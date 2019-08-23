@@ -47,7 +47,8 @@
      
       Onde o primeiro número é o número do sócio e o segundo o bilhete do sorteio do
       mês.
-      Essa lista é aproveitada para adicionar novos sócios e desativar inativos. Se o número do banco não está na lista, deve ser             desativado, se o número da lista ainda
+      Essa lista é aproveitada para adicionar novos sócios e desativar inativos. 
+      Se o número do banco não está na lista, deve ser desativado, se o número da lista ainda
       não está no banco, deve ser adicionado já com seu bilhete pro sorteio do mês. Se o
       número da lista já está no banco, o número do sorteio deve ser atualizado.
       Sua missão é escrever uma função: atualiza_socios que recebe uma lista conforme
