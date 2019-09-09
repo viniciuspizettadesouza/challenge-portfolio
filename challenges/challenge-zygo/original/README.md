@@ -2,9 +2,9 @@
 
 ##  Versões e execução do programa
 
-Vscode versão 1.38.0 
-Extensão Coderunner versão 0.9.14
-Nodejs versão 10.16.2
+    Vscode versão 1.38.0 
+    Extensão Coderunner versão 0.9.14
+    Nodejs versão 10.16.2
 
 A dependência do programa é o módulo fs "File System" herdado do 
 da biblioteca nodejs para utilizar a função fs.readFile para ler o arquivo JSON criado
