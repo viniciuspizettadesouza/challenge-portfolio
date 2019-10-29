@@ -6,9 +6,7 @@ import './App.css';
 
 import logo from './assets/logo.png'
 
-
 export default function Table() {
-
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -153,7 +151,7 @@ export default function Table() {
         <button className="App-table-button" type="button" placeholder="Author Ascending" onClick={ShowByAuthorAscending}>Author Ascending</button>
         <button className="App-table-button" type="button" placeholder="Author Descending" onClick={ShowByAuthorDescending}>Author Descending</button>
         <button className="App-table-button" type="button" placeholder="Edition Descending" onClick={ShowByEditionDescending}>Edition Descending</button>
-        <p><strong>Click the headers to sort the table.</strong></p>
+        <p>Click the headers to sort the table.</p>
         <p>The first time you click, the sorting direction is ascending (A to Z).</p>
         <p>Click again, and the sorting direction will be descending (Z to A):</p>
         <table className="App-table">
@@ -224,7 +222,6 @@ export default function Table() {
             ))}
           </tbody>
         </table>
-
       </div>
     </>
   );
