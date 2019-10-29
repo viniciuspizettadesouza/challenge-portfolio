@@ -6,9 +6,15 @@ import './App.css';
 
 import logo from './assets/logo.png'
 
-export default function Test() {
+const TITLEASC = "TitleAscending"
+const TITLEDESC = "TitleDescending"
+const AUTHORASC = "AuthorAscending"
+const AUTHORDESC = "AuthorDescending"
+const EDITIONDESC = "EditionDescending"
+
+const Table = () => {
     const [books, setBooks] = useState([]);
-    const [status, setStatus] = useState(books)
+    const [status, setStatus] = useState('')
 
     useEffect(() => {
         async function loadBooks() {
@@ -17,10 +23,9 @@ export default function Test() {
         } loadBooks();
     });
 
-    function titleAscending(a, b) {
-        let bookA = a.title.toUpperCase();
-        let bookB = b.title.toUpperCase();
-
+    const titleAscending = useCallback((a, b) => {
+        const bookA = a.title.toUpperCase();
+        const bookB = b.title.toUpperCase();
         let compare = 0;
         if (bookA > bookB) {
             compare = 1;
@@ -28,11 +33,11 @@ export default function Test() {
             compare = -1;
         }
         return compare;
-    }
-    function titleDescending(a, b) {
-        let bookA = a.title.toUpperCase();
-        let bookB = b.title.toUpperCase();
+    }, [])
 
+    const titleDescending = useCallback((a, b) => {
+        const bookA = a.title.toUpperCase();
+        const bookB = b.title.toUpperCase();
         let compare = 0;
         if (bookA < bookB) {
             compare = 1;
@@ -40,11 +45,11 @@ export default function Test() {
             compare = -1;
         }
         return compare;
-    }
-    function authorAscending(a, b) {
-        let bookA = a.author.toUpperCase();
-        let bookB = b.author.toUpperCase();
+    }, [])
 
+    const authorAscending = useCallback((a, b) => {
+        const bookA = a.author.toUpperCase();
+        const bookB = b.author.toUpperCase();
         let compare = 0;
         if (bookA > bookB) {
             compare = 1;
@@ -52,11 +57,11 @@ export default function Test() {
             compare = -1;
         }
         return compare;
-    }
-    function authorDescending(a, b) {
-        let bookA = a.author.toUpperCase();
-        let bookB = b.author.toUpperCase();
+    }, [])
 
+    const authorDescending = useCallback((a, b) => {
+        const bookA = a.author.toUpperCase();
+        const bookB = b.author.toUpperCase();
         let compare = 0;
         if (bookA < bookB) {
             compare = 1;
@@ -64,32 +69,26 @@ export default function Test() {
             compare = -1;
         }
         return compare;
-    }
+    }, [])
 
-    function listBooks() {
+    const listBooks = useCallback(() =>
         books.map(book => (
             <div className="grid-container" key={book._id}>
                 <div className="grid-item">
-                    <p>{book.id}</p>
+                    <p className="grid-item-p">{book.id}</p>
                 </div>
                 <div className="grid-item">
-                    <p>{book.title}</p>
+                    <p className="grid-item-p">{book.title}</p>
                 </div>
                 <div className="grid-item">
-                    <p>{book.author}</p>
+                    <p className="grid-item-p">{book.author}</p>
                 </div>
                 <div className="grid-item">
-                    <p>{book.edition_year}</p>
+                    <p className="grid-item-p">{book.edition_year}</p>
                 </div>
             </div>
-        ))
-    }
+        )), [books])
 
-    const TITLEASC = "TitleAscending"
-    const TITLEDESC = "TitleDescending"
-    const AUTHORASC = "AuthorAscending"
-    const AUTHORDESC = "AuthorDescending"
-    const EDITIONDESC = "EditionDescending"
 
     const setTitleAscending = useCallback(() => {
         setStatus(TITLEASC)
@@ -111,182 +110,68 @@ export default function Test() {
         switch (status) {
             case TITLEASC:
                 return (
-                    <div>
-                        {
-                            books.sort(titleAscending)
-                            &&
-                            books.map(book => (
-                                <div className="grid-container" key={book._id} >
-                                    <div className="grid-item">
-                                        <p>{book.id}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.title}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.author}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.edition_year}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    books.sort(titleAscending)
+                    &&
+                    listBooks()
                 )
             case TITLEDESC:
                 return (
-                    <div>
-                        {
-                            books.sort(titleDescending)
-                            &&
-                            books.map(book => (
-                                <div className="grid-container" key={book._id} >
-                                    <div className="grid-item">
-                                        <p>{book.id}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.title}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.author}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.edition_year}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    books.sort(titleDescending)
+                    &&
+                    listBooks()
                 )
             case AUTHORASC:
                 return (
-                    <div>
-                        {
-                            books.sort(authorAscending)
-                            &&
-                            books.map(book => (
-                                <div className="grid-container" key={book._id} >
-                                    <div className="grid-item">
-                                        <p>{book.id}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.title}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.author}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.edition_year}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    books.sort(authorAscending)
+                    &&
+                    listBooks()
                 )
             case AUTHORDESC:
                 return (
-                    <div>
-                        {
-                            books.sort(authorDescending)
-                            &&
-                            books.map(book => (
-                                <div className="grid-container" key={book._id} >
-                                    <div className="grid-item">
-                                        <p>{book.id}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.title}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.author}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.edition_year}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    books.sort(authorDescending)
+                    &&
+                    listBooks()
                 )
             case EDITIONDESC:
                 return (
-                    <div>
-                        {
-                            books.sort((a, b) => (a.edition_year > b.edition_year) ? 1 : ((a.edition_year < b.edition_year) ? -1 : 0))
-                            &&
-                            books.map(book => (
-                                <div className="grid-container" key={book._id} >
-                                    <div className="grid-item">
-                                        <p>{book.id}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.title}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.author}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.edition_year}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    books.sort((a, b) => (a.edition_year > b.edition_year) ? 1 : ((a.edition_year < b.edition_year) ? -1 : 0))
+                    &&
+                    listBooks()
                 )
             default:
                 return (
-                    <div>
-                        {
-                            books.map(book => (
-                                <div className="grid-container" key={book._id} >
-                                    <div className="grid-item">
-                                        <p>{book.id}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.title}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.author}</p>
-                                    </div>
-                                    <div className="grid-item">
-                                        <p>{book.edition_year}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    listBooks()
                 )
         }
-    }, [books, status])
+    }, [books, status, titleAscending, titleDescending, authorAscending, authorDescending, listBooks])
 
     return (
-        <>
+        <div>
             <header className="app-header">
                 <img src={logo} alt="logo" />
             </header>
 
             <div className="grid-container-header">
-            
                 <div className="grid-item"></div>
                 <div className="grid-button" onClick={setTitleAscending}>
-                    <p>Title Ascending</p>
+                    <p className="grid-button-p">Title Ascending</p>
                 </div>
                 <div className="grid-button" onClick={setTitleDescending}>
-                    <p>Title Descending</p>
+                    <p className="grid-button-p">Title Descending</p>
                 </div>
                 <div className="grid-button" onClick={setAuthorAscending}>
-                    <p>Author Ascending</p>
+                    <p className="grid-button-p">Author Ascending</p>
                 </div>
                 <div className="grid-button" onClick={setAuthorDescending}>
-                    <p>Author Descending</p>
+                    <p className="grid-button-p">Author Descending</p>
                 </div>
                 <div className="grid-button" onClick={setEditionDescending}>
-                    <p>Edition Year</p>
+                    <p className="grid-button-p">Edition Year</p>
                 </div>
             </div>
 
             {renderState()}
-        </>
-    );
+        </div>
+    )
 }
+export default Table
