@@ -4,8 +4,6 @@ import api from './services/api';
 
 import './App.css'
 
-import logo from './assets/logo.png'
-
 const FIRSTSCENARIO = "FirstScenario"
 const SECONDSCENARIO = "SecondScenario"
 const THIRDSCENARIO = "ThirdScenario"
@@ -73,7 +71,7 @@ const TableScenarios = () => {
 
     const listBooks = useCallback(() =>
         books.map(book => (
-            <div className="grid-container" key={book._id}>
+            <div className="grid-container-scenarios" key={book._id}>
                 <div className="grid-item">
                     <p className="grid-item-p">{book.id}</p>
                 </div>
@@ -150,7 +148,7 @@ const TableScenarios = () => {
             <button className="App-button" type="button" placeholder="Fourth Scenario" onClick={OrderByFourthScenario}>Fourth Scenario</button>
             <button className="App-button" type="button" placeholder="Fifth Scenario" onClick={OrderByFifthScenario}>Fifth Scenario</button>
 
-            <div className="grid-container-header">
+            <div className="grid-scenarios-header">
                 <div className="grid-item"></div>
                 <div className="grid-item">
                     <p className="grid-button-p">Title</p>
