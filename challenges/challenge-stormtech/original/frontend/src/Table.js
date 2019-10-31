@@ -151,21 +151,21 @@ const Table = () => {
             </header>
             <div className="grid-container-header">
                 <div className="grid-item"></div>
-                <div className="grid-button" onClick={setTitleAscending}>
+                <button className="grid-button" onClick={setTitleAscending}>
                     <p className="grid-button-p">Title Ascending</p>
-                </div>
-                <div className="grid-button" onClick={setTitleDescending}>
+                </button>
+                <button className="grid-button" onClick={setTitleDescending}>
                     <p className="grid-button-p">Title Descending</p>
-                </div>
-                <div className="grid-button" onClick={setAuthorAscending}>
+                </button>
+                <button className="grid-button" onClick={setAuthorAscending}>
                     <p className="grid-button-p">Author Ascending</p>
-                </div>
-                <div className="grid-button" onClick={setAuthorDescending}>
+                </button>
+                <button className="grid-button" onClick={setAuthorDescending}>
                     <p className="grid-button-p">Author Descending</p>
-                </div>
-                <div className="grid-button" onClick={setEditionDescending}>
+                </button>
+                <button className="grid-button" onClick={setEditionDescending}>
                     <p className="grid-button-p">Edition Year</p>
-                </div>
+                </button>
             </div>
             {renderTable()}
         </div>
