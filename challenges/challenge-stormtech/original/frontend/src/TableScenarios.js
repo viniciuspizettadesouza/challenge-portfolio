@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react'
 
-import api from './services/api';
+import api from './services/api'
 
 import './App.css'
 
@@ -11,62 +11,74 @@ const FOURTHSCENARIO = "FourthScenario"
 const FIFTHSCENARIO = "FifthScenario"
 
 const TableScenarios = () => {
-    const [books, setBooks] = useState([]);
+    const [books, setBooks] = useState([])
     const [status, setStatus] = useState('')
 
     useEffect(() => {
         async function loadBooks() {
             const response = await api.get('/books', {})
             setBooks(response.data)
-        } loadBooks();
-    });
+        } loadBooks()
+    })
 
     const titleAscending = useCallback((a, b) => {
-        const bookA = a.title.toUpperCase();
-        const bookB = b.title.toUpperCase();
-        let compare = 0;
+        const bookA = a.title.toUpperCase()
+        const bookB = b.title.toUpperCase()
+        let compare = 0
         if (bookA > bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA < bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
     }, [])
 
     const titleDescending = useCallback((a, b) => {
-        const bookA = a.title.toUpperCase();
-        const bookB = b.title.toUpperCase();
-        let compare = 0;
+        const bookA = a.title.toUpperCase()
+        const bookB = b.title.toUpperCase()
+        let compare = 0
         if (bookA < bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA > bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
     }, [])
 
     const authorAscending = useCallback((a, b) => {
-        const bookA = a.author.toUpperCase();
-        const bookB = b.author.toUpperCase();
-        let compare = 0;
+        const bookA = a.author.toUpperCase()
+        const bookB = b.author.toUpperCase()
+        let compare = 0
         if (bookA > bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA < bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
     }, [])
 
     const authorDescending = useCallback((a, b) => {
-        const bookA = a.author.toUpperCase();
-        const bookB = b.author.toUpperCase();
-        let compare = 0;
+        const bookA = a.author.toUpperCase()
+        const bookB = b.author.toUpperCase()
+        let compare = 0
         if (bookA < bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA > bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
+    }, [])
+
+    const editionDescending = useCallback((a, b) => {
+        const bookA = a.edition_year
+        const bookB = b.edition_year
+        let compare = 0
+        if (bookA < bookB) {
+            compare = 1
+        } else if (bookA > bookB) {
+            compare = -1
+        }
+        return compare
     }, [])
 
     const listBooks = useCallback(() =>
@@ -103,61 +115,81 @@ const TableScenarios = () => {
         setStatus(FIFTHSCENARIO)
     }, [])
 
+
+
     const renderScenarios = useCallback(() => {
         switch (status) {
 
             case FIRSTSCENARIO:
+                books.sort(titleAscending)
                 return (
-                    books.sort(titleAscending)
-                    &&
                     listBooks()
                 )
             case SECONDSCENARIO:
+                books.sort(titleDescending)
+                books.sort(authorAscending)
                 return (
-                    books.sort(titleDescending) &&
-                    books.sort(authorAscending) &&
                     listBooks()
                 )
             case THIRDSCENARIO:
+                books.sort(titleAscending)
+                books.sort(authorDescending)
+                books.sort(editionDescending)
                 return (
-                    books.sort(titleDescending) &&
-                    books.sort(authorDescending) &&
-                    books.sort((a, b) => (a.edition_year > b.edition_year) ? 1 : ((a.edition_year < b.edition_year) ? -1 : 0)) &&
                     listBooks()
                 )
             case FOURTHSCENARIO:
                 return (
-                    'FOURTHSCENARIO'
+                    books.map(book => (
+                        <div className="grid-container-scenarios" key={book._id}>
+                            <div className="grid-item">
+                                <p className="grid-item-p">-</p>
+                            </div>
+                            <div className="grid-item">
+                                <p className="grid-item-p">-</p>
+                            </div>
+                            <div className="grid-item">
+                                <p className="grid-item-p">-</p>
+                            </div>
+                            <div className="grid-item">
+                                <p className="grid-item-p">-</p>
+                            </div>
+                        </div>
+                    ))
                 )
+
+
             case FIFTHSCENARIO:
                 return (
-                    'FIFTHSCENARIO'
+                    []
                 )
+
             default:
                 return (
                     listBooks()
                 )
         }
-    }, [books, status, titleAscending, titleDescending, authorAscending, authorDescending, listBooks])
+    }, [books, status, listBooks, authorAscending, authorDescending, titleAscending, titleDescending, editionDescending])
 
     return (
-        <div>
-            <button className="App-button" type="button" placeholder="First Scenario" onClick={OrderByFirstScenario}>First Scenario</button>
-            <button className="App-button" type="button" placeholder="Second Scenario" onClick={OrderBySecondScenario}>Second Scenario</button>
-            <button className="App-button" type="button" placeholder="Third Scenario" onClick={OrderByThirdScenario}>Third Scenario</button>
-            <button className="App-button" type="button" placeholder="Fourth Scenario" onClick={OrderByFourthScenario}>Fourth Scenario</button>
-            <button className="App-button" type="button" placeholder="Fifth Scenario" onClick={OrderByFifthScenario}>Fifth Scenario</button>
-
+        <div className="container-scenarios">
+            <div className="container-buttons" >
+                <button className="button" type="button" placeholder="First Scenario" onClick={OrderByFirstScenario}>First Scenario</button>
+                <button className="button" type="button" placeholder="Second Scenario" onClick={OrderBySecondScenario}>Second Scenario</button>
+                <button className="button" type="button" placeholder="Third Scenario" onClick={OrderByThirdScenario}>Third Scenario</button>
+                <button className="button" type="button" placeholder="Fourth Scenario" onClick={OrderByFourthScenario}>Fourth Scenario</button>
+                <button className="button" type="button" placeholder="Fifth Scenario" onClick={OrderByFifthScenario}>Fifth Scenario</button>
+            </div>
             <div className="grid-scenarios-header">
                 <div className="grid-item"></div>
                 <div className="grid-item">
-                    <p className="grid-button-p">Title</p>
+                    <p className="grid-p">Title</p>
                 </div>
                 <div className="grid-item">
-                    <p className="grid-button-p">Author</p>
+                    <p className="grid-p">Author</p>
                 </div>
-                <div className="grid-button">
-                    <p className="grid-button-p">Edition Year</p>
+                <div className="grid-item">
+                    <p className="grid-p">Edition Year</p>
                 </div>
             </div>
             {renderScenarios()}
