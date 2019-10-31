@@ -1,24 +1,26 @@
 # challenge-stormtech
 
-# Backend dependencies
+## Para testar a aplicação
 
-yarn init -y
+Após clonar o repositório do github, por conta do arquivo .gitignore executar um dos comandos abaixo para carregar os modulos do node dentro das pastas backend e frontend
 
-yarn add express
+    yarn install
+    ou
+    npm install
 
-yarn add nodemon -D
+Para executar o backend da aplicação:
 
-yarn add cors
+Dentro da pasta backend, execute o comando abaixo para subir o servidor na porta 3333.
 
-yarn add mongoose
+    yarn start
+    ou
+    npm run-script start
+    onde "start" é o script criado no arquivo package.json
 
-# Frontend 
+Para executar o frontend da aplicação:
 
-yarn create react-app frontend
+Dentro da pasta frontend, execute o comando abaixo para iniciar a aplicação na porta 3000.
 
-yarn add axios
-
-# Para iniciar aplicação:
-
-Iniciar backend - yarn dev 
-Iniciar frontend - yarn start
+    yarn start
+    ou
+    npm react-script start
