@@ -1,12 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 
-// import Table from './Table'
-import Test from './Test'
+import Table from './Table'
+import TableScenarios from './TableScenarios'
 
 export default function App() {
 
   return (
-    <Test />
+    <div>
+      <Table />
+      <TableScenarios />
+    </div>
   );
 }
