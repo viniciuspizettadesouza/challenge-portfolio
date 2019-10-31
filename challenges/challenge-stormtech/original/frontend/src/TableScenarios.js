@@ -2,17 +2,15 @@ import React, { useEffect, useState, useCallback } from 'react';
 
 import api from './services/api';
 
-import './App.css';
+import './App.css'
 
-import logo from './assets/logo.png'
+const FIRSTSCENARIO = "FirstScenario"
+const SECONDSCENARIO = "SecondScenario"
+const THIRDSCENARIO = "ThirdScenario"
+const FOURTHSCENARIO = "FourthScenario"
+const FIFTHSCENARIO = "FifthScenario"
 
-const TITLEASC = "TitleAscending"
-const TITLEDESC = "TitleDescending"
-const AUTHORASC = "AuthorAscending"
-const AUTHORDESC = "AuthorDescending"
-const EDITIONDESC = "EditionDescending"
-
-const Table = () => {
+const TableScenarios = () => {
     const [books, setBooks] = useState([]);
     const [status, setStatus] = useState('')
 
@@ -73,7 +71,7 @@ const Table = () => {
 
     const listBooks = useCallback(() =>
         books.map(book => (
-            <div className="grid-container" key={book._id}>
+            <div className="grid-container-scenarios" key={book._id}>
                 <div className="grid-item">
                     <p className="grid-item-p">{book.id}</p>
                 </div>
@@ -89,54 +87,51 @@ const Table = () => {
             </div>
         )), [books])
 
+    const OrderByFirstScenario = useCallback(() => {
+        setStatus(FIRSTSCENARIO)
+    }, [])
+    const OrderBySecondScenario = useCallback(() => {
+        setStatus(SECONDSCENARIO)
+    }, [])
+    const OrderByThirdScenario = useCallback(() => {
+        setStatus(THIRDSCENARIO)
+    }, [])
+    const OrderByFourthScenario = useCallback(() => {
+        setStatus(FOURTHSCENARIO)
+    }, [])
+    const OrderByFifthScenario = useCallback(() => {
+        setStatus(FIFTHSCENARIO)
+    }, [])
 
-    const setTitleAscending = useCallback(() => {
-        setStatus(TITLEASC)
-    }, [])
-    const setTitleDescending = useCallback(() => {
-        setStatus(TITLEDESC)
-    }, [])
-    const setAuthorAscending = useCallback(() => {
-        setStatus(AUTHORASC)
-    }, [])
-    const setAuthorDescending = useCallback(() => {
-        setStatus(AUTHORDESC)
-    }, [])
-    const setEditionDescending = useCallback(() => {
-        setStatus(EDITIONDESC)
-    }, [])
-
-    const renderState = useCallback(() => {
+    const renderScenarios = useCallback(() => {
         switch (status) {
-            case TITLEASC:
+
+            case FIRSTSCENARIO:
                 return (
                     books.sort(titleAscending)
                     &&
                     listBooks()
                 )
-            case TITLEDESC:
+            case SECONDSCENARIO:
                 return (
-                    books.sort(titleDescending)
-                    &&
+                    books.sort(titleDescending) &&
+                    books.sort(authorAscending) &&
                     listBooks()
                 )
-            case AUTHORASC:
+            case THIRDSCENARIO:
                 return (
-                    books.sort(authorAscending)
-                    &&
+                    books.sort(titleDescending) &&
+                    books.sort(authorDescending) &&
+                    books.sort((a, b) => (a.edition_year > b.edition_year) ? 1 : ((a.edition_year < b.edition_year) ? -1 : 0)) &&
                     listBooks()
                 )
-            case AUTHORDESC:
+            case FOURTHSCENARIO:
                 return (
-                    books.sort(authorDescending)
-                    &&
-                    listBooks()
+                    'FOURTHSCENARIO'
                 )
-            case EDITIONDESC:
+            case FIFTHSCENARIO:
                 return (
-                    books.sort((a, b) => (a.edition_year > b.edition_year) ? 1 : ((a.edition_year < b.edition_year) ? -1 : 0))
-                    &&
-                    listBooks()
+                    'FIFTHSCENARIO'
                 )
             default:
                 return (
@@ -147,31 +142,26 @@ const Table = () => {
 
     return (
         <div>
-            <header className="app-header">
-                <img src={logo} alt="logo" />
-            </header>
+            <button className="App-button" type="button" placeholder="First Scenario" onClick={OrderByFirstScenario}>First Scenario</button>
+            <button className="App-button" type="button" placeholder="Second Scenario" onClick={OrderBySecondScenario}>Second Scenario</button>
+            <button className="App-button" type="button" placeholder="Third Scenario" onClick={OrderByThirdScenario}>Third Scenario</button>
+            <button className="App-button" type="button" placeholder="Fourth Scenario" onClick={OrderByFourthScenario}>Fourth Scenario</button>
+            <button className="App-button" type="button" placeholder="Fifth Scenario" onClick={OrderByFifthScenario}>Fifth Scenario</button>
 
-            <div className="grid-container-header">
+            <div className="grid-scenarios-header">
                 <div className="grid-item"></div>
-                <div className="grid-button" onClick={setTitleAscending}>
-                    <p className="grid-button-p">Title Ascending</p>
+                <div className="grid-item">
+                    <p className="grid-button-p">Title</p>
                 </div>
-                <div className="grid-button" onClick={setTitleDescending}>
-                    <p className="grid-button-p">Title Descending</p>
+                <div className="grid-item">
+                    <p className="grid-button-p">Author</p>
                 </div>
-                <div className="grid-button" onClick={setAuthorAscending}>
-                    <p className="grid-button-p">Author Ascending</p>
-                </div>
-                <div className="grid-button" onClick={setAuthorDescending}>
-                    <p className="grid-button-p">Author Descending</p>
-                </div>
-                <div className="grid-button" onClick={setEditionDescending}>
+                <div className="grid-button">
                     <p className="grid-button-p">Edition Year</p>
                 </div>
             </div>
-
-            {renderState()}
+            {renderScenarios()}
         </div>
     )
 }
-export default Table
+export default TableScenarios
