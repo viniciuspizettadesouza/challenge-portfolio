@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
 
-import Table from './Table'
 import TableScenarios from './TableScenarios'
+import Table from './Table'
 
 export default function App() {
 
@@ -11,5 +11,5 @@ export default function App() {
       <Table />
       <TableScenarios />
     </div>
-  );
+  )
 }
