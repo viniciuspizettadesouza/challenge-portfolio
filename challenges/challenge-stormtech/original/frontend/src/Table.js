@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react'
 
-import api from './services/api';
+import api from './services/api'
 
 import './App.css'
 
@@ -13,62 +13,74 @@ const AUTHORDESC = "AuthorDescending"
 const EDITIONDESC = "EditionDescending"
 
 const Table = () => {
-    const [books, setBooks] = useState([]);
+    const [books, setBooks] = useState([])
     const [status, setStatus] = useState('')
 
     useEffect(() => {
         async function loadBooks() {
             const response = await api.get('/books', {})
             setBooks(response.data)
-        } loadBooks();
-    });
+        } loadBooks()
+    })
 
     const titleAscending = useCallback((a, b) => {
-        const bookA = a.title.toUpperCase();
-        const bookB = b.title.toUpperCase();
-        let compare = 0;
+        const bookA = a.title.toUpperCase()
+        const bookB = b.title.toUpperCase()
+        let compare = 0
         if (bookA > bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA < bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
     }, [])
 
     const titleDescending = useCallback((a, b) => {
-        const bookA = a.title.toUpperCase();
-        const bookB = b.title.toUpperCase();
-        let compare = 0;
+        const bookA = a.title.toUpperCase()
+        const bookB = b.title.toUpperCase()
+        let compare = 0
         if (bookA < bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA > bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
     }, [])
 
     const authorAscending = useCallback((a, b) => {
-        const bookA = a.author.toUpperCase();
-        const bookB = b.author.toUpperCase();
-        let compare = 0;
+        const bookA = a.author.toUpperCase()
+        const bookB = b.author.toUpperCase()
+        let compare = 0
         if (bookA > bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA < bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
     }, [])
 
     const authorDescending = useCallback((a, b) => {
-        const bookA = a.author.toUpperCase();
-        const bookB = b.author.toUpperCase();
-        let compare = 0;
+        const bookA = a.author.toUpperCase()
+        const bookB = b.author.toUpperCase()
+        let compare = 0
         if (bookA < bookB) {
-            compare = 1;
+            compare = 1
         } else if (bookA > bookB) {
-            compare = -1;
+            compare = -1
         }
-        return compare;
+        return compare
+    }, [])
+
+    const editionDescending = useCallback((a, b) => {
+        const bookA = a.edition_year
+        const bookB = b.edition_year
+        let compare = 0
+        if (bookA < bookB) {
+            compare = 1
+        } else if (bookA > bookB) {
+            compare = -1
+        }
+        return compare
     }, [])
 
     const listBooks = useCallback(() =>
@@ -108,33 +120,28 @@ const Table = () => {
     const renderTable = useCallback(() => {
         switch (status) {
             case TITLEASC:
+                books.sort(titleAscending)
                 return (
-                    books.sort(titleAscending)
-                    &&
                     listBooks()
                 )
             case TITLEDESC:
+                books.sort(titleDescending)
                 return (
-                    books.sort(titleDescending)
-                    &&
                     listBooks()
                 )
             case AUTHORASC:
+                books.sort(authorAscending)
                 return (
-                    books.sort(authorAscending)
-                    &&
                     listBooks()
                 )
             case AUTHORDESC:
+                books.sort(authorDescending)
                 return (
-                    books.sort(authorDescending)
-                    &&
                     listBooks()
                 )
             case EDITIONDESC:
+                books.sort(editionDescending)
                 return (
-                    books.sort((a, b) => (a.edition_year > b.edition_year) ? 1 : ((a.edition_year < b.edition_year) ? -1 : 0))
-                    &&
                     listBooks()
                 )
             default:
@@ -142,30 +149,37 @@ const Table = () => {
                     listBooks()
                 )
         }
-    }, [books, status, titleAscending, titleDescending, authorAscending, authorDescending, listBooks])
+    }, [books, status, titleAscending, titleDescending, authorAscending, authorDescending, editionDescending, listBooks])
 
     return (
         <div>
             <header className="app-header">
                 <img src={logo} alt="logo" />
             </header>
+            <div className="container-buttons" >
+                <button className="button" type="button" placeholder="Title Ascending" onClick={setTitleAscending}>Title Ascending</button>
+                <button className="button" type="button" placeholder="Title Descending" onClick={setTitleDescending}>Title Descending</button>
+                <button className="button" type="button" placeholder="Author Ascending" onClick={setAuthorAscending}>Author Ascending</button>
+                <button className="button" type="button" placeholder="Author Descending" onClick={setAuthorDescending}>Author Descending</button>
+                <button className="button" type="button" placeholder="Edition Year" onClick={setEditionDescending}>Edition Year Descending</button>
+            </div>
             <div className="grid-container-header">
                 <div className="grid-item"></div>
-                <button className="grid-button" onClick={setTitleAscending}>
-                    <p className="grid-button-p">Title Ascending</p>
-                </button>
-                <button className="grid-button" onClick={setTitleDescending}>
-                    <p className="grid-button-p">Title Descending</p>
-                </button>
-                <button className="grid-button" onClick={setAuthorAscending}>
-                    <p className="grid-button-p">Author Ascending</p>
-                </button>
-                <button className="grid-button" onClick={setAuthorDescending}>
-                    <p className="grid-button-p">Author Descending</p>
-                </button>
-                <button className="grid-button" onClick={setEditionDescending}>
-                    <p className="grid-button-p">Edition Year</p>
-                </button>
+                <div className="grid-item">
+                    <p className="grid-p">Title Ascending</p>
+                </div>
+                <div className="grid-item">
+                    <p className="grid-p">Title Descending</p>
+                </div>
+                <div className="grid-item">
+                    <p className="grid-p">Author Ascending</p>
+                </div>
+                <div className="grid-item">
+                    <p className="grid-p">Author Descending</p>
+                </div>
+                <div className="grid-item">
+                    <p className="grid-p">Edition Year</p>
+                </div>
             </div>
             {renderTable()}
         </div>
