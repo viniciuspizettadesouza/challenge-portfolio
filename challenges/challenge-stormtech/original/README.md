@@ -2,7 +2,7 @@
 
 ## Para testar a aplicação
 
-Após clonar o repositório do github, por conta do arquivo .gitignore executar um dos comandos abaixo para carregar os modulos do node dentro das pastas backend e frontend
+Após clonar o repositório do github, por conta do arquivo .gitignore executar um dos comandos abaixo para carregar os modulos do node dentro da pasta do frontend
 
     yarn install
     ou
