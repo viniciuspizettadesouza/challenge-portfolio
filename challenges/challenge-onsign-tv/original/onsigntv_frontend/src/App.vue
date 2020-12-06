@@ -22,7 +22,7 @@
 
       <div>
         <b-table-simple small caption-top responsive>
-          <caption>{{ weatherMock.hourly[hours].weather[0].main }} currently in Florianópolis. The temperature is
+          <caption>{{ testingWeather[0][0].weather[0].main }} currently in Florianópolis. The temperature is
             {{ weatherMock.hourly[hours].temp }} C.
           </caption>
           <b-thead>
@@ -36,44 +36,87 @@
               <b-th>{{ hours + 5 }}</b-th>
             </b-tr>
           </b-thead>
-          <b-tbody v-for="(value, index) in weatherFiltered" v-bind:key="index">
-            <b-tr>
-              <b-th>Condition</b-th>
-              <b-td>{{ value[0].weather[index].main }}</b-td>
-              <b-td>{{ value[1].weather[index].main }}</b-td>
-              <b-td>{{ value[2].weather[index].main }}</b-td>
-              <b-td>{{ value[3].weather[index].main }}</b-td>
-              <b-td>{{ value[4].weather[index].main }}</b-td>
-              <b-td>{{ value[5].weather[index].main }}</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th>Temp</b-th>
-              <b-td>{{ value[0].temp }} C</b-td>
-              <b-td>{{ value[1].temp }} C</b-td>
-              <b-td>{{ value[2].temp }} C</b-td>
-              <b-td>{{ value[3].temp }} C</b-td>
-              <b-td>{{ value[4].temp }} C</b-td>
-              <b-td>{{ value[5].temp }} C</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th>Feels Like</b-th>
-              <b-td>{{ value[0].feels_like }} C</b-td>
-              <b-td>{{ value[1].feels_like }} C</b-td>
-              <b-td>{{ value[2].feels_like }} C</b-td>
-              <b-td>{{ value[3].feels_like }} C</b-td>
-              <b-td>{{ value[4].feels_like }} C</b-td>
-              <b-td>{{ value[5].feels_like }} C</b-td>
-            </b-tr>
-            <b-tr>
-              <b-th>Humidity</b-th>
-              <b-td>{{ value[0].humidity }}%</b-td>
-              <b-td>{{ value[1].humidity }}%</b-td>
-              <b-td>{{ value[2].humidity }}%</b-td>
-              <b-td>{{ value[3].humidity }}%</b-td>
-              <b-td>{{ value[4].humidity }}%</b-td>
-              <b-td>{{ value[5].humidity }}%</b-td>
-            </b-tr>
-          </b-tbody>
+          <template v-if="testingWeather">
+            <b-tbody v-for="(value, index) in testingWeather" v-bind:key="index">
+              <b-tr>
+                <b-th>Condition</b-th>
+                <b-td>{{ value[0].weather[index].main }}</b-td>
+                <b-td>{{ value[1].weather[index].main }}</b-td>
+                <b-td>{{ value[2].weather[index].main }}</b-td>
+                <b-td>{{ value[3].weather[index].main }}</b-td>
+                <b-td>{{ value[4].weather[index].main }}</b-td>
+                <b-td>{{ value[5].weather[index].main }}</b-td>
+              </b-tr>
+              <b-tr>
+                <b-th>Temp</b-th>
+                <b-td>{{ value[0].temp }} C</b-td>
+                <b-td>{{ value[1].temp }} C</b-td>
+                <b-td>{{ value[2].temp }} C</b-td>
+                <b-td>{{ value[3].temp }} C</b-td>
+                <b-td>{{ value[4].temp }} C</b-td>
+                <b-td>{{ value[5].temp }} C</b-td>
+              </b-tr>
+              <b-tr>
+                <b-th>Feels Like</b-th>
+                <b-td>{{ value[0].feels_like }} C</b-td>
+                <b-td>{{ value[1].feels_like }} C</b-td>
+                <b-td>{{ value[2].feels_like }} C</b-td>
+                <b-td>{{ value[3].feels_like }} C</b-td>
+                <b-td>{{ value[4].feels_like }} C</b-td>
+                <b-td>{{ value[5].feels_like }} C</b-td>
+              </b-tr>
+              <b-tr>
+                <b-th>Humidity</b-th>
+                <b-td>{{ value[0].humidity }}%</b-td>
+                <b-td>{{ value[1].humidity }}%</b-td>
+                <b-td>{{ value[2].humidity }}%</b-td>
+                <b-td>{{ value[3].humidity }}%</b-td>
+                <b-td>{{ value[4].humidity }}%</b-td>
+                <b-td>{{ value[5].humidity }}%</b-td>
+              </b-tr>
+            </b-tbody>
+          </template>
+          <template v-else>
+            <b-tbody v-for="(value, index) in weatherFiltered" v-bind:key="index">
+              <b-tr>
+                <b-th>Condition</b-th>
+                <b-td>{{ value[0].weather[index].main }}</b-td>
+                <b-td>{{ value[1].weather[index].main }}</b-td>
+                <b-td>{{ value[2].weather[index].main }}</b-td>
+                <b-td>{{ value[3].weather[index].main }}</b-td>
+                <b-td>{{ value[4].weather[index].main }}</b-td>
+                <b-td>{{ value[5].weather[index].main }}</b-td>
+              </b-tr>
+              <b-tr>
+                <b-th>Temp</b-th>
+                <b-td>{{ value[0].temp }} C</b-td>
+                <b-td>{{ value[1].temp }} C</b-td>
+                <b-td>{{ value[2].temp }} C</b-td>
+                <b-td>{{ value[3].temp }} C</b-td>
+                <b-td>{{ value[4].temp }} C</b-td>
+                <b-td>{{ value[5].temp }} C</b-td>
+              </b-tr>
+              <b-tr>
+                <b-th>Feels Like</b-th>
+                <b-td>{{ value[0].feels_like }} C</b-td>
+                <b-td>{{ value[1].feels_like }} C</b-td>
+                <b-td>{{ value[2].feels_like }} C</b-td>
+                <b-td>{{ value[3].feels_like }} C</b-td>
+                <b-td>{{ value[4].feels_like }} C</b-td>
+                <b-td>{{ value[5].feels_like }} C</b-td>
+              </b-tr>
+              <b-tr>
+                <b-th>Humidity</b-th>
+                <b-td>{{ value[0].humidity }}%</b-td>
+                <b-td>{{ value[1].humidity }}%</b-td>
+                <b-td>{{ value[2].humidity }}%</b-td>
+                <b-td>{{ value[3].humidity }}%</b-td>
+                <b-td>{{ value[4].humidity }}%</b-td>
+                <b-td>{{ value[5].humidity }}%</b-td>
+              </b-tr>
+            </b-tbody>
+          </template>
+
         </b-table-simple>
       </div>
     </div>
@@ -94,6 +137,7 @@ export default {
       latitude: -27.585,
       longitude: -48.435,
       hours: null,
+      testingWeather: null,
       weatherMock: {
         "lat": -27.59,
         "lon": -48.44,
@@ -1291,6 +1335,9 @@ export default {
   components: { Header },
   created() {
     this.getTime()
+    if (localStorage.getItem('weatherFiltered') != null) {
+      this.testingWeather = JSON.parse(localStorage.getItem('weatherFiltered'));
+    }
   },
   methods: {
     getLocation() {
@@ -1340,6 +1387,7 @@ export default {
       let initial = this.hours
       let end = this.hours + 6
       this.weatherFiltered.push(weather.hourly.slice(initial, end))
+      localStorage.setItem('weatherFiltered', JSON.stringify(this.weatherFiltered));
     }
   },
 }
