@@ -9,7 +9,7 @@
             <b-icon icon="cursor-fill"/>
           </b-input-group-text>
           <b-form-input v-if="geocodeResponse" v-model="geocodeResponse.formatted_address"></b-form-input>
-          <b-form-input v-else v-model="geocodeCache"></b-form-input>
+          <b-form-input v-else v-model="geocodeCache.formatted_address"></b-form-input>
 
           <template #append>
             <b-button variant="primary" @click="getLocation">
@@ -181,9 +181,7 @@ export default {
     filterWeather(weather) {
       let initial = this.hours
       let end = this.hours + 6
-      console.log(weather)
       this.weatherResponse.push(weather.hourly.slice(initial, end))
-
       localStorage.setItem('weatherCache', JSON.stringify(this.weatherResponse))
     }
   },
