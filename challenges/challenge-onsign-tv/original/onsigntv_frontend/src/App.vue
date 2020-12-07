@@ -31,15 +31,13 @@
           <b-thead>
             <b-tr>
               <b-th></b-th>
-              <b-th v-for="count in nextHours" v-bind:key="count">
-                <span v-if="count===0">Now</span>
-                <span v-else>{{ hours + count }}</span>
+              <b-th v-for="item in hours" v-bind:key="item">
+                <span>{{ item }}</span>
               </b-th>
             </b-tr>
           </b-thead>
-
-          <template v-if="weatherResponse">
-            <b-tbody v-for="(value, index) in weatherResponse" v-bind:key="index">
+          <template v-if="weatherCache !== null">
+            <b-tbody v-for="(value, index) in weatherCache" v-bind:key="index">
               <b-tr>
                 <b-th>Condition</b-th>
                 <b-td v-for="count in nextHours" v-bind:key="count">
@@ -67,7 +65,7 @@
             </b-tbody>
           </template>
           <template v-else>
-            <b-tbody v-for="(value, index) in weatherCache" v-bind:key="index">
+            <b-tbody v-for="(value, index) in weatherResponse" v-bind:key="index">
               <b-tr>
                 <b-th>Condition</b-th>
                 <b-td v-for="count in nextHours" v-bind:key="count">
@@ -123,6 +121,8 @@ export default {
     this.getTime()
     this.getGeocode()
     this.getWeather()
+
+
   },
   methods: {
     getLocation() {
@@ -138,7 +138,19 @@ export default {
       )
     },
     getTime() {
-      this.hours = new Date().getHours()
+      let hours = new Date().getHours()
+      let nextHours = this.nextHours
+
+      this.hours = nextHours.map(function (num) {
+        if (num===0) {
+          return 'Now'
+        }
+        let hour = hours + num
+        if (hour <= 24) {
+          return hour
+        }
+        return hour - 24;
+      })
     },
     getGeocode() {
       if (localStorage.getItem('geocodeCache') != null) {
