@@ -9,7 +9,8 @@
             <b-icon icon="cursor-fill"/>
           </b-input-group-text>
           <b-form-input v-if="geocodeResponse" v-model="geocodeResponse.formatted_address"></b-form-input>
-          <b-form-input v-else v-model="geocodeCache.formatted_address"></b-form-input>
+          <b-form-input v-else-if="geocodeCache" v-model="geocodeCache.formatted_address"></b-form-input>
+          <b-form-input v-else></b-form-input>
 
           <template #append>
             <b-button variant="primary" @click="getLocation">
@@ -36,7 +37,7 @@
               </b-th>
             </b-tr>
           </b-thead>
-          <template v-if="weatherCache !== null">
+          <template v-if="weatherCache !== null && weatherCache !== [] && weatherCache !== [[]]">
             <b-tbody v-for="(value, index) in weatherCache" v-bind:key="index">
               <b-tr>
                 <b-th>Condition</b-th>
@@ -64,7 +65,7 @@
               </b-tr>
             </b-tbody>
           </template>
-          <template v-else>
+          <template v-else-if="weatherResponse !== null && weatherResponse !== []">
             <b-tbody v-for="(value, index) in weatherResponse" v-bind:key="index">
               <b-tr>
                 <b-th>Condition</b-th>
@@ -92,6 +93,7 @@
               </b-tr>
             </b-tbody>
           </template>
+          <template v-else></template>
         </b-table-simple>
       </div>
     </div>
@@ -113,7 +115,8 @@ export default {
       geocodeResponse: null,
       geocodeCache: null,
       address: null,
-      hours: null
+      hours: null,
+      time: null
     }
   },
   components: { Header },
@@ -136,11 +139,12 @@ export default {
       )
     },
     getTime() {
-      let hours = new Date().getHours()
+      this.time = new Date().getHours()
+      let hours = this.time
       let nextHours = this.nextHours
 
       this.hours = nextHours.map(function (num) {
-        if (num===0) {
+        if (num === 0) {
           return 'Now'
         }
         let hour = hours + num
@@ -189,8 +193,8 @@ export default {
           )
     },
     filterWeather(weather) {
-      let initial = this.hours
-      let end = this.hours + 6
+      let initial = this.time
+      let end = this.time + 6
       this.weatherResponse.push(weather.hourly.slice(initial, end))
       localStorage.setItem('weatherCache', JSON.stringify(this.weatherResponse))
     }
