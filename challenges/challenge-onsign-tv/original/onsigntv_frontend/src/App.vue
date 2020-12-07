@@ -121,8 +121,6 @@ export default {
     this.getTime()
     this.getGeocode()
     this.getWeather()
-
-
   },
   methods: {
     getLocation() {
