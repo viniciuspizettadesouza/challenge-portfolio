@@ -8,12 +8,12 @@
         <q-btn @click="navigateHome" flat label="Sword Health | News platform" />
       </q-toolbar-title>
 
-      <q-btn v-if="!isAuthenticated" @click.prevent="login" color="primary" label="Login" />
+      <div class="q-pa-md">
+        <q-btn v-if="!isAuthenticated" @click.prevent="login" color="primary" label="Login" />
 
-      <div v-else class="q-pa-md" style="max-width: 300px">
-        <q-btn-dropdown unelevated>
+        <q-btn-dropdown v-else unelevated style="max-width: 300px">
           <template v-slot:label>
-            <div class="row items-center no-wrap">
+            <div class="row">
               <q-item-section avatar>
                 <q-avatar size="48px">
                   <img :src="user.picture">
