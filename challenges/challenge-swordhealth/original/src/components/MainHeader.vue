@@ -1,12 +1,12 @@
 <template>
   <q-header elevated class="bg-white">
-    <q-toolbar class="text-black shadow-2 rounded-borders">
-      <q-avatar color="primary">
-        <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-      </q-avatar>
-      <q-toolbar-title color="primary">
-        <q-btn @click="navigateHome" flat label="Sword Health | News platform" />
-      </q-toolbar-title>
+    <q-toolbar class="text-black shadow-2 rounded-borders justify-between">
+      <q-btn @click="navigateHome" flat>
+        <q-avatar color="primary" class="q-mr-md">
+          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+        </q-avatar>
+        Sword Health | News platform
+      </q-btn>
 
       <div class="q-pa-md">
         <q-btn v-if="!isAuthenticated" @click.prevent="login" color="primary" label="Login" />
@@ -34,6 +34,15 @@
               </q-item-section>
               <q-item-section>
                 <q-item-label>Profile</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-close-popup @click="navigateToNewArticle">
+              <q-item-section avatar>
+                <q-avatar icon="book" color="primary" text-color="white" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Write</q-item-label>
               </q-item-section>
             </q-item>
 
@@ -77,5 +86,8 @@ const navigateHome = () => {
 }
 const navigateProfile = () => {
   router.push({ path: '/profile' });
+}
+const navigateToNewArticle = () => {
+  router.push({ path: '/new-article' });
 }
 </script>
