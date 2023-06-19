@@ -1,12 +1,13 @@
 <template>
   <q-layout>
-    <MainHeader />
-
     <q-page-container>
+
+      <MainHeader />
       <router-view />
+
+      <MainFooter />
     </q-page-container>
 
-    <MainFooter />
   </q-layout>
 </template>
 
