@@ -4,7 +4,7 @@
       <q-parallax src="https://cdn.quasar.dev/img/parallax1.jpg" :height="350" width="full" />
     </q-card>
 
-    <div class="content">
+    <div class="container">
       <q-card class="my-card" flat>
         <q-item>
           <q-item-section avatar>
@@ -23,7 +23,7 @@
           </q-item-section>
         </q-item>
       </q-card>
-      <p>
+      <p class="text-body2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis augue faucibus, blandit quam eget,
         tristique libero. Nulla vitae gravida dolor. Curabitur quis ante velit. Nam eu dui a erat dictum tempor nec non
         felis. Quisque quis sem orci. Sed mauris urna, auctor non molestie non, suscipit non quam. Curabitur euismod
@@ -33,7 +33,7 @@
         erat volutpat eu. Quisque imperdiet elit eget urna dapibus blandit. Vestibulum laoreet felis at nisl porttitor,
         vitae malesuada nunc pharetra.
       </p>
-      <p>
+      <p class="text-body2">
         Nunc consequat, erat in egestas ultricies, nisl orci imperdiet purus, eget malesuada sem felis a felis. Nulla
         facilisi. Ut sodales dignissim eros, commodo varius odio ultricies sed. Nullam dui urna, scelerisque ut ex ut,
         bibendum commodo leo. Aenean imperdiet, dui ultricies aliquam rhoncus, mauris felis vehicula orci, eu dapibus
@@ -43,14 +43,14 @@
         nec ex. Suspendisse semper, nulla sit amet hendrerit dapibus, velit sem congue magna, a varius nisi libero eget
         leo. Sed ut felis lacus. Curabitur vitae leo sed libero faucibus consequat at ornare tellus.
       </p>
-      <p>
+      <p class="text-body2">
         Nunc id maximus neque. Nam pulvinar viverra ligula quis egestas. Nunc odio mi, mattis a vulputate eget, luctus
         sed ipsum. Maecenas lacinia quam in interdum rhoncus. Fusce luctus vel sapien eget interdum. Cras vestibulum
         accumsan nibh, dignissim accumsan turpis mattis quis. Nullam vel purus maximus, feugiat orci vel, commodo felis.
         Cras mollis neque a sagittis pulvinar. Etiam nulla odio, cursus non iaculis id, convallis eget eros. Vestibulum
         finibus arcu arcu, vel congue lacus volutpat sed. Integer fermentum eleifend fermentum.
       </p>
-      <p>
+      <p class="text-body2">
         Duis imperdiet lectus turpis, non scelerisque justo rhoncus in. Suspendisse purus odio, lobortis sit amet sapien
         sit amet, auctor tincidunt lectus. Sed pharetra accumsan consectetur. Nulla facilisi. Ut neque libero, pretium
         at euismod nec, bibendum eu ante. Nulla ullamcorper libero id arcu congue, a consectetur risus interdum. Nullam
@@ -58,8 +58,7 @@
         aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant
         morbi tristique senectus et netus et malesuada fames ac turpis egestas.
       </p>
-
-      <p>
+      <p class="text-body2">
         Cras eget leo et sem pulvinar pretium ultricies rhoncus orci. Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Donec sed malesuada nisl. Phasellus sit amet malesuada est. Aenean scelerisque id est at finibus. Maecenas
         ultrices at lacus sit amet mattis. Vivamus tristique arcu at arcu condimentum tristique. Donec congue sed tellus
@@ -81,7 +80,7 @@ const user = auth0.user
   width: 100%;
 }
 
-.content {
+.container {
   max-width: 680px;
 }
 </style>
