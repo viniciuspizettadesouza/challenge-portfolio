@@ -8,6 +8,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const navigateToNewArticle = () => {
-  router.push({ path: '/new-article' });
+  router.push({ path: '/article' });
 }
 </script>
