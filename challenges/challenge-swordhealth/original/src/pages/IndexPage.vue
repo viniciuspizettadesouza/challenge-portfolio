@@ -31,7 +31,6 @@ import IndexArticle from 'src/components/IndexArticle.vue';
 import ButtonLoadMore from 'src/components/ButtonLoadMore.vue'
 
 const categories = ['Marketing', 'Design', 'Engineering']
-const counter = 5
 const articles = ref([
   {
     id: '01',
