@@ -5,6 +5,5 @@
 </template>
 
 <script setup lang="ts">
-
 import NewArticleForm from 'src/components/NewArticleForm.vue';
 </script>

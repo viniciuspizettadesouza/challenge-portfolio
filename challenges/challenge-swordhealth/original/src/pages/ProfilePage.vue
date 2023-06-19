@@ -1,14 +1,14 @@
 <template>
   <q-page class="row items-center justify-center">
-    <q-avatar size="100px" class="q-mr-">
+    <q-avatar size="100px">
       <q-img :src="user?.picture" spinner-color="white" />
     </q-avatar>
 
     <q-card-section>
       <h2>{{ user?.name }}</h2>
       <p class="text-grey text-subtitle1">{{ user?.email }}</p>
-
     </q-card-section>
+
     <q-card-section>
       <highlightjs language="json" :code="JSON.stringify(user, null, 2)" />
     </q-card-section>

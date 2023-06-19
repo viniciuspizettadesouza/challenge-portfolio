@@ -1,25 +1,28 @@
 <template>
-  <div class="q-pa-md" style="max-width: 400px">
+  <div class="q-pa-md container">
     <q-form @submit="onSubmit" class="q-gutter-md">
       <p>Title</p>
-      <q-input outlined v-model="name" label="Your name" lazy-rules
-        :rules="[val => val && val.length > 0 || 'Please type something']" />
+      <q-input outlined v-model="formData.title" clearable label="Title" lazy-rules
+        :rules="[val => val && val.length > 3 || 'Please type something']" />
 
       <p>Small description</p>
-      <q-input v-model="description" filled clearable autogrow color="red-12" label="Your message" />
+      <q-input v-model="formData.description" filled clearable autogrow color="red-12" label="Your message"
+        :rules="[val => val && val.length > 3 || 'Please type something']" />
 
       <p>Image</p>
-      <q-file v-model="image" label="Pick one Image" filled style="max-width: 300px" @update:model-value="handleUpload()">
+      <q-file v-model="formData.image" label="Pick one Image" filled style="max-width: 300px"
+        @update:model-value="handleUpload()" :rules="[val => val || 'Please insert image']">
         <q-icon name="image" />
       </q-file>
-      <q-img v-if="imageUrl" :src="imageUrl" spinner-color="white" style="max-width: 150px" />
+      <q-img v-if="formData.imageUrl" :src="formData.imageUrl" spinner-color="white" style="max-width: 150px" />
 
       <p>Category</p>
-      <q-select outlined v-model="category" :options="options" label="Outlined" />
+      <q-select outlined v-model="formData.category" :options="options" label="Outlined"
+        :rules="[val => val && val.length > 3 || 'Please select a category']" />
 
       <p>Content</p>
-      <q-input v-model="content" filled clearable type="textarea" color="red-12" label="Your message" />
-
+      <q-input v-model="formData.content" filled clearable type="textarea" color="red-12" label="Your message"
+        :rules="[val => val && val.length > 3 || 'Please type something']" />
 
       <div>
         <q-btn label="Submit" type="submit" color="primary" />
@@ -29,61 +32,45 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
 
-export default {
-  setup() {
-    const $q = useQuasar()
+const $q = useQuasar()
 
-    const name = ref(null)
-    const description = ref(null)
-    const image = ref(null)
-    const imageUrl = ref('');
-    const category = ref(null)
-    const content = ref(null)
+const options = [
+  'Marketing', 'Design', 'Engineering', 'Medicine', 'Finance'
+]
 
-    const handleUpload = () => {
-      console.log('handleUpload is triggered');
-      if (image.value) {
-        imageUrl.value = URL.createObjectURL(image.value);
-      }
-    }
+const formData = ref({
+  title: null,
+  description: null,
+  image: null,
+  imageUrl: '',
+  category: null,
+  content: null,
+})
 
-    return {
-      name,
-      description,
-      image,
-      imageUrl,
-      category,
-      content,
-      options: [
-        'Google', 'Facebook', 'Twitter', 'Apple', 'Oracle'
-      ],
-      handleUpload,
-
-
-      onSubmit() {
-        console.log('teste')
-        if (accept.value !== true) {
-          $q.notify({
-            color: 'red-5',
-            textColor: 'white',
-            icon: 'warning',
-            message: 'You need to accept the license and terms first'
-          })
-        }
-        else {
-          $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: 'Submitted'
-          })
-        }
-      },
-    }
+const handleUpload = () => {
+  if (formData.value.image) {
+    formData.value.imageUrl = URL.createObjectURL(formData.value.image);
   }
 }
+
+const onSubmit = () => {
+  $q.notify({
+    color: 'green-4',
+    textColor: 'white',
+    icon: 'cloud_done',
+    message: 'Submitted',
+    position: 'bottom'
+  })
+}
 </script>
+
+<style lang="scss" scoped>
+.container {
+  width: 100%;
+  max-width: 680px;
+}
+</style>
