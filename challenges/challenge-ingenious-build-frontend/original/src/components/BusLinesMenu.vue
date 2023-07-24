@@ -5,7 +5,7 @@
       <div
         v-for="(stop, index) in groupedStopsByLineKeys"
         :key="index"
-        class="bus-lines-item"
+        :class="{ 'bus-lines-item': true, selected: stop === selectedBusLine }"
         @click="selectBusLine(stop)"
       >
         {{ stop }}
@@ -14,25 +14,18 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
-const selectedBusLineStop = computed(
-  () => store.getters.getSelectedBusLineStop
-);
-const stops = computed(() => store.getters.getStops);
+const selectedBusLine = computed(() => store.getters.getSelectedBusLine);
 const groupedStopsByLineKeys = computed(
   () => store.getters.getGroupedStopsByLineKeys
 );
 
-const selectBusLine = (stop) => {
-  store.dispatch("selectBusLine", stops.value[stop]);
-  console.log(selectedBusLineStop.value, stop);
-  if (selectedBusLineStop.value !== stops.value[stop]) {
-    store.dispatch("clearBusStop");
-  }
+const selectBusLine = (stop: number) => {
+  store.dispatch("selectBusLine", stop);
 };
 </script>
 
@@ -64,6 +57,10 @@ const selectBusLine = (stop) => {
       font-size: 12px;
       font-weight: 500;
       line-height: 16px;
+
+      &.selected {
+        background-color: #2e3e6e;
+      }
     }
   }
   .bus-stops-container {

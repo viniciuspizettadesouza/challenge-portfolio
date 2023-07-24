@@ -16,7 +16,7 @@ export function groupStopsByLine(stops: Stop[]) {
   return groupedStops;
 }
 
-export function groupStopsByStopName(stops: Stop[]): GroupedStops {
+export function groupStopsByStopName(stops: Stop) {
   return stops.reduce((groupedStops: GroupedStops, stop: Stop) => {
     const { stop: stopName } = stop;
     groupedStops[stopName] = [...(groupedStops[stopName] || []), stop];

@@ -11,13 +11,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 
 const menuItems = ref(["Bus Lines", "Stops"]);
 const selectedItem = ref(0);
 
-const selectItem = (index) => {
+const selectItem = (index: number) => {
   selectedItem.value = index;
 };
 </script>

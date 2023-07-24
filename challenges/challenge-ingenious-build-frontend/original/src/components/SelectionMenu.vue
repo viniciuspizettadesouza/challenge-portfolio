@@ -5,13 +5,16 @@
     </span>
     <div v-else class="selection-area">
       <div class="bus-lines-container">
-        <div class="title">Bus Line: 104</div>
+        <div class="title">Bus Line: {{ selectedBusLine }}</div>
         <div class="subtitle">Bus Stops</div>
         <div
           v-for="stop in busLineStopsKeys"
           :key="stop"
           @click="selectBusStop(stop)"
-          :class="{ content: true, selected: selectedBusLineStop === stop }"
+          :class="{
+            content: true,
+            selected: selectedBusLineStop === stop,
+          }"
         >
           {{ stop }}
         </div>
@@ -23,12 +26,12 @@
     </span>
     <div v-else class="selection-area">
       <div class="bus-lines-container">
-        <div class="title">Bus Stop: Rondo Czyżyńskie 10</div>
+        <div class="title">Bus Stop: {{ selectedBusLineStop }}</div>
         <div class="subtitle">Time</div>
         <div
           v-for="(stop, index) in sortedBusLineStops"
           :key="index"
-          class="content"
+          class="content bus-stop"
         >
           {{ stop.time }}
         </div>
@@ -37,18 +40,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
 const busLineStopsKeys = computed(() => store.getters.getBusLineStopsKeys);
+const selectedBusLine = computed(() => store.getters.getSelectedBusLine);
+
 const selectedBusLineStop = computed(
   () => store.getters.getSelectedBusLineStop
 );
 const sortedBusLineStops = computed(() => store.getters.getSortedBusLineStops);
 
-const selectBusStop = (stop) => {
+const selectBusStop = (stop: string) => {
   store.dispatch("selectBusStop", stop);
 };
 </script>
@@ -125,9 +130,12 @@ const selectBusStop = (stop) => {
         font-weight: 400;
         line-height: 16px;
         padding: 0 24px;
-        cursor: pointer;
         border-top: 1px solid #ccc;
+        cursor: pointer;
 
+        &.bus-stop {
+          cursor: default;
+        }
         &.selected {
           background-color: #f8f8fb;
           color: #1952e1;
