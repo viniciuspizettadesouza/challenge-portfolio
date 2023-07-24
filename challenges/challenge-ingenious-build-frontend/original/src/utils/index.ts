@@ -30,3 +30,9 @@ export function parseTime(timeStr: string): Date {
   dateObj.setHours(hours, minutes, 0, 0);
   return dateObj;
 }
+
+export function getUniqueStopNames(stops: Stop) {
+  const uniqueStopsSet = new Set();
+  stops.forEach((item: Stop) => uniqueStopsSet.add(item.stop));
+  return Array.from(uniqueStopsSet);
+}

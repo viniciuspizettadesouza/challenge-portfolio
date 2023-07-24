@@ -1,4 +1,5 @@
 export interface Stop {
+  forEach: any;
   reduce: any;
   line: number;
   stop: string;
@@ -10,12 +11,16 @@ export interface GroupedStops {
   [stopName: string]: Stop[];
 }
 
-export interface RootState {
+export interface RootStateBusLines {
   stops: Stop[];
   groupedStopsByLineKeys: string[];
-  selectedBusLine: null;
+  selectedBusLine: string | null;
   busLineStops: GroupedStops | null;
   busLineStopsKeys: string[] | null;
   selectedBusLineStop: null;
   sortedBusLineStops: Stop[] | null;
+}
+
+export interface RootStateBusStops {
+  uniqueBusStops: Stop[];
 }
