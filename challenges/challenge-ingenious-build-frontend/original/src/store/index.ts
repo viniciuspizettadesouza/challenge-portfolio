@@ -7,6 +7,7 @@ export default createStore({
   state: {
     stops: [],
     groupedStopsByLineKeys: [],
+    selectedBusLine: null,
     busLineStops: null,
     busLineStopsKeys: null,
     selectedBusLineStop: null,
@@ -16,6 +17,7 @@ export default createStore({
   getters: {
     getStops: (state) => state.stops,
     getGroupedStopsByLineKeys: (state) => state.groupedStopsByLineKeys,
+    getSelectedBusLine: (state) => state.selectedBusLine,
     getBusLineStops: (state) => state.busLineStops,
     getBusLineStopsKeys: (state) => state.busLineStopsKeys,
     getSelectedBusLineStop: (state) => state.selectedBusLineStop,
@@ -28,6 +30,9 @@ export default createStore({
     },
     SET_GROUPED_STOPS_BY_LINE_KEYS(state, groupedStopsByLineKeys) {
       state.groupedStopsByLineKeys = groupedStopsByLineKeys;
+    },
+    SET_SELECTED_BUS_LINE: (state, stop) => {
+      state.selectedBusLine = stop;
     },
     SET_BUS_LINE_STOPS: (state, stops) => {
       state.busLineStops = stops;
@@ -45,25 +50,27 @@ export default createStore({
 
   actions: {
     async fetchStops({ commit }) {
-      try {
-        const response = await axios.get("http://localhost:3000/stops");
-        const groupedStopsByLine = groupStopsByLine(response.data);
-        commit("SET_STOPS", groupedStopsByLine);
-        commit(
-          "SET_GROUPED_STOPS_BY_LINE_KEYS",
-          Object.keys(groupedStopsByLine)
-        );
-      } catch (error) {
-        console.error(error);
-      }
+      return axios
+        .get("http://localhost:3000/stops")
+        .then((response) => {
+          const groupedStopsByLine = groupStopsByLine(response.data);
+          commit("SET_STOPS", groupedStopsByLine);
+          commit(
+            "SET_GROUPED_STOPS_BY_LINE_KEYS",
+            Object.keys(groupedStopsByLine)
+          );
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     },
-    selectBusLine: ({ commit }, stops) => {
-      const busLineStops = groupStopsByStopName(stops);
+    selectBusLine: ({ commit, state }, stop) => {
+      commit("SET_SELECTED_BUS_LINE", stop);
+      const busLineStops = groupStopsByStopName(state.stops[stop]);
       commit("SET_BUS_LINE_STOPS", busLineStops);
       commit("SET_BUS_LINE_STOPS_KEYS", Object.keys(busLineStops));
     },
     selectBusStop: ({ commit, state }, stop) => {
-      console.log(stop, state.busLineStops);
       commit("SET_SELECTED_BUS_LINE_STOP", stop);
 
       if (state.busLineStops) {
@@ -76,9 +83,6 @@ export default createStore({
 
         commit("SET_SORTED_BUS_LINE_STOPS", sortedBusLineStops);
       }
-    },
-    clearBusStop: ({ commit }) => {
-      commit("SET_SELECTED_BUS_LINE_STOP", "");
     },
   },
 
