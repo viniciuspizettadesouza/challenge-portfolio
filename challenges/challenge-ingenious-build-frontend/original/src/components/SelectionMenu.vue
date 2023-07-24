@@ -78,7 +78,7 @@ const selectBusStop = (stop: string) => {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    min-height: 200px;
+    min-height: 300px;
   }
   .selection-area {
     display: flex;
@@ -93,7 +93,7 @@ const selectBusStop = (stop: string) => {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    min-height: 100px;
+    min-height: 300px;
 
     .bus-lines-container {
       text-align: left;
