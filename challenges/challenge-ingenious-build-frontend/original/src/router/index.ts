@@ -1,10 +1,21 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import BusLines from "@/views/BusLines.vue";
+import BusStops from "@/views/BusStops.vue";
 
-const routes: Array<RouteRecordRaw> = []
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: "/",
+    component: BusLines,
+  },
+  {
+    path: "/bus-stops",
+    component: BusStops,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

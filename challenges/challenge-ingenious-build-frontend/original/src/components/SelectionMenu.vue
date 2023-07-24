@@ -152,9 +152,6 @@ const selectBusStop = (stop: string) => {
       }
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
-
-      .selected {
-      }
     }
   }
 }

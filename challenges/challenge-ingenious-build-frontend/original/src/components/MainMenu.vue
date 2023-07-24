@@ -1,24 +1,35 @@
 <template>
   <div class="menu">
-    <div
-      v-for="(item, index) in menuItems"
-      :key="index"
-      :class="{ 'menu-item': true, selected: index === selectedItem }"
-      @click="selectItem(index)"
+    <router-link
+      to="/"
+      :class="{ 'menu-item': true, selected: isActive('/') }"
+      @click="selectItem(0)"
     >
-      {{ item }}
-    </div>
+      Bus Lines
+    </router-link>
+
+    <router-link
+      to="/bus-stops"
+      :class="{ 'menu-item': true, selected: isActive('/bus-stops') }"
+      @click="selectItem(1)"
+    >
+      Bus Stops
+    </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 
-const menuItems = ref(["Bus Lines", "Stops"]);
+const route = useRoute();
 const selectedItem = ref(0);
 
 const selectItem = (index: number) => {
   selectedItem.value = index;
+};
+const isActive = (path: string) => {
+  return route.path === path;
 };
 </script>
 
@@ -39,6 +50,7 @@ const selectItem = (index: number) => {
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s ease-in-out;
     color: #9a9da4;
+    text-decoration: none;
 
     &:hover {
       border-color: #1952e1;
