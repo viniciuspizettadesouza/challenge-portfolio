@@ -130,7 +130,7 @@ const selectBusStop = (stop: string) => {
         font-weight: 400;
         line-height: 16px;
         padding: 0 24px;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #f3f4f9;
         cursor: pointer;
 
         &.bus-stop {
