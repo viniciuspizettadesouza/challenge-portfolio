@@ -9,6 +9,7 @@
         @focus="isFocused = true"
         @blur="isFocused = false"
       />
+
       <button class="title" @click="toggleOrder">
         Bus Stops <img class="icon" src="@/assets/ToggleIcon.svg" />
       </button>
@@ -90,9 +91,11 @@ const orderedBusStops = computed(() => {
       border: none;
       background-color: white;
     }
+
     .icon {
       padding: 0 4px;
     }
+
     .search-input {
       width: 250px;
       height: 40px;
@@ -120,7 +123,7 @@ const orderedBusStops = computed(() => {
       font-weight: 400;
       line-height: 16px;
       padding: 0 24px;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid #f3f4f9;
       cursor: pointer;
 
       &.bus-stop {

@@ -14,7 +14,7 @@
       :class="{ 'menu-item': true, selected: isActive('/bus-stops') }"
       @click="selectItem(1)"
     >
-      Bus Stops
+      Stops
     </router-link>
   </div>
 </template>
