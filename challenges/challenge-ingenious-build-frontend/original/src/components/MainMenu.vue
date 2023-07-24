@@ -1,4 +1,5 @@
 <template>
+  <h1 class="title">Timetable</h1>
   <div class="menu">
     <router-link
       to="/"
@@ -41,6 +42,14 @@ const isActive = (path: string) => {
   border-radius: 4px;
   padding: 0px 24px;
   margin-bottom: 16px;
+
+  .title {
+    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
 
   .menu-item {
     display: flex;
