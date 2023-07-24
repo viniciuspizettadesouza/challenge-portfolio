@@ -35,8 +35,8 @@ export default createStore({
     SET_BUS_LINE_STOPS_KEYS: (state, stops) => {
       state.busLineStopsKeys = stops;
     },
-    SET_SELECTED_BUS_LINE_STOP: (state, stops) => {
-      state.sortedBusLineStops = stops;
+    SET_SELECTED_BUS_LINE_STOP: (state, stop) => {
+      state.selectedBusLineStop = stop;
     },
     SET_SORTED_BUS_LINE_STOPS: (state, stops) => {
       state.sortedBusLineStops = stops;
