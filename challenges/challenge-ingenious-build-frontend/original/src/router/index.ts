@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     component: BusLines,
   },
   {
-    path: "/bus-stops",
+    path: "/stops",
     component: BusStops,
   },
 ];

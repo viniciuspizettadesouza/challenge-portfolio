@@ -10,8 +10,8 @@
     </router-link>
 
     <router-link
-      to="/bus-stops"
-      :class="{ 'menu-item': true, selected: isActive('/bus-stops') }"
+      to="/stops"
+      :class="{ 'menu-item': true, selected: isActive('/stops') }"
       @click="selectItem(1)"
     >
       Stops
