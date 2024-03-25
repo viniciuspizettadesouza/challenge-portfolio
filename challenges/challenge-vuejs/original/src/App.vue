@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import TVShowPage from './components/TVShowPage.vue'
 </script>
 
 <template>
@@ -18,6 +19,8 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <RouterView />
+
+  <TVShowPage />
 </template>
 
 <style scoped>
