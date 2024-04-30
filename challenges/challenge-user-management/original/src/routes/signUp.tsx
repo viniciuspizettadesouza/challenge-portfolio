@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../index.css'
 
 export default function SignUp() {
-  const navigate = useNavigate();
   const [token, setToken] = useState<string | null>('');
   const [id, setId] = useState<string | null>('');
   const [formData, setFormData] = useState({
@@ -12,14 +12,16 @@ export default function SignUp() {
   });
   const [error, setError] = useState('');
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchUser = async (id: string | null) => {
       const response = await fetch(`https://reqres.in/api/users/${id}`);
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('token', data.token);
-        navigate("/welcome", { state: { firstName: data.data.first_name } });
+        sessionStorage.setItem('token', data.token);
+        navigate("/welcome");
       }
     };
 
@@ -28,7 +30,7 @@ export default function SignUp() {
     } else {
       navigate("/sign-up");
     }
-  }, [navigate, token, id]);
+  }, [token, id]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -61,41 +63,45 @@ export default function SignUp() {
     setToken(data.token);
   };
 
-  const handleSignInClick = () => {
-    navigate("/sign-in");
-  };
-
   return (
     <div className="card">
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          required
-        />
+      <form onSubmit={handleSubmit} autoComplete="on">
+        <div className="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete="email"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete="new-password"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            autoComplete="new-password"
+            required
+          />
+        </div>
         <button type="submit">Sign Up</button>
       </form>
-      <button onClick={handleSignInClick}>Sign In</button>
       {error && <p className="error">{error}</p>}
     </div>
   );

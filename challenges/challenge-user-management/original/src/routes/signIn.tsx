@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../index.css'
 
 export default function SignIn() {
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -27,37 +28,41 @@ export default function SignIn() {
     const data = await response.json();
 
     if (response.ok) {
-      navigate("/welcome", { state: { data } });
+      console.log(data)
+      navigate("/welcome");
     }
-  };
-
-  const handleSignUpClick = () => {
-    navigate("/sign-up");
   };
 
   return (
     <div className="card">
       <h2>Sign In</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
+      <form onSubmit={handleSubmit} autoComplete="on">
+        <div className="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete="email"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete="password"
+            required
+          />
+        </div>
         <button type="submit">Sign In</button>
       </form>
-      <button onClick={handleSignUpClick}>Sign Up</button>
     </div>
   );
 }
