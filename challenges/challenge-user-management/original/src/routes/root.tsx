@@ -1,28 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import NavBar from '../components/navbar'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import '../index.css';
 
 export default function Root() {
     const navigate = useNavigate();
-    const [session] = useState<string | null>(sessionStorage.getItem('token'))
+    const location = useLocation();
+    const [sessionChecked, setSessionChecked] = useState(false);
 
     useEffect(() => {
+        const session = sessionStorage.getItem('challenge/token');
         if (session) {
-            navigate("/welcome")
-        } else {
+            navigate("/welcome");
+        } else if (location.pathname !== '/sign-up' && location.pathname !== '/sign-in') {
             navigate("/sign-up");
         }
-    }, [session, navigate]);
+
+        setSessionChecked(true);
+    }, [navigate, location.pathname]);
+
+    if (!sessionChecked) {
+        return null;
+    }
 
     return (
-        <>
-            <div className="container">
-                <NavBar />
-                <h1>Vite + React</h1>
-                <h2>1 Global</h2>
-                <Outlet />
-            </div>
-        </>
+        <div className="container">
+            <Outlet />
+        </div>
     );
 }

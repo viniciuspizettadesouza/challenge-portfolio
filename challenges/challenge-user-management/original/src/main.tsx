@@ -6,11 +6,11 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import './index.css'
 import Root from "./routes/root";
 import SignIn from "./routes/signIn";
 import SignUp from "./routes/signUp";
 import Welcome from "./routes/welcome";
+import './index.css'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

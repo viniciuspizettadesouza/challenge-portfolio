@@ -1,108 +1,116 @@
-import React, { useState, useEffect } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../index.css'
+import NavBar from '../components/navbar';
+import '../index.css';
 
-export default function SignUp() {
-  const [token, setToken] = useState<string | null>('');
-  const [id, setId] = useState<string | null>('');
-  const [formData, setFormData] = useState({
+interface FormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export default function SignUp(): React.ReactNode {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
     confirmPassword: ''
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchUser = async (id: string | null) => {
-      const response = await fetch(`https://reqres.in/api/users/${id}`);
-      const data = await response.json();
-
-      if (response.ok) {
-        sessionStorage.setItem('token', data.token);
-        navigate("/welcome");
-      }
-    };
-
-    if (token) {
-      fetchUser(id);
-    } else {
-      navigate("/sign-up");
-    }
-  }, [token, id]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const passwordsMatch = () => {
+  const passwordsMatch = (): boolean => {
     return formData.password === formData.confirmPassword;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  console.log(import.meta.env)
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
     if (!passwordsMatch()) {
       setError('Passwords do not match');
       return;
     }
 
-    const response = await fetch('https://reqres.in/api/register', {
+    setLoading(true);
+
+    fetch(`${import.meta.env.VITE_API_URL}/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: formData.email,
         password: formData.password
       })
-    });
-
-    const data = await response.json();
-
-    setId(data.id);
-    setToken(data.token);
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to sign up. Please try again.');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        sessionStorage.setItem('challenge/token', data.token);
+        sessionStorage.setItem('challenge/id', data.id);
+        navigate('/welcome');
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
-    <div className="card">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit} autoComplete="on">
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            autoComplete="email"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            autoComplete="new-password"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            autoComplete="new-password"
-            required
-          />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
-      {error && <p className="error">{error}</p>}
-    </div>
+    <>
+      <NavBar />
+      <div className="card">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSubmit} autoComplete="on">
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              autoComplete="email"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              autoComplete="new-password"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              autoComplete="new-password"
+              required
+            />
+          </div>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Signing Up...' : 'Sign Up'}
+          </button>
+        </form>
+        {error && <p className="error">{error}</p>}
+      </div>
+    </>
   );
 }
