@@ -13,13 +13,8 @@ export default function Episode() {
     variables: { episodeId: id },
   });
 
-  if (loading) return <p className="text-center text-lg">Loading...</p>;
-  if (error)
-    return (
-      <p className="text-center text-lg text-red-500">
-        Error loading episode details.
-      </p>
-    );
+  if (loading) return <Loading />;
+  if (error) return <Error />;
 
   const episode = data?.getEpisodeById;
 
