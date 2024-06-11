@@ -1,15 +1,27 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useQuery } from '@apollo/client';
 import { LIST_EPISODES } from './graphql/queries'
+import { Episode, Episodes, SearchEpisode } from './interfaces';
+import debounce from 'lodash.debounce';
 
 function App() {
   const [search, setSearch] = useState('');
-  const { data, loading, error } = useQuery(LIST_EPISODES, {
+  const { data, loading, error, refetch } = useQuery<Episodes, SearchEpisode>(LIST_EPISODES, {
     variables: { search },
   });
 
+  console.log(data)
+
+  const debouncedSearch = useCallback(
+    debounce((value) => {
+      refetch({ search: value });
+    }, 250),
+    []
+  );
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+    debouncedSearch(e.target.value);
   };
 
   return (
@@ -24,7 +36,7 @@ function App() {
       {loading && <p>Loading...</p>}
       {error && <p>Error loading episodes.</p>}
       <ul>
-        {data?.listEpisodes?.map((episode: any) => (
+        {data?.listEpisodes?.map((episode: Episode) => (
           <li key={episode.id} className="border-b p-2">
             <p>
               {episode.title} (Season {episode.seasonNumber}, Episode {episode.episodeNumber})
