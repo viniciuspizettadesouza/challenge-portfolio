@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Episode } from "./interfaces";
 import MainLayout from "@layouts/MainLayout";
+import { Episode } from "@/interfaces";
 
 function App() {
   return (
