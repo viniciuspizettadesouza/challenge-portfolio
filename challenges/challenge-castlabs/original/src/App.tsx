@@ -1,21 +1,24 @@
-import { useState, useCallback } from 'react';
-import { useQuery } from '@apollo/client';
-import { LIST_EPISODES } from './graphql/queries'
-import { Episode, Episodes, SearchEpisode } from './interfaces';
-import debounce from 'lodash.debounce';
-import { Link } from 'react-router-dom';
+import { useState, useCallback } from "react";
+import { useQuery } from "@apollo/client";
+import { LIST_EPISODES } from "./graphql/queries";
+import { Episode, Episodes, SearchEpisode } from "./interfaces";
+import debounce from "lodash.debounce";
+import { Link } from "react-router-dom";
 
 function App() {
-  const [search, setSearch] = useState('');
-  const { data, loading, error, refetch } = useQuery<Episodes, SearchEpisode>(LIST_EPISODES, {
-    variables: { search },
-  });
+  const [search, setSearch] = useState("");
+  const { data, loading, error, refetch } = useQuery<Episodes, SearchEpisode>(
+    LIST_EPISODES,
+    {
+      variables: { search },
+    },
+  );
 
   const debouncedSearch = useCallback(
     debounce((value) => {
       refetch({ search: value });
     }, 250),
-    []
+    [],
   );
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +41,8 @@ function App() {
         {data?.listEpisodes?.map((episode: Episode) => (
           <li key={episode.id} className="border-b p-2">
             <Link to={`/episode/${episode.id}`}>
-              {episode.title} (Season {episode.seasonNumber}, Episode {episode.episodeNumber})
+              {episode.title} (Season {episode.seasonNumber}, Episode{" "}
+              {episode.episodeNumber})
             </Link>
           </li>
         ))}
@@ -47,4 +51,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

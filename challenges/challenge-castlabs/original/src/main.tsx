@@ -1,14 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
-import client from './graphql/main.tsx';
-import App from './App.tsx'
-import Episode from './pages/Episode.tsx'
-import './index.css'
+import client from "./graphql/main.tsx";
+import App from "./App.tsx";
+import Episode from "./pages/Episode.tsx";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +19,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <ApolloProvider client={client}>
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>
-  </ApolloProvider>
-)
+  </ApolloProvider>,
+);
