@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import Header from "@components/Header";
 import { useDebouncedEpisodesSearch } from "@/hooks/useDebouncedEpisodesSearch";
 import { Episode } from "@/interfaces";
+import Header from "@components/Header";
+import Loading from "@components/Loading";
+import Error from "@components/Error";
 
 export default function Home() {
   const { search, loading, error, data, handleSearchChange } =
@@ -12,8 +14,8 @@ export default function Home() {
       <Header search={search} onSearchChange={handleSearchChange} />
 
       <div className="container mx-auto mt-16 flex-grow overflow-auto p-4">
-        {loading && <p>Loading...</p>}
-        {error && <p>Error loading episodes.</p>}
+        {loading && <Loading />}
+        {error && <Error />}
         <ul>
           {data?.listEpisodes?.map((episode: Episode) => (
             <li key={episode.id} className="border-b p-2">
