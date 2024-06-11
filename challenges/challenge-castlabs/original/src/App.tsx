@@ -1,67 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useQuery, gql } from "@apollo/client";
-import './App.css'
-
-
-const GET_LOCATIONS = gql`
-  query getLocations {
-    locations {
-      id
-      name
-      description
-      photo
-    }
-  }
-`;
-
-function DisplayLocations() {
-  const { loading, error, data } = useQuery(GET_LOCATIONS);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-  return data.locations.map(({ id, name, description, photo }) => (
-    <div key={id}>
-      <h3>{name}</h3>
-      <img width="400" height="250" alt="location-reference" src={`${photo}`} />
-      <br />
-      <b>About this location:</b>
-      <p>{description}</p>
-      <br />
-    </div>
-  ));
-}
+import { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { LIST_EPISODES } from './graphql/queries'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [search, setSearch] = useState('');
+  const { data, loading, error } = useQuery(LIST_EPISODES, {
+    variables: { search },
+  });
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
 
   return (
-    <>
-      <DisplayLocations />
-
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="container mx-auto p-4">
+      <input
+        type="text"
+        placeholder="Search episodes..."
+        className="border p-2 w-full mb-4"
+        value={search}
+        onChange={handleSearchChange}
+      />
+      {loading && <p>Loading...</p>}
+      {error && <p>Error loading episodes.</p>}
+      <ul>
+        {data?.listEpisodes?.map((episode: any) => (
+          <li key={episode.id} className="border-b p-2">
+            <p>
+              {episode.title} (Season {episode.seasonNumber}, Episode {episode.episodeNumber})
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default App
