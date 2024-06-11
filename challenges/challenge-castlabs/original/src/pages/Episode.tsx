@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_EPISODE_BY_ID } from "@graphql/queries";
-import MainLayout from "@layouts/MainLayout";
+import Header from "@components/Header";
+import { useDebouncedEpisodesSearch } from "@/hooks/useDebouncedEpisodesSearch";
 
 export default function Episode() {
+  const { search, handleSearchChange } = useDebouncedEpisodesSearch();
   const { id } = useParams<{ id: string }>();
   const { data, loading, error } = useQuery(GET_EPISODE_BY_ID, {
     variables: { episodeId: id },
@@ -20,8 +22,10 @@ export default function Episode() {
   const episode = data?.getEpisodeById;
 
   return (
-    <MainLayout>
-      <div className="container mx-auto p-4">
+    <div className="flex min-h-screen flex-col">
+      <Header search={search} onSearchChange={handleSearchChange} />
+
+      <div className="container mx-auto mt-16 p-4">
         <div className="rounded bg-white p-6 shadow-md">
           <h1 className="mb-4 text-3xl font-bold">{episode.title}</h1>
           <p className="mb-4 text-gray-700">{episode.description}</p>
@@ -45,6 +49,6 @@ export default function Episode() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </div>
   );
 }
