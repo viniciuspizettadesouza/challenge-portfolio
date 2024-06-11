@@ -15,7 +15,7 @@ export default function Episode() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">{episode.title}</h1>
+      <h1 className="mb-4 text-2xl font-bold">{episode.title}</h1>
       <p>{episode.description}</p>
       <p>Series: {episode.series}</p>
       <p>Season: {episode.seasonNumber}</p>
