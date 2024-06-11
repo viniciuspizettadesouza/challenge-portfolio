@@ -10,7 +10,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       "@components": path.resolve(__dirname, "./src/components"),
       "@graphql": path.resolve(__dirname, "./src/graphql"),
-      "@layouts": path.resolve(__dirname, "./src/layouts"),
       "@pages": path.resolve(__dirname, "./src/pages"),
     },
   },
