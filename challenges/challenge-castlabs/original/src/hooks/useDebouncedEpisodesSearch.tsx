@@ -1,8 +1,8 @@
-import { useState, useCallback } from "react";
+import { Episodes, SearchEpisode } from "@/interfaces";
 import { useQuery } from "@apollo/client";
 import { LIST_EPISODES } from "@graphql/queries";
 import debounce from "lodash.debounce";
-import { Episodes, SearchEpisode } from "@/interfaces";
+import { useCallback, useState } from "react";
 
 export function useDebouncedEpisodesSearch() {
   const [search, setSearch] = useState("");

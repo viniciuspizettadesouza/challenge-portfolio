@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { useDebouncedEpisodesSearch } from "@/hooks/useDebouncedEpisodesSearch";
 import { Episode } from "@/interfaces";
+import Error from "@components/Error";
 import Header from "@components/Header";
 import Loading from "@components/Loading";
-import Error from "@components/Error";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { search, loading, error, data, handleSearchChange } =
