@@ -25,5 +25,5 @@ export function useDebouncedEpisodesSearch() {
     debouncedSearch(e.target.value);
   };
 
-  return { search, loading, error, data, handleSearchChange };
+  return { search, loading, error, data, handleSearchChange, refetch };
 }

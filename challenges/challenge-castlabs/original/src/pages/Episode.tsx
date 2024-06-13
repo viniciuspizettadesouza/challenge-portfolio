@@ -16,11 +16,7 @@ export default function Episode() {
     error: episodeError,
   } = useEpisodeById(id);
 
-  const {
-    movie,
-    loading: movieLoading,
-    error: movieError,
-  } = useOMDBMovie(episode?.imdbId);
+  const { movie } = useOMDBMovie(episode?.imdbId);
 
   if (episodeLoading) return <Loading />;
   if (episodeError) return <Error />;
