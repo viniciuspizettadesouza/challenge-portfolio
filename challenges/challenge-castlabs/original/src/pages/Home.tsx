@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header search={search} onSearchChange={handleSearchChange} />
 
-      <div className="container mx-auto mt-16 flex-grow overflow-auto p-4">
+      <main className="container mx-auto mt-16 flex-grow overflow-auto p-4">
         {loading && <Loading />}
         {error && <Error />}
         <ul>
@@ -26,7 +26,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </div>
+      </main>
     </div>
   );
 }
