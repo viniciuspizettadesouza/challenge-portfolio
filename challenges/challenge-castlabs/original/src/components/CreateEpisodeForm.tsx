@@ -1,11 +1,15 @@
+import { useRefetchStore } from "@/store/index";
 import { useMutation } from "@apollo/client";
 import { CREATE_EPISODE } from "@graphql/queries";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function CreateEpisodeForm() {
   const [createEpisode] = useMutation(CREATE_EPISODE);
+  const setRefetch = useRefetchStore((state) => state.setRefetch);
 
   const [newEpisode, setNewEpisode] = useState({
+    id: uuidv4(),
     series: "",
     title: "",
     description: "",
@@ -15,7 +19,10 @@ export default function CreateEpisodeForm() {
     imdbId: "",
   });
 
-  const handleCreateEpisode = async () => {
+  const handleCreateEpisode = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
+    event.preventDefault();
     try {
       await createEpisode({
         variables: {
@@ -24,6 +31,7 @@ export default function CreateEpisodeForm() {
       });
 
       setNewEpisode({
+        id: uuidv4(),
         series: "",
         title: "",
         description: "",
@@ -32,6 +40,7 @@ export default function CreateEpisodeForm() {
         releaseDate: "",
         imdbId: "",
       });
+      setRefetch(true);
     } catch (error) {
       console.error("Error creating episode:", error);
     }
@@ -50,12 +59,7 @@ export default function CreateEpisodeForm() {
   return (
     <section className="mt-4">
       <h2 className="text-xl font-bold mb-2">Create New Episode:</h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleCreateEpisode();
-        }}
-      >
+      <form onSubmit={handleCreateEpisode}>
         <div className="mb-4">
           <label className="block text-sm font-semibold text-gray-600">
             Series:
@@ -90,7 +94,7 @@ export default function CreateEpisodeForm() {
             name="description"
             value={newEpisode.description}
             onChange={handleInputChange}
-            rows={3}
+            rows={2}
             className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
             required
           />

@@ -32,17 +32,14 @@ export default function EpisodeFooterButtons({
 
   return (
     <section className="mt-4 flex flex-col items-end">
-      <button
-        type="submit"
-        className="bg-blue-500 mb-2 w-1/3 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
-      >
+      <button className="bg-blue-500 mb-2 w-1/2 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
         <Link to={`/createEpisode`}>Create Episode</Link>
       </button>
       <button
         onClick={handleDeleteEpisode}
-        className="bg-red-500 w-1/3 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md"
+        className="bg-red-500 w-1/2 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md"
       >
-        <Link to={`/createEpisode`}> Delete Episode</Link>
+        Delete Episode
       </button>
     </section>
   );

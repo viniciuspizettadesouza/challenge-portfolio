@@ -1,13 +1,32 @@
 import { useDebouncedEpisodesSearch } from "@/hooks/useDebouncedEpisodesSearch";
 import { Episode } from "@/interfaces";
+import { useRefetchStore } from "@/store/index";
 import Error from "@components/Error";
 import Header from "@components/Header";
 import Loading from "@components/Loading";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const { search, loading, error, data, handleSearchChange } =
-    useDebouncedEpisodesSearch();
+  const {
+    search,
+    loading,
+    error,
+    data,
+    handleSearchChange,
+    refetch: refetchEpisodeById,
+  } = useDebouncedEpisodesSearch();
+
+  const { refetch, setRefetch } = useRefetchStore();
+
+  console.log("refetch", refetch);
+  useEffect(() => {
+    console.log("refetch", refetch);
+    if (refetch) {
+      refetchEpisodeById();
+      setRefetch(false);
+    }
+  }, [refetch, refetchEpisodeById, setRefetch]);
 
   return (
     <div className="flex min-h-screen flex-col">
