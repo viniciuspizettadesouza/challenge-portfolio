@@ -1,5 +1,6 @@
 import { useRefetchStore } from "@/store/index";
 import { useMutation } from "@apollo/client";
+import FormField from "@components/FormField";
 import { CREATE_EPISODE } from "@graphql/queries";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -18,6 +19,44 @@ export default function CreateEpisodeForm() {
     releaseDate: "",
     imdbId: "",
   });
+
+  const formFields = [
+    {
+      label: "Series:",
+      name: "series",
+      type: "text" as const,
+    },
+    {
+      label: "Title:",
+      name: "title",
+      type: "text" as const,
+    },
+    {
+      label: "Description:",
+      name: "description",
+      type: "textarea" as const,
+    },
+    {
+      label: "Season Number:",
+      name: "seasonNumber",
+      type: "number" as const,
+    },
+    {
+      label: "Episode Number:",
+      name: "episodeNumber",
+      type: "number" as const,
+    },
+    {
+      label: "Release Date:",
+      name: "releaseDate",
+      type: "date" as const,
+    },
+    {
+      label: "IMDB ID:",
+      name: "imdbId",
+      type: "text" as const,
+    },
+  ];
 
   const handleCreateEpisode = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -60,99 +99,18 @@ export default function CreateEpisodeForm() {
     <section className="mt-4">
       <h2 className="text-xl font-bold mb-2">Create New Episode:</h2>
       <form onSubmit={handleCreateEpisode}>
-        <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-600">
-            Series:
-          </label>
-          <input
-            type="text"
-            name="series"
-            value={newEpisode.series}
+        {formFields.map((field) => (
+          <FormField
+            key={field.name}
+            label={field.label}
+            name={field.name}
+            value={newEpisode[field.name as keyof typeof newEpisode]}
             onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
+            type={field.type}
+            rows={field.type === "textarea" ? 2 : undefined}
             required
           />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-600">
-            Title:
-          </label>
-          <input
-            type="text"
-            name="title"
-            value={newEpisode.title}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-600">
-            Description:
-          </label>
-          <textarea
-            name="description"
-            value={newEpisode.description}
-            onChange={handleInputChange}
-            rows={2}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
-            required
-          />
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="mb-4">
-            <label className="block text-sm font-semibold text-gray-600">
-              Season Number:
-            </label>
-            <input
-              type="number"
-              name="seasonNumber"
-              value={newEpisode.seasonNumber}
-              onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-sm font-semibold text-gray-600">
-              Episode Number:
-            </label>
-            <input
-              type="number"
-              name="episodeNumber"
-              value={newEpisode.episodeNumber}
-              onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
-              required
-            />
-          </div>
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-600">
-            Release Date:
-          </label>
-          <input
-            type="date"
-            name="releaseDate"
-            value={newEpisode.releaseDate}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-600">
-            IMDB ID:
-          </label>
-          <input
-            type="text"
-            name="imdbId"
-            value={newEpisode.imdbId}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
-            required
-          />
-        </div>
+        ))}
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
