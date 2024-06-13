@@ -1,9 +1,10 @@
 import { useRefetchStore } from "@/store/index";
 import { useMutation } from "@apollo/client";
 import FormField from "@components/FormField";
-import { CREATE_EPISODE } from "@graphql/queries";
+import { CREATE_EPISODE } from "@graphql/mutations";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import CheckSubscriptions from "./CheckSubscriptions";
 
 export default function CreateEpisodeForm() {
   const [createEpisode] = useMutation(CREATE_EPISODE);
@@ -118,6 +119,8 @@ export default function CreateEpisodeForm() {
           Create Episode
         </button>
       </form>
+
+      <CheckSubscriptions />
     </section>
   );
 }
