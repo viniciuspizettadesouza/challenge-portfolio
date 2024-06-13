@@ -1,6 +1,7 @@
 import { useDebouncedEpisodesSearch } from "@/hooks/useDebouncedEpisodesSearch";
 import { useEpisodeById } from "@/hooks/useEpisodeById";
 import useOMDBMovie from "@/hooks/useOMDBMovie";
+import EpisodeFooterButtons from "@components/EpisodeFooterButtons";
 import Error from "@components/Error";
 import Header from "@components/Header";
 import Loading from "@components/Loading";
@@ -21,13 +22,14 @@ export default function Episode() {
     error: movieError,
   } = useOMDBMovie(episode?.imdbId);
 
+  if (episodeLoading) return <Loading />;
+  if (episodeError) return <Error />;
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header search={search} onSearchChange={handleSearchChange} />
 
       <main className="container mx-auto mt-16 flex-grow">
-        {episodeLoading && <Loading />}
-        {episodeError && <Error />}
         <article className="p-4">
           {episode && (
             <section className="bg-white rounded-lg shadow-md p-6">
@@ -45,7 +47,7 @@ export default function Episode() {
                   </figcaption>
                 </figure>
               )}
-              <dl>
+              <dl className="mb-4">
                 <dt className="font-semibold">Series:</dt>
                 <dd>{episode.series}</dd>
                 <dt className="font-semibold">Season:</dt>
@@ -58,16 +60,7 @@ export default function Episode() {
                 <dd>{episode.imdbId}</dd>
               </dl>
 
-              {movie && (
-                <dl className="mb-4">
-                  <dt className="font-semibold">Title:</dt>
-                  <dd>{movie.Title}</dd>
-                  <dt className="font-semibold">Year:</dt>
-                  <dd>{movie.Year}</dd>
-                  <dt className="font-semibold">Director:</dt>
-                  <dd>{movie.Director}</dd>
-                </dl>
-              )}
+              <EpisodeFooterButtons id={id} />
             </section>
           )}
         </article>
