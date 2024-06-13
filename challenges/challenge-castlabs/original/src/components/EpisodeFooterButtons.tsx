@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { DELETE_EPISODE } from "@graphql/queries";
+import { DELETE_EPISODE } from "@graphql/mutations";
 import { Link, useNavigate } from "react-router-dom";
 
 interface EpisodeFooterButtonsProps {

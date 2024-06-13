@@ -21,7 +21,6 @@ export default function Home() {
 
   console.log("refetch", refetch);
   useEffect(() => {
-    console.log("refetch", refetch);
     if (refetch) {
       refetchEpisodeById();
       setRefetch(false);
