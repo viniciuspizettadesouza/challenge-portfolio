@@ -1,4 +1,3 @@
-import { useDebouncedEpisodesSearch } from "@/hooks/useDebouncedEpisodesSearch";
 import { useEpisodeById } from "@/hooks/useEpisodeById";
 import useOMDBMovie from "@/hooks/useOMDBMovie";
 import EpisodeFooterButtons from "@components/EpisodeFooterButtons";
@@ -9,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 export default function Episode() {
   const { id } = useParams<{ id: string }>();
-  const { search, handleSearchChange } = useDebouncedEpisodesSearch();
   const {
     episode,
     loading: episodeLoading,
@@ -23,7 +21,7 @@ export default function Episode() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header search={search} onSearchChange={handleSearchChange} />
+      <Header />
 
       <main className="container mx-auto mt-16 flex-grow">
         <article className="p-4">

@@ -1,7 +1,6 @@
 import { ApolloClient, HttpLink, InMemoryCache, split } from "@apollo/client";
-// import { GraphQLWsLink } from "@apollo/client/link/subscriptions";
+import { WebSocketLink } from "@apollo/client/link/ws";
 import { getMainDefinition } from "@apollo/client/utilities";
-// import { createClient } from "graphql-ws";
 import { SubscriptionClient } from "subscriptions-transport-ws";
 
 const httpLink = new HttpLink({
@@ -11,14 +10,16 @@ const httpLink = new HttpLink({
   },
 });
 
-const wsLink = new SubscriptionClient(import.meta.env.VITE_GRAPHQL_WS, {
-  reconnect: true,
-  connectionParams: {
-    headers: {
-      "x-api-key": import.meta.env.VITE_GRAPHQL_API_KEY,
+const wsLink = new WebSocketLink(
+  new SubscriptionClient(import.meta.env.VITE_GRAPHQL_WS, {
+    reconnect: true,
+    connectionParams: {
+      headers: {
+        "x-api-key": import.meta.env.VITE_GRAPHQL_API_KEY,
+      },
     },
-  },
-});
+  }),
+);
 
 const splitLink = split(
   ({ query }) => {
