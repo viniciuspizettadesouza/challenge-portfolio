@@ -1,0 +1,62 @@
+#app {
+  color: #18221c;
+}
+
+#app [className="container"],
+#app .container {
+  padding: 1.5rem;
+  color: #18221c;
+  background: #f8faf8;
+  border-radius: 0.35rem;
+}
+
+#app .row {
+  display: flex;
+  gap: 1rem;
+  margin-block: 0.75rem;
+}
+
+#app .col {
+  flex: 1;
+}
+
+#app .text-end {
+  text-align: right;
+}
+
+#app .border {
+  border: 1px solid #cbd5ce;
+}
+
+#app .px-2 {
+  padding-inline: 0.75rem;
+}
+
+#app .py-2,
+#app .py-3 {
+  padding-block: 0.75rem;
+}
+
+#app .form-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+#app .form-select {
+  width: 100%;
+  min-height: 2.5rem;
+  color: #18221c;
+  background: white;
+  border: 1px solid #aebbb1;
+  border-radius: 0.25rem;
+}
+
+#app .form-check-input {
+  margin-right: 0.5rem;
+}
+
+#app h3 {
+  margin: 0 0 1rem;
+}
+

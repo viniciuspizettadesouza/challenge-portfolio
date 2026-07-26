@@ -264,6 +264,21 @@ h2 {
   color: var(--muted);
 }
 
+.panel--demo > h2 {
+  margin-bottom: 1.5rem;
+}
+
+.demo-placeholder {
+  min-height: 16rem;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 0.35rem;
+  text-align: center;
+}
+
 dl {
   margin: 0 0 2rem;
 }
@@ -324,4 +339,3 @@ footer {
     font-size: 3rem;
   }
 }
-
