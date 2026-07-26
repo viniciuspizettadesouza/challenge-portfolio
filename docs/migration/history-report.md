@@ -1,8 +1,8 @@
-# Relatório de preservação de histórico
+# History preservation report
 
-Gerado em 2026-07-26T18:18:21.415Z.
+Generated at 2026-07-26T18:25:05.023Z.
 
-| Repositório | Estado | Verificação |
+| Repository | Status | Verification |
 | --- | --- | --- |
 | challenge-stormtech | verified | tree=ok, authors=ok, files=22, removed=backend/node_modules, redacted=— |
 | challenge-vue | verified | tree=ok, authors=ok, files=18 |
@@ -25,5 +25,5 @@ Gerado em 2026-07-26T18:18:21.415Z.
 | challenge-onsign-tv | verified | tree=ok, authors=ok, files=18, removed=OnSign TV Front End Programming Test 3A (2).pdf, redacted=onsigntv_frontend/src/App.vue |
 | challenge-ingenious-build-frontend | verified | tree=ok, authors=ok, files=30 |
 
-A comparação de árvore usa os IDs dos blobs e caminhos; a comparação de autores
-usa o conjunto de nomes e e-mails nos históricos original e reescrito.
+Tree comparison uses blob IDs and paths. Author comparison uses the set of
+names and email addresses in the source and rewritten histories.

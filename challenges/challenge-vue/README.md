@@ -1,15 +1,21 @@
 # Vue Challenge
 
-Projeto piloto Vue 3.
+Vue 3 pilot project.
 
-## Preservação
+## Preservation
 
-- branch `main` importada em `original/`;
-- árvore e autores verificados contra o mirror externo;
-- código de `original/` mantido sem alterações.
+- the `main` branch was imported under `original/`;
+- tree content and authors were verified against the external mirror;
+- `original/` remains unchanged after sanitization.
 
 ## Demo
 
-`demo/` carrega o componente Vue 3 original pela integração oficial do Astro.
-Uma folha de estilos local substitui as classes visuais esperadas pelo projeto,
-sem instalar ou executar o conjunto legado de dependências.
+`demo/` loads the original Vue 3 component through Astro's official Vue
+integration. A local stylesheet replaces the visual utility classes expected by
+the project without installing or executing the legacy dependency set.
+
+## Remaining work
+
+- capture and register a screenshot;
+- complete manual responsive and console review;
+- mark the challenge as migrated only after its completion criteria pass.

@@ -1,25 +1,33 @@
-# Decisões e restrições
+# Decisions and constraints
 
-## Decisões
+## Decisions
 
-1. Astro é o shell estático e pode hospedar componentes React e Vue 3.
-2. `original/` é arquivo permanente; `demo/` é a versão adaptável.
-3. A branch padrão e tags relevantes entram no monorepo; referências extras
-   permanecem nos mirrors e bundles.
-4. Os hashes mudam ao reescrever caminhos, mas autoria, mensagens e datas devem
-   permanecer.
-5. Um merge commit separado identifica cada origem.
-6. Projetos desconhecidos não são modernizados antes do inventário.
-7. Backends indisponíveis devem preferir fixtures e mocks a infraestrutura
-   permanente.
+1. Astro is the static shell and can host React and Vue 3 components.
+2. `original/` is the permanent historical archive; `demo/` is adaptable.
+3. The default branch and relevant tags enter the monorepo; additional
+   references remain in external mirrors and bundles.
+4. Commit hashes change when paths or sensitive values are rewritten, but
+   authorship, messages, and dates should remain.
+5. A separate merge commit identifies each imported repository.
+6. Unknown projects are not modernized before the inventory is reviewed.
+7. Unavailable backends should prefer fixtures and mocks over permanent
+   infrastructure.
+8. Sanitized paths and redacted values are documented in the migration
+   manifest and security report.
 
-## Restrições de segurança
+## Safety constraints
 
-- não apagar, arquivar, renomear ou alterar repositórios remotos;
-- não usar `--force` fora de clones temporários;
-- não versionar backups, builds, dependências ou segredos;
-- não executar scripts dos projetos antigos durante a auditoria;
-- parar e reportar credenciais, sem imprimir o valor completo;
-- não importar enquanto qualquer backup estiver incompleto;
-- tratar a exclusão final como manual e irreversível.
+- do not delete, archive, rename, or modify original remote repositories;
+- do not use `--force` outside disposable clones or an explicitly authorized
+  local history-sanitization operation;
+- do not commit backups, builds, dependencies, or secrets;
+- do not execute scripts from historical projects during initial auditing;
+- stop and report credentials without printing complete values;
+- do not import while any backup is incomplete;
+- treat final repository deletion as manual and irreversible.
 
+## Git ownership
+
+Automated agents may stage files only when the repository owner explicitly
+requests it. They must not commit, push, tag, or open pull requests. By default,
+future changes remain unstaged in the working tree for the repository owner.

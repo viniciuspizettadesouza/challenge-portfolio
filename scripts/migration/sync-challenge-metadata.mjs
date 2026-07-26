@@ -42,7 +42,7 @@ for (const repository of repositories) {
     title: updated.title,
     company,
     description:
-      "Código de um desafio técnico preservado para consulta e apresentação no portfólio.",
+      "A preserved technical challenge available for source review and portfolio presentation.",
     technologies: updated.technologies ?? [],
     renderer: updated.renderer,
     migrationStatus: updated.migrationStatus,
@@ -62,4 +62,3 @@ writeFileSync(
   `${JSON.stringify(registry, null, 2)}\n`,
 );
 console.log(`Challenge metadata synchronized for ${registry.length} repositories.`);
-

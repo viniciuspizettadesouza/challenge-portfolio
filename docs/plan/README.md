@@ -1,27 +1,37 @@
-# Plano de consolidação
+# Consolidation plan
 
-Este diretório é a fonte permanente de contexto para a consolidação. Ele foi
-organizado para que uma pessoa ou uma nova sessão do Codex possa retomar o
-trabalho sem depender do texto original da conversa.
+This directory is the permanent source of context for the consolidation. It is
+organized so a contributor or a new agent session can resume the work without
+depending on earlier conversations.
 
-## Ordem de leitura
+## Reading order
 
-1. [Objetivo e arquitetura](architecture.md)
-2. [Roteiro e critérios de saída](roadmap.md)
-3. [Runbook operacional](runbook.md)
-4. [Decisões e restrições](decisions.md)
-5. [Estado real da execução](../migration/status.md)
-6. [Checklist de exclusão](../migration/deletion-checklist.md)
+1. [Architecture and objective](architecture.md)
+2. [Roadmap and exit criteria](roadmap.md)
+3. [Operational runbook](runbook.md)
+4. [Decisions and constraints](decisions.md)
+5. [Current execution status](../migration/status.md)
+6. [Manual deletion checklist](../migration/deletion-checklist.md)
 
-## Regra central
+## Central rule
 
-O código histórico vive em `challenges/<slug>/original` e não deve ser
-modernizado. A versão executável vive em `challenges/<slug>/demo`. Repositórios
-originais nunca serão apagados automaticamente.
+Historical source lives in `challenges/<slug>/original` and must not be
+modernized in place. Executable adaptations live in
+`challenges/<slug>/demo`. Original remote repositories must never be deleted
+automatically.
 
-## Escopo
+## Scope
 
-O escopo inclui exatamente os 20 repositórios registrados em
+The initial scope contains exactly the 20 repositories listed in
 [`scripts/migration/repositories.json`](../../scripts/migration/repositories.json).
-`nuxt-challenge` está fora da migração inicial.
+`nuxt-challenge` is outside the initial migration.
 
+## How to resume
+
+Start with [`../migration/status.md`](../migration/status.md). Completed work
+remains visible there. Continue from the first phase marked `In progress` or
+`Pending`, and update the status and relevant checklist as evidence changes.
+
+Agents may stage files only when the repository owner explicitly requests it.
+They must not commit, push, tag, or open pull requests. The repository owner
+handles Git publication. See [`../../AGENTS.md`](../../AGENTS.md).

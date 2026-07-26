@@ -8,12 +8,12 @@ interface Props {
 
 const {
   title,
-  description = "Desafios técnicos preservados e apresentados em um único portfólio.",
+  description = "Historical technical challenges preserved and presented in one portfolio.",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -22,20 +22,19 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip-link" href="#content">Ir para o conteúdo</a>
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="/">Challenge Portfolio</a>
-      <nav aria-label="Navegação principal">
+      <nav aria-label="Main navigation">
         <a href="/challenges">Challenges</a>
-        <a href="/about">Sobre</a>
+        <a href="/about">About</a>
       </nav>
     </header>
     <main id="content">
       <slot />
     </main>
     <footer>
-      <p>Código histórico preservado. Demos adaptadas sem alterar os originais.</p>
+      <p>Historical source preserved. Demos adapted without changing originals.</p>
     </footer>
   </body>
 </html>
-

@@ -1,38 +1,52 @@
-# Estado da migração
+# Migration status
 
-Atualizado em 2026-07-26.
+Last updated: 2026-07-26.
 
-| Fase | Estado | Evidência / bloqueio |
+This is the authoritative handoff document. Completed work remains visible.
+Resume from the first phase marked `In progress` or `Pending`.
+
+| Phase | Status | Evidence or next requirement |
 | --- | --- | --- |
-| Ambiente | Concluída | Git, Node, pnpm, Python, `git-filter-repo` e GitHub disponíveis |
-| Configuração | Concluída | 20 repositórios confirmados via GitHub |
-| Backups | Concluída | 20 mirrors e 20 bundles verificados no diretório externo |
-| Metadados | Concluída | exportados no diretório externo; revisão antes de publicação ainda necessária |
-| Importação | Concluída | 20 branches padrão importadas com merge individual |
-| Verificação | Concluída | 20 árvores e conjuntos de autores conferidos |
-| Inventário | Em andamento | inventário automático gerado; revisão manual pendente |
-| Segurança | Concluída | histórico sanitizado e Gitleaks sem ocorrências |
-| Shell Astro | Concluída | 20 rotas de challenge e build estático validados |
-| Demos piloto | Em andamento | Salsify e Vue integrados e testados; screenshots pendentes |
-| Ondas restantes | Pendente | depende dos pilotos |
-| Publicação inicial | Concluída | `main` publicada no GitHub e confirmada como branch padrão |
-| Deploy/limpeza | Pendente | demos restantes e checklist final ainda necessários |
+| Environment | Completed | Git, Node, pnpm, Python, `git-filter-repo`, and GitHub available |
+| Repository configuration | Completed | 20 repositories confirmed and recorded |
+| Backups | Completed | 20 mirrors and 20 verified bundles stored externally |
+| GitHub metadata | Completed | metadata exported externally |
+| History import | Completed | 20 default branches imported with individual merges |
+| Import verification | Completed | all 20 trees and author sets verified |
+| Security | Completed | public history sanitized; Gitleaks reports no findings |
+| Astro shell | Completed | all 20 challenge routes build statically |
+| Initial publication | Completed | `main` published and confirmed as the default branch |
+| Technical inventory | In progress | automatic inventory generated; manual review pending |
+| Pilot demos | In progress | Salsify and Vue integrated and tested; screenshots pending |
+| Remaining migration waves | Pending | 18 demos or complete case studies |
+| Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
-## Ambiente observado
+## Current next action
 
-- `pnpm`: 10.13.1;
-- `git-filter-repo`: 2.47.0, instalação local ignorada pelo Git;
-- Git LFS: ausente;
-- Git LFS não é necessário para as branches padrão auditadas (`usesLfs=false`);
-- `gh`: autenticado;
-- remote do novo repositório: configurado;
-- branch local: `main`, ainda sem commits no início desta execução.
+Manually review `docs/migration/inventory.json` and confirm or correct each
+challenge's proposed strategy. Then finish the two pilot screenshots before
+starting the modern React/Vite wave.
 
-Os repositórios remotos originais não foram alterados. Backups e metadados ficam
-em `../challenge-portfolio-backups/` e não são versionados.
+## Environment observed
 
-## Validação do upstream
+- pnpm: 10.13.1;
+- `git-filter-repo`: 2.47.0, installed locally outside Git tracking;
+- Git LFS: not required for the audited default branches (`usesLfs=false`);
+- GitHub CLI: authenticated;
+- remote: `origin` configured;
+- branch: `main`, tracking `origin/main`.
 
-Um clone novo do repositório público foi criado em 2026-07-26. Nesse clone,
-`pnpm install --frozen-lockfile` e `pnpm build` passaram, gerando 23 páginas
-estáticas.
+Original remote repositories have not been modified. Backups and metadata live
+under `../challenge-portfolio-backups/` and are not tracked here.
+
+## Upstream validation
+
+A fresh public clone was created on 2026-07-26. In that clone,
+`pnpm install --frozen-lockfile` and `pnpm build` passed and generated 23 static
+pages. Lint, typecheck, tests, and build also passed in the primary checkout.
+
+## Git ownership
+
+Automated agents may stage files only when the repository owner explicitly
+requests it. They must not commit, push, tag, or open pull requests. The
+repository owner handles all Git publication.

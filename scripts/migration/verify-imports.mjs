@@ -101,16 +101,16 @@ for (const repository of repositories) {
 }
 
 const report = [
-  "# Relatório de preservação de histórico",
+  "# History preservation report",
   "",
-  `Gerado em ${new Date().toISOString()}.`,
+  `Generated at ${new Date().toISOString()}.`,
   "",
-  "| Repositório | Estado | Verificação |",
+  "| Repository | Status | Verification |",
   "| --- | --- | --- |",
   ...rows.map((row) => `| ${row.name} | ${row.status} | ${row.detail.replaceAll("|", "\\|")} |`),
   "",
-  "A comparação de árvore usa os IDs dos blobs e caminhos; a comparação de autores",
-  "usa o conjunto de nomes e e-mails nos históricos original e reescrito.",
+  "Tree comparison uses blob IDs and paths. Author comparison uses the set of",
+  "names and email addresses in the source and rewritten histories.",
   "",
 ].join("\n");
 

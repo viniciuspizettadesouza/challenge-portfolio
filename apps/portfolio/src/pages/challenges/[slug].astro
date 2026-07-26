@@ -21,7 +21,7 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
 <BaseLayout title={`${challenge.title} — Challenge Portfolio`}>
   <article>
     <header class="challenge-hero">
-      <a class="back-link" href="/challenges">← Todos os challenges</a>
+      <a class="back-link" href="/challenges">← All challenges</a>
       <div class="challenge-title">
         <div>
           <p class="eyebrow">{challenge.company}</p>
@@ -36,12 +36,12 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
 
     <div class="detail-grid">
       <section class="panel panel--demo">
-        <p class="eyebrow">Apresentação</p>
+        <p class="eyebrow">Presentation</p>
         <h2>
           {
             ["challenge-salsify", "challenge-vue"].includes(challenge.slug)
-              ? "Demo interativa"
-              : "Demo em preparação"
+              ? "Interactive demo"
+              : "Demo in preparation"
           }
         </h2>
         <ChallengeDemo slug={challenge.slug} />
@@ -50,18 +50,18 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
       <aside class="panel panel--meta">
         <dl>
           <div><dt>Status</dt><dd>{challenge.migrationStatus}</dd></div>
-          <div><dt>Estratégia</dt><dd>{challenge.migrationStrategy}</dd></div>
-          <div><dt>Branch original</dt><dd>{challenge.originalDefaultBranch}</dd></div>
+          <div><dt>Strategy</dt><dd>{challenge.migrationStrategy}</dd></div>
+          <div><dt>Original branch</dt><dd>{challenge.originalDefaultBranch}</dd></div>
           <div>
-            <dt>Repositório original</dt>
+            <dt>Original repository</dt>
             <dd>{challenge.originalRepository}</dd>
           </div>
           <div>
-            <dt>SHA original</dt>
-            <dd>{challenge.originalHeadSha || "Aguardando importação"}</dd>
+            <dt>Original SHA</dt>
+            <dd>{challenge.originalHeadSha || "Awaiting import"}</dd>
           </div>
         </dl>
-        <a class="button button--secondary" href={sourceUrl}>Ver código preservado</a>
+        <a class="button button--secondary" href={sourceUrl}>View preserved source</a>
       </aside>
     </div>
   </article>

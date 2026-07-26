@@ -1,28 +1,34 @@
 # Challenge Portfolio
 
-Portfólio unificado para preservar e apresentar 20 desafios técnicos antigos.
+A unified portfolio that preserves and presents 20 historical technical
+challenges.
 
-O projeto mantém duas representações separadas por challenge:
+Each challenge has two clearly separated representations:
 
-- `original/`: código e histórico preservados do repositório de origem;
-- `demo/`: versão executável, modernizada ou adaptada para o portfólio.
+- `original/`: sanitized source and imported Git history from the original
+  repository;
+- `demo/`: an executable, modernized, or adapted portfolio version.
 
-## Estado atual
+## Current status
 
-A infraestrutura do monorepo e o catálogo das 20 páginas estão em construção. O
-estado auditável da migração fica em
+The 20 default branches have been imported, backed up, sanitized, and verified.
+The Astro catalog builds all 20 challenge routes. The Salsify React demo and the
+Vue 3 demo are integrated; the remaining demos and case studies are pending.
+
+The authoritative progress record is
 [`docs/migration/status.md`](docs/migration/status.md).
 
-## Referências
+## Documentation
 
-- [Índice do plano](docs/plan/README.md)
-- [Arquitetura](docs/plan/architecture.md)
-- [Roteiro por fases](docs/plan/roadmap.md)
-- [Runbook operacional](docs/plan/runbook.md)
-- [Decisões e restrições](docs/plan/decisions.md)
-- [Checklist de exclusão](docs/migration/deletion-checklist.md)
+- [Plan index](docs/plan/README.md)
+- [Architecture](docs/plan/architecture.md)
+- [Roadmap](docs/plan/roadmap.md)
+- [Migration runbook](docs/plan/runbook.md)
+- [Decisions and constraints](docs/plan/decisions.md)
+- [Security review](docs/migration/security-review.md)
+- [Deletion checklist](docs/migration/deletion-checklist.md)
 
-## Comandos
+## Commands
 
 ```bash
 corepack enable
@@ -34,17 +40,24 @@ pnpm test
 pnpm build
 ```
 
-Os comandos de migração são intencionalmente separados do build:
+Migration commands are intentionally separate from the regular build:
 
 ```bash
 pnpm migration:check
 pnpm migration:backup
 pnpm migration:metadata
 pnpm migration:import -- --repository challenge-vue
+pnpm migration:refresh
 pnpm verify:migration
 pnpm inventory
 ```
 
-Leia o [runbook](docs/plan/runbook.md) antes de executar operações de histórico.
-Nenhum script deste repositório apaga, arquiva ou altera repositórios remotos.
+Read the [runbook](docs/plan/runbook.md) before performing history operations.
+No repository script deletes, archives, or modifies an original remote
+repository.
+
+## Git workflow
+
+Automated agents must leave changes uncommitted and unpushed. The repository
+owner reviews, commits, and pushes all future work. See [`AGENTS.md`](AGENTS.md).
 

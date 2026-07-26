@@ -1,16 +1,22 @@
 # Salsify Challenge
 
-Projeto piloto React.
+React pilot project.
 
-## Preservação
+## Preservation
 
-- branch `main` importada em `original/`;
-- árvore e autores verificados contra o mirror externo;
-- código de `original/` mantido sem alterações.
+- the `main` branch was imported under `original/`;
+- tree content and authors were verified against the external mirror;
+- `original/` remains unchanged after sanitization.
 
 ## Demo
 
-`demo/` expõe a aplicação React original como um pacote isolado do workspace.
-A adaptação adiciona apenas uma camada de estilos compatível com o shell Astro;
-as regras de filtro e o datastore continuam vindo do código preservado.
+`demo/` exposes the original React application as an isolated workspace
+package. The adaptation adds only an Astro-compatible styling layer; filtering
+rules and the datastore still come from the preserved source.
+
+## Remaining work
+
+- capture and register a screenshot;
+- complete manual responsive and console review;
+- mark the challenge as migrated only after its completion criteria pass.
 

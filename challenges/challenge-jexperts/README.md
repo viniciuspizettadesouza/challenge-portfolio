@@ -1,4 +1,4 @@
 # JExperts Challenge
 
-Importação histórica e auditoria pendentes. O original não deve ser modificado.
-
+History imported, sanitized, and verified. A backend-mocking strategy is
+pending. Do not modify `original/`.

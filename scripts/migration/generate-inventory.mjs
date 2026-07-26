@@ -153,15 +153,15 @@ writeFileSync(jsonPath, `${JSON.stringify(inventory, null, 2)}\n`);
 writeFileSync(
   markdownPath,
   [
-    "# Inventário técnico",
+    "# Technical inventory",
     "",
-    `Gerado em ${new Date().toISOString()} sem instalar dependências.`,
+    `Generated at ${new Date().toISOString()} without installing historical dependencies.`,
     "",
-    "| Challenge | Importado | Framework | Bundler | Estratégia |",
+    "| Challenge | Imported | Framework | Bundler | Strategy |",
     "| --- | --- | --- | --- | --- |",
     ...inventory.map(
       (item) =>
-        `| ${item.slug} | ${item.imported ? "sim" : "não"} | ${
+        `| ${item.slug} | ${item.imported ? "yes" : "no"} | ${
           item.framework ?? "—"
         } ${item.frameworkVersion ?? ""} | ${item.bundler ?? "—"} | ${
           item.migrationStrategy
