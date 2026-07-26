@@ -1,0 +1,23 @@
+---
+import SalsifyDemo from "@challenge/salsify-demo";
+import VueDemo from "@challenge/vue-demo";
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+{
+  slug === "challenge-salsify" ? (
+    <SalsifyDemo client:load />
+  ) : slug === "challenge-vue" ? (
+    <VueDemo client:load />
+  ) : (
+    <div class="demo-placeholder">
+      <p>A demo será definida após a revisão manual deste challenge.</p>
+    </div>
+  )
+}
+

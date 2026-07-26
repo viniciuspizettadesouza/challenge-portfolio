@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import ChallengeDemo from "../../components/ChallengeDemo.astro";
 import { challenges, type Challenge } from "../../challenges/registry";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -34,13 +35,16 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
     </header>
 
     <div class="detail-grid">
-      <section class="panel">
+      <section class="panel panel--demo">
         <p class="eyebrow">Apresentação</p>
-        <h2>Demo em preparação</h2>
-        <p>
-          Este challenge está catalogado, mas só receberá uma demo depois que o
-          código original e o histórico forem importados e auditados.
-        </p>
+        <h2>
+          {
+            ["challenge-salsify", "challenge-vue"].includes(challenge.slug)
+              ? "Demo interativa"
+              : "Demo em preparação"
+          }
+        </h2>
+        <ChallengeDemo slug={challenge.slug} />
       </section>
 
       <aside class="panel panel--meta">
@@ -62,4 +66,3 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
     </div>
   </article>
 </BaseLayout>
-
