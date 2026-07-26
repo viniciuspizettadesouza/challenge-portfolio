@@ -331,12 +331,15 @@
     "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:24.835Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-onsign-tv.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-onsign-tv.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:54:11.463Z"
+    "metadataExportedAt": "2026-07-26T17:54:11.463Z",
+    "rewrittenHeadSha": "8da62a3f9139bdb857e4f83eec128e999b678ae5",
+    "importMergeSha": "879c03675fcf868a641d8ed6e87c3672d8215418",
+    "importedAt": "2026-07-26T17:56:06.276Z"
   },
   {
     "owner": "viniciuspizettadesouza",
