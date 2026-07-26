@@ -1,1 +1,21 @@
-{"slug":"challenge-castlabs","title":"Castlabs Challenge","originalRepository":"viniciuspizettadesouza/challenge-castlabs","originalDefaultBranch":"main","originalHeadSha":"","framework":"react","frameworkVersion":"18","technologies":["React","TypeScript","Vite","Apollo","GraphQL"],"renderer":"react","migrationStrategy":"native-react","migrationStatus":"pending","hasBackend":false,"hasExternalApi":true}
+{
+  "slug": "challenge-castlabs",
+  "title": "Castlabs Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-castlabs",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b",
+  "framework": "react",
+  "frameworkVersion": "^18.2.0",
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Apollo",
+    "GraphQL"
+  ],
+  "renderer": "react",
+  "migrationStrategy": "native-react",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

@@ -1,1 +1,15 @@
-{"slug":"challenge-onsign-tv","title":"OnSign TV Challenge","originalRepository":"viniciuspizettadesouza/challenge-onsign-tv","originalDefaultBranch":"main","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-onsign-tv",
+  "title": "OnSign TV Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-onsign-tv",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565",
+  "framework": "vue",
+  "frameworkVersion": "^2.6.12",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "upgrade-vue2",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

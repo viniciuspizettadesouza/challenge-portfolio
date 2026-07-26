@@ -1,0 +1,597 @@
+[
+  {
+    "slug": "challenge-stormtech",
+    "originalRepository": "viniciuspizettadesouza/challenge-stormtech",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^16.11.0",
+    "language": "javascript",
+    "bundler": "create-react-app",
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": true,
+    "hasExternalApi": true,
+    "envVariables": [],
+    "packageRoots": [
+      "backend",
+      "frontend"
+    ],
+    "entrypoints": [
+      "backend/src/server.js",
+      "frontend/public/index.html",
+      "frontend/src/App.js",
+      "frontend/src/index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "mock-backend",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-vue",
+    "originalRepository": "viniciuspizettadesouza/challenge-vue",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "1729ec23692ae5b749e55ff5b9718bb37c499b53",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^3.2.25",
+    "language": "javascript",
+    "bundler": "vite",
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [
+      "original-version",
+      "."
+    ],
+    "entrypoints": [
+      "index.html",
+      "original-version/public/index.html",
+      "original-version/src/App.vue",
+      "original-version/src/main.js",
+      "src/App.vue",
+      "src/main.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-vuejs",
+    "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^3.4.21",
+    "language": "typescript",
+    "bundler": "vite",
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": true,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "BASE_URL"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "index.html",
+      "src/App.vue",
+      "src/main.ts",
+      "src/router/index.ts"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-castlabs",
+    "originalRepository": "viniciuspizettadesouza/challenge-castlabs",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^18.2.0",
+    "language": "typescript",
+    "bundler": "vite",
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "VITE_GRAPHQL_API_KEY",
+      "VITE_GRAPHQL_API_URL",
+      "VITE_GRAPHQL_WS",
+      "VITE_OMDB_API_KEY",
+      "VITE_OMDB_BASE_URL"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "index.html",
+      "src/App.tsx",
+      "src/graphql/main.tsx",
+      "src/interfaces/index.ts",
+      "src/main.tsx",
+      "src/store/index.ts"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-react",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-conaz",
+    "originalRepository": "viniciuspizettadesouza/challenge-conaz",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "69264714c1376d8150364d68fe749f97d9eb9ca0",
+    "imported": true,
+    "framework": null,
+    "frameworkVersion": null,
+    "language": null,
+    "bundler": null,
+    "packageManager": null,
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [],
+    "entrypoints": [
+      "index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "manual-review",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-jexperts",
+    "originalRepository": "viniciuspizettadesouza/challenge-jexperts",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^16.11.0",
+    "language": "javascript",
+    "bundler": "create-react-app",
+    "packageManager": "yarn",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": true,
+    "hasExternalApi": true,
+    "envVariables": [],
+    "packageRoots": [
+      "backend",
+      "frontend"
+    ],
+    "entrypoints": [
+      "backend/src/server.js",
+      "frontend/public/index.html",
+      "frontend/src/App.js",
+      "frontend/src/components/Header/index.js",
+      "frontend/src/components/Search/index.js",
+      "frontend/src/index.js",
+      "frontend/src/views/Index/index.js",
+      "frontend/src/views/Register/Address/index.js",
+      "frontend/src/views/Register/index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "mock-backend",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-zygo",
+    "originalRepository": "viniciuspizettadesouza/challenge-zygo",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4",
+    "imported": true,
+    "framework": null,
+    "frameworkVersion": null,
+    "language": null,
+    "bundler": null,
+    "packageManager": null,
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [],
+    "entrypoints": [
+      "index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "manual-review",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-salsify",
+    "originalRepository": "viniciuspizettadesouza/challenge-salsify",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^18.2.0",
+    "language": "typescript",
+    "bundler": "vite",
+    "packageManager": "npm",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "index.html",
+      "src/App.tsx",
+      "src/datastore/index.ts",
+      "src/interfaces/index.ts",
+      "src/main.tsx"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-react",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-climateseed",
+    "originalRepository": "viniciuspizettadesouza/challenge-climateseed",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^3.4.21",
+    "language": "typescript",
+    "bundler": "vite",
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": true,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "BASE_URL"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "index.html",
+      "src/App.vue",
+      "src/main.ts",
+      "src/router/index.ts"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-lagoasoft",
+    "originalRepository": "viniciuspizettadesouza/challenge-lagoasoft",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^16.11.0",
+    "language": "javascript",
+    "bundler": "create-react-app",
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "public/index.html",
+      "src/App.js",
+      "src/components/Header/index.js",
+      "src/components/Post/index.js",
+      "src/components/post/one-post/index.js",
+      "src/components/post/one-post/like-button/index.js",
+      "src/index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "upgrade-react",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-devlandia",
+    "originalRepository": "viniciuspizettadesouza/challenge-devlandia",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6",
+    "imported": true,
+    "framework": null,
+    "frameworkVersion": null,
+    "language": null,
+    "bundler": null,
+    "packageManager": null,
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [],
+    "entrypoints": [],
+    "nodeVersion": null,
+    "migrationStrategy": "manual-review",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-meetime",
+    "originalRepository": "viniciuspizettadesouza/challenge-meetime",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^2.6.11",
+    "language": "javascript",
+    "bundler": "vue-cli",
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "public/index.html",
+      "src/App.vue",
+      "src/main.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-instruct",
+    "originalRepository": "viniciuspizettadesouza/challenge-instruct",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1",
+    "imported": true,
+    "framework": "unknown",
+    "frameworkVersion": null,
+    "language": "javascript",
+    "bundler": null,
+    "packageManager": "npm",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "pages/index.vue"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "manual-review",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-blueticket",
+    "originalRepository": "viniciuspizettadesouza/challenge-blueticket",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^2.6.11",
+    "language": "javascript",
+    "bundler": "vue-cli",
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "PORT"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "public/index.html",
+      "server.js",
+      "src/App.vue",
+      "src/main.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-swordhealth",
+    "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^3.0.0",
+    "language": "typescript",
+    "bundler": null,
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "PORT",
+      "SERVER",
+      "VUE_ROUTER_BASE",
+      "VUE_ROUTER_MODE"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "index.html",
+      "src/App.vue",
+      "src/i18n/en-US/index.ts",
+      "src/i18n/index.ts",
+      "src/router/index.ts",
+      "src/stores/index.ts"
+    ],
+    "nodeVersion": "^18 || ^16 || ^14.19",
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-pipz",
+    "originalRepository": "viniciuspizettadesouza/challenge-pipz",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^16.10.2",
+    "language": "javascript",
+    "bundler": "create-react-app",
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "REACT_APP_API_URL"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "public/index.html",
+      "src/App.js",
+      "src/index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "upgrade-react",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-propertiag",
+    "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b",
+    "imported": true,
+    "framework": "react",
+    "frameworkVersion": "^18.1.0",
+    "language": "typescript",
+    "bundler": null,
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": true,
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "envVariables": [],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "pages/index.tsx"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-react",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-fyld-hansecom",
+    "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^2.6.14",
+    "language": "javascript",
+    "bundler": null,
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "pages/index.vue",
+      "store/index.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-onsign-tv",
+    "originalRepository": "viniciuspizettadesouza/challenge-onsign-tv",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^2.6.12",
+    "language": "javascript",
+    "bundler": "vue-cli",
+    "packageManager": "yarn",
+    "hasRouter": false,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [],
+    "packageRoots": [
+      "onsigntv_frontend"
+    ],
+    "entrypoints": [
+      "onsigntv_frontend/public/index.html",
+      "onsigntv_frontend/src/App.vue",
+      "onsigntv_frontend/src/main.js"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "pending"
+  },
+  {
+    "slug": "challenge-ingenious-build-frontend",
+    "originalRepository": "viniciuspizettadesouza/challenge-ingenious-build-frontend",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87",
+    "imported": true,
+    "framework": "vue",
+    "frameworkVersion": "^3.2.13",
+    "language": "typescript",
+    "bundler": "vue-cli",
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "envVariables": [
+      "BASE_URL",
+      "NODE_ENV"
+    ],
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "public/index.html",
+      "src/App.vue",
+      "src/interfaces/index.ts",
+      "src/main.ts",
+      "src/router/index.ts",
+      "src/store/index.ts",
+      "src/utils/index.ts"
+    ],
+    "nodeVersion": null,
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "pending"
+  }
+]

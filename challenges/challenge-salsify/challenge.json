@@ -1,1 +1,19 @@
-{"slug":"challenge-salsify","title":"Salsify Challenge","originalRepository":"viniciuspizettadesouza/challenge-salsify","originalDefaultBranch":"main","originalHeadSha":"","framework":"react","frameworkVersion":"18","technologies":["React","TypeScript","Vite"],"renderer":"react","migrationStrategy":"native-react","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-salsify",
+  "title": "Salsify Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-salsify",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4",
+  "framework": "react",
+  "frameworkVersion": "^18.2.0",
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "renderer": "react",
+  "migrationStrategy": "native-react",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": false
+}

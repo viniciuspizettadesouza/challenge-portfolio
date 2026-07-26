@@ -8,9 +8,11 @@ Atualizado em 2026-07-26.
 | Configuração | Concluída | 20 repositórios confirmados via GitHub |
 | Backups | Concluída | 20 mirrors e 20 bundles verificados no diretório externo |
 | Metadados | Concluída | exportados no diretório externo; revisão antes de publicação ainda necessária |
-| Importação | Pronta | backups verificados e `git-filter-repo` disponível |
-| Inventário | Bloqueado | depende das árvores `original/` |
-| Shell Astro | Em andamento | catálogo estático em construção |
+| Importação | Concluída | 20 branches padrão importadas com merge individual |
+| Verificação | Concluída | 20 árvores e conjuntos de autores conferidos |
+| Inventário | Em andamento | inventário automático gerado; revisão manual pendente |
+| Segurança | Bloqueada para publicação | achados registrados em `security-review.md` |
+| Shell Astro | Concluída | 20 rotas de challenge e build estático validados |
 | Demos piloto | Pendente | depende do inventário |
 | Ondas restantes | Pendente | depende dos pilotos |
 | Deploy/limpeza | Pendente | depende de todas as fases anteriores |

@@ -1,1 +1,15 @@
-{"slug":"challenge-lagoasoft","title":"Lagoasoft Challenge","originalRepository":"viniciuspizettadesouza/challenge-lagoasoft","originalDefaultBranch":"master","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-lagoasoft",
+  "title": "Lagoasoft Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-lagoasoft",
+  "originalDefaultBranch": "master",
+  "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1",
+  "framework": "react",
+  "frameworkVersion": "^16.11.0",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "upgrade-react",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": false
+}

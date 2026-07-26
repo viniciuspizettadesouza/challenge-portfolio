@@ -1,1 +1,15 @@
-{"slug":"challenge-propertiag","title":"PropertiaG Challenge","originalRepository":"viniciuspizettadesouza/challenge-propertiag","originalDefaultBranch":"main","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-propertiag",
+  "title": "PropertiaG Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b",
+  "framework": "react",
+  "frameworkVersion": "^18.1.0",
+  "technologies": [],
+  "renderer": "react",
+  "migrationStrategy": "native-react",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": false
+}

@@ -1,1 +1,15 @@
-{"slug":"challenge-devlandia","title":"Devlandia Challenge","originalRepository":"viniciuspizettadesouza/challenge-devlandia","originalDefaultBranch":"main","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-devlandia",
+  "title": "Devlandia Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-devlandia",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6",
+  "framework": "",
+  "frameworkVersion": "",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "manual-review",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": false
+}

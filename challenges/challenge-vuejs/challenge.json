@@ -1,1 +1,20 @@
-{"slug":"challenge-vuejs","title":"Vue.js Challenge","originalRepository":"viniciuspizettadesouza/challenge-vuejs","originalDefaultBranch":"main","originalHeadSha":"","framework":"vue","frameworkVersion":"3","technologies":["Vue","TypeScript","Pinia","Vue Router"],"renderer":"vue3","migrationStrategy":"native-vue3","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-vuejs",
+  "title": "Vue.js Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889",
+  "framework": "vue",
+  "frameworkVersion": "^3.4.21",
+  "technologies": [
+    "Vue",
+    "TypeScript",
+    "Pinia",
+    "Vue Router"
+  ],
+  "renderer": "vue3",
+  "migrationStrategy": "native-vue3",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

@@ -1,1 +1,15 @@
-{"slug":"challenge-conaz","title":"Conaz Challenge","originalRepository":"viniciuspizettadesouza/challenge-conaz","originalDefaultBranch":"master","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-conaz",
+  "title": "Conaz Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-conaz",
+  "originalDefaultBranch": "master",
+  "originalHeadSha": "69264714c1376d8150364d68fe749f97d9eb9ca0",
+  "framework": "",
+  "frameworkVersion": "",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "manual-review",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": false
+}

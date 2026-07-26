@@ -1,1 +1,15 @@
-{"slug":"challenge-fyld-hansecom","title":"FYLD / HanseCom Challenge","originalRepository":"viniciuspizettadesouza/challenge-fyld-hansecom","originalDefaultBranch":"main","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-fyld-hansecom",
+  "title": "FYLD / HanseCom Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79",
+  "framework": "vue",
+  "frameworkVersion": "^2.6.14",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "upgrade-vue2",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

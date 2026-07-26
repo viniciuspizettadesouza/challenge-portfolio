@@ -1,5 +1,5 @@
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { relative, resolve } from "node:path";
 import { projectRoot, readManifest } from "./lib.mjs";
 
 const repositories = readManifest();
@@ -13,18 +13,61 @@ function readJson(path) {
   }
 }
 
+function walk(root, predicate, results = []) {
+  if (!existsSync(root)) return results;
+  for (const entry of readdirSync(root, { withFileTypes: true })) {
+    if (
+      entry.name === ".git" ||
+      entry.name === "node_modules" ||
+      entry.name === "dist" ||
+      entry.name === "build" ||
+      entry.name === "coverage"
+    ) {
+      continue;
+    }
+    const path = resolve(root, entry.name);
+    if (entry.isDirectory()) {
+      walk(path, predicate, results);
+    } else if (predicate(path, entry.name)) {
+      results.push(path);
+    }
+  }
+  return results;
+}
+
 for (const repository of repositories) {
   const root = resolve(projectRoot, "challenges", repository.name, "original");
-  const packageJson = readJson(resolve(root, "package.json"));
-  const dependencies = {
-    ...(packageJson?.dependencies ?? {}),
-    ...(packageJson?.devDependencies ?? {}),
-  };
+  const packagePaths = walk(root, (_, name) => name === "package.json");
+  const packages = packagePaths
+    .map((path) => ({ path, data: readJson(path) }))
+    .filter(({ data }) => data);
+  const dependencies = packages.reduce(
+    (result, { data }) => ({
+      ...result,
+      ...(data.dependencies ?? {}),
+      ...(data.devDependencies ?? {}),
+    }),
+    {},
+  );
+  const sourcePaths = walk(root, (_, name) =>
+    /\.(?:js|jsx|ts|tsx|vue|astro|html)$/.test(name),
+  );
+  const source = sourcePaths
+    .filter((path) => readFileSync(path).byteLength < 1_000_000)
+    .map((path) => readFileSync(path, "utf8"))
+    .join("\n");
+  const envVariables = [
+    ...new Set(
+      [...source.matchAll(/(?:process\.env|import\.meta\.env)\.([A-Z][A-Z0-9_]*)/g)].map(
+        (match) => match[1],
+      ),
+    ),
+  ].sort();
   const framework = dependencies.vue
     ? "vue"
     : dependencies.react
       ? "react"
-      : packageJson
+      : packages.length
         ? "unknown"
         : null;
   const frameworkVersion =
@@ -34,15 +77,22 @@ for (const repository of repositories) {
         ? dependencies.react
         : null;
   const major = Number.parseInt(frameworkVersion?.match(/\d+/)?.[0] ?? "0", 10);
-  const strategy =
-    framework === "vue" && major >= 3
+  const hasBackend =
+    Boolean(dependencies.express || dependencies.fastify || dependencies["@nestjs/core"]) ||
+    packagePaths.some((path) => /\/(?:backend|server)\//i.test(path));
+  const hasStaticEntry = walk(root, (_, name) => name === "index.html").length > 0;
+  const strategy = hasBackend
+    ? "mock-backend"
+    : framework === "vue" && major >= 3
       ? "native-vue3"
       : framework === "vue"
         ? "upgrade-vue2"
         : framework === "react" && major >= 18
           ? "native-react"
           : framework === "react"
-            ? "upgrade-react"
+          ? "upgrade-react"
+          : hasStaticEntry
+            ? "static-embed"
             : "manual-review";
 
   inventory.push({
@@ -54,10 +104,10 @@ for (const repository of repositories) {
     framework,
     frameworkVersion,
     language:
-      existsSync(resolve(root, "tsconfig.json")) ||
-      existsSync(resolve(root, "tsconfig.app.json"))
+      walk(root, (_, name) => name === "tsconfig.json" || name === "tsconfig.app.json")
+        .length > 0
         ? "typescript"
-        : packageJson
+        : packages.length
           ? "javascript"
           : null,
     bundler: dependencies.vite
@@ -67,11 +117,11 @@ for (const repository of repositories) {
         : dependencies["@vue/cli-service"]
           ? "vue-cli"
           : null,
-    packageManager: existsSync(resolve(root, "pnpm-lock.yaml"))
+    packageManager: walk(root, (_, name) => name === "pnpm-lock.yaml").length
       ? "pnpm"
-      : existsSync(resolve(root, "yarn.lock"))
+      : walk(root, (_, name) => name === "yarn.lock").length
         ? "yarn"
-        : existsSync(resolve(root, "package-lock.json"))
+        : walk(root, (_, name) => name === "package-lock.json").length
           ? "npm"
           : null,
     hasRouter: Boolean(dependencies["react-router-dom"] || dependencies["vue-router"]),
@@ -81,9 +131,17 @@ for (const repository of repositories) {
         dependencies["@testing-library/react"] ||
         dependencies["@vue/test-utils"],
     ),
-    hasBackend: Boolean(
-      dependencies.express || dependencies.fastify || dependencies["@nestjs/core"],
-    ),
+    hasBackend,
+    hasExternalApi:
+      envVariables.some((name) => /API|SERVER|URL|GRAPHQL|TOKEN/.test(name)) ||
+      /\b(?:fetch|axios|ApolloClient)\s*(?:\(|\.)/.test(source),
+    envVariables,
+    packageRoots: packages.map(({ path }) => relative(root, resolve(path, "..")) || "."),
+    entrypoints: sourcePaths
+      .filter((path) => /\/(?:main|index|App|server)\.(?:js|jsx|ts|tsx|vue|html)$/.test(path))
+      .map((path) => relative(root, path))
+      .slice(0, 20),
+    nodeVersion: packages.find(({ data }) => data.engines?.node)?.data.engines.node ?? null,
     migrationStrategy: existsSync(root) ? strategy : "manual-review",
     migrationStatus: "pending",
   });
@@ -114,4 +172,3 @@ writeFileSync(
 );
 
 console.log(`Inventory written for ${inventory.length} repositories.`);
-
