@@ -1,4 +1,12 @@
 # Conaz Challenge
 
-History imported, sanitized, and verified. Demo strategy requires manual review.
-Do not modify `original/`.
+History imported, sanitized, and verified.
+
+## Portfolio presentation
+
+The dependency-free JavaScript exercises are available as an interactive Astro
+demo. The adaptation covers character frequency, run-length encoding, and
+monthly member updates.
+
+The historical implementation remains unchanged under `original/`. The
+browser-safe adaptation lives under `demo/`.

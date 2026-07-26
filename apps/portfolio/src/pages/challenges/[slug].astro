@@ -38,11 +38,7 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
       <section class="panel panel--demo">
         <p class="eyebrow">Presentation</p>
         <h2>
-          {
-            ["challenge-salsify", "challenge-vue"].includes(challenge.slug)
-              ? "Interactive demo"
-              : "Demo in preparation"
-          }
+          {challenge.demoPath ? "Interactive demo" : "Demo in preparation"}
         </h2>
         <ChallengeDemo slug={challenge.slug} />
       </section>

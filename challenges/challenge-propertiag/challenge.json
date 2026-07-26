@@ -9,7 +9,7 @@
   "technologies": [],
   "renderer": "react",
   "migrationStrategy": "native-react",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "pending",
   "hasBackend": false,
   "hasExternalApi": false
 }

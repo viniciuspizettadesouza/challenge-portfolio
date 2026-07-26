@@ -14,12 +14,15 @@ for (const repository of repositories) {
   const metadata = JSON.parse(readFileSync(metadataPath, "utf8"));
   const audit = inventory.find((item) => item.slug === repository.name);
   const migrationStatus =
-    repository.importStatus === "imported" ? "in-progress" : "pending";
+    audit?.migrationStatus ??
+    (repository.importStatus === "imported" ? "in-progress" : "pending");
   const renderer =
     audit?.migrationStrategy === "native-react"
       ? "react"
       : audit?.migrationStrategy === "native-vue3"
         ? "vue3"
+        : audit?.migrationStrategy === "static-embed"
+          ? "static"
         : metadata.renderer ?? "case-study";
 
   const updated = {

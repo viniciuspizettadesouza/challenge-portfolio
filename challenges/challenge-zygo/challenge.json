@@ -6,9 +6,12 @@
   "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4",
   "framework": "",
   "frameworkVersion": "",
-  "technologies": [],
-  "renderer": "case-study",
-  "migrationStrategy": "manual-review",
+  "technologies": [
+    "JavaScript",
+    "Astro"
+  ],
+  "renderer": "static",
+  "migrationStrategy": "static-embed",
   "migrationStatus": "in-progress",
   "hasBackend": false,
   "hasExternalApi": false

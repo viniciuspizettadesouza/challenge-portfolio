@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Pilot demos | In progress | Salsify and Vue integrated and tested; screenshots pending |
-| Remaining migration waves | Pending | 18 demos or complete case studies |
+| Interactive demos | In progress | Salsify, Vue, Conaz, Zygo, and Devlandia integrated and tested; screenshots pending |
+| Remaining migration waves | Pending | 15 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
 Use `docs/migration/legacy-runtime-assessment.md` to record durable strategy
-confirmations for all 20 challenges. Then finish the two pilot screenshots
-before starting the remaining low-effort projects.
+confirmations for all 20 challenges. Capture evidence for the five interactive
+demos before starting the remaining low-effort projects.
 
 ## Environment observed
 

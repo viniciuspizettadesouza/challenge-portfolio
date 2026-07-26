@@ -27,7 +27,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "mock-backend",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-vue",
@@ -59,7 +61,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending"
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 3/Vite application integrated as a tested Astro island."
   },
   {
     "slug": "challenge-vuejs",
@@ -90,7 +94,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-castlabs",
@@ -127,7 +133,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-react",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-conaz",
@@ -150,8 +158,10 @@
       "index.js"
     ],
     "nodeVersion": null,
-    "migrationStrategy": "manual-review",
-    "migrationStatus": "pending"
+    "migrationStrategy": "static-embed",
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Dependency-free JavaScript algorithms adapted to an interactive Astro demo."
   },
   {
     "slug": "challenge-jexperts",
@@ -186,7 +196,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "mock-backend",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-zygo",
@@ -209,8 +221,10 @@
       "index.js"
     ],
     "nodeVersion": null,
-    "migrationStrategy": "manual-review",
-    "migrationStatus": "pending"
+    "migrationStrategy": "static-embed",
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo."
   },
   {
     "slug": "challenge-salsify",
@@ -240,7 +254,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-react",
-    "migrationStatus": "pending"
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Modern React/Vite application integrated as a tested Astro island."
   },
   {
     "slug": "challenge-climateseed",
@@ -271,7 +287,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-lagoasoft",
@@ -303,7 +321,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-react",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-devlandia",
@@ -324,8 +344,10 @@
     "packageRoots": [],
     "entrypoints": [],
     "nodeVersion": null,
-    "migrationStrategy": "manual-review",
-    "migrationStatus": "pending"
+    "migrationStrategy": "static-embed",
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript."
   },
   {
     "slug": "challenge-meetime",
@@ -353,7 +375,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-vue2",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-instruct",
@@ -379,7 +403,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "manual-review",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-blueticket",
@@ -410,7 +436,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-vue2",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-swordhealth",
@@ -446,7 +474,9 @@
     ],
     "nodeVersion": "^18 || ^16 || ^14.19",
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-pipz",
@@ -476,7 +506,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-react",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-propertiag",
@@ -502,7 +534,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-react",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-fyld-hansecom",
@@ -529,7 +563,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-vue2",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-onsign-tv",
@@ -557,7 +593,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-vue2",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   },
   {
     "slug": "challenge-ingenious-build-frontend",
@@ -592,6 +630,8 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending"
+    "migrationStatus": "pending",
+    "reviewStatus": "unreviewed",
+    "reviewNotes": ""
   }
 ]
