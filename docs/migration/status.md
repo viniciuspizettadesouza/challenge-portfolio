@@ -11,11 +11,12 @@ Atualizado em 2026-07-26.
 | Importação | Concluída | 20 branches padrão importadas com merge individual |
 | Verificação | Concluída | 20 árvores e conjuntos de autores conferidos |
 | Inventário | Em andamento | inventário automático gerado; revisão manual pendente |
-| Segurança | Bloqueada para publicação | achados registrados em `security-review.md` |
+| Segurança | Concluída | histórico sanitizado e Gitleaks sem ocorrências |
 | Shell Astro | Concluída | 20 rotas de challenge e build estático validados |
 | Demos piloto | Em andamento | Salsify e Vue integrados e testados; screenshots pendentes |
 | Ondas restantes | Pendente | depende dos pilotos |
-| Deploy/limpeza | Pendente | depende de todas as fases anteriores |
+| Publicação inicial | Pronta | branch `main` validada para o primeiro push |
+| Deploy/limpeza | Pendente | demos restantes e checklist final ainda necessários |
 
 ## Ambiente observado
 

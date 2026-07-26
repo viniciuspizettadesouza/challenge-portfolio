@@ -13,9 +13,14 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-stormtech.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:28.044Z",
-    "rewrittenHeadSha": "cb74e0bb21bc5876df56befcc7f3545dd287f80b",
-    "importMergeSha": "dae08552e14a7a4cf71166f6b5e753bc13eb7330",
-    "importedAt": "2026-07-26T17:55:45.292Z"
+    "rewrittenHeadSha": "71bb04cb4f0cb7487a5cc7a3a3c52bfb86a631a1",
+    "importMergeSha": "b291cd9ead8e392febddb75774df2db0fd444edf",
+    "importedAt": "2026-07-26T17:55:45.292Z",
+    "sanitizedPaths": [
+      "backend/node_modules"
+    ],
+    "redactedPaths": [],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -32,8 +37,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:30.525Z",
     "rewrittenHeadSha": "5a98d41e7e3bfee29ff8016d6119791de0fa9596",
-    "importMergeSha": "dd7fb5bd02c3ccdaf8fc0606ea9003a3f242e5d0",
-    "importedAt": "2026-07-26T17:55:46.212Z"
+    "importMergeSha": "647af1f0dbcf00e7f15c41a1866b154fe2dea276",
+    "importedAt": "2026-07-26T17:55:46.212Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -50,8 +58,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:32.891Z",
     "rewrittenHeadSha": "45d2d56e47ebbb445946dc5085d640b444166e55",
-    "importMergeSha": "7e2406db05b608337e9693ad55f596dfce86444b",
-    "importedAt": "2026-07-26T17:55:47.198Z"
+    "importMergeSha": "d1cf3a8e6f59620eb034739c3d33b093cba44fe8",
+    "importedAt": "2026-07-26T17:55:47.198Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -68,8 +79,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:35.252Z",
     "rewrittenHeadSha": "ae1bb2ec35edb00dc9c6451e033bd5ef5b5febb1",
-    "importMergeSha": "32b78de0578185ea3abe07108e5846e94ce03541",
-    "importedAt": "2026-07-26T17:55:48.171Z"
+    "importMergeSha": "e36e45a053142c605ce41c00d916e9f91f5e4bc1",
+    "importedAt": "2026-07-26T17:55:48.171Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -86,8 +100,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:37.569Z",
     "rewrittenHeadSha": "d76144b9a7355ab31d3761e52811b6c08810f0d5",
-    "importMergeSha": "8f0730e997d925c336af138c14c935ed6cc13523",
-    "importedAt": "2026-07-26T17:55:49.129Z"
+    "importMergeSha": "e5a8acd3718ccc254ba138cbfc1e2d59f34971ca",
+    "importedAt": "2026-07-26T17:55:49.129Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -103,9 +120,14 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-jexperts.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:40.322Z",
-    "rewrittenHeadSha": "67ab75021332aa7d7f0f309f4ca065c15d109b44",
-    "importMergeSha": "6faf66653c4b82263fb3baf31f3f88beff92fc09",
-    "importedAt": "2026-07-26T17:55:51.317Z"
+    "rewrittenHeadSha": "981ad8db44bf2e441a8a7189c2238a3df9107ba3",
+    "importMergeSha": "761ebad772e1ff98aec39880795b35a53c0bf98e",
+    "importedAt": "2026-07-26T17:55:51.317Z",
+    "sanitizedPaths": [
+      "backend/node_modules"
+    ],
+    "redactedPaths": [],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -122,8 +144,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:42.684Z",
     "rewrittenHeadSha": "b1e287446f9b7a53fc9c54a4c4750970f64cc667",
-    "importMergeSha": "33c4115bdd594847b4747c8a4ae59c69fffb3617",
-    "importedAt": "2026-07-26T17:55:52.412Z"
+    "importMergeSha": "e7276e9c5e069e1e9ebafc21675802ef132b122a",
+    "importedAt": "2026-07-26T17:55:52.412Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -141,7 +166,10 @@
     "metadataExportedAt": "2026-07-26T17:53:45.181Z",
     "rewrittenHeadSha": "96d1cc59e3ae2c9cf17077419504c9104c4a48f3",
     "importMergeSha": "d6e07a0c31691b50b2a52ffcfe57e412d5b0fe74",
-    "importedAt": "2026-07-26T17:55:16.350Z"
+    "importedAt": "2026-07-26T17:55:16.350Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -158,8 +186,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:47.454Z",
     "rewrittenHeadSha": "ad5a8c0de7c5cae1908847e3c8cb9114e6f1bb46",
-    "importMergeSha": "727077e72f97a3141923ba87b0652d7e568318d6",
-    "importedAt": "2026-07-26T17:55:53.284Z"
+    "importMergeSha": "22af170b10b040c056ef5ee1f2a4606ba72d8db1",
+    "importedAt": "2026-07-26T17:55:53.284Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -176,8 +207,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:50.051Z",
     "rewrittenHeadSha": "f275c1355913a8c738b5a79cc7ee104d0865e5ba",
-    "importMergeSha": "a5ae215fd49de7cc4ec8eefe48117bb8164daf26",
-    "importedAt": "2026-07-26T17:55:54.314Z"
+    "importMergeSha": "8e88a79e160aed0ca2dda3bbb50fd0e238fafd56",
+    "importedAt": "2026-07-26T17:55:54.314Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -194,8 +228,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:52.502Z",
     "rewrittenHeadSha": "dc0b78e31cb21d388695e0adfe1c47e670d5c2a8",
-    "importMergeSha": "8f41eac16b3c242f8456548e8bdf4afdc6c4568d",
-    "importedAt": "2026-07-26T17:55:55.215Z"
+    "importMergeSha": "fae2f3a4aab49c887a600b6a4216791aa3040473",
+    "importedAt": "2026-07-26T17:55:55.215Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -211,9 +248,14 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-meetime.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:54.794Z",
-    "rewrittenHeadSha": "f85f6e1272d096c710a39a26339f4f6c11621b47",
-    "importMergeSha": "78e90c1083566a2af48a58c638926e56c9c901c6",
-    "importedAt": "2026-07-26T17:55:58.173Z"
+    "rewrittenHeadSha": "c5f6b68aeaa3b4587a55f68e6b88397218ee653e",
+    "importMergeSha": "bcaefb24c96a1b57036b45d099a614edd12bffb1",
+    "importedAt": "2026-07-26T17:55:58.173Z",
+    "sanitizedPaths": [
+      "node_modules"
+    ],
+    "redactedPaths": [],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -230,8 +272,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:57.052Z",
     "rewrittenHeadSha": "46fd900f34ed8b639ac4d9843293d389e3d4a18a",
-    "importMergeSha": "21089b4275a24d9d9895f662a72d42f6b5a90d5f",
-    "importedAt": "2026-07-26T17:55:59.054Z"
+    "importMergeSha": "efd2819367e5a967500482cf76bbe3742e9184e3",
+    "importedAt": "2026-07-26T17:55:59.054Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -247,9 +292,15 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-blueticket.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:53:59.410Z",
-    "rewrittenHeadSha": "bc0ea1be770f3dcefd54f04690b5ec28e2435be2",
-    "importMergeSha": "357683ae3b0d4fce7d245b51eb5d89ff675aed32",
-    "importedAt": "2026-07-26T17:56:00.214Z"
+    "rewrittenHeadSha": "b533a643b47e9934f6d2af50337c027774a969e5",
+    "importMergeSha": "f5bb4b7ee4705a23375efac123a5c34b0fd79655",
+    "importedAt": "2026-07-26T17:56:00.214Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [
+      "blueticket_frontend/src/components/InputGeocode.vue",
+      "src/components/InputGeocode.vue"
+    ],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -266,8 +317,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:54:01.615Z",
     "rewrittenHeadSha": "b5bfad077bcfdd173f34a27855be2a4eedbbfbf2",
-    "importMergeSha": "fbbcef0e828b62c3ae98c90c3c887526d7933ba0",
-    "importedAt": "2026-07-26T17:56:01.433Z"
+    "importMergeSha": "bd55fbd60cd07fb91e281b9932015f0d94ad4222",
+    "importedAt": "2026-07-26T17:56:01.433Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -283,9 +337,14 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-pipz.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:54:04.401Z",
-    "rewrittenHeadSha": "f5162c582b5f31e996881161d5c6b5aaa66ddaf6",
-    "importMergeSha": "8aa60c1de34f62c84d91617ddce86ba5107d4596",
-    "importedAt": "2026-07-26T17:56:02.916Z"
+    "rewrittenHeadSha": "02e687889db44eb27ab35d872f486c2831f1603a",
+    "importMergeSha": "84b2c62867014a5a47b823986cf7a3cf920ac0d8",
+    "importedAt": "2026-07-26T17:56:02.916Z",
+    "sanitizedPaths": [
+      ".env"
+    ],
+    "redactedPaths": [],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -302,8 +361,11 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:54:06.683Z",
     "rewrittenHeadSha": "d9f61541584fd83898792d7cbe19d4d8893bedf0",
-    "importMergeSha": "c6a19d50e99070f4c3159ea450672abff2886a13",
-    "importedAt": "2026-07-26T17:56:04.044Z"
+    "importMergeSha": "b06cfb12313b007361cbbf77e54d148353d2a63c",
+    "importedAt": "2026-07-26T17:56:04.044Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -319,9 +381,16 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-fyld-hansecom.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:54:08.989Z",
-    "rewrittenHeadSha": "702dd6f2622cfa2d5f149a603882bc16ad597f25",
-    "importMergeSha": "efd5f71296f081aa9be6758f8e6a6a02b981cdb7",
-    "importedAt": "2026-07-26T17:56:05.135Z"
+    "rewrittenHeadSha": "6d7d2d65b66e45a37a7c6eca0d1d59a324a7ccab",
+    "importMergeSha": "2aab1f14988c4ab436bb5999d98e040b7ba4fe27",
+    "importedAt": "2026-07-26T17:56:05.135Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [
+      "components/Tutorial.vue",
+      "pages/index.vue",
+      "store/index.js"
+    ],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -337,9 +406,16 @@
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-onsign-tv.bundle",
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:54:11.463Z",
-    "rewrittenHeadSha": "8da62a3f9139bdb857e4f83eec128e999b678ae5",
-    "importMergeSha": "879c03675fcf868a641d8ed6e87c3672d8215418",
-    "importedAt": "2026-07-26T17:56:06.276Z"
+    "rewrittenHeadSha": "25bac0fb9628190a22a1098ebdf3de2593e94931",
+    "importMergeSha": "5101d1d767f6a9c73f0b087337953079d0b08da1",
+    "importedAt": "2026-07-26T17:56:06.276Z",
+    "sanitizedPaths": [
+      "OnSign TV Front End Programming Test 3A (2).pdf"
+    ],
+    "redactedPaths": [
+      "onsigntv_frontend/src/App.vue"
+    ],
+    "sanitizationStatus": "sanitized"
   },
   {
     "owner": "viniciuspizettadesouza",
@@ -356,7 +432,10 @@
     "metadataStatus": "exported",
     "metadataExportedAt": "2026-07-26T17:54:13.813Z",
     "rewrittenHeadSha": "6122686c1ae799f9e6dfbbf21812cc6bfdf48575",
-    "importMergeSha": "b3c0b196a1542d61418829063f52813b2e688bca",
-    "importedAt": "2026-07-26T17:56:07.124Z"
+    "importMergeSha": "742e9c44819b2dcdcd13da2ab5534e5b29846de4",
+    "importedAt": "2026-07-26T17:56:07.124Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
   }
 ]
