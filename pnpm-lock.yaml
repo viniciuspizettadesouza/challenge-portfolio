@@ -6,7 +6,17 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      react:
+        specifier: 19.2.8
+        version: 19.2.8
+      react-dom:
+        specifier: 19.2.8
+        version: 19.2.8(react@19.2.8)
+      vue:
+        specifier: 3.5.40
+        version: 3.5.40(typescript@6.0.3)
 
   apps/portfolio:
     dependencies:

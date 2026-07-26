@@ -16,16 +16,16 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Security | Completed | public history sanitized; Gitleaks reports no findings |
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
-| Technical inventory | In progress | automatic inventory generated; manual review pending |
+| Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
 | Pilot demos | In progress | Salsify and Vue integrated and tested; screenshots pending |
 | Remaining migration waves | Pending | 18 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Manually review `docs/migration/inventory.json` and confirm or correct each
-challenge's proposed strategy. Then finish the two pilot screenshots before
-starting the modern React/Vite wave.
+Use `docs/migration/legacy-runtime-assessment.md` to record durable strategy
+confirmations for all 20 challenges. Then finish the two pilot screenshots
+before starting the remaining low-effort projects.
 
 ## Environment observed
 
