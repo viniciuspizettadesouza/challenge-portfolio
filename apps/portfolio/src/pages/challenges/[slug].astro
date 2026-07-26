@@ -1,0 +1,65 @@
+---
+import type { GetStaticPaths } from "astro";
+import { challenges, type Challenge } from "../../challenges/registry";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export const getStaticPaths = (() =>
+  challenges.map((challenge) => ({
+    params: { slug: challenge.slug },
+    props: { challenge },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  challenge: Challenge;
+}
+
+const { challenge } = Astro.props;
+const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio/tree/main/${challenge.sourcePath}`;
+---
+
+<BaseLayout title={`${challenge.title} — Challenge Portfolio`}>
+  <article>
+    <header class="challenge-hero">
+      <a class="back-link" href="/challenges">← Todos os challenges</a>
+      <div class="challenge-title">
+        <div>
+          <p class="eyebrow">{challenge.company}</p>
+          <h1>{challenge.title}</h1>
+        </div>
+        <span class:list={["status", `status--${challenge.migrationStatus}`]}>
+          {challenge.migrationStatus}
+        </span>
+      </div>
+      <p class="hero__copy">{challenge.description}</p>
+    </header>
+
+    <div class="detail-grid">
+      <section class="panel">
+        <p class="eyebrow">Apresentação</p>
+        <h2>Demo em preparação</h2>
+        <p>
+          Este challenge está catalogado, mas só receberá uma demo depois que o
+          código original e o histórico forem importados e auditados.
+        </p>
+      </section>
+
+      <aside class="panel panel--meta">
+        <dl>
+          <div><dt>Status</dt><dd>{challenge.migrationStatus}</dd></div>
+          <div><dt>Estratégia</dt><dd>{challenge.migrationStrategy}</dd></div>
+          <div><dt>Branch original</dt><dd>{challenge.originalDefaultBranch}</dd></div>
+          <div>
+            <dt>Repositório original</dt>
+            <dd>{challenge.originalRepository}</dd>
+          </div>
+          <div>
+            <dt>SHA original</dt>
+            <dd>{challenge.originalHeadSha || "Aguardando importação"}</dd>
+          </div>
+        </dl>
+        <a class="button button--secondary" href={sourceUrl}>Ver código preservado</a>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+

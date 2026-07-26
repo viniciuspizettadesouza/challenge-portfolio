@@ -1,0 +1,24 @@
+{
+  "name": "challenge-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter portfolio dev",
+    "build": "pnpm --filter portfolio build",
+    "preview": "pnpm --filter portfolio preview",
+    "lint": "pnpm --filter portfolio lint",
+    "typecheck": "pnpm --filter portfolio typecheck",
+    "test": "pnpm --filter portfolio test",
+    "verify:migration": "node scripts/migration/verify-imports.mjs",
+    "inventory": "node scripts/migration/generate-inventory.mjs",
+    "migration:check": "node scripts/migration/check-environment.mjs",
+    "migration:backup": "node scripts/migration/backup-repositories.mjs",
+    "migration:metadata": "node scripts/migration/export-github-metadata.mjs",
+    "migration:import": "node scripts/migration/import-history.mjs"
+  }
+}
+

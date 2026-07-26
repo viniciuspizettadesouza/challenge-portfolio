@@ -1,0 +1,31 @@
+---
+import ChallengeCard from "../components/ChallengeCard.astro";
+import { challenges } from "../challenges/registry";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Challenge Portfolio">
+  <section class="hero">
+    <p class="eyebrow">Arquivo vivo de trabalho</p>
+    <h1>Vinte desafios.<br />Uma história navegável.</h1>
+    <p class="hero__copy">
+      Código original e decisões técnicas preservados, com demos adaptadas para
+      continuar funcionando na web atual.
+    </p>
+    <a class="button" href="/challenges">Explorar os challenges</a>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Catálogo</p>
+        <h2>Primeiros da fila</h2>
+      </div>
+      <a href="/challenges">Ver todos ({challenges.length})</a>
+    </div>
+    <div class="grid">
+      {challenges.slice(0, 6).map((challenge) => <ChallengeCard challenge={challenge} />)}
+    </div>
+  </section>
+</BaseLayout>
+

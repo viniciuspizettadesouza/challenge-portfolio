@@ -1,0 +1,22 @@
+---
+import ChallengeCard from "../../components/ChallengeCard.astro";
+import { challenges } from "../../challenges/registry";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Challenges — Challenge Portfolio">
+  <section class="page-intro">
+    <p class="eyebrow">20 repositórios, um catálogo</p>
+    <h1>Challenges</h1>
+    <p>
+      Cada página documenta o código preservado, o contexto e a estratégia usada
+      para manter o projeto acessível.
+    </p>
+  </section>
+  <section class="section" aria-label="Lista de challenges">
+    <div class="grid">
+      {challenges.map((challenge) => <ChallengeCard challenge={challenge} />)}
+    </div>
+  </section>
+</BaseLayout>
+
