@@ -25,12 +25,15 @@
     "originalHeadSha": "1729ec23692ae5b749e55ff5b9718bb37c499b53",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:14.886Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-vue.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-vue.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:30.525Z"
+    "metadataExportedAt": "2026-07-26T17:53:30.525Z",
+    "rewrittenHeadSha": "5a98d41e7e3bfee29ff8016d6119791de0fa9596",
+    "importMergeSha": "dd7fb5bd02c3ccdaf8fc0606ea9003a3f242e5d0",
+    "importedAt": "2026-07-26T17:55:46.212Z"
   },
   {
     "owner": "viniciuspizettadesouza",
