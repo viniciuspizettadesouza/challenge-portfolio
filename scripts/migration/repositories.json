@@ -7,12 +7,15 @@
     "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:14.336Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-stormtech.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-stormtech.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:28.044Z"
+    "metadataExportedAt": "2026-07-26T17:53:28.044Z",
+    "rewrittenHeadSha": "cb74e0bb21bc5876df56befcc7f3545dd287f80b",
+    "importMergeSha": "dae08552e14a7a4cf71166f6b5e753bc13eb7330",
+    "importedAt": "2026-07-26T17:55:45.292Z"
   },
   {
     "owner": "viniciuspizettadesouza",
