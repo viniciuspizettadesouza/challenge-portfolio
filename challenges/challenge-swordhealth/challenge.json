@@ -1,1 +1,15 @@
-{"slug":"challenge-swordhealth","title":"Sword Health Challenge","originalRepository":"viniciuspizettadesouza/challenge-swordhealth","originalDefaultBranch":"main","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-swordhealth",
+  "title": "Sword Health Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5",
+  "framework": "vue",
+  "frameworkVersion": "^3.0.0",
+  "technologies": [],
+  "renderer": "vue3",
+  "migrationStrategy": "native-vue3",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

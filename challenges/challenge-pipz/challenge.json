@@ -1,1 +1,15 @@
-{"slug":"challenge-pipz","title":"Pipz Challenge","originalRepository":"viniciuspizettadesouza/challenge-pipz","originalDefaultBranch":"master","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-pipz",
+  "title": "Pipz Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-pipz",
+  "originalDefaultBranch": "master",
+  "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3",
+  "framework": "react",
+  "frameworkVersion": "^16.10.2",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "upgrade-react",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

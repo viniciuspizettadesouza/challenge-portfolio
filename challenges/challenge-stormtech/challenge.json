@@ -1,1 +1,15 @@
-{"slug":"challenge-stormtech","title":"Stormtech Challenge","originalRepository":"viniciuspizettadesouza/challenge-stormtech","originalDefaultBranch":"master","originalHeadSha":"","framework":"react","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"upgrade-react","migrationStatus":"pending","hasBackend":true,"hasExternalApi":false}
+{
+  "slug": "challenge-stormtech",
+  "title": "Stormtech Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-stormtech",
+  "originalDefaultBranch": "master",
+  "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d",
+  "framework": "react",
+  "frameworkVersion": "^16.11.0",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "mock-backend",
+  "migrationStatus": "in-progress",
+  "hasBackend": true,
+  "hasExternalApi": true
+}

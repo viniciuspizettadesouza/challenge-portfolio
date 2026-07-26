@@ -14,11 +14,10 @@
     "typecheck": "pnpm --filter portfolio typecheck",
     "test": "pnpm --filter portfolio test",
     "verify:migration": "node scripts/migration/verify-imports.mjs",
-    "inventory": "node scripts/migration/generate-inventory.mjs",
+    "inventory": "node scripts/migration/generate-inventory.mjs && node scripts/migration/sync-challenge-metadata.mjs",
     "migration:check": "node scripts/migration/check-environment.mjs",
     "migration:backup": "node scripts/migration/backup-repositories.mjs",
     "migration:metadata": "node scripts/migration/export-github-metadata.mjs",
     "migration:import": "node scripts/migration/import-history.mjs"
   }
 }
-

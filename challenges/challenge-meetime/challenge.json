@@ -1,1 +1,19 @@
-{"slug":"challenge-meetime","title":"Meetime Challenge","originalRepository":"viniciuspizettadesouza/challenge-meetime","originalDefaultBranch":"main","originalHeadSha":"","framework":"vue","frameworkVersion":"2","technologies":["Vue","Vue CLI","Vuetify"],"renderer":"case-study","migrationStrategy":"upgrade-vue2","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-meetime",
+  "title": "Meetime Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-meetime",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1",
+  "framework": "vue",
+  "frameworkVersion": "^2.6.11",
+  "technologies": [
+    "Vue",
+    "Vue CLI",
+    "Vuetify"
+  ],
+  "renderer": "case-study",
+  "migrationStrategy": "upgrade-vue2",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

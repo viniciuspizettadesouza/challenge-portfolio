@@ -1,1 +1,15 @@
-{"slug":"challenge-zygo","title":"Zygo Challenge","originalRepository":"viniciuspizettadesouza/challenge-zygo","originalDefaultBranch":"master","originalHeadSha":"","framework":"","frameworkVersion":"","technologies":[],"renderer":"case-study","migrationStrategy":"manual-review","migrationStatus":"pending","hasBackend":false,"hasExternalApi":false}
+{
+  "slug": "challenge-zygo",
+  "title": "Zygo Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-zygo",
+  "originalDefaultBranch": "master",
+  "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4",
+  "framework": "",
+  "frameworkVersion": "",
+  "technologies": [],
+  "renderer": "case-study",
+  "migrationStrategy": "manual-review",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": false
+}
