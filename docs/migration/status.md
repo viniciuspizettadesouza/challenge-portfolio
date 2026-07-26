@@ -13,7 +13,7 @@ Atualizado em 2026-07-26.
 | Inventário | Em andamento | inventário automático gerado; revisão manual pendente |
 | Segurança | Bloqueada para publicação | achados registrados em `security-review.md` |
 | Shell Astro | Concluída | 20 rotas de challenge e build estático validados |
-| Demos piloto | Pendente | depende do inventário |
+| Demos piloto | Em andamento | Salsify e Vue integrados e testados; screenshots pendentes |
 | Ondas restantes | Pendente | depende dos pilotos |
 | Deploy/limpeza | Pendente | depende de todas as fases anteriores |
 
