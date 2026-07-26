@@ -78,6 +78,8 @@ try {
   run(
     "git",
     [
+      "-c",
+      "commit.gpgsign=false",
       "merge",
       "--allow-unrelated-histories",
       "--no-ff",
@@ -98,7 +100,13 @@ try {
   run("git", ["add", "scripts/migration/repositories.json"], { cwd: projectRoot });
   run(
     "git",
-    ["commit", "-m", `chore(migration): record ${repository.name} import`],
+    [
+      "-c",
+      "commit.gpgsign=false",
+      "commit",
+      "-m",
+      `chore(migration): record ${repository.name} import`,
+    ],
     { cwd: projectRoot },
   );
 } finally {
