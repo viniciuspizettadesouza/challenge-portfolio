@@ -1,6 +1,12 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { argument, output, projectRoot, readManifest } from "./lib.mjs";
+import {
+  argument,
+  output,
+  projectRoot,
+  readManifest,
+  writeManifest,
+} from "./lib.mjs";
 
 const backupRoot = resolve(
   argument("backup-dir", resolve(projectRoot, "../challenge-portfolio-backups")),
@@ -37,7 +43,9 @@ for (const repository of repositories) {
   for (const [name, data] of Object.entries(files)) {
     writeFileSync(resolve(target, name), `${JSON.stringify(data, null, 2)}\n`);
   }
+  repository.metadataStatus = "exported";
+  repository.metadataExportedAt = new Date().toISOString();
+  writeManifest(repositories);
 }
 
 console.log(`Metadata exported to ${outputRoot}. Review it before publication.`);
-

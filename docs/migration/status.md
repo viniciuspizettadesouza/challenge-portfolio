@@ -4,10 +4,11 @@ Atualizado em 2026-07-26.
 
 | Fase | Estado | Evidência / bloqueio |
 | --- | --- | --- |
-| Ambiente | Em andamento | Git 2.43.0, Node 24.18.0 e Python 3.12.3 disponíveis |
-| Configuração | Em andamento | 20 repositórios confirmados via GitHub |
-| Backups | Pendente | Diretório externo ainda não criado |
-| Importação | Bloqueada | depende de backups verificados e `git-filter-repo` |
+| Ambiente | Concluída | Git, Node, pnpm, Python, `git-filter-repo` e GitHub disponíveis |
+| Configuração | Concluída | 20 repositórios confirmados via GitHub |
+| Backups | Concluída | 20 mirrors e 20 bundles verificados no diretório externo |
+| Metadados | Concluída | exportados no diretório externo; revisão antes de publicação ainda necessária |
+| Importação | Pronta | backups verificados e `git-filter-repo` disponível |
 | Inventário | Bloqueado | depende das árvores `original/` |
 | Shell Astro | Em andamento | catálogo estático em construção |
 | Demos piloto | Pendente | depende do inventário |
@@ -16,12 +17,13 @@ Atualizado em 2026-07-26.
 
 ## Ambiente observado
 
-- `pnpm`: ausente;
-- `git-filter-repo`: ausente;
+- `pnpm`: 10.13.1;
+- `git-filter-repo`: 2.47.0, instalação local ignorada pelo Git;
 - Git LFS: ausente;
-- `gh`: instalado, mas a credencial local está inválida;
+- Git LFS não é necessário para as branches padrão auditadas (`usesLfs=false`);
+- `gh`: autenticado;
 - remote do novo repositório: configurado;
 - branch local: `main`, ainda sem commits no início desta execução.
 
-Os repositórios remotos originais não foram alterados.
-
+Os repositórios remotos originais não foram alterados. Backups e metadados ficam
+em `../challenge-portfolio-backups/` e não são versionados.

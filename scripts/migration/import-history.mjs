@@ -39,9 +39,13 @@ if (output("git", ["status", "--porcelain"], { cwd: projectRoot })) {
 
 run("git", ["filter-repo", "--version"]);
 
-const mirror = repository.backupMirror;
+const mirror = repository.backupMirror
+  ? resolve(projectRoot, repository.backupMirror)
+  : null;
 if (!mirror || !existsSync(mirror)) {
-  throw new Error(`Mirror not found for ${repository.name}: ${mirror ?? "unset"}`);
+  throw new Error(
+    `Mirror not found for ${repository.name}: ${repository.backupMirror ?? "unset"}`,
+  );
 }
 
 const temporaryRoot = mkdtempSync(resolve(tmpdir(), `${repository.name}-`));

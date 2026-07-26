@@ -25,7 +25,7 @@ for (const repository of repositories) {
     const sourceTree = lines(
       "git",
       ["ls-tree", "-r", "--format=%(objectname) %(path)", repository.originalHeadSha],
-      repository.backupMirror,
+      resolve(projectRoot, repository.backupMirror),
     );
     const importedTree = lines(
       "git",
@@ -85,4 +85,3 @@ const report = [
 writeFileSync(resolve(projectRoot, "docs/migration/history-report.md"), report);
 console.log(report);
 if (failures > 0) process.exitCode = 1;
-

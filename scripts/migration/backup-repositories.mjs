@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
-import { basename, resolve } from "node:path";
+import { basename, relative, resolve } from "node:path";
 import {
   argument,
   output,
@@ -63,8 +63,8 @@ for (const repository of repositories) {
 
     repository.backupStatus = "verified";
     repository.backupVerifiedAt = new Date().toISOString();
-    repository.backupMirror = mirror;
-    repository.backupBundle = bundle;
+    repository.backupMirror = relative(projectRoot, mirror);
+    repository.backupBundle = relative(projectRoot, bundle);
     delete repository.backupError;
   } catch (error) {
     repository.backupStatus = "failed";
@@ -78,4 +78,3 @@ for (const repository of repositories) {
 }
 
 console.log(`\nAll ${repositories.length} backups verified in ${backupRoot}`);
-
