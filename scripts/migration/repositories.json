@@ -349,11 +349,14 @@
     "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:25.393Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-ingenious-build-frontend.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-ingenious-build-frontend.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:54:13.813Z"
+    "metadataExportedAt": "2026-07-26T17:54:13.813Z",
+    "rewrittenHeadSha": "6122686c1ae799f9e6dfbbf21812cc6bfdf48575",
+    "importMergeSha": "b3c0b196a1542d61418829063f52813b2e688bca",
+    "importedAt": "2026-07-26T17:56:07.124Z"
   }
 ]
