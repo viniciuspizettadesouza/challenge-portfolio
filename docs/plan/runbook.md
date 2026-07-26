@@ -1,61 +1,71 @@
-# Runbook da migração
+# Migration runbook
 
-Execute comandos a partir da raiz de `challenge-portfolio`.
+Run commands from the `challenge-portfolio` repository root.
 
-## 1. Preparar o ambiente
+## 1. Prepare the environment
 
 ```bash
 corepack enable
 pnpm migration:check
 ```
 
-Instale `git-filter-repo` pelo gerenciador de pacotes do sistema ou em um
-ambiente isolado. Instale Git LFS caso algum repositório use LFS. Autentique o
-GitHub CLI com `gh auth login -h github.com` para exportar metadados completos.
+Install `git-filter-repo` through the system package manager or an isolated
+environment. Install Git LFS only if a repository uses LFS. Authenticate the
+GitHub CLI with `gh auth login -h github.com` when complete metadata export is
+required.
 
-## 2. Criar backups
+## 2. Maintain backups
 
-Por padrão, o script usa o diretório irmão
-`../challenge-portfolio-backups`. É possível substituí-lo:
+The backup script defaults to the sibling directory
+`../challenge-portfolio-backups`. It can be overridden:
 
 ```bash
-pnpm migration:backup -- --backup-dir /caminho/seguro
+pnpm migration:backup -- --backup-dir /secure/path
 ```
 
-O script cria mirrors, busca objetos LFS quando necessário, cria bundles e os
-verifica. Ele é retomável e não altera repositórios remotos.
+The script creates or updates mirrors, fetches LFS objects when required,
+creates bundles, and verifies them. It is resumable and does not modify remote
+repositories.
 
-## 3. Exportar metadados
+## 3. Export metadata
 
 ```bash
 pnpm migration:metadata
 ```
 
-Revise os JSONs antes de publicá-los para remover dados pessoais desnecessários.
+Review exported JSON before publication and remove unnecessary personal data.
 
-## 4. Importar
+## 4. Import history
 
-Confirme que o worktree está limpo e que todos os backups estão `verified`.
-Importe um repositório por vez:
+This phase is complete for the initial 20 repositories. If it ever needs to be
+repeated, confirm that the worktree is clean and all backups are `verified`,
+then import one repository at a time:
 
 ```bash
 pnpm migration:import -- --repository challenge-vue
 ```
 
-O script cria um clone temporário, executa `git-filter-repo`, importa tags,
-produz um merge commit e remove o remote temporário.
+The script creates a temporary clone, runs `git-filter-repo`, imports tags,
+creates a merge commit, and removes the temporary remote.
 
-## 5. Validar e inventariar
+After any authorized history sanitization, refresh rewritten SHAs:
+
+```bash
+pnpm migration:refresh
+```
+
+## 5. Verify and inventory
 
 ```bash
 pnpm verify:migration
 pnpm inventory
 ```
 
-Revise `docs/migration/history-report.md` e
-`docs/migration/inventory.md`. Nenhuma diferença inesperada é aceitável.
+Review `docs/migration/history-report.md` and
+`docs/migration/inventory.md`. Unexpected differences are not acceptable.
+Expected sanitization differences must be declared in the repository manifest.
 
-## 6. Desenvolver e validar o portfólio
+## 6. Develop and validate the portfolio
 
 ```bash
 pnpm install
@@ -66,8 +76,23 @@ pnpm build
 pnpm preview
 ```
 
-## 7. Encerrar
+## 7. Resume implementation
 
-Siga `docs/migration/deletion-checklist.md`. A ferramenta não implementa
-exclusão remota; essa decisão pertence ao proprietário após revisão manual.
+Read `docs/migration/status.md` and continue from its first `In progress` or
+`Pending` phase. The current implementation priority is:
 
+1. manually review the generated inventory;
+2. finish screenshots and completion evidence for Salsify and Vue;
+3. implement the remaining demos or case studies by migration wave.
+
+## 8. Finalize
+
+Follow `docs/migration/deletion-checklist.md`. The tooling does not implement
+remote deletion. That decision belongs to the repository owner after manual
+review.
+
+## Git policy
+
+Automated agents may stage files only when the repository owner explicitly
+requests it. They must not commit, push, tag, or open pull requests. Leave
+changes unstaged in the working tree by default.

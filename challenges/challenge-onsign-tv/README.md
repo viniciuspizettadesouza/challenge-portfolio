@@ -1,4 +1,4 @@
 # OnSign TV Challenge
 
-Importação histórica e auditoria pendentes. O original não deve ser modificado.
-
+History imported, sanitized, and verified. The Vue 2 adaptation is pending.
+Do not modify `original/`.

@@ -1,27 +1,38 @@
-# Checklist para exclusão manual
+# Manual deletion checklist
 
-Não execute exclusões enquanto houver qualquer item desmarcado.
+Do not delete any original repository while any required item remains
+unchecked.
 
-- [ ] 20 mirror clones existem fora do novo repositório.
-- [ ] 20 bundles foram criados.
-- [ ] 20 bundles passaram em `git bundle verify`.
-- [ ] Metadados do GitHub foram exportados e revisados.
-- [ ] Código original dos 20 projetos está no monorepo.
-- [ ] Histórico da branch padrão dos 20 projetos foi importado.
-- [ ] Autores, e-mails, mensagens e datas foram comparados.
-- [ ] Nenhum segredo ou material confidencial permanece.
-- [x] Repositório unificado foi enviado ao GitHub.
-- [x] Clone novo do repositório unificado funciona.
-- [x] `pnpm install` funciona no clone novo.
-- [x] Build passa no clone novo; lint, typecheck e testes passaram no checkout principal.
-- [ ] As 20 páginas existem e foram revisadas.
-- [ ] Cada challenge possui demo funcional ou case study completa.
-- [ ] Aplicação está publicada.
-- [ ] Tag e release `migration-complete` foram criadas.
-- [ ] Há cópia dos backups em outro disco ou armazenamento.
-- [ ] Checklist foi revisado manualmente pelo proprietário.
+## Preservation and migration
 
-## Exclusão
+- [x] 20 mirror clones exist outside the new repository.
+- [x] 20 bundles were created.
+- [x] All 20 bundles passed `git bundle verify`.
+- [x] GitHub metadata was exported.
+- [x] Sanitized source for all 20 projects exists in the monorepo.
+- [x] Default-branch history for all 20 projects was imported.
+- [x] Authors, emails, and trees were compared.
+- [x] The public history was sanitized.
+- [x] Gitleaks reports no remaining findings.
 
-A exclusão é feita manualmente, um repositório por vez, pelo proprietário.
-Nenhum script deste projeto contém uma operação de exclusão remota.
+## Repository validation
+
+- [x] The unified repository was pushed to GitHub.
+- [x] A fresh clone of the unified repository works.
+- [x] `pnpm install --frozen-lockfile` works in the fresh clone.
+- [x] The fresh-clone build generates all 20 challenge routes.
+- [x] Lint, typecheck, tests, and build pass in the primary checkout.
+- [ ] All 20 pages have been manually reviewed.
+- [ ] Every challenge has a functional demo or a complete case study.
+
+## Release and recovery
+
+- [ ] The application is deployed.
+- [ ] The `migration-complete` tag and release exist.
+- [ ] At least one backup copy exists on another disk or storage provider.
+- [ ] The repository owner has manually reviewed this checklist.
+
+## Deletion
+
+Deletion is a manual, one-repository-at-a-time action performed by the owner.
+No project script contains a remote repository deletion operation.

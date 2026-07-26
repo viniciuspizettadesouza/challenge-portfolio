@@ -1,4 +1,4 @@
 # Meetime Challenge
 
-Projeto Vue 2 reservado para a última onda. Importação e auditoria pendentes.
-
+History imported, sanitized, and verified. This Vue 2 project remains in the
+final migration wave. Do not modify `original/`.

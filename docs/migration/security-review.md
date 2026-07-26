@@ -1,38 +1,38 @@
-# Revisão de segurança e publicação
+# Security and publication review
 
-Sanitização concluída em 2026-07-26. Nenhum valor sensível é reproduzido neste
-relatório.
+Sanitization completed on 2026-07-26. No sensitive value is reproduced in this
+report.
 
-## Itens removidos de todo o histórico publicável
+## Items removed from the complete public history
 
 - `challenge-pipz/original/.env`;
-- PDF do processo seletivo em `challenge-onsign-tv/original`;
-- `node_modules` históricos de `challenge-stormtech`;
-- `node_modules` históricos de `challenge-jexperts`;
-- `node_modules` históricos de `challenge-meetime`.
+- the recruitment-process PDF from `challenge-onsign-tv/original`;
+- historical `node_modules` from `challenge-stormtech`;
+- historical `node_modules` from `challenge-jexperts`;
+- historical `node_modules` from `challenge-meetime`.
 
-Os conteúdos integrais anteriores à sanitização continuam recuperáveis nos
-mirrors, bundles individuais e no bundle externo
+The complete pre-sanitization content remains recoverable through the external
+mirrors, individual bundles, and
 `pre-sanitization-challenge-portfolio.bundle`.
 
-## Valores redigidos
+## Redacted values
 
-O Gitleaks 8.30.1 encontrou três valores únicos compatíveis com chaves de API
-em históricos de `challenge-blueticket`, `challenge-fyld-hansecom` e
-`challenge-onsign-tv`. Os valores foram substituídos por `[REDACTED]` em todos
-os commits alcançáveis da branch publicável.
+Gitleaks 8.30.1 found three unique values matching API-key rules in histories
+from `challenge-blueticket`, `challenge-fyld-hansecom`, and
+`challenge-onsign-tv`. Those values were replaced with `[REDACTED]` throughout
+the public history.
 
-## Validação
+## Validation
 
-- Gitleaks 8.30.1;
-- 268 commits examinados;
-- aproximadamente 12,77 MB analisados;
-- nenhuma ocorrência após a sanitização;
-- arquivos temporários contendo os valores originais apagados com segurança.
+- scanner: Gitleaks 8.30.1;
+- commits scanned: 268;
+- data scanned: approximately 12.77 MB;
+- findings after sanitization: none;
+- temporary files containing original values: securely deleted.
 
-## Resultado
+## Result
 
-A branch `main` está liberada para a publicação inicial. Os repositórios
-originais não foram alterados e não devem ser apagados até a conclusão do
-checklist geral.
+The `main` branch was approved for initial publication. Original remote
+repositories remain unchanged and must not be deleted until the full deletion
+checklist is complete.
 

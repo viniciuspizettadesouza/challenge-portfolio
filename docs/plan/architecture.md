@@ -1,46 +1,46 @@
-# Arquitetura
+# Architecture
 
-## Objetivo
+## Objective
 
-Consolidar 20 repositórios públicos em um monorepo navegável, preservando o
-código da branch padrão, autores, mensagens e datas dos commits, além de
-backups completos das referências Git.
+Consolidate 20 public repositories into a navigable monorepo while preserving
+the default-branch source, commit authors, messages and dates, plus complete
+external backups of Git references.
 
-## Estrutura
+## Structure
 
 ```text
-apps/portfolio/                 shell Astro estático
-challenges/<slug>/original/     árvore e histórico preservados
-challenges/<slug>/demo/         adaptação executável opcional
+apps/portfolio/                 static Astro shell
+challenges/<slug>/original/     preserved, sanitized tree and history
+challenges/<slug>/demo/         optional executable adaptation
 challenges/<slug>/challenge.json
 challenges/<slug>/README.md
-docs/migration/                 evidências e estado da migração
-scripts/migration/              automação auditável
+docs/migration/                 migration evidence and current status
+scripts/migration/              auditable automation
 ```
 
-## Aplicação
+## Application
 
-- Astro com TypeScript estrito e saída estática;
-- integrações oficiais de React e Vue 3;
-- CSS compartilhado, sem biblioteca visual;
-- rotas `/`, `/challenges`, `/challenges/[slug]` e `/about`;
-- registry tipado contendo os 20 challenges;
-- páginas disponíveis mesmo quando uma demo ainda estiver pendente.
+- Astro with strict TypeScript and static output;
+- official React and Vue 3 integrations;
+- shared CSS without a component library;
+- `/`, `/challenges`, `/challenges/[slug]`, and `/about` routes;
+- a typed registry containing all 20 challenges;
+- pages remain available while a demo is pending.
 
-## Isolamento
+## Isolation
 
-Somente `apps/*`, `packages/*` e `challenges/*/demo` pertencem ao workspace
-pnpm. `original/` fica fora dele para impedir instalação acidental de
-dependências legadas e execução de scripts desconhecidos.
+Only `apps/*`, `packages/*`, and `challenges/*/demo` belong to the pnpm
+workspace. `original/` is excluded to prevent accidental installation of legacy
+dependencies or execution of unknown scripts.
 
-## Estratégias de apresentação
+## Presentation strategies
 
-- `native-react`: componente React moderno integrado ao Astro;
-- `native-vue3`: componente Vue 3 integrado ao Astro;
-- `static-embed`: build estático isolado;
-- `upgrade-vue2`: adaptação controlada para Vue 3;
-- `upgrade-react`: adaptação de React legado;
-- `mock-backend`: frontend executado com fixtures ou mocks;
-- `case-study`: documentação completa quando execução não for viável;
-- `manual-review`: bloqueia migração automática.
+- `native-react`: modern React component integrated into Astro;
+- `native-vue3`: Vue 3 component integrated into Astro;
+- `static-embed`: isolated static build;
+- `upgrade-vue2`: controlled Vue 2 to Vue 3 adaptation;
+- `upgrade-react`: legacy React adaptation;
+- `mock-backend`: frontend backed by local fixtures or mocks;
+- `case-study`: complete documentation when execution is not practical;
+- `manual-review`: blocks automatic migration until reviewed.
 

@@ -6,26 +6,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Challenge Portfolio">
   <section class="hero">
-    <p class="eyebrow">Arquivo vivo de trabalho</p>
-    <h1>Vinte desafios.<br />Uma história navegável.</h1>
+    <p class="eyebrow">A living work archive</p>
+    <h1>Twenty challenges.<br />One navigable history.</h1>
     <p class="hero__copy">
-      Código original e decisões técnicas preservados, com demos adaptadas para
-      continuar funcionando na web atual.
+      Original source and technical decisions preserved, with adapted demos
+      designed to keep working on the modern web.
     </p>
-    <a class="button" href="/challenges">Explorar os challenges</a>
+    <a class="button" href="/challenges">Explore the challenges</a>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Catálogo</p>
-        <h2>Primeiros da fila</h2>
+        <p class="eyebrow">Catalog</p>
+        <h2>First in line</h2>
       </div>
-      <a href="/challenges">Ver todos ({challenges.length})</a>
+      <a href="/challenges">View all ({challenges.length})</a>
     </div>
     <div class="grid">
       {challenges.slice(0, 6).map((challenge) => <ChallengeCard challenge={challenge} />)}
     </div>
   </section>
 </BaseLayout>
-
