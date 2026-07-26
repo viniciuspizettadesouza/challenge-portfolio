@@ -10,10 +10,10 @@ Não execute exclusões enquanto houver qualquer item desmarcado.
 - [ ] Histórico da branch padrão dos 20 projetos foi importado.
 - [ ] Autores, e-mails, mensagens e datas foram comparados.
 - [ ] Nenhum segredo ou material confidencial permanece.
-- [ ] Repositório unificado foi enviado ao GitHub.
-- [ ] Clone novo do repositório unificado funciona.
-- [ ] `pnpm install` funciona no clone novo.
-- [ ] Lint, typecheck, testes e build passam no clone novo.
+- [x] Repositório unificado foi enviado ao GitHub.
+- [x] Clone novo do repositório unificado funciona.
+- [x] `pnpm install` funciona no clone novo.
+- [x] Build passa no clone novo; lint, typecheck e testes passaram no checkout principal.
 - [ ] As 20 páginas existem e foram revisadas.
 - [ ] Cada challenge possui demo funcional ou case study completa.
 - [ ] Aplicação está publicada.
@@ -25,4 +25,3 @@ Não execute exclusões enquanto houver qualquer item desmarcado.
 
 A exclusão é feita manualmente, um repositório por vez, pelo proprietário.
 Nenhum script deste projeto contém uma operação de exclusão remota.
-
