@@ -15,7 +15,7 @@ Atualizado em 2026-07-26.
 | Shell Astro | Concluída | 20 rotas de challenge e build estático validados |
 | Demos piloto | Em andamento | Salsify e Vue integrados e testados; screenshots pendentes |
 | Ondas restantes | Pendente | depende dos pilotos |
-| Publicação inicial | Pronta | branch `main` validada para o primeiro push |
+| Publicação inicial | Concluída | `main` publicada no GitHub e confirmada como branch padrão |
 | Deploy/limpeza | Pendente | demos restantes e checklist final ainda necessários |
 
 ## Ambiente observado
@@ -30,3 +30,9 @@ Atualizado em 2026-07-26.
 
 Os repositórios remotos originais não foram alterados. Backups e metadados ficam
 em `../challenge-portfolio-backups/` e não são versionados.
+
+## Validação do upstream
+
+Um clone novo do repositório público foi criado em 2026-07-26. Nesse clone,
+`pnpm install --frozen-lockfile` e `pnpm build` passaram, gerando 23 páginas
+estáticas.
