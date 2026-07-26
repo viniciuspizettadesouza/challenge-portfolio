@@ -11,6 +11,17 @@ function lines(command, args, cwd) {
   return value ? value.split("\n") : [];
 }
 
+function treePath(entry) {
+  return entry.slice(entry.indexOf(" ") + 1);
+}
+
+function normalizeRedactions(entries, redactedPaths = []) {
+  return entries.map((entry) => {
+    const path = treePath(entry);
+    return redactedPaths.includes(path) ? `<redacted> ${path}` : entry;
+  });
+}
+
 for (const repository of repositories) {
   if (repository.importStatus !== "imported") {
     rows.push({
@@ -22,20 +33,32 @@ for (const repository of repositories) {
   }
 
   try {
-    const sourceTree = lines(
-      "git",
-      ["ls-tree", "-r", "--format=%(objectname) %(path)", repository.originalHeadSha],
-      resolve(projectRoot, repository.backupMirror),
+    const sourceTree = normalizeRedactions(
+      lines(
+        "git",
+        ["ls-tree", "-r", "--format=%(objectname) %(path)", repository.originalHeadSha],
+        resolve(projectRoot, repository.backupMirror),
+      ).filter((entry) => {
+        const path = treePath(entry);
+        return !(repository.sanitizedPaths ?? []).some(
+          (sanitizedPath) =>
+            path === sanitizedPath || path.startsWith(`${sanitizedPath}/`),
+        );
+      }),
+      repository.redactedPaths,
     );
-    const importedTree = lines(
-      "git",
-      [
-        "ls-tree",
-        "-r",
-        "--format=%(objectname) %(path)",
-        `${repository.rewrittenHeadSha}:challenges/${repository.name}/original`,
-      ],
-      projectRoot,
+    const importedTree = normalizeRedactions(
+      lines(
+        "git",
+        [
+          "ls-tree",
+          "-r",
+          "--format=%(objectname) %(path)",
+          `${repository.rewrittenHeadSha}:challenges/${repository.name}/original`,
+        ],
+        projectRoot,
+      ),
+      repository.redactedPaths,
     );
     const sourceAuthors = lines(
       "git",
@@ -52,6 +75,9 @@ for (const repository of repositories) {
     const authorsMatch =
       JSON.stringify([...new Set(sourceAuthors)]) ===
       JSON.stringify([...new Set(importedAuthors)]);
+    const sanitized =
+      (repository.sanitizedPaths ?? []).length > 0 ||
+      (repository.redactedPaths ?? []).length > 0;
     const status = treeMatches && authorsMatch ? "verified" : "failed";
     failures += status === "failed" ? 1 : 0;
 
@@ -60,7 +86,13 @@ for (const repository of repositories) {
       status,
       detail: `tree=${treeMatches ? "ok" : "different"}, authors=${
         authorsMatch ? "ok" : "different"
-      }, files=${sourceTree.length}`,
+      }, files=${sourceTree.length}${
+        sanitized
+          ? `, removed=${(repository.sanitizedPaths ?? []).join(", ") || "—"}, redacted=${
+              (repository.redactedPaths ?? []).join(", ") || "—"
+            }`
+          : ""
+      }`,
     });
   } catch (error) {
     failures += 1;
