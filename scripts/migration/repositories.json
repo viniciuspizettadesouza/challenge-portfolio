@@ -112,12 +112,15 @@
     "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:18.582Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-salsify.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-salsify.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:45.181Z"
+    "metadataExportedAt": "2026-07-26T17:53:45.181Z",
+    "rewrittenHeadSha": "96d1cc59e3ae2c9cf17077419504c9104c4a48f3",
+    "importMergeSha": "d6e07a0c31691b50b2a52ffcfe57e412d5b0fe74",
+    "importedAt": "2026-07-26T17:55:16.350Z"
   },
   {
     "owner": "viniciuspizettadesouza",
