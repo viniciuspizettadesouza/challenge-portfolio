@@ -97,12 +97,15 @@
     "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:17.519Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-jexperts.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-jexperts.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:40.322Z"
+    "metadataExportedAt": "2026-07-26T17:53:40.322Z",
+    "rewrittenHeadSha": "67ab75021332aa7d7f0f309f4ca065c15d109b44",
+    "importMergeSha": "6faf66653c4b82263fb3baf31f3f88beff92fc09",
+    "importedAt": "2026-07-26T17:55:51.317Z"
   },
   {
     "owner": "viniciuspizettadesouza",
