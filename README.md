@@ -25,6 +25,7 @@ The authoritative progress record is
 - [Roadmap](docs/plan/roadmap.md)
 - [Migration runbook](docs/plan/runbook.md)
 - [Decisions and constraints](docs/plan/decisions.md)
+- [Legacy runtime assessment](docs/migration/legacy-runtime-assessment.md)
 - [Security review](docs/migration/security-review.md)
 - [Deletion checklist](docs/migration/deletion-checklist.md)
 
@@ -60,4 +61,3 @@ repository.
 
 Automated agents must leave changes uncommitted and unpushed. The repository
 owner reviews, commits, and pushes all future work. See [`AGENTS.md`](AGENTS.md).
-

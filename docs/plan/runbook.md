@@ -82,8 +82,10 @@ Read `docs/migration/status.md` and continue from its first `In progress` or
 `Pending` phase. The current implementation priority is:
 
 1. manually review the generated inventory;
-2. finish screenshots and completion evidence for Salsify and Vue;
-3. implement the remaining demos or case studies by migration wave.
+2. follow `docs/migration/legacy-runtime-assessment.md` from the easiest
+   unverified project;
+3. finish screenshots and completion evidence for Salsify and Vue;
+4. implement the remaining demos or case studies by migration wave.
 
 ## 8. Finalize
 

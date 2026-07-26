@@ -20,5 +20,10 @@
     "migration:metadata": "node scripts/migration/export-github-metadata.mjs",
     "migration:import": "node scripts/migration/import-history.mjs",
     "migration:refresh": "node scripts/migration/refresh-import-metadata.mjs"
+  },
+  "devDependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "vue": "3.5.40"
   }
 }

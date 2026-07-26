@@ -32,6 +32,9 @@ Start with [`../migration/status.md`](../migration/status.md). Completed work
 remains visible there. Continue from the first phase marked `In progress` or
 `Pending`, and update the status and relevant checklist as evidence changes.
 
+Use [`../migration/legacy-runtime-assessment.md`](../migration/legacy-runtime-assessment.md)
+for the current easiest-to-hardest testing order and owner dependency assessment.
+
 Agents may stage files only when the repository owner explicitly requests it.
 They must not commit, push, tag, or open pull requests. The repository owner
 handles Git publication. See [`../../AGENTS.md`](../../AGENTS.md).
