@@ -187,12 +187,15 @@
     "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:20.239Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-devlandia.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-devlandia.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:52.502Z"
+    "metadataExportedAt": "2026-07-26T17:53:52.502Z",
+    "rewrittenHeadSha": "dc0b78e31cb21d388695e0adfe1c47e670d5c2a8",
+    "importMergeSha": "8f41eac16b3c242f8456548e8bdf4afdc6c4568d",
+    "importedAt": "2026-07-26T17:55:55.215Z"
   },
   {
     "owner": "viniciuspizettadesouza",
