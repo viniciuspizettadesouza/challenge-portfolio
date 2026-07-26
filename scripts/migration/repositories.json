@@ -259,12 +259,15 @@
     "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:22.591Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-swordhealth.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-swordhealth.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:54:01.615Z"
+    "metadataExportedAt": "2026-07-26T17:54:01.615Z",
+    "rewrittenHeadSha": "b5bfad077bcfdd173f34a27855be2a4eedbbfbf2",
+    "importMergeSha": "fbbcef0e828b62c3ae98c90c3c887526d7933ba0",
+    "importedAt": "2026-07-26T17:56:01.433Z"
   },
   {
     "owner": "viniciuspizettadesouza",
