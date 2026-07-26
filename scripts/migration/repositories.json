@@ -205,12 +205,15 @@
     "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:20.940Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-meetime.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-meetime.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:54.794Z"
+    "metadataExportedAt": "2026-07-26T17:53:54.794Z",
+    "rewrittenHeadSha": "f85f6e1272d096c710a39a26339f4f6c11621b47",
+    "importMergeSha": "78e90c1083566a2af48a58c638926e56c9c901c6",
+    "importedAt": "2026-07-26T17:55:58.173Z"
   },
   {
     "owner": "viniciuspizettadesouza",
