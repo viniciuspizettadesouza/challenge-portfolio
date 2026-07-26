@@ -169,12 +169,15 @@
     "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:19.686Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-lagoasoft.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-lagoasoft.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:50.051Z"
+    "metadataExportedAt": "2026-07-26T17:53:50.051Z",
+    "rewrittenHeadSha": "f275c1355913a8c738b5a79cc7ee104d0865e5ba",
+    "importMergeSha": "a5ae215fd49de7cc4ec8eefe48117bb8164daf26",
+    "importedAt": "2026-07-26T17:55:54.314Z"
   },
   {
     "owner": "viniciuspizettadesouza",
