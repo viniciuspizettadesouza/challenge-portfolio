@@ -151,12 +151,15 @@
     "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:19.126Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-climateseed.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-climateseed.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:47.454Z"
+    "metadataExportedAt": "2026-07-26T17:53:47.454Z",
+    "rewrittenHeadSha": "ad5a8c0de7c5cae1908847e3c8cb9114e6f1bb46",
+    "importMergeSha": "727077e72f97a3141923ba87b0652d7e568318d6",
+    "importedAt": "2026-07-26T17:55:53.284Z"
   },
   {
     "owner": "viniciuspizettadesouza",
