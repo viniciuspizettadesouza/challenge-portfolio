@@ -115,12 +115,15 @@
     "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:18.037Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-zygo.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-zygo.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:42.684Z"
+    "metadataExportedAt": "2026-07-26T17:53:42.684Z",
+    "rewrittenHeadSha": "b1e287446f9b7a53fc9c54a4c4750970f64cc667",
+    "importMergeSha": "33c4115bdd594847b4747c8a4ae59c69fffb3617",
+    "importedAt": "2026-07-26T17:55:52.412Z"
   },
   {
     "owner": "viniciuspizettadesouza",
