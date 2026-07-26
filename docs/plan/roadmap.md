@@ -15,9 +15,9 @@ future contributors can see what happened and where to continue.
 | 5 — Import verification | Completed | `docs/migration/history-report.md` |
 | 6 — Technical inventory | In progress | automatic inventory complete; manual review pending |
 | 7 — Astro catalog | Completed | 20 challenge routes and static build |
-| 8 — Challenge structure | In progress | metadata complete; demo coverage incomplete |
-| 9 — Pilot demos | In progress | Salsify and Vue integrated; screenshots pending |
-| 10 — Remaining waves | Pending | 18 demos or case studies |
+| 8 — Challenge structure | In progress | metadata complete; 5 of 20 demos integrated |
+| 9 — Pilot demos | In progress | five interactive demos integrated; screenshots pending |
+| 10 — Remaining waves | Pending | 15 demos or case studies |
 | 11 — Repository quality | In progress | checks pass; clean-clone build verified |
 | 12 — Final release and cleanup | Pending | deploy, release, backup copy, manual review |
 
@@ -76,4 +76,3 @@ Finish Salsify and Vue screenshots first. Then continue in this order:
 Validate lint, types, tests, build, a clean clone, deploy, release, and an
 off-device backup copy. Original repository deletion remains manual and is
 blocked until every deletion-checklist item is complete.
-

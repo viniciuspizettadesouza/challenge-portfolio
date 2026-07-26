@@ -6,9 +6,13 @@
   "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6",
   "framework": "",
   "frameworkVersion": "",
-  "technologies": [],
-  "renderer": "case-study",
-  "migrationStrategy": "manual-review",
+  "technologies": [
+    "Ruby",
+    "TypeScript",
+    "Astro"
+  ],
+  "renderer": "static",
+  "migrationStrategy": "static-embed",
   "migrationStatus": "in-progress",
   "hasBackend": false,
   "hasExternalApi": false

@@ -13,6 +13,9 @@ function readJson(path) {
   }
 }
 
+const inventoryOverrides =
+  readJson(resolve(projectRoot, "docs/migration/inventory-overrides.json")) ?? {};
+
 function walk(root, predicate, results = []) {
   if (!existsSync(root)) return results;
   for (const entry of readdirSync(root, { withFileTypes: true })) {
@@ -95,7 +98,7 @@ for (const repository of repositories) {
             ? "static-embed"
             : "manual-review";
 
-  inventory.push({
+  const generated = {
     slug: repository.name,
     originalRepository: `${repository.owner}/${repository.name}`,
     originalDefaultBranch: repository.defaultBranch,
@@ -143,7 +146,15 @@ for (const repository of repositories) {
       .slice(0, 20),
     nodeVersion: packages.find(({ data }) => data.engines?.node)?.data.engines.node ?? null,
     migrationStrategy: existsSync(root) ? strategy : "manual-review",
-    migrationStatus: "pending",
+    migrationStatus: existsSync(resolve(projectRoot, "challenges", repository.name, "demo"))
+      ? "in-progress"
+      : "pending",
+    reviewStatus: "unreviewed",
+    reviewNotes: "",
+  };
+  inventory.push({
+    ...generated,
+    ...(inventoryOverrides[repository.name] ?? {}),
   });
 }
 
@@ -157,15 +168,15 @@ writeFileSync(
     "",
     `Generated at ${new Date().toISOString()} without installing historical dependencies.`,
     "",
-    "| Challenge | Imported | Framework | Bundler | Strategy |",
-    "| --- | --- | --- | --- | --- |",
+    "| Challenge | Imported | Framework | Bundler | Strategy | Review |",
+    "| --- | --- | --- | --- | --- | --- |",
     ...inventory.map(
       (item) =>
         `| ${item.slug} | ${item.imported ? "yes" : "no"} | ${
           item.framework ?? "—"
         } ${item.frameworkVersion ?? ""} | ${item.bundler ?? "—"} | ${
           item.migrationStrategy
-        } |`,
+        } | ${item.reviewStatus} |`,
     ),
     "",
   ].join("\n"),

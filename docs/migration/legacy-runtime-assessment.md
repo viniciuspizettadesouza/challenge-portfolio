@@ -25,9 +25,9 @@ No dependency was installed inside `challenges/*/original/`.
 
 | Rank | Project | Current evidence | Why it has this rank | Owner effort |
 | ---: | --- | --- | --- | --- |
-| 1 | `challenge-conaz` | Executed | One Node.js file, no dependencies, services, or credentials | None |
-| 2 | `challenge-zygo` | Executed | Two Node.js files and a local JSON fixture | None |
-| 3 | `challenge-devlandia` | Executed | Two dependency-free Ruby scripts; sample inputs run successfully | None beyond having Ruby |
+| 1 | `challenge-conaz` | Executed, Portfolio demo | One Node.js file, no dependencies, services, or credentials | None |
+| 2 | `challenge-zygo` | Executed, Portfolio demo | Two Node.js files and a local JSON fixture | None |
+| 3 | `challenge-devlandia` | Executed, Portfolio demo | Two dependency-free Ruby scripts; sample inputs run successfully | None beyond having Ruby |
 | 4 | `challenge-salsify` | Built, Portfolio demo | Modern React/Vite app with local data and no external API | None |
 | 5 | `challenge-vue` | Portfolio demo, Inspected | Small Vue 3/Vite app with no backend or private API | Low; independently build the preserved app |
 | 6 | `challenge-vuejs` | Built, Tested | Modern Vue 3/Vite app; production build and one unit test pass | Low; browser flow depends on a TVMaze request currently using HTTP |
@@ -58,8 +58,8 @@ challenge-salsify     npm clean install and production build passed
 challenge-vuejs       npm clean install, production build, and unit test passed
 ```
 
-The maintained Salsify and Vue portfolio demos also pass the portfolio lint,
-typecheck, tests, and static build.
+The maintained Salsify, Vue, Conaz, Zygo, and Devlandia portfolio demos also
+pass the portfolio lint, typecheck, tests, and static build.
 
 Climateseed installed successfully, but its build exposed existing TypeScript
 errors in `src/plugins/apexcharts.ts`, `src/router/index.ts`, and
@@ -68,8 +68,8 @@ lockfile, so an `npm ci` attempt is not a valid test for that project.
 
 ## Recommended testing order
 
-1. Record console evidence for Conaz, Zygo, and Devlandia, and capture browser
-   evidence for Salsify and Vue.
+1. Capture browser evidence for the five integrated demos: Conaz, Zygo,
+   Devlandia, Salsify, and Vue.
 2. Run a browser smoke test for Vue.js and replace its HTTP API URL with HTTPS
    or a fixture if necessary.
 3. Test Propertia with Yarn 1 and Node 16 or 18.

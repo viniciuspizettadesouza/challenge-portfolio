@@ -13,7 +13,7 @@
   ],
   "renderer": "case-study",
   "migrationStrategy": "upgrade-vue2",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "pending",
   "hasBackend": false,
   "hasExternalApi": true
 }

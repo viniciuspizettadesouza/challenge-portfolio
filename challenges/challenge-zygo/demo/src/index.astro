@@ -1,0 +1,168 @@
+---
+import { sortBooks, type Book } from "./logic";
+
+const books: Book[] = [
+  { id: 1, title: "Java How To Program", author: "Deitel & Deitel", edition: 2007 },
+  {
+    id: 2,
+    title: "Patterns of Enterprise Application Architecture",
+    author: "Martin Fowler",
+    edition: 2002,
+  },
+  {
+    id: 3,
+    title: "Head First Design Patterns",
+    author: "Elisabeth Freeman",
+    edition: 2004,
+  },
+  {
+    id: 4,
+    title: "Internet & World Wide Web: How to Program",
+    author: "Deitel & Deitel",
+    edition: 2007,
+  },
+];
+const initialBooks = sortBooks(books, "title-ascending");
+---
+
+<zygo-demo>
+  <label for="zygo-rule">Ordering rule</label>
+  <select id="zygo-rule">
+    <option value="title-ascending">Title ascending</option>
+    <option value="author-ascending-title-descending">
+      Author ascending, title descending
+    </option>
+    <option value="edition-descending-author-descending-title-ascending">
+      Edition descending, author descending, title ascending
+    </option>
+  </select>
+  <p class="result">
+    Ordered IDs: <output id="zygo-ids">{initialBooks.map(({ id }) => id).join(", ")}</output>
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Title</th><th>Author</th><th>Edition</th></tr>
+      </thead>
+      <tbody id="zygo-books">
+        {
+          initialBooks.map((book) => (
+            <tr>
+              <td>{book.id}</td><td>{book.title}</td><td>{book.author}</td>
+              <td>{book.edition}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</zygo-demo>
+
+<script>
+  import { sortBooks, type Book, type OrderingRule } from "./logic";
+
+  const books: Book[] = [
+    { id: 1, title: "Java How To Program", author: "Deitel & Deitel", edition: 2007 },
+    {
+      id: 2,
+      title: "Patterns of Enterprise Application Architecture",
+      author: "Martin Fowler",
+      edition: 2002,
+    },
+    {
+      id: 3,
+      title: "Head First Design Patterns",
+      author: "Elisabeth Freeman",
+      edition: 2004,
+    },
+    {
+      id: 4,
+      title: "Internet & World Wide Web: How to Program",
+      author: "Deitel & Deitel",
+      edition: 2007,
+    },
+  ];
+
+  class ZygoDemo extends HTMLElement {
+    connectedCallback() {
+      const select = this.querySelector<HTMLSelectElement>("#zygo-rule");
+      const body = this.querySelector<HTMLTableSectionElement>("#zygo-books");
+      const ids = this.querySelector<HTMLOutputElement>("#zygo-ids");
+
+      select?.addEventListener("change", () => {
+        const sorted = sortBooks(books, select.value as OrderingRule);
+        if (ids) ids.textContent = sorted.map(({ id }) => id).join(", ");
+        if (body) {
+          body.replaceChildren(
+            ...sorted.map((book) => {
+              const row = document.createElement("tr");
+              for (const value of [book.id, book.title, book.author, book.edition]) {
+                const cell = document.createElement("td");
+                cell.textContent = String(value);
+                row.append(cell);
+              }
+              return row;
+            }),
+          );
+        }
+      });
+    }
+  }
+
+  if (!customElements.get("zygo-demo")) {
+    customElements.define("zygo-demo", ZygoDemo);
+  }
+</script>
+
+<style>
+  zygo-demo {
+    display: block;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #a4ada6;
+    font-size: 0.8rem;
+  }
+
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    color: #f2f5ef;
+    background: #1b201d;
+    border: 1px solid #303732;
+    border-radius: 0.3rem;
+  }
+
+  .result {
+    color: #a4ada6;
+  }
+
+  output {
+    color: #b8f34a;
+    font-family: ui-monospace, monospace;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.7rem;
+    border: 1px solid #303732;
+    text-align: left;
+  }
+
+  th {
+    color: #a4ada6;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+</style>

@@ -9,7 +9,7 @@
   "technologies": [],
   "renderer": "case-study",
   "migrationStrategy": "mock-backend",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "pending",
   "hasBackend": true,
   "hasExternalApi": true
 }

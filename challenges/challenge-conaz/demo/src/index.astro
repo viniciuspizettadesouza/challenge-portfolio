@@ -1,0 +1,189 @@
+---
+import { countCharacters, runLengthEncode, updateMembers } from "./logic";
+
+const initialMembers = [
+  { number: 1, active: true, ticket: 10 },
+  { number: 2, active: false, ticket: 0 },
+  { number: 3, active: true, ticket: 12 },
+  { number: 4, active: false, ticket: 0 },
+  { number: 5, active: true, ticket: 14 },
+  { number: 6, active: true, ticket: 15 },
+];
+const incomingMembers = [
+  { number: 1, ticket: 16 },
+  { number: 3, ticket: 13 },
+  { number: 5, ticket: 15 },
+  { number: 8, ticket: 10 },
+  { number: 9, ticket: 19 },
+];
+---
+
+<conaz-demo>
+  <div class="demo-grid">
+    <section>
+      <h3>Character frequency</h3>
+      <label for="conaz-frequency">Text</label>
+      <input id="conaz-frequency" value="teste conaz" />
+      <output id="conaz-frequency-output">
+        {JSON.stringify(countCharacters("teste conaz"), null, 2)}
+      </output>
+    </section>
+
+    <section>
+      <h3>Run-length encoding</h3>
+      <label for="conaz-encoding">Text</label>
+      <input id="conaz-encoding" value="aaaaabbbbccccccaaaaaaa" />
+      <output id="conaz-encoding-output">{runLengthEncode("aaaaabbbbccccccaaaaaaa")}</output>
+    </section>
+  </div>
+
+  <section class="members">
+    <div>
+      <h3>Member update</h3>
+      <p>Apply the challenge’s incoming monthly list to the stored members.</p>
+    </div>
+    <button type="button" id="conaz-update-members">Run update</button>
+    <output id="conaz-members-output">
+      {JSON.stringify(updateMembers(initialMembers, incomingMembers), null, 2)}
+    </output>
+  </section>
+</conaz-demo>
+
+<script>
+  import { countCharacters, runLengthEncode, updateMembers } from "./logic";
+
+  const initialMembers = [
+    { number: 1, active: true, ticket: 10 },
+    { number: 2, active: false, ticket: 0 },
+    { number: 3, active: true, ticket: 12 },
+    { number: 4, active: false, ticket: 0 },
+    { number: 5, active: true, ticket: 14 },
+    { number: 6, active: true, ticket: 15 },
+  ];
+  const incomingMembers = [
+    { number: 1, ticket: 16 },
+    { number: 3, ticket: 13 },
+    { number: 5, ticket: 15 },
+    { number: 8, ticket: 10 },
+    { number: 9, ticket: 19 },
+  ];
+
+  class ConazDemo extends HTMLElement {
+    connectedCallback() {
+      const frequency = this.querySelector<HTMLInputElement>("#conaz-frequency");
+      const frequencyOutput = this.querySelector<HTMLOutputElement>(
+        "#conaz-frequency-output",
+      );
+      const encoding = this.querySelector<HTMLInputElement>("#conaz-encoding");
+      const encodingOutput = this.querySelector<HTMLOutputElement>(
+        "#conaz-encoding-output",
+      );
+      const membersOutput = this.querySelector<HTMLOutputElement>(
+        "#conaz-members-output",
+      );
+
+      frequency?.addEventListener("input", () => {
+        if (frequencyOutput) {
+          frequencyOutput.textContent = JSON.stringify(
+            countCharacters(frequency.value),
+            null,
+            2,
+          );
+        }
+      });
+      encoding?.addEventListener("input", () => {
+        if (encodingOutput) encodingOutput.textContent = runLengthEncode(encoding.value);
+      });
+      this.querySelector("#conaz-update-members")?.addEventListener("click", () => {
+        if (membersOutput) {
+          membersOutput.textContent = JSON.stringify(
+            updateMembers(initialMembers, incomingMembers),
+            null,
+            2,
+          );
+        }
+      });
+    }
+  }
+
+  if (!customElements.get("conaz-demo")) {
+    customElements.define("conaz-demo", ConazDemo);
+  }
+</script>
+
+<style>
+  conaz-demo,
+  section,
+  output {
+    display: block;
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  section {
+    padding: 1rem;
+    background: #0f1210;
+    border: 1px solid #303732;
+    border-radius: 0.4rem;
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #a4ada6;
+    font-size: 0.8rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    color: #f2f5ef;
+    background: #1b201d;
+    border: 1px solid #303732;
+    border-radius: 0.3rem;
+  }
+
+  output {
+    min-height: 3.25rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    overflow-x: auto;
+    color: #b8f34a;
+    background: #090b0a;
+    border-radius: 0.3rem;
+    font-family: ui-monospace, monospace;
+    white-space: pre-wrap;
+  }
+
+  .members {
+    margin-top: 1rem;
+  }
+
+  .members p {
+    color: #a4ada6;
+  }
+
+  button {
+    padding: 0.65rem 0.9rem;
+    color: #111;
+    background: #b8f34a;
+    border: 0;
+    border-radius: 0.3rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    .demo-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

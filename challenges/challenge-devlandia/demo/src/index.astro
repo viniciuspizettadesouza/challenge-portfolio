@@ -1,0 +1,117 @@
+---
+import { fullPath, nextMove } from "./logic";
+
+const sample = `-----
+-----
+p--m-
+-----
+-----`;
+---
+
+<devlandia-demo>
+  <p class="intro">
+    Browser adaptation of the original Ruby “Bot saves princess” solutions.
+  </p>
+  <label for="devlandia-grid">Square grid (`m` = bot, `p` = princess)</label>
+  <textarea id="devlandia-grid" rows="5" spellcheck="false">{sample}</textarea>
+  <div class="actions">
+    <button type="button" id="devlandia-path">Show full path</button>
+    <button type="button" id="devlandia-next">Show next move</button>
+  </div>
+  <output id="devlandia-output">
+    {`Full path:\n${fullPath(sample).join("\n")}\n\nNext move:\n${nextMove(sample)}`}
+  </output>
+</devlandia-demo>
+
+<script>
+  import { fullPath, nextMove } from "./logic";
+
+  class DevlandiaDemo extends HTMLElement {
+    connectedCallback() {
+      const grid = this.querySelector<HTMLTextAreaElement>("#devlandia-grid");
+      const output = this.querySelector<HTMLOutputElement>("#devlandia-output");
+
+      const run = (mode: "path" | "next") => {
+        if (!grid || !output) return;
+        try {
+          const result =
+            mode === "path" ? fullPath(grid.value).join("\n") : (nextMove(grid.value) ?? "DONE");
+          output.textContent = mode === "path" ? `Full path:\n${result}` : `Next move:\n${result}`;
+        } catch (error) {
+          output.textContent = error instanceof Error ? error.message : "Invalid grid.";
+        }
+      };
+
+      this.querySelector("#devlandia-path")?.addEventListener("click", () => run("path"));
+      this.querySelector("#devlandia-next")?.addEventListener("click", () => run("next"));
+    }
+  }
+
+  if (!customElements.get("devlandia-demo")) {
+    customElements.define("devlandia-demo", DevlandiaDemo);
+  }
+</script>
+
+<style>
+  devlandia-demo,
+  output {
+    display: block;
+  }
+
+  .intro,
+  label {
+    color: #a4ada6;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    resize: vertical;
+    color: #b8f34a;
+    background: #090b0a;
+    border: 1px solid #303732;
+    border-radius: 0.3rem;
+    font-family: ui-monospace, monospace;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-block: 0.75rem;
+  }
+
+  button {
+    padding: 0.65rem 0.9rem;
+    color: #111;
+    background: #b8f34a;
+    border: 0;
+    border-radius: 0.3rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  button + button {
+    color: #f2f5ef;
+    background: #1b201d;
+    border: 1px solid #303732;
+  }
+
+  output {
+    min-height: 8rem;
+    padding: 1rem;
+    color: #b8f34a;
+    background: #090b0a;
+    border-radius: 0.3rem;
+    font-family: ui-monospace, monospace;
+    white-space: pre-wrap;
+  }
+</style>
