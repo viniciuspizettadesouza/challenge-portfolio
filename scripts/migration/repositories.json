@@ -241,12 +241,15 @@
     "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d",
     "usesLfs": false,
     "backupStatus": "verified",
-    "importStatus": "pending",
+    "importStatus": "imported",
     "backupVerifiedAt": "2026-07-26T17:53:22.029Z",
     "backupMirror": "../challenge-portfolio-backups/mirrors/challenge-blueticket.git",
     "backupBundle": "../challenge-portfolio-backups/bundles/challenge-blueticket.bundle",
     "metadataStatus": "exported",
-    "metadataExportedAt": "2026-07-26T17:53:59.410Z"
+    "metadataExportedAt": "2026-07-26T17:53:59.410Z",
+    "rewrittenHeadSha": "bc0ea1be770f3dcefd54f04690b5ec28e2435be2",
+    "importMergeSha": "357683ae3b0d4fce7d245b51eb5d89ff675aed32",
+    "importedAt": "2026-07-26T17:56:00.214Z"
   },
   {
     "owner": "viniciuspizettadesouza",
