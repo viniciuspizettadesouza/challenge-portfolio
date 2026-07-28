@@ -1,3 +1,4 @@
+import ClimateSeedDemo from "@challenge/climateseed-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import VueDemo from "@challenge/vue-demo";
@@ -9,6 +10,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the fixture-backed ClimateSeed dashboard", async () => {
+    const html = await renderToString(createSSRApp(ClimateSeedDemo));
+
+    expect(html).toContain("Organisation emissions overview");
+    expect(html).toContain("Climateseed");
+    expect(html).toContain("Add an emissions result");
+  });
+
   it("renders the PropertiaG Roman numeral calculator", () => {
     const html = renderToStaticMarkup(createElement(PropertiaGDemo));
 

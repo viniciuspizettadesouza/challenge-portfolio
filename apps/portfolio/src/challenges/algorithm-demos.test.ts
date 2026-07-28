@@ -1,9 +1,37 @@
+import {
+  aggregateByOrganisation,
+  createEmissionResult,
+  initialResults,
+  organisations,
+} from "@challenge/climateseed-demo/logic";
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
 import { convertToRoman } from "@challenge/propertiag-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("ClimateSeed demo logic", () => {
+  it("aggregates the preserved emissions fixture by organisation", () => {
+    const emissions = aggregateByOrganisation(initialResults, organisations);
+
+    expect(emissions.map(({ name, value }) => ({ name, value }))).toEqual([
+      { name: "Climateseed", value: 11_866 },
+      { name: "Acme Corp", value: 2_306 },
+      { name: "Fast Co2", value: 2_916 },
+    ]);
+    expect(emissions.reduce((sum, { percentage }) => sum + percentage, 0)).toBeCloseTo(100);
+  });
+
+  it("validates additions before they enter the dashboard", () => {
+    expect(createEmissionResult(2, 5, 450)).toEqual({
+      entityId: 2,
+      categoryId: 5,
+      kco2e: 450,
+    });
+    expect(() => createEmissionResult(2, 5, 0)).toThrow("greater than zero");
+  });
+});
 
 describe("Conaz demo logic", () => {
   it("counts characters and encodes repeated runs", () => {

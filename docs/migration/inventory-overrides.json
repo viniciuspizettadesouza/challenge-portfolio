@@ -1,4 +1,11 @@
 {
+  "challenge-climateseed": {
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Local-data Vue 3 dashboard adapted with dependency-free charts. The preserved ApexCharts project remains unchanged and retains its three documented TypeScript build errors. Owner approved on 2026-07-28."
+  },
   "challenge-conaz": {
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",

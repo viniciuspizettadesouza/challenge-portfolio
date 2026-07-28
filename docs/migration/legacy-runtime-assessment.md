@@ -34,7 +34,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 5 | `challenge-vue` | Portfolio demo, Owner approved | Small Vue 3/Vite app with no backend or private API | None for the maintained demo |
 | 6 | `challenge-vuejs` | Built, Tested, Portfolio demo, Owner approved | Modern Vue 3 episode guide integrated with local fixtures | None for the maintained demo |
 | 7 | `challenge-propertiag` | Built, Tested, Portfolio demo, Owner approved | Self-contained Next.js calculator adapted to a tested React island | None for the maintained demo |
-| 8 | `challenge-climateseed` | Inspected, install verified | Modern Vue 3/Vite app with local data and a unit test | Low to medium; production build currently has three TypeScript errors |
+| 8 | `challenge-climateseed` | Inspected, install verified, Portfolio demo, Owner approved | Modern Vue 3/Vite dashboard preserved and adapted with the original local dataset | None for the maintained demo |
 | 9 | `challenge-lagoasoft` | Inspected | React 16/CRA app backed by local JSON | Medium; use an older Node/Yarn toolchain and replace expired remote image URLs if needed |
 | 10 | `challenge-ingenious-build-frontend` | Inspected | Vue 3 app with a bundled `json-server` fixture | Medium; use Node 16 and run both API and UI processes |
 | 11 | `challenge-instruct` | Inspected | Nuxt 2 frontend using the public JSONPlaceholder API | Medium; legacy Node/Nuxt compatibility plus live network behavior |
@@ -61,24 +61,25 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-The seven maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved all seven on 2026-07-28.
+Eight maintained portfolio demos pass lint, typecheck, tests, and static build.
+The repository owner approved all eight on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
-installed successfully, but its build exposed existing TypeScript errors in
-`src/plugins/apexcharts.ts`, `src/router/index.ts`, and `src/stores/data.ts`.
+installed successfully, but its preserved build exposes existing TypeScript
+errors in `src/plugins/apexcharts.ts`, `src/router/index.ts`, and
+`src/stores/data.ts`. Its maintained Vue 3 adaptation keeps the original source
+unchanged, uses the same local data, and replaces the fragile chart integration
+with tested semantic HTML and CSS charts.
 
 ## Recommended testing order
 
-1. Fix Climateseed's three type errors in its maintained adaptation, then run
-   its build and unit test again.
-2. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
-3. Decide whether Sword Health should retain Auth0 or become a fixture-backed
+1. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
+2. Decide whether Sword Health should retain Auth0 or become a fixture-backed
    demo.
-4. Use local fixtures for every credential-dependent project before attempting
+3. Use local fixtures for every credential-dependent project before attempting
    functional parity.
-5. Recreate MongoDB locally for Stormtech and JExperts only if full backend
+4. Recreate MongoDB locally for Stormtech and JExperts only if full backend
    behavior is valuable; otherwise produce complete case studies.
 
 ## Completion rule
