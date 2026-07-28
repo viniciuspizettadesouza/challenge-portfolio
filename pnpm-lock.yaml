@@ -68,6 +68,9 @@ importers:
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
+      '@challenge/stormtech-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-stormtech/demo
       '@challenge/swordhealth-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-swordhealth/demo
@@ -208,6 +211,12 @@ importers:
       react-dom:
         specifier: '>=18'
         version: 19.2.8(react@19.2.8)
+
+  challenges/challenge-stormtech/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
 
   challenges/challenge-swordhealth/demo:
     dependencies:

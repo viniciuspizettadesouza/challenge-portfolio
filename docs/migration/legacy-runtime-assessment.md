@@ -45,7 +45,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 16 | `challenge-blueticket` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geocoding screen adapted with local city forecasts | None for the maintained demo |
 | 17 | `challenge-onsign-tv` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geolocation screen adapted with local forecast fixtures | None for the maintained demo |
 | 18 | `challenge-meetime` | Inspected, Portfolio demo, Owner approved | Vue 2 sales client adapted with fictional local leads and cadences | None for the maintained demo |
-| 19 | `challenge-stormtech` | Inspected | React 16 frontend plus Express/Mongoose backend | Very high; requires a replacement MongoDB database, seed data, two processes, and legacy Node |
+| 19 | `challenge-stormtech` | Inspected, Portfolio demo, Owner approved | React 16/Express/MongoDB sorter adapted with its documented local book fixture | None for the maintained demo |
 | 20 | `challenge-jexperts` | Inspected | React 16 frontend plus a larger Express/Mongoose CRUD backend | Very high; requires replacement database/configuration, representative data, two processes, and deeper workflow review |
 
 ## What is known to work now
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Eighteen maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved all eighteen on 2026-07-28.
+Nineteen maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all nineteen on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -115,6 +115,11 @@ Meetime's two Vue 2 routes are retained in a single Vue 3 island. Cadence
 selection, form validation, lead creation, the lead table, edit/delete dialogs,
 and browser persistence use fictional fixtures rather than the private sales
 API or historical authorization values.
+
+Stormtech's React frontend is retained as a modern React island using the exact
+four books and expected orders from its README. The five individual sorts and
+all five scenarios—including the null exception and empty set—work without the
+historical Express server or remote MongoDB connection.
 
 ## Recommended testing order
 

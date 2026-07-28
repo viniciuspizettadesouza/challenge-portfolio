@@ -1,0 +1,223 @@
+.storm-demo {
+  --storm-red: #c80e1a;
+  --storm-ink: #263640;
+  --storm-muted: #6f7d85;
+  --storm-line: #dce2e5;
+  width: 100%;
+  min-height: 44rem;
+  overflow: hidden;
+  border: 1px solid var(--storm-line);
+  border-radius: 1.1rem;
+  color: var(--storm-ink);
+  background: #f5f7f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.storm-demo *,
+.storm-demo *::before,
+.storm-demo *::after {
+  box-sizing: border-box;
+}
+
+.storm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 6.5rem;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--storm-line);
+  background: white;
+}
+
+.storm-header img {
+  width: min(14rem, 47vw);
+  height: auto;
+}
+
+.storm-header > div {
+  display: grid;
+  justify-items: end;
+  gap: 0.3rem;
+}
+
+.storm-header span {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #40515b;
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.storm-header i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #30a46c;
+  box-shadow: 0 0 0 0.2rem #dcf7e9;
+}
+
+.storm-header small {
+  color: var(--storm-muted);
+  font-size: 0.65rem;
+}
+
+.storm-demo main {
+  display: grid;
+  gap: 3rem;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
+}
+
+.storm-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.storm-heading p,
+.storm-heading h2 {
+  margin: 0;
+}
+
+.storm-heading p {
+  margin-bottom: 0.2rem;
+  color: var(--storm-red);
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.storm-heading h2 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  letter-spacing: -0.045em;
+}
+
+.storm-heading > span {
+  max-width: 27rem;
+  color: var(--storm-muted);
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.storm-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.storm-controls button {
+  padding: 0.62rem 0.75rem;
+  border: 2px solid var(--storm-red);
+  border-radius: 0.25rem;
+  color: var(--storm-red);
+  background: white;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.storm-controls button:hover,
+.storm-controls button.is-active {
+  color: white;
+  background: var(--storm-red);
+}
+
+.storm-table-wrap {
+  overflow-x: auto;
+  border: 5px solid #bac1c5;
+  background: #bac1c5;
+}
+
+.storm-table-wrap table {
+  width: 100%;
+  min-width: 42rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.storm-table-wrap th,
+.storm-table-wrap td {
+  padding: 0.78rem 0.85rem;
+  border: 1px solid #7b858b;
+  background: white;
+  font-size: 0.74rem;
+}
+
+.storm-table-wrap th {
+  color: var(--storm-ink);
+  font-size: 0.68rem;
+}
+
+.storm-table-wrap th:first-child,
+.storm-table-wrap td:first-child {
+  width: 3.5rem;
+  text-align: center;
+}
+
+.storm-table-wrap th:last-child,
+.storm-table-wrap td:last-child {
+  width: 8rem;
+}
+
+.storm-empty {
+  margin: 0;
+  padding: 2rem;
+  color: var(--storm-muted);
+  background: white;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.storm-section--scenarios {
+  padding-top: 2rem;
+  border-top: 1px solid var(--storm-line);
+}
+
+.storm-error {
+  padding: 1.2rem;
+  border: 1px solid #efb8bc;
+  border-left: 4px solid var(--storm-red);
+  color: #76222a;
+  background: #fff1f2;
+}
+
+.storm-error p {
+  margin: 0.35rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.73rem;
+}
+
+.storm-order {
+  margin: 0;
+  padding: 0.7rem 0.8rem;
+  color: var(--storm-muted);
+  background: #e9edef;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.67rem;
+}
+
+@media (max-width: 600px) {
+  .storm-header,
+  .storm-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .storm-header > div {
+    justify-items: start;
+  }
+
+  .storm-heading > span {
+    text-align: left;
+  }
+}

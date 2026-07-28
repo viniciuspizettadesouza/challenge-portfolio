@@ -14,7 +14,7 @@
   "challenge-pipz": "A faithful React recreation of the original Star Wars intro and perspective crawl, listing seven films with Roman episode numbers and release dates.",
   "challenge-propertiag": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
   "challenge-salsify": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
-  "challenge-stormtech": "A full-stack book catalog that loads records from MongoDB and demonstrates several title, author, and edition sorting scenarios.",
+  "challenge-stormtech": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
   "challenge-swordhealth": "A Vue news platform with category filtering, progressive article loading, detail pages, a user profile, and local article authoring.",
   "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
   "challenge-vuejs": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",

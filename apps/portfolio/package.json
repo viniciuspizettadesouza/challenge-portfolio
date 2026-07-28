@@ -26,6 +26,7 @@
     "@challenge/pipz-demo": "workspace:*",
     "@challenge/propertiag-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",
+    "@challenge/stormtech-demo": "workspace:*",
     "@challenge/swordhealth-demo": "workspace:*",
     "@challenge/vue-demo": "workspace:*",
     "@challenge/vuejs-demo": "workspace:*",
