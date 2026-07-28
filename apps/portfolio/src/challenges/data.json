@@ -205,19 +205,22 @@
     "slug": "challenge-meetime",
     "title": "Meetime Challenge",
     "company": "Meetime",
-    "description": "A Vue sales-prospecting client for listing, editing, deleting, and adding leads to selected outbound cadences.",
+    "description": "A Vue sales-prospecting client for validating and adding leads to outbound cadences, then listing, editing, deleting, and caching them locally.",
     "technologies": [
       "Vue",
       "Vue CLI",
-      "Vuetify"
+      "Vuetify",
+      "Axios",
+      "Vuelidate"
     ],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-vue2",
     "sourcePath": "challenges/challenge-meetime/original",
     "originalRepository": "viniciuspizettadesouza/challenge-meetime",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1"
+    "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1",
+    "demoPath": "challenges/challenge-meetime/demo"
   },
   {
     "slug": "challenge-instruct",

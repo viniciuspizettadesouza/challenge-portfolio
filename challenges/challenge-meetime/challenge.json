@@ -9,11 +9,13 @@
   "technologies": [
     "Vue",
     "Vue CLI",
-    "Vuetify"
+    "Vuetify",
+    "Axios",
+    "Vuelidate"
   ],
-  "renderer": "case-study",
+  "renderer": "vue3",
   "migrationStrategy": "upgrade-vue2",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

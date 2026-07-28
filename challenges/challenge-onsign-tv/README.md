@@ -19,4 +19,4 @@ The historical Google Maps key was removed during sanitization, and the
 committed OpenWeather credential must not be reused. Three deterministic local
 forecasts replace those services in the maintained demo.
 
-Status: integrated and automatically tested. Owner review is pending.
+Status: integrated, automatically tested, and owner-approved on 2026-07-28.

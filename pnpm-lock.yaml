@@ -53,6 +53,9 @@ importers:
       '@challenge/lagoasoft-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-lagoasoft/demo
+      '@challenge/meetime-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-meetime/demo
       '@challenge/onsign-tv-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-onsign-tv/demo
@@ -169,6 +172,12 @@ importers:
       react:
         specifier: '>=18.0.0'
         version: 19.2.8
+
+  challenges/challenge-meetime/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.2.0'
+        version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-onsign-tv/demo:
     dependencies:

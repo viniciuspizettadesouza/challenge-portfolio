@@ -8,6 +8,7 @@ import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
+import MeetimeDemo from "@challenge/meetime-demo";
 import OnSignTvDemo from "@challenge/onsign-tv-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
@@ -51,6 +52,8 @@ const { slug } = Astro.props;
     <InstructDemo client:load />
   ) : slug === "challenge-lagoasoft" ? (
     <LagoasoftDemo client:load />
+  ) : slug === "challenge-meetime" ? (
+    <MeetimeDemo client:load />
   ) : slug === "challenge-onsign-tv" ? (
     <OnSignTvDemo client:load />
   ) : slug === "challenge-pipz" ? (
