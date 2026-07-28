@@ -17,14 +17,14 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 8 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 12 demos or complete case studies |
+| Interactive demos | In progress | 9 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 11 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a maintained Lagoasoft adaptation after inspecting its preserved React
-application and local JSON data. Capture screenshots for approved demos as
+Create a maintained Ingenious Build adaptation after inspecting its Vue 3
+frontend and bundled JSON API data. Capture screenshots for approved demos as
 release evidence when convenient.
 
 ## Environment observed

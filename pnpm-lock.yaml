@@ -35,6 +35,9 @@ importers:
       '@challenge/devlandia-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-devlandia/demo
+      '@challenge/lagoasoft-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-lagoasoft/demo
       '@challenge/propertiag-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-propertiag/demo
@@ -106,6 +109,12 @@ importers:
   challenges/challenge-conaz/demo: {}
 
   challenges/challenge-devlandia/demo: {}
+
+  challenges/challenge-lagoasoft/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
 
   challenges/challenge-propertiag/demo:
     dependencies:

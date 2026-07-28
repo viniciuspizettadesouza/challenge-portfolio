@@ -18,6 +18,13 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript. Owner approved on 2026-07-28."
   },
+  "challenge-lagoasoft": {
+    "migrationStrategy": "upgrade-react",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16 social voting exercise adapted to a tested modern React island. Original captions, dates, like counts, and browser-only state are preserved; expired Instagram media is replaced with local CSS artwork. Owner approved on 2026-07-28."
+  },
   "challenge-propertiag": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",
