@@ -14,7 +14,7 @@
   ],
   "renderer": "vue3",
   "migrationStrategy": "native-vue3",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
   "hasExternalApi": true
 }

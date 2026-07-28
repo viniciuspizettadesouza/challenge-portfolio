@@ -43,12 +43,13 @@
       "Vue Router"
     ],
     "renderer": "vue3",
-    "migrationStatus": "pending",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-vue3",
     "sourcePath": "challenges/challenge-vuejs/original",
     "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889"
+    "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889",
+    "demoPath": "challenges/challenge-vuejs/demo"
   },
   {
     "slug": "challenge-castlabs",

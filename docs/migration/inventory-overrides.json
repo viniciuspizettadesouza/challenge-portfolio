@@ -23,6 +23,12 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Vue 3/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
   },
+  "challenge-vuejs": {
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 3 episode guide integrated with deterministic local fixtures replacing the original HTTP TVMaze dependency. Owner approved on 2026-07-28."
+  },
   "challenge-zygo": {
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",

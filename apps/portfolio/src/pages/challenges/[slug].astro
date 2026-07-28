@@ -57,7 +57,16 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
             <dd>{challenge.originalHeadSha || "Awaiting import"}</dd>
           </div>
         </dl>
-        <a class="button button--secondary" href={sourceUrl}>View preserved source</a>
+        <div class="meta-actions">
+          {
+            challenge.demoPath && (
+              <a class="button" href={`/demos/${challenge.slug}`}>
+                Open fullscreen demo
+              </a>
+            )
+          }
+          <a class="button button--secondary" href={sourceUrl}>View preserved source</a>
+        </div>
       </aside>
     </div>
   </article>

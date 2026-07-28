@@ -299,6 +299,16 @@ dd {
   overflow-wrap: anywhere;
 }
 
+.meta-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.meta-actions .button {
+  justify-content: center;
+  text-align: center;
+}
+
 .prose p {
   max-width: 50rem;
   font-size: 1.2rem;

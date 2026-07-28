@@ -3,6 +3,7 @@ import ConazDemo from "@challenge/conaz-demo";
 import DevlandiaDemo from "@challenge/devlandia-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import VueDemo from "@challenge/vue-demo";
+import VueJsDemo from "@challenge/vuejs-demo";
 import ZygoDemo from "@challenge/zygo-demo";
 
 interface Props {
@@ -17,6 +18,8 @@ const { slug } = Astro.props;
     <SalsifyDemo client:load />
   ) : slug === "challenge-vue" ? (
     <VueDemo client:load />
+  ) : slug === "challenge-vuejs" ? (
+    <VueJsDemo client:load />
   ) : slug === "challenge-conaz" ? (
     <ConazDemo />
   ) : slug === "challenge-zygo" ? (

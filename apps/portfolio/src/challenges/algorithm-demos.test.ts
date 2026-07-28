@@ -1,6 +1,7 @@
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
+import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
 
 describe("Conaz demo logic", () => {
@@ -89,5 +90,19 @@ p--m-
 
   it("rejects malformed grids", () => {
     expect(() => fullPath("--\n-m\np-")).toThrow("square");
+  });
+});
+
+describe("Vue.js demo pagination", () => {
+  const items = Array.from({ length: 12 }, (_, index) => index + 1);
+
+  it("calculates pages and returns the requested slice", () => {
+    expect(getTotalPages(items.length, 5)).toBe(3);
+    expect(paginate(items, 2, 5)).toEqual([6, 7, 8, 9, 10]);
+  });
+
+  it("keeps page selection within range", () => {
+    expect(clampPage(0, items.length, 5)).toBe(1);
+    expect(clampPage(8, items.length, 5)).toBe(3);
   });
 });

@@ -57,6 +57,10 @@ Read the [runbook](docs/plan/runbook.md) before performing history operations.
 No repository script deletes, archives, or modifies an original remote
 repository.
 
+Integrated demos are available both on their challenge detail pages and through
+distraction-free routes at `/demos/<challenge-slug>`. The dedicated route also
+provides a browser fullscreen control.
+
 ## Git workflow
 
 Automated agents must leave changes uncommitted and unpushed. The repository
