@@ -19,18 +19,24 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | Interactive demos | Completed | all 20 integrated, owner-approved, browser-tested, and captured |
 | Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
-| Deployment and final cleanup | In progress | GitHub Pages workflow prepared; publish it, verify production, release, back up, and review |
+| Deployment and final cleanup | In progress | GitHub Pages deployed and verified; release, second backup copy, and owner review remain |
 
 ## Current next action
 
-Commit and push the GitHub Pages configuration. In repository Settings, select
-GitHub Actions as the Pages source if it is not already selected, then monitor
-the `Deploy to GitHub Pages` workflow and verify:
+Create the `migration-complete` tag and GitHub release for deployed revision
+`4c4fd6455a80641e182d6f0137994b5f03ec75dd`. Then make the second off-device
+backup copy and complete the final owner review.
+
+## Production deployment
+
+GitHub Pages deployed revision `4c4fd64` on 2026-07-29:
 
 `https://viniciuspizettadesouza.github.io/challenge-portfolio/`
 
-After production validation, record the deployed revision, create the release,
-make the second off-device backup copy, and complete the final owner review.
+The GitHub Pages API confirms workflow-based publication, public visibility,
+and enforced HTTPS. The workflow completed successfully, and production checks
+returned HTTP 200 for the home page, challenge catalog, a challenge detail
+page, a fullscreen demo, and the favicon.
 
 ## Environment observed
 
