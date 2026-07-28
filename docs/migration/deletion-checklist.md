@@ -32,7 +32,7 @@ interaction tests, and the 43-page static build passed.
 ## Release and recovery
 
 - [x] GitHub Pages workflow and `/challenge-portfolio/` base path are configured.
-- [ ] The application is deployed.
+- [x] The application is deployed and production routes were validated.
 - [ ] The `migration-complete` tag and release exist.
 - [ ] At least one backup copy exists on another disk or storage provider.
 - [ ] The repository owner has manually reviewed this checklist.

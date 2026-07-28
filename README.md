@@ -64,11 +64,11 @@ distraction-free routes at
 `/challenge-portfolio/demos/<challenge-slug>`. The dedicated route also
 provides a browser fullscreen control.
 
-## GitHub Pages
+## Live site
 
-The production target is:
+The portfolio is deployed at:
 
-`https://viniciuspizettadesouza.github.io/challenge-portfolio/`
+[viniciuspizettadesouza.github.io/challenge-portfolio](https://viniciuspizettadesouza.github.io/challenge-portfolio/)
 
 Astro is configured for the `/challenge-portfolio/` project subpath. The
 workflow at `.github/workflows/deploy-pages.yml` validates and publishes the
