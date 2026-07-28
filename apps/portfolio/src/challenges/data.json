@@ -244,15 +244,22 @@
     "slug": "challenge-blueticket",
     "title": "Blueticket Challenge",
     "company": "Blueticket",
-    "description": "A Vue weather dashboard that geocodes a location, retrieves hourly conditions, and caches the forecast locally for later viewing.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "description": "A Vue weather dashboard with local city search, privacy-safe location matching, six-hour conditions, and browser-cached forecast history.",
+    "technologies": [
+      "Vue",
+      "Vue CLI",
+      "Vuetify",
+      "Google Maps",
+      "OpenWeather"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-vue2",
     "sourcePath": "challenges/challenge-blueticket/original",
     "originalRepository": "viniciuspizettadesouza/challenge-blueticket",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d"
+    "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d",
+    "demoPath": "challenges/challenge-blueticket/demo"
   },
   {
     "slug": "challenge-swordhealth",

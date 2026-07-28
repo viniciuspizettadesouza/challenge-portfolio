@@ -6,10 +6,16 @@
   "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d",
   "framework": "vue",
   "frameworkVersion": "^2.6.11",
-  "technologies": [],
-  "renderer": "case-study",
+  "technologies": [
+    "Vue",
+    "Vue CLI",
+    "Vuetify",
+    "Google Maps",
+    "OpenWeather"
+  ],
+  "renderer": "vue3",
   "migrationStrategy": "upgrade-vue2",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

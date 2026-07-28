@@ -5,6 +5,11 @@ import {
   organisations,
 } from "@challenge/climateseed-demo/logic";
 import {
+  addSearchHistory,
+  closestForecast,
+  findForecast,
+} from "@challenge/blueticket-demo/logic";
+import {
   createEpisode,
   deleteEpisode,
   episodes as castlabsEpisodes,
@@ -47,6 +52,24 @@ import {
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("Blueticket local weather lookup", () => {
+  it("finds city fixtures and selects the closest available forecast", () => {
+    expect(findForecast("lisbon")?.country).toBe("Portugal");
+    expect(findForecast("united kingdom")?.city).toBe("London");
+    expect(closestForecast(-27.6, -48.55).city).toBe("Florianópolis");
+  });
+
+  it("maintains a unique, most-recent-first search history", () => {
+    expect(addSearchHistory(["London", "Lisbon"], "London")).toEqual([
+      "London",
+      "Lisbon",
+    ]);
+    expect(
+      addSearchHistory(["London", "Lisbon", "São Paulo"], "Florianópolis"),
+    ).toEqual(["Florianópolis", "London", "Lisbon", "São Paulo"]);
+  });
+});
 
 describe("Castlabs episode management", () => {
   it("searches episode titles and series names", () => {

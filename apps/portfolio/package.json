@@ -12,6 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@challenge/blueticket-demo": "workspace:*",
     "@challenge/castlabs-demo": "workspace:*",
     "@challenge/climateseed-demo": "workspace:*",
     "@challenge/conaz-demo": "workspace:*",

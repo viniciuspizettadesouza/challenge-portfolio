@@ -42,7 +42,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 13 | `challenge-pipz` | Inspected, Portfolio demo, Owner approved | React 16/CRA film list adapted with the original SWAPI fields and crawl design | None for the maintained demo |
 | 14 | `challenge-fyld-hansecom` | Inspected, Portfolio demo, Owner approved | Nuxt 2 movie search adapted with records from its bundled response | None for the maintained demo |
 | 15 | `challenge-castlabs` | Inspected, Portfolio demo, Owner approved | React/Vite episode manager adapted with local service fixtures | None for the maintained demo |
-| 16 | `challenge-blueticket` | Inspected | Vue 2 weather/geocoding application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
+| 16 | `challenge-blueticket` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geocoding screen adapted with local city forecasts | None for the maintained demo |
 | 17 | `challenge-onsign-tv` | Inspected | Vue 2 weather/geolocation application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
 | 18 | `challenge-meetime` | Inspected | Vue 2 client for a private sales API | Very high; requires authorized API access and should use fixtures instead of historical credentials |
 | 19 | `challenge-stormtech` | Inspected | React 16 frontend plus Express/Mongoose backend | Very high; requires a replacement MongoDB database, seed data, two processes, and legacy Node |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Fifteen maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved all fifteen on 2026-07-28.
+Sixteen maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all sixteen on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -100,6 +100,11 @@ Castlabs' maintained React episode manager replaces the unavailable GraphQL
 HTTP and WebSocket services with deterministic browser state. Search, episode
 details, create/delete mutations, and immediate subscription-style feedback
 remain interactive; OMDb poster requests are represented by local artwork.
+
+Blueticket's Vue 2 city weather screen is retained as a Vue 3 island with four
+local forecast fixtures. Search, browser geolocation matching, six hourly
+weather fields, recent searches, and last-forecast caching remain interactive
+without contacting Google Maps or OpenWeather.
 
 ## Recommended testing order
 
