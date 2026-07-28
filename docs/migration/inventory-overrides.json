@@ -47,6 +47,13 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Next.js calculator behavior adapted to a tested React island. Preserved build passes under Node 18/Yarn 1; one original snapshot is stale. Owner approved on 2026-07-28."
   },
+  "challenge-pipz": {
+    "migrationStrategy": "upgrade-react",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16 SWAPI film list adapted to a tested modern React island with the original seven-film fields and historical response order stored locally. The original intro, preserved logo, and continuous perspective crawl are reproduced without the removed API configuration. Owner approved on 2026-07-28."
+  },
   "challenge-salsify": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",

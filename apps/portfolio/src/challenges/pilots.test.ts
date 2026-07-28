@@ -2,6 +2,7 @@ import ClimateSeedDemo from "@challenge/climateseed-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
+import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
@@ -14,6 +15,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local Pipz film archive", () => {
+    const html = renderToStaticMarkup(createElement(PipzDemo));
+
+    expect(html).toContain("A long time ago in a galaxy far, far away");
+    expect(html).toContain("The Phantom Menace");
+    expect(html).toContain("The Force Awakens");
+  });
+
   it("renders the safe Sword Health news platform", async () => {
     const html = await renderToString(createSSRApp(SwordHealthDemo));
 

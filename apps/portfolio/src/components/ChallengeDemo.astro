@@ -5,6 +5,7 @@ import DevlandiaDemo from "@challenge/devlandia-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
+import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
@@ -40,6 +41,8 @@ const { slug } = Astro.props;
     <InstructDemo client:load />
   ) : slug === "challenge-lagoasoft" ? (
     <LagoasoftDemo client:load />
+  ) : slug === "challenge-pipz" ? (
+    <PipzDemo client:load />
   ) : slug === "challenge-propertiag" ? (
     <PropertiaGDemo client:load />
   ) : slug === "challenge-swordhealth" ? (

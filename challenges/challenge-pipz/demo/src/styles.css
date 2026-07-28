@@ -1,0 +1,246 @@
+.pipz-demo {
+  --yellow: #ffe81f;
+  --blue: #4bd5ee;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #161821;
+  border-radius: 1.25rem;
+  color: white;
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pipz-opening,
+.pipz-crawl-stage {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  isolation: isolate;
+}
+
+.pipz-opening {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: min(43rem, 82vh);
+  padding: 3rem 1rem;
+}
+
+.pipz-opening p {
+  overflow: hidden;
+  width: 0;
+  max-width: 92%;
+  margin: 0 0 clamp(5rem, 15vh, 9rem);
+  color: var(--blue);
+  font-size: clamp(0.8rem, 2.4vw, 1.5rem);
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  animation:
+    pipz-typing 5s steps(44, end) 0.4s forwards,
+    pipz-caret 0.75s step-end 7;
+}
+
+.pipz-opening img {
+  width: min(25rem, 70vw);
+  height: auto;
+}
+
+.pipz-stars,
+.pipz-stars::before,
+.pipz-stars::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    radial-gradient(circle at 10% 20%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 35%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 35% 75%, #8eaaff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 82%, #fff 0 1px, transparent 1.5px);
+  background-size: 9rem 11rem;
+}
+
+.pipz-stars::before {
+  opacity: 0.55;
+  background-size: 14rem 16rem;
+  transform: translate(2rem, 1rem);
+}
+
+.pipz-stars::after {
+  opacity: 0.3;
+  background-size: 20rem 18rem;
+  transform: translate(-4rem, 3rem);
+}
+
+.pipz-crawl-stage {
+  height: min(48rem, 88vh);
+  min-height: 34rem;
+  border-top: 1px solid #171922;
+  perspective: 26rem;
+}
+
+.pipz-crawl-fade {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: 28%;
+  pointer-events: none;
+  background: linear-gradient(#000 28%, transparent);
+}
+
+.pipz-crawl-controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(255, 232, 31, 0.22);
+  border-radius: 0.55rem;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(0.4rem);
+}
+
+.pipz-crawl-controls > span {
+  color: #8e8e88;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pipz-crawl-controls div {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.pipz-crawl-controls button {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--yellow);
+  border-radius: 0.35rem;
+  color: var(--yellow);
+  background: transparent;
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pipz-crawl {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: min(48rem, 88%);
+  color: var(--yellow);
+  text-align: center;
+  transform: translateX(-50%) rotateX(24deg);
+  transform-origin: 50% 100%;
+  animation: pipz-crawl 72s linear forwards;
+}
+
+.pipz-crawl--paused {
+  animation-play-state: paused;
+}
+
+.pipz-crawl article {
+  margin-bottom: 8rem;
+}
+
+.pipz-crawl p {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.pipz-crawl h2 {
+  margin: 0.6rem 0 1rem;
+  font-size: clamp(2.2rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.pipz-crawl h3 {
+  margin: 0;
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.pipz-crawl article > span {
+  display: block;
+  margin-top: 3rem;
+  color: #000;
+}
+
+@keyframes pipz-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 43em;
+  }
+}
+
+@keyframes pipz-caret {
+  50% {
+    border-right: 2px solid var(--blue);
+  }
+}
+
+@keyframes pipz-crawl {
+  from {
+    transform: translate(-50%, 0) rotateX(24deg);
+  }
+  to {
+    transform: translate(-50%, -235rem) rotateX(24deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .pipz-opening {
+    min-height: 32rem;
+  }
+
+  .pipz-opening p {
+    max-width: 100%;
+    font-size: 0.62rem;
+  }
+
+  .pipz-crawl-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pipz-crawl article {
+    margin-bottom: 5.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pipz-opening p {
+    width: auto;
+    animation: none;
+  }
+
+  .pipz-crawl-stage {
+    height: auto;
+    min-height: 0;
+    perspective: none;
+  }
+
+  .pipz-crawl-fade,
+  .pipz-crawl-controls {
+    display: none;
+  }
+
+  .pipz-crawl {
+    position: static;
+    width: auto;
+    padding: 4rem 1.5rem;
+    animation: none;
+    transform: none;
+  }
+}
