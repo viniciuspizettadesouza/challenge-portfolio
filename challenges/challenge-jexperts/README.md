@@ -20,4 +20,4 @@ fictional local fixtures and never connects to that database. Registration
 passwords are validated for the flow but deliberately discarded rather than
 stored.
 
-Status: integrated and automatically tested. Owner review is pending.
+Status: integrated, automatically tested, and owner-approved on 2026-07-28.

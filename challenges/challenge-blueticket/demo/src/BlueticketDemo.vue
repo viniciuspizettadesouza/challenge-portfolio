@@ -141,7 +141,7 @@ onMounted(() => {
             <p>Hourly forecast</p>
             <h3>{{ forecast.city }}, {{ forecast.country }}</h3>
           </div>
-          <span>Updated {{ forecast.updatedAt }}</span>
+          <span>Updated {{ forecast.updatedAt }} · {{ forecast.hourly.length }} hourly records</span>
         </header>
 
         <div class="forecast-table-wrap">
@@ -157,7 +157,7 @@ onMounted(() => {
               </tr>
             </thead>
             <tbody>
-              <tr v-for="hour in forecast.hourly" :key="hour.time">
+              <tr v-for="(hour, index) in forecast.hourly" :key="`${hour.time}-${index}`">
                 <td><strong>{{ hour.time }}</strong></td>
                 <td><b>{{ Math.round(hour.temp) }}° C</b></td>
                 <td>{{ Math.round(hour.feelsLike) }}° C</td>
@@ -450,7 +450,9 @@ onMounted(() => {
 }
 
 .forecast-table-wrap {
+  max-height: 34rem;
   overflow-x: auto;
+  overflow-y: auto;
 }
 
 .forecast table {
@@ -461,6 +463,9 @@ onMounted(() => {
 }
 
 .forecast th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: 0.75rem 1rem;
   color: var(--muted);
   background: #f7fafc;

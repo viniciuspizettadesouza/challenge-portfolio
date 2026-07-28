@@ -14,9 +14,7 @@ React pilot project.
 package. The adaptation adds only an Astro-compatible styling layer; filtering
 rules and the datastore still come from the preserved source.
 
-## Remaining work
+## Status
 
-- capture and register a screenshot;
-- complete manual responsive and console review;
-- mark the challenge as migrated only after its completion criteria pass.
-
+The demo is integrated, tested, and was approved by the repository owner on
+2026-07-28.

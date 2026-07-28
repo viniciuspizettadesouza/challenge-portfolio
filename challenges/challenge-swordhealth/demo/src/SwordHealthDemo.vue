@@ -20,6 +20,8 @@ const view = ref<View>("home");
 const selectedArticle = ref<Article | null>(null);
 const authenticated = ref(false);
 const feedback = ref("");
+const imagePreview = ref("");
+const imageName = ref("");
 const demoUser = {
   name: "Alex Morgan",
   givenName: "Alex",
@@ -76,15 +78,32 @@ function openProtected(nextView: "profile" | "write") {
 
 function submitArticle() {
   try {
+    if (!imagePreview.value) {
+      throw new Error("Select an image for the article.");
+    }
     const article = createArticle(draft, demoUser.name, articles.value.length + 1);
     articles.value.unshift(article);
     selectedArticle.value = article;
     Object.assign(draft, { title: "", description: "", category: "", content: "" });
+    URL.revokeObjectURL(imagePreview.value);
+    imagePreview.value = "";
+    imageName.value = "";
     feedback.value = "Article added to this browser session.";
     view.value = "article";
   } catch (error) {
     feedback.value = error instanceof Error ? error.message : "Unable to create this article.";
   }
+}
+
+function selectImage(event: Event) {
+  const input = event.target as HTMLInputElement;
+  const file = input.files?.[0];
+  if (!file) return;
+
+  if (imagePreview.value) URL.revokeObjectURL(imagePreview.value);
+  imagePreview.value = URL.createObjectURL(file);
+  imageName.value = file.name;
+  feedback.value = "";
 }
 </script>
 
@@ -224,6 +243,14 @@ function submitArticle() {
             <textarea v-model="draft.description" rows="3" placeholder="A short summary"></textarea>
           </label>
           <label>
+            Pick one image
+            <input type="file" accept="image/*" @change="selectImage" />
+            <small v-if="imageName">{{ imageName }} · local preview only</small>
+          </label>
+          <figure v-if="imagePreview" class="article-image-preview">
+            <img :src="imagePreview" alt="Selected article preview" />
+          </figure>
+          <label>
             Category
             <select v-model="draft.category">
               <option value="">Select a category</option>
@@ -344,6 +371,9 @@ button { font: inherit; }
 .write-view header h2 { margin: 0 0 1rem; }.write-view form, .write-view label { display: grid; gap: .5rem; }
 .write-view form { gap: .9rem; }.write-view label { color: var(--muted); font-size: .7rem; font-weight: 800; }
 .write-view input, .write-view textarea, .write-view select { padding: .75rem; border: 1px solid #dfe3ec; border-radius: .45rem; font: inherit; }
+.write-view label small { color: var(--blue); font-weight: 700; }
+.article-image-preview { margin: 0; overflow: hidden; border-radius: .6rem; background: #eef1f8; }
+.article-image-preview img { display: block; width: 100%; max-height: 16rem; object-fit: cover; }
 footer { justify-content: space-between; padding: 1rem 2rem; color: #cbd3e9; background: var(--navy); font-size: .68rem; }
 @media (max-width: 760px) {
   .brand small, .avatar-button i { display: none; }.hero { grid-template-columns: 1fr; }.hero-art { max-width: 16rem; margin: auto; }

@@ -16,9 +16,9 @@ future contributors can see what happened and where to continue.
 | 6 — Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | 7 — Astro catalog | Completed | 20 challenge routes and static build |
 | 8 — Challenge structure | Completed | metadata, English summaries, and 20 demos integrated |
-| 9 — Pilot demos | In progress | 19 owner-approved; JExperts review and screenshots pending |
+| 9 — Pilot demos | Completed | all 20 owner-approved with browser evidence and screenshots |
 | 10 — Remaining waves | Completed | all 20 challenges have interactive demos |
-| 11 — Repository quality | In progress | checks pass; clean-clone build verified |
+| 11 — Repository quality | In progress | local checks pass; repeat clean-clone validation after publication |
 | 12 — Final release and cleanup | Pending | deploy, release, backup copy, manual review |
 
 ## Phase 0 — Environment
@@ -62,17 +62,15 @@ All 20 static challenge pages exist with metadata and migration state.
 
 ## Phases 8–10 — Demos and case studies
 
-Finish Salsify and Vue screenshots first. Then continue in this order:
-
-1. modern React/Vite projects;
-2. Vue 3/Vite projects;
-3. legacy React projects;
-4. Vue CLI and Vue 2 projects;
-5. backend-dependent projects;
-6. case studies for projects that cannot run safely.
+Completed for all 20 projects. Historical source remains under each
+`original/` directory, while maintained React, Vue, Astro, and fixture-backed
+adaptations live under `demo/`. The fidelity comparison is recorded in
+`docs/migration/fidelity-audit.md`; browser evidence and reproducible
+screenshots cover every demo.
 
 ## Phases 11–12 — Quality and completion
 
-Validate lint, types, tests, build, a clean clone, deploy, release, and an
+After the owner commits and pushes the current source state, validate it from a
+fresh clone, deploy that exact revision, create the release, and make the
 off-device backup copy. Original repository deletion remains manual and is
 blocked until every deletion-checklist item is complete.

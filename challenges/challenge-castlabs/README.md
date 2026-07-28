@@ -11,7 +11,8 @@ workflow:
 - search episodes by title or series;
 - browse episode details and local poster artwork;
 - create and delete episodes through an in-memory mutation flow;
-- display immediate create/delete activity as a local subscription simulation.
+- display immediate create/delete activity and simulate the original external
+  update subscription.
 
 The original application requires a private GraphQL HTTP endpoint, a WebSocket
 subscription endpoint, API credentials, and OMDb. None of those services or

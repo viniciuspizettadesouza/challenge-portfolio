@@ -81,6 +81,13 @@ export default function CastlabsDemo() {
     setActivity(`DELETE received · “${selectedEpisode.title}”`);
   }
 
+  function handleSimulatedUpdate() {
+    if (!selectedEpisode) return;
+    setActivity(
+      `UPDATE received · “${selectedEpisode.title}” in ${selectedEpisode.series}`,
+    );
+  }
+
   return (
     <section className="castlabs-demo">
       <header className="castlabs-header">
@@ -215,6 +222,7 @@ export default function CastlabsDemo() {
                   </dl>
                   <div className="castlabs-details__actions">
                     <button type="button" className="castlabs-button" onClick={() => setView("create")}>Create episode</button>
+                    <button type="button" className="castlabs-button castlabs-button--quiet" onClick={handleSimulatedUpdate}>Simulate update event</button>
                     <button type="button" className="castlabs-button castlabs-button--danger" onClick={handleDelete}>Delete episode</button>
                   </div>
                 </div>

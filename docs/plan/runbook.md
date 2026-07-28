@@ -72,20 +72,26 @@ pnpm install
 pnpm lint
 pnpm typecheck
 pnpm test
+pnpm test:e2e
 pnpm build
 pnpm preview
 ```
+
+`pnpm test:e2e` builds and previews the site, exercises all 20 demos in
+Chromium, and refreshes the representative screenshots. It requires the
+Playwright Chromium browser installed for the current Playwright version.
 
 ## 7. Resume implementation
 
 Read `docs/migration/status.md` and continue from its first `In progress` or
 `Pending` phase. The current implementation priority is:
 
-1. manually review the generated inventory;
-2. follow `docs/migration/legacy-runtime-assessment.md` from the easiest
-   unverified project;
-3. finish screenshots and completion evidence for Salsify and Vue;
-4. implement the remaining demos or case studies by migration wave.
+1. have the repository owner review, commit, and push the completed demo
+   fidelity and browser-evidence changes;
+2. validate a fresh clone of that exact revision;
+3. deploy the verified revision, create the release, and make the second
+   off-device backup copy;
+4. complete the final manual review and deletion checklist.
 
 ## 8. Finalize
 

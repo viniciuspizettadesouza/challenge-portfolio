@@ -1,6 +1,6 @@
 {
-  "challenge-blueticket": "A Vue weather dashboard with local city search, privacy-safe location matching, six-hour conditions, and browser-cached forecast history.",
-  "challenge-castlabs": "A React episode manager with title and series search, detailed records, local create/delete flows, and simulated real-time subscription feedback.",
+  "challenge-blueticket": "A Vue weather dashboard with local city search, privacy-safe location matching, a complete 48-hour forecast, and browser-cached history.",
+  "challenge-castlabs": "A React episode manager with search, detailed records, local create/delete flows, and simulated create, update, and delete subscription feedback.",
   "challenge-climateseed": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
   "challenge-conaz": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
   "challenge-devlandia": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",
@@ -15,8 +15,8 @@
   "challenge-propertiag": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
   "challenge-salsify": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
   "challenge-stormtech": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
-  "challenge-swordhealth": "A Vue news platform with category filtering, progressive article loading, detail pages, a user profile, and local article authoring.",
+  "challenge-swordhealth": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
   "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
   "challenge-vuejs": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
-  "challenge-zygo": "An interactive presentation of JavaScript book-sorting algorithms across title, author, and publication-edition criteria."
+  "challenge-zygo": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes."
 }

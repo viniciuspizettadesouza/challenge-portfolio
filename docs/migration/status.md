@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically with project-specific summaries |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
-| Interactive demos | In progress | all 20 integrated and tested; 19 owner-approved; screenshots pending |
+| Interactive demos | Completed | all 20 integrated, owner-approved, browser-tested, and captured |
 | Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Review the fixture-backed JExperts adaptation. After approval, capture
-screenshots and proceed to deployment, release, a second backup copy, and the
-final owner review.
+Review and commit the completed fidelity/browser-evidence changes, then push the
+exact source state. After publication, validate a fresh clone and proceed to
+deployment, release, a second backup copy, and final owner review.
 
 ## Environment observed
 
@@ -43,7 +43,9 @@ under `../challenge-portfolio-backups/` and are not tracked here.
 
 A fresh public clone was created on 2026-07-26. In that clone,
 `pnpm install --frozen-lockfile` and `pnpm build` passed and generated 23 static
-pages. Lint, typecheck, tests, and build also passed in the primary checkout.
+pages. The current primary checkout passes lint, typecheck, 62 unit tests, 20
+Chromium interaction tests, and a 43-page static build. A new clean-clone
+validation remains required after the current changes are committed and pushed.
 
 ## Git ownership
 

@@ -14,8 +14,7 @@ Vue 3 pilot project.
 integration. A local stylesheet replaces the visual utility classes expected by
 the project without installing or executing the legacy dependency set.
 
-## Remaining work
+## Status
 
-- capture and register a screenshot;
-- complete manual responsive and console review;
-- mark the challenge as migrated only after its completion criteria pass.
+The demo is integrated, tested, and was approved by the repository owner on
+2026-07-28.

@@ -62,7 +62,7 @@
     "slug": "challenge-castlabs",
     "title": "Castlabs Challenge",
     "company": "Castlabs",
-    "description": "A React episode manager with title and series search, detailed records, local create/delete flows, and simulated real-time subscription feedback.",
+    "description": "A React episode manager with search, detailed records, local create/delete flows, and simulated create, update, and delete subscription feedback.",
     "technologies": [
       "React",
       "TypeScript",
@@ -124,7 +124,7 @@
     "slug": "challenge-zygo",
     "title": "Zygo Challenge",
     "company": "Zygo",
-    "description": "An interactive presentation of JavaScript book-sorting algorithms across title, author, and publication-edition criteria.",
+    "description": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes.",
     "technologies": [
       "JavaScript",
       "Astro"
@@ -262,7 +262,7 @@
     "slug": "challenge-blueticket",
     "title": "Blueticket Challenge",
     "company": "Blueticket",
-    "description": "A Vue weather dashboard with local city search, privacy-safe location matching, six-hour conditions, and browser-cached forecast history.",
+    "description": "A Vue weather dashboard with local city search, privacy-safe location matching, a complete 48-hour forecast, and browser-cached history.",
     "technologies": [
       "Vue",
       "Vue CLI",
@@ -283,7 +283,7 @@
     "slug": "challenge-swordhealth",
     "title": "Sword Health Challenge",
     "company": "Sword Health",
-    "description": "A Vue news platform with category filtering, progressive article loading, detail pages, a user profile, and local article authoring.",
+    "description": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
     "technologies": [
       "Vue",
       "TypeScript",
