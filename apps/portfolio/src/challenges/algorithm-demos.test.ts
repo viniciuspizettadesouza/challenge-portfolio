@@ -6,6 +6,11 @@ import {
 } from "@challenge/climateseed-demo/logic";
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
+import {
+  displayedLikes,
+  posts as lagoasoftPosts,
+  togglePostVote,
+} from "@challenge/lagoasoft-demo/logic";
 import { convertToRoman } from "@challenge/propertiag-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
@@ -136,6 +141,19 @@ p--m-
 
   it("rejects malformed grids", () => {
     expect(() => fullPath("--\n-m\np-")).toThrow("square");
+  });
+});
+
+describe("Lagoasoft demo voting", () => {
+  it("keeps each post vote independent and derives the displayed count", () => {
+    const firstVote = togglePostVote({}, 1);
+    const secondVote = togglePostVote(firstVote, 2);
+    const removedFirstVote = togglePostVote(secondVote, 1);
+
+    expect(secondVote).toEqual({ 1: true, 2: true });
+    expect(removedFirstVote).toEqual({ 1: false, 2: true });
+    expect(displayedLikes(lagoasoftPosts[0], secondVote[1])).toBe(901);
+    expect(displayedLikes(lagoasoftPosts[0], removedFirstVote[1])).toBe(900);
   });
 });
 

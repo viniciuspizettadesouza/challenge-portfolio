@@ -1,0 +1,329 @@
+.lago-demo {
+  --lago-ink: #17212b;
+  --lago-muted: #73808d;
+  --lago-line: #e4e8ec;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--lago-line);
+  border-radius: 1.25rem;
+  color: var(--lago-ink);
+  background: #f4f6f8;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.lago-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
+  border-bottom: 1px solid var(--lago-line);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.lago-brand,
+.lago-nav__icons,
+.lago-post__header,
+.lago-actions,
+.lago-intro {
+  display: flex;
+  align-items: center;
+}
+
+.lago-brand {
+  gap: 0.65rem;
+}
+
+.lago-brand strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.04em;
+}
+
+.lago-brand__camera {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 2px solid currentColor;
+  border-radius: 0.55rem;
+}
+
+.lago-brand__camera i {
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.lago-nav__icons {
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.lago-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(145deg, #5d35c5, #ef496f 60%, #f5ad42);
+  box-shadow: 0 0 0 2px #e64f7d;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.lago-avatar--small {
+  width: 1.55rem;
+  height: 1.55rem;
+  font-size: 0.62rem;
+}
+
+.lago-intro {
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 1.25rem;
+}
+
+.lago-intro p,
+.lago-intro h2 {
+  margin: 0;
+}
+
+.lago-intro p {
+  margin-bottom: 0.3rem;
+  color: #d84775;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lago-intro h2 {
+  max-width: 23ch;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.08;
+}
+
+.lago-intro > span {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: #576270;
+  background: white;
+  box-shadow: 0 4px 18px rgba(30, 44, 55, 0.07);
+  font-size: 0.68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.lago-feed {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 0 1rem 2.5rem;
+}
+
+.lago-post {
+  overflow: hidden;
+  border: 1px solid var(--lago-line);
+  border-radius: 0.85rem;
+  background: white;
+  box-shadow: 0 18px 45px rgba(30, 44, 55, 0.07);
+}
+
+.lago-post__header {
+  gap: 0.8rem;
+  padding: 0.85rem 1rem;
+}
+
+.lago-post__header div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.lago-post__header strong {
+  font-size: 0.82rem;
+}
+
+.lago-post__header small {
+  color: var(--lago-muted);
+  font-size: 0.66rem;
+}
+
+.lago-more {
+  margin-left: auto;
+  color: var(--lago-muted);
+  letter-spacing: 0.12em;
+}
+
+.lago-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(18rem, 65vw, 31rem);
+  overflow: hidden;
+  color: white;
+  isolation: isolate;
+}
+
+.lago-art--launch {
+  background: linear-gradient(145deg, #171526, #643bb3 55%, #ef6b70);
+}
+
+.lago-art--meeting {
+  background: linear-gradient(145deg, #092c3a, #087b82 58%, #ffd284);
+}
+
+.lago-art--wellbeing {
+  background: linear-gradient(145deg, #153a29, #32a867 55%, #d5e871);
+}
+
+.lago-art--coding {
+  background: linear-gradient(145deg, #101824, #263b63 55%, #ec5e8d);
+}
+
+.lago-art--mobile {
+  background: linear-gradient(145deg, #36124f, #8f2f85 55%, #ff9a57);
+}
+
+.lago-art__glow {
+  position: absolute;
+  top: -15%;
+  right: -10%;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(3rem);
+}
+
+.lago-art__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  transform: perspective(25rem) rotateX(55deg) scale(1.4) translateY(20%);
+}
+
+.lago-art__content {
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.lago-art__symbol {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(0.5rem);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.lago-art__content strong {
+  max-width: 12ch;
+  font-size: clamp(2rem, 7vw, 3.8rem);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.lago-art__content small {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lago-post__body {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.lago-actions {
+  gap: 0.85rem;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.lago-actions button {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  color: var(--lago-ink);
+  background: transparent;
+  cursor: pointer;
+}
+
+.lago-actions button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lago-actions button.is-liked {
+  color: #e53e67;
+  animation: lago-heart 180ms ease-out;
+}
+
+.lago-likes,
+.lago-caption {
+  margin: 0.65rem 0 0;
+  font-size: 0.83rem;
+}
+
+.lago-caption {
+  margin-top: 0.35rem;
+}
+
+.lago-caption strong {
+  margin-right: 0.25rem;
+}
+
+.lago-post time {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--lago-muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes lago-heart {
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@media (max-width: 560px) {
+  .lago-nav__icons {
+    gap: 0.65rem;
+  }
+
+  .lago-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lago-art {
+    min-height: 20rem;
+  }
+}

@@ -6,10 +6,15 @@
   "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1",
   "framework": "react",
   "frameworkVersion": "^16.11.0",
-  "technologies": [],
-  "renderer": "case-study",
+  "technologies": [
+    "React",
+    "JavaScript",
+    "Create React App",
+    "CSS"
+  ],
+  "renderer": "react",
   "migrationStrategy": "upgrade-react",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
   "hasExternalApi": false
 }

@@ -165,14 +165,20 @@
     "title": "Lagoasoft Challenge",
     "company": "Lagoasoft",
     "description": "A preserved technical challenge available for source review and portfolio presentation.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "technologies": [
+      "React",
+      "JavaScript",
+      "Create React App",
+      "CSS"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-react",
     "sourcePath": "challenges/challenge-lagoasoft/original",
     "originalRepository": "viniciuspizettadesouza/challenge-lagoasoft",
     "originalDefaultBranch": "master",
-    "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1"
+    "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1",
+    "demoPath": "challenges/challenge-lagoasoft/demo"
   },
   {
     "slug": "challenge-devlandia",

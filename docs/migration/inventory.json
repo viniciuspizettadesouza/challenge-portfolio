@@ -321,9 +321,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-react",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16 social voting exercise adapted to a tested modern React island. Original captions, dates, like counts, and browser-only state are preserved; expired Instagram media is replaced with local CSS artwork. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-devlandia",

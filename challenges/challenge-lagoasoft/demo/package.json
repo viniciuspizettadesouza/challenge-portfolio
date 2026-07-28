@@ -1,0 +1,13 @@
+{
+  "name": "@challenge/lagoasoft-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.tsx",
+    "./logic": "./src/logic.ts"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  }
+}

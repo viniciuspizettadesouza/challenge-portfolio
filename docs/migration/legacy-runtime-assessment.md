@@ -35,7 +35,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 6 | `challenge-vuejs` | Built, Tested, Portfolio demo, Owner approved | Modern Vue 3 episode guide integrated with local fixtures | None for the maintained demo |
 | 7 | `challenge-propertiag` | Built, Tested, Portfolio demo, Owner approved | Self-contained Next.js calculator adapted to a tested React island | None for the maintained demo |
 | 8 | `challenge-climateseed` | Inspected, install verified, Portfolio demo, Owner approved | Modern Vue 3/Vite dashboard preserved and adapted with the original local dataset | None for the maintained demo |
-| 9 | `challenge-lagoasoft` | Inspected | React 16/CRA app backed by local JSON | Medium; use an older Node/Yarn toolchain and replace expired remote image URLs if needed |
+| 9 | `challenge-lagoasoft` | Inspected, Portfolio demo, Owner approved | React 16/CRA social feed adapted from its local JSON | None for the maintained demo |
 | 10 | `challenge-ingenious-build-frontend` | Inspected | Vue 3 app with a bundled `json-server` fixture | Medium; use Node 16 and run both API and UI processes |
 | 11 | `challenge-instruct` | Inspected | Nuxt 2 frontend using the public JSONPlaceholder API | Medium; legacy Node/Nuxt compatibility plus live network behavior |
 | 12 | `challenge-swordhealth` | Inspected | Vue 3/Quasar app with an explicit Node 14–18 range | Medium to high; Auth0 tenant and callback configuration may require owner access |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Eight maintained portfolio demos pass lint, typecheck, tests, and static build.
-The repository owner approved all eight on 2026-07-28.
+Nine maintained portfolio demos pass lint, typecheck, tests, and static build.
+The repository owner approved all nine on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -72,9 +72,13 @@ errors in `src/plugins/apexcharts.ts`, `src/router/index.ts`, and
 unchanged, uses the same local data, and replaces the fragile chart integration
 with tested semantic HTML and CSS charts.
 
+Lagoasoft's five-post data and browser-only voting behavior are preserved in a
+modern React island. Its expired Instagram CDN media is intentionally replaced
+with local CSS artwork so the demo remains deterministic and network-free.
+
 ## Recommended testing order
 
-1. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
+1. Test Ingenious Build and Instruct in isolated legacy runtimes.
 2. Decide whether Sword Health should retain Auth0 or become a fixture-backed
    demo.
 3. Use local fixtures for every credential-dependent project before attempting

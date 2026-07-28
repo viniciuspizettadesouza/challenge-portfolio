@@ -1,6 +1,6 @@
 # Technical inventory
 
-Generated at 2026-07-28T21:15:05.597Z without installing historical dependencies.
+Generated at 2026-07-28T21:21:52.711Z without installing historical dependencies.
 
 | Challenge | Imported | Framework | Bundler | Strategy | Review |
 | --- | --- | --- | --- | --- | --- |
@@ -13,7 +13,7 @@ Generated at 2026-07-28T21:15:05.597Z without installing historical dependencies
 | challenge-zygo | yes | —  | — | static-embed | confirmed |
 | challenge-salsify | yes | react ^18.2.0 | vite | native-react | confirmed |
 | challenge-climateseed | yes | vue ^3.4.21 | vite | native-vue3 | confirmed |
-| challenge-lagoasoft | yes | react ^16.11.0 | create-react-app | upgrade-react | unreviewed |
+| challenge-lagoasoft | yes | react ^16.11.0 | create-react-app | upgrade-react | confirmed |
 | challenge-devlandia | yes | —  | — | static-embed | confirmed |
 | challenge-meetime | yes | vue ^2.6.11 | vue-cli | upgrade-vue2 | unreviewed |
 | challenge-instruct | yes | unknown  | — | manual-review | unreviewed |

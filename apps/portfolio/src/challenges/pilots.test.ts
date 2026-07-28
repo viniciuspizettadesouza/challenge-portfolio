@@ -1,4 +1,5 @@
 import ClimateSeedDemo from "@challenge/climateseed-demo";
+import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import VueDemo from "@challenge/vue-demo";
@@ -10,6 +11,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the Lagoasoft social feed", () => {
+    const html = renderToStaticMarkup(createElement(LagoasoftDemo));
+
+    expect(html).toContain("A local social feed with independent likes");
+    expect(html).toContain("Need a job?");
+    expect(html).toContain("Mobile developer role");
+  });
+
   it("renders the fixture-backed ClimateSeed dashboard", async () => {
     const html = await renderToString(createSSRApp(ClimateSeedDemo));
 
