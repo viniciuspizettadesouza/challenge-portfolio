@@ -15,6 +15,7 @@
     "@challenge/climateseed-demo": "workspace:*",
     "@challenge/conaz-demo": "workspace:*",
     "@challenge/devlandia-demo": "workspace:*",
+    "@challenge/fyld-hansecom-demo": "workspace:*",
     "@challenge/ingenious-build-demo": "workspace:*",
     "@challenge/instruct-demo": "workspace:*",
     "@challenge/lagoasoft-demo": "workspace:*",

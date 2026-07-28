@@ -552,7 +552,7 @@
     "hasRouter": false,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [],
     "packageRoots": [
       "."
@@ -563,9 +563,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-vue2",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Nuxt 2/Vuetify movie search adapted to a Vue 3 island using records from its bundled Avengers response. The preserved Nuxt branding, search form, and wide text-card layout are reproduced without the removed movie API token. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-onsign-tv",

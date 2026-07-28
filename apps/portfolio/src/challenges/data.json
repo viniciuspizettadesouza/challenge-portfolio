@@ -317,15 +317,22 @@
     "slug": "challenge-fyld-hansecom",
     "title": "FYLD / HanseCom Challenge",
     "company": "FYLD / HanseCom",
-    "description": "A Nuxt movie-search interface that filters a catalog and presents release years, ratings, artwork, and plot summaries.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "description": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
+    "technologies": [
+      "Nuxt",
+      "Vue",
+      "Vuex",
+      "Vuetify",
+      "Movie API"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-vue2",
     "sourcePath": "challenges/challenge-fyld-hansecom/original",
     "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79"
+    "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79",
+    "demoPath": "challenges/challenge-fyld-hansecom/demo"
   },
   {
     "slug": "challenge-onsign-tv",

@@ -40,7 +40,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 11 | `challenge-instruct` | Inspected, Portfolio demo, Owner approved | Nuxt 2 lead table adapted with the original public dataset stored locally | None for the maintained demo |
 | 12 | `challenge-swordhealth` | Inspected, Portfolio demo, Owner approved | Vue 3/Quasar news platform adapted with a safe local demo identity | None for the maintained demo |
 | 13 | `challenge-pipz` | Inspected, Portfolio demo, Owner approved | React 16/CRA film list adapted with the original SWAPI fields and crawl design | None for the maintained demo |
-| 14 | `challenge-fyld-hansecom` | Inspected | Small Nuxt 2 movie search app | High; the external movie API token was redacted and a replacement API or mock is required |
+| 14 | `challenge-fyld-hansecom` | Inspected, Portfolio demo, Owner approved | Nuxt 2 movie search adapted with records from its bundled response | None for the maintained demo |
 | 15 | `challenge-castlabs` | Inspected | Modern React/Vite code but multiple live data integrations | High; GraphQL HTTP/WebSocket and OMDb configuration must be safely replaced or mocked |
 | 16 | `challenge-blueticket` | Inspected | Vue 2 weather/geocoding application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
 | 17 | `challenge-onsign-tv` | Inspected | Vue 2 weather/geolocation application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Thirteen maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved all thirteen on 2026-07-28.
+Fourteen maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all fourteen on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -91,6 +91,10 @@ supports profile and article creation for safe portfolio review.
 Pipz's Star Wars film listing now uses a deterministic seven-film fixture in a
 modern React island. It reproduces the preserved blue intro, original logo,
 historical API order, Roman episode numbers, and yellow perspective crawl.
+
+Fyld Hansecom's maintained Vue 3 search uses records already committed in the
+historical Vuex store. It follows the preserved Nuxt/Vuetify screenshot and no
+longer requires the removed external movie API token.
 
 ## Recommended testing order
 

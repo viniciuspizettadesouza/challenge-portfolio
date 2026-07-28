@@ -1,4 +1,5 @@
 import ClimateSeedDemo from "@challenge/climateseed-demo";
+import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
@@ -15,6 +16,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the Fyld Hansecom movie search", async () => {
+    const html = await renderToString(createSSRApp(FyldHansecomDemo));
+
+    expect(html).toContain("Search for any movie");
+    expect(html).toContain("Search movie");
+    expect(html).toContain("The preserved “avengers” query is ready to run.");
+  });
+
   it("renders the local Pipz film archive", () => {
     const html = renderToStaticMarkup(createElement(PipzDemo));
 

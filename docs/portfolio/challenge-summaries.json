@@ -4,7 +4,7 @@
   "challenge-climateseed": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
   "challenge-conaz": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
   "challenge-devlandia": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",
-  "challenge-fyld-hansecom": "A Nuxt movie-search interface that filters a catalog and presents release years, ratings, artwork, and plot summaries.",
+  "challenge-fyld-hansecom": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
   "challenge-ingenious-build-frontend": "A Vue bus timetable for selecting lines and stops, viewing sorted departure times, and searching the complete stop directory.",
   "challenge-instruct": "A responsive lead-management table with contact-name search and combinable filters derived from company categories.",
   "challenge-jexperts": "A full-stack employee directory for creating, editing, deleting, and approximately searching users with contact, role, address, and reporting details.",

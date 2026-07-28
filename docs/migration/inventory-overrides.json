@@ -18,6 +18,13 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript. Owner approved on 2026-07-28."
   },
+  "challenge-fyld-hansecom": {
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Nuxt 2/Vuetify movie search adapted to a Vue 3 island using records from its bundled Avengers response. The preserved Nuxt branding, search form, and wide text-card layout are reproduced without the removed movie API token. Owner approved on 2026-07-28."
+  },
   "challenge-lagoasoft": {
     "migrationStrategy": "upgrade-react",
     "migrationStatus": "migrated",

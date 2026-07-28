@@ -7,6 +7,10 @@ import {
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
 import {
+  movies as fyldMovies,
+  searchMovies,
+} from "@challenge/fyld-hansecom-demo/logic";
+import {
   getLines,
   getStopsForLine,
   getTimesForStop,
@@ -196,6 +200,14 @@ p--m-
 
   it("rejects malformed grids", () => {
     expect(() => fullPath("--\n-m\np-")).toThrow("square");
+  });
+});
+
+describe("Fyld Hansecom movie search", () => {
+  it("requires three characters and filters titles case-insensitively", () => {
+    expect(searchMovies(fyldMovies, "av")).toEqual([]);
+    expect(searchMovies(fyldMovies, "INFINITY").map(({ id }) => id)).toEqual([299536]);
+    expect(searchMovies(fyldMovies, "avengers")).toHaveLength(8);
   });
 });
 
