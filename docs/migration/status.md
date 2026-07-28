@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 7 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 13 demos or complete case studies |
+| Interactive demos | In progress | 8 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 12 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a maintained Climateseed adaptation that resolves the three TypeScript
-issues found in the preserved project. Capture screenshots for approved demos
-as release evidence when convenient.
+Create a maintained Lagoasoft adaptation after inspecting its preserved React
+application and local JSON data. Capture screenshots for approved demos as
+release evidence when convenient.
 
 ## Environment observed
 

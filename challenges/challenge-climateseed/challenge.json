@@ -6,10 +6,15 @@
   "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4",
   "framework": "vue",
   "frameworkVersion": "^3.4.21",
-  "technologies": [],
+  "technologies": [
+    "Vue",
+    "TypeScript",
+    "Pinia",
+    "ApexCharts"
+  ],
   "renderer": "vue3",
   "migrationStrategy": "native-vue3",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

@@ -272,7 +272,7 @@
     "hasRouter": true,
     "hasTests": true,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [
       "BASE_URL"
     ],
@@ -287,9 +287,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Local-data Vue 3 dashboard adapted with dependency-free charts. The preserved ApexCharts project remains unchanged and retains its three documented TypeScript build errors. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-lagoasoft",

@@ -1,4 +1,5 @@
 ---
+import ClimateSeedDemo from "@challenge/climateseed-demo";
 import ConazDemo from "@challenge/conaz-demo";
 import DevlandiaDemo from "@challenge/devlandia-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
@@ -15,7 +16,9 @@ const { slug } = Astro.props;
 ---
 
 {
-  slug === "challenge-salsify" ? (
+  slug === "challenge-climateseed" ? (
+    <ClimateSeedDemo client:load />
+  ) : slug === "challenge-salsify" ? (
     <SalsifyDemo client:load />
   ) : slug === "challenge-vue" ? (
     <VueDemo client:load />

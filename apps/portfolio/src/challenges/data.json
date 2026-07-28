@@ -145,14 +145,20 @@
     "title": "ClimateSeed Challenge",
     "company": "ClimateSeed",
     "description": "A preserved technical challenge available for source review and portfolio presentation.",
-    "technologies": [],
+    "technologies": [
+      "Vue",
+      "TypeScript",
+      "Pinia",
+      "ApexCharts"
+    ],
     "renderer": "vue3",
-    "migrationStatus": "pending",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-vue3",
     "sourcePath": "challenges/challenge-climateseed/original",
     "originalRepository": "viniciuspizettadesouza/challenge-climateseed",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4"
+    "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4",
+    "demoPath": "challenges/challenge-climateseed/demo"
   },
   {
     "slug": "challenge-lagoasoft",
