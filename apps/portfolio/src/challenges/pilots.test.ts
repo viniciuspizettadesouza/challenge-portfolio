@@ -69,6 +69,7 @@ describe("pilot demos", () => {
 
     expect(html).toContain("TV Series Episodes");
     expect(html).toContain("Local subscription simulation");
+    expect(html).toContain("Simulate update event");
     expect(html).toContain("The Quiet Frequency");
   });
 

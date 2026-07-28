@@ -13,6 +13,8 @@
     "lint": "pnpm --filter portfolio lint",
     "typecheck": "pnpm --filter portfolio typecheck",
     "test": "pnpm --filter portfolio test",
+    "test:e2e": "pnpm --filter portfolio test:e2e",
+    "screenshots": "pnpm --filter portfolio screenshots",
     "verify:migration": "node scripts/migration/verify-imports.mjs",
     "inventory": "node scripts/migration/generate-inventory.mjs && node scripts/migration/sync-challenge-metadata.mjs",
     "migration:check": "node scripts/migration/check-environment.mjs",

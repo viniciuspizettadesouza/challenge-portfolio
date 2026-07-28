@@ -35,6 +35,8 @@ const initialBooks = sortBooks(books, "title-ascending");
     <option value="edition-descending-author-descending-title-ascending">
       Edition descending, author descending, title ascending
     </option>
+    <option value="null-collection">Null collection → OrderingException</option>
+    <option value="empty-set">Empty set</option>
   </select>
   <p class="result">
     Ordered IDs: <output id="zygo-ids">{initialBooks.map(({ id }) => id).join(", ")}</output>
@@ -90,20 +92,30 @@ const initialBooks = sortBooks(books, "title-ascending");
       const ids = this.querySelector<HTMLOutputElement>("#zygo-ids");
 
       select?.addEventListener("change", () => {
-        const sorted = sortBooks(books, select.value as OrderingRule);
-        if (ids) ids.textContent = sorted.map(({ id }) => id).join(", ");
-        if (body) {
-          body.replaceChildren(
-            ...sorted.map((book) => {
-              const row = document.createElement("tr");
-              for (const value of [book.id, book.title, book.author, book.edition]) {
-                const cell = document.createElement("td");
-                cell.textContent = String(value);
-                row.append(cell);
-              }
-              return row;
-            }),
-          );
+        try {
+          const sorted = sortBooks(books, select.value as OrderingRule);
+          if (ids) ids.textContent = sorted.length
+            ? sorted.map(({ id }) => id).join(", ")
+            : "(empty set)";
+          if (body) {
+            body.replaceChildren(
+              ...sorted.map((book) => {
+                const row = document.createElement("tr");
+                for (const value of [book.id, book.title, book.author, book.edition]) {
+                  const cell = document.createElement("td");
+                  cell.textContent = String(value);
+                  row.append(cell);
+                }
+                return row;
+              }),
+            );
+          }
+        } catch (error) {
+          if (ids) {
+            ids.textContent =
+              error instanceof Error ? error.message : "OrderingException";
+          }
+          body?.replaceChildren();
         }
       });
     }

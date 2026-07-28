@@ -10,3 +10,5 @@ monthly member updates.
 
 The historical implementation remains unchanged under `original/`. The
 browser-safe adaptation lives under `demo/`.
+
+Status: integrated, automatically tested, and owner-approved on 2026-07-28.

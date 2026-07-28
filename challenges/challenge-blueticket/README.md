@@ -10,8 +10,8 @@ screen while retaining its primary workflow:
 
 - search deterministic forecasts by city or country;
 - use browser geolocation to choose the nearest available local city;
-- inspect temperature, feels-like temperature, humidity, condition, and
-  description for six hourly records;
+- inspect the complete 48-record hourly horizon with temperature, feels-like
+  temperature, humidity, condition, and description;
 - retain recent searches and the last selected forecast in localStorage.
 
 The preserved application called Google Maps and OpenWeather directly. Its

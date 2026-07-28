@@ -4,14 +4,14 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 2/Vuetify weather search adapted to a self-contained Vue 3 island. City search, geolocation selection, hourly weather fields, search history, and browser caching remain interactive using deterministic local fixtures instead of the sanitized Google Maps and historical OpenWeather credentials. Owner approved on 2026-07-28."
+    "reviewNotes": "Vue 2/Vuetify weather search adapted to a self-contained Vue 3 island. City search, geolocation selection, the complete 48-record hourly horizon, search history, and browser caching remain interactive using deterministic local fixtures instead of the sanitized Google Maps and historical OpenWeather credentials. Owner approved on 2026-07-28."
   },
   "challenge-castlabs": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "React/Vite episode manager adapted to a self-contained React island. Search, details, create/delete mutations, and subscription feedback are retained with deterministic fixtures and local artwork replacing the unavailable GraphQL, WebSocket, and OMDb services. Owner approved on 2026-07-28."
+    "reviewNotes": "React/Vite episode manager adapted to a self-contained React island. Search, details, create/delete mutations, and create/update/delete subscription feedback are retained with deterministic fixtures and local artwork replacing the unavailable GraphQL, WebSocket, and OMDb services. Owner approved on 2026-07-28."
   },
   "challenge-climateseed": {
     "migrationStrategy": "native-vue3",
@@ -82,7 +82,7 @@
     "hasBackend": false,
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "React 16/Express/MongoDB employee directory adapted to a self-contained modern React island. Show-all and approximate name search, profile fields, a repaired two-step profile/address registration flow, and browser persistence use fictional local records. Passwords are never stored, and the historical remote MongoDB connection is not used. Owner review pending."
+    "reviewNotes": "React 16/Express/MongoDB employee directory adapted to a self-contained modern React island. Show-all and approximate name search, profile fields, a repaired two-step profile/address registration flow, and browser persistence use fictional local records. Passwords are never stored, and the historical remote MongoDB connection is not used. Owner approved on 2026-07-28."
   },
   "challenge-propertiag": {
     "migrationStrategy": "native-react",
@@ -116,7 +116,7 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 3/Quasar news platform adapted to a self-contained Vue 3 island. Feed, category filters, load more, article detail, profile, and authoring are retained with a clearly labelled local demo identity replacing the historical Auth0 tenant. Owner approved on 2026-07-28."
+    "reviewNotes": "Vue 3/Quasar news platform adapted to a self-contained Vue 3 island. Feed, category filters, load more, article detail, profile, authoring, and local image preview are retained with a clearly labelled local demo identity replacing the historical Auth0 tenant. Owner approved on 2026-07-28."
   },
   "challenge-vue": {
     "migrationStrategy": "native-vue3",
@@ -134,6 +134,6 @@
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo. Owner approved on 2026-07-28."
+    "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo with all three ordering rules, the documented null exception, and the empty-set result. Owner approved on 2026-07-28."
   }
 }

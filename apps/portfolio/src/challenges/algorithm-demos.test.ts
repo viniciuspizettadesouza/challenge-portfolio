@@ -7,6 +7,7 @@ import {
 import {
   addSearchHistory,
   closestForecast,
+  expandHourlyForecast,
   findForecast,
 } from "@challenge/blueticket-demo/logic";
 import {
@@ -210,6 +211,14 @@ describe("Blueticket local weather lookup", () => {
       addSearchHistory(["London", "Lisbon", "São Paulo"], "Florianópolis"),
     ).toEqual(["Florianópolis", "London", "Lisbon", "São Paulo"]);
   });
+
+  it("retains a complete 48-record hourly horizon", () => {
+    const seed = findForecast("London")!.hourly.slice(0, 6);
+    const expanded = expandHourlyForecast(seed);
+
+    expect(expanded).toHaveLength(48);
+    expect(new Set(expanded.slice(0, 24).map(({ time }) => time)).size).toBe(24);
+  });
 });
 
 describe("Castlabs episode management", () => {
@@ -396,6 +405,8 @@ describe("Zygo demo logic", () => {
         ({ id }) => id,
       ),
     ).toEqual([4, 1, 3, 2]);
+    expect(() => sortBooks(books, "null-collection")).toThrow("OrderingException");
+    expect(sortBooks(books, "empty-set")).toEqual([]);
   });
 });
 

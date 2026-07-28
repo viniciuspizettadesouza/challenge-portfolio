@@ -21,9 +21,9 @@ unchecked.
 - [x] A fresh clone of the unified repository works.
 - [x] `pnpm install --frozen-lockfile` works in the fresh clone.
 - [x] The fresh-clone build generates all 20 challenge routes.
-- [x] Lint, typecheck, tests, and build pass in the primary checkout.
-- [ ] All 20 pages have been manually reviewed.
-- [ ] Every challenge has a functional demo or a complete case study.
+- [x] Lint, typecheck, unit/browser tests, and build pass in the primary checkout.
+- [x] All 20 pages have been manually reviewed.
+- [x] Every challenge has a functional demo or a complete case study.
 
 ## Release and recovery
 

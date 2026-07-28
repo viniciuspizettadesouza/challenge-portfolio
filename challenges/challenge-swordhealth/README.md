@@ -11,6 +11,7 @@ The Vue 3 demo under `demo/` preserves the news-platform workflow:
 - progressively load more articles and open their detail view;
 - start a clearly labelled local demo session;
 - inspect the fixture-backed author profile;
+- select and preview an article image locally;
 - create an article that remains in the current browser session.
 
 The historical application uses Auth0 for authentication and author identity.

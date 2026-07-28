@@ -46,7 +46,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 17 | `challenge-onsign-tv` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geolocation screen adapted with local forecast fixtures | None for the maintained demo |
 | 18 | `challenge-meetime` | Inspected, Portfolio demo, Owner approved | Vue 2 sales client adapted with fictional local leads and cadences | None for the maintained demo |
 | 19 | `challenge-stormtech` | Inspected, Portfolio demo, Owner approved | React 16/Express/MongoDB sorter adapted with its documented local book fixture | None for the maintained demo |
-| 20 | `challenge-jexperts` | Inspected, Portfolio demo | React 16/Express/MongoDB employee directory adapted with fictional local records | Low; review show-all, approximate search, details, two-step registration, and persistence |
+| 20 | `challenge-jexperts` | Inspected, Portfolio demo, Owner approved | React 16/Express/MongoDB employee directory adapted with fictional local records | None for the maintained demo |
 
 ## What is known to work now
 
@@ -61,9 +61,10 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-All twenty maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved nineteen on 2026-07-28; JExperts awaits
-owner review.
+All twenty maintained portfolio demos pass lint, typecheck, unit tests,
+Chromium interaction tests, and static build. The repository owner approved
+all twenty on 2026-07-28. Each browser test exercises a representative workflow
+and writes a screenshot to `docs/portfolio/screenshots/`.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -103,9 +104,9 @@ details, create/delete mutations, and immediate subscription-style feedback
 remain interactive; OMDb poster requests are represented by local artwork.
 
 Blueticket's Vue 2 city weather screen is retained as a Vue 3 island with four
-local forecast fixtures. Search, browser geolocation matching, six hourly
-weather fields, recent searches, and last-forecast caching remain interactive
-without contacting Google Maps or OpenWeather.
+local forecast fixtures. Search, browser geolocation matching, a complete
+48-record hourly horizon, weather fields, recent searches, and last-forecast
+caching remain interactive without contacting Google Maps or OpenWeather.
 
 OnSign TV's Vue 2 location forecast is retained as a Vue 3 island with its
 Bootstrap-style navigation and horizontal six-hour matrix. Address search,
@@ -128,10 +129,10 @@ and address details, a repaired two-step registration flow, and browser
 persistence use fictional records without the historical Express/MongoDB
 services; submitted passwords are deliberately discarded.
 
-## Recommended testing order
+## Recommended next validation
 
-1. Review the final JExperts local workflow.
-2. Capture representative screenshots for the twenty maintained demos.
+1. Commit and push the current maintained source and browser evidence.
+2. Run the complete validation in a fresh clone of that revision.
 3. Do not revive historical credential or database connections; the documented
    fixtures are the supported portfolio runtime.
 

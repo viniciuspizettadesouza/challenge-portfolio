@@ -80,18 +80,40 @@ const cityForecasts: CityForecast[] = [
   },
 ];
 
-export const forecasts = cityForecasts;
+export function expandHourlyForecast(hours: HourlyWeather[], total = 48) {
+  const firstHour = Number(hours[0]?.time.slice(0, 2) ?? 0);
+
+  return Array.from({ length: total }, (_, index) => {
+    const source = hours[index % hours.length];
+    const cycle = Math.floor(index / hours.length);
+    const hour = (firstHour + index) % 24;
+    const temperatureOffset = cycle === 0 ? 0 : Math.round(Math.sin(index / 4) * 2);
+
+    return {
+      ...source,
+      time: `${String(hour).padStart(2, "0")}:00`,
+      temp: source.temp + temperatureOffset,
+      feelsLike: source.feelsLike + temperatureOffset,
+      humidity: Math.min(96, source.humidity + cycle),
+    };
+  });
+}
+
+export const forecasts = cityForecasts.map((forecast) => ({
+  ...forecast,
+  hourly: expandHourlyForecast(forecast.hourly),
+}));
 
 export function findForecast(query: string) {
   const normalisedQuery = query.trim().toLocaleLowerCase();
 
-  return cityForecasts.find(({ city, country }) =>
+  return forecasts.find(({ city, country }) =>
     `${city}, ${country}`.toLocaleLowerCase().includes(normalisedQuery),
   );
 }
 
 export function closestForecast(latitude: number, longitude: number) {
-  return cityForecasts.reduce((closest, candidate) => {
+  return forecasts.reduce((closest, candidate) => {
     const closestDistance =
       (closest.latitude - latitude) ** 2 + (closest.longitude - longitude) ** 2;
     const candidateDistance =
