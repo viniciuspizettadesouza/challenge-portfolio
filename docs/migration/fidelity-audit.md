@@ -52,6 +52,22 @@ interaction for every demo and fails on browser console or page errors. The
 same run refreshes all 20 representative screenshots under
 `docs/portfolio/screenshots/`.
 
+## Preserved-source execution evidence
+
+No dependency was installed inside `challenges/*/original/`. During migration:
+
+- the dependency-free Conaz and Zygo Node programs ran successfully;
+- both dependency-free Devlandia Ruby programs ran with sample input;
+- the preserved Salsify, Vue.js, and PropertiaG projects completed their
+  available build or test checks in temporary environments;
+- PropertiaG's committed snapshot remained stale even though its heading test
+  passed;
+- ClimateSeed installed successfully, but its preserved build retained existing
+  TypeScript errors in its ApexCharts plugin, router, and data store.
+
+These limitations apply only to the preserved historical runtimes. All 20
+maintained demos pass the portfolio's current automated checks.
+
 ## Architectural rule
 
 The portfolio does not attempt to revive unsafe or unavailable infrastructure.

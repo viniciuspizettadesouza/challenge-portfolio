@@ -14,7 +14,7 @@ challenges/<slug>/demo/         optional executable adaptation
 challenges/<slug>/challenge.json
 challenges/<slug>/README.md
 docs/migration/                 migration evidence and current status
-scripts/migration/              auditable automation
+scripts/migration/              inventory and metadata generation
 ```
 
 ## Application
