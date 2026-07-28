@@ -25,6 +25,10 @@ unchecked.
 - [x] All 20 pages have been manually reviewed.
 - [x] Every challenge has a functional demo or a complete case study.
 
+Fresh-clone validation was repeated for published revision `fe69c34` on
+2026-07-28: frozen install, lint, typecheck, 62 unit tests, 20 Chromium
+interaction tests, and the 43-page static build passed.
+
 ## Release and recovery
 
 - [ ] The application is deployed.

@@ -19,13 +19,13 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | Interactive demos | Completed | all 20 integrated, owner-approved, browser-tested, and captured |
 | Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
-| Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
+| Deployment and final cleanup | Pending | deploy verified revision `fe69c34`, release, second backup copy, and owner review |
 
 ## Current next action
 
-Review and commit the completed fidelity/browser-evidence changes, then push the
-exact source state. After publication, validate a fresh clone and proceed to
-deployment, release, a second backup copy, and final owner review.
+Deploy verified revision `fe69c34`. After deployment validation, create the
+release, make the second off-device backup copy, and complete the final owner
+review.
 
 ## Environment observed
 
@@ -41,11 +41,15 @@ under `../challenge-portfolio-backups/` and are not tracked here.
 
 ## Upstream validation
 
-A fresh public clone was created on 2026-07-26. In that clone,
-`pnpm install --frozen-lockfile` and `pnpm build` passed and generated 23 static
-pages. The current primary checkout passes lint, typecheck, 62 unit tests, 20
-Chromium interaction tests, and a 43-page static build. A new clean-clone
-validation remains required after the current changes are committed and pushed.
+A fresh public clone of revision
+`fe69c346c4b94fe636ce79e7739d69e3382304ef` was validated on 2026-07-28.
+`pnpm install --frozen-lockfile`, lint, typecheck, 62 unit tests, 20 Chromium
+interaction tests, and the 43-page static build all passed.
+
+History verification remains tied to the external backup mirrors under
+`../challenge-portfolio-backups/` and is therefore not part of portable
+clean-clone validation. It passed in the primary checkout before this revision
+was published.
 
 ## Git ownership
 
