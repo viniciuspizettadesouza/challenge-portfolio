@@ -12,8 +12,9 @@ Each challenge has two clearly separated representations:
 ## Current status
 
 The 20 default branches have been imported, backed up, sanitized, and verified.
-The Astro catalog builds all 20 challenge routes. The Salsify React demo and the
-Vue 3 demo are integrated; the remaining demos and case studies are pending.
+The Astro catalog builds all 20 challenge routes, and every maintained demo is
+integrated, owner-approved, browser-tested, and represented by a reproducible
+screenshot.
 
 The authoritative progress record is
 [`docs/migration/status.md`](docs/migration/status.md).
@@ -38,6 +39,7 @@ pnpm dev
 pnpm lint
 pnpm typecheck
 pnpm test
+pnpm test:e2e
 pnpm build
 ```
 
@@ -58,8 +60,24 @@ No repository script deletes, archives, or modifies an original remote
 repository.
 
 Integrated demos are available both on their challenge detail pages and through
-distraction-free routes at `/demos/<challenge-slug>`. The dedicated route also
+distraction-free routes at
+`/challenge-portfolio/demos/<challenge-slug>`. The dedicated route also
 provides a browser fullscreen control.
+
+## GitHub Pages
+
+The production target is:
+
+`https://viniciuspizettadesouza.github.io/challenge-portfolio/`
+
+Astro is configured for the `/challenge-portfolio/` project subpath. The
+workflow at `.github/workflows/deploy-pages.yml` validates and publishes the
+site whenever `main` is pushed, and it can also be run manually from GitHub
+Actions.
+
+For the first deployment, set **Settings → Pages → Build and deployment →
+Source** to **GitHub Actions**. See the
+[deployment runbook](docs/plan/runbook.md#9-deploy-to-github-pages).
 
 ## Git workflow
 

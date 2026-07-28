@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import ChallengeDemo from "../../components/ChallengeDemo.astro";
 import { challenges, type Challenge } from "../../challenges/registry";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/urls";
 
 export const getStaticPaths = (() =>
   challenges.map((challenge) => ({
@@ -21,7 +22,7 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
 <BaseLayout title={`${challenge.title} — Challenge Portfolio`}>
   <article>
     <header class="challenge-hero">
-      <a class="back-link" href="/challenges">← All challenges</a>
+      <a class="back-link" href={withBase("challenges")}>← All challenges</a>
       <div class="challenge-title">
         <div>
           <p class="eyebrow">{challenge.company}</p>
@@ -60,7 +61,7 @@ const sourceUrl = `https://github.com/viniciuspizettadesouza/challenge-portfolio
         <div class="meta-actions">
           {
             challenge.demoPath && (
-              <a class="button" href={`/demos/${challenge.slug}`}>
+              <a class="button" href={withBase(`demos/${challenge.slug}`)}>
                 Open fullscreen demo
               </a>
             )

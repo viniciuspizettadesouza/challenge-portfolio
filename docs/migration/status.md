@@ -1,6 +1,6 @@
 # Migration status
 
-Last updated: 2026-07-28.
+Last updated: 2026-07-29.
 
 This is the authoritative handoff document. Completed work remains visible.
 Resume from the first phase marked `In progress` or `Pending`.
@@ -19,13 +19,18 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | Interactive demos | Completed | all 20 integrated, owner-approved, browser-tested, and captured |
 | Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
-| Deployment and final cleanup | Pending | deploy verified revision `fe69c34`, release, second backup copy, and owner review |
+| Deployment and final cleanup | In progress | GitHub Pages workflow prepared; publish it, verify production, release, back up, and review |
 
 ## Current next action
 
-Deploy verified revision `fe69c34`. After deployment validation, create the
-release, make the second off-device backup copy, and complete the final owner
-review.
+Commit and push the GitHub Pages configuration. In repository Settings, select
+GitHub Actions as the Pages source if it is not already selected, then monitor
+the `Deploy to GitHub Pages` workflow and verify:
+
+`https://viniciuspizettadesouza.github.io/challenge-portfolio/`
+
+After production validation, record the deployed revision, create the release,
+make the second off-device backup copy, and complete the final owner review.
 
 ## Environment observed
 

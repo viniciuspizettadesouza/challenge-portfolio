@@ -19,7 +19,7 @@ future contributors can see what happened and where to continue.
 | 9 — Pilot demos | Completed | all 20 owner-approved with browser evidence and screenshots |
 | 10 — Remaining waves | Completed | all 20 challenges have interactive demos |
 | 11 — Repository quality | Completed | revision `fe69c34` passed frozen install and all checks in a fresh public clone |
-| 12 — Final release and cleanup | Pending | deploy, release, backup copy, manual review |
+| 12 — Final release and cleanup | In progress | Pages automation prepared; production validation, release, backup, and review remain |
 
 ## Phase 0 — Environment
 
@@ -70,7 +70,8 @@ screenshots cover every demo.
 
 ## Phases 11–12 — Quality and completion
 
-Revision `fe69c34` passed fresh-clone validation. Deploy that exact revision,
-validate the production result, create the release, and make the off-device
-backup copy. Original repository deletion remains manual and is blocked until
-every deletion-checklist item is complete.
+Revision `fe69c34` passed fresh-clone validation. The GitHub Pages workflow and
+the `/challenge-portfolio/` base-path support are prepared in the next change.
+Publish that configuration, validate the production result, create the release,
+and make the off-device backup copy. Original repository deletion remains
+manual and is blocked until every deletion-checklist item is complete.

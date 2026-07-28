@@ -14,8 +14,12 @@ async function openDemo(page: Page, slug: string) {
     if (message.type() === "error") errors.push(message.text());
   });
 
-  await page.goto(`/demos/${slug}`);
+  await page.goto(`demos/${slug}`);
   await expect(page.getByText("Interactive demo", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Back to challenge" })).toHaveAttribute(
+    "href",
+    `/challenge-portfolio/challenges/${slug}`,
+  );
   await page.addStyleTag({
     content: "*, *::before, *::after { animation: none !important; transition: none !important; }",
   });
