@@ -13,7 +13,7 @@
   ],
   "renderer": "static",
   "migrationStrategy": "static-embed",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "migrated",
   "hasBackend": false,
   "hasExternalApi": false
 }

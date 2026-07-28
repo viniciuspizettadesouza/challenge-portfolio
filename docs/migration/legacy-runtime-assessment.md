@@ -1,6 +1,6 @@
 # Legacy runtime assessment
 
-Last updated: 2026-07-26.
+Last updated: 2026-07-28.
 
 This document ranks the 20 preserved projects from easiest to hardest to test
 functionally. It distinguishes direct execution evidence from static analysis.
@@ -16,6 +16,8 @@ a project depends on an external API.
 - `Tested`: an available automated test suite passed in a temporary copy.
 - `Portfolio demo`: the maintained adaptation is integrated into the portfolio
   and covered by the portfolio checks.
+- `Owner approved`: the repository owner completed a manual visual and
+  functional review.
 - `Inspected`: the classification is based on source, scripts, dependencies,
   lockfiles, and service requirements; it has not been executed independently.
 
@@ -25,11 +27,11 @@ No dependency was installed inside `challenges/*/original/`.
 
 | Rank | Project | Current evidence | Why it has this rank | Owner effort |
 | ---: | --- | --- | --- | --- |
-| 1 | `challenge-conaz` | Executed, Portfolio demo | One Node.js file, no dependencies, services, or credentials | None |
-| 2 | `challenge-zygo` | Executed, Portfolio demo | Two Node.js files and a local JSON fixture | None |
-| 3 | `challenge-devlandia` | Executed, Portfolio demo | Two dependency-free Ruby scripts; sample inputs run successfully | None beyond having Ruby |
-| 4 | `challenge-salsify` | Built, Portfolio demo | Modern React/Vite app with local data and no external API | None |
-| 5 | `challenge-vue` | Portfolio demo, Inspected | Small Vue 3/Vite app with no backend or private API | Low; independently build the preserved app |
+| 1 | `challenge-conaz` | Executed, Portfolio demo, Owner approved | One Node.js file, no dependencies, services, or credentials | None |
+| 2 | `challenge-zygo` | Executed, Portfolio demo, Owner approved | Two Node.js files and a local JSON fixture | None |
+| 3 | `challenge-devlandia` | Executed, Portfolio demo, Owner approved | Two dependency-free Ruby scripts; sample inputs run successfully | None beyond having Ruby |
+| 4 | `challenge-salsify` | Built, Portfolio demo, Owner approved | Modern React/Vite app with local data and no external API | None |
+| 5 | `challenge-vue` | Portfolio demo, Owner approved | Small Vue 3/Vite app with no backend or private API | None for the maintained demo |
 | 6 | `challenge-vuejs` | Built, Tested | Modern Vue 3/Vite app; production build and one unit test pass | Low; browser flow depends on a TVMaze request currently using HTTP |
 | 7 | `challenge-propertiag` | Inspected | Self-contained Next.js calculator with Jest tests and no API | Low; use Yarn 1 and a compatible Node version |
 | 8 | `challenge-climateseed` | Inspected, install verified | Modern Vue 3/Vite app with local data and a unit test | Low to medium; production build currently has three TypeScript errors |
@@ -58,8 +60,9 @@ challenge-salsify     npm clean install and production build passed
 challenge-vuejs       npm clean install, production build, and unit test passed
 ```
 
-The maintained Salsify, Vue, Conaz, Zygo, and Devlandia portfolio demos also
-pass the portfolio lint, typecheck, tests, and static build.
+The maintained Salsify, Vue, Conaz, Zygo, and Devlandia portfolio demos pass
+the portfolio lint, typecheck, tests, and static build. The repository owner
+approved all five on 2026-07-28.
 
 Climateseed installed successfully, but its build exposed existing TypeScript
 errors in `src/plugins/apexcharts.ts`, `src/router/index.ts`, and
@@ -68,18 +71,16 @@ lockfile, so an `npm ci` attempt is not a valid test for that project.
 
 ## Recommended testing order
 
-1. Capture browser evidence for the five integrated demos: Conaz, Zygo,
-   Devlandia, Salsify, and Vue.
-2. Run a browser smoke test for Vue.js and replace its HTTP API URL with HTTPS
+1. Run a browser smoke test for Vue.js and replace its HTTP API URL with HTTPS
    or a fixture if necessary.
-3. Test Propertia with Yarn 1 and Node 16 or 18.
-4. Fix Climateseed's three type errors, then run its build and unit test again.
-5. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
-6. Decide whether Sword Health should retain Auth0 or become a fixture-backed
+2. Test Propertia with Yarn 1 and Node 16 or 18.
+3. Fix Climateseed's three type errors, then run its build and unit test again.
+4. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
+5. Decide whether Sword Health should retain Auth0 or become a fixture-backed
    demo.
-7. Use local fixtures for every credential-dependent project before attempting
+6. Use local fixtures for every credential-dependent project before attempting
    functional parity.
-8. Recreate MongoDB locally for Stormtech and JExperts only if full backend
+7. Recreate MongoDB locally for Stormtech and JExperts only if full backend
    behavior is valuable; otherwise produce complete case studies.
 
 ## Completion rule

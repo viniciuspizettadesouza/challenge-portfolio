@@ -61,9 +61,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 3/Vite application integrated as a tested Astro island."
+    "reviewNotes": "Vue 3/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-vuejs",
@@ -159,9 +159,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "static-embed",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Dependency-free JavaScript algorithms adapted to an interactive Astro demo."
+    "reviewNotes": "Dependency-free JavaScript algorithms adapted to an interactive Astro demo. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-jexperts",
@@ -222,9 +222,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "static-embed",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo."
+    "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-salsify",
@@ -254,9 +254,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-react",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Modern React/Vite application integrated as a tested Astro island."
+    "reviewNotes": "Modern React/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-climateseed",
@@ -345,9 +345,9 @@
     "entrypoints": [],
     "nodeVersion": null,
     "migrationStrategy": "static-embed",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript."
+    "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-meetime",
