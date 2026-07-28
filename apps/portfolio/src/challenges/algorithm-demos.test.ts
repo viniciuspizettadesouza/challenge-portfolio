@@ -35,6 +35,13 @@ import {
   nearestLocationForecast,
 } from "@challenge/onsign-tv-demo/logic";
 import {
+  createLead,
+  deleteLead,
+  initialLeads,
+  updateLead,
+  validateLead,
+} from "@challenge/meetime-demo/logic";
+import {
   filterLeads,
   getCategoryOptions,
   leads as instructLeads,
@@ -58,6 +65,34 @@ import {
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("Meetime local lead management", () => {
+  it("validates and creates leads for a local cadence", () => {
+    const draft = {
+      name: "Alex Morgan",
+      email: "alex@example.com",
+      phone: "+44 20 7000 0000",
+      cadence: "Product Demo",
+    };
+
+    expect(validateLead(draft)).toEqual({});
+    expect(createLead(draft, 4)).toMatchObject({
+      id: 4,
+      leadName: "Alex Morgan",
+      cadence: "Product Demo",
+    });
+    expect(validateLead({ ...draft, email: "invalid" }).email).toContain("valid");
+  });
+
+  it("updates and deletes leads without mutating the preserved fixture", () => {
+    const updated = { ...initialLeads[0], phone: "+55 48 90000-0000" };
+    const next = updateLead(initialLeads, updated);
+
+    expect(next[0].phone).toBe("+55 48 90000-0000");
+    expect(initialLeads[0].phone).not.toBe(next[0].phone);
+    expect(deleteLead(next, updated.id)).toHaveLength(initialLeads.length - 1);
+  });
+});
 
 describe("OnSign TV local forecast", () => {
   it("resolves text and coordinate searches against bundled locations", () => {

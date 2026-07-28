@@ -46,12 +46,19 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "React 16 social voting exercise adapted to a tested modern React island. Original captions, dates, like counts, and browser-only state are preserved; expired Instagram media is replaced with local CSS artwork. Owner approved on 2026-07-28."
   },
+  "challenge-meetime": {
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 2/Vuetify prospecting client adapted to a self-contained Vue 3 island. Cadence selection, lead validation and creation, the lead table, edit/delete dialogs, and browser persistence remain interactive with fictional local records replacing the private Meetime API. Owner approved on 2026-07-28."
+  },
   "challenge-onsign-tv": {
     "migrationStrategy": "upgrade-vue2",
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 2/BootstrapVue location forecast adapted to a self-contained Vue 3 island. Address search, local geolocation matching, the six-column forecast matrix, and browser caching are retained with deterministic fixtures replacing the sanitized Google Maps and historical OpenWeather credentials. Owner review pending."
+    "reviewNotes": "Vue 2/BootstrapVue location forecast adapted to a self-contained Vue 3 island. Address search, local geolocation matching, the six-column forecast matrix, and browser caching are retained with deterministic fixtures replacing the sanitized Google Maps and historical OpenWeather credentials. Owner approved on 2026-07-28."
   },
   "challenge-ingenious-build-frontend": {
     "migrationStrategy": "native-vue3",

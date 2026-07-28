@@ -43,8 +43,8 @@ No dependency was installed inside `challenges/*/original/`.
 | 14 | `challenge-fyld-hansecom` | Inspected, Portfolio demo, Owner approved | Nuxt 2 movie search adapted with records from its bundled response | None for the maintained demo |
 | 15 | `challenge-castlabs` | Inspected, Portfolio demo, Owner approved | React/Vite episode manager adapted with local service fixtures | None for the maintained demo |
 | 16 | `challenge-blueticket` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geocoding screen adapted with local city forecasts | None for the maintained demo |
-| 17 | `challenge-onsign-tv` | Inspected, Portfolio demo | Vue 2 weather/geolocation screen adapted with local forecast fixtures | Low; review address search, location matching, six-hour matrix, and caching |
-| 18 | `challenge-meetime` | Inspected | Vue 2 client for a private sales API | Very high; requires authorized API access and should use fixtures instead of historical credentials |
+| 17 | `challenge-onsign-tv` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geolocation screen adapted with local forecast fixtures | None for the maintained demo |
+| 18 | `challenge-meetime` | Inspected, Portfolio demo, Owner approved | Vue 2 sales client adapted with fictional local leads and cadences | None for the maintained demo |
 | 19 | `challenge-stormtech` | Inspected | React 16 frontend plus Express/Mongoose backend | Very high; requires a replacement MongoDB database, seed data, two processes, and legacy Node |
 | 20 | `challenge-jexperts` | Inspected | React 16 frontend plus a larger Express/Mongoose CRUD backend | Very high; requires replacement database/configuration, representative data, two processes, and deeper workflow review |
 
@@ -61,9 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Seventeen maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved sixteen on 2026-07-28; OnSign TV awaits
-owner review.
+Eighteen maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all eighteen on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -111,6 +110,11 @@ OnSign TV's Vue 2 location forecast is retained as a Vue 3 island with its
 Bootstrap-style navigation and horizontal six-hour matrix. Address search,
 privacy-safe geolocation matching, conditions, temperatures, humidity, and
 last-forecast caching work with three bundled locations.
+
+Meetime's two Vue 2 routes are retained in a single Vue 3 island. Cadence
+selection, form validation, lead creation, the lead table, edit/delete dialogs,
+and browser persistence use fictional fixtures rather than the private sales
+API or historical authorization values.
 
 ## Recommended testing order
 

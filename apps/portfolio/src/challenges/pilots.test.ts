@@ -5,6 +5,7 @@ import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
+import MeetimeDemo from "@challenge/meetime-demo";
 import OnSignTvDemo from "@challenge/onsign-tv-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
@@ -19,6 +20,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local Meetime lead workflow", async () => {
+    const html = await renderToString(createSSRApp(MeetimeDemo));
+
+    expect(html).toContain("Add lead");
+    expect(html).toContain("Outbound SMB");
+    expect(html).toContain("Private API replaced with local browser state");
+  });
+
   it("renders the local OnSign TV six-hour forecast", async () => {
     const html = await renderToString(createSSRApp(OnSignTvDemo));
 
