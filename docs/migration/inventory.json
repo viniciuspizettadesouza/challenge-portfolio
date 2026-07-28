@@ -12,8 +12,8 @@
     "packageManager": "yarn",
     "hasRouter": false,
     "hasTests": false,
-    "hasBackend": true,
-    "hasExternalApi": true,
+    "hasBackend": false,
+    "hasExternalApi": false,
     "envVariables": [],
     "packageRoots": [
       "backend",
@@ -27,9 +27,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "mock-backend",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16/Express/MongoDB book sorter adapted to a self-contained modern React island. The exact four-book README dataset, five individual sort controls, three ordered scenarios, null exception, and empty-set behavior remain interactive without the historical remote MongoDB connection. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-vue",

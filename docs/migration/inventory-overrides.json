@@ -95,6 +95,14 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Modern React/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
   },
+  "challenge-stormtech": {
+    "migrationStrategy": "mock-backend",
+    "migrationStatus": "migrated",
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16/Express/MongoDB book sorter adapted to a self-contained modern React island. The exact four-book README dataset, five individual sort controls, three ordered scenarios, null exception, and empty-set behavior remain interactive without the historical remote MongoDB connection. Owner approved on 2026-07-28."
+  },
   "challenge-swordhealth": {
     "migrationStrategy": "native-vue3",
     "migrationStatus": "migrated",

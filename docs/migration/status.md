@@ -17,14 +17,14 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically with project-specific summaries |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 18 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 2 demos or complete case studies |
+| Interactive demos | In progress | 19 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 1 demo or complete case study |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a fixture-backed Stormtech adaptation after inspecting its React
-frontend, Express API, MongoDB data model, and sorting workflows. Capture
+Create a fixture-backed JExperts adaptation after inspecting its React
+frontend, Express/MongoDB API, employee model, and CRUD workflows. Capture
 screenshots for approved demos when convenient.
 
 ## Environment observed

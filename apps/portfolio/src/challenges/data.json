@@ -3,15 +3,22 @@
     "slug": "challenge-stormtech",
     "title": "Stormtech Challenge",
     "company": "Stormtech",
-    "description": "A full-stack book catalog that loads records from MongoDB and demonstrates several title, author, and edition sorting scenarios.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "description": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
+    "technologies": [
+      "React",
+      "Create React App",
+      "Express",
+      "MongoDB",
+      "Mongoose"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
     "migrationStrategy": "mock-backend",
     "sourcePath": "challenges/challenge-stormtech/original",
     "originalRepository": "viniciuspizettadesouza/challenge-stormtech",
     "originalDefaultBranch": "master",
-    "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d"
+    "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d",
+    "demoPath": "challenges/challenge-stormtech/demo"
   },
   {
     "slug": "challenge-vue",

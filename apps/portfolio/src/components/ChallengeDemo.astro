@@ -13,6 +13,7 @@ import OnSignTvDemo from "@challenge/onsign-tv-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
+import StormtechDemo from "@challenge/stormtech-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -60,6 +61,8 @@ const { slug } = Astro.props;
     <PipzDemo client:load />
   ) : slug === "challenge-propertiag" ? (
     <PropertiaGDemo client:load />
+  ) : slug === "challenge-stormtech" ? (
+    <StormtechDemo client:load />
   ) : slug === "challenge-swordhealth" ? (
     <SwordHealthDemo client:load />
   ) : (

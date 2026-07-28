@@ -10,6 +10,7 @@ import OnSignTvDemo from "@challenge/onsign-tv-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
+import StormtechDemo from "@challenge/stormtech-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -20,6 +21,15 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local Stormtech sorting scenarios", () => {
+    const html = renderToStaticMarkup(createElement(StormtechDemo));
+
+    expect(html).toContain("Storm Tecnologia");
+    expect(html).toContain("Book catalog");
+    expect(html).toContain("Java How To Program");
+    expect(html).toContain("Sorting scenarios");
+  });
+
   it("renders the local Meetime lead workflow", async () => {
     const html = await renderToString(createSSRApp(MeetimeDemo));
 

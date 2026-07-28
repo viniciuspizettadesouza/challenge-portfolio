@@ -62,9 +62,41 @@ import {
   initialArticles as swordArticles,
   visibleArticles as visibleSwordArticles,
 } from "@challenge/swordhealth-demo/logic";
+import {
+  books as stormtechBooks,
+  runScenario as runStormtechScenario,
+  sortBooks as sortStormtechBooks,
+} from "@challenge/stormtech-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("Stormtech book sorting", () => {
+  it("supports every individual table order", () => {
+    expect(
+      sortStormtechBooks(stormtechBooks, "title-ascending").map(({ id }) => id),
+    ).toEqual([3, 4, 1, 2]);
+    expect(
+      sortStormtechBooks(stormtechBooks, "edition-descending").map(({ id }) => id),
+    ).toEqual([1, 4, 3, 2]);
+  });
+
+  it("reproduces all five documented scenario outcomes", () => {
+    expect(runStormtechScenario(stormtechBooks, "first").map(({ id }) => id)).toEqual([
+      3, 4, 1, 2,
+    ]);
+    expect(runStormtechScenario(stormtechBooks, "second").map(({ id }) => id)).toEqual([
+      1, 4, 3, 2,
+    ]);
+    expect(runStormtechScenario(stormtechBooks, "third").map(({ id }) => id)).toEqual([
+      4, 1, 3, 2,
+    ]);
+    expect(() => runStormtechScenario(stormtechBooks, "fourth")).toThrow(
+      "SortingServiceException",
+    );
+    expect(runStormtechScenario(stormtechBooks, "fifth")).toEqual([]);
+  });
+});
 
 describe("Meetime local lead management", () => {
   it("validates and creates leads for a local cadence", () => {
