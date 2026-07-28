@@ -29,6 +29,12 @@ import {
   stops as ingeniousStops,
 } from "@challenge/ingenious-build-demo/logic";
 import {
+  createUser,
+  initialUsers as jexpertsUsers,
+  searchUsers,
+  similarity,
+} from "@challenge/jexperts-demo/logic";
+import {
   findLocationForecast,
   hourLabels,
   locationForecasts,
@@ -70,6 +76,47 @@ import {
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("JExperts local employee directory", () => {
+  it("supports exact and approximate name searches", () => {
+    expect(searchUsers(jexpertsUsers, "camila").map(({ id }) => id)).toEqual([3]);
+    expect(searchUsers(jexpertsUsers, "Vincus").map(({ id }) => id)).toEqual([2]);
+    expect(similarity("Vinicius", "Vincus")).toBeGreaterThan(0.28);
+  });
+
+  it("creates a complete user without retaining the password", () => {
+    const user = createUser(
+      {
+        name: "Alex Morgan",
+        email: "ALEX@example.com",
+        telephone: "+44 20 7000 0000",
+        position: "Engineer",
+        login: "AlexM",
+        password: "local-only",
+        cpf: "111.222.333-44",
+        superior: "Camila Nunes",
+      },
+      {
+        street: "Market Street",
+        number: "10",
+        complement: "",
+        district: "Central",
+        city: "London",
+        state: "LDN",
+        cep: "EC1A 1AA",
+      },
+      4,
+    );
+
+    expect(user).toMatchObject({
+      id: 4,
+      email: "alex@example.com",
+      login: "alexm",
+      address: { city: "London" },
+    });
+    expect(user).not.toHaveProperty("password");
+  });
+});
 
 describe("Stormtech book sorting", () => {
   it("supports every individual table order", () => {

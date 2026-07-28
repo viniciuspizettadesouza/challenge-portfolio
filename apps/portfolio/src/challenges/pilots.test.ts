@@ -4,6 +4,7 @@ import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
+import JExpertsDemo from "@challenge/jexperts-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import MeetimeDemo from "@challenge/meetime-demo";
 import OnSignTvDemo from "@challenge/onsign-tv-demo";
@@ -21,6 +22,15 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local JExperts employee directory", () => {
+    const html = renderToStaticMarkup(createElement(JExpertsDemo));
+
+    expect(html).toContain("JExperts");
+    expect(html).toContain("Create User");
+    expect(html).toContain("See all Users");
+    expect(html).toContain("Search users by name");
+  });
+
   it("renders the local Stormtech sorting scenarios", () => {
     const html = renderToStaticMarkup(createElement(StormtechDemo));
 

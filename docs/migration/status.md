@@ -16,16 +16,16 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Security | Completed | public history sanitized; Gitleaks reports no findings |
 | Astro shell | Completed | all 20 challenge routes build statically with project-specific summaries |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
-| Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 19 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 1 demo or complete case study |
+| Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
+| Interactive demos | In progress | all 20 integrated and tested; 19 owner-approved; screenshots pending |
+| Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a fixture-backed JExperts adaptation after inspecting its React
-frontend, Express/MongoDB API, employee model, and CRUD workflows. Capture
-screenshots for approved demos when convenient.
+Review the fixture-backed JExperts adaptation. After approval, capture
+screenshots and proceed to deployment, release, a second backup copy, and the
+final owner review.
 
 ## Environment observed
 

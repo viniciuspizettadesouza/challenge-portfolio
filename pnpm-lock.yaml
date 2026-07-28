@@ -50,6 +50,9 @@ importers:
       '@challenge/instruct-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-instruct/demo
+      '@challenge/jexperts-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-jexperts/demo
       '@challenge/lagoasoft-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-lagoasoft/demo
@@ -169,6 +172,12 @@ importers:
       vue:
         specifier: '>=3.2.0'
         version: 3.5.40(typescript@6.0.3)
+
+  challenges/challenge-jexperts/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
 
   challenges/challenge-lagoasoft/demo:
     dependencies:

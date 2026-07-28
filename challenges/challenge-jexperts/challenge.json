@@ -6,10 +6,17 @@
   "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c",
   "framework": "react",
   "frameworkVersion": "^16.11.0",
-  "technologies": [],
-  "renderer": "case-study",
+  "technologies": [
+    "React",
+    "Create React App",
+    "Express",
+    "MongoDB",
+    "Mongoose",
+    "React Router"
+  ],
+  "renderer": "react",
   "migrationStrategy": "mock-backend",
-  "migrationStatus": "pending",
-  "hasBackend": true,
-  "hasExternalApi": true
+  "migrationStatus": "migrated",
+  "hasBackend": false,
+  "hasExternalApi": false
 }
