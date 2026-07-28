@@ -32,10 +32,9 @@ asset routes were validated successfully.
 - All 20 imported trees and author sets were verified.
 - Removed or redacted paths are recorded in the migration manifest.
 - Gitleaks reported no remaining findings after sanitization.
-- Original remote repositories were not modified by the consolidation.
 - Historical source remains immutable by project policy.
-- Verified mirrors, bundles, and exported GitHub metadata are retained outside
-  the working repository.
+- The repository owner manually deleted the 20 superseded remote repositories
+  after completing the migration review.
 
 ## Intentional runtime differences
 
@@ -57,5 +56,5 @@ See `docs/migration/fidelity-audit.md` for the project-by-project comparison.
 - Production HTTP checks for representative routes and assets
 - Verified Git history preservation for all 20 imports
 
-Original repository deletion remains a separate, manual owner decision governed
-by `docs/migration/deletion-checklist.md`.
+The manual repository deletion record is maintained in
+`docs/migration/deletion-checklist.md`.

@@ -17,8 +17,9 @@ depending on earlier conversations.
 
 Historical source lives in `challenges/<slug>/original` and must not be
 modernized in place. Executable adaptations live in
-`challenges/<slug>/demo`. Original remote repositories must never be deleted
-automatically.
+`challenges/<slug>/demo`. The 20 superseded remote repositories were deleted
+manually by the repository owner after the final migration review; automated
+deletion remains prohibited.
 
 ## Scope
 

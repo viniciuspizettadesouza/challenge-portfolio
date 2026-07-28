@@ -11,10 +11,6 @@ report.
 - historical `node_modules` from `challenge-jexperts`;
 - historical `node_modules` from `challenge-meetime`.
 
-The complete pre-sanitization content remains recoverable through the external
-mirrors, individual bundles, and
-`pre-sanitization-challenge-portfolio.bundle`.
-
 ## Redacted values
 
 Gitleaks 8.30.1 found three unique values matching API-key rules in histories
@@ -32,7 +28,6 @@ the public history.
 
 ## Result
 
-The `main` branch was approved for initial publication. Original remote
-repositories remain unchanged and must not be deleted until the full deletion
-checklist is complete.
-
+The `main` branch was approved for publication. The repository owner completed
+the deletion checklist and manually deleted the 20 superseded remote
+repositories on 2026-07-29.
