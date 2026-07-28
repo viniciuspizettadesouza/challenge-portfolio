@@ -20,6 +20,7 @@
     "@challenge/lagoasoft-demo": "workspace:*",
     "@challenge/propertiag-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",
+    "@challenge/swordhealth-demo": "workspace:*",
     "@challenge/vue-demo": "workspace:*",
     "@challenge/vuejs-demo": "workspace:*",
     "@challenge/zygo-demo": "workspace:*",

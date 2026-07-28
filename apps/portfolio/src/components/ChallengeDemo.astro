@@ -7,6 +7,7 @@ import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
+import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
 import ZygoDemo from "@challenge/zygo-demo";
@@ -41,6 +42,8 @@ const { slug } = Astro.props;
     <LagoasoftDemo client:load />
   ) : slug === "challenge-propertiag" ? (
     <PropertiaGDemo client:load />
+  ) : slug === "challenge-swordhealth" ? (
+    <SwordHealthDemo client:load />
   ) : (
     <div class="demo-placeholder">
       <p>The demo will be defined after this challenge's manual review.</p>

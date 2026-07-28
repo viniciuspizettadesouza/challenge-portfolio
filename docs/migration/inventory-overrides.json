@@ -53,6 +53,13 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Modern React/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
   },
+  "challenge-swordhealth": {
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 3/Quasar news platform adapted to a self-contained Vue 3 island. Feed, category filters, load more, article detail, profile, and authoring are retained with a clearly labelled local demo identity replacing the historical Auth0 tenant. Owner approved on 2026-07-28."
+  },
   "challenge-vue": {
     "migrationStrategy": "native-vue3",
     "migrationStatus": "migrated",

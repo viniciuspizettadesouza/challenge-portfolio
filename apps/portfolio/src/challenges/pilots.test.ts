@@ -4,6 +4,7 @@ import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
+import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
 import { createElement } from "react";
@@ -13,6 +14,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the safe Sword Health news platform", async () => {
+    const html = await renderToString(createSSRApp(SwordHealthDemo));
+
+    expect(html).toContain("Clinical insight for a world without pain");
+    expect(html).toContain("Start demo session");
+    expect(html).toContain("News &amp; perspectives");
+  });
+
   it("renders the fixture-backed Instruct leads table", async () => {
     const html = await renderToString(createSSRApp(InstructDemo));
 
