@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 10 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 10 demos or complete case studies |
+| Interactive demos | In progress | 11 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 9 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a maintained Instruct adaptation after inspecting its Nuxt 2 frontend
-and public data workflow. Capture screenshots for approved demos as release
-evidence when convenient.
+Create a safe maintained Sword Health adaptation after inspecting its Quasar
+frontend and Auth0-dependent workflow. Capture screenshots for approved demos
+when convenient.
 
 ## Environment observed
 

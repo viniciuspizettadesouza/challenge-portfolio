@@ -32,6 +32,15 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Vue 3 bus timetable adapted to load the complete preserved json-server dataset locally. Line and stop selection, sorted departure times, directory search, and sort direction are retained without a second process. Owner approved on 2026-07-28."
   },
+  "challenge-instruct": {
+    "framework": "vue",
+    "frameworkVersion": "Nuxt 2.14.12",
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Nuxt 2 lead table adapted to a responsive Vue 3 island using a deterministic local copy of the original ten-user JSONPlaceholder response. Name and multi-category filtering are retained without live API access. Owner approved on 2026-07-28."
+  },
   "challenge-propertiag": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",

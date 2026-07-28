@@ -14,6 +14,11 @@ import {
   stops as ingeniousStops,
 } from "@challenge/ingenious-build-demo/logic";
 import {
+  filterLeads,
+  getCategoryOptions,
+  leads as instructLeads,
+} from "@challenge/instruct-demo/logic";
+import {
   displayedLikes,
   posts as lagoasoftPosts,
   togglePostVote,
@@ -184,6 +189,24 @@ describe("Ingenious Build timetable logic", () => {
 
     expect(ascending).toContain("Salwator");
     expect(descending).toEqual([...ascending].reverse());
+  });
+});
+
+describe("Instruct lead filtering", () => {
+  it("extracts the individual company categories", () => {
+    const options = getCategoryOptions(instructLeads);
+
+    expect(options).toContain("real-time");
+    expect(options).toContain("technologies");
+    expect(new Set(options).size).toBe(options.length);
+  });
+
+  it("combines contact-name and category filters", () => {
+    expect(filterLeads(instructLeads, "glenna", ["real-time"])).toHaveLength(1);
+    expect(
+      filterLeads(instructLeads, "", ["e-enable", "applications"]).map(({ id }) => id),
+    ).toEqual([3, 6]);
+    expect(filterLeads(instructLeads, "glenna", ["supply-chains"])).toEqual([]);
   });
 });
 

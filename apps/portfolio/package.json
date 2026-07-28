@@ -16,6 +16,7 @@
     "@challenge/conaz-demo": "workspace:*",
     "@challenge/devlandia-demo": "workspace:*",
     "@challenge/ingenious-build-demo": "workspace:*",
+    "@challenge/instruct-demo": "workspace:*",
     "@challenge/lagoasoft-demo": "workspace:*",
     "@challenge/propertiag-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",

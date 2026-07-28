@@ -38,6 +38,9 @@ importers:
       '@challenge/ingenious-build-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-ingenious-build-frontend/demo
+      '@challenge/instruct-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-instruct/demo
       '@challenge/lagoasoft-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-lagoasoft/demo
@@ -114,6 +117,12 @@ importers:
   challenges/challenge-devlandia/demo: {}
 
   challenges/challenge-ingenious-build-frontend/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.2.0'
+        version: 3.5.40(typescript@6.0.3)
+
+  challenges/challenge-instruct/demo:
     dependencies:
       vue:
         specifier: '>=3.2.0'

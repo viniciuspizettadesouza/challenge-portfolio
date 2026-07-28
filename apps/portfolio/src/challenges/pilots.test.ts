@@ -1,5 +1,6 @@
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
+import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
@@ -12,6 +13,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the fixture-backed Instruct leads table", async () => {
+    const html = await renderToString(createSSRApp(InstructDemo));
+
+    expect(html).toContain("Potential customers");
+    expect(html).toContain("Leanne Graham");
+    expect(html).toContain("Glenna Reichert");
+  });
+
   it("renders the Ingenious Build timetable", async () => {
     const html = await renderToString(createSSRApp(IngeniousBuildDemo));
 
