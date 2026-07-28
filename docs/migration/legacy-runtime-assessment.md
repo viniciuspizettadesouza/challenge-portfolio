@@ -38,7 +38,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 9 | `challenge-lagoasoft` | Inspected, Portfolio demo, Owner approved | React 16/CRA social feed adapted from its local JSON | None for the maintained demo |
 | 10 | `challenge-ingenious-build-frontend` | Inspected, Portfolio demo, Owner approved | Vue 3 timetable integrated with its complete bundled dataset | None for the maintained demo |
 | 11 | `challenge-instruct` | Inspected, Portfolio demo, Owner approved | Nuxt 2 lead table adapted with the original public dataset stored locally | None for the maintained demo |
-| 12 | `challenge-swordhealth` | Inspected | Vue 3/Quasar app with an explicit Node 14–18 range | Medium to high; Auth0 tenant and callback configuration may require owner access |
+| 12 | `challenge-swordhealth` | Inspected, Portfolio demo, Owner approved | Vue 3/Quasar news platform adapted with a safe local demo identity | None for the maintained demo |
 | 13 | `challenge-pipz` | Inspected | Small React 16/CRA frontend | High; the removed environment configuration pointed to a Star Wars API that must be replaced or mocked |
 | 14 | `challenge-fyld-hansecom` | Inspected | Small Nuxt 2 movie search app | High; the external movie API token was redacted and a replacement API or mock is required |
 | 15 | `challenge-castlabs` | Inspected | Modern React/Vite code but multiple live data integrations | High; GraphQL HTTP/WebSocket and OMDb configuration must be safely replaced or mocked |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Eleven maintained portfolio demos pass lint, typecheck, tests, and static build.
-The repository owner approved all eleven on 2026-07-28.
+Twelve maintained portfolio demos pass lint, typecheck, tests, and static build.
+The repository owner approved all twelve on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -84,13 +84,15 @@ Instruct's Nuxt 2 leads workflow is retained in a responsive Vue 3 island with a
 local copy of the ten-record JSONPlaceholder fixture. Contact and company
 category filters no longer depend on live network availability.
 
+Sword Health's public news and protected authoring flows are retained without
+contacting its historical Auth0 tenant. A clearly labelled local demo identity
+supports profile and article creation for safe portfolio review.
+
 ## Recommended testing order
 
-1. Decide whether Sword Health should retain Auth0 or become a fixture-backed
-   demo.
-2. Use local fixtures for every credential-dependent project before attempting
+1. Use local fixtures for every credential-dependent project before attempting
    functional parity.
-3. Recreate MongoDB locally for Stormtech and JExperts only if full backend
+2. Recreate MongoDB locally for Stormtech and JExperts only if full backend
    behavior is valuable; otherwise produce complete case studies.
 
 ## Completion rule

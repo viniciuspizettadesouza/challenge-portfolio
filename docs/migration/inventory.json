@@ -454,7 +454,7 @@
     "hasRouter": true,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [
       "PORT",
       "SERVER",
@@ -474,9 +474,9 @@
     ],
     "nodeVersion": "^18 || ^16 || ^14.19",
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 3/Quasar news platform adapted to a self-contained Vue 3 island. Feed, category filters, load more, article detail, profile, and authoring are retained with a clearly labelled local demo identity replacing the historical Auth0 tenant. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-pipz",

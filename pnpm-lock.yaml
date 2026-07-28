@@ -50,6 +50,9 @@ importers:
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
+      '@challenge/swordhealth-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-swordhealth/demo
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
@@ -151,6 +154,12 @@ importers:
       react-dom:
         specifier: '>=18'
         version: 19.2.8(react@19.2.8)
+
+  challenges/challenge-swordhealth/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-vue/demo:
     dependencies:

@@ -24,6 +24,12 @@ import {
   togglePostVote,
 } from "@challenge/lagoasoft-demo/logic";
 import { convertToRoman } from "@challenge/propertiag-demo/logic";
+import {
+  createArticle,
+  filterArticles,
+  initialArticles as swordArticles,
+  visibleArticles as visibleSwordArticles,
+} from "@challenge/swordhealth-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
@@ -100,6 +106,39 @@ describe("PropertiaG Roman numeral conversion", () => {
 
   it.each([0, 1001, 1.5, Number.NaN])("rejects invalid value %s", (value) => {
     expect(() => convertToRoman(value)).toThrow("1 to 1000");
+  });
+});
+
+describe("Sword Health news logic", () => {
+  it("filters categories and applies the visible article limit", () => {
+    expect(filterArticles(swordArticles, ["Engineering"]).map(({ id }) => id)).toEqual([
+      "02",
+      "06",
+    ]);
+    expect(visibleSwordArticles(swordArticles, [], 4)).toHaveLength(4);
+  });
+
+  it("validates and creates a locally authored article", () => {
+    expect(
+      createArticle(
+        {
+          title: "Care at home",
+          description: "A useful summary",
+          category: "Medicine",
+          content: "A complete local article.",
+        },
+        "Alex Morgan",
+        7,
+      ),
+    ).toMatchObject({ id: "07", category: "Medicine", author: "Alex Morgan" });
+
+    expect(() =>
+      createArticle(
+        { title: "", description: "", category: "", content: "" },
+        "Alex Morgan",
+        7,
+      ),
+    ).toThrow("Title");
   });
 });
 

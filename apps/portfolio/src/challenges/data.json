@@ -257,14 +257,21 @@
     "title": "Sword Health Challenge",
     "company": "Sword Health",
     "description": "A preserved technical challenge available for source review and portfolio presentation.",
-    "technologies": [],
+    "technologies": [
+      "Vue",
+      "TypeScript",
+      "Quasar",
+      "Pinia",
+      "Auth0"
+    ],
     "renderer": "vue3",
-    "migrationStatus": "pending",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-vue3",
     "sourcePath": "challenges/challenge-swordhealth/original",
     "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5"
+    "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5",
+    "demoPath": "challenges/challenge-swordhealth/demo"
   },
   {
     "slug": "challenge-pipz",
