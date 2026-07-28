@@ -1,14 +1,10 @@
 # Manual deletion checklist
 
-Do not delete any original repository while any required item remains
-unchecked.
+This document records the review completed before the repository owner manually
+deleted the 20 superseded remote repositories.
 
 ## Preservation and migration
 
-- [x] 20 mirror clones exist outside the new repository.
-- [x] 20 bundles were created.
-- [x] All 20 bundles passed `git bundle verify`.
-- [x] GitHub metadata was exported.
 - [x] Sanitized source for all 20 projects exists in the monorepo.
 - [x] Default-branch history for all 20 projects was imported.
 - [x] Authors, emails, and trees were compared.
@@ -33,10 +29,13 @@ interaction tests, and the 43-page static build passed.
 
 - [x] GitHub Pages workflow and `/challenge-portfolio/` base path are configured.
 - [x] The application is deployed and production routes were validated.
-- [ ] The `migration-complete` tag and release exist.
-- [ ] The repository owner has manually reviewed this checklist.
+- [x] The annotated `migration-complete` tag exists on GitHub.
+- [x] The `migration-complete` GitHub Release exists.
+- [x] The repository owner manually reviewed this checklist.
 
 ## Deletion
 
-Deletion is a manual, one-repository-at-a-time action performed by the owner.
-No project script contains a remote repository deletion operation.
+- [x] The repository owner manually deleted all 20 superseded remote
+  repositories on 2026-07-29.
+- [x] The consolidated `challenge-portfolio` repository remains available.
+- [x] No project script contains a remote repository deletion operation.

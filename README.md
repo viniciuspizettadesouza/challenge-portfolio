@@ -11,10 +11,12 @@ Each challenge has two clearly separated representations:
 
 ## Current status
 
-The 20 default branches have been imported, backed up, sanitized, and verified.
+The 20 default branches have been imported, sanitized, and verified.
 The Astro catalog builds all 20 challenge routes, and every maintained demo is
 integrated, owner-approved, browser-tested, and represented by a reproducible
-screenshot.
+screenshot. The repository owner deleted the 20 superseded remote repositories
+after completing the migration review. The `migration-complete` tag and GitHub
+Release mark the end of the consolidation.
 
 The authoritative progress record is
 [`docs/migration/status.md`](docs/migration/status.md).
@@ -48,7 +50,6 @@ Migration commands are intentionally separate from the regular build:
 
 ```bash
 pnpm migration:check
-pnpm migration:backup
 pnpm migration:metadata
 pnpm migration:import -- --repository challenge-vue
 pnpm migration:refresh
@@ -57,8 +58,7 @@ pnpm inventory
 ```
 
 Read the [runbook](docs/plan/runbook.md) before performing history operations.
-No repository script deletes, archives, or modifies an original remote
-repository.
+No repository script performs remote repository deletion.
 
 Integrated demos are available both on their challenge detail pages and through
 distraction-free routes at

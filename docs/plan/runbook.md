@@ -14,18 +14,11 @@ environment. Install Git LFS only if a repository uses LFS. Authenticate the
 GitHub CLI with `gh auth login -h github.com` when complete metadata export is
 required.
 
-## 2. Maintain backups
+## 2. Review the source manifest
 
-The backup script defaults to the sibling directory
-`../challenge-portfolio-backups`. It can be overridden:
-
-```bash
-pnpm migration:backup -- --backup-dir /secure/path
-```
-
-The script creates or updates mirrors, fetches LFS objects when required,
-creates bundles, and verifies them. It is resumable and does not modify remote
-repositories.
+Confirm the repository list, default branches, source revisions, and
+sanitization declarations in `scripts/migration/repositories.json` before any
+history operation.
 
 ## 3. Export metadata
 
@@ -38,8 +31,8 @@ Review exported JSON before publication and remove unnecessary personal data.
 ## 4. Import history
 
 This phase is complete for the initial 20 repositories. If it ever needs to be
-repeated, confirm that the worktree is clean and all backups are `verified`,
-then import one repository at a time:
+repeated, confirm that the worktree is clean, then import one repository at a
+time:
 
 ```bash
 pnpm migration:import -- --repository challenge-vue
@@ -84,19 +77,15 @@ Playwright Chromium browser installed for the current Playwright version.
 ## 7. Resume implementation
 
 Read `docs/migration/status.md` and continue from its first `In progress` or
-`Pending` phase. The current implementation priority is:
-
-1. have the repository owner review, commit, and push the completed demo
-   fidelity and browser-evidence changes;
-2. validate a fresh clone of that exact revision;
-3. deploy the verified revision and create the release;
-4. complete the final manual review and deletion checklist.
+`Pending` phase. All initial migration phases are complete. Future work is
+normal portfolio maintenance and must preserve `challenges/*/original/`.
 
 ## 8. Finalize
 
-Follow `docs/migration/deletion-checklist.md`. The tooling does not implement
-remote deletion. That decision belongs to the repository owner after manual
-review.
+The repository owner completed
+`docs/migration/deletion-checklist.md` and manually deleted the 20 superseded
+remote repositories on 2026-07-29. The tooling does not implement remote
+deletion.
 
 ## 9. Deploy to GitHub Pages
 
@@ -127,20 +116,18 @@ No GitHub secret or paid hosting plan is required for this public static site.
 
 ## 10. Create the final release
 
-After the release notes are committed, pushed, and deployed successfully, the
-repository owner creates the annotated tag and GitHub release:
+The repository owner created and pushed the annotated `migration-complete` tag,
+and the corresponding GitHub Release is published. The command used was:
 
 ```bash
-git tag -a migration-complete -m "release: complete challenge portfolio migration"
-git push origin migration-complete
 gh release create migration-complete \
   --title "Migration complete" \
   --notes-file docs/releases/migration-complete.md
 ```
 
-Automated agents must not execute these commands. Confirm that the tag targets
-the final published `main` commit and that the release is visible before
-marking the release checklist item complete.
+Agents must not create tags or releases unless the repository owner explicitly
+requests that action. Confirm that a release targets the intended published
+commit and is visible before marking its checklist item complete.
 
 ## Git policy
 

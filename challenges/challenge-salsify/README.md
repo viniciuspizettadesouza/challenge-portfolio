@@ -5,7 +5,7 @@ React pilot project.
 ## Preservation
 
 - the `main` branch was imported under `original/`;
-- tree content and authors were verified against the external mirror;
+- tree content and authors were verified during migration;
 - `original/` remains unchanged after sanitization.
 
 ## Demo

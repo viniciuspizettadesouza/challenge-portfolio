@@ -9,8 +9,7 @@ Resume from the first phase marked `In progress` or `Pending`.
 | --- | --- | --- |
 | Environment | Completed | Git, Node, pnpm, Python, `git-filter-repo`, and GitHub available |
 | Repository configuration | Completed | 20 repositories confirmed and recorded |
-| Backups | Completed | 20 mirrors and 20 verified bundles stored externally |
-| GitHub metadata | Completed | metadata exported externally |
+| Source audit | Completed | repository manifest and sanitization declarations reviewed |
 | History import | Completed | 20 default branches imported with individual merges |
 | Import verification | Completed | all 20 trees and author sets verified |
 | Security | Completed | public history sanitized; Gitleaks reports no findings |
@@ -19,13 +18,13 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | Interactive demos | Completed | all 20 integrated, owner-approved, browser-tested, and captured |
 | Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
-| Deployment and final cleanup | In progress | GitHub Pages deployed and verified; release and owner review remain |
+| Deployment and final cleanup | Completed | Pages, tag, release, owner review, and legacy repository deletion completed |
 
 ## Current next action
 
-Publish the prepared release notes, wait for the Pages workflow on that final
-commit, and create the annotated `migration-complete` tag and GitHub release.
-Then complete the final owner review.
+No migration action remains. Continue with normal portfolio maintenance:
+dependency updates, automated checks, and improvements to maintained demos
+without modifying `challenges/*/original/`.
 
 ## Production deployment
 
@@ -47,8 +46,12 @@ page, a fullscreen demo, and the favicon.
 - remote: `origin` configured;
 - branch: `main`, tracking `origin/main`.
 
-Original remote repositories have not been modified. Backups and metadata live
-under `../challenge-portfolio-backups/` and are not tracked here.
+The repository owner completed the final review and manually deleted all 20
+superseded remote repositories on 2026-07-29. Their sanitized default-branch
+source and imported history remain preserved under `challenges/*/original/`.
+
+The annotated `migration-complete` tag and corresponding GitHub Release were
+published on 2026-07-29.
 
 ## Upstream validation
 
@@ -57,10 +60,9 @@ A fresh public clone of revision
 `pnpm install --frozen-lockfile`, lint, typecheck, 62 unit tests, 20 Chromium
 interaction tests, and the 43-page static build all passed.
 
-History verification remains tied to the external backup mirrors under
-`../challenge-portfolio-backups/` and is therefore not part of portable
-clean-clone validation. It passed in the primary checkout before this revision
-was published.
+History verification passed in the primary checkout before this revision was
+published. The resulting evidence is recorded in
+`docs/migration/history-report.md`.
 
 ## Git ownership
 

@@ -4,8 +4,8 @@
 
 1. Astro is the static shell and can host React and Vue 3 components.
 2. `original/` is the permanent historical archive; `demo/` is adaptable.
-3. The default branch and relevant tags enter the monorepo; additional
-   references remain in external mirrors and bundles.
+3. The default branch enters the monorepo; references outside the imported
+   history are outside the consolidation scope.
 4. Commit hashes change when paths or sensitive values are rewritten, but
    authorship, messages, and dates should remain.
 5. A separate merge commit identifies each imported repository.
@@ -17,14 +17,17 @@
 
 ## Safety constraints
 
-- do not delete, archive, rename, or modify original remote repositories;
+- do not automate deletion, archival, renaming, or modification of remote
+  repositories;
 - do not use `--force` outside disposable clones or an explicitly authorized
   local history-sanitization operation;
-- do not commit backups, builds, dependencies, or secrets;
+- do not commit builds, dependencies, or secrets;
 - do not execute scripts from historical projects during initial auditing;
 - stop and report credentials without printing complete values;
-- do not import while any backup is incomplete;
-- treat final repository deletion as manual and irreversible.
+- treat remote repository deletion as a manual, irreversible owner action.
+
+The repository owner completed the final review and manually deleted all 20
+superseded remote repositories on 2026-07-29.
 
 ## Git ownership
 

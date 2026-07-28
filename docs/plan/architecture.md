@@ -3,8 +3,7 @@
 ## Objective
 
 Consolidate 20 public repositories into a navigable monorepo while preserving
-the default-branch source, commit authors, messages and dates, plus complete
-external backups of Git references.
+the default-branch source, commit authors, messages, and dates.
 
 ## Structure
 
@@ -43,4 +42,3 @@ dependencies or execution of unknown scripts.
 - `mock-backend`: frontend backed by local fixtures or mocks;
 - `case-study`: complete documentation when execution is not practical;
 - `manual-review`: blocks automatic migration until reviewed.
-

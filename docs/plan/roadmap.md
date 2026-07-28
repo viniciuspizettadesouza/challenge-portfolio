@@ -9,7 +9,7 @@ future contributors can see what happened and where to continue.
 | --- | --- | --- |
 | 0 — Environment | Completed | `docs/migration/status.md` |
 | 1 — Repository configuration | Completed | `scripts/migration/repositories.json` |
-| 2 — External backups | Completed | external mirrors, bundles, and metadata |
+| 2 — Source audit | Completed | repository manifest and sanitization declarations |
 | 3 — Monorepo foundation | Completed | workspace, scripts, docs, and Astro shell |
 | 4 — History imports | Completed | 20 individual import merges |
 | 5 — Import verification | Completed | `docs/migration/history-report.md` |
@@ -19,7 +19,7 @@ future contributors can see what happened and where to continue.
 | 9 — Pilot demos | Completed | all 20 owner-approved with browser evidence and screenshots |
 | 10 — Remaining waves | Completed | all 20 challenges have interactive demos |
 | 11 — Repository quality | Completed | revision `fe69c34` passed frozen install and all checks in a fresh public clone |
-| 12 — Final release and cleanup | In progress | Pages deployment verified; release and owner review remain |
+| 12 — Final release and cleanup | Completed | Pages, tag, release, owner review, and legacy repository deletion completed |
 
 ## Phase 0 — Environment
 
@@ -29,13 +29,12 @@ authentication. Never rewrite history without `git-filter-repo`.
 ## Phase 1 — Configuration
 
 Maintain the 20-repository manifest with default branches, source SHAs, LFS
-usage, backup status, import status, and sanitization evidence.
+usage, import status, and sanitization evidence.
 
-## Phase 2 — Backups
+## Phase 2 — Source audit
 
-Keep mirrors, verified bundles, and GitHub metadata outside this repository. A
-failed backup blocks import. A pre-sanitization bundle preserves the complete
-local consolidation state.
+Review the repository list, source revisions, and sanitization declarations
+before importing history.
 
 ## Phase 3 — Monorepo foundation
 
@@ -72,6 +71,6 @@ screenshots cover every demo.
 
 Revision `fe69c34` passed fresh-clone validation. Revision `4c4fd64` configured
 GitHub Pages and is live with verified home, catalog, detail, demo, and asset
-routes. Create the release and complete the final owner review. Original
-repository deletion remains manual and is blocked until every deletion-checklist
-item is complete.
+routes. The owner completed the final review, published the
+`migration-complete` tag, and manually deleted all 20 superseded remote
+repositories. The GitHub Release is published and no migration action remains.
