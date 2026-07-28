@@ -347,15 +347,22 @@
     "slug": "challenge-onsign-tv",
     "title": "OnSign TV Challenge",
     "company": "OnSign TV",
-    "description": "A Vue weather application that resolves a location and presents the next six hours of temperature and condition forecasts with local caching.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "description": "A Vue location forecast with address search, privacy-safe coordinate matching, and a cached six-column comparison of conditions, temperature, and humidity.",
+    "technologies": [
+      "Vue",
+      "Vue CLI",
+      "BootstrapVue",
+      "Google Maps",
+      "OpenWeather"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-vue2",
     "sourcePath": "challenges/challenge-onsign-tv/original",
     "originalRepository": "viniciuspizettadesouza/challenge-onsign-tv",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565"
+    "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565",
+    "demoPath": "challenges/challenge-onsign-tv/demo"
   },
   {
     "slug": "challenge-ingenious-build-frontend",

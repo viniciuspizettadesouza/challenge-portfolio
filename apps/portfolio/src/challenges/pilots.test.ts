@@ -5,6 +5,7 @@ import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
+import OnSignTvDemo from "@challenge/onsign-tv-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
@@ -18,6 +19,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local OnSign TV six-hour forecast", async () => {
+    const html = await renderToString(createSSRApp(OnSignTvDemo));
+
+    expect(html).toContain("Weather for the next six hours");
+    expect(html).toContain("Florianópolis");
+    expect(html).toContain("Feels Like");
+  });
+
   it("renders the local Blueticket weather search", async () => {
     const html = await renderToString(createSSRApp(BlueticketDemo));
 

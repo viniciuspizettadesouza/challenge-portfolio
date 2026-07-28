@@ -29,6 +29,12 @@ import {
   stops as ingeniousStops,
 } from "@challenge/ingenious-build-demo/logic";
 import {
+  findLocationForecast,
+  hourLabels,
+  locationForecasts,
+  nearestLocationForecast,
+} from "@challenge/onsign-tv-demo/logic";
+import {
   filterLeads,
   getCategoryOptions,
   leads as instructLeads,
@@ -52,6 +58,27 @@ import {
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("OnSign TV local forecast", () => {
+  it("resolves text and coordinate searches against bundled locations", () => {
+    expect(findLocationForecast("florianópolis")?.hours).toHaveLength(6);
+    expect(findLocationForecast("Portugal")?.address).toBe("Lisbon, Portugal");
+    expect(nearestLocationForecast(51.5, -0.1).address).toBe(
+      "London, United Kingdom",
+    );
+  });
+
+  it("labels the first forecast column as now", () => {
+    expect(hourLabels(locationForecasts[1].hours)).toEqual([
+      "Now",
+      "23:00",
+      "00:00",
+      "01:00",
+      "02:00",
+      "03:00",
+    ]);
+  });
+});
 
 describe("Blueticket local weather lookup", () => {
   it("finds city fixtures and selects the closest available forecast", () => {

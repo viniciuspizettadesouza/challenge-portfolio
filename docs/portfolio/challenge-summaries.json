@@ -10,7 +10,7 @@
   "challenge-jexperts": "A full-stack employee directory for creating, editing, deleting, and approximately searching users with contact, role, address, and reporting details.",
   "challenge-lagoasoft": "A React social feed that renders five local posts and maintains an independent browser-only like vote for each one.",
   "challenge-meetime": "A Vue sales-prospecting client for listing, editing, deleting, and adding leads to selected outbound cadences.",
-  "challenge-onsign-tv": "A Vue weather application that resolves a location and presents the next six hours of temperature and condition forecasts with local caching.",
+  "challenge-onsign-tv": "A Vue location forecast with address search, privacy-safe coordinate matching, and a cached six-column comparison of conditions, temperature, and humidity.",
   "challenge-pipz": "A faithful React recreation of the original Star Wars intro and perspective crawl, listing seven films with Roman episode numbers and release dates.",
   "challenge-propertiag": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
   "challenge-salsify": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
