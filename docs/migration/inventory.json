@@ -611,7 +611,7 @@
     "hasRouter": true,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [
       "BASE_URL",
       "NODE_ENV"
@@ -630,8 +630,8 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-vue3",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 3 bus timetable adapted to load the complete preserved json-server dataset locally. Line and stop selection, sorted departure times, directory search, and sort direction are retained without a second process. Owner approved on 2026-07-28."
   }
 ]

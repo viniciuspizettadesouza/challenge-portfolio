@@ -1,4 +1,5 @@
 import ClimateSeedDemo from "@challenge/climateseed-demo";
+import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
@@ -11,6 +12,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the Ingenious Build timetable", async () => {
+    const html = await renderToString(createSSRApp(IngeniousBuildDemo));
+
+    expect(html).toContain("Stops Board");
+    expect(html).toContain("Select Bus Line");
+    expect(html).toContain("Please select a bus line first");
+  });
+
   it("renders the Lagoasoft social feed", () => {
     const html = renderToStaticMarkup(createElement(LagoasoftDemo));
 

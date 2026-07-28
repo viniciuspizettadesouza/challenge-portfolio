@@ -6,10 +6,16 @@
   "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87",
   "framework": "vue",
   "frameworkVersion": "^3.2.13",
-  "technologies": [],
+  "technologies": [
+    "Vue",
+    "TypeScript",
+    "Vuex",
+    "Vue Router",
+    "JSON Server"
+  ],
   "renderer": "vue3",
   "migrationStrategy": "native-vue3",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

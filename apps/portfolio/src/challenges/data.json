@@ -326,13 +326,20 @@
     "title": "Ingenious Build Challenge",
     "company": "Ingenious Build",
     "description": "A preserved technical challenge available for source review and portfolio presentation.",
-    "technologies": [],
+    "technologies": [
+      "Vue",
+      "TypeScript",
+      "Vuex",
+      "Vue Router",
+      "JSON Server"
+    ],
     "renderer": "vue3",
-    "migrationStatus": "pending",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-vue3",
     "sourcePath": "challenges/challenge-ingenious-build-frontend/original",
     "originalRepository": "viniciuspizettadesouza/challenge-ingenious-build-frontend",
     "originalDefaultBranch": "master",
-    "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87"
+    "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87",
+    "demoPath": "challenges/challenge-ingenious-build-frontend/demo"
   }
 ]
