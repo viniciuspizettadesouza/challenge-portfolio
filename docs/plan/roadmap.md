@@ -19,7 +19,7 @@ future contributors can see what happened and where to continue.
 | 9 — Pilot demos | Completed | all 20 owner-approved with browser evidence and screenshots |
 | 10 — Remaining waves | Completed | all 20 challenges have interactive demos |
 | 11 — Repository quality | Completed | revision `fe69c34` passed frozen install and all checks in a fresh public clone |
-| 12 — Final release and cleanup | In progress | Pages deployment verified; release, backup, and owner review remain |
+| 12 — Final release and cleanup | In progress | Pages deployment verified; release and owner review remain |
 
 ## Phase 0 — Environment
 
@@ -72,6 +72,6 @@ screenshots cover every demo.
 
 Revision `fe69c34` passed fresh-clone validation. Revision `4c4fd64` configured
 GitHub Pages and is live with verified home, catalog, detail, demo, and asset
-routes. Create the release and make the off-device backup copy. Original
-repository deletion remains manual and is blocked until every
-deletion-checklist item is complete.
+routes. Create the release and complete the final owner review. Original
+repository deletion remains manual and is blocked until every deletion-checklist
+item is complete.
