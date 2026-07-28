@@ -12,7 +12,7 @@
   ],
   "renderer": "vue3",
   "migrationStrategy": "native-vue3",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "migrated",
   "hasBackend": false,
   "hasExternalApi": false
 }
