@@ -35,6 +35,9 @@ importers:
       '@challenge/devlandia-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-devlandia/demo
+      '@challenge/fyld-hansecom-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-fyld-hansecom/demo
       '@challenge/ingenious-build-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-ingenious-build-frontend/demo
@@ -121,6 +124,12 @@ importers:
   challenges/challenge-conaz/demo: {}
 
   challenges/challenge-devlandia/demo: {}
+
+  challenges/challenge-fyld-hansecom/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.2.0'
+        version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-ingenious-build-frontend/demo:
     dependencies:

@@ -2,6 +2,7 @@
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import ConazDemo from "@challenge/conaz-demo";
 import DevlandiaDemo from "@challenge/devlandia-demo";
+import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
@@ -35,6 +36,8 @@ const { slug } = Astro.props;
     <ZygoDemo />
   ) : slug === "challenge-devlandia" ? (
     <DevlandiaDemo />
+  ) : slug === "challenge-fyld-hansecom" ? (
+    <FyldHansecomDemo client:load />
   ) : slug === "challenge-ingenious-build-frontend" ? (
     <IngeniousBuildDemo client:load />
   ) : slug === "challenge-instruct" ? (

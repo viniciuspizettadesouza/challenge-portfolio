@@ -6,10 +6,16 @@
   "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79",
   "framework": "vue",
   "frameworkVersion": "^2.6.14",
-  "technologies": [],
-  "renderer": "case-study",
+  "technologies": [
+    "Nuxt",
+    "Vue",
+    "Vuex",
+    "Vuetify",
+    "Movie API"
+  ],
+  "renderer": "vue3",
   "migrationStrategy": "upgrade-vue2",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

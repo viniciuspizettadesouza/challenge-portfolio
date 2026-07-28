@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically with project-specific summaries |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 13 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 7 demos or complete case studies |
+| Interactive demos | In progress | 14 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 6 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a maintained Fyld Hansecom adaptation after inspecting its Nuxt movie
-search and bundled results. Capture screenshots for approved demos when
-convenient.
+Create a fixture-backed Castlabs adaptation after inspecting its React,
+GraphQL, subscription, and OMDb workflows. Capture screenshots for approved
+demos when convenient.
 
 ## Environment observed
 
