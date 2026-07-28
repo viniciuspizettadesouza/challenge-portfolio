@@ -1,3 +1,4 @@
+import BlueticketDemo from "@challenge/blueticket-demo";
 import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
@@ -17,6 +18,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local Blueticket weather search", async () => {
+    const html = await renderToString(createSSRApp(BlueticketDemo));
+
+    expect(html).toContain("What is the weather like?");
+    expect(html).toContain("Florianópolis");
+    expect(html).toContain("Weather description");
+  });
+
   it("renders the local Castlabs episode manager", () => {
     const html = renderToStaticMarkup(createElement(CastlabsDemo));
 

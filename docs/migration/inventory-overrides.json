@@ -1,4 +1,11 @@
 {
+  "challenge-blueticket": {
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 2/Vuetify weather search adapted to a self-contained Vue 3 island. City search, geolocation selection, hourly weather fields, search history, and browser caching remain interactive using deterministic local fixtures instead of the sanitized Google Maps and historical OpenWeather credentials. Owner approved on 2026-07-28."
+  },
   "challenge-castlabs": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",

@@ -1,4 +1,5 @@
 ---
+import BlueticketDemo from "@challenge/blueticket-demo";
 import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import ConazDemo from "@challenge/conaz-demo";
@@ -23,7 +24,9 @@ const { slug } = Astro.props;
 ---
 
 {
-  slug === "challenge-castlabs" ? (
+  slug === "challenge-blueticket" ? (
+    <BlueticketDemo client:load />
+  ) : slug === "challenge-castlabs" ? (
     <CastlabsDemo client:load />
   ) : slug === "challenge-climateseed" ? (
     <ClimateSeedDemo client:load />

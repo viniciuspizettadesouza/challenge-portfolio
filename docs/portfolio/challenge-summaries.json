@@ -1,5 +1,5 @@
 {
-  "challenge-blueticket": "A Vue weather dashboard that geocodes a location, retrieves hourly conditions, and caches the forecast locally for later viewing.",
+  "challenge-blueticket": "A Vue weather dashboard with local city search, privacy-safe location matching, six-hour conditions, and browser-cached forecast history.",
   "challenge-castlabs": "A React episode manager with title and series search, detailed records, local create/delete flows, and simulated real-time subscription feedback.",
   "challenge-climateseed": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
   "challenge-conaz": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
