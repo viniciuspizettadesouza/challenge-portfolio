@@ -4,6 +4,12 @@ import {
   initialResults,
   organisations,
 } from "@challenge/climateseed-demo/logic";
+import {
+  createEpisode,
+  deleteEpisode,
+  episodes as castlabsEpisodes,
+  searchEpisodes,
+} from "@challenge/castlabs-demo/logic";
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
 import {
@@ -41,6 +47,49 @@ import {
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("Castlabs episode management", () => {
+  it("searches episode titles and series names", () => {
+    expect(searchEpisodes(castlabsEpisodes, "quiet").map(({ id }) => id)).toEqual([
+      "episode-01",
+    ]);
+    expect(searchEpisodes(castlabsEpisodes, "northbound")).toHaveLength(2);
+  });
+
+  it("creates and deletes local episodes", () => {
+    const episode = createEpisode(
+      {
+        series: "Orbital",
+        title: "First Light",
+        description: "The station wakes.",
+        seasonNumber: 1,
+        episodeNumber: 1,
+        releaseDate: "2026-07-28",
+        imdbId: "tt1234567",
+      },
+      6,
+    );
+
+    expect(episode).toMatchObject({ id: "local-6", title: "First Light" });
+    expect(deleteEpisode([...castlabsEpisodes, episode], episode.id)).toHaveLength(
+      castlabsEpisodes.length,
+    );
+    expect(() =>
+      createEpisode(
+        {
+          series: "",
+          title: "",
+          description: "",
+          seasonNumber: 0,
+          episodeNumber: 0,
+          releaseDate: "",
+          imdbId: "",
+        },
+        7,
+      ),
+    ).toThrow("Series");
+  });
+});
 
 describe("ClimateSeed demo logic", () => {
   it("aggregates the preserved emissions fixture by organisation", () => {

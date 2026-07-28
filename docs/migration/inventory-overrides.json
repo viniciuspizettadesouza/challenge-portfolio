@@ -1,4 +1,11 @@
 {
+  "challenge-castlabs": {
+    "migrationStrategy": "native-react",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React/Vite episode manager adapted to a self-contained React island. Search, details, create/delete mutations, and subscription feedback are retained with deterministic fixtures and local artwork replacing the unavailable GraphQL, WebSocket, and OMDb services. Owner approved on 2026-07-28."
+  },
   "challenge-climateseed": {
     "migrationStrategy": "native-vue3",
     "migrationStatus": "migrated",

@@ -1,6 +1,6 @@
 {
   "challenge-blueticket": "A Vue weather dashboard that geocodes a location, retrieves hourly conditions, and caches the forecast locally for later viewing.",
-  "challenge-castlabs": "A React episode-management application with search, create/update/delete flows, real-time GraphQL subscriptions, and external movie metadata.",
+  "challenge-castlabs": "A React episode manager with title and series search, detailed records, local create/delete flows, and simulated real-time subscription feedback.",
   "challenge-climateseed": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
   "challenge-conaz": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
   "challenge-devlandia": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",

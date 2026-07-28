@@ -26,6 +26,9 @@ importers:
       '@astrojs/vue':
         specifier: 7.0.1
         version: 7.0.1(astro@7.1.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(yaml@2.9.0))(esbuild@0.28.1)(vue@3.5.40(typescript@6.0.3))(yaml@2.9.0)
+      '@challenge/castlabs-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-castlabs/demo
       '@challenge/climateseed-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-climateseed/demo
@@ -114,6 +117,12 @@ importers:
       vitest:
         specifier: 4.1.10
         version: 4.1.10(vite@8.1.5(esbuild@0.28.1)(yaml@2.9.0))
+
+  challenges/challenge-castlabs/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
 
   challenges/challenge-climateseed/demo:
     dependencies:

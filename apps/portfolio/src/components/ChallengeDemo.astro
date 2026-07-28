@@ -1,4 +1,5 @@
 ---
+import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import ConazDemo from "@challenge/conaz-demo";
 import DevlandiaDemo from "@challenge/devlandia-demo";
@@ -22,7 +23,9 @@ const { slug } = Astro.props;
 ---
 
 {
-  slug === "challenge-climateseed" ? (
+  slug === "challenge-castlabs" ? (
+    <CastlabsDemo client:load />
+  ) : slug === "challenge-climateseed" ? (
     <ClimateSeedDemo client:load />
   ) : slug === "challenge-salsify" ? (
     <SalsifyDemo client:load />
