@@ -581,7 +581,7 @@
     "hasRouter": false,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [],
     "packageRoots": [
       "onsigntv_frontend"
@@ -593,9 +593,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-vue2",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 2/BootstrapVue location forecast adapted to a self-contained Vue 3 island. Address search, local geolocation matching, the six-column forecast matrix, and browser caching are retained with deterministic fixtures replacing the sanitized Google Maps and historical OpenWeather credentials. Owner review pending."
   },
   {
     "slug": "challenge-ingenious-build-frontend",

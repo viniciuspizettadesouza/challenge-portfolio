@@ -17,15 +17,14 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically with project-specific summaries |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 16 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 4 demos or complete case studies |
+| Interactive demos | In progress | 17 integrated and tested; 16 owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 3 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a fixture-backed OnSign TV adaptation after inspecting its Vue 2,
-weather, and geolocation workflows. Capture screenshots for approved demos when
-convenient.
+Review the fixture-backed OnSign TV adaptation, then continue with Meetime.
+Capture screenshots for approved demos when convenient.
 
 ## Environment observed
 

@@ -21,6 +21,7 @@
     "@challenge/ingenious-build-demo": "workspace:*",
     "@challenge/instruct-demo": "workspace:*",
     "@challenge/lagoasoft-demo": "workspace:*",
+    "@challenge/onsign-tv-demo": "workspace:*",
     "@challenge/pipz-demo": "workspace:*",
     "@challenge/propertiag-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",
