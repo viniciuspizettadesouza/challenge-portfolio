@@ -7,6 +7,13 @@ import {
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
 import {
+  getLines,
+  getStopsForLine,
+  getTimesForStop,
+  getUniqueStops,
+  stops as ingeniousStops,
+} from "@challenge/ingenious-build-demo/logic";
+import {
   displayedLikes,
   posts as lagoasoftPosts,
   togglePostVote,
@@ -154,6 +161,29 @@ describe("Lagoasoft demo voting", () => {
     expect(removedFirstVote).toEqual({ 1: false, 2: true });
     expect(displayedLikes(lagoasoftPosts[0], secondVote[1])).toBe(901);
     expect(displayedLikes(lagoasoftPosts[0], removedFirstVote[1])).toBe(900);
+  });
+});
+
+describe("Ingenious Build timetable logic", () => {
+  it("derives ordered lines, route stops, and departure times from the preserved data", () => {
+    expect(getLines(ingeniousStops)).toEqual([100, 101, 102, 103, 105, 106, 107, 109, 110, 111, 112]);
+    expect(getStopsForLine(ingeniousStops, 100).map(({ stop }) => stop)).toEqual([
+      "Salwator",
+      "Malczewskiego",
+      "Aleja Waszyngtona",
+    ]);
+
+    const times = getTimesForStop(ingeniousStops, 100, "Salwator");
+    expect(times[0]).toBe("6:20");
+    expect(times.at(-1)).toBe("21:18");
+  });
+
+  it("filters and reverses the unique stop directory", () => {
+    const ascending = getUniqueStops(ingeniousStops, "salw", "ascending");
+    const descending = getUniqueStops(ingeniousStops, "salw", "descending");
+
+    expect(ascending).toContain("Salwator");
+    expect(descending).toEqual([...ascending].reverse());
   });
 });
 

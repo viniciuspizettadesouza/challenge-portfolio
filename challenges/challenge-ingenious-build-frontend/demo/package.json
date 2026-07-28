@@ -1,0 +1,13 @@
+{
+  "name": "@challenge/ingenious-build-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./logic": "./src/logic.ts"
+  },
+  "peerDependencies": {
+    "vue": ">=3.2.0"
+  }
+}

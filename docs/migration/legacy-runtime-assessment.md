@@ -36,7 +36,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 7 | `challenge-propertiag` | Built, Tested, Portfolio demo, Owner approved | Self-contained Next.js calculator adapted to a tested React island | None for the maintained demo |
 | 8 | `challenge-climateseed` | Inspected, install verified, Portfolio demo, Owner approved | Modern Vue 3/Vite dashboard preserved and adapted with the original local dataset | None for the maintained demo |
 | 9 | `challenge-lagoasoft` | Inspected, Portfolio demo, Owner approved | React 16/CRA social feed adapted from its local JSON | None for the maintained demo |
-| 10 | `challenge-ingenious-build-frontend` | Inspected | Vue 3 app with a bundled `json-server` fixture | Medium; use Node 16 and run both API and UI processes |
+| 10 | `challenge-ingenious-build-frontend` | Inspected, Portfolio demo, Owner approved | Vue 3 timetable integrated with its complete bundled dataset | None for the maintained demo |
 | 11 | `challenge-instruct` | Inspected | Nuxt 2 frontend using the public JSONPlaceholder API | Medium; legacy Node/Nuxt compatibility plus live network behavior |
 | 12 | `challenge-swordhealth` | Inspected | Vue 3/Quasar app with an explicit Node 14–18 range | Medium to high; Auth0 tenant and callback configuration may require owner access |
 | 13 | `challenge-pipz` | Inspected | Small React 16/CRA frontend | High; the removed environment configuration pointed to a Star Wars API that must be replaced or mocked |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Nine maintained portfolio demos pass lint, typecheck, tests, and static build.
-The repository owner approved all nine on 2026-07-28.
+Ten maintained portfolio demos pass lint, typecheck, tests, and static build.
+The repository owner approved all ten on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -76,9 +76,13 @@ Lagoasoft's five-post data and browser-only voting behavior are preserved in a
 modern React island. Its expired Instagram CDN media is intentionally replaced
 with local CSS artwork so the demo remains deterministic and network-free.
 
+Ingenious Build's maintained Vue 3 island consumes the complete preserved
+`data.json` response at build time. It retains the two timetable views while
+removing the need to run `json-server` on port 3000.
+
 ## Recommended testing order
 
-1. Test Ingenious Build and Instruct in isolated legacy runtimes.
+1. Test Instruct in an isolated legacy runtime.
 2. Decide whether Sword Health should retain Auth0 or become a fixture-backed
    demo.
 3. Use local fixtures for every credential-dependent project before attempting

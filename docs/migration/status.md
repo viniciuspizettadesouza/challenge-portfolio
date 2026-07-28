@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | 9 integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 11 demos or complete case studies |
+| Interactive demos | In progress | 10 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 10 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Create a maintained Ingenious Build adaptation after inspecting its Vue 3
-frontend and bundled JSON API data. Capture screenshots for approved demos as
-release evidence when convenient.
+Create a maintained Instruct adaptation after inspecting its Nuxt 2 frontend
+and public data workflow. Capture screenshots for approved demos as release
+evidence when convenient.
 
 ## Environment observed
 

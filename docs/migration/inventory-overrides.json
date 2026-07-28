@@ -25,6 +25,13 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "React 16 social voting exercise adapted to a tested modern React island. Original captions, dates, like counts, and browser-only state are preserved; expired Instagram media is replaced with local CSS artwork. Owner approved on 2026-07-28."
   },
+  "challenge-ingenious-build-frontend": {
+    "migrationStrategy": "native-vue3",
+    "migrationStatus": "migrated",
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Vue 3 bus timetable adapted to load the complete preserved json-server dataset locally. Line and stop selection, sorted departure times, directory search, and sort direction are retained without a second process. Owner approved on 2026-07-28."
+  },
   "challenge-propertiag": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",
