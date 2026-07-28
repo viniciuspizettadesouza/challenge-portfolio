@@ -44,6 +44,9 @@ importers:
       '@challenge/lagoasoft-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-lagoasoft/demo
+      '@challenge/pipz-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-pipz/demo
       '@challenge/propertiag-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-propertiag/demo
@@ -132,6 +135,12 @@ importers:
         version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-lagoasoft/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
+
+  challenges/challenge-pipz/demo:
     dependencies:
       react:
         specifier: '>=18.0.0'

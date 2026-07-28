@@ -39,7 +39,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 10 | `challenge-ingenious-build-frontend` | Inspected, Portfolio demo, Owner approved | Vue 3 timetable integrated with its complete bundled dataset | None for the maintained demo |
 | 11 | `challenge-instruct` | Inspected, Portfolio demo, Owner approved | Nuxt 2 lead table adapted with the original public dataset stored locally | None for the maintained demo |
 | 12 | `challenge-swordhealth` | Inspected, Portfolio demo, Owner approved | Vue 3/Quasar news platform adapted with a safe local demo identity | None for the maintained demo |
-| 13 | `challenge-pipz` | Inspected | Small React 16/CRA frontend | High; the removed environment configuration pointed to a Star Wars API that must be replaced or mocked |
+| 13 | `challenge-pipz` | Inspected, Portfolio demo, Owner approved | React 16/CRA film list adapted with the original SWAPI fields and crawl design | None for the maintained demo |
 | 14 | `challenge-fyld-hansecom` | Inspected | Small Nuxt 2 movie search app | High; the external movie API token was redacted and a replacement API or mock is required |
 | 15 | `challenge-castlabs` | Inspected | Modern React/Vite code but multiple live data integrations | High; GraphQL HTTP/WebSocket and OMDb configuration must be safely replaced or mocked |
 | 16 | `challenge-blueticket` | Inspected | Vue 2 weather/geocoding application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Twelve maintained portfolio demos pass lint, typecheck, tests, and static build.
-The repository owner approved all twelve on 2026-07-28.
+Thirteen maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all thirteen on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -87,6 +87,10 @@ category filters no longer depend on live network availability.
 Sword Health's public news and protected authoring flows are retained without
 contacting its historical Auth0 tenant. A clearly labelled local demo identity
 supports profile and article creation for safe portfolio review.
+
+Pipz's Star Wars film listing now uses a deterministic seven-film fixture in a
+modern React island. It reproduces the preserved blue intro, original logo,
+historical API order, Roman episode numbers, and yellow perspective crawl.
 
 ## Recommended testing order
 

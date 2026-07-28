@@ -19,6 +19,10 @@ import {
   leads as instructLeads,
 } from "@challenge/instruct-demo/logic";
 import {
+  films as pipzFilms,
+  toRomanEpisode,
+} from "@challenge/pipz-demo/logic";
+import {
   displayedLikes,
   posts as lagoasoftPosts,
   togglePostVote,
@@ -246,6 +250,16 @@ describe("Instruct lead filtering", () => {
       filterLeads(instructLeads, "", ["e-enable", "applications"]).map(({ id }) => id),
     ).toEqual([3, 6]);
     expect(filterLeads(instructLeads, "glenna", ["supply-chains"])).toEqual([]);
+  });
+});
+
+describe("Pipz film archive logic", () => {
+  it("formats episode numbers", () => {
+    expect(toRomanEpisode(4)).toBe("IV");
+  });
+
+  it("retains the historical SWAPI response order", () => {
+    expect(pipzFilms.map(({ episodeId }) => episodeId)).toEqual([4, 5, 6, 1, 2, 3, 7]);
   });
 });
 

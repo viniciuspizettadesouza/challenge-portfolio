@@ -6,6 +6,12 @@ const repositories = readManifest();
 const inventory = JSON.parse(
   readFileSync(resolve(projectRoot, "docs/migration/inventory.json"), "utf8"),
 );
+const summaries = JSON.parse(
+  readFileSync(
+    resolve(projectRoot, "docs/portfolio/challenge-summaries.json"),
+    "utf8",
+  ),
+);
 const registry = [];
 
 for (const repository of repositories) {
@@ -45,6 +51,7 @@ for (const repository of repositories) {
     title: updated.title,
     company,
     description:
+      summaries[updated.slug] ??
       "A preserved technical challenge available for source review and portfolio presentation.",
     technologies: updated.technologies ?? [],
     renderer: updated.renderer,

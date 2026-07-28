@@ -492,7 +492,7 @@
     "hasRouter": false,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [
       "REACT_APP_API_URL"
     ],
@@ -506,9 +506,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "upgrade-react",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16 SWAPI film list adapted to a tested modern React island with the original seven-film fields and historical response order stored locally. The original intro, preserved logo, and continuous perspective crawl are reproduced without the removed API configuration. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-propertiag",

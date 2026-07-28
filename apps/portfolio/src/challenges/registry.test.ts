@@ -12,5 +12,13 @@ describe("challenge registry", () => {
       expect(getChallenge(challenge.slug)).toBe(challenge);
     }
   });
-});
 
+  it("provides a specific explanatory summary for every challenge", () => {
+    for (const challenge of challenges) {
+      expect(challenge.description.length).toBeGreaterThan(60);
+      expect(challenge.description).not.toContain("available for source review");
+    }
+
+    expect(new Set(challenges.map(({ description }) => description)).size).toBe(20);
+  });
+});
