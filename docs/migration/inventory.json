@@ -534,9 +534,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-react",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Next.js calculator behavior adapted to a tested React island. Preserved build passes under Node 18/Yarn 1; one original snapshot is stale. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-fyld-hansecom",

@@ -6,10 +6,15 @@
   "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b",
   "framework": "react",
   "frameworkVersion": "^18.1.0",
-  "technologies": [],
+  "technologies": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Jest"
+  ],
   "renderer": "react",
   "migrationStrategy": "native-react",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
   "hasExternalApi": false
 }

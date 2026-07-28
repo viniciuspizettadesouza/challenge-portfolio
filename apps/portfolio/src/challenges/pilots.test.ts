@@ -1,3 +1,4 @@
+import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -8,6 +9,13 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the PropertiaG Roman numeral calculator", () => {
+    const html = renderToStaticMarkup(createElement(PropertiaGDemo));
+
+    expect(html).toContain("Integer to Roman numeral");
+    expect(html).toContain("XLII");
+  });
+
   it("renders the Salsify product table", () => {
     const html = renderToStaticMarkup(createElement(SalsifyDemo));
 

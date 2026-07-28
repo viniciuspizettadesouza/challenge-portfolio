@@ -14,6 +14,7 @@
   "dependencies": {
     "@challenge/conaz-demo": "workspace:*",
     "@challenge/devlandia-demo": "workspace:*",
+    "@challenge/propertiag-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",
     "@challenge/vue-demo": "workspace:*",
     "@challenge/vuejs-demo": "workspace:*",

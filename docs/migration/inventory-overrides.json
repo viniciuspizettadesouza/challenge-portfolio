@@ -11,6 +11,12 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript. Owner approved on 2026-07-28."
   },
+  "challenge-propertiag": {
+    "migrationStrategy": "native-react",
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Next.js calculator behavior adapted to a tested React island. Preserved build passes under Node 18/Yarn 1; one original snapshot is stale. Owner approved on 2026-07-28."
+  },
   "challenge-salsify": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",

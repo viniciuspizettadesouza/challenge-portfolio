@@ -32,6 +32,9 @@ importers:
       '@challenge/devlandia-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-devlandia/demo
+      '@challenge/propertiag-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-propertiag/demo
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
@@ -94,6 +97,15 @@ importers:
   challenges/challenge-conaz/demo: {}
 
   challenges/challenge-devlandia/demo: {}
+
+  challenges/challenge-propertiag/demo:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 19.2.8
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.8(react@19.2.8)
 
   challenges/challenge-salsify/demo:
     dependencies:

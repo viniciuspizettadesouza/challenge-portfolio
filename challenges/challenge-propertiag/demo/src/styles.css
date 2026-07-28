@@ -1,0 +1,134 @@
+.propertiag-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(12rem, 0.6fr);
+  gap: 1rem;
+}
+
+.propertiag-demo .calculator,
+.propertiag-demo aside {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: #0f1210;
+  border: 1px solid #303732;
+  border-radius: 0.45rem;
+}
+
+.propertiag-demo .calculator__eyebrow,
+.propertiag-demo aside > p {
+  margin: 0 0 0.5rem;
+  color: #b8f34a;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.propertiag-demo h3 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  letter-spacing: -0.04em;
+}
+
+.propertiag-demo .calculator__copy,
+.propertiag-demo small {
+  color: #a4ada6;
+}
+
+.propertiag-demo label,
+.propertiag-demo small {
+  display: block;
+}
+
+.propertiag-demo label {
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.propertiag-demo input {
+  width: 100%;
+  padding: 0.8rem;
+  color: #f2f5ef;
+  background: #1b201d;
+  border: 1px solid #303732;
+  border-radius: 0.3rem;
+  font: inherit;
+  font-size: 1.1rem;
+}
+
+.propertiag-demo small {
+  margin-top: 0.35rem;
+}
+
+.propertiag-demo .examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-block: 1rem;
+}
+
+.propertiag-demo button {
+  padding: 0.45rem 0.65rem;
+  color: #d8ded9;
+  background: #1b201d;
+  border: 1px solid #303732;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.propertiag-demo button:hover,
+.propertiag-demo button:focus-visible {
+  color: #111;
+  background: #b8f34a;
+  border-color: #b8f34a;
+}
+
+.propertiag-demo output {
+  display: grid;
+  min-height: 8rem;
+  padding: 1rem;
+  background: #090b0a;
+  border-radius: 0.35rem;
+  align-content: center;
+}
+
+.propertiag-demo output span {
+  color: #a4ada6;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.propertiag-demo output strong {
+  overflow-wrap: anywhere;
+  color: #b8f34a;
+  font-family: ui-monospace, monospace;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.propertiag-demo aside div {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid #303732;
+}
+
+.propertiag-demo aside span {
+  color: #a4ada6;
+}
+
+.propertiag-demo aside strong {
+  color: #b8f34a;
+  font-family: ui-monospace, monospace;
+}
+
+.propertiag-demo aside .total {
+  margin-top: 1rem;
+  border-bottom: 0;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 700px) {
+  .propertiag-demo {
+    grid-template-columns: 1fr;
+  }
+}

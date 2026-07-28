@@ -266,14 +266,20 @@
     "title": "PropertiaG Challenge",
     "company": "PropertiaG",
     "description": "A preserved technical challenge available for source review and portfolio presentation.",
-    "technologies": [],
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Jest"
+    ],
     "renderer": "react",
-    "migrationStatus": "pending",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-react",
     "sourcePath": "challenges/challenge-propertiag/original",
     "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b"
+    "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b",
+    "demoPath": "challenges/challenge-propertiag/demo"
   },
   {
     "slug": "challenge-fyld-hansecom",
