@@ -176,8 +176,8 @@
     "packageManager": "yarn",
     "hasRouter": true,
     "hasTests": false,
-    "hasBackend": true,
-    "hasExternalApi": true,
+    "hasBackend": false,
+    "hasExternalApi": false,
     "envVariables": [],
     "packageRoots": [
       "backend",
@@ -196,9 +196,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "mock-backend",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16/Express/MongoDB employee directory adapted to a self-contained modern React island. Show-all and approximate name search, profile fields, a repaired two-step profile/address registration flow, and browser persistence use fictional local records. Passwords are never stored, and the historical remote MongoDB connection is not used. Owner review pending."
   },
   {
     "slug": "challenge-zygo",

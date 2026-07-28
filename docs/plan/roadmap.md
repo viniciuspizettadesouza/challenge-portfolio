@@ -13,11 +13,11 @@ future contributors can see what happened and where to continue.
 | 3 — Monorepo foundation | Completed | workspace, scripts, docs, and Astro shell |
 | 4 — History imports | Completed | 20 individual import merges |
 | 5 — Import verification | Completed | `docs/migration/history-report.md` |
-| 6 — Technical inventory | In progress | automatic inventory complete; manual review pending |
+| 6 — Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | 7 — Astro catalog | Completed | 20 challenge routes and static build |
-| 8 — Challenge structure | In progress | metadata and English summaries complete; 19 of 20 demos integrated |
-| 9 — Pilot demos | In progress | 19 owner-approved; screenshots pending |
-| 10 — Remaining waves | Pending | 1 demo or case study |
+| 8 — Challenge structure | Completed | metadata, English summaries, and 20 demos integrated |
+| 9 — Pilot demos | In progress | 19 owner-approved; JExperts review and screenshots pending |
+| 10 — Remaining waves | Completed | all 20 challenges have interactive demos |
 | 11 — Repository quality | In progress | checks pass; clean-clone build verified |
 | 12 — Final release and cleanup | Pending | deploy, release, backup copy, manual review |
 

@@ -7,6 +7,7 @@ import DevlandiaDemo from "@challenge/devlandia-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import InstructDemo from "@challenge/instruct-demo";
+import JExpertsDemo from "@challenge/jexperts-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import MeetimeDemo from "@challenge/meetime-demo";
 import OnSignTvDemo from "@challenge/onsign-tv-demo";
@@ -51,6 +52,8 @@ const { slug } = Astro.props;
     <IngeniousBuildDemo client:load />
   ) : slug === "challenge-instruct" ? (
     <InstructDemo client:load />
+  ) : slug === "challenge-jexperts" ? (
+    <JExpertsDemo client:load />
   ) : slug === "challenge-lagoasoft" ? (
     <LagoasoftDemo client:load />
   ) : slug === "challenge-meetime" ? (

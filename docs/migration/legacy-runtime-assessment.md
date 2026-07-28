@@ -46,7 +46,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 17 | `challenge-onsign-tv` | Inspected, Portfolio demo, Owner approved | Vue 2 weather/geolocation screen adapted with local forecast fixtures | None for the maintained demo |
 | 18 | `challenge-meetime` | Inspected, Portfolio demo, Owner approved | Vue 2 sales client adapted with fictional local leads and cadences | None for the maintained demo |
 | 19 | `challenge-stormtech` | Inspected, Portfolio demo, Owner approved | React 16/Express/MongoDB sorter adapted with its documented local book fixture | None for the maintained demo |
-| 20 | `challenge-jexperts` | Inspected | React 16 frontend plus a larger Express/Mongoose CRUD backend | Very high; requires replacement database/configuration, representative data, two processes, and deeper workflow review |
+| 20 | `challenge-jexperts` | Inspected, Portfolio demo | React 16/Express/MongoDB employee directory adapted with fictional local records | Low; review show-all, approximate search, details, two-step registration, and persistence |
 
 ## What is known to work now
 
@@ -61,8 +61,9 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Nineteen maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved all nineteen on 2026-07-28.
+All twenty maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved nineteen on 2026-07-28; JExperts awaits
+owner review.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -121,12 +122,18 @@ four books and expected orders from its README. The five individual sorts and
 all five scenarios—including the null exception and empty set—work without the
 historical Express server or remote MongoDB connection.
 
+JExperts' React employee directory is retained as a modern React island that
+follows its preserved screenshot. Show-all and approximate name search, profile
+and address details, a repaired two-step registration flow, and browser
+persistence use fictional records without the historical Express/MongoDB
+services; submitted passwords are deliberately discarded.
+
 ## Recommended testing order
 
-1. Use local fixtures for every credential-dependent project before attempting
-   functional parity.
-2. Recreate MongoDB locally for Stormtech and JExperts only if full backend
-   behavior is valuable; otherwise produce complete case studies.
+1. Review the final JExperts local workflow.
+2. Capture representative screenshots for the twenty maintained demos.
+3. Do not revive historical credential or database connections; the documented
+   fixtures are the supported portfolio runtime.
 
 ## Completion rule
 

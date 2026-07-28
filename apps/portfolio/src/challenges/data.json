@@ -102,15 +102,23 @@
     "slug": "challenge-jexperts",
     "title": "JExperts Challenge",
     "company": "JExperts",
-    "description": "A full-stack employee directory for creating, editing, deleting, and approximately searching users with contact, role, address, and reporting details.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
+    "description": "A React employee directory for showing and approximately searching local users, inspecting their details, and completing a two-step profile-and-address registration.",
+    "technologies": [
+      "React",
+      "Create React App",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "React Router"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
     "migrationStrategy": "mock-backend",
     "sourcePath": "challenges/challenge-jexperts/original",
     "originalRepository": "viniciuspizettadesouza/challenge-jexperts",
     "originalDefaultBranch": "master",
-    "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c"
+    "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c",
+    "demoPath": "challenges/challenge-jexperts/demo"
   },
   {
     "slug": "challenge-zygo",

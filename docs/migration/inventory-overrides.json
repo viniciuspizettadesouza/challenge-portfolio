@@ -76,6 +76,14 @@
     "reviewStatus": "confirmed",
     "reviewNotes": "Nuxt 2 lead table adapted to a responsive Vue 3 island using a deterministic local copy of the original ten-user JSONPlaceholder response. Name and multi-category filtering are retained without live API access. Owner approved on 2026-07-28."
   },
+  "challenge-jexperts": {
+    "migrationStrategy": "mock-backend",
+    "migrationStatus": "migrated",
+    "hasBackend": false,
+    "hasExternalApi": false,
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React 16/Express/MongoDB employee directory adapted to a self-contained modern React island. Show-all and approximate name search, profile fields, a repaired two-step profile/address registration flow, and browser persistence use fictional local records. Passwords are never stored, and the historical remote MongoDB connection is not used. Owner review pending."
+  },
   "challenge-propertiag": {
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",

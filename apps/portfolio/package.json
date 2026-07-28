@@ -20,6 +20,7 @@
     "@challenge/fyld-hansecom-demo": "workspace:*",
     "@challenge/ingenious-build-demo": "workspace:*",
     "@challenge/instruct-demo": "workspace:*",
+    "@challenge/jexperts-demo": "workspace:*",
     "@challenge/lagoasoft-demo": "workspace:*",
     "@challenge/meetime-demo": "workspace:*",
     "@challenge/onsign-tv-demo": "workspace:*",

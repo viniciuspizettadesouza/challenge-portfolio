@@ -7,7 +7,7 @@
   "challenge-fyld-hansecom": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
   "challenge-ingenious-build-frontend": "A Vue bus timetable for selecting lines and stops, viewing sorted departure times, and searching the complete stop directory.",
   "challenge-instruct": "A responsive lead-management table with contact-name search and combinable filters derived from company categories.",
-  "challenge-jexperts": "A full-stack employee directory for creating, editing, deleting, and approximately searching users with contact, role, address, and reporting details.",
+  "challenge-jexperts": "A React employee directory for showing and approximately searching local users, inspecting their details, and completing a two-step profile-and-address registration.",
   "challenge-lagoasoft": "A React social feed that renders five local posts and maintains an independent browser-only like vote for each one.",
   "challenge-meetime": "A Vue sales-prospecting client for validating and adding leads to outbound cadences, then listing, editing, deleting, and caching them locally.",
   "challenge-onsign-tv": "A Vue location forecast with address search, privacy-safe coordinate matching, and a cached six-column comparison of conditions, temperature, and humidity.",
