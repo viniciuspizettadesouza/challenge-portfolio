@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { withBase } from "../lib/urls";
 
 interface Props {
   title: string;
@@ -18,16 +19,16 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase("favicon.svg")} type="image/svg+xml" />
     <title>{title}</title>
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="/">Challenge Portfolio</a>
+      <a class="brand" href={withBase()}>Challenge Portfolio</a>
       <nav aria-label="Main navigation">
-        <a href="/challenges">Challenges</a>
-        <a href="/about">About</a>
+        <a href={withBase("challenges")}>Challenges</a>
+        <a href={withBase("about")}>About</a>
       </nav>
     </header>
     <main id="content">

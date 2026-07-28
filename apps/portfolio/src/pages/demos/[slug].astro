@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { challenges, type Challenge } from "../../challenges/registry";
 import ChallengeDemo from "../../components/ChallengeDemo.astro";
+import { withBase } from "../../lib/urls";
 import "../../styles/global.css";
 
 export const getStaticPaths = (() =>
@@ -37,7 +38,7 @@ const { challenge } = Astro.props;
         <strong>{challenge.title}</strong>
       </div>
       <nav aria-label="Demo controls">
-        <a href={`/challenges/${challenge.slug}`}>Back to challenge</a>
+        <a href={withBase(`challenges/${challenge.slug}`)}>Back to challenge</a>
         <button type="button" id="enter-fullscreen">Enter fullscreen</button>
       </nav>
     </header>

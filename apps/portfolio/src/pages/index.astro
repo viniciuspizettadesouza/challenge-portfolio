@@ -2,6 +2,7 @@
 import ChallengeCard from "../components/ChallengeCard.astro";
 import { challenges } from "../challenges/registry";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/urls";
 ---
 
 <BaseLayout title="Challenge Portfolio">
@@ -12,7 +13,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Original source and technical decisions preserved, with adapted demos
       designed to keep working on the modern web.
     </p>
-    <a class="button" href="/challenges">Explore the challenges</a>
+    <a class="button" href={withBase("challenges")}>Explore the challenges</a>
   </section>
 
   <section class="section">
@@ -21,7 +22,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="eyebrow">Catalog</p>
         <h2>First in line</h2>
       </div>
-      <a href="/challenges">View all ({challenges.length})</a>
+      <a href={withBase("challenges")}>View all ({challenges.length})</a>
     </div>
     <div class="grid">
       {challenges.slice(0, 6).map((challenge) => <ChallengeCard challenge={challenge} />)}

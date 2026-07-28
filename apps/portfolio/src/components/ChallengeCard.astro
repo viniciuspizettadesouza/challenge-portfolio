@@ -1,5 +1,6 @@
 ---
 import type { Challenge } from "../challenges/registry";
+import { withBase } from "../lib/urls";
 
 interface Props {
   challenge: Challenge;
@@ -15,7 +16,7 @@ const { challenge } = Astro.props;
       {challenge.migrationStatus}
     </span>
   </div>
-  <h2><a href={`/challenges/${challenge.slug}`}>{challenge.title}</a></h2>
+  <h2><a href={withBase(`challenges/${challenge.slug}`)}>{challenge.title}</a></h2>
   <p>{challenge.description}</p>
   <span class="card__link" aria-hidden="true">View challenge →</span>
 </article>

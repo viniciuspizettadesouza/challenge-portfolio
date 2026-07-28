@@ -99,6 +99,33 @@ Follow `docs/migration/deletion-checklist.md`. The tooling does not implement
 remote deletion. That decision belongs to the repository owner after manual
 review.
 
+## 9. Deploy to GitHub Pages
+
+The repository uses `.github/workflows/deploy-pages.yml` and the official Astro
+and GitHub Pages actions. Astro's production configuration uses:
+
+- site: `https://viniciuspizettadesouza.github.io`;
+- base path: `/challenge-portfolio`;
+- production URL:
+  `https://viniciuspizettadesouza.github.io/challenge-portfolio/`.
+
+The workflow runs lint, typecheck, unit tests, and the static build before
+uploading the Pages artifact. It deploys on every push to `main` and supports
+manual runs through `workflow_dispatch`.
+
+For the first deployment:
+
+1. commit and push the prepared Pages configuration;
+2. open **Settings → Pages** in the GitHub repository;
+3. under **Build and deployment**, select **GitHub Actions** as the source;
+4. open **Actions → Deploy to GitHub Pages** and monitor both jobs;
+5. verify the home page, challenge catalog, at least one detail route, and at
+   least one fullscreen demo at the production URL;
+6. record the deployed commit in `docs/migration/status.md` and mark the
+   deployment checklist item complete.
+
+No GitHub secret or paid hosting plan is required for this public static site.
+
 ## Git policy
 
 Automated agents may stage files only when the repository owner explicitly

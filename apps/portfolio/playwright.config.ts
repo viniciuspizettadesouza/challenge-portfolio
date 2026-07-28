@@ -7,7 +7,7 @@ export default defineConfig({
   workers: 1,
   reporter: "list",
   use: {
-    baseURL: "http://127.0.0.1:4322",
+    baseURL: "http://127.0.0.1:4322/challenge-portfolio/",
     trace: "retain-on-failure",
     viewport: { width: 1440, height: 1000 },
   },
@@ -19,7 +19,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "pnpm build && pnpm preview --host 127.0.0.1 --port 4322",
-    url: "http://127.0.0.1:4322",
+    url: "http://127.0.0.1:4322/challenge-portfolio/",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
