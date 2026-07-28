@@ -1,12 +1,12 @@
 # Technical inventory
 
-Generated at 2026-07-28T20:41:09.263Z without installing historical dependencies.
+Generated at 2026-07-28T20:58:05.435Z without installing historical dependencies.
 
 | Challenge | Imported | Framework | Bundler | Strategy | Review |
 | --- | --- | --- | --- | --- | --- |
 | challenge-stormtech | yes | react ^16.11.0 | create-react-app | mock-backend | unreviewed |
 | challenge-vue | yes | vue ^3.2.25 | vite | native-vue3 | confirmed |
-| challenge-vuejs | yes | vue ^3.4.21 | vite | native-vue3 | unreviewed |
+| challenge-vuejs | yes | vue ^3.4.21 | vite | native-vue3 | confirmed |
 | challenge-castlabs | yes | react ^18.2.0 | vite | native-react | unreviewed |
 | challenge-conaz | yes | —  | — | static-embed | confirmed |
 | challenge-jexperts | yes | react ^16.11.0 | create-react-app | mock-backend | unreviewed |

@@ -32,7 +32,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 3 | `challenge-devlandia` | Executed, Portfolio demo, Owner approved | Two dependency-free Ruby scripts; sample inputs run successfully | None beyond having Ruby |
 | 4 | `challenge-salsify` | Built, Portfolio demo, Owner approved | Modern React/Vite app with local data and no external API | None |
 | 5 | `challenge-vue` | Portfolio demo, Owner approved | Small Vue 3/Vite app with no backend or private API | None for the maintained demo |
-| 6 | `challenge-vuejs` | Built, Tested | Modern Vue 3/Vite app; production build and one unit test pass | Low; browser flow depends on a TVMaze request currently using HTTP |
+| 6 | `challenge-vuejs` | Built, Tested, Portfolio demo, Owner approved | Modern Vue 3 episode guide integrated with local fixtures | None for the maintained demo |
 | 7 | `challenge-propertiag` | Inspected | Self-contained Next.js calculator with Jest tests and no API | Low; use Yarn 1 and a compatible Node version |
 | 8 | `challenge-climateseed` | Inspected, install verified | Modern Vue 3/Vite app with local data and a unit test | Low to medium; production build currently has three TypeScript errors |
 | 9 | `challenge-lagoasoft` | Inspected | React 16/CRA app backed by local JSON | Medium; use an older Node/Yarn toolchain and replace expired remote image URLs if needed |
@@ -60,9 +60,8 @@ challenge-salsify     npm clean install and production build passed
 challenge-vuejs       npm clean install, production build, and unit test passed
 ```
 
-The maintained Salsify, Vue, Conaz, Zygo, and Devlandia portfolio demos pass
-the portfolio lint, typecheck, tests, and static build. The repository owner
-approved all five on 2026-07-28.
+The six maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all six on 2026-07-28.
 
 Climateseed installed successfully, but its build exposed existing TypeScript
 errors in `src/plugins/apexcharts.ts`, `src/router/index.ts`, and
@@ -71,16 +70,14 @@ lockfile, so an `npm ci` attempt is not a valid test for that project.
 
 ## Recommended testing order
 
-1. Run a browser smoke test for Vue.js and replace its HTTP API URL with HTTPS
-   or a fixture if necessary.
-2. Test Propertia with Yarn 1 and Node 16 or 18.
-3. Fix Climateseed's three type errors, then run its build and unit test again.
-4. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
-5. Decide whether Sword Health should retain Auth0 or become a fixture-backed
+1. Test Propertia with Yarn 1 and Node 16 or 18.
+2. Fix Climateseed's three type errors, then run its build and unit test again.
+3. Test Lagoasoft, Ingenious Build, and Instruct in isolated legacy runtimes.
+4. Decide whether Sword Health should retain Auth0 or become a fixture-backed
    demo.
-6. Use local fixtures for every credential-dependent project before attempting
+5. Use local fixtures for every credential-dependent project before attempting
    functional parity.
-7. Recreate MongoDB locally for Stormtech and JExperts only if full backend
+6. Recreate MongoDB locally for Stormtech and JExperts only if full backend
    behavior is valuable; otherwise produce complete case studies.
 
 ## Completion rule

@@ -1,0 +1,145 @@
+---
+import type { GetStaticPaths } from "astro";
+import { challenges, type Challenge } from "../../challenges/registry";
+import ChallengeDemo from "../../components/ChallengeDemo.astro";
+import "../../styles/global.css";
+
+export const getStaticPaths = (() =>
+  challenges
+    .filter((challenge) => challenge.demoPath)
+    .map((challenge) => ({
+      params: { slug: challenge.slug },
+      props: { challenge },
+    }))) satisfies GetStaticPaths;
+
+interface Props {
+  challenge: Challenge;
+}
+
+const { challenge } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content={`Full-screen interactive demo for ${challenge.title}.`}
+    />
+    <title>{challenge.title} Demo — Challenge Portfolio</title>
+  </head>
+  <body>
+    <header class="demo-toolbar">
+      <div>
+        <p>Interactive demo</p>
+        <strong>{challenge.title}</strong>
+      </div>
+      <nav aria-label="Demo controls">
+        <a href={`/challenges/${challenge.slug}`}>Back to challenge</a>
+        <button type="button" id="enter-fullscreen">Enter fullscreen</button>
+      </nav>
+    </header>
+    <main class="demo-stage">
+      <ChallengeDemo slug={challenge.slug} />
+    </main>
+
+    <script>
+      const button = document.querySelector<HTMLButtonElement>("#enter-fullscreen");
+
+      button?.addEventListener("click", async () => {
+        if (document.fullscreenElement) {
+          await document.exitFullscreen();
+        } else {
+          await document.documentElement.requestFullscreen();
+        }
+      });
+
+      document.addEventListener("fullscreenchange", () => {
+        if (button) {
+          button.textContent = document.fullscreenElement
+            ? "Exit fullscreen"
+            : "Enter fullscreen";
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  body {
+    min-height: 100vh;
+  }
+
+  .demo-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    width: 100%;
+    min-height: auto;
+    padding: 0.8rem clamp(1rem, 3vw, 2rem);
+    background: rgb(11 13 12 / 92%);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+  }
+
+  .demo-toolbar p {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .demo-toolbar strong {
+    display: block;
+    line-height: 1.25;
+  }
+
+  .demo-toolbar nav {
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .demo-toolbar a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .demo-toolbar button {
+    padding: 0.6rem 0.8rem;
+    color: #111;
+    background: var(--accent);
+    border: 0;
+    border-radius: 0.3rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .demo-stage {
+    display: grid;
+    width: min(1440px, 100%);
+    min-height: calc(100vh - 4.5rem);
+    margin-inline: auto;
+    padding: clamp(1rem, 4vw, 3rem);
+    align-items: start;
+  }
+
+  @media (max-width: 620px) {
+    .demo-toolbar {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .demo-toolbar nav {
+      width: 100%;
+      margin-left: 0;
+      justify-content: space-between;
+    }
+  }
+</style>

@@ -16,6 +16,7 @@
     "@challenge/devlandia-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",
     "@challenge/vue-demo": "workspace:*",
+    "@challenge/vuejs-demo": "workspace:*",
     "@challenge/zygo-demo": "workspace:*",
     "@astrojs/react": "6.0.1",
     "@astrojs/vue": "7.0.1",

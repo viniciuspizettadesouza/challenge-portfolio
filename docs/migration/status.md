@@ -17,15 +17,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Astro shell | Completed | all 20 challenge routes build statically |
 | Initial publication | Completed | `main` published and confirmed as the default branch |
 | Technical inventory | In progress | runtime difficulty ranked; durable strategy confirmations pending |
-| Interactive demos | In progress | Salsify, Vue, Conaz, Zygo, and Devlandia integrated, tested, and owner-approved; screenshots pending |
-| Remaining migration waves | Pending | 15 demos or complete case studies |
+| Interactive demos | In progress | 6 integrated, tested, and owner-approved; screenshots pending |
+| Remaining migration waves | Pending | 14 demos or complete case studies |
 | Deployment and final cleanup | Pending | deploy, release, second backup copy, and owner review |
 
 ## Current next action
 
-Integrate `challenge-vuejs`, replacing its HTTP TVMaze request with HTTPS or a
-local fixture. Capture screenshots for the five approved demos as release
-evidence when convenient.
+Test and integrate `challenge-propertiag` with a compatible Node and Yarn
+runtime. Capture screenshots for approved demos as release evidence when
+convenient.
 
 ## Environment observed
 

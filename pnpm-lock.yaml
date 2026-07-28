@@ -38,6 +38,9 @@ importers:
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
+      '@challenge/vuejs-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-vuejs/demo
       '@challenge/zygo-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-zygo/demo
@@ -105,6 +108,12 @@ importers:
     dependencies:
       vue:
         specifier: '>=3'
+        version: 3.5.40(typescript@6.0.3)
+
+  challenges/challenge-vuejs/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.4'
         version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-zygo/demo: {}
