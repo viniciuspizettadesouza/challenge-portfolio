@@ -11,11 +11,12 @@
     "TypeScript",
     "Vite",
     "Apollo",
-    "GraphQL"
+    "GraphQL",
+    "OMDb"
   ],
   "renderer": "react",
   "migrationStrategy": "native-react",
-  "migrationStatus": "pending",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

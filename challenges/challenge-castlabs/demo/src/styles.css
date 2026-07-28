@@ -1,0 +1,526 @@
+.castlabs-demo {
+  --castlabs-blue: #3b82f6;
+  --castlabs-navy: #14213d;
+  --castlabs-muted: #64748b;
+  --castlabs-line: #e2e8f0;
+  width: 100%;
+  min-height: 42rem;
+  overflow: hidden;
+  border: 1px solid var(--castlabs-line);
+  border-radius: 1.25rem;
+  color: var(--castlabs-navy);
+  background: #f8fafc;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.castlabs-demo button,
+.castlabs-demo input,
+.castlabs-demo textarea {
+  font: inherit;
+}
+
+.castlabs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+  color: white;
+  background: var(--castlabs-blue);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.18);
+}
+
+.castlabs-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  cursor: pointer;
+}
+
+.castlabs-brand span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.55rem;
+  color: var(--castlabs-blue);
+  background: white;
+  font-size: 0.65rem;
+}
+
+.castlabs-search {
+  display: flex;
+  align-items: center;
+  width: min(22rem, 42%);
+  padding: 0 0.8rem;
+  border-radius: 0.45rem;
+  color: #64748b;
+  background: white;
+}
+
+.castlabs-search svg {
+  width: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.castlabs-search input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 0;
+  outline: 0;
+}
+
+.castlabs-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem clamp(1rem, 4vw, 2rem);
+  border-bottom: 1px solid var(--castlabs-line);
+  color: var(--castlabs-muted);
+  background: white;
+  font-size: 0.7rem;
+}
+
+.castlabs-status span {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.castlabs-status i {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0.2rem #dcfce7;
+}
+
+.castlabs-status strong {
+  color: #475569;
+  font-weight: 600;
+}
+
+.castlabs-library {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.85fr) minmax(22rem, 1.4fr);
+  min-height: 36rem;
+}
+
+.castlabs-list {
+  border-right: 1px solid var(--castlabs-line);
+  background: white;
+}
+
+.castlabs-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+.castlabs-section-heading p,
+.castlabs-section-heading h2 {
+  margin: 0;
+}
+
+.castlabs-section-heading p,
+.castlabs-eyebrow {
+  color: var(--castlabs-blue);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.castlabs-section-heading h2 {
+  margin-top: 0.2rem;
+  font-size: 1.25rem;
+}
+
+.castlabs-add {
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: var(--castlabs-blue);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.castlabs-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.castlabs-list li {
+  border-top: 1px solid #eef2f7;
+}
+
+.castlabs-list li button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.castlabs-list li button:hover,
+.castlabs-list li button.is-selected {
+  background: #eff6ff;
+}
+
+.castlabs-list li button.is-selected {
+  box-shadow: inset 3px 0 var(--castlabs-blue);
+}
+
+.castlabs-list li button > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.45rem;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.castlabs-list li button div {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.castlabs-list li strong,
+.castlabs-list li small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.castlabs-list li strong {
+  font-size: 0.86rem;
+}
+
+.castlabs-list li small {
+  color: var(--castlabs-muted);
+  font-size: 0.7rem;
+}
+
+.castlabs-list li b {
+  margin-left: auto;
+  color: #94a3b8;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.castlabs-details {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(15rem, 1fr);
+  align-items: start;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.3rem, 4vw, 2.5rem);
+}
+
+.castlabs-artwork {
+  position: relative;
+  display: grid;
+  place-items: end start;
+  aspect-ratio: 3 / 4;
+  min-height: 20rem;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  color: white;
+  background:
+    linear-gradient(145deg, transparent, rgba(8, 15, 36, 0.8)),
+    var(--episode-colour);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.2);
+}
+
+.castlabs-artwork::before {
+  position: absolute;
+  top: 12%;
+  left: -15%;
+  width: 130%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  content: "";
+}
+
+.castlabs-artwork__signal,
+.castlabs-artwork__signal::before,
+.castlabs-artwork__signal::after {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 42%;
+  aspect-ratio: 1;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.castlabs-artwork__signal::before {
+  top: 22%;
+  width: 56%;
+}
+
+.castlabs-artwork__signal::after {
+  top: 45%;
+  width: 10%;
+  border: 0;
+  background: white;
+}
+
+.castlabs-artwork div {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.5rem;
+}
+
+.castlabs-artwork small {
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.castlabs-artwork strong {
+  max-width: 10ch;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.castlabs-artwork div span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.castlabs-details__copy {
+  padding-top: 0.4rem;
+}
+
+.castlabs-details__copy h2 {
+  margin: 0.35rem 0 0.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.castlabs-details__copy > p:not(.castlabs-eyebrow) {
+  color: #526070;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.castlabs-details dl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin: 1.5rem 0;
+  border: 1px solid var(--castlabs-line);
+  border-radius: 0.7rem;
+  background: white;
+}
+
+.castlabs-details dl div {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--castlabs-line);
+}
+
+.castlabs-details dt {
+  color: var(--castlabs-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.castlabs-details dd {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.castlabs-details__actions,
+.castlabs-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.castlabs-button {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--castlabs-blue);
+  border-radius: 0.45rem;
+  color: white;
+  background: var(--castlabs-blue);
+  font-size: 0.75rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.castlabs-button--danger {
+  border-color: #ef4444;
+  background: #ef4444;
+}
+
+.castlabs-button--quiet {
+  border-color: #cbd5e1;
+  color: #475569;
+  background: white;
+}
+
+.castlabs-form-page {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 2.5rem;
+}
+
+.castlabs-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--castlabs-line);
+  border-radius: 0.8rem;
+  background: white;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+}
+
+.castlabs-form label {
+  display: grid;
+  gap: 0.38rem;
+  color: #475569;
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.castlabs-form input,
+.castlabs-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.4rem;
+  color: var(--castlabs-navy);
+  background: #fff;
+}
+
+.castlabs-form input:focus,
+.castlabs-form textarea:focus {
+  border-color: var(--castlabs-blue);
+  outline: 3px solid #dbeafe;
+}
+
+.castlabs-form__wide,
+.castlabs-form__actions,
+.castlabs-form__error {
+  grid-column: 1 / -1;
+}
+
+.castlabs-form__actions {
+  justify-content: flex-end;
+}
+
+.castlabs-form__error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.78rem;
+}
+
+.castlabs-empty {
+  padding: 2rem 1.4rem;
+  color: var(--castlabs-muted);
+  font-size: 0.85rem;
+}
+
+.castlabs-empty--details {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .castlabs-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .castlabs-search {
+    width: auto;
+  }
+
+  .castlabs-status {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .castlabs-library {
+    grid-template-columns: 1fr;
+  }
+
+  .castlabs-list {
+    border-right: 0;
+    border-bottom: 1px solid var(--castlabs-line);
+  }
+
+  .castlabs-details {
+    grid-template-columns: 1fr;
+  }
+
+  .castlabs-artwork {
+    width: min(100%, 22rem);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .castlabs-form {
+    grid-template-columns: 1fr;
+  }
+
+  .castlabs-form > * {
+    grid-column: 1;
+  }
+}

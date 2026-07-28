@@ -55,21 +55,23 @@
     "slug": "challenge-castlabs",
     "title": "Castlabs Challenge",
     "company": "Castlabs",
-    "description": "A React episode-management application with search, create/update/delete flows, real-time GraphQL subscriptions, and external movie metadata.",
+    "description": "A React episode manager with title and series search, detailed records, local create/delete flows, and simulated real-time subscription feedback.",
     "technologies": [
       "React",
       "TypeScript",
       "Vite",
       "Apollo",
-      "GraphQL"
+      "GraphQL",
+      "OMDb"
     ],
     "renderer": "react",
-    "migrationStatus": "pending",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-react",
     "sourcePath": "challenges/challenge-castlabs/original",
     "originalRepository": "viniciuspizettadesouza/challenge-castlabs",
     "originalDefaultBranch": "main",
-    "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b"
+    "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b",
+    "demoPath": "challenges/challenge-castlabs/demo"
   },
   {
     "slug": "challenge-conaz",

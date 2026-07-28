@@ -41,7 +41,7 @@ No dependency was installed inside `challenges/*/original/`.
 | 12 | `challenge-swordhealth` | Inspected, Portfolio demo, Owner approved | Vue 3/Quasar news platform adapted with a safe local demo identity | None for the maintained demo |
 | 13 | `challenge-pipz` | Inspected, Portfolio demo, Owner approved | React 16/CRA film list adapted with the original SWAPI fields and crawl design | None for the maintained demo |
 | 14 | `challenge-fyld-hansecom` | Inspected, Portfolio demo, Owner approved | Nuxt 2 movie search adapted with records from its bundled response | None for the maintained demo |
-| 15 | `challenge-castlabs` | Inspected | Modern React/Vite code but multiple live data integrations | High; GraphQL HTTP/WebSocket and OMDb configuration must be safely replaced or mocked |
+| 15 | `challenge-castlabs` | Inspected, Portfolio demo, Owner approved | React/Vite episode manager adapted with local service fixtures | None for the maintained demo |
 | 16 | `challenge-blueticket` | Inspected | Vue 2 weather/geocoding application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
 | 17 | `challenge-onsign-tv` | Inspected | Vue 2 weather/geolocation application | High; Google Maps credentials were redacted and the OpenWeather integration is old |
 | 18 | `challenge-meetime` | Inspected | Vue 2 client for a private sales API | Very high; requires authorized API access and should use fixtures instead of historical credentials |
@@ -61,8 +61,8 @@ challenge-vuejs       npm clean install, production build, and unit test passed
 challenge-propertiag  Yarn 1 install and production build passed under Node 18
 ```
 
-Fourteen maintained portfolio demos pass lint, typecheck, tests, and static
-build. The repository owner approved all fourteen on 2026-07-28.
+Fifteen maintained portfolio demos pass lint, typecheck, tests, and static
+build. The repository owner approved all fifteen on 2026-07-28.
 
 PropertiaG's original heading test passes, but its committed snapshot is stale
 and still describes the Next.js starter instead of the calculator. Climateseed
@@ -95,6 +95,11 @@ historical API order, Roman episode numbers, and yellow perspective crawl.
 Fyld Hansecom's maintained Vue 3 search uses records already committed in the
 historical Vuex store. It follows the preserved Nuxt/Vuetify screenshot and no
 longer requires the removed external movie API token.
+
+Castlabs' maintained React episode manager replaces the unavailable GraphQL
+HTTP and WebSocket services with deterministic browser state. Search, episode
+details, create/delete mutations, and immediate subscription-style feedback
+remain interactive; OMDb poster requests are represented by local artwork.
 
 ## Recommended testing order
 

@@ -112,7 +112,7 @@
     "hasRouter": true,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [
       "VITE_GRAPHQL_API_KEY",
       "VITE_GRAPHQL_API_URL",
@@ -133,9 +133,9 @@
     ],
     "nodeVersion": null,
     "migrationStrategy": "native-react",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "React/Vite episode manager adapted to a self-contained React island. Search, details, create/delete mutations, and subscription feedback are retained with deterministic fixtures and local artwork replacing the unavailable GraphQL, WebSocket, and OMDb services. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-conaz",

@@ -1,3 +1,4 @@
+import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
@@ -16,6 +17,14 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the local Castlabs episode manager", () => {
+    const html = renderToStaticMarkup(createElement(CastlabsDemo));
+
+    expect(html).toContain("TV Series Episodes");
+    expect(html).toContain("Local subscription simulation");
+    expect(html).toContain("The Quiet Frequency");
+  });
+
   it("renders the Fyld Hansecom movie search", async () => {
     const html = await renderToString(createSSRApp(FyldHansecomDemo));
 
