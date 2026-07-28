@@ -1,5 +1,6 @@
 import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
+import { convertToRoman } from "@challenge/propertiag-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
@@ -37,6 +38,23 @@ describe("Conaz demo logic", () => {
       { number: 2, active: false, ticket: 11 },
       { number: 3, active: true, ticket: 30 },
     ]);
+  });
+});
+
+describe("PropertiaG Roman numeral conversion", () => {
+  it.each([
+    [1, "I"],
+    [4, "IV"],
+    [9, "IX"],
+    [42, "XLII"],
+    [944, "CMXLIV"],
+    [1000, "M"],
+  ])("converts %i to %s", (value, expected) => {
+    expect(convertToRoman(value)).toBe(expected);
+  });
+
+  it.each([0, 1001, 1.5, Number.NaN])("rejects invalid value %s", (value) => {
+    expect(() => convertToRoman(value)).toThrow("1 to 1000");
   });
 });
 

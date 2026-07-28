@@ -1,6 +1,7 @@
 ---
 import ConazDemo from "@challenge/conaz-demo";
 import DevlandiaDemo from "@challenge/devlandia-demo";
+import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -26,6 +27,8 @@ const { slug } = Astro.props;
     <ZygoDemo />
   ) : slug === "challenge-devlandia" ? (
     <DevlandiaDemo />
+  ) : slug === "challenge-propertiag" ? (
+    <PropertiaGDemo client:load />
   ) : (
     <div class="demo-placeholder">
       <p>The demo will be defined after this challenge's manual review.</p>
