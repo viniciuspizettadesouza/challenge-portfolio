@@ -385,15 +385,15 @@
     "originalDefaultBranch": "master",
     "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1",
     "imported": true,
-    "framework": "unknown",
-    "frameworkVersion": null,
+    "framework": "vue",
+    "frameworkVersion": "Nuxt 2.14.12",
     "language": "javascript",
     "bundler": null,
     "packageManager": "npm",
     "hasRouter": false,
     "hasTests": false,
     "hasBackend": false,
-    "hasExternalApi": true,
+    "hasExternalApi": false,
     "envVariables": [],
     "packageRoots": [
       "."
@@ -402,10 +402,10 @@
       "pages/index.vue"
     ],
     "nodeVersion": null,
-    "migrationStrategy": "manual-review",
-    "migrationStatus": "pending",
-    "reviewStatus": "unreviewed",
-    "reviewNotes": ""
+    "migrationStrategy": "upgrade-vue2",
+    "migrationStatus": "migrated",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "Nuxt 2 lead table adapted to a responsive Vue 3 island using a deterministic local copy of the original ten-user JSONPlaceholder response. Name and multi-category filtering are retained without live API access. Owner approved on 2026-07-28."
   },
   {
     "slug": "challenge-blueticket",

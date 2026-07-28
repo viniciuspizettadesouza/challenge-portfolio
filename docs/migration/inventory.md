@@ -1,6 +1,6 @@
 # Technical inventory
 
-Generated at 2026-07-28T21:26:51.570Z without installing historical dependencies.
+Generated at 2026-07-28T21:33:17.060Z without installing historical dependencies.
 
 | Challenge | Imported | Framework | Bundler | Strategy | Review |
 | --- | --- | --- | --- | --- | --- |
@@ -16,7 +16,7 @@ Generated at 2026-07-28T21:26:51.570Z without installing historical dependencies
 | challenge-lagoasoft | yes | react ^16.11.0 | create-react-app | upgrade-react | confirmed |
 | challenge-devlandia | yes | —  | — | static-embed | confirmed |
 | challenge-meetime | yes | vue ^2.6.11 | vue-cli | upgrade-vue2 | unreviewed |
-| challenge-instruct | yes | unknown  | — | manual-review | unreviewed |
+| challenge-instruct | yes | vue Nuxt 2.14.12 | — | upgrade-vue2 | confirmed |
 | challenge-blueticket | yes | vue ^2.6.11 | vue-cli | upgrade-vue2 | unreviewed |
 | challenge-swordhealth | yes | vue ^3.0.0 | — | native-vue3 | unreviewed |
 | challenge-pipz | yes | react ^16.10.2 | create-react-app | upgrade-react | unreviewed |

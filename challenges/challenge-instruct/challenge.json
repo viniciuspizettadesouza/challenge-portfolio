@@ -4,12 +4,18 @@
   "originalRepository": "viniciuspizettadesouza/challenge-instruct",
   "originalDefaultBranch": "master",
   "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1",
-  "framework": "unknown",
-  "frameworkVersion": "",
-  "technologies": [],
-  "renderer": "case-study",
-  "migrationStrategy": "manual-review",
-  "migrationStatus": "pending",
+  "framework": "vue",
+  "frameworkVersion": "Nuxt 2.14.12",
+  "technologies": [
+    "Nuxt",
+    "Vue",
+    "JavaScript",
+    "SCSS",
+    "REST API"
+  ],
+  "renderer": "vue3",
+  "migrationStrategy": "upgrade-vue2",
+  "migrationStatus": "migrated",
   "hasBackend": false,
-  "hasExternalApi": true
+  "hasExternalApi": false
 }

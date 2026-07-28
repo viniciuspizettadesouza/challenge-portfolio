@@ -222,14 +222,21 @@
     "title": "Instruct Challenge",
     "company": "Instruct",
     "description": "A preserved technical challenge available for source review and portfolio presentation.",
-    "technologies": [],
-    "renderer": "case-study",
-    "migrationStatus": "pending",
-    "migrationStrategy": "manual-review",
+    "technologies": [
+      "Nuxt",
+      "Vue",
+      "JavaScript",
+      "SCSS",
+      "REST API"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "upgrade-vue2",
     "sourcePath": "challenges/challenge-instruct/original",
     "originalRepository": "viniciuspizettadesouza/challenge-instruct",
     "originalDefaultBranch": "master",
-    "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1"
+    "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1",
+    "demoPath": "challenges/challenge-instruct/demo"
   },
   {
     "slug": "challenge-blueticket",
