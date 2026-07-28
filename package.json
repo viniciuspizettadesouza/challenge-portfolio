@@ -15,13 +15,7 @@
     "test": "pnpm --filter portfolio test",
     "test:e2e": "pnpm --filter portfolio test:e2e",
     "screenshots": "pnpm --filter portfolio screenshots",
-    "verify:migration": "node scripts/migration/verify-imports.mjs",
-    "inventory": "node scripts/migration/generate-inventory.mjs && node scripts/migration/sync-challenge-metadata.mjs",
-    "migration:check": "node scripts/migration/check-environment.mjs",
-    "migration:backup": "node scripts/migration/backup-repositories.mjs",
-    "migration:metadata": "node scripts/migration/export-github-metadata.mjs",
-    "migration:import": "node scripts/migration/import-history.mjs",
-    "migration:refresh": "node scripts/migration/refresh-import-metadata.mjs"
+    "inventory": "node scripts/migration/generate-inventory.mjs && node scripts/migration/sync-challenge-metadata.mjs"
   },
   "devDependencies": {
     "react": "19.2.8",

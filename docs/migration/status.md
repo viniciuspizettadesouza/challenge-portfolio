@@ -37,12 +37,11 @@ and enforced HTTPS. The workflow completed successfully, and production checks
 returned HTTP 200 for the home page, challenge catalog, a challenge detail
 page, a fullscreen demo, and the favicon.
 
-## Environment observed
+## Maintenance environment
 
 - pnpm: 10.13.1;
-- `git-filter-repo`: 2.47.0, installed locally outside Git tracking;
-- Git LFS: not required for the audited default branches (`usesLfs=false`);
-- GitHub CLI: authenticated;
+- Node.js: 22 or newer;
+- no migration-only tools or external services are required;
 - remote: `origin` configured;
 - branch: `main`, tracking `origin/main`.
 

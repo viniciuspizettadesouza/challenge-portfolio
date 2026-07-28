@@ -26,9 +26,9 @@ The authoritative progress record is
 - [Plan index](docs/plan/README.md)
 - [Architecture](docs/plan/architecture.md)
 - [Roadmap](docs/plan/roadmap.md)
-- [Migration runbook](docs/plan/runbook.md)
+- [Maintenance runbook](docs/plan/runbook.md)
 - [Decisions and constraints](docs/plan/decisions.md)
-- [Legacy runtime assessment](docs/migration/legacy-runtime-assessment.md)
+- [Demo fidelity audit](docs/migration/fidelity-audit.md)
 - [Security review](docs/migration/security-review.md)
 - [Deletion checklist](docs/migration/deletion-checklist.md)
 - [Migration-complete release notes](docs/releases/migration-complete.md)
@@ -46,19 +46,14 @@ pnpm test:e2e
 pnpm build
 ```
 
-Migration commands are intentionally separate from the regular build:
+Refresh the generated technical inventory and challenge registry after changing
+challenge metadata:
 
 ```bash
-pnpm migration:check
-pnpm migration:metadata
-pnpm migration:import -- --repository challenge-vue
-pnpm migration:refresh
-pnpm verify:migration
 pnpm inventory
 ```
 
-Read the [runbook](docs/plan/runbook.md) before performing history operations.
-No repository script performs remote repository deletion.
+Read the [runbook](docs/plan/runbook.md) before maintaining the portfolio.
 
 Integrated demos are available both on their challenge detail pages and through
 distraction-free routes at

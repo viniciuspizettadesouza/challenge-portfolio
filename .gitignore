@@ -7,8 +7,3 @@ test-results/
 .env
 .env.*
 !.env.example
-
-# Migration worktrees and backups must never be committed.
-.migration-work/
-.migration-tools/
-challenge-portfolio-backups/

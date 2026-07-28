@@ -8,7 +8,7 @@ depending on earlier conversations.
 
 1. [Architecture and objective](architecture.md)
 2. [Roadmap and exit criteria](roadmap.md)
-3. [Operational runbook](runbook.md)
+3. [Maintenance runbook](runbook.md)
 4. [Decisions and constraints](decisions.md)
 5. [Current execution status](../migration/status.md)
 6. [Manual deletion checklist](../migration/deletion-checklist.md)
@@ -29,12 +29,9 @@ The initial scope contains exactly the 20 repositories listed in
 
 ## How to resume
 
-Start with [`../migration/status.md`](../migration/status.md). Completed work
-remains visible there. Continue from the first phase marked `In progress` or
-`Pending`, and update the status and relevant checklist as evidence changes.
-
-Use [`../migration/legacy-runtime-assessment.md`](../migration/legacy-runtime-assessment.md)
-for the current easiest-to-hardest testing order and owner dependency assessment.
+Start with [`../migration/status.md`](../migration/status.md) for the completed
+migration record, then use the maintenance runbook for ongoing work. Update the
+status and relevant audit documents when evidence changes.
 
 Agents may stage files only when the repository owner explicitly requests it.
 They must not commit, push, tag, or open pull requests. The repository owner
