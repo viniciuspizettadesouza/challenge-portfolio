@@ -19,13 +19,13 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Technical inventory | Completed | all 20 strategies confirmed through implemented demos |
 | Interactive demos | Completed | all 20 integrated, owner-approved, browser-tested, and captured |
 | Remaining migration waves | Completed | all 20 challenges have maintained interactive demos |
-| Deployment and final cleanup | In progress | GitHub Pages deployed and verified; release, second backup copy, and owner review remain |
+| Deployment and final cleanup | In progress | GitHub Pages deployed and verified; release and owner review remain |
 
 ## Current next action
 
-Create the `migration-complete` tag and GitHub release for deployed revision
-`4c4fd6455a80641e182d6f0137994b5f03ec75dd`. Then make the second off-device
-backup copy and complete the final owner review.
+Publish the prepared release notes, wait for the Pages workflow on that final
+commit, and create the annotated `migration-complete` tag and GitHub release.
+Then complete the final owner review.
 
 ## Production deployment
 

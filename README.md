@@ -29,6 +29,7 @@ The authoritative progress record is
 - [Legacy runtime assessment](docs/migration/legacy-runtime-assessment.md)
 - [Security review](docs/migration/security-review.md)
 - [Deletion checklist](docs/migration/deletion-checklist.md)
+- [Migration-complete release notes](docs/releases/migration-complete.md)
 
 ## Commands
 

@@ -89,8 +89,7 @@ Read `docs/migration/status.md` and continue from its first `In progress` or
 1. have the repository owner review, commit, and push the completed demo
    fidelity and browser-evidence changes;
 2. validate a fresh clone of that exact revision;
-3. deploy the verified revision, create the release, and make the second
-   off-device backup copy;
+3. deploy the verified revision and create the release;
 4. complete the final manual review and deletion checklist.
 
 ## 8. Finalize
@@ -125,6 +124,23 @@ For the first deployment:
    deployment checklist item complete.
 
 No GitHub secret or paid hosting plan is required for this public static site.
+
+## 10. Create the final release
+
+After the release notes are committed, pushed, and deployed successfully, the
+repository owner creates the annotated tag and GitHub release:
+
+```bash
+git tag -a migration-complete -m "release: complete challenge portfolio migration"
+git push origin migration-complete
+gh release create migration-complete \
+  --title "Migration complete" \
+  --notes-file docs/releases/migration-complete.md
+```
+
+Automated agents must not execute these commands. Confirm that the tag targets
+the final published `main` commit and that the release is visible before
+marking the release checklist item complete.
 
 ## Git policy
 
