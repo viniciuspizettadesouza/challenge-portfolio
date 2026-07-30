@@ -1,0 +1,12 @@
+<svg
+            focusable="false"
+            role="img"
+            viewBox="0 0 45 40"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 38.5v-6.8H0V25h14.1L1.4 12.4l4.9-4.8L19 20V.6h7V20L38.6 7.6l4.9 4.8L30.9 25h14v6.8H26v6.8z"
+              fill="#36DC90"
+            ></path>
+          </svg>
