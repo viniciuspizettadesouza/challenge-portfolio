@@ -22,14 +22,13 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Expansion assessment | Completed | Leafwell (`strains` source repository) approved as project 21; 3cket approved as project 22 |
 | Expansion audit and source snapshots | Completed | both signed snapshots verified; 3cket uses the approved non-default solution branch |
 | Expansion catalog and demos | Completed | 22 metadata entries, demos, screenshots, and owner review completed |
-| Expansion quality and publication | In progress | sign and validate the restored-lineage integration, then publish it |
+| Expansion quality and publication | Completed | restored signed lineage published, fresh-clone validation passed, and Pages verified |
 
 ## Current next action
 
-Sign the final portfolio integration commit, repeat fresh-clone validation, and
-force-push the restored signed lineage. Then verify signatures, GitHub's
-contributor panel, and the validated Pages routes. Optional archival or
-deletion of the two source repositories remains a manual owner action.
+No required expansion action remains. Optional archival or deletion of the two
+source repositories remains a manual owner action after the owner confirms no
+further source-level reference is needed.
 
 The approved classifications, implementation constraints, and completion
 criteria are recorded in
@@ -37,30 +36,30 @@ criteria are recorded in
 
 ## Expansion validation
 
-Fresh-clone validation passed on 2026-07-30:
+Fresh public-clone validation of published revision
+`1b0c16e92860efac758d0d24c9eed2bfe131cd08` passed on 2026-07-30:
 
-- frozen offline install for all 24 workspace projects;
+- frozen install for all 24 workspace projects;
 - lint and Astro/TypeScript diagnostics with no findings;
 - 68 unit tests;
 - 22 Chromium interaction tests with no browser console or page errors;
 - 22 reproducible screenshots;
 - 47-page static production build.
 
-The frozen install initially required one lockfile-pinned cache download
-(`vite@8.1.5`); no dependency versions changed. The production home, catalog,
-Leafwell detail/demo, and 3cket detail/demo routes all returned HTTP 200. The
-repository owner also completed manual interactive review of both new demos.
+No dependency versions changed. The production home, catalog, Leafwell
+detail/demo, and 3cket detail/demo routes all returned HTTP 200. The repository
+owner also completed manual interactive review of both new demos.
 
 ## Production deployment
 
-GitHub Pages deployed revision `4c4fd64` on 2026-07-29:
+GitHub Pages deployed expansion revision `1b0c16e` on 2026-07-30 in successful
+workflow run `30505553039`:
 
 `https://viniciuspizettadesouza.github.io/challenge-portfolio/`
 
 The GitHub Pages API confirms workflow-based publication, public visibility,
-and enforced HTTPS. The workflow completed successfully, and production checks
-returned HTTP 200 for the home page, challenge catalog, a challenge detail
-page, a fullscreen demo, and the favicon.
+and enforced HTTPS. Production checks returned HTTP 200 for the home page,
+challenge catalog, and both expansion detail and fullscreen demo routes.
 
 ## Maintenance environment
 
@@ -104,7 +103,10 @@ Leafwell was added by the signed snapshot commit
 `e782b42c350b78e56aa3c9ed6f15ccd42420c06e`, followed by 3cket in the signed
 snapshot commit `ba3715efb0ac20bbaf7568a7636770a4458008cf`. Both commits attach
 only the reviewed source trees; neither attaches the source repositories'
-upstream commit ancestry.
+upstream commit ancestry. The final integration commit
+`1b0c16e92860efac758d0d24c9eed2bfe131cd08` is also signed. GitHub reports all
+three signatures as valid and verified. Its contributor API no longer reports
+the excluded Leafwell or 3cket upstream contributor identities.
 
 ## Git ownership
 

@@ -124,8 +124,9 @@ projects. The owner reviewed both new demos in production.
 Fresh-clone validation passed with a frozen lockfile, lint, typecheck, 68 unit
 tests, 22 Chromium tests, screenshot capture, and the 47-page static build.
 The owner verified both new detail pages and fullscreen demos in production;
-the home and catalog plus all four new routes returned HTTP 200. Publish the
-restored signed lineage and clean snapshot commits with a force-with-lease
-push, then recheck signatures, the GitHub contributor panel, and Pages.
-Archival or deletion of the two source repositories is optional, manual, and
-permitted only after preservation and publication are verified.
+the home and catalog plus all four new routes returned HTTP 200. The restored
+signed lineage and clean snapshot commits were published with
+force-with-lease. GitHub verifies all three new signatures, no excluded
+expansion contributor identity remains in the default-branch contributor data,
+and the Pages workflow completed successfully. Archival or deletion of the two
+source repositories is optional and manual.
