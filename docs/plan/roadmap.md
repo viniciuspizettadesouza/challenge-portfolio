@@ -23,7 +23,7 @@ future contributors can see what happened and where to continue.
 | 13 — Expansion assessment | Completed | `docs/migration/expansion-assessment.md` approves projects 21 and 22 |
 | 14 — Expansion audit and snapshots | Completed | both signed snapshots imported and verified; 3cket uses its owner-approved solution branch |
 | 15 — Expansion catalog and demos | Completed | metadata, demos, tests, screenshots, and owner review complete |
-| 16 — Expansion quality and publication | In progress | restored signed lineage and clean snapshots await final validation and publication |
+| 16 — Expansion quality and publication | Completed | restored signed lineage, verified commits, fresh-clone checks, and Pages deployment complete |
 
 ## Phase 0 — Environment
 
@@ -128,5 +128,6 @@ the home and catalog plus all four new routes returned HTTP 200. The restored
 signed lineage and clean snapshot commits were published with
 force-with-lease. GitHub verifies all three new signatures, no excluded
 expansion contributor identity remains in the default-branch contributor data,
-and the Pages workflow completed successfully. Archival or deletion of the two
-source repositories is optional and manual.
+and the Pages workflow completed successfully. The owner manually deleted both
+expansion source repositories on 2026-07-30 after confirming their preserved
+snapshots and maintained portfolio replacements.

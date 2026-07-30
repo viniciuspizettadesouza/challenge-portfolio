@@ -5,6 +5,7 @@ describe("challenge registry", () => {
   it("contains exactly twenty-two unique challenges", () => {
     expect(challenges).toHaveLength(22);
     expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(22);
+    expect(challenges.every(({ migrationStatus }) => migrationStatus === "migrated")).toBe(true);
   });
 
   it("resolves every registered slug", () => {

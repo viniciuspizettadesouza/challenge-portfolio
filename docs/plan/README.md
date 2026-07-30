@@ -34,10 +34,12 @@ the [expansion assessment](../migration/expansion-assessment.md).
 
 ## How to resume
 
-Start with [`../migration/status.md`](../migration/status.md). Resume from the
-first pending expansion phase while keeping the completed 20-project migration
-record visible. Use the maintenance runbook for ongoing work and update the
-status and relevant audit documents when evidence changes.
+Start with [`../migration/status.md`](../migration/status.md). All implementation
+and publication phases are complete. Use the maintenance runbook for ongoing
+work and update the status and relevant audit documents when evidence changes.
+The owner deleted both preserved expansion source repositories after verifying
+their signed snapshots and maintained portfolio replacements. No consolidation
+or expansion action remains.
 
 Agents may stage files only when the repository owner explicitly requests it.
 The owner authorized restoring the signed pre-expansion lineage, two signed
