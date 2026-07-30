@@ -1,0 +1,18 @@
+{
+  "name": "nuxt-challenge",
+  "version": "1.0.0",
+  "description": "Simple Endpoint for the challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-generator": "^4.16.1",
+    "fs": "0.0.1-security",
+    "http-errors": "^2.0.0"
+  }
+}

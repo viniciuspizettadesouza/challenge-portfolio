@@ -1,0 +1,404 @@
+{
+    "data": [
+        {
+            "id": "7d09dfc547064ce5b63e35b5b33c9330",
+            "name": "Evo Padel Open",
+            "slug": "evo-padel-open",
+            "category": "sports",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2020-08-20T06:10:00",
+            "ends_at": "2030-11-30T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Alcafaz",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/2f0a35c0494d404da53b77b56ae761b5.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 35,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "ccc9b0766e5a408eb1ec9eadb030692b",
+            "name": "Maia Jovem International Tennis Cup",
+            "slug": "maia-jovem-international-tennis-cup",
+            "category": "sports",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-08-20T06:10:00",
+            "ends_at": "2023-11-30T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Alcafaz",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/7a5f17a359f04bf78d6e2083ac02409f.png",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 2,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 10,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "4fb8ca121e5f44ab845356df6cb5fd48",
+            "name": "Festival F",
+            "slug": "festival-f",
+            "category": "festival",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-09-07T06:10:00",
+            "ends_at": "2023-09-09T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Alcafaz",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/017ba94beac84f8b93dfa3272c95b132.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 70,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "d482423b94ce44dfa93d87a25dcfeca1",
+            "name": "Grandes Escolhas",
+            "slug": "grandes-escolhas",
+            "category": "conference",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-10-16T06:10:00",
+            "ends_at": "2023-10-18T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Alcafaz",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/63b8b74fc2534eae919173f449740a35.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 10,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 30,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "ed05ed71a92646518e274fea7841523e",
+            "name": "Tamariz Summer Fest",
+            "slug": "tamariz-summer-fest",
+            "category": "festival",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2024-07-16T06:10:00",
+            "ends_at": "2024-07-18T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Alcafaz",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/155b5667fdea443486d2cc35bc4d3df4.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 75,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 75,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "602a51f676704fdba4bf4dc90f9af8b9",
+            "name": "Jornadas Juventude Lisboa",
+            "slug": "jmj-2023",
+            "category": "festival",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-07-08T06:10:00",
+            "ends_at": "2023-07-10T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Alcafaz",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/222f6d055fe941cc9a0a7882f59107ad.png",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 75,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 75,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "11dc13813fc54b5a901fb9d1543c509c",
+            "name": "Bliss Vilamoura",
+            "slug": "bliss",
+            "category": "party",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-08-08T06:10:00",
+            "ends_at": "2023-08-10T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Vilamoura",
+                "address": null,
+                "name": "Vilamoura",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/1612b793167347359651fb0c88cc313d.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 25,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 25,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "43a65234e3404ca7bd40483c42b6fb92",
+            "name": "Timeout Barcelona",
+            "slug": "timeout-barcelona",
+            "category": "party",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-12-08T06:10:00",
+            "ends_at": "2023-12-10T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Spain",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Barcelona",
+                "address": null,
+                "name": "Barcelona",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/253972cbc8ac4a57ab190852e8b955b9.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "9caa9cf4b9c14ebdaee305d44967ae2b",
+            "name": "Lamiré",
+            "slug": "lamire",
+            "category": "party",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-12-24T06:10:00",
+            "ends_at": "2023-12-26T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Spain",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Barcelona",
+                "address": null,
+                "name": "Barcelona",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/aab9533ec1ca438d80130a8ebaa372da.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                }
+            }
+        },
+        {
+            "id": "730ca999215b416989e81ea1214aedfa",
+            "name": "Banco Alimentar Contra a Fome",
+            "slug": "banco-alimentar-contra-fome",
+            "category": "food",
+            "status": "published",
+            "has_live": false,
+            "starts_at": "2023-12-24T06:10:00",
+            "ends_at": "2023-12-26T22:40:00",
+            "location": {
+                "is_unknown": false,
+                "country": "Portugal",
+                "administration_area_level_1": null,
+                "administration_area_level_2": null,
+                "location": "Lisboa",
+                "address": null,
+                "name": "Lisboa",
+                "zip_code": null,
+                "latitude": null,
+                "longitude": null
+            },
+            "theme": {
+                "logo_image": null,
+                "background_image": {
+                    "url": "http://localhost:3001/images/ff38ffc9112a430090f637c3bbc05dcd.jpg",
+                    "mime_type": "image/jpeg"
+                },
+                "accent_colour": "#3367e5"
+            },
+            "price_range": {
+                "minimum": {
+                    "amount": 0,
+                    "currency": "EUR"
+                },
+                "maximum": {
+                    "amount": 10,
+                    "currency": "EUR"
+                }
+            }
+        }
+    ]
+}

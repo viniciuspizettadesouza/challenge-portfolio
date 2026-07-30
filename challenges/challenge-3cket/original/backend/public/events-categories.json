@@ -1,0 +1,61 @@
+{
+    "data": [
+        {
+            "name": "museum"
+        },
+        {
+            "name": "sports"
+        },
+        {
+            "name": "party"
+        },
+        {
+            "name": "live"
+        },
+        {
+            "name": "concert"
+        },
+        {
+            "name": "music"
+        },
+        {
+            "name": "drive-in"
+        },
+        {
+            "name": "kids"
+        },
+        {
+            "name": "conference"
+        },
+        {
+            "name": "dance"
+        },
+        {
+            "name": "festival"
+        },
+        {
+            "name": "travel"
+        },
+        {
+            "name": "cinema"
+        },
+        {
+            "name": "theater"
+        },
+        {
+            "name": "stand-up"
+        },
+        {
+            "name": "club"
+        },
+        {
+            "name": "family"
+        },
+        {
+            "name": "books"
+        },
+        {
+            "name": "food"
+        }
+    ]
+}
