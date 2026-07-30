@@ -1,0 +1,3 @@
+<template>
+  <EventNotFound />
+</template>
