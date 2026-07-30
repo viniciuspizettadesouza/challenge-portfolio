@@ -139,5 +139,6 @@ snapshot-only history exception:
   cover both new demos;
 - [x] Counts in portfolio-maintained documentation are updated from 20 to 22 only
   as the corresponding implementation evidence becomes true;
-- [ ] Archival or deletion of either original remote repository remains a manual
-  owner action after review, publication, and preservation verification.
+- [x] The owner manually deleted `strains` and `nuxt-challenge` on 2026-07-30
+  after preservation, review, and publication verification. Both repository
+  endpoints subsequently returned HTTP 404.

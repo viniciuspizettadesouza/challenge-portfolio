@@ -23,12 +23,13 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Expansion audit and source snapshots | Completed | both signed snapshots verified; 3cket uses the approved non-default solution branch |
 | Expansion catalog and demos | Completed | 22 metadata entries, demos, screenshots, and owner review completed |
 | Expansion quality and publication | Completed | restored signed lineage published, fresh-clone validation passed, and Pages verified |
+| Expansion source cleanup | Completed | owner manually deleted `strains` and `nuxt-challenge` on 2026-07-30 |
 
 ## Current next action
 
-No required expansion action remains. Optional archival or deletion of the two
-source repositories remains a manual owner action after the owner confirms no
-further source-level reference is needed.
+No migration, expansion, or source-repository cleanup action remains. Continue
+with normal portfolio maintenance and verify the Pages workflow after
+publishing future changes.
 
 The approved classifications, implementation constraints, and completion
 criteria are recorded in
@@ -73,7 +74,9 @@ The repository owner completed the final review and manually deleted all 20
 superseded remote repositories on 2026-07-29. The sanitized source trees and
 imported histories for those initial 20 projects remain preserved under
 `challenges/*/original/`. The two expansion projects use the signed snapshot
-import mode documented above.
+import mode documented above. The owner manually deleted the `strains` and
+`nuxt-challenge` source repositories on 2026-07-30 after preservation and
+publication verification; both GitHub repository endpoints returned HTTP 404.
 
 The annotated `migration-complete` tag and corresponding GitHub Release were
 published on 2026-07-29. The tag was later removed during expansion-history

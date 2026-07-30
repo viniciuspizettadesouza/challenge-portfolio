@@ -16,7 +16,7 @@
   ],
   "renderer": "react",
   "migrationStrategy": "native-react",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "migrated",
   "hasBackend": false,
   "hasExternalApi": true
 }

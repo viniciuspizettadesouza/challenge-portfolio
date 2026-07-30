@@ -23,7 +23,9 @@ third-party expansion ancestry.
 The repository owner deleted the initial 20 superseded remote repositories
 after completing their migration review. The GitHub Release records that
 initial consolidation milestone; its tag was removed during expansion-history
-cleanup.
+cleanup. The owner also deleted the preserved `strains` and `nuxt-challenge`
+source repositories on 2026-07-30 after their signed snapshots, maintained
+demos, and publication evidence were verified.
 
 The authoritative progress record is
 [`docs/migration/status.md`](docs/migration/status.md).

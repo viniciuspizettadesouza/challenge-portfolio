@@ -17,7 +17,7 @@
   ],
   "renderer": "vue3",
   "migrationStrategy": "mock-backend",
-  "migrationStatus": "in-progress",
+  "migrationStatus": "migrated",
   "hasBackend": true,
   "hasExternalApi": false
 }

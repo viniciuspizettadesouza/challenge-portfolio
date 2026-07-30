@@ -154,7 +154,7 @@
       "app/cannabis-strains/[slug]/page.tsx"
     ],
     "migrationStrategy": "native-react",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
     "reviewNotes": "The imported Next.js 13 listing/detail challenge is backed historically by the Leafwell GraphQL endpoint. Its maintained React demo preserves search, initial and type filtering, pagination, and detail composition with representative deterministic local records. The owner approved the production demo on 2026-07-30."
   },
@@ -179,7 +179,7 @@
       "frontend/pages/events/[...slug].vue"
     ],
     "migrationStrategy": "mock-backend",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
     "reviewNotes": "The owner approved branch 3cket as the import source because it contains the completed Nuxt 3/Tailwind solution beyond the one-commit default master branch. Its maintained Vue demo preserves event search, list, detail, and not-found behavior with the bundled fixture and no localhost backend. The owner approved the production demo on 2026-07-30."
   }

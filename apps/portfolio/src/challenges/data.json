@@ -417,7 +417,7 @@
       "GraphQL"
     ],
     "renderer": "react",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "migrationStrategy": "native-react",
     "sourcePath": "challenges/strains/original",
     "originalRepository": "viniciuspizettadesouza/strains",
@@ -438,7 +438,7 @@
       "Express"
     ],
     "renderer": "vue3",
-    "migrationStatus": "in-progress",
+    "migrationStatus": "migrated",
     "migrationStrategy": "mock-backend",
     "sourcePath": "challenges/challenge-3cket/original",
     "originalRepository": "viniciuspizettadesouza/nuxt-challenge",
