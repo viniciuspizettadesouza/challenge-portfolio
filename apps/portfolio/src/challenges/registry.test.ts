@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { challenges, getChallenge } from "./registry";
 
 describe("challenge registry", () => {
-  it("contains exactly twenty unique challenges", () => {
-    expect(challenges).toHaveLength(20);
-    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(20);
+  it("contains exactly twenty-two unique challenges", () => {
+    expect(challenges).toHaveLength(22);
+    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(22);
   });
 
   it("resolves every registered slug", () => {
@@ -19,6 +19,6 @@ describe("challenge registry", () => {
       expect(challenge.description).not.toContain("available for source review");
     }
 
-    expect(new Set(challenges.map(({ description }) => description)).size).toBe(20);
+    expect(new Set(challenges.map(({ description }) => description)).size).toBe(22);
   });
 });

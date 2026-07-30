@@ -74,9 +74,54 @@ import {
   runScenario as runStormtechScenario,
   sortBooks as sortStormtechBooks,
 } from "@challenge/stormtech-demo/logic";
+import {
+  filterStrains,
+  findStrain,
+  paginateStrains,
+  strains,
+} from "@challenge/strains-demo/logic";
 import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
 import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
+
+describe("3cket local event fixture", () => {
+  it("searches across name, category, and location", () => {
+    expect(filterEvents(threeCketEvents, "festival")).toHaveLength(3);
+    expect(filterEvents(threeCketEvents, "Barcelona")).toHaveLength(2);
+    expect(filterEvents(threeCketEvents, "Evo Padel")[0]?.slug).toBe(
+      "evo-padel-open",
+    );
+  });
+
+  it("models detail lookup, not-found, and price presentation", () => {
+    expect(findEvent("festival-f")?.name).toBe("Festival F");
+    expect(findEvent("missing-event")).toBeUndefined();
+    expect(formatEventPrice(findEvent("timeout-barcelona")!)).toBe("Free");
+    expect(formatEventPrice(findEvent("tamariz-summer-fest")!)).toBe("€75");
+  });
+});
+
+describe("Leafwell local strain directory", () => {
+  it("combines name, initial, and type filters", () => {
+    expect(
+      filterStrains(strains, { query: "", initial: "B", type: "All" }).map(
+        ({ slug }) => slug,
+      ),
+    ).toEqual(["blue-dream"]);
+    expect(
+      filterStrains(strains, { query: "purple", initial: "", type: "Indica" }),
+    ).toHaveLength(2);
+    expect(
+      filterStrains(strains, { query: "", initial: "", type: "Sativa" }),
+    ).toHaveLength(4);
+  });
+
+  it("paginates records and resolves a detail slug", () => {
+    expect(paginateStrains(strains, 2).items).toHaveLength(6);
+    expect(paginateStrains(strains, 99).currentPage).toBe(2);
+    expect(findStrain("northern-lights")?.type).toBe("Indica");
+  });
+});
 
 describe("JExperts local employee directory", () => {
   it("supports exact and approximate name searches", () => {
@@ -512,3 +557,9 @@ describe("Vue.js demo pagination", () => {
     expect(clampPage(8, items.length, 5)).toBe(3);
   });
 });
+import {
+  events as threeCketEvents,
+  filterEvents,
+  findEvent,
+  formatEventPrice,
+} from "@challenge/3cket-demo/logic";

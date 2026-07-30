@@ -26,6 +26,9 @@ importers:
       '@astrojs/vue':
         specifier: 7.0.1
         version: 7.0.1(@types/node@26.1.2)(astro@7.1.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@26.1.2)(yaml@2.9.0))(esbuild@0.28.1)(vue@3.5.40(typescript@6.0.3))(yaml@2.9.0)
+      '@challenge/3cket-demo':
+        specifier: workspace:*
+        version: link:../../challenges/challenge-3cket/demo
       '@challenge/blueticket-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-blueticket/demo
@@ -74,6 +77,9 @@ importers:
       '@challenge/stormtech-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-stormtech/demo
+      '@challenge/strains-demo':
+        specifier: workspace:*
+        version: link:../../challenges/strains/demo
       '@challenge/swordhealth-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-swordhealth/demo
@@ -138,6 +144,12 @@ importers:
       vitest:
         specifier: 4.1.10
         version: 4.1.10(@types/node@26.1.2)(vite@8.1.5(@types/node@26.1.2)(esbuild@0.28.1)(yaml@2.9.0))
+
+  challenges/challenge-3cket/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-blueticket/demo:
     dependencies:
@@ -252,6 +264,15 @@ importers:
         version: 3.5.40(typescript@6.0.3)
 
   challenges/challenge-zygo/demo: {}
+
+  challenges/strains/demo:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 19.2.8
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.8(react@19.2.8)
 
 packages:
 

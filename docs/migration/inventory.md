@@ -1,6 +1,6 @@
 # Technical inventory
 
-Generated at 2026-07-28T23:56:59.770Z without installing historical dependencies.
+Generated at 2026-07-30T01:21:20.844Z without installing historical dependencies.
 
 | Challenge | Imported | Framework | Bundler | Strategy | Review |
 | --- | --- | --- | --- | --- | --- |
@@ -24,3 +24,5 @@ Generated at 2026-07-28T23:56:59.770Z without installing historical dependencies
 | challenge-fyld-hansecom | yes | vue ^2.6.14 | — | upgrade-vue2 | confirmed |
 | challenge-onsign-tv | yes | vue ^2.6.12 | vue-cli | upgrade-vue2 | confirmed |
 | challenge-ingenious-build-frontend | yes | vue ^3.2.13 | vue-cli | native-vue3 | confirmed |
+| challenge-leafwell | yes | react ^18.2.0 (Next.js 13.3.1) | next | native-react | confirmed |
+| challenge-3cket | yes | vue Nuxt 3.7.1 | nuxt | mock-backend | confirmed |

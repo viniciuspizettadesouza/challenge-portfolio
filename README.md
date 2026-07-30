@@ -1,22 +1,29 @@
 # Challenge Portfolio
 
-A unified portfolio that preserves and presents 20 historical technical
+A unified portfolio that preserves and presents 22 historical technical
 challenges.
 
 Each challenge has two clearly separated representations:
 
-- `original/`: sanitized source and imported Git history from the original
-  repository;
+- `original/`: sanitized source; the initial 20 projects retain imported Git
+  history, while Leafwell and 3cket use signed snapshot-only imports;
 - `demo/`: an executable, modernized, or adapted portfolio version.
 
 ## Current status
 
-The 20 default branches have been imported, sanitized, and verified.
-The Astro catalog builds all 20 challenge routes, and every maintained demo is
-integrated, owner-approved, browser-tested, and represented by a reproducible
-screenshot. The repository owner deleted the 20 superseded remote repositories
-after completing the migration review. The `migration-complete` tag and GitHub
-Release mark the end of the consolidation.
+The initial 20 default-branch histories and two expansion source snapshots have
+been imported, sanitized, and verified. The 3cket solution intentionally comes from its
+non-default `3cket` branch with owner approval. The Astro catalog builds all 22
+challenge routes, and every maintained demo is integrated, browser-tested, and
+represented by a reproducible screenshot. The repository owner completed
+production review of both expansion demos. The clean expansion commits retain
+the original signed pre-expansion portfolio history without importing
+third-party expansion ancestry.
+
+The repository owner deleted the initial 20 superseded remote repositories
+after completing their migration review. The GitHub Release records that
+initial consolidation milestone; its tag was removed during expansion-history
+cleanup.
 
 The authoritative progress record is
 [`docs/migration/status.md`](docs/migration/status.md).
@@ -77,5 +84,7 @@ Source** to **GitHub Actions**. See the
 
 ## Git workflow
 
-Automated agents must leave changes uncommitted and unpushed. The repository
-owner reviews, commits, and pushes all future work. See [`AGENTS.md`](AGENTS.md).
+Automated agents must leave changes uncommitted and unpushed unless the
+repository owner explicitly authorizes a narrowly scoped exception, as they
+did for the two signed expansion snapshots and final integration. The repository owner reviews
+and publishes all work. See [`AGENTS.md`](AGENTS.md).

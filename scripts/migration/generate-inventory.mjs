@@ -39,7 +39,9 @@ function walk(root, predicate, results = []) {
 }
 
 for (const repository of repositories) {
-  const root = resolve(projectRoot, "challenges", repository.name, "original");
+  const slug = repository.slug ?? repository.name;
+  const directory = repository.directory ?? slug;
+  const root = resolve(projectRoot, "challenges", directory, "original");
   const packagePaths = walk(root, (_, name) => name === "package.json");
   const packages = packagePaths
     .map((path) => ({ path, data: readJson(path) }))
@@ -99,10 +101,16 @@ for (const repository of repositories) {
             : "manual-review";
 
   const generated = {
-    slug: repository.name,
+    slug,
     originalRepository: `${repository.owner}/${repository.name}`,
     originalDefaultBranch: repository.defaultBranch,
     originalHeadSha: repository.originalHeadSha,
+    ...(repository.importedSourceBranch
+      ? {
+          importedSourceBranch: repository.importedSourceBranch,
+          importedSourceHeadSha: repository.importedSourceHeadSha,
+        }
+      : {}),
     imported: existsSync(root),
     framework,
     frameworkVersion,
@@ -146,7 +154,7 @@ for (const repository of repositories) {
       .slice(0, 20),
     nodeVersion: packages.find(({ data }) => data.engines?.node)?.data.engines.node ?? null,
     migrationStrategy: existsSync(root) ? strategy : "manual-review",
-    migrationStatus: existsSync(resolve(projectRoot, "challenges", repository.name, "demo"))
+    migrationStatus: existsSync(resolve(projectRoot, "challenges", directory, "demo"))
       ? "in-progress"
       : "pending",
     reviewStatus: "unreviewed",
@@ -154,7 +162,7 @@ for (const repository of repositories) {
   };
   inventory.push({
     ...generated,
-    ...(inventoryOverrides[repository.name] ?? {}),
+    ...(inventoryOverrides[slug] ?? {}),
   });
 }
 

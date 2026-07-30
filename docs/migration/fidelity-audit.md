@@ -1,6 +1,6 @@
 # Demo fidelity audit
 
-Last updated: 2026-07-28.
+Last updated: 2026-07-30.
 
 This document records how each maintained portfolio demo relates to its
 preserved historical source. The audit distinguishes feature fidelity from
@@ -16,6 +16,7 @@ runtime architecture fidelity:
 
 | Challenge | Historical architecture | Maintained runtime | Preserved behaviour and intentional differences |
 | --- | --- | --- | --- |
+| 3cket | Nuxt 3, Tailwind CSS, Express event API | Vue 3 island | Imported `3cket` branch event grid, name search, dynamic detail data, local images, and not-found behavior use the bundled fixture directly instead of `localhost:3001` |
 | Blueticket | Vue 2, Vuetify, Google Maps, OpenWeather | Vue 3 island | City search, geolocation, complete 48-hour conditions, search history, and forecast caching; local cities replace external APIs |
 | Castlabs | React, Apollo GraphQL, WebSocket subscriptions, OMDb | React island | Search, detail, create/delete mutations, and create/update/delete subscription feedback; fixtures and local artwork replace unavailable services |
 | ClimateSeed | Vue 3, Pinia, ApexCharts | Vue 3 island | Original organisations, employee comparison, chart switching, emissions aggregation, and result creation; semantic CSS charts replace ApexCharts |
@@ -32,6 +33,7 @@ runtime architecture fidelity:
 | PropertiaG | Next.js 12, React | React island | The original integer-to-Roman conversion and 1–1000 constraint remain; explicit validation and examples were added |
 | Salsify | React and Vite-style source | React island using the original component | Original datastore, property/operator/value filters, and table are executed directly with an Astro-compatible style layer |
 | Stormtech | React 16, Express, Mongoose, MongoDB | React island | Exact README book fixture, five individual sorts, three ordered cases, null exception, and empty set; local records replace the backend |
+| Leafwell | Next.js 13, React, Apollo GraphQL, Leafwell API | React island | Name, initial, and type filtering, pagination, and detail composition remain interactive; representative deterministic records replace the mutable external GraphQL response |
 | Sword Health | Vue 3, Quasar, Router, Auth0 | Vue 3 island | Feed, category filters, load more, detail, local session, profile, authoring, image selection/preview, and article creation work without Auth0 |
 | Vue | Vue 3 component | Vue 3 island using the original component | Original driver selector runs directly; only missing visual utility styles are supplied locally |
 | Vue.js | Vue 3, Pinia, Router, TVMaze HTTP API | Vue 3 island | Show metadata, episode list, summaries, and pagination use a deterministic local show fixture |
@@ -41,7 +43,7 @@ runtime architecture fidelity:
 
 The repository checks cover:
 
-- all 20 registered challenge routes and demo routes;
+- all 22 registered challenge routes and demo routes;
 - server rendering for React and Vue islands;
 - pure logic for algorithms, fixtures, validation, filtering, sorting,
   creation, deletion, pagination, and approximate matching;
@@ -49,7 +51,7 @@ The repository checks cover:
 
 Browser automation under `apps/portfolio/e2e/` exercises one representative
 interaction for every demo and fails on browser console or page errors. The
-same run refreshes all 20 representative screenshots under
+same run refreshes all 22 representative screenshots under
 `docs/portfolio/screenshots/`.
 
 ## Preserved-source execution evidence
@@ -65,7 +67,7 @@ No dependency was installed inside `challenges/*/original/`. During migration:
 - ClimateSeed installed successfully, but its preserved build retained existing
   TypeScript errors in its ApexCharts plugin, router, and data store.
 
-These limitations apply only to the preserved historical runtimes. All 20
+These limitations apply only to the preserved historical runtimes. All 22
 maintained demos pass the portfolio's current automated checks.
 
 ## Architectural rule

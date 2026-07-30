@@ -1,0 +1,23 @@
+{
+  "slug": "challenge-3cket",
+  "title": "3cket Challenge",
+  "originalRepository": "viniciuspizettadesouza/nuxt-challenge",
+  "originalDefaultBranch": "master",
+  "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e",
+  "importedSourceBranch": "3cket",
+  "importedSourceHeadSha": "11f0bc5bfd3bb6dbf95c8b3d2c328599792d5c16",
+  "framework": "vue",
+  "frameworkVersion": "Nuxt 3.7.1",
+  "technologies": [
+    "Nuxt",
+    "Vue",
+    "TypeScript",
+    "Tailwind CSS",
+    "Express"
+  ],
+  "renderer": "vue3",
+  "migrationStrategy": "mock-backend",
+  "migrationStatus": "in-progress",
+  "hasBackend": true,
+  "hasExternalApi": false
+}

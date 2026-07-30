@@ -317,5 +317,43 @@
     "sanitizedPaths": [],
     "redactedPaths": [],
     "sanitizationStatus": "not-needed"
+  },
+  {
+    "owner": "viniciuspizettadesouza",
+    "name": "strains",
+    "slug": "challenge-leafwell",
+    "directory": "strains",
+    "url": "https://github.com/viniciuspizettadesouza/strains.git",
+    "defaultBranch": "main",
+    "originalHeadSha": "7f41b5022e29528d737fd045a9554bee98ae8d18",
+    "usesLfs": false,
+    "importStatus": "imported",
+    "importMode": "signed-snapshot",
+    "snapshotCommitSha": "e782b42c350b78e56aa3c9ed6f15ccd42420c06e",
+    "importedAt": "2026-07-29T23:45:36.370Z",
+    "sanitizedPaths": [],
+    "redactedPaths": [],
+    "sanitizationStatus": "not-needed"
+  },
+  {
+    "owner": "viniciuspizettadesouza",
+    "name": "nuxt-challenge",
+    "slug": "challenge-3cket",
+    "url": "https://github.com/viniciuspizettadesouza/nuxt-challenge.git",
+    "defaultBranch": "master",
+    "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e",
+    "importedSourceBranch": "3cket",
+    "importedSourceHeadSha": "11f0bc5bfd3bb6dbf95c8b3d2c328599792d5c16",
+    "usesLfs": false,
+    "importStatus": "imported",
+    "importMode": "signed-snapshot",
+    "snapshotCommitSha": "ba3715efb0ac20bbaf7568a7636770a4458008cf",
+    "importedAt": "2026-07-29T23:45:36.370Z",
+    "sanitizedPaths": [
+      "CHALLENGE.pdf",
+      "backend/CHALLENGE.pdf"
+    ],
+    "redactedPaths": [],
+    "sanitizationStatus": "sanitized"
   }
 ]

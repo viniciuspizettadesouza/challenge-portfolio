@@ -1,4 +1,5 @@
 ---
+import ThreeCketDemo from "@challenge/3cket-demo";
 import BlueticketDemo from "@challenge/blueticket-demo";
 import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
@@ -15,6 +16,7 @@ import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import StormtechDemo from "@challenge/stormtech-demo";
+import StrainsDemo from "@challenge/strains-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -28,7 +30,9 @@ const { slug } = Astro.props;
 ---
 
 {
-  slug === "challenge-blueticket" ? (
+  slug === "challenge-3cket" ? (
+    <ThreeCketDemo client:load />
+  ) : slug === "challenge-blueticket" ? (
     <BlueticketDemo client:load />
   ) : slug === "challenge-castlabs" ? (
     <CastlabsDemo client:load />
@@ -66,6 +70,8 @@ const { slug } = Astro.props;
     <PropertiaGDemo client:load />
   ) : slug === "challenge-stormtech" ? (
     <StormtechDemo client:load />
+  ) : slug === "challenge-leafwell" ? (
+    <StrainsDemo client:load />
   ) : slug === "challenge-swordhealth" ? (
     <SwordHealthDemo client:load />
   ) : (

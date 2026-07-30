@@ -15,10 +15,12 @@ const summaries = JSON.parse(
 const registry = [];
 
 for (const repository of repositories) {
-  const directory = resolve(projectRoot, "challenges", repository.name);
+  const slug = repository.slug ?? repository.name;
+  const sourceDirectory = repository.directory ?? slug;
+  const directory = resolve(projectRoot, "challenges", sourceDirectory);
   const metadataPath = resolve(directory, "challenge.json");
   const metadata = JSON.parse(readFileSync(metadataPath, "utf8"));
-  const audit = inventory.find((item) => item.slug === repository.name);
+  const audit = inventory.find((item) => item.slug === slug);
   const migrationStatus =
     audit?.migrationStatus ??
     (repository.importStatus === "imported" ? "in-progress" : "pending");
@@ -35,6 +37,12 @@ for (const repository of repositories) {
     ...metadata,
     originalDefaultBranch: repository.defaultBranch,
     originalHeadSha: repository.originalHeadSha ?? "",
+    ...(repository.importedSourceBranch
+      ? {
+          importedSourceBranch: repository.importedSourceBranch,
+          importedSourceHeadSha: repository.importedSourceHeadSha,
+        }
+      : {}),
     framework: audit?.framework ?? metadata.framework ?? "",
     frameworkVersion: audit?.frameworkVersion ?? metadata.frameworkVersion ?? "",
     renderer,
@@ -57,12 +65,12 @@ for (const repository of repositories) {
     renderer: updated.renderer,
     migrationStatus: updated.migrationStatus,
     migrationStrategy: updated.migrationStrategy,
-    sourcePath: `challenges/${updated.slug}/original`,
+    sourcePath: `challenges/${sourceDirectory}/original`,
     originalRepository: updated.originalRepository,
     originalDefaultBranch: updated.originalDefaultBranch,
     originalHeadSha: updated.originalHeadSha,
     ...(existsSync(resolve(directory, "demo"))
-      ? { demoPath: `challenges/${updated.slug}/demo` }
+      ? { demoPath: `challenges/${sourceDirectory}/demo` }
       : {}),
   });
 }

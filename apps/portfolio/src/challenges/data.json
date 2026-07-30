@@ -402,5 +402,48 @@
     "originalDefaultBranch": "master",
     "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87",
     "demoPath": "challenges/challenge-ingenious-build-frontend/demo"
+  },
+  {
+    "slug": "challenge-leafwell",
+    "title": "Leafwell Challenge",
+    "company": "Leafwell",
+    "description": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Apollo Client",
+      "GraphQL"
+    ],
+    "renderer": "react",
+    "migrationStatus": "in-progress",
+    "migrationStrategy": "native-react",
+    "sourcePath": "challenges/strains/original",
+    "originalRepository": "viniciuspizettadesouza/strains",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "7f41b5022e29528d737fd045a9554bee98ae8d18",
+    "demoPath": "challenges/strains/demo"
+  },
+  {
+    "slug": "challenge-3cket",
+    "title": "3cket Challenge",
+    "company": "3cket",
+    "description": "A Nuxt event-discovery challenge adapted to Vue 3 with responsive fixture-backed search, event cards, dynamic details, and explicit not-found handling.",
+    "technologies": [
+      "Nuxt",
+      "Vue",
+      "TypeScript",
+      "Tailwind CSS",
+      "Express"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "in-progress",
+    "migrationStrategy": "mock-backend",
+    "sourcePath": "challenges/challenge-3cket/original",
+    "originalRepository": "viniciuspizettadesouza/nuxt-challenge",
+    "originalDefaultBranch": "master",
+    "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e",
+    "demoPath": "challenges/challenge-3cket/demo"
   }
 ]
