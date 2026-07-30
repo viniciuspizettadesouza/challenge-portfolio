@@ -2,14 +2,18 @@
 
 ## Objective
 
-Consolidate 20 public repositories into a navigable monorepo while preserving
-the default-branch source, commit authors, messages, and dates.
+Consolidate 22 public repositories into a navigable monorepo. The initial 20
+projects retain their sanitized imported histories and the portfolio retains
+its original signed pre-expansion lineage. Leafwell and 3cket preserve reviewed
+source snapshots without importing upstream contributor ancestry. The
+owner-approved 3cket snapshot uses the solution branch because the default
+branch contains only the supplied API.
 
 ## Structure
 
 ```text
 apps/portfolio/                 static Astro shell
-challenges/<slug>/original/     preserved, sanitized tree and history
+challenges/<slug>/original/     preserved, sanitized source tree
 challenges/<slug>/demo/         optional executable adaptation
 challenges/<slug>/challenge.json
 challenges/<slug>/README.md
@@ -17,13 +21,17 @@ docs/migration/                 migration evidence and current status
 scripts/migration/              inventory and metadata generation
 ```
 
+Leafwell is the documented naming exception: its public portfolio slug is
+`challenge-leafwell`, while its immutable imported source and maintained demo
+remain in `challenges/strains/`.
+
 ## Application
 
 - Astro with strict TypeScript and static output;
 - official React and Vue 3 integrations;
 - shared CSS without a component library;
 - `/`, `/challenges`, `/challenges/[slug]`, and `/about` routes;
-- a typed registry containing all 20 challenges;
+- a typed registry containing all 22 challenges;
 - pages remain available while a demo is pending.
 
 ## Isolation

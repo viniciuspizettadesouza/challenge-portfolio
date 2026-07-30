@@ -36,6 +36,26 @@ async function capture(page: Page, slug: string, errors: string[]) {
   expect(errors, `browser errors in ${slug}`).toEqual([]);
 }
 
+test("3cket searches the imported event fixture and opens details", async ({ page }) => {
+  const errors = await openDemo(page, "challenge-3cket");
+  await page.getByPlaceholder("Name, category, city or country").fill("Evo Padel");
+  await expect(page.locator(".event-grid article")).toHaveCount(1);
+  await page.locator(".event-grid article button").click();
+  await expect(page.getByRole("heading", { name: "Evo Padel Open" })).toBeVisible();
+  await expect(page.getByText("A local presentation of the original dynamic route")).toBeVisible();
+  await capture(page, "challenge-3cket", errors);
+});
+
+test("Leafwell combines directory filters and opens a profile", async ({ page }) => {
+  const errors = await openDemo(page, "challenge-leafwell");
+  await page.getByPlaceholder("Search by strain name").fill("Blue Dream");
+  await expect(page.getByRole("heading", { name: "1 directory record" })).toBeVisible();
+  await page.getByRole("button", { name: "View strain →" }).click();
+  await expect(page.getByRole("heading", { name: "Blue Dream" })).toBeVisible();
+  await expect(page.getByText(/not medical advice/)).toBeVisible();
+  await capture(page, "challenge-leafwell", errors);
+});
+
 test("Stormtech sorts the local book fixture", async ({ page }) => {
   const errors = await openDemo(page, "challenge-stormtech");
   await page.getByRole("button", { name: "Title Descending" }).click();

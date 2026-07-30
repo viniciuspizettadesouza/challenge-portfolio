@@ -1,6 +1,6 @@
 # History preservation report
 
-Generated at 2026-07-28T22:53:40.944Z.
+Updated at 2026-07-30 after the approved expansion imports.
 
 | Repository | Status | Verification |
 | --- | --- | --- |
@@ -24,6 +24,21 @@ Generated at 2026-07-28T22:53:40.944Z.
 | challenge-fyld-hansecom | verified | tree=ok, authors=ok, files=10, removed=—, redacted=components/Tutorial.vue, pages/index.vue, store/index.js |
 | challenge-onsign-tv | verified | tree=ok, authors=ok, files=18, removed=OnSign TV Front End Programming Test 3A (2).pdf, redacted=onsigntv_frontend/src/App.vue |
 | challenge-ingenious-build-frontend | verified | tree=ok, authors=ok, files=30 |
+| challenge-leafwell (`strains` source directory) | verified snapshot | tree=ok, upstream-history=excluded, files=41 |
+| challenge-3cket (`3cket` source branch) | verified snapshot | tree=ok, upstream-history=excluded, files=39, removed=CHALLENGE.pdf, backend/CHALLENGE.pdf, redacted=— |
 
-Tree comparison uses blob IDs and paths. Author comparison uses the set of
-names and email addresses in the source and rewritten histories.
+Tree comparison uses blob IDs and paths. The initial 20 projects retain their
+verified sanitized histories. On 2026-07-30, the original signed pre-expansion
+portfolio lineage was restored and the two expansion projects were re-imported
+as owner-signed source snapshots. Their upstream commit ancestry is
+intentionally not attached to this repository.
+
+The signed snapshot commits are
+`e782b42c350b78e56aa3c9ed6f15ccd42420c06e` for Leafwell and
+`ba3715efb0ac20bbaf7568a7636770a4458008cf` for 3cket. Their parent chain
+continues directly into the unchanged signed pre-expansion head
+`10ccbb0564c77e84baa915ce2e8360ff6d80c561`.
+
+The 3cket verification compares the owner-approved source branch
+`3cket` at `11f0bc5bfd3bb6dbf95c8b3d2c328599792d5c16`, not the repository's
+one-commit default `master` branch.

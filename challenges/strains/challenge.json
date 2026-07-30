@@ -1,0 +1,22 @@
+{
+  "slug": "challenge-leafwell",
+  "title": "Leafwell Challenge",
+  "originalRepository": "viniciuspizettadesouza/strains",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "7f41b5022e29528d737fd045a9554bee98ae8d18",
+  "framework": "react",
+  "frameworkVersion": "^18.2.0 (Next.js 13.3.1)",
+  "technologies": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Apollo Client",
+    "GraphQL"
+  ],
+  "renderer": "react",
+  "migrationStrategy": "native-react",
+  "migrationStatus": "in-progress",
+  "hasBackend": false,
+  "hasExternalApi": true
+}

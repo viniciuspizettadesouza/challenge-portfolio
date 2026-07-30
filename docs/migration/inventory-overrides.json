@@ -135,5 +135,52 @@
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
     "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo with all three ordering rules, the documented null exception, and the empty-set result. Owner approved on 2026-07-28."
+  },
+  "challenge-leafwell": {
+    "framework": "react",
+    "frameworkVersion": "^18.2.0 (Next.js 13.3.1)",
+    "language": "typescript",
+    "bundler": "next",
+    "packageManager": "pnpm",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": false,
+    "hasExternalApi": true,
+    "packageRoots": [
+      "."
+    ],
+    "entrypoints": [
+      "app/page.tsx",
+      "app/cannabis-strains/[slug]/page.tsx"
+    ],
+    "migrationStrategy": "native-react",
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "The imported Next.js 13 listing/detail challenge is backed historically by the Leafwell GraphQL endpoint. Its maintained React demo preserves search, initial and type filtering, pagination, and detail composition with representative deterministic local records. The owner approved the production demo on 2026-07-30."
+  },
+  "challenge-3cket": {
+    "framework": "vue",
+    "frameworkVersion": "Nuxt 3.7.1",
+    "language": "typescript",
+    "bundler": "nuxt",
+    "packageManager": "npm",
+    "hasRouter": true,
+    "hasTests": false,
+    "hasBackend": true,
+    "hasExternalApi": false,
+    "packageRoots": [
+      "backend",
+      "frontend"
+    ],
+    "entrypoints": [
+      "backend/index.js",
+      "frontend/app.vue",
+      "frontend/pages/index.vue",
+      "frontend/pages/events/[...slug].vue"
+    ],
+    "migrationStrategy": "mock-backend",
+    "migrationStatus": "in-progress",
+    "reviewStatus": "confirmed",
+    "reviewNotes": "The owner approved branch 3cket as the import source because it contains the completed Nuxt 3/Tailwind solution beyond the one-commit default master branch. Its maintained Vue demo preserves event search, list, detail, and not-found behavior with the bundled fixture and no localhost backend. The owner approved the production demo on 2026-07-30."
   }
 }

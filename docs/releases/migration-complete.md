@@ -29,7 +29,7 @@ asset routes were validated successfully.
 
 ## Preservation and security
 
-- All 20 imported trees and author sets were verified.
+- All 20 imported trees, author sets, and historical metadata were verified.
 - Removed or redacted paths are recorded in the migration manifest.
 - Gitleaks reported no remaining findings after sanitization.
 - Historical source remains immutable by project policy.

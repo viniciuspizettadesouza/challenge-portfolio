@@ -31,3 +31,15 @@ the public history.
 The `main` branch was approved for publication. The repository owner completed
 the deletion checklist and manually deleted the 20 superseded remote
 repositories on 2026-07-29.
+
+## Expansion audit
+
+On 2026-07-30, Gitleaks 8.30.1 scanned the complete fetched histories of
+`strains` and `nuxt-challenge` with redaction enabled. It scanned approximately
+978.50 KB and reported no findings.
+
+The `nuxt-challenge` recruitment brief was removed from the complete imported
+history at both historical paths, `CHALLENGE.pdf` and
+`backend/CHALLENGE.pdf`, consistent with the original migration's treatment of
+recruitment-process PDFs. Repeat Gitleaks scans of both rewritten histories
+reported no findings before their local import merges.

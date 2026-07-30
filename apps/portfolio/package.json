@@ -16,6 +16,7 @@
   "dependencies": {
     "@astrojs/react": "6.0.1",
     "@astrojs/vue": "7.0.1",
+    "@challenge/3cket-demo": "workspace:*",
     "@challenge/blueticket-demo": "workspace:*",
     "@challenge/castlabs-demo": "workspace:*",
     "@challenge/climateseed-demo": "workspace:*",
@@ -32,6 +33,7 @@
     "@challenge/propertiag-demo": "workspace:*",
     "@challenge/salsify-demo": "workspace:*",
     "@challenge/stormtech-demo": "workspace:*",
+    "@challenge/strains-demo": "workspace:*",
     "@challenge/swordhealth-demo": "workspace:*",
     "@challenge/vue-demo": "workspace:*",
     "@challenge/vuejs-demo": "workspace:*",

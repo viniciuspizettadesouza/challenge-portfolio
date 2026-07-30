@@ -7,7 +7,7 @@ deleted the 20 superseded remote repositories.
 
 - [x] Sanitized source for all 20 projects exists in the monorepo.
 - [x] Default-branch history for all 20 projects was imported.
-- [x] Authors, emails, and trees were compared.
+- [x] Source metadata, trees, and imported author sets were compared.
 - [x] The public history was sanitized.
 - [x] Gitleaks reports no remaining findings.
 
@@ -29,7 +29,8 @@ interaction tests, and the 43-page static build passed.
 
 - [x] GitHub Pages workflow and `/challenge-portfolio/` base path are configured.
 - [x] The application is deployed and production routes were validated.
-- [x] The annotated `migration-complete` tag exists on GitHub.
+- [x] The annotated `migration-complete` tag was published for the initial
+  release and later removed during expansion-history cleanup.
 - [x] The `migration-complete` GitHub Release exists.
 - [x] The repository owner manually reviewed this checklist.
 

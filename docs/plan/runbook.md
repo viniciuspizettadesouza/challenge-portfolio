@@ -23,7 +23,7 @@ pnpm test:e2e
 pnpm build
 ```
 
-`pnpm test:e2e` builds and previews the site, exercises all 20 demos in
+`pnpm test:e2e` builds and previews the site, exercises all 22 demos in
 Chromium, and refreshes the representative screenshots. It requires the
 Playwright Chromium browser installed for the current Playwright version.
 
@@ -53,7 +53,7 @@ Review changes to `docs/migration/inventory.json`,
 pnpm screenshots
 ```
 
-The command replaces all 20 images under `docs/portfolio/screenshots/`. Review
+The command replaces all 22 images under `docs/portfolio/screenshots/`. Review
 visual changes before committing them.
 
 ## 5. Deploy

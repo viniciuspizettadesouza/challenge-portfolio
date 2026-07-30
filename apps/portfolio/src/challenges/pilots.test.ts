@@ -1,3 +1,4 @@
+import ThreeCketDemo from "@challenge/3cket-demo";
 import BlueticketDemo from "@challenge/blueticket-demo";
 import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
@@ -12,6 +13,7 @@ import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import StormtechDemo from "@challenge/stormtech-demo";
+import StrainsDemo from "@challenge/strains-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -22,6 +24,22 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
+  it("renders the fixture-backed 3cket event grid", async () => {
+    const html = await renderToString(createSSRApp(ThreeCketDemo));
+
+    expect(html).toContain("Find your next event.");
+    expect(html).toContain("Evo Padel Open");
+    expect(html).toContain("Preview dynamic slug");
+  });
+
+  it("renders the local Leafwell strain directory", () => {
+    const html = renderToStaticMarkup(createElement(StrainsDemo));
+
+    expect(html).toContain("Find a strain");
+    expect(html).toContain("Acapulco Gold");
+    expect(html).toContain("12 directory records");
+  });
+
   it("renders the local JExperts employee directory", () => {
     const html = renderToStaticMarkup(createElement(JExpertsDemo));
 
