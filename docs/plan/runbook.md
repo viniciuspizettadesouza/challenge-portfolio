@@ -20,6 +20,7 @@ pnpm lint
 pnpm typecheck
 pnpm test
 pnpm test:e2e
+pnpm security:secrets
 pnpm build
 ```
 
@@ -29,6 +30,11 @@ Chromium browser installed for the current Playwright version. The dedicated
 browser workflow runs the same command for pushes to `main`, pull requests,
 and manual dispatches; failed runs retain the HTML report and traces for 14
 days.
+
+`pnpm security:secrets` requires Docker and scans the complete Git history with
+the official Gitleaks container pinned by version and digest. Review findings
+and false positives using the process in
+`docs/migration/security-review.md`; do not add broad allowlists.
 
 ## 3. Maintain challenge metadata
 
@@ -49,6 +55,12 @@ pnpm inventory
 Review changes to `docs/migration/inventory.json`,
 `docs/migration/inventory.md`, every affected `challenge.json`, and
 `apps/portfolio/src/challenges/data.json`.
+
+The catalog derives its technology, framework, and adaptation-type options
+from that generated challenge data. Filter state is encoded in the
+`technology`, `framework`, and `adaptation` query parameters. Unknown values
+are ignored, and the complete catalog remains available when JavaScript is
+disabled.
 
 ## 4. Refresh screenshots
 

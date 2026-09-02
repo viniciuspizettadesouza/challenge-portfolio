@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly image="ghcr.io/gitleaks/gitleaks:v8.30.0@sha256:691af3c7c5a48b16f187ce3446d5f194838f91238f27270ed36eef6359a574d9"
+readonly repository_root="$(git rev-parse --show-toplevel)"
+
+docker run --rm \
+  --volume "${repository_root}:/repo" \
+  "${image}" \
+  git --redact --no-banner /repo

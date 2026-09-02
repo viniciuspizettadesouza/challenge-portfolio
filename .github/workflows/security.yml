@@ -1,0 +1,29 @@
+name: Security scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "30 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout complete history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Scan Git history for secrets
+        run: bash scripts/security/scan-secrets.sh

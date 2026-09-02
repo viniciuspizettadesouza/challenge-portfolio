@@ -15,6 +15,7 @@
     "test": "pnpm --filter portfolio test",
     "test:e2e": "pnpm --filter portfolio test:e2e",
     "screenshots": "pnpm --filter portfolio screenshots",
+    "security:secrets": "bash scripts/security/scan-secrets.sh",
     "inventory": "node scripts/migration/generate-inventory.mjs && node scripts/migration/sync-challenge-metadata.mjs"
   },
   "devDependencies": {

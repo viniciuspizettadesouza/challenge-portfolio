@@ -29,16 +29,32 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Project 23 initial publication | Completed | integration revision `8227df4` is present on `origin/main` |
 | Project 23 coverage follow-up | Completed | revision `6caced1` is on `origin/main`; the 23-project home and project-23 Pages routes were verified |
 | Project 23 source cleanup | Completed | owner confirmed deletion of the superseded source repository on 2026-09-02 after preservation and publication |
-| Post-consolidation hardening | In progress | Playwright CI coverage implemented; dependency and security automation is next |
+| Post-consolidation hardening | In progress | local release candidate validated; owner publication, production verification, tag, and release remain |
 
 ## Current next action
 
-Continue the Phase 18 P0 backlog in `docs/plan/roadmap.md`: add dependency and
-security automation. Playwright now runs in a dedicated GitHub Actions workflow
-for pushes to `main`, pull requests, and manual dispatches; its lockfile-matched
-Chromium browser is installed in CI, failed-run reports are retained for 14
-days, and screenshot regeneration remains explicit. These are optional
-maintenance improvements; no consolidation or source-cleanup work remains.
+Review and publish the Phase 18 release candidate recorded in
+`docs/releases/post-consolidation-hardening.md`. Browser and security
+automation, the accessibility baseline, and URL-backed catalog discovery are
+implemented and locally validated. After pushing the reviewed revision, verify
+all three workflows and the representative production routes, then create the
+owner-selected tag and GitHub Release. No consolidation or source-cleanup work
+remains.
+
+## Phase 18 local validation
+
+Validation completed on 2026-09-02:
+
+- frozen offline install for all 25 workspace projects;
+- ESLint passed;
+- Astro/TypeScript diagnostics reported 0 errors, warnings, or hints;
+- Vitest passed 80 tests across five files;
+- Playwright passed all 51 Chromium tests without changing tracked
+  screenshots;
+- Astro generated 49 static pages;
+- digest-pinned Gitleaks 8.30.0 scanned 310 commits and approximately 14.42 MB
+  with no findings;
+- `git diff --check` passed.
 
 Project-23 evidence is recorded in
 `docs/migration/expansion-assessment-user-management.md`; the earlier expansion

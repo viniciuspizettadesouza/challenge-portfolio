@@ -144,7 +144,7 @@ onMounted(() => {
           <span>Updated {{ forecast.updatedAt }} · {{ forecast.hourly.length }} hourly records</span>
         </header>
 
-        <div class="forecast-table-wrap">
+        <div class="forecast-table-wrap" tabindex="0" aria-label="Scrollable hourly forecast">
           <table>
             <thead>
               <tr>

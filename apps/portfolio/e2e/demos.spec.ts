@@ -326,3 +326,34 @@ test("Ingenious Build selects a line and stop", async ({ page }) => {
   await expect(page.locator(".selections")).toContainText(stop);
   await capture(page, "challenge-ingenious-build-frontend", errors);
 });
+
+test("catalog combines URL-backed filters and restores browser history", async ({ page }) => {
+  await page.goto("challenges?technology=React&framework=react");
+  const entries = page.locator(".catalog-entry:visible");
+  const initialCount = await entries.count();
+  expect(initialCount).toBeGreaterThan(0);
+  await expect(page.getByLabel("Technology")).toHaveValue("React");
+  await expect(page.getByLabel("Framework")).toHaveValue("react");
+
+  await page.getByLabel("Adaptation type").selectOption("mock-backend");
+  await expect(page).toHaveURL(/adaptation=mock-backend/);
+  await expect(page.locator(".catalog-entry:visible")).not.toHaveCount(initialCount);
+
+  await page.goBack();
+  await expect(page.getByLabel("Adaptation type")).toHaveValue("");
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(initialCount);
+
+  await page.getByRole("button", { name: "Clear filters" }).click();
+  await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(23);
+});
+
+test("catalog keeps every challenge available without JavaScript", async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.goto("challenges?technology=React");
+
+  await expect(page.locator(".catalog-entry")).toHaveCount(23);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(23);
+  await context.close();
+});

@@ -36,6 +36,11 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .skip-link {
   position: fixed;
   top: 1rem;
@@ -175,6 +180,66 @@ h2 {
   margin-bottom: 2rem;
 }
 
+.catalog-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.catalog-heading .eyebrow,
+.catalog-heading h2,
+.catalog-heading > p {
+  margin-block: 0;
+}
+
+.catalog-heading > p,
+.catalog-note,
+.catalog-empty {
+  color: var(--muted);
+}
+
+.catalog-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+
+.catalog-filters label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.catalog-filters select,
+.catalog-filters button {
+  min-height: 2.8rem;
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+  background: var(--background);
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  font: inherit;
+}
+
+.catalog-filters button {
+  cursor: pointer;
+}
+
+.catalog-filters button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -190,6 +255,21 @@ h2 {
   padding: 1.5rem;
   background: var(--surface);
   transition: background 160ms ease;
+}
+
+.catalog-entry .card {
+  height: 100%;
+}
+
+.catalog-entry[hidden] {
+  display: none;
+}
+
+.catalog-empty {
+  padding: 3rem;
+  border: 1px dashed var(--line);
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
 .card:hover {
@@ -335,6 +415,15 @@ footer {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .catalog-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .catalog-filters {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 500px) {
@@ -347,5 +436,9 @@ footer {
 
   h1 {
     font-size: 3rem;
+  }
+
+  .catalog-filters {
+    grid-template-columns: 1fr;
   }
 }

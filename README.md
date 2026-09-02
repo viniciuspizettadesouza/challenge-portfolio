@@ -42,9 +42,11 @@ The authoritative progress record is
 - [Maintenance runbook](docs/plan/runbook.md)
 - [Decisions and constraints](docs/plan/decisions.md)
 - [Demo fidelity audit](docs/migration/fidelity-audit.md)
+- [Accessibility baseline](docs/migration/accessibility-audit.md)
 - [Security review](docs/migration/security-review.md)
 - [Deletion checklist](docs/migration/deletion-checklist.md)
 - [Migration-complete release notes](docs/releases/migration-complete.md)
+- [Post-consolidation hardening release candidate](docs/releases/post-consolidation-hardening.md)
 
 ## Commands
 

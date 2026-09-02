@@ -155,18 +155,29 @@ items independently in the following priority order:
   artifact. Keep screenshot regeneration an explicit maintenance operation.
   Evidence: `.github/workflows/browser-tests.yml` and the separate
   `pnpm screenshots` command.
-- [ ] **P0 — Dependency and security automation:** configure automated pnpm and
+- [x] **P0 — Dependency and security automation:** configure automated pnpm and
   GitHub Actions update proposals, add a reproducible secret scan, and document
   how maintainers review findings and false positives.
-- [ ] **P1 — Accessibility baseline:** add automated checks for the shared shell
+  Evidence: `.github/dependabot.yml`, `.github/workflows/security.yml`, the
+  digest-pinned `pnpm security:secrets` command, and
+  `docs/migration/security-review.md`.
+- [x] **P1 — Accessibility baseline:** add automated checks for the shared shell
   and representative demo routes, then manually verify keyboard navigation,
   focus visibility, landmarks, names, and color contrast across all 23 demos.
-- [ ] **P1 — Catalog discovery:** add URL-backed filters for technology,
+  Evidence: `apps/portfolio/e2e/accessibility.spec.ts` and the complete review,
+  including explicitly deferred demo-level findings, in
+  `docs/migration/accessibility-audit.md`.
+- [x] **P1 — Catalog discovery:** add URL-backed filters for technology,
   framework, and adaptation type while preserving the current static routes and
   usable no-JavaScript catalog content.
+  Evidence: metadata-derived facets in `src/challenges/catalog.ts`, interaction
+  and no-JavaScript browser coverage, and the unchanged static catalog route.
 - [ ] **P2 — Consolidation release:** after the hardening work is reviewed and
   deployed, record the final validation evidence and let the repository owner
   create the corresponding tag and GitHub Release.
+  Local release-candidate evidence is complete in
+  `docs/releases/post-consolidation-hardening.md`. Owner review, publication,
+  production verification, tagging, and release creation remain pending.
 
 Phase 18 is complete when every selected item has automated evidence where
 applicable, the production deployment is verified, and deferred items are

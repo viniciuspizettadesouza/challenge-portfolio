@@ -1,7 +1,15 @@
 ---
 import ChallengeCard from "../../components/ChallengeCard.astro";
+import {
+  adaptationLabels,
+  frameworkLabels,
+  getCatalogFacets,
+} from "../../challenges/catalog";
 import { challenges } from "../../challenges/registry";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/urls";
+
+const facets = getCatalogFacets(challenges);
 ---
 
 <BaseLayout title="Challenges — Challenge Portfolio">
@@ -13,9 +21,171 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       used to keep the project accessible.
     </p>
   </section>
-  <section class="section" aria-label="Challenge list">
-    <div class="grid">
-      {challenges.map((challenge) => <ChallengeCard challenge={challenge} />)}
+  <section class="section" aria-labelledby="catalog-heading">
+    <div class="catalog-heading">
+      <div>
+        <p class="eyebrow">Discover</p>
+        <h2 id="catalog-heading">Filter the catalog</h2>
+      </div>
+      <p id="catalog-count" aria-live="polite">
+        Showing all {challenges.length} challenges
+      </p>
     </div>
+
+    <form
+      class="catalog-filters"
+      id="catalog-filters"
+      action={withBase("challenges")}
+      method="get"
+    >
+      <label>
+        Technology
+        <select name="technology" disabled>
+          <option value="">All technologies</option>
+          {
+            facets.technologies.map((technology) => (
+              <option value={technology}>{technology}</option>
+            ))
+          }
+        </select>
+      </label>
+      <label>
+        Framework
+        <select name="framework" disabled>
+          <option value="">All frameworks</option>
+          {
+            facets.frameworks.map((framework) => (
+              <option value={framework}>{frameworkLabels[framework]}</option>
+            ))
+          }
+        </select>
+      </label>
+      <label>
+        Adaptation type
+        <select name="adaptation" disabled>
+          <option value="">All adaptation types</option>
+          {
+            facets.adaptations.map((adaptation) => (
+              <option value={adaptation}>{adaptationLabels[adaptation]}</option>
+            ))
+          }
+        </select>
+      </label>
+      <button type="button" id="clear-catalog-filters" disabled
+        >Clear filters</button
+      >
+    </form>
+    <noscript>
+      <p class="catalog-note">
+        Filtering requires JavaScript; the complete catalog remains below.
+      </p>
+    </noscript>
+
+    <div class="grid catalog-grid" id="catalog-grid">
+      {
+        challenges.map((challenge) => (
+          <div
+            class="catalog-entry"
+            data-technology={challenge.technologies.join("|")}
+            data-framework={challenge.renderer}
+            data-adaptation={challenge.migrationStrategy}
+          >
+            <ChallengeCard challenge={challenge} />
+          </div>
+        ))
+      }
+    </div>
+    <p class="catalog-empty" id="catalog-empty" hidden>
+      No challenges match this combination. Clear the filters to see the
+      complete catalog.
+    </p>
   </section>
 </BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#catalog-filters");
+  const count = document.querySelector<HTMLElement>("#catalog-count");
+  const empty = document.querySelector<HTMLElement>("#catalog-empty");
+  const clearButton = document.querySelector<HTMLButtonElement>(
+    "#clear-catalog-filters",
+  );
+  const entries = [...document.querySelectorAll<HTMLElement>(".catalog-entry")];
+  const filterNames = ["technology", "framework", "adaptation"] as const;
+
+  function controls() {
+    return Object.fromEntries(
+      filterNames.map((name) => [
+        name,
+        form?.elements.namedItem(name) as HTMLSelectElement,
+      ]),
+    ) as Record<(typeof filterNames)[number], HTMLSelectElement>;
+  }
+
+  function readUrl() {
+    if (!form) return;
+    const parameters = new URL(window.location.href).searchParams;
+    const selects = controls();
+
+    for (const name of filterNames) {
+      const value = parameters.get(name) ?? "";
+      selects[name].value = [...selects[name].options].some(
+        (option) => option.value === value,
+      )
+        ? value
+        : "";
+    }
+  }
+
+  function applyFilters(updateUrl: boolean) {
+    if (!form || !count || !empty || !clearButton) return;
+    const selects = controls();
+    let visible = 0;
+
+    for (const entry of entries) {
+      const technologies = (entry.dataset.technology ?? "").split("|");
+      const matches =
+        (!selects.technology.value ||
+          technologies.includes(selects.technology.value)) &&
+        (!selects.framework.value ||
+          entry.dataset.framework === selects.framework.value) &&
+        (!selects.adaptation.value ||
+          entry.dataset.adaptation === selects.adaptation.value);
+
+      entry.hidden = !matches;
+      if (matches) visible += 1;
+    }
+
+    const hasFilters = filterNames.some((name) => selects[name].value);
+    count.textContent = hasFilters
+      ? `Showing ${visible} of ${entries.length} challenges`
+      : `Showing all ${entries.length} challenges`;
+    empty.hidden = visible !== 0;
+    clearButton.disabled = !hasFilters;
+
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      for (const name of filterNames) {
+        if (selects[name].value)
+          url.searchParams.set(name, selects[name].value);
+        else url.searchParams.delete(name);
+      }
+      window.history.pushState({}, "", url);
+    }
+  }
+
+  if (form && clearButton) {
+    for (const select of form.querySelectorAll("select"))
+      select.disabled = false;
+    readUrl();
+    applyFilters(false);
+    form.addEventListener("change", () => applyFilters(true));
+    clearButton.addEventListener("click", () => {
+      form.reset();
+      applyFilters(true);
+    });
+    window.addEventListener("popstate", () => {
+      readUrl();
+      applyFilters(false);
+    });
+  }
+</script>
