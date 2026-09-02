@@ -70,7 +70,8 @@ nested `BrowserRouter`. The same component also has a standalone Vite entry.
   protected service operation.
 - A local asynchronous service layer replaces ReqRes with 14 fictional,
   deterministic records. It provides current-user, list, create, update, and
-  delete operations without a real backend.
+  delete operations without a real backend. This is a behavioural equivalent
+  of the brief's API, not a literal ReqRes HTTP integration.
 - CRUD mutations remain only in React runtime state and reset on refresh.
   Pagination renders exactly six users per page and corrects invalid pages.
 - Theme preference alone persists in `localStorage`; both themes are responsive
@@ -79,6 +80,10 @@ nested `BrowserRouter`. The same component also has a standalone Vite entry.
   retaining `Hello <first_name>` in its header.
 - Vitest and Playwright are used instead of the brief's Cypress preference to
   follow the portfolio's established testing stack.
+- Automated coverage explicitly exercises successful registration, independent
+  sign-in, session serialization/clearing, invalid tokens on every protected
+  operation, valid protected operations, CRUD reset, and theme persistence
+  after the application page is closed and reopened.
 - A multi-stage Dockerfile builds the same Vite component and serves it through
   nginx without altering the portfolio deployment.
 

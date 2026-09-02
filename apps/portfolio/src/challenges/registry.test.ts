@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { challenges, getChallenge } from "./registry";
 
 describe("challenge registry", () => {
-  it("contains exactly twenty-two unique challenges", () => {
+  it("contains exactly twenty-three unique challenges", () => {
     expect(challenges).toHaveLength(23);
     expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(23);
     expect(challenges.every(({ migrationStatus }) => migrationStatus === "migrated")).toBe(true);

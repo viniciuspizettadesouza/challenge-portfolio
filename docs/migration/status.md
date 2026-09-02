@@ -26,13 +26,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Expansion source cleanup | Completed | owner manually deleted `strains` and `nuxt-challenge` on 2026-07-30 |
 | Project 23 assessment and history | Completed | five sanitized commits preserve authors/dates/messages; source, rewritten, and merge SHAs recorded |
 | Project 23 maintained demo | Completed | Parts 1–4, local services, CRUD/pagination, themes, testing, and Docker path implemented |
-| Project 23 owner review and publication | Pending | review unstaged changes, publish, validate Pages, then decide legacy-source cleanup |
+| Project 23 initial publication | Completed | integration revision `8227df4` is present on `origin/main` |
+| Project 23 coverage follow-up | In progress | publish the staged home-count correction and unstaged coverage evidence, then validate Pages |
 
 ## Current next action
 
-Review and publish the unstaged project-23 expansion. After publication, verify
-the challenge detail/fullscreen routes and screenshot on GitHub Pages. Only the
-owner may then decide whether to archive or delete the legacy source repository.
+Review and publish the current home-count correction and project-23 coverage
+follow-up. After publication, verify the home, challenge detail/fullscreen
+routes, and screenshot on GitHub Pages. Only the owner may then decide whether
+to archive or delete the legacy source repository.
 
 Project-23 evidence is recorded in
 `docs/migration/expansion-assessment-user-management.md`; the earlier expansion
@@ -48,10 +50,13 @@ portfolio changes plus the explicitly authorized sanitized-history merge:
 - inventory generation produced 23 inventory and registry entries;
 - ESLint passed;
 - Astro/TypeScript diagnostics reported 0 errors, warnings, or hints;
-- Vitest passed 74 tests across four files;
-- Playwright passed 23 Chromium interaction tests with no captured browser
+- Vitest passed 77 tests across four files, including positive registration,
+  malformed/cleared sessions, and every protected service with valid and
+  invalid tokens;
+- Playwright passed 24 Chromium interaction tests, including application
+  close/reopen persistence, with no captured browser
   console or page errors;
-- the screenshot workflow repeated all 23 browser tests successfully and wrote
+- the screenshot workflow repeated all 24 browser tests successfully and retained
   `docs/portfolio/screenshots/challenge-user-management.png`;
 - the standalone Vite build completed;
 - the Astro production build generated 49 static pages, including project 23's

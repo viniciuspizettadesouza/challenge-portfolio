@@ -80,6 +80,39 @@ test("Vuejs paginates the local episode guide", async ({ page }) => {
   await capture(page, "challenge-vuejs", errors);
 });
 
+test("User Management signs up and keeps only its theme after reopening", async ({ page, context }) => {
+  const errors = await openDemo(page, "challenge-user-management");
+  await expect(page.getByRole("heading", { name: "Create your account" })).toBeVisible();
+
+  await page.getByLabel("Email address").fill("new.user@example.test");
+  await page.getByLabel("Password", { exact: true }).fill("ExamplePass123!");
+  await page.getByLabel("Confirm password").fill("ExamplePass123!");
+  await page.getByRole("button", { name: "Create account" }).click();
+  await expect(page.getByRole("heading", { name: "Hello New" })).toBeVisible();
+  await expect(page.getByTestId("user-card")).toHaveCount(6);
+
+  const storedToken = await page.evaluate(() => {
+    const session = JSON.parse(sessionStorage.getItem("user-management/session") ?? "null") as { token?: string } | null;
+    return session?.token ?? null;
+  });
+  expect(storedToken).toMatch(/^demo-token-/);
+
+  const demo = page.locator(".um-demo");
+  const initialTheme = await demo.getAttribute("data-theme");
+  const selectedTheme = initialTheme === "dark" ? "light" : "dark";
+  await page.getByRole("button", { name: `Switch to ${selectedTheme} theme` }).click();
+  await expect(demo).toHaveAttribute("data-theme", selectedTheme);
+  expect(errors).toEqual([]);
+
+  await page.close();
+  const reopenedPage = await context.newPage();
+  const reopenedErrors = await openDemo(reopenedPage, "challenge-user-management");
+  await expect(reopenedPage.getByRole("heading", { name: "Create your account" })).toBeVisible();
+  await expect(reopenedPage.locator(".um-demo")).toHaveAttribute("data-theme", selectedTheme);
+  expect(await reopenedPage.evaluate(() => sessionStorage.getItem("user-management/session"))).toBeNull();
+  expect(reopenedErrors).toEqual([]);
+});
+
 test("User Management completes authentication, CRUD, pagination, and theme persistence", async ({ page }) => {
   const errors = await openDemo(page, "challenge-user-management");
 

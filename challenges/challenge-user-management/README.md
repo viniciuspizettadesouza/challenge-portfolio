@@ -33,14 +33,18 @@ dashboard and retains the required `Hello <first_name>` greeting.
 
 ReqRes is intentionally replaced by deterministic fictional fixtures. This
 keeps the static portfolio reliable, removes production API and personal-data
-dependencies, and makes every test reproducible. User mutations live only in
-React runtime state and reset on refresh; the session uses `sessionStorage`,
-while theme preference alone uses `localStorage`.
+dependencies, and makes every test reproducible. The asynchronous local service
+is the maintained demo's behavioural equivalent of the brief's backend; it is
+not a literal ReqRes HTTP integration. User mutations live only in React
+runtime state and reset on refresh; the session uses `sessionStorage`, while
+theme preference alone uses `localStorage`.
 
 Vitest and Playwright replace the brief's Cypress preference to follow the
-portfolio's established test stack. The sanitized historical history remains unchanged
-after sanitization, so improvements in `demo/` are not presented as historical
-capabilities.
+portfolio's established test stack. Coverage explicitly verifies successful
+sign-up, independent sign-in, malformed and cleared sessions, valid and invalid
+tokens for every protected operation, CRUD reset, and theme persistence after
+closing and reopening the application. The sanitized historical history remains
+unchanged, so improvements in `demo/` are not presented as historical capabilities.
 
 ## Standalone and Docker
 
