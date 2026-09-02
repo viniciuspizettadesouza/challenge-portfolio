@@ -1,6 +1,6 @@
 # Migration status
 
-Last updated: 2026-09-02.
+Last updated: 2026-09-03.
 
 This is the authoritative handoff document. Completed work remains visible.
 Resume from the first phase marked `In progress` or `Pending`.
@@ -33,12 +33,11 @@ Resume from the first phase marked `In progress` or `Pending`.
 
 ## Current next action
 
-Review and publish the Phase 18 release candidate recorded in
-`docs/releases/post-consolidation-hardening.md`. Browser and security
-automation, the accessibility baseline, and URL-backed catalog discovery are
-implemented and locally validated. After pushing the reviewed revision, verify
-all three workflows and the representative production routes, then create the
-owner-selected tag and GitHub Release. No consolidation or source-cleanup work
+Implement the approved documentation distillation and central-library plan in
+`docs/plan/documentation-consolidation.md`. The owner considers the technical
+Phase 18 work complete and has explicitly deferred its optional tag and GitHub
+Release. The consolidation will record that decision, centralize current
+guidance, and archive detailed migration evidence. No source-cleanup work
 remains.
 
 ## Phase 18 local validation
