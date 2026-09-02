@@ -27,14 +27,15 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Project 23 assessment and history | Completed | five sanitized commits preserve authors/dates/messages; source, rewritten, and merge SHAs recorded |
 | Project 23 maintained demo | Completed | Parts 1–4, local services, CRUD/pagination, themes, testing, and Docker path implemented |
 | Project 23 initial publication | Completed | integration revision `8227df4` is present on `origin/main` |
-| Project 23 coverage follow-up | In progress | publish the staged home-count correction and unstaged coverage evidence, then validate Pages |
+| Project 23 coverage follow-up | Completed | revision `6caced1` is on `origin/main`; the 23-project home and project-23 Pages routes were verified |
+| Project 23 source cleanup | Completed | owner confirmed deletion of the superseded source repository on 2026-09-02 after preservation and publication |
+| Post-consolidation hardening | Planned | optional prioritized backlog is recorded as roadmap phase 18 |
 
 ## Current next action
 
-Review and publish the current home-count correction and project-23 coverage
-follow-up. After publication, verify the home, challenge detail/fullscreen
-routes, and screenshot on GitHub Pages. Only the owner may then decide whether
-to archive or delete the legacy source repository.
+Start with the Phase 18 P0 backlog in `docs/plan/roadmap.md`: add Playwright to
+CI, then add dependency and security automation. These are optional maintenance
+improvements; no consolidation or source-cleanup work remains.
 
 Project-23 evidence is recorded in
 `docs/migration/expansion-assessment-user-management.md`; the earlier expansion
@@ -42,8 +43,8 @@ assessment remains the completed record for projects 21 and 22.
 
 ## Project 23 local validation
 
-Validation completed on 2026-09-02 against the unstaged maintained-demo and
-portfolio changes plus the explicitly authorized sanitized-history merge:
+Validation completed on 2026-09-02 and was published through revision
+`6caced1`:
 
 - Corepack enabled pnpm 10.13.1; `pnpm install` completed for 25 workspaces;
 - the frozen lockfile install was repeated successfully without network access;

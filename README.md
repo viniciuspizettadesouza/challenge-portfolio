@@ -27,7 +27,9 @@ after completing their migration review. The GitHub Release records that
 initial consolidation milestone; its tag was removed during expansion-history
 cleanup. The owner also deleted the preserved `strains` and `nuxt-challenge`
 source repositories on 2026-07-30 after their signed snapshots, maintained
-demos, and publication evidence were verified.
+demos, and publication evidence were verified. The superseded User Management
+repository was deleted on 2026-09-02 after its sanitized history, maintained
+demo, expanded test coverage, and production routes were verified here.
 
 The authoritative progress record is
 [`docs/migration/status.md`](docs/migration/status.md).

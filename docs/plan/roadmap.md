@@ -24,7 +24,8 @@ future contributors can see what happened and where to continue.
 | 14 — Expansion audit and snapshots | Completed | both signed snapshots imported and verified; 3cket uses its owner-approved solution branch |
 | 15 — Expansion catalog and demos | Completed | metadata, demos, tests, screenshots, and owner review complete |
 | 16 — Expansion quality and publication | Completed | restored signed lineage, verified commits, fresh-clone checks, and Pages deployment complete |
-| 17 — Project 23 expansion | Implemented; owner review pending | sanitized snapshot, complete user-management demo, tests, and Docker path |
+| 17 — Project 23 expansion | Completed | revision `6caced1`, Pages verification, and owner-confirmed legacy repository deletion |
+| 18 — Post-consolidation hardening | Planned | CI browser coverage, security automation, accessibility, catalog discovery, and a final release milestone |
 
 ## Phase 0 — Environment
 
@@ -137,6 +138,34 @@ snapshots and maintained portfolio replacements.
 
 The user-management recruitment project was assessed separately on 2026-09-02.
 Its sanitized snapshot, full Parts 1–4 maintained demo, local service layer,
-unit/Chromium coverage, and standalone Docker path are prepared. Publication,
-production verification, owner review, and any legacy-source cleanup remain
-pending. See `docs/migration/expansion-assessment-user-management.md`.
+unit/Chromium coverage, and standalone Docker path are published. Revision
+`6caced1` is present on `origin/main`; the home page reports 23 challenges, and
+the home, project detail, and fullscreen demo routes return HTTP 200 on GitHub
+Pages. The repository owner confirmed deletion of the superseded source
+repository after its sanitized history and source were preserved here. See
+`docs/migration/expansion-assessment-user-management.md`.
+
+## Phase 18 — Post-consolidation hardening
+
+This is an optional maintenance backlog, not unfinished migration work. Address
+items independently in the following priority order:
+
+- [ ] **P0 — Browser tests in CI:** run the Playwright suite in GitHub Actions,
+  install the pinned Chromium dependency, and retain its report as a failed-run
+  artifact. Keep screenshot regeneration an explicit maintenance operation.
+- [ ] **P0 — Dependency and security automation:** configure automated pnpm and
+  GitHub Actions update proposals, add a reproducible secret scan, and document
+  how maintainers review findings and false positives.
+- [ ] **P1 — Accessibility baseline:** add automated checks for the shared shell
+  and representative demo routes, then manually verify keyboard navigation,
+  focus visibility, landmarks, names, and color contrast across all 23 demos.
+- [ ] **P1 — Catalog discovery:** add URL-backed filters for technology,
+  framework, and adaptation type while preserving the current static routes and
+  usable no-JavaScript catalog content.
+- [ ] **P2 — Consolidation release:** after the hardening work is reviewed and
+  deployed, record the final validation evidence and let the repository owner
+  create the corresponding tag and GitHub Release.
+
+Phase 18 is complete when every selected item has automated evidence where
+applicable, the production deployment is verified, and deferred items are
+explicitly recorded rather than silently omitted.

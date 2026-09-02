@@ -37,12 +37,12 @@ and is assessed separately in
 
 ## How to resume
 
-Start with [`../migration/status.md`](../migration/status.md). Project 23 is
-implemented but its owner review and publication remain pending. Use the
-maintenance runbook and update the status and audit documents when evidence changes.
-The owner deleted both preserved expansion source repositories after verifying
-their signed snapshots and maintained portfolio replacements. No consolidation
-or expansion action remains.
+Start with [`../migration/status.md`](../migration/status.md). All 23 projects
+are preserved and published, and their superseded source repositories have been
+deleted by the owner after verification. No consolidation or expansion action
+remains. Optional maintenance work is prioritized in Phase 18 of the
+[roadmap](roadmap.md); use the maintenance runbook and update status and audit
+documents when evidence changes.
 
 Agents may stage files only when the repository owner explicitly requests it.
 The owner authorized restoring the signed pre-expansion lineage, two signed
