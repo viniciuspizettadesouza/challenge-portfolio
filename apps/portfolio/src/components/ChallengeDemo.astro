@@ -18,6 +18,7 @@ import SalsifyDemo from "@challenge/salsify-demo";
 import StormtechDemo from "@challenge/stormtech-demo";
 import StrainsDemo from "@challenge/strains-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
+import UserManagementDemo from "@challenge/user-management-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
 import ZygoDemo from "@challenge/zygo-demo";
@@ -74,6 +75,8 @@ const { slug } = Astro.props;
     <StrainsDemo client:load />
   ) : slug === "challenge-swordhealth" ? (
     <SwordHealthDemo client:load />
+  ) : slug === "challenge-user-management" ? (
+    <UserManagementDemo client:load />
   ) : (
     <div class="demo-placeholder">
       <p>The demo will be defined after this challenge's manual review.</p>

@@ -445,5 +445,27 @@
     "originalDefaultBranch": "master",
     "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e",
     "demoPath": "challenges/challenge-3cket/demo"
+  },
+  {
+    "slug": "challenge-user-management",
+    "title": "React User Management Challenge",
+    "company": "React User Management",
+    "description": "A complete React user-administration challenge with independent authentication, token-protected local services, runtime-only CRUD, six-user pagination, and persistent themes.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Router",
+      "REST API",
+      "sessionStorage"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "mock-backend",
+    "sourcePath": "challenges/challenge-user-management/original",
+    "originalRepository": "viniciuspizettadesouza/challenge-user-management-source",
+    "originalDefaultBranch": "main",
+    "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653",
+    "demoPath": "challenges/challenge-user-management/demo"
   }
 ]

@@ -1,6 +1,6 @@
 # Demo screenshots
 
-These 22 images are reproducible browser evidence for the maintained challenge
+These 23 images are reproducible browser evidence for the maintained challenge
 demos. Each image is captured after the representative interaction asserted by
 `apps/portfolio/e2e/demos.spec.ts`.
 

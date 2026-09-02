@@ -43,3 +43,18 @@ history at both historical paths, `CHALLENGE.pdf` and
 `backend/CHALLENGE.pdf`, consistent with the original migration's treatment of
 recruitment-process PDFs. Repeat Gitleaks scans of both rewritten histories
 reported no findings before their local import merges.
+
+## Project 23 expansion audit
+
+On 2026-09-02, the project-23 source tree and selected head were audited before
+snapshot import. The recruitment PDF was excluded, and public brand references
+in `package.json` and `src/components/navbar.tsx` were neutralized. The tracked
+`.env` contains only the public ReqRes base URL. Searches for credentials,
+secrets, API keys, private keys, and tokens found no secret material. The
+maintained demo uses only fictional identities, a visibly synthetic password,
+and deterministic local token values; it calls no production API.
+
+No repository security script or Gitleaks executable was available in the
+project-23 implementation environment. The targeted source/history audit and
+five-commit PDF/branding verification passed; this section does not claim a
+new Gitleaks scan.

@@ -2,10 +2,11 @@
 
 ## Objective
 
-Consolidate 22 public repositories into a navigable monorepo. The initial 20
+Consolidate 23 historical challenges into a navigable monorepo. The initial 20
 projects retain their sanitized imported histories and the portfolio retains
 its original signed pre-expansion lineage. Leafwell and 3cket preserve reviewed
-source snapshots without importing upstream contributor ancestry. The
+source snapshots without importing upstream contributor ancestry. Project 23
+retains a five-commit sanitized history with neutralized paths because its brief prohibits public branding. The
 owner-approved 3cket snapshot uses the solution branch because the default
 branch contains only the supplied API.
 
@@ -31,7 +32,7 @@ remain in `challenges/strains/`.
 - official React and Vue 3 integrations;
 - shared CSS without a component library;
 - `/`, `/challenges`, `/challenges/[slug]`, and `/about` routes;
-- a typed registry containing all 22 challenges;
+- a typed registry containing all 23 challenges;
 - pages remain available while a demo is pending.
 
 ## Isolation

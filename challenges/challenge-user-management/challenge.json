@@ -1,0 +1,22 @@
+{
+  "slug": "challenge-user-management",
+  "title": "React User Management Challenge",
+  "originalRepository": "viniciuspizettadesouza/challenge-user-management-source",
+  "originalDefaultBranch": "main",
+  "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653",
+  "framework": "react",
+  "frameworkVersion": "^18.2.0",
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "React Router",
+    "REST API",
+    "sessionStorage"
+  ],
+  "renderer": "react",
+  "migrationStrategy": "mock-backend",
+  "migrationStatus": "migrated",
+  "hasBackend": false,
+  "hasExternalApi": false
+}

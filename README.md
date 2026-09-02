@@ -1,20 +1,22 @@
 # Challenge Portfolio
 
-A unified portfolio that preserves and presents 22 historical technical
+A unified portfolio that preserves and presents 23 historical technical
 challenges.
 
 Each challenge has two clearly separated representations:
 
 - `original/`: sanitized source; the initial 20 projects retain imported Git
-  history, while Leafwell and 3cket use signed snapshot-only imports;
+history; Leafwell and 3cket use snapshot-only imports, while User Management
+  retains five sanitized historical commits;
 - `demo/`: an executable, modernized, or adapted portfolio version.
 
 ## Current status
 
-The initial 20 default-branch histories and two expansion source snapshots have
+The initial 20 default-branch histories, two expansion snapshots, and the
+sanitized five-commit User Management history have
 been imported, sanitized, and verified. The 3cket solution intentionally comes from its
-non-default `3cket` branch with owner approval. The Astro catalog builds all 22
-challenge routes, and every maintained demo is integrated, browser-tested, and
+non-default `3cket` branch with owner approval. The Astro catalog builds all 23
+challenge routes, and every maintained demo is integrated and browser-tested,
 represented by a reproducible screenshot. The repository owner completed
 production review of both expansion demos. The clean expansion commits retain
 the original signed pre-expansion portfolio history without importing

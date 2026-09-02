@@ -62,3 +62,16 @@ interaction tests, and the 43-page static build passed.
 
 Deletion was intentionally performed manually; no project script contains a
 remote deletion operation.
+
+## Project 23 source repository
+
+- [x] All five sanitized source commits are preserved under
+  `challenges/challenge-user-management/original/`.
+- [x] Maintained Parts 1–4 demo, metadata, tests, Docker path, and documentation
+  are prepared for owner review.
+- [ ] The owner has reviewed the sanitized historical source and maintained demo.
+- [ ] The owner has published and independently validated project 23.
+- [ ] The owner has decided whether to delete or archive the legacy source.
+
+No source cleanup is complete or implied for project 23, and the portfolio
+contains no remote deletion operation.

@@ -80,6 +80,65 @@ test("Vuejs paginates the local episode guide", async ({ page }) => {
   await capture(page, "challenge-vuejs", errors);
 });
 
+test("User Management completes authentication, CRUD, pagination, and theme persistence", async ({ page }) => {
+  const errors = await openDemo(page, "challenge-user-management");
+
+  await expect(page.getByRole("heading", { name: "Create your account" })).toBeVisible();
+  await page.getByLabel("Email address").fill("new.user@example.test");
+  await page.getByLabel("Password", { exact: true }).fill("ExamplePass123!");
+  await page.getByLabel("Confirm password").fill("DifferentPass123!");
+  await page.getByRole("button", { name: "Create account" }).click();
+  await expect(page.getByRole("alert")).toHaveText("Passwords do not match.");
+
+  await page.getByRole("tab", { name: "Sign In" }).click();
+  await expect(page.getByText("admin@example.test")).toBeVisible();
+  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Hello Janet" })).toBeVisible();
+  await expect(page.getByTestId("user-card")).toHaveCount(6);
+
+  await page.getByRole("button", { name: "Next" }).click();
+  await expect(page.getByText("Page 2 of 3")).toBeVisible();
+  await expect(page.getByTestId("user-card")).toHaveCount(6);
+
+  await page.getByRole("button", { name: "Add user" }).click();
+  await page.getByLabel("First name").fill("Rowan");
+  await page.getByLabel("Last name").fill("Stone");
+  await page.getByLabel("Email address").fill("rowan.stone@example.test");
+  await page.getByRole("button", { name: "Save user" }).click();
+  await expect(page.getByText("Rowan was created.")).toBeVisible();
+  await expect(page.getByText("Page 3 of 3")).toBeVisible();
+  await expect(page.getByText("Rowan Stone")).toBeVisible();
+
+  await page.getByRole("button", { name: "Edit Rowan Stone" }).click();
+  await page.getByLabel("Last name").fill("Vale");
+  await page.getByRole("button", { name: "Save user" }).click();
+  await expect(page.getByText("Rowan Vale")).toBeVisible();
+
+  await page.getByRole("button", { name: "Delete Kai Tan" }).click();
+  await expect(page.getByRole("alertdialog")).toBeVisible();
+  await page.getByRole("button", { name: "Delete user" }).click();
+  await expect(page.getByText("Kai was deleted.")).toBeVisible();
+  await expect(page.getByText("Page 3 of 3")).toBeVisible();
+
+  const demo = page.locator(".um-demo");
+  const originalTheme = await demo.getAttribute("data-theme");
+  await page.getByRole("button", { name: `Switch to ${originalTheme === "dark" ? "light" : "dark"} theme` }).click();
+  const selectedTheme = originalTheme === "dark" ? "light" : "dark";
+  await expect(demo).toHaveAttribute("data-theme", selectedTheme);
+
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "Hello Janet" })).toBeVisible();
+  await expect(page.locator(".um-demo")).toHaveAttribute("data-theme", selectedTheme);
+  await expect(page.getByTestId("user-card")).toHaveCount(6);
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("button", { name: "Next" }).click();
+  await expect(page.getByText("Kai Tan")).toBeVisible();
+  await expect(page.getByText("Rowan Vale")).toHaveCount(0);
+  await page.getByRole("button", { name: "Previous" }).click();
+  await page.getByRole("button", { name: "Previous" }).click();
+  await capture(page, "challenge-user-management", errors);
+});
+
 test("Castlabs filters episodes and receives an update event", async ({ page }) => {
   const errors = await openDemo(page, "challenge-castlabs");
   await page.getByPlaceholder("Search episodes...").fill("Northbound");

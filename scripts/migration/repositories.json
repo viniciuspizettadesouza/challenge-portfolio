@@ -355,5 +355,27 @@
     ],
     "redactedPaths": [],
     "sanitizationStatus": "sanitized"
+  },
+  {
+    "owner": "viniciuspizettadesouza",
+    "name": "challenge-user-management-source",
+    "slug": "challenge-user-management",
+    "directory": "challenge-user-management",
+    "defaultBranch": "main",
+    "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653",
+    "usesLfs": false,
+    "importStatus": "imported",
+    "importMode": "sanitized-history",
+    "rewrittenHeadSha": "2c88ede2eccf9eb1d5b1f1ea66a0de5bea7aa2d3",
+    "importMergeSha": "d1c01d5b115ca7c43f55153e4ce3af7b6fc5b42f",
+    "importedAt": "2026-09-01T23:52:37.000Z",
+    "sanitizedPaths": [
+      "recruitment specification PDF"
+    ],
+    "redactedPaths": [
+      "package.json",
+      "src/components/navbar.tsx"
+    ],
+    "sanitizationStatus": "sanitized"
   }
 ]

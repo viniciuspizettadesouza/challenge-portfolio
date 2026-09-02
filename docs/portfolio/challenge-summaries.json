@@ -18,6 +18,7 @@
   "challenge-stormtech": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
   "challenge-leafwell": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
   "challenge-swordhealth": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
+  "challenge-user-management": "A complete React user-administration challenge with independent authentication, token-protected local services, runtime-only CRUD, six-user pagination, and persistent themes.",
   "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
   "challenge-vuejs": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
   "challenge-zygo": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes."

@@ -35,6 +35,7 @@
     "@challenge/stormtech-demo": "workspace:*",
     "@challenge/strains-demo": "workspace:*",
     "@challenge/swordhealth-demo": "workspace:*",
+    "@challenge/user-management-demo": "workspace:*",
     "@challenge/vue-demo": "workspace:*",
     "@challenge/vuejs-demo": "workspace:*",
     "@challenge/zygo-demo": "workspace:*",

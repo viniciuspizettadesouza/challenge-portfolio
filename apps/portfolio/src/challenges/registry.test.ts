@@ -3,8 +3,8 @@ import { challenges, getChallenge } from "./registry";
 
 describe("challenge registry", () => {
   it("contains exactly twenty-two unique challenges", () => {
-    expect(challenges).toHaveLength(22);
-    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(22);
+    expect(challenges).toHaveLength(23);
+    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(23);
     expect(challenges.every(({ migrationStatus }) => migrationStatus === "migrated")).toBe(true);
   });
 
@@ -20,6 +20,6 @@ describe("challenge registry", () => {
       expect(challenge.description).not.toContain("available for source review");
     }
 
-    expect(new Set(challenges.map(({ description }) => description)).size).toBe(22);
+    expect(new Set(challenges.map(({ description }) => description)).size).toBe(23);
   });
 });

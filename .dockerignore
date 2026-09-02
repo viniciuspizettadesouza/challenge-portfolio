@@ -1,0 +1,12 @@
+*
+!package.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!challenges/
+challenges/*
+!challenges/challenge-user-management/
+challenges/challenge-user-management/*
+!challenges/challenge-user-management/demo/
+!challenges/challenge-user-management/demo/**
+challenges/challenge-user-management/demo/dist
+challenges/challenge-user-management/demo/node_modules

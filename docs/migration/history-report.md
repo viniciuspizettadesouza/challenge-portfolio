@@ -1,6 +1,6 @@
 # History preservation report
 
-Updated at 2026-07-30 after the approved expansion imports.
+Updated at 2026-09-02 after importing the project-23 sanitized history.
 
 | Repository | Status | Verification |
 | --- | --- | --- |
@@ -26,6 +26,7 @@ Updated at 2026-07-30 after the approved expansion imports.
 | challenge-ingenious-build-frontend | verified | tree=ok, authors=ok, files=30 |
 | challenge-leafwell (`strains` source directory) | verified snapshot | tree=ok, upstream-history=excluded, files=41 |
 | challenge-3cket (`3cket` source branch) | verified snapshot | tree=ok, upstream-history=excluded, files=39, removed=CHALLENGE.pdf, backend/CHALLENGE.pdf, redacted=— |
+| challenge-user-management (neutral public source identity) | verified sanitized history | tree=ok, commits=5, source-head=f73752d, rewritten-head=2c88ede, merge=d1c01d5, files=20, removed=recruitment PDF, neutralized=package name and navigation heading |
 
 Tree comparison uses blob IDs and paths. The initial 20 projects retain their
 verified sanitized histories. On 2026-07-30, the original signed pre-expansion
@@ -42,3 +43,11 @@ continues directly into the unchanged signed pre-expansion head
 The 3cket verification compares the owner-approved source branch
 `3cket` at `11f0bc5bfd3bb6dbf95c8b3d2c328599792d5c16`, not the repository's
 one-commit default `master` branch.
+
+Project 23 preserves all five upstream commits. Its source `main` resolves to
+`f73752d439ab7ae4dbf4aaca579ca19a79443653`; the sanitized path-prefixed
+lineage resolves to `2c88ede2eccf9eb1d5b1f1ea66a0de5bea7aa2d3` and is attached by merge
+`d1c01d5b115ca7c43f55153e4ce3af7b6fc5b42f`. Authors, author dates, commit
+order, and messages match the source. The expansion assessment records the
+complete old-to-new SHA map. The owner will decide publication and source
+cleanup after reviewing the maintained demo.

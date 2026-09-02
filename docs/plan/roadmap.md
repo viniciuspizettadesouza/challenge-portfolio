@@ -24,6 +24,7 @@ future contributors can see what happened and where to continue.
 | 14 — Expansion audit and snapshots | Completed | both signed snapshots imported and verified; 3cket uses its owner-approved solution branch |
 | 15 — Expansion catalog and demos | Completed | metadata, demos, tests, screenshots, and owner review complete |
 | 16 — Expansion quality and publication | Completed | restored signed lineage, verified commits, fresh-clone checks, and Pages deployment complete |
+| 17 — Project 23 expansion | Implemented; owner review pending | sanitized snapshot, complete user-management demo, tests, and Docker path |
 
 ## Phase 0 — Environment
 
@@ -131,3 +132,11 @@ expansion contributor identity remains in the default-branch contributor data,
 and the Pages workflow completed successfully. The owner manually deleted both
 expansion source repositories on 2026-07-30 after confirming their preserved
 snapshots and maintained portfolio replacements.
+
+## Phase 17 — Project 23 expansion
+
+The user-management recruitment project was assessed separately on 2026-09-02.
+Its sanitized snapshot, full Parts 1–4 maintained demo, local service layer,
+unit/Chromium coverage, and standalone Docker path are prepared. Publication,
+production verification, owner review, and any legacy-source cleanup remain
+pending. See `docs/migration/expansion-assessment-user-management.md`.

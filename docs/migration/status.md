@@ -1,6 +1,6 @@
 # Migration status
 
-Last updated: 2026-07-30.
+Last updated: 2026-09-02.
 
 This is the authoritative handoff document. Completed work remains visible.
 Resume from the first phase marked `In progress` or `Pending`.
@@ -24,12 +24,46 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Expansion catalog and demos | Completed | 22 metadata entries, demos, screenshots, and owner review completed |
 | Expansion quality and publication | Completed | restored signed lineage published, fresh-clone validation passed, and Pages verified |
 | Expansion source cleanup | Completed | owner manually deleted `strains` and `nuxt-challenge` on 2026-07-30 |
+| Project 23 assessment and history | Completed | five sanitized commits preserve authors/dates/messages; source, rewritten, and merge SHAs recorded |
+| Project 23 maintained demo | Completed | Parts 1–4, local services, CRUD/pagination, themes, testing, and Docker path implemented |
+| Project 23 owner review and publication | Pending | review unstaged changes, publish, validate Pages, then decide legacy-source cleanup |
 
 ## Current next action
 
-No migration, expansion, or source-repository cleanup action remains. Continue
-with normal portfolio maintenance and verify the Pages workflow after
-publishing future changes.
+Review and publish the unstaged project-23 expansion. After publication, verify
+the challenge detail/fullscreen routes and screenshot on GitHub Pages. Only the
+owner may then decide whether to archive or delete the legacy source repository.
+
+Project-23 evidence is recorded in
+`docs/migration/expansion-assessment-user-management.md`; the earlier expansion
+assessment remains the completed record for projects 21 and 22.
+
+## Project 23 local validation
+
+Validation completed on 2026-09-02 against the unstaged maintained-demo and
+portfolio changes plus the explicitly authorized sanitized-history merge:
+
+- Corepack enabled pnpm 10.13.1; `pnpm install` completed for 25 workspaces;
+- the frozen lockfile install was repeated successfully without network access;
+- inventory generation produced 23 inventory and registry entries;
+- ESLint passed;
+- Astro/TypeScript diagnostics reported 0 errors, warnings, or hints;
+- Vitest passed 74 tests across four files;
+- Playwright passed 23 Chromium interaction tests with no captured browser
+  console or page errors;
+- the screenshot workflow repeated all 23 browser tests successfully and wrote
+  `docs/portfolio/screenshots/challenge-user-management.png`;
+- the standalone Vite build completed;
+- the Astro production build generated 49 static pages, including project 23's
+  detail and fullscreen demo routes;
+- Docker image `challenge-user-management-demo:validation` built successfully;
+  a temporary nginx container returned HTTP 200 and was then removed;
+- `git diff --check` and the five-commit branding/PDF path audit passed.
+
+No repository security script or Gitleaks executable is installed in the
+current workspace. Targeted source/history searches found no secret material;
+the existing repository security documentation remains explicit about the
+tooling used for earlier migrations.
 
 The approved classifications, implementation constraints, and completion
 criteria are recorded in

@@ -23,20 +23,23 @@ deletion remains prohibited.
 
 ## Scope
 
-The repository manifest contains the completed initial 20 repositories and the
-two imported expansion projects in
+The repository manifest contains the completed initial 20 repositories and
+three expansion projects in
 [`scripts/migration/repositories.json`](../../scripts/migration/repositories.json).
 The expansion adds Leafwell (`strains` source repository) as project 21,
 presented as `challenge-leafwell`, and the owner-selected `3cket` branch from
 `nuxt-challenge` as project 22, presented as `challenge-3cket`.
 Their investigation, classifications, and completion criteria are recorded in
 the [expansion assessment](../migration/expansion-assessment.md).
+Project 23 is presented under the neutral `challenge-user-management` identity
+and is assessed separately in
+[its expansion assessment](../migration/expansion-assessment-user-management.md).
 
 ## How to resume
 
-Start with [`../migration/status.md`](../migration/status.md). All implementation
-and publication phases are complete. Use the maintenance runbook for ongoing
-work and update the status and relevant audit documents when evidence changes.
+Start with [`../migration/status.md`](../migration/status.md). Project 23 is
+implemented but its owner review and publication remain pending. Use the
+maintenance runbook and update the status and audit documents when evidence changes.
 The owner deleted both preserved expansion source repositories after verifying
 their signed snapshots and maintained portfolio replacements. No consolidation
 or expansion action remains.
