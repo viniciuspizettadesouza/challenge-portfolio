@@ -25,7 +25,7 @@ future contributors can see what happened and where to continue.
 | 15 — Expansion catalog and demos | Completed | metadata, demos, tests, screenshots, and owner review complete |
 | 16 — Expansion quality and publication | Completed | restored signed lineage, verified commits, fresh-clone checks, and Pages deployment complete |
 | 17 — Project 23 expansion | Completed | revision `6caced1`, Pages verification, and owner-confirmed legacy repository deletion |
-| 18 — Post-consolidation hardening | Planned | CI browser coverage, security automation, accessibility, catalog discovery, and a final release milestone |
+| 18 — Post-consolidation hardening | In progress | CI browser coverage completed; security automation is next |
 
 ## Phase 0 — Environment
 
@@ -150,9 +150,11 @@ repository after its sanitized history and source were preserved here. See
 This is an optional maintenance backlog, not unfinished migration work. Address
 items independently in the following priority order:
 
-- [ ] **P0 — Browser tests in CI:** run the Playwright suite in GitHub Actions,
+- [x] **P0 — Browser tests in CI:** run the Playwright suite in GitHub Actions,
   install the pinned Chromium dependency, and retain its report as a failed-run
   artifact. Keep screenshot regeneration an explicit maintenance operation.
+  Evidence: `.github/workflows/browser-tests.yml` and the separate
+  `pnpm screenshots` command.
 - [ ] **P0 — Dependency and security automation:** configure automated pnpm and
   GitHub Actions update proposals, add a reproducible secret scan, and document
   how maintainers review findings and false positives.

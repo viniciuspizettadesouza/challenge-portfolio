@@ -23,9 +23,12 @@ pnpm test:e2e
 pnpm build
 ```
 
-`pnpm test:e2e` builds and previews the site, exercises all 23 demos in
-Chromium, and refreshes the representative screenshots. It requires the
-Playwright Chromium browser installed for the current Playwright version.
+`pnpm test:e2e` builds and previews the site and exercises all 23 demos in
+Chromium without changing the tracked screenshots. It requires the Playwright
+Chromium browser installed for the current Playwright version. The dedicated
+browser workflow runs the same command for pushes to `main`, pull requests,
+and manual dispatches; failed runs retain the HTML report and traces for 14
+days.
 
 ## 3. Maintain challenge metadata
 
@@ -53,8 +56,8 @@ Review changes to `docs/migration/inventory.json`,
 pnpm screenshots
 ```
 
-The command replaces all 23 images under `docs/portfolio/screenshots/`. Review
-visual changes before committing them.
+The command runs the interaction suite and replaces all 23 images under
+`docs/portfolio/screenshots/`. Review visual changes before committing them.
 
 ## 5. Deploy
 

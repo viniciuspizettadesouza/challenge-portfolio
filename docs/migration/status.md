@@ -29,13 +29,16 @@ Resume from the first phase marked `In progress` or `Pending`.
 | Project 23 initial publication | Completed | integration revision `8227df4` is present on `origin/main` |
 | Project 23 coverage follow-up | Completed | revision `6caced1` is on `origin/main`; the 23-project home and project-23 Pages routes were verified |
 | Project 23 source cleanup | Completed | owner confirmed deletion of the superseded source repository on 2026-09-02 after preservation and publication |
-| Post-consolidation hardening | Planned | optional prioritized backlog is recorded as roadmap phase 18 |
+| Post-consolidation hardening | In progress | Playwright CI coverage implemented; dependency and security automation is next |
 
 ## Current next action
 
-Start with the Phase 18 P0 backlog in `docs/plan/roadmap.md`: add Playwright to
-CI, then add dependency and security automation. These are optional maintenance
-improvements; no consolidation or source-cleanup work remains.
+Continue the Phase 18 P0 backlog in `docs/plan/roadmap.md`: add dependency and
+security automation. Playwright now runs in a dedicated GitHub Actions workflow
+for pushes to `main`, pull requests, and manual dispatches; its lockfile-matched
+Chromium browser is installed in CI, failed-run reports are retained for 14
+days, and screenshot regeneration remains explicit. These are optional
+maintenance improvements; no consolidation or source-cleanup work remains.
 
 Project-23 evidence is recorded in
 `docs/migration/expansion-assessment-user-management.md`; the earlier expansion

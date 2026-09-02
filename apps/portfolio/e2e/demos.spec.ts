@@ -28,12 +28,15 @@ async function openDemo(page: Page, slug: string) {
 }
 
 async function capture(page: Page, slug: string, errors: string[]) {
+  expect(errors, `browser errors in ${slug}`).toEqual([]);
+
+  if (process.env.UPDATE_SCREENSHOTS !== "1") return;
+
   await mkdir(screenshotDirectory, { recursive: true });
   await page.screenshot({
     path: `${screenshotDirectory}/${slug}.png`,
     fullPage: true,
   });
-  expect(errors, `browser errors in ${slug}`).toEqual([]);
 }
 
 test("3cket searches the imported event fixture and opens details", async ({ page }) => {
