@@ -208,9 +208,9 @@ function addResult() {
 <style scoped>
 .climate-demo {
   --ink: #173128;
-  --muted: #61736c;
+  --muted: #52615b;
   --line: #dbe8e1;
-  --green: #178957;
+  --green: #0b7045;
   color: var(--ink);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

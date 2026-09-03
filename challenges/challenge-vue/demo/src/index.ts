@@ -1,5 +1,4 @@
-import OriginalApp from "../../original/src/App.vue";
+import AccessibleApp from "./AccessibleApp.vue";
 import "./styles.css";
 
-export default OriginalApp;
-
+export default AccessibleApp;

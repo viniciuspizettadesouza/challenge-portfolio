@@ -206,9 +206,9 @@ onMounted(() => {
 <style scoped>
 .meetime-demo {
   --charcoal: #3c3c3c;
-  --coral: #f05b56;
+  --coral: #b83f3b;
   --ink: #313940;
-  --muted: #7b8790;
+  --muted: #59666f;
   --line: #dfe4e7;
   width: 100%;
   min-height: 43rem;
@@ -384,7 +384,7 @@ onMounted(() => {
   position: absolute;
   right: 0.5rem;
   bottom: 0.65rem;
-  color: #9aa3a9;
+  color: #59666f;
   font-size: 0.58rem;
   font-style: normal;
 }

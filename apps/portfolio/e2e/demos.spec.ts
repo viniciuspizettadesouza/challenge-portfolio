@@ -20,6 +20,8 @@ async function openDemo(page: Page, slug: string) {
     "href",
     `/challenge-portfolio/challenges/${slug}`,
   );
+  await expect(page.locator("astro-island[ssr]")).toHaveCount(0, { timeout: 10_000 });
+  expect(errors, `hydration errors in ${slug}`).toEqual([]);
   await page.addStyleTag({
     content: "*, *::before, *::after { animation: none !important; transition: none !important; }",
   });

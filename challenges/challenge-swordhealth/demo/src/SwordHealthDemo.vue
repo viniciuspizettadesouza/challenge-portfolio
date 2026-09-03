@@ -326,6 +326,7 @@ button { font: inherit; }
   margin: 0 0 .45rem; color: var(--cyan); font-size: .68rem; font-weight: 900;
   letter-spacing: .12em; text-transform: uppercase;
 }
+.articles-section header p { color: #2452a6; }
 .hero h2 { max-width: 15ch; margin: 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: .98; }
 .hero div > span { display: block; max-width: 55ch; margin-top: 1rem; color: #d9e5ff; font-size: .85rem; line-height: 1.6; }
 .hero button { margin-top: 1.3rem; padding: .7rem 1rem; border: 0; border-radius: .45rem; color: var(--navy); background: var(--cyan); font-weight: 900; cursor: pointer; }

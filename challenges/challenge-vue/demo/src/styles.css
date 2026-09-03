@@ -1,49 +1,49 @@
-#app {
+.vue-demo {
   color: #18221c;
 }
 
-#app [className="container"],
-#app .container {
+.vue-demo [className="container"],
+.vue-demo .container {
   padding: 1.5rem;
   color: #18221c;
   background: #f8faf8;
   border-radius: 0.35rem;
 }
 
-#app .row {
+.vue-demo .row {
   display: flex;
   gap: 1rem;
   margin-block: 0.75rem;
 }
 
-#app .col {
+.vue-demo .col {
   flex: 1;
 }
 
-#app .text-end {
+.vue-demo .text-end {
   text-align: right;
 }
 
-#app .border {
+.vue-demo .border {
   border: 1px solid #cbd5ce;
 }
 
-#app .px-2 {
+.vue-demo .px-2 {
   padding-inline: 0.75rem;
 }
 
-#app .py-2,
-#app .py-3 {
+.vue-demo .py-2,
+.vue-demo .py-3 {
   padding-block: 0.75rem;
 }
 
-#app .form-label {
+.vue-demo .form-label {
   display: block;
   margin-bottom: 0.35rem;
   font-weight: 700;
 }
 
-#app .form-select {
+.vue-demo .form-select {
   width: 100%;
   min-height: 2.5rem;
   color: #18221c;
@@ -52,11 +52,19 @@
   border-radius: 0.25rem;
 }
 
-#app .form-check-input {
+.vue-demo .form-check-input {
   margin-right: 0.5rem;
 }
 
-#app h3 {
+.vue-demo h3 {
   margin: 0 0 1rem;
 }
 
+.vue-demo .vue-demo-checkbox-labels {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

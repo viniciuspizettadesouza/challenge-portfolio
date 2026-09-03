@@ -184,9 +184,9 @@ onMounted(() => {
 <style scoped>
 .blueticket-demo {
   --blue: #1464c0;
-  --cyan: #20a7e8;
+  --cyan: #08749e;
   --ink: #16324a;
-  --muted: #718096;
+  --muted: #556978;
   --line: #dfe8ef;
   width: 100%;
   min-height: 42rem;
@@ -217,7 +217,7 @@ onMounted(() => {
 
 .blueticket-header p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -518,7 +518,7 @@ onMounted(() => {
 .forecast footer {
   padding: 0.85rem 1.4rem;
   border-top: 1px solid var(--line);
-  color: #81909c;
+  color: #596b77;
   background: #f9fbfc;
   font-size: 0.65rem;
   line-height: 1.5;

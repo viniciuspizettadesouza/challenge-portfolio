@@ -1,6 +1,6 @@
 .lago-demo {
   --lago-ink: #17212b;
-  --lago-muted: #73808d;
+  --lago-muted: #596673;
   --lago-line: #e4e8ec;
   width: 100%;
   overflow: hidden;
@@ -97,7 +97,7 @@
 
 .lago-intro p {
   margin-bottom: 0.3rem;
-  color: #d84775;
+  color: #a92b55;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.1em;

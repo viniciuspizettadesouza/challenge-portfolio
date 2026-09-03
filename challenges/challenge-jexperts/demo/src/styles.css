@@ -1,8 +1,8 @@
 .jexperts-demo {
-  --blue: #3483fa;
+  --blue: #1d66b3;
   --orange: #ff8a00;
   --ink: #263238;
-  --muted: #7b858b;
+  --muted: #59666d;
   --line: #e0e4e7;
   width: 100%;
   min-height: 44rem;
@@ -80,9 +80,15 @@
   padding: 0 1rem;
   border: 1px solid #d6dce0;
   border-radius: 0.25rem;
-  color: #59666d;
+  color: #37474f;
+  background: white;
   text-align: center;
   outline: 0;
+}
+
+.jexperts-directory input::placeholder {
+  color: #37474f;
+  opacity: 1;
 }
 
 .jexperts-directory input:focus {
@@ -92,7 +98,7 @@
 
 .jexperts-directory > small {
   margin-top: 0.45rem;
-  color: #a0a7ac;
+  color: #5f696f;
   font-size: 0.62rem;
 }
 
@@ -138,7 +144,7 @@
 
 .jexperts-empty {
   margin: 1rem 0;
-  color: #999;
+  color: #5f696f;
   font-size: clamp(1.15rem, 4vw, 1.8rem);
   font-weight: 750;
 }
@@ -156,7 +162,7 @@
 .jexperts-demo > footer {
   padding: 0.8rem 1rem;
   border-top: 1px solid var(--line);
-  color: #9aa2a7;
+  color: #5f696f;
   background: #fafbfb;
   font-size: 0.62rem;
   text-align: center;
@@ -290,7 +296,7 @@
 }
 
 .jexperts-form label small {
-  color: #9aa3a8;
+  color: #5f696f;
   font-size: 0.58rem;
   font-weight: 400;
 }

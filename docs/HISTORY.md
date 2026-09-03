@@ -193,42 +193,21 @@ Only a proven false positive may receive an exact fingerprint entry with an
 explanatory comment in `.gitleaksignore`; broad path, rule, regex, or entropy
 allowlists are prohibited. Rerun the complete-history scan after any exception.
 
-## Accessibility baseline and deferrals
+## Accessibility baseline
 
-Established on 2026-09-02, Playwright and axe cover the shared home, catalog,
-detail, and about routes plus all 23 fullscreen demos against applicable WCAG
-2.0 A/AA, 2.1 A/AA, and 2.2 AA rules. Full contrast checks cover the shared
-shell and representative Astro (Conaz, Devlandia), React (Pipz, Salsify), and
-Vue (Vue.js) demos. Keyboard coverage verifies the catalog skip link, target
-focus, the first target on every demo, and the shared three-pixel focus ring.
+Established on 2026-09-02 and completed across every demo on 2026-09-03,
+Playwright and axe cover the shared home, catalog, detail, and about routes plus
+all 23 fullscreen demos against applicable WCAG 2.0 A/AA, 2.1 A/AA, and 2.2 AA
+rules. Full contrast analysis now runs on the shared shell and every maintained
+demo. Keyboard coverage verifies the catalog skip link, target focus, the first
+target on every demo, and the shared three-pixel focus ring.
 
-Vue.js, Conaz, Zygo, Salsify, Devlandia, Pipz, and PropertiaG passed every
-selected rule. The remaining findings stay explicit:
-
-| Demo            | Deferred finding                                                                   |
-| --------------- | ---------------------------------------------------------------------------------- |
-| Stormtech       | Muted labels and ordering text contrast                                            |
-| Vue             | Four inherited checkboxes lack individual labels                                   |
-| Castlabs        | Brand, supporting copy, and action contrast                                        |
-| JExperts        | Buttons, inputs, supporting text, and footer contrast                              |
-| ClimateSeed     | Eyebrows, inactive toggle, and submit-action contrast                              |
-| Lagoasoft       | Supporting post-metadata contrast                                                  |
-| Meetime         | Supporting copy and primary-action contrast                                        |
-| Instruct        | Result metadata and contact-detail contrast                                        |
-| Blueticket      | Supporting copy and table-heading contrast; table region is now keyboard-focusable |
-| Sword Health    | Article supporting-copy contrast                                                   |
-| FYLD / HanseCom | Search-hint and metadata contrast                                                  |
-| OnSign TV       | Supporting copy, table-heading, and about-copy contrast                            |
-| Ingenious Build | Metadata, inactive tab, panel label, and empty-state contrast                      |
-| Leafwell        | Directory result-count contrast                                                    |
-| 3cket           | Navigation and event-list supporting-copy contrast                                 |
-| User Management | Authentication-eyebrow and inactive-tab contrast                                   |
-
-Contrast changes require owner visual review and screenshot regeneration
-because the colors are fidelity-preserving. Vue's four known checkbox
-exceptions are scoped only to controls rendered by the immutable historical
-component and require a maintained wrapper, never an `original/` edit. No
-global accessibility rule was disabled.
+The maintenance pass corrected supporting-text, control, table-heading, and
+action contrast in 15 demos. The Vue demo supplies maintained, visually hidden
+labels for four controls whose immutable historical component reuses the wrong
+`for` target. All explicit axe exclusions and the contrast sampling allowlist
+were removed, and the refreshed screenshots record the small fidelity-preserving
+color changes.
 
 ## Validation and publication record
 
@@ -239,6 +218,7 @@ global accessibility rule was disabled.
 | Projects 21–22 · `1b0c16e` | 24 workspaces; frozen install; lint and typecheck; 68 unit and 22 Chromium tests; 22 screenshots; 47 pages; production home/catalog and four new routes returned HTTP 200                                  |
 | Project 23 · `6caced1`     | 25 workspaces; offline frozen install; lint and typecheck; 77 unit and 24 Chromium tests; 23 screenshots; 49 pages; standalone Vite and Docker/nginx builds; production home/detail/demo returned HTTP 200 |
 | Phase 18 · `6e79caf`       | Lint and typecheck; 80 unit tests; 51 Chromium tests (24 interactions, 25 accessibility, 2 catalog); 49 pages; Gitleaks over 310 commits; no screenshot changes                                            |
+| 2026-09-03 maintenance     | Compatible dependency updates; lint and typecheck; 80 unit tests; 51 Chromium tests with full accessibility coverage; 49 pages; Gitleaks over 316 commits; 23 reviewed screenshots                |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

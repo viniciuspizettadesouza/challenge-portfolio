@@ -220,7 +220,7 @@ function submitSearch() {
   display: grid;
   place-items: center;
   min-height: 15rem;
-  color: #777;
+  color: #595959;
   text-align: center;
 }
 

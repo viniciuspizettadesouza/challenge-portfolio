@@ -193,7 +193,7 @@ button, input { font: inherit; }
 }
 .ticket-brand strong { font-size: 1rem; letter-spacing: -.04em; }
 .ticket-nav nav { gap: .7rem; }.ticket-nav nav button { border: 0; background: transparent; font-weight: 800; cursor: pointer; }
-.ticket-nav nav span { color: #72798a; font-size: .65rem; }
+.ticket-nav nav span { color: #555e70; font-size: .65rem; }
 .ticket-hero {
   display: grid; grid-template-columns: 1fr auto; align-items: end; min-height: 20rem;
   padding: clamp(2rem, 6vw, 4.5rem); color: white;
@@ -219,7 +219,8 @@ button, input { font: inherit; }
   background: var(--ticket-blue); font-weight: 850; cursor: pointer;
 }
 .events-heading { justify-content: space-between; margin: 2rem 0 1rem; }
-.events-heading h3 { margin: 0; font-size: 1.65rem; }.events-heading > span { color: #6d7587; font-size: .7rem; }
+.events-heading p { color: #2346a0; }
+.events-heading h3 { margin: 0; font-size: 1.65rem; }.events-heading > span { color: #596274; font-size: .7rem; }
 .event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .event-grid article { overflow: hidden; border: 1px solid #e0e4ec; border-radius: .8rem; background: white; box-shadow: 0 8px 25px rgba(24,33,57,.05); }
 .event-grid article > button { width: 100%; padding: 0; border: 0; color: inherit; background: transparent; text-align: left; cursor: pointer; }

@@ -23,7 +23,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "pnpm build && pnpm preview --host 127.0.0.1 --port 4322",
+    command:
+      "pnpm build && ASTRO_PREVIEW_BACKGROUND=0 pnpm preview --host 127.0.0.1 --port 4322",
     url: "http://127.0.0.1:4322/challenge-portfolio/",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

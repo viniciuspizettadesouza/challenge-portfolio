@@ -272,7 +272,7 @@ function removeCategory(category: string) {
 }
 
 .result-count span {
-  color: #77758b;
+  color: #5b586c;
   font-size: 0.68rem;
 }
 
@@ -421,7 +421,7 @@ td:nth-child(3) {
 
 .contact-cell a,
 td small {
-  color: #77758b;
+  color: #5b586c;
   font-size: 0.64rem;
   text-decoration: none;
 }

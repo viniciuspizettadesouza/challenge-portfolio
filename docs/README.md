@@ -105,6 +105,12 @@ Three GitHub Actions workflows protect `main`:
 Dependabot checks npm and GitHub Actions dependencies every Monday. Review its
 pull requests with the same quality gate as application changes.
 
+The npm configuration temporarily excludes TypeScript 7 because Astro Check
+and typescript-eslint still require the TypeScript 6 API, and Vue
+3.5.41–3.5.42 because they leave the portfolio's Composition API islands
+unhydrated. Remove each narrow exclusion after upstream compatibility is
+verified by the complete quality gate.
+
 Treat every secret-scanner finding as real until investigated. Identify the
 commit and fingerprint, rotate any live credential, and remove it from current
 code. Suppress only a proven false positive with the smallest exact
@@ -120,11 +126,11 @@ the axe accessibility engine into those pages. Both are needed because browser
 correctness and automated accessibility analysis cover different failure
 classes.
 
-The Phase 18 baseline remediated portfolio-shell violations and records the
-remaining third-party or historical demo limitations as explicit deferrals.
-Do not broaden exclusions merely to make tests pass. Reassess deferrals when a
-maintained demo is materially changed. See the
-[accessibility baseline](HISTORY.md#accessibility-baseline-and-deferrals) and
+The Phase 18 baseline introduced portfolio-shell and representative-demo
+coverage. The September maintenance pass extended contrast analysis to every
+maintained demo and removed all explicit axe exclusions. Preserve that complete
+baseline when a demo is materially changed. See the
+[accessibility baseline](HISTORY.md#accessibility-baseline) and
 [demo fidelity record](HISTORY.md#maintained-demo-fidelity).
 
 ## Deployment

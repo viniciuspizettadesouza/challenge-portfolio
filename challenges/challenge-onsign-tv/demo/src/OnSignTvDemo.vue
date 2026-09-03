@@ -171,9 +171,9 @@ onMounted(() => {
 <style scoped>
 .onsign-demo {
   --navy: #26374d;
-  --blue: #1678ca;
-  --sky: #48acd7;
-  --muted: #718096;
+  --blue: #1d659c;
+  --sky: #12698f;
+  --muted: #526779;
   --line: #dce4eb;
   width: 100%;
   min-height: 42rem;
@@ -434,7 +434,7 @@ onMounted(() => {
   padding: 1rem 1.2rem;
   border: 1px solid #dcecf4;
   border-radius: 0.45rem;
-  color: #607687;
+  color: #4f6575;
   background: #eff9fd;
   font-size: 0.7rem;
   line-height: 1.55;

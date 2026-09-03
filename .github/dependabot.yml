@@ -8,6 +8,13 @@ updates:
       time: "06:00"
       timezone: Europe/Lisbon
     open-pull-requests-limit: 5
+    ignore:
+      # Astro Check and typescript-eslint do not support the TypeScript 7 API yet.
+      - dependency-name: typescript
+        versions: [">=7.0.0"]
+      # Vue 3.5.41–3.5.42 leave the Composition API demo islands unhydrated.
+      - dependency-name: vue
+        versions: ["3.5.41", "3.5.42"]
     groups:
       production-dependencies:
         dependency-type: production

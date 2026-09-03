@@ -182,7 +182,7 @@ function showView(view: "lines" | "stops") {
   --blue: #1952e1;
   --navy: #24345f;
   --ink: #20242a;
-  --muted: #777d88;
+  --muted: #555b66;
   --line: #e8eaf0;
   display: grid;
   gap: 1rem;
@@ -261,7 +261,7 @@ function showView(view: "lines" | "stops") {
   padding: 1rem;
   border: 0;
   border-bottom: 2px solid transparent;
-  color: #969aa3;
+  color: #5d616a;
   background: transparent;
   font: inherit;
   font-size: 0.82rem;
@@ -417,7 +417,7 @@ function showView(view: "lines" | "stops") {
 
 .empty-state small {
   margin-top: 0.3rem;
-  color: #9a9da4;
+  color: #626772;
   font-size: 0.68rem;
 }
 

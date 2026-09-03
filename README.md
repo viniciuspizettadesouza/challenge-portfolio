@@ -27,8 +27,8 @@ The usual validation commands are `pnpm lint`, `pnpm typecheck`, `pnpm test`,
 - [Challenge library](docs/README.md#challenge-library)
 - [Distilled migration and hardening history](docs/HISTORY.md)
 
-Migration Phases 0–18 are complete. Routine dependency, CI, security, and
-accessibility maintenance is the current work; no migration task is pending.
+Migration Phases 0–18 are complete. Routine dependency, CI, and security
+maintenance is the current work; no migration task is pending.
 
 Automated agents leave changes unstaged and unpublished unless the repository
 owner explicitly directs otherwise. See [AGENTS.md](AGENTS.md).

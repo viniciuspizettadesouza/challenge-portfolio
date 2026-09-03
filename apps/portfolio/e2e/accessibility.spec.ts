@@ -13,13 +13,7 @@ const challenges = JSON.parse(
 ) as ChallengeRoute[];
 
 const wcagTags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
-const fullAuditSlugs = new Set([
-  "challenge-conaz",
-  "challenge-devlandia",
-  "challenge-pipz",
-  "challenge-salsify",
-  "challenge-vuejs",
-]);
+const fullAuditSlugs = new Set(challenges.map(({ slug }) => slug));
 
 async function expectAccessible(
   page: Page,
@@ -39,7 +33,11 @@ async function expectAccessible(
     violations.map(({ id, impact, nodes }) => ({
       id,
       impact,
-      targets: nodes.map((node) => node.target.join(" ")),
+      nodes: nodes.map(({ failureSummary, html, target }) => ({
+        failureSummary,
+        html,
+        target: target.join(" "),
+      })),
     })),
   ).toEqual([]);
 }
@@ -74,10 +72,6 @@ for (const challenge of challenges.filter(({ demoPath }) => demoPath)) {
   }) => {
     await expectAccessible(page, `demos/${challenge.slug}`, {
       checkContrast: fullAuditSlugs.has(challenge.slug),
-      exclude:
-        challenge.slug === "challenge-vue"
-          ? ['[id="2"]', '[id="3"]', '[id="4"]', '[id="5"]']
-          : undefined,
     });
 
     await page.keyboard.press("Tab");

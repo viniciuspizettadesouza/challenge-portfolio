@@ -24,7 +24,7 @@
 .um-brand { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; letter-spacing: -.02em; }
 .um-brand > span { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 9px 3px 9px 3px; background: var(--accent); color: #173017; font-size: 16px; }
 .um-auth-copy .um-brand { position: absolute; top: 36px; left: clamp(30px, 5vw, 76px); }
-.um-eyebrow { margin: 0 0 8px; color: #7da02f; font-size: 12px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.um-eyebrow { margin: 0 0 8px; color: #536d20; font-size: 12px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .um-auth-copy .um-eyebrow { color: var(--accent); }
 .um-auth-copy h1 { margin: 0; max-width: 620px; font-family: Georgia, serif; font-size: clamp(42px, 5vw, 68px); font-weight: 500; line-height: 1.02; letter-spacing: -.045em; }
 .um-auth-copy > p:not(.um-eyebrow) { max-width: 500px; margin: 26px 0; color: #b8c8c2; font-size: 17px; line-height: 1.65; }
@@ -36,7 +36,7 @@
 .um-auth-card { width: min(430px, 100%); padding: 36px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: 0 24px 60px rgba(22, 43, 36, .09); }
 .um-auth-card h2, .um-editor h2 { margin: 0; font-family: Georgia, serif; font-size: 34px; font-weight: 500; letter-spacing: -.03em; }.um-auth-card > p:not(.um-eyebrow) { color: var(--muted); }
 .um-tabs { display: grid; grid-template-columns: 1fr 1fr; margin: 25px 0; padding: 4px; border-radius: 10px; background: var(--canvas); }
-.um-tabs button { padding: 9px; border: 0; border-radius: 8px; color: var(--muted); background: transparent; }.um-tabs button[aria-selected="true"] { color: var(--ink); background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.07); font-weight: 700; }
+.um-tabs button { padding: 9px; border: 0; border-radius: 8px; color: #596660; background: transparent; }.um-tabs button[aria-selected="true"] { color: var(--ink); background: var(--surface); box-shadow: 0 2px 8px rgba(0,0,0,.07); font-weight: 700; }
 .um-form { display: grid; gap: 16px; }.um-form label { display: grid; gap: 7px; color: var(--ink); font-size: 13px; font-weight: 700; }.um-form input { width: 100%; padding: 12px 13px; color: var(--ink); border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }.um-form input:focus { border-color: #83ad32; }
 .um-primary, .um-danger, .um-quiet { min-height: 42px; padding: 10px 17px; border-radius: 9px; font-weight: 750; }
 .um-primary { border: 1px solid #93c73d; background: var(--accent); color: var(--accent-ink); }.um-primary:hover { filter: brightness(.96); }.um-primary:disabled { opacity: .55; cursor: progress; }

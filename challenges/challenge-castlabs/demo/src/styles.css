@@ -1,7 +1,7 @@
 .castlabs-demo {
-  --castlabs-blue: #3b82f6;
+  --castlabs-blue: #1d5faa;
   --castlabs-navy: #14213d;
-  --castlabs-muted: #64748b;
+  --castlabs-muted: #526175;
   --castlabs-line: #e2e8f0;
   width: 100%;
   min-height: 42rem;
@@ -388,8 +388,8 @@
 }
 
 .castlabs-button--danger {
-  border-color: #ef4444;
-  background: #ef4444;
+  border-color: #b42323;
+  background: #b42323;
 }
 
 .castlabs-button--quiet {
