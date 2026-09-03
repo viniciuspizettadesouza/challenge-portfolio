@@ -14,7 +14,7 @@
     "screenshots": "UPDATE_SCREENSHOTS=1 playwright test"
   },
   "dependencies": {
-    "@astrojs/react": "6.0.4",
+    "@astrojs/react": "6.0.5",
     "@astrojs/vue": "7.0.2",
     "@challenge/3cket-demo": "workspace:*",
     "@challenge/blueticket-demo": "workspace:*",
@@ -41,7 +41,7 @@
     "@challenge/zygo-demo": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
-    "astro": "7.2.9",
+    "astro": "7.2.10",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "vue": "3.5.40"
