@@ -1,0 +1,35 @@
+---
+interface Props {
+  destination: string;
+  title: string;
+}
+
+const { destination, title } = Astro.props;
+const canonicalUrl = new URL(destination, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="refresh" content={`0; url=${destination}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{title} — Challenge Portfolio</title>
+  </head>
+  <body>
+    <main>
+      <h1>This portfolio entry has moved</h1>
+      <p>
+        <a id="canonical-destination" href={destination}>Continue to {title}</a>
+      </p>
+    </main>
+    <script>
+      const destination = document.querySelector<HTMLAnchorElement>(
+        "#canonical-destination",
+      );
+      if (destination) window.location.replace(destination.href);
+    </script>
+  </body>
+</html>

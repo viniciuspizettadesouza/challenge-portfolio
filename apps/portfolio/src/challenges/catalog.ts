@@ -3,6 +3,7 @@ import type { Challenge, ChallengeRenderer } from "./registry";
 export interface CatalogFilters {
   adaptation: string;
   framework: string;
+  theme: string;
   technology: string;
 }
 
@@ -21,12 +22,16 @@ export const adaptationLabels: Record<Challenge["migrationStrategy"], string> =
     "upgrade-vue2": "Vue 2 upgrade",
     "upgrade-react": "React upgrade",
     "mock-backend": "Local backend fixture",
+    consolidated: "Consolidated",
     "case-study": "Case study",
     "manual-review": "Manual review",
   };
 
 export function getCatalogFacets(challenges: Challenge[]) {
   return {
+    themes: [...new Set(challenges.flatMap(({ themes }) => themes))].sort(
+      (left, right) => left.localeCompare(right),
+    ),
     technologies: [
       ...new Set(challenges.flatMap(({ technologies }) => technologies)),
     ].sort((left, right) => left.localeCompare(right)),
@@ -50,6 +55,7 @@ export function filterChallenges(
     (challenge) =>
       (!filters.technology ||
         challenge.technologies.includes(filters.technology)) &&
+      (!filters.theme || challenge.themes.includes(filters.theme)) &&
       (!filters.framework || challenge.renderer === filters.framework) &&
       (!filters.adaptation ||
         challenge.migrationStrategy === filters.adaptation),

@@ -1,6 +1,6 @@
-# Technical inventory
+# Historical source inventory
 
-Generated at 2026-09-03T17:38:16.400Z without installing historical dependencies.
+Generated at 2026-09-06T22:09:31.762Z for 23 preserved source repositories without installing historical dependencies.
 
 | Challenge | Imported | Framework | Bundler | Strategy | Review |
 | --- | --- | --- | --- | --- | --- |

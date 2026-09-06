@@ -14,7 +14,7 @@ const facets = getCatalogFacets(challenges);
 
 <BaseLayout title="Challenges — Challenge Portfolio">
   <section class="page-intro">
-    <p class="eyebrow">23 challenges, one catalog</p>
+    <p class="eyebrow">23 preserved sources, 21 curated entries</p>
     <h1>Challenges</h1>
     <p>
       Each page documents the preserved source, its context, and the strategy
@@ -38,6 +38,13 @@ const facets = getCatalogFacets(challenges);
       action={withBase("challenges")}
       method="get"
     >
+      <label>
+        Theme
+        <select name="theme" disabled>
+          <option value="">All themes</option>
+          {facets.themes.map((theme) => <option value={theme}>{theme}</option>)}
+        </select>
+      </label>
       <label>
         Technology
         <select name="technology" disabled>
@@ -87,6 +94,7 @@ const facets = getCatalogFacets(challenges);
           <div
             class="catalog-entry"
             data-technology={challenge.technologies.join("|")}
+            data-theme={challenge.themes.join("|")}
             data-framework={challenge.renderer}
             data-adaptation={challenge.migrationStrategy}
           >
@@ -110,7 +118,12 @@ const facets = getCatalogFacets(challenges);
     "#clear-catalog-filters",
   );
   const entries = [...document.querySelectorAll<HTMLElement>(".catalog-entry")];
-  const filterNames = ["technology", "framework", "adaptation"] as const;
+  const filterNames = [
+    "theme",
+    "technology",
+    "framework",
+    "adaptation",
+  ] as const;
 
   function controls() {
     return Object.fromEntries(
@@ -144,6 +157,10 @@ const facets = getCatalogFacets(challenges);
     for (const entry of entries) {
       const technologies = (entry.dataset.technology ?? "").split("|");
       const matches =
+        (!selects.theme.value ||
+          (entry.dataset.theme ?? "")
+            .split("|")
+            .includes(selects.theme.value)) &&
         (!selects.technology.value ||
           technologies.includes(selects.technology.value)) &&
         (!selects.framework.value ||

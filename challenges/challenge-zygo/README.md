@@ -1,5 +1,9 @@
 # Zygo Challenge
 
+> Portfolio note: this challenge's maintained demo is now consolidated into
+> **Configurable Book Sorting**. The source below remains as immutable
+> historical evidence.
+
 History imported, sanitized, and verified.
 
 ## Portfolio presentation

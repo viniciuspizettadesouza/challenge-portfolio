@@ -1,85 +1,27 @@
 ---
-import ThreeCketDemo from "@challenge/3cket-demo";
-import BlueticketDemo from "@challenge/blueticket-demo";
-import CastlabsDemo from "@challenge/castlabs-demo";
-import ClimateSeedDemo from "@challenge/climateseed-demo";
-import ConazDemo from "@challenge/conaz-demo";
-import DevlandiaDemo from "@challenge/devlandia-demo";
-import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
-import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
-import InstructDemo from "@challenge/instruct-demo";
-import JExpertsDemo from "@challenge/jexperts-demo";
-import LagoasoftDemo from "@challenge/lagoasoft-demo";
-import MeetimeDemo from "@challenge/meetime-demo";
-import OnSignTvDemo from "@challenge/onsign-tv-demo";
-import PipzDemo from "@challenge/pipz-demo";
-import PropertiaGDemo from "@challenge/propertiag-demo";
-import SalsifyDemo from "@challenge/salsify-demo";
-import StormtechDemo from "@challenge/stormtech-demo";
-import StrainsDemo from "@challenge/strains-demo";
-import SwordHealthDemo from "@challenge/swordhealth-demo";
-import UserManagementDemo from "@challenge/user-management-demo";
-import VueDemo from "@challenge/vue-demo";
-import VueJsDemo from "@challenge/vuejs-demo";
-import ZygoDemo from "@challenge/zygo-demo";
+import { getChallenge } from "../challenges/registry";
+import ReactDemoHost from "./demos/ReactDemoHost";
+import StaticDemoHost from "./demos/StaticDemoHost.astro";
+import VueDemoHost from "./demos/VueDemoHost.vue";
 
 interface Props {
   slug: string;
 }
 
 const { slug } = Astro.props;
+const challenge = getChallenge(slug);
 ---
 
 {
-  slug === "challenge-3cket" ? (
-    <ThreeCketDemo client:load />
-  ) : slug === "challenge-blueticket" ? (
-    <BlueticketDemo client:load />
-  ) : slug === "challenge-castlabs" ? (
-    <CastlabsDemo client:load />
-  ) : slug === "challenge-climateseed" ? (
-    <ClimateSeedDemo client:load />
-  ) : slug === "challenge-salsify" ? (
-    <SalsifyDemo client:load />
-  ) : slug === "challenge-vue" ? (
-    <VueDemo client:load />
-  ) : slug === "challenge-vuejs" ? (
-    <VueJsDemo client:load />
-  ) : slug === "challenge-conaz" ? (
-    <ConazDemo />
-  ) : slug === "challenge-zygo" ? (
-    <ZygoDemo />
-  ) : slug === "challenge-devlandia" ? (
-    <DevlandiaDemo />
-  ) : slug === "challenge-fyld-hansecom" ? (
-    <FyldHansecomDemo client:load />
-  ) : slug === "challenge-ingenious-build-frontend" ? (
-    <IngeniousBuildDemo client:load />
-  ) : slug === "challenge-instruct" ? (
-    <InstructDemo client:load />
-  ) : slug === "challenge-jexperts" ? (
-    <JExpertsDemo client:load />
-  ) : slug === "challenge-lagoasoft" ? (
-    <LagoasoftDemo client:load />
-  ) : slug === "challenge-meetime" ? (
-    <MeetimeDemo client:load />
-  ) : slug === "challenge-onsign-tv" ? (
-    <OnSignTvDemo client:load />
-  ) : slug === "challenge-pipz" ? (
-    <PipzDemo client:load />
-  ) : slug === "challenge-propertiag" ? (
-    <PropertiaGDemo client:load />
-  ) : slug === "challenge-stormtech" ? (
-    <StormtechDemo client:load />
-  ) : slug === "challenge-leafwell" ? (
-    <StrainsDemo client:load />
-  ) : slug === "challenge-swordhealth" ? (
-    <SwordHealthDemo client:load />
-  ) : slug === "challenge-user-management" ? (
-    <UserManagementDemo client:load />
+  challenge?.renderer === "react" ? (
+    <ReactDemoHost slug={slug} client:load />
+  ) : challenge?.renderer === "vue3" ? (
+    <VueDemoHost slug={slug} client:load />
+  ) : challenge?.renderer === "static" ? (
+    <StaticDemoHost slug={slug} />
   ) : (
     <div class="demo-placeholder">
-      <p>The demo will be defined after this challenge's manual review.</p>
+      <p>No maintained demo is registered for this entry.</p>
     </div>
   )
 }

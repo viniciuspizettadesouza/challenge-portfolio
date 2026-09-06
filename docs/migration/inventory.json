@@ -29,7 +29,7 @@
     "migrationStrategy": "mock-backend",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "React 16/Express/MongoDB book sorter adapted to a self-contained modern React island. The exact four-book README dataset, five individual sort controls, three ordered scenarios, null exception, and empty-set behavior remain interactive without the historical remote MongoDB connection. Owner approved on 2026-07-28."
+    "reviewNotes": "React 16/Express/MongoDB book sorter now contributes its table presentation and documented outcomes to Configurable Book Sorting. The consolidated React demo uses the exact four-book fixture and requires no backend or historical remote MongoDB connection."
   },
   {
     "slug": "challenge-vue",
@@ -224,7 +224,7 @@
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Dependency-free JavaScript sorting exercise adapted to an interactive Astro demo with all three ordering rules, the documented null exception, and the empty-set result. Owner approved on 2026-07-28."
+    "reviewNotes": "Dependency-free JavaScript sorting exercise now contributes its configuration-oriented requirements, three compound rules, null exception, and empty-set result to Configurable Book Sorting."
   },
   {
     "slug": "challenge-salsify",
@@ -438,7 +438,7 @@
     "migrationStrategy": "upgrade-vue2",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 2/Vuetify weather search adapted to a self-contained Vue 3 island. City search, geolocation selection, the complete 48-record hourly horizon, search history, and browser caching remain interactive using deterministic local fixtures instead of the sanitized Google Maps and historical OpenWeather credentials. Owner approved on 2026-07-28."
+    "reviewNotes": "Vue 2/Vuetify weather search now contributes its city search, geolocation, 48-hour horizon, history, and caching behavior to the consolidated Weather Forecast Explorer. Deterministic fixtures replace the sanitized Google Maps and historical OpenWeather credentials."
   },
   {
     "slug": "challenge-swordhealth",
@@ -595,7 +595,7 @@
     "migrationStrategy": "upgrade-vue2",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 2/BootstrapVue location forecast adapted to a self-contained Vue 3 island. Address search, local geolocation matching, the six-column forecast matrix, and browser caching are retained with deterministic fixtures replacing the sanitized Google Maps and historical OpenWeather credentials. Owner approved on 2026-07-28."
+    "reviewNotes": "Vue 2/BootstrapVue location forecast now contributes its address search, geolocation flow, and six-column comparison matrix to the consolidated Weather Forecast Explorer. Deterministic fixtures replace the sanitized Google Maps and historical OpenWeather credentials."
   },
   {
     "slug": "challenge-ingenious-build-frontend",

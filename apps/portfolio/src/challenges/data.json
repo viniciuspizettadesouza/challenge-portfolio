@@ -1,67 +1,85 @@
 [
   {
-    "slug": "challenge-stormtech",
-    "title": "Stormtech Challenge",
-    "company": "Stormtech",
-    "description": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
-    "technologies": [
-      "React",
-      "Create React App",
-      "Express",
-      "MongoDB",
-      "Mongoose"
+    "slug": "event-discovery",
+    "title": "Event Discovery",
+    "themes": [
+      "Discovery & Catalogs",
+      "Mobility & Events"
     ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "mock-backend",
-    "sourcePath": "challenges/challenge-stormtech/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-stormtech",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d",
-    "demoPath": "challenges/challenge-stormtech/demo"
-  },
-  {
-    "slug": "challenge-vue",
-    "title": "Vue Challenge",
-    "company": "Vue",
-    "description": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
+    "description": "A Nuxt event-discovery challenge adapted to Vue 3 with responsive fixture-backed search, event cards, dynamic details, and explicit not-found handling.",
     "technologies": [
-      "Vue",
-      "Vite"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sourcePath": "challenges/challenge-vue/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-vue",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "1729ec23692ae5b749e55ff5b9718bb37c499b53",
-    "demoPath": "challenges/challenge-vue/demo"
-  },
-  {
-    "slug": "challenge-vuejs",
-    "title": "Vue.js Challenge",
-    "company": "Vue.js",
-    "description": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
-    "technologies": [
+      "Nuxt",
       "Vue",
       "TypeScript",
-      "Pinia",
-      "Vue Router"
+      "Tailwind CSS",
+      "Express"
     ],
     "renderer": "vue3",
     "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sourcePath": "challenges/challenge-vuejs/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889",
-    "demoPath": "challenges/challenge-vuejs/demo"
+    "migrationStrategy": "mock-backend",
+    "sources": [
+      {
+        "slug": "challenge-3cket",
+        "title": "3cket Challenge",
+        "sourcePath": "challenges/challenge-3cket/original",
+        "originalRepository": "viniciuspizettadesouza/nuxt-challenge",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e"
+      }
+    ],
+    "aliases": [
+      "challenge-3cket"
+    ],
+    "demoPath": "challenges/challenge-3cket/demo"
   },
   {
-    "slug": "challenge-castlabs",
-    "title": "Castlabs Challenge",
-    "company": "Castlabs",
+    "slug": "weather-forecast",
+    "title": "Weather Forecast Explorer",
+    "themes": [
+      "Weather & Climate"
+    ],
+    "description": "A private, fixture-backed weather explorer with location search, nearest-city matching, a six-hour comparison, a detailed 48-hour forecast, and resilient browser history.",
+    "technologies": [
+      "Vue",
+      "Vue CLI",
+      "Vuetify",
+      "Google Maps",
+      "OpenWeather",
+      "BootstrapVue"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "consolidated",
+    "sources": [
+      {
+        "slug": "challenge-blueticket",
+        "title": "Blueticket Challenge",
+        "sourcePath": "challenges/challenge-blueticket/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-blueticket",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d"
+      },
+      {
+        "slug": "challenge-onsign-tv",
+        "title": "OnSign TV Challenge",
+        "sourcePath": "challenges/challenge-onsign-tv/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-onsign-tv",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565"
+      }
+    ],
+    "aliases": [
+      "challenge-blueticket",
+      "challenge-onsign-tv"
+    ],
+    "demoPath": "challenges/weather-forecast/demo"
+  },
+  {
+    "slug": "episode-management",
+    "title": "Episode Management",
+    "themes": [
+      "Content & Media"
+    ],
     "description": "A React episode manager with search, detailed records, local create/delete flows, and simulated create, update, and delete subscription feedback.",
     "technologies": [
       "React",
@@ -74,16 +92,59 @@
     "renderer": "react",
     "migrationStatus": "migrated",
     "migrationStrategy": "native-react",
-    "sourcePath": "challenges/challenge-castlabs/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-castlabs",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b",
+    "sources": [
+      {
+        "slug": "challenge-castlabs",
+        "title": "Castlabs Challenge",
+        "sourcePath": "challenges/challenge-castlabs/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-castlabs",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b"
+      }
+    ],
+    "aliases": [
+      "challenge-castlabs"
+    ],
     "demoPath": "challenges/challenge-castlabs/demo"
   },
   {
-    "slug": "challenge-conaz",
-    "title": "Conaz Challenge",
-    "company": "Conaz",
+    "slug": "carbon-emissions-dashboard",
+    "title": "Carbon Emissions Dashboard",
+    "themes": [
+      "Data & Analytics",
+      "Weather & Climate"
+    ],
+    "description": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
+    "technologies": [
+      "Vue",
+      "TypeScript",
+      "Pinia",
+      "ApexCharts"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "native-vue3",
+    "sources": [
+      {
+        "slug": "challenge-climateseed",
+        "title": "ClimateSeed Challenge",
+        "sourcePath": "challenges/challenge-climateseed/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-climateseed",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4"
+      }
+    ],
+    "aliases": [
+      "challenge-climateseed"
+    ],
+    "demoPath": "challenges/challenge-climateseed/demo"
+  },
+  {
+    "slug": "javascript-data-exercises",
+    "title": "JavaScript Data Exercises",
+    "themes": [
+      "Algorithms & Utilities"
+    ],
     "description": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
     "technologies": [
       "JavaScript",
@@ -92,16 +153,156 @@
     "renderer": "static",
     "migrationStatus": "migrated",
     "migrationStrategy": "static-embed",
-    "sourcePath": "challenges/challenge-conaz/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-conaz",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "69264714c1376d8150364d68fe749f97d9eb9ca0",
+    "sources": [
+      {
+        "slug": "challenge-conaz",
+        "title": "Conaz Challenge",
+        "sourcePath": "challenges/challenge-conaz/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-conaz",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "69264714c1376d8150364d68fe749f97d9eb9ca0"
+      }
+    ],
+    "aliases": [
+      "challenge-conaz"
+    ],
     "demoPath": "challenges/challenge-conaz/demo"
   },
   {
-    "slug": "challenge-jexperts",
-    "title": "JExperts Challenge",
-    "company": "JExperts",
+    "slug": "grid-pathfinding",
+    "title": "Grid Pathfinding",
+    "themes": [
+      "Algorithms & Utilities"
+    ],
+    "description": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",
+    "technologies": [
+      "Ruby",
+      "TypeScript",
+      "Astro"
+    ],
+    "renderer": "static",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "static-embed",
+    "sources": [
+      {
+        "slug": "challenge-devlandia",
+        "title": "Devlandia Challenge",
+        "sourcePath": "challenges/challenge-devlandia/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-devlandia",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6"
+      }
+    ],
+    "aliases": [
+      "challenge-devlandia"
+    ],
+    "demoPath": "challenges/challenge-devlandia/demo"
+  },
+  {
+    "slug": "movie-search",
+    "title": "Movie Search",
+    "themes": [
+      "Content & Media",
+      "Discovery & Catalogs"
+    ],
+    "description": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
+    "technologies": [
+      "Nuxt",
+      "Vue",
+      "Vuex",
+      "Vuetify",
+      "Movie API"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "upgrade-vue2",
+    "sources": [
+      {
+        "slug": "challenge-fyld-hansecom",
+        "title": "FYLD / HanseCom Challenge",
+        "sourcePath": "challenges/challenge-fyld-hansecom/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79"
+      }
+    ],
+    "aliases": [
+      "challenge-fyld-hansecom"
+    ],
+    "demoPath": "challenges/challenge-fyld-hansecom/demo"
+  },
+  {
+    "slug": "public-transit-timetable",
+    "title": "Public Transit Timetable",
+    "themes": [
+      "Discovery & Catalogs",
+      "Mobility & Events"
+    ],
+    "description": "A Vue bus timetable for selecting lines and stops, viewing sorted departure times, and searching the complete stop directory.",
+    "technologies": [
+      "Vue",
+      "TypeScript",
+      "Vuex",
+      "Vue Router",
+      "JSON Server"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "native-vue3",
+    "sources": [
+      {
+        "slug": "challenge-ingenious-build-frontend",
+        "title": "Ingenious Build Challenge",
+        "sourcePath": "challenges/challenge-ingenious-build-frontend/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-ingenious-build-frontend",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87"
+      }
+    ],
+    "aliases": [
+      "challenge-ingenious-build-frontend"
+    ],
+    "demoPath": "challenges/challenge-ingenious-build-frontend/demo"
+  },
+  {
+    "slug": "lead-filtering-dashboard",
+    "title": "Lead Filtering Dashboard",
+    "themes": [
+      "Business Operations",
+      "Data & Analytics"
+    ],
+    "description": "A responsive lead-management table with contact-name search and combinable filters derived from company categories.",
+    "technologies": [
+      "Nuxt",
+      "Vue",
+      "JavaScript",
+      "SCSS",
+      "REST API"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "upgrade-vue2",
+    "sources": [
+      {
+        "slug": "challenge-instruct",
+        "title": "Instruct Challenge",
+        "sourcePath": "challenges/challenge-instruct/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-instruct",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1"
+      }
+    ],
+    "aliases": [
+      "challenge-instruct"
+    ],
+    "demoPath": "challenges/challenge-instruct/demo"
+  },
+  {
+    "slug": "employee-directory-registration",
+    "title": "Employee Directory & Registration",
+    "themes": [
+      "Business Operations"
+    ],
     "description": "A React employee directory for showing and approximately searching local users, inspecting their details, and completing a two-step profile-and-address registration.",
     "technologies": [
       "React",
@@ -114,73 +315,27 @@
     "renderer": "react",
     "migrationStatus": "migrated",
     "migrationStrategy": "mock-backend",
-    "sourcePath": "challenges/challenge-jexperts/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-jexperts",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c",
+    "sources": [
+      {
+        "slug": "challenge-jexperts",
+        "title": "JExperts Challenge",
+        "sourcePath": "challenges/challenge-jexperts/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-jexperts",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c"
+      }
+    ],
+    "aliases": [
+      "challenge-jexperts"
+    ],
     "demoPath": "challenges/challenge-jexperts/demo"
   },
   {
-    "slug": "challenge-zygo",
-    "title": "Zygo Challenge",
-    "company": "Zygo",
-    "description": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes.",
-    "technologies": [
-      "JavaScript",
-      "Astro"
+    "slug": "social-feed-interactions",
+    "title": "Social Feed Interactions",
+    "themes": [
+      "Content & Media"
     ],
-    "renderer": "static",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "static-embed",
-    "sourcePath": "challenges/challenge-zygo/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-zygo",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4",
-    "demoPath": "challenges/challenge-zygo/demo"
-  },
-  {
-    "slug": "challenge-salsify",
-    "title": "Salsify Challenge",
-    "company": "Salsify",
-    "description": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Vite"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-react",
-    "sourcePath": "challenges/challenge-salsify/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-salsify",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4",
-    "demoPath": "challenges/challenge-salsify/demo"
-  },
-  {
-    "slug": "challenge-climateseed",
-    "title": "ClimateSeed Challenge",
-    "company": "ClimateSeed",
-    "description": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Pinia",
-      "ApexCharts"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sourcePath": "challenges/challenge-climateseed/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-climateseed",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4",
-    "demoPath": "challenges/challenge-climateseed/demo"
-  },
-  {
-    "slug": "challenge-lagoasoft",
-    "title": "Lagoasoft Challenge",
-    "company": "Lagoasoft",
     "description": "A React social feed that renders five local posts and maintains an independent browser-only like vote for each one.",
     "technologies": [
       "React",
@@ -191,35 +346,27 @@
     "renderer": "react",
     "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-react",
-    "sourcePath": "challenges/challenge-lagoasoft/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-lagoasoft",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1",
+    "sources": [
+      {
+        "slug": "challenge-lagoasoft",
+        "title": "Lagoasoft Challenge",
+        "sourcePath": "challenges/challenge-lagoasoft/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-lagoasoft",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1"
+      }
+    ],
+    "aliases": [
+      "challenge-lagoasoft"
+    ],
     "demoPath": "challenges/challenge-lagoasoft/demo"
   },
   {
-    "slug": "challenge-devlandia",
-    "title": "Devlandia Challenge",
-    "company": "Devlandia",
-    "description": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",
-    "technologies": [
-      "Ruby",
-      "TypeScript",
-      "Astro"
+    "slug": "sales-lead-management",
+    "title": "Sales Lead Management",
+    "themes": [
+      "Business Operations"
     ],
-    "renderer": "static",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "static-embed",
-    "sourcePath": "challenges/challenge-devlandia/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-devlandia",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6",
-    "demoPath": "challenges/challenge-devlandia/demo"
-  },
-  {
-    "slug": "challenge-meetime",
-    "title": "Meetime Challenge",
-    "company": "Meetime",
     "description": "A Vue sales-prospecting client for validating and adding leads to outbound cadences, then listing, editing, deleting, and caching them locally.",
     "technologies": [
       "Vue",
@@ -231,58 +378,164 @@
     "renderer": "vue3",
     "migrationStatus": "migrated",
     "migrationStrategy": "upgrade-vue2",
-    "sourcePath": "challenges/challenge-meetime/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-meetime",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1",
+    "sources": [
+      {
+        "slug": "challenge-meetime",
+        "title": "Meetime Challenge",
+        "sourcePath": "challenges/challenge-meetime/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-meetime",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1"
+      }
+    ],
+    "aliases": [
+      "challenge-meetime"
+    ],
     "demoPath": "challenges/challenge-meetime/demo"
   },
   {
-    "slug": "challenge-instruct",
-    "title": "Instruct Challenge",
-    "company": "Instruct",
-    "description": "A responsive lead-management table with contact-name search and combinable filters derived from company categories.",
+    "slug": "film-crawl-experience",
+    "title": "Film Crawl Experience",
+    "themes": [
+      "Content & Media"
+    ],
+    "description": "A faithful React recreation of the original Star Wars intro and perspective crawl, listing seven films with Roman episode numbers and release dates.",
     "technologies": [
-      "Nuxt",
-      "Vue",
+      "React",
       "JavaScript",
-      "SCSS",
-      "REST API"
+      "Create React App",
+      "SWAPI"
     ],
-    "renderer": "vue3",
+    "renderer": "react",
     "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
-    "sourcePath": "challenges/challenge-instruct/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-instruct",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1",
-    "demoPath": "challenges/challenge-instruct/demo"
+    "migrationStrategy": "upgrade-react",
+    "sources": [
+      {
+        "slug": "challenge-pipz",
+        "title": "Pipz Challenge",
+        "sourcePath": "challenges/challenge-pipz/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-pipz",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3"
+      }
+    ],
+    "aliases": [
+      "challenge-pipz"
+    ],
+    "demoPath": "challenges/challenge-pipz/demo"
   },
   {
-    "slug": "challenge-blueticket",
-    "title": "Blueticket Challenge",
-    "company": "Blueticket",
-    "description": "A Vue weather dashboard with local city search, privacy-safe location matching, a complete 48-hour forecast, and browser-cached history.",
+    "slug": "roman-numeral-converter",
+    "title": "Roman Numeral Converter",
+    "themes": [
+      "Algorithms & Utilities"
+    ],
+    "description": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
     "technologies": [
-      "Vue",
-      "Vue CLI",
-      "Vuetify",
-      "Google Maps",
-      "OpenWeather"
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Jest"
     ],
-    "renderer": "vue3",
+    "renderer": "react",
     "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
-    "sourcePath": "challenges/challenge-blueticket/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-blueticket",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "ae55664df4832a97fab6beff601494fdbd84695d",
-    "demoPath": "challenges/challenge-blueticket/demo"
+    "migrationStrategy": "native-react",
+    "sources": [
+      {
+        "slug": "challenge-propertiag",
+        "title": "PropertiaG Challenge",
+        "sourcePath": "challenges/challenge-propertiag/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b"
+      }
+    ],
+    "aliases": [
+      "challenge-propertiag"
+    ],
+    "demoPath": "challenges/challenge-propertiag/demo"
   },
   {
-    "slug": "challenge-swordhealth",
-    "title": "Sword Health Challenge",
-    "company": "Sword Health",
+    "slug": "product-data-table",
+    "title": "Product Data Table",
+    "themes": [
+      "Data & Analytics",
+      "Discovery & Catalogs"
+    ],
+    "description": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Vite"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "native-react",
+    "sources": [
+      {
+        "slug": "challenge-salsify",
+        "title": "Salsify Challenge",
+        "sourcePath": "challenges/challenge-salsify/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-salsify",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4"
+      }
+    ],
+    "aliases": [
+      "challenge-salsify"
+    ],
+    "demoPath": "challenges/challenge-salsify/demo"
+  },
+  {
+    "slug": "configurable-book-sorting",
+    "title": "Configurable Book Sorting",
+    "themes": [
+      "Algorithms & Utilities",
+      "Data & Analytics"
+    ],
+    "description": "A configurable sorting workbench that composes ordered field rules, preserves the documented book scenarios, and makes null and empty outcomes explicit.",
+    "technologies": [
+      "React",
+      "Create React App",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JavaScript",
+      "Astro"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "consolidated",
+    "sources": [
+      {
+        "slug": "challenge-stormtech",
+        "title": "Stormtech Challenge",
+        "sourcePath": "challenges/challenge-stormtech/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-stormtech",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "4e4a8787ed677b0c23c6f2ff98bcf416e5b0376d"
+      },
+      {
+        "slug": "challenge-zygo",
+        "title": "Zygo Challenge",
+        "sourcePath": "challenges/challenge-zygo/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-zygo",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4"
+      }
+    ],
+    "aliases": [
+      "challenge-stormtech",
+      "challenge-zygo"
+    ],
+    "demoPath": "challenges/configurable-book-sorting/demo"
+  },
+  {
+    "slug": "news-publishing-platform",
+    "title": "News Publishing Platform",
+    "themes": [
+      "Content & Media"
+    ],
     "description": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
     "technologies": [
       "Vue",
@@ -294,162 +547,27 @@
     "renderer": "vue3",
     "migrationStatus": "migrated",
     "migrationStrategy": "native-vue3",
-    "sourcePath": "challenges/challenge-swordhealth/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5",
+    "sources": [
+      {
+        "slug": "challenge-swordhealth",
+        "title": "Sword Health Challenge",
+        "sourcePath": "challenges/challenge-swordhealth/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5"
+      }
+    ],
+    "aliases": [
+      "challenge-swordhealth"
+    ],
     "demoPath": "challenges/challenge-swordhealth/demo"
   },
   {
-    "slug": "challenge-pipz",
-    "title": "Pipz Challenge",
-    "company": "Pipz",
-    "description": "A faithful React recreation of the original Star Wars intro and perspective crawl, listing seven films with Roman episode numbers and release dates.",
-    "technologies": [
-      "React",
-      "JavaScript",
-      "Create React App",
-      "SWAPI"
+    "slug": "user-administration",
+    "title": "User Administration",
+    "themes": [
+      "Business Operations"
     ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-react",
-    "sourcePath": "challenges/challenge-pipz/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-pipz",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3",
-    "demoPath": "challenges/challenge-pipz/demo"
-  },
-  {
-    "slug": "challenge-propertiag",
-    "title": "PropertiaG Challenge",
-    "company": "PropertiaG",
-    "description": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Jest"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-react",
-    "sourcePath": "challenges/challenge-propertiag/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b",
-    "demoPath": "challenges/challenge-propertiag/demo"
-  },
-  {
-    "slug": "challenge-fyld-hansecom",
-    "title": "FYLD / HanseCom Challenge",
-    "company": "FYLD / HanseCom",
-    "description": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
-    "technologies": [
-      "Nuxt",
-      "Vue",
-      "Vuex",
-      "Vuetify",
-      "Movie API"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
-    "sourcePath": "challenges/challenge-fyld-hansecom/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79",
-    "demoPath": "challenges/challenge-fyld-hansecom/demo"
-  },
-  {
-    "slug": "challenge-onsign-tv",
-    "title": "OnSign TV Challenge",
-    "company": "OnSign TV",
-    "description": "A Vue location forecast with address search, privacy-safe coordinate matching, and a cached six-column comparison of conditions, temperature, and humidity.",
-    "technologies": [
-      "Vue",
-      "Vue CLI",
-      "BootstrapVue",
-      "Google Maps",
-      "OpenWeather"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
-    "sourcePath": "challenges/challenge-onsign-tv/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-onsign-tv",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565",
-    "demoPath": "challenges/challenge-onsign-tv/demo"
-  },
-  {
-    "slug": "challenge-ingenious-build-frontend",
-    "title": "Ingenious Build Challenge",
-    "company": "Ingenious Build",
-    "description": "A Vue bus timetable for selecting lines and stops, viewing sorted departure times, and searching the complete stop directory.",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Vuex",
-      "Vue Router",
-      "JSON Server"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sourcePath": "challenges/challenge-ingenious-build-frontend/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-ingenious-build-frontend",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87",
-    "demoPath": "challenges/challenge-ingenious-build-frontend/demo"
-  },
-  {
-    "slug": "challenge-leafwell",
-    "title": "Leafwell Challenge",
-    "company": "Leafwell",
-    "description": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Apollo Client",
-      "GraphQL"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-react",
-    "sourcePath": "challenges/strains/original",
-    "originalRepository": "viniciuspizettadesouza/strains",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "7f41b5022e29528d737fd045a9554bee98ae8d18",
-    "demoPath": "challenges/strains/demo"
-  },
-  {
-    "slug": "challenge-3cket",
-    "title": "3cket Challenge",
-    "company": "3cket",
-    "description": "A Nuxt event-discovery challenge adapted to Vue 3 with responsive fixture-backed search, event cards, dynamic details, and explicit not-found handling.",
-    "technologies": [
-      "Nuxt",
-      "Vue",
-      "TypeScript",
-      "Tailwind CSS",
-      "Express"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "mock-backend",
-    "sourcePath": "challenges/challenge-3cket/original",
-    "originalRepository": "viniciuspizettadesouza/nuxt-challenge",
-    "originalDefaultBranch": "master",
-    "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e",
-    "demoPath": "challenges/challenge-3cket/demo"
-  },
-  {
-    "slug": "challenge-user-management",
-    "title": "React User Management Challenge",
-    "company": "React User Management",
     "description": "A complete React user-administration challenge with independent authentication, token-protected local services, runtime-only CRUD, six-user pagination, and persistent themes.",
     "technologies": [
       "React",
@@ -462,10 +580,114 @@
     "renderer": "react",
     "migrationStatus": "migrated",
     "migrationStrategy": "mock-backend",
-    "sourcePath": "challenges/challenge-user-management/original",
-    "originalRepository": "viniciuspizettadesouza/challenge-user-management-source",
-    "originalDefaultBranch": "main",
-    "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653",
+    "sources": [
+      {
+        "slug": "challenge-user-management",
+        "title": "React User Management Challenge",
+        "sourcePath": "challenges/challenge-user-management/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-user-management-source",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653"
+      }
+    ],
+    "aliases": [
+      "challenge-user-management"
+    ],
     "demoPath": "challenges/challenge-user-management/demo"
+  },
+  {
+    "slug": "formula-one-driver-explorer",
+    "title": "Formula 1 Driver Explorer",
+    "themes": [
+      "Data & Analytics",
+      "Discovery & Catalogs"
+    ],
+    "description": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
+    "technologies": [
+      "Vue",
+      "Vite"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "native-vue3",
+    "sources": [
+      {
+        "slug": "challenge-vue",
+        "title": "Vue Challenge",
+        "sourcePath": "challenges/challenge-vue/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-vue",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "1729ec23692ae5b749e55ff5b9718bb37c499b53"
+      }
+    ],
+    "aliases": [
+      "challenge-vue"
+    ],
+    "demoPath": "challenges/challenge-vue/demo"
+  },
+  {
+    "slug": "tv-episode-guide",
+    "title": "TV Episode Guide",
+    "themes": [
+      "Content & Media",
+      "Discovery & Catalogs"
+    ],
+    "description": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
+    "technologies": [
+      "Vue",
+      "TypeScript",
+      "Pinia",
+      "Vue Router"
+    ],
+    "renderer": "vue3",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "native-vue3",
+    "sources": [
+      {
+        "slug": "challenge-vuejs",
+        "title": "Vue.js Challenge",
+        "sourcePath": "challenges/challenge-vuejs/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889"
+      }
+    ],
+    "aliases": [
+      "challenge-vuejs"
+    ],
+    "demoPath": "challenges/challenge-vuejs/demo"
+  },
+  {
+    "slug": "strain-directory",
+    "title": "Strain Directory",
+    "themes": [
+      "Discovery & Catalogs"
+    ],
+    "description": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Apollo Client",
+      "GraphQL"
+    ],
+    "renderer": "react",
+    "migrationStatus": "migrated",
+    "migrationStrategy": "native-react",
+    "sources": [
+      {
+        "slug": "challenge-leafwell",
+        "title": "Leafwell Challenge",
+        "sourcePath": "challenges/strains/original",
+        "originalRepository": "viniciuspizettadesouza/strains",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "7f41b5022e29528d737fd045a9554bee98ae8d18"
+      }
+    ],
+    "aliases": [
+      "challenge-leafwell"
+    ],
+    "demoPath": "challenges/strains/demo"
   }
 ]

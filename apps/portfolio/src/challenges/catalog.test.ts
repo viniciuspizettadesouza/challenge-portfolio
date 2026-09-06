@@ -9,7 +9,17 @@ describe("catalog discovery", () => {
     expect(facets.technologies).toContain("React");
     expect(facets.technologies).toContain("Vue");
     expect(facets.frameworks).toEqual(["static", "react", "vue3"]);
+    expect(facets.themes).toEqual([
+      "Algorithms & Utilities",
+      "Business Operations",
+      "Content & Media",
+      "Data & Analytics",
+      "Discovery & Catalogs",
+      "Mobility & Events",
+      "Weather & Climate",
+    ]);
     expect(facets.adaptations).toEqual([
+      "consolidated",
       "mock-backend",
       "native-react",
       "native-vue3",
@@ -19,8 +29,9 @@ describe("catalog discovery", () => {
     ]);
   });
 
-  it("combines technology, framework, and adaptation filters", () => {
+  it("combines theme, technology, framework, and adaptation filters", () => {
     const results = filterChallenges(challenges, {
+      theme: "Business Operations",
       technology: "React",
       framework: "react",
       adaptation: "mock-backend",
@@ -41,6 +52,7 @@ describe("catalog discovery", () => {
   it("returns the complete catalog when every filter is empty", () => {
     expect(
       filterChallenges(challenges, {
+        theme: "",
         technology: "",
         framework: "",
         adaptation: "",

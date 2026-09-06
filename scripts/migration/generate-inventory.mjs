@@ -172,9 +172,9 @@ writeFileSync(jsonPath, `${JSON.stringify(inventory, null, 2)}\n`);
 writeFileSync(
   markdownPath,
   [
-    "# Technical inventory",
+    "# Historical source inventory",
     "",
-    `Generated at ${new Date().toISOString()} without installing historical dependencies.`,
+    `Generated at ${new Date().toISOString()} for 23 preserved source repositories without installing historical dependencies.`,
     "",
     "| Challenge | Imported | Framework | Bundler | Strategy | Review |",
     "| --- | --- | --- | --- | --- | --- |",

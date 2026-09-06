@@ -1,13 +1,12 @@
 # Challenge Portfolio handbook
 
 This is the canonical maintenance guide for the Challenge Portfolio. The
-repository presents 23 historical technical challenges through a single Astro
-site while preserving reviewed source material separately from maintained
-demos.
+repository presents 21 domain-focused entries through a single Astro site while
+preserving all 23 reviewed historical sources separately from maintained demos.
 
 ## Current state
 
-Migration Phases 0–18 are complete. Revision `6e79caf` is the verified Phase
+Migration Phases 0–19 are complete. Revision `6e79caf` is the verified Phase
 18 baseline: browser, security, accessibility, catalog-discovery, GitHub Pages,
 and production checks passed. The owner intentionally deferred a new tag and
 GitHub Release because this repository is a personal library; that is a release
@@ -15,7 +14,7 @@ decision, not pending migration work.
 
 The short operational handoff is [migration status](migration/status.md).
 The decisions, preservation evidence, project fidelity notes, validation
-results, and completed Phase 0–18 timeline are in the
+results, and completed Phase 0–19 timeline are in the
 [distilled history](HISTORY.md).
 
 ## Repository model
@@ -35,6 +34,8 @@ Repository invariants:
 
 - Never modify `challenges/*/original/`. It is historical evidence.
 - Put fixes and adaptations in `challenges/<slug>/demo/`.
+- Domain consolidations may reference several immutable source challenges from
+  one neutral maintained demo directory.
 - Keep portfolio-maintained documentation in English.
 - Update the challenge manifest, generated inventory, and tests together when
   metadata changes.
@@ -75,8 +76,9 @@ The secret scan uses the digest-pinned Gitleaks container defined by
 
 ## Metadata and catalog discovery
 
-Each challenge is registered by its `challenge.json`. After changing a
-manifest, run:
+Historical sources are registered by `challenge.json`; public entries and
+their themes, aliases, and source relationships are defined in
+`docs/portfolio/entries.json`. After changing either manifest, run:
 
 ```bash
 pnpm inventory
@@ -88,8 +90,8 @@ catalog summaries at `docs/portfolio/challenge-summaries.json`. Intentional
 classification exceptions belong in
 `docs/migration/inventory-overrides.json`.
 
-The catalog supports shareable query-string filters for search, technology,
-framework, capability, and provenance. Preserve backward-compatible URLs when
+The catalog supports shareable query-string filters for theme, technology,
+framework, and adaptation strategy. Preserve backward-compatible URLs when
 changing filter behavior, and cover additions in both unit and browser tests.
 
 ## CI, security, and dependencies
@@ -145,7 +147,7 @@ After deployment, verify the home page, `/challenges/`, at least one detail
 page, its `/demos/<slug>/` route, and a shareable filtered catalog URL. Confirm
 HTTP 200 responses, expected filtering, and no browser console or page errors.
 
-## Challenge library
+## Historical source library
 
 The challenge READMEs remain next to the code and are the maintained entry
 points for project-specific context:
@@ -173,6 +175,10 @@ points for project-specific context:
 - [Vue](../challenges/challenge-vue/README.md)
 - [Vue.js](../challenges/challenge-vuejs/README.md)
 - [Zygo](../challenges/challenge-zygo/README.md)
+
+The consolidated maintained demos are documented at
+[Weather Forecast Explorer](../challenges/weather-forecast/README.md) and
+[Configurable Book Sorting](../challenges/configurable-book-sorting/README.md).
 
 ## Evidence and ownership
 

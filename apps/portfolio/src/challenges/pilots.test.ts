@@ -1,5 +1,5 @@
 import ThreeCketDemo from "@challenge/3cket-demo";
-import BlueticketDemo from "@challenge/blueticket-demo";
+import WeatherForecastDemo from "@challenge/weather-forecast-demo";
 import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
@@ -8,11 +8,10 @@ import InstructDemo from "@challenge/instruct-demo";
 import JExpertsDemo from "@challenge/jexperts-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import MeetimeDemo from "@challenge/meetime-demo";
-import OnSignTvDemo from "@challenge/onsign-tv-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
-import StormtechDemo from "@challenge/stormtech-demo";
+import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-demo";
 import StrainsDemo from "@challenge/strains-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
@@ -49,13 +48,15 @@ describe("pilot demos", () => {
     expect(html).toContain("Search users by name");
   });
 
-  it("renders the local Stormtech sorting scenarios", () => {
-    const html = renderToStaticMarkup(createElement(StormtechDemo));
+  it("renders configurable book sorting", () => {
+    const html = renderToStaticMarkup(
+      createElement(ConfigurableBookSortingDemo),
+    );
 
-    expect(html).toContain("Storm Tecnologia");
-    expect(html).toContain("Book catalog");
+    expect(html).toContain("Configurable book sorting");
+    expect(html).toContain("Comparator pipeline");
     expect(html).toContain("Java How To Program");
-    expect(html).toContain("Sorting scenarios");
+    expect(html).toContain("Configuration presets");
   });
 
   it("renders the local Meetime lead workflow", async () => {
@@ -66,20 +67,13 @@ describe("pilot demos", () => {
     expect(html).toContain("Private API replaced with local browser state");
   });
 
-  it("renders the local OnSign TV six-hour forecast", async () => {
-    const html = await renderToString(createSSRApp(OnSignTvDemo));
+  it("renders the consolidated local weather explorer", async () => {
+    const html = await renderToString(createSSRApp(WeatherForecastDemo));
 
-    expect(html).toContain("Weather for the next six hours");
+    expect(html).toContain("Forecast explorer");
     expect(html).toContain("Florianópolis");
-    expect(html).toContain("Feels Like");
-  });
-
-  it("renders the local Blueticket weather search", async () => {
-    const html = await renderToString(createSSRApp(BlueticketDemo));
-
-    expect(html).toContain("What is the weather like?");
-    expect(html).toContain("Florianópolis");
-    expect(html).toContain("Weather description");
+    expect(html).toContain("Next six hours");
+    expect(html).toContain("48-hour forecast");
   });
 
   it("renders the local Castlabs episode manager", () => {

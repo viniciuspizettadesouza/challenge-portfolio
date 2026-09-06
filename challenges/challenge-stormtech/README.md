@@ -1,5 +1,9 @@
 # Stormtech Challenge
 
+> Portfolio note: this challenge's maintained demo is now consolidated into
+> **Configurable Book Sorting**. The source below remains as immutable
+> historical evidence.
+
 The complete sanitized history is preserved under `original/`. That directory
 is historical evidence and must not be modified.
 

@@ -1,11 +1,27 @@
 import { describe, expect, it } from "vitest";
-import { challenges, getChallenge } from "./registry";
+import { challengeAliases, challenges, getChallenge } from "./registry";
 
 describe("challenge registry", () => {
-  it("contains exactly twenty-three unique challenges", () => {
-    expect(challenges).toHaveLength(23);
-    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(23);
-    expect(challenges.every(({ migrationStatus }) => migrationStatus === "migrated")).toBe(true);
+  it("contains twenty-one curated entries backed by all twenty-three sources", () => {
+    expect(challenges).toHaveLength(21);
+    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(21);
+    const sourceSlugs = challenges.flatMap(({ sources }) =>
+      sources.map(({ slug }) => slug),
+    );
+    expect(sourceSlugs).toHaveLength(23);
+    expect(new Set(sourceSlugs).size).toBe(23);
+    expect(
+      challenges.every(({ migrationStatus }) => migrationStatus === "migrated"),
+    ).toBe(true);
+  });
+
+  it("resolves every unique legacy slug to its canonical entry", () => {
+    expect(challengeAliases.size).toBe(23);
+    for (const challenge of challenges) {
+      for (const alias of challenge.aliases) {
+        expect(challengeAliases.get(alias)).toBe(challenge);
+      }
+    }
   });
 
   it("resolves every registered slug", () => {
@@ -17,9 +33,13 @@ describe("challenge registry", () => {
   it("provides a specific explanatory summary for every challenge", () => {
     for (const challenge of challenges) {
       expect(challenge.description.length).toBeGreaterThan(60);
-      expect(challenge.description).not.toContain("available for source review");
+      expect(challenge.description).not.toContain(
+        "available for source review",
+      );
     }
 
-    expect(new Set(challenges.map(({ description }) => description)).size).toBe(23);
+    expect(new Set(challenges.map(({ description }) => description)).size).toBe(
+      21,
+    );
   });
 });

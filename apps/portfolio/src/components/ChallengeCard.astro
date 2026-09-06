@@ -11,12 +11,14 @@ const { challenge } = Astro.props;
 
 <article class="card">
   <div class="card__eyebrow">
-    <span>{challenge.company}</span>
+    <span>{challenge.themes.join(" · ")}</span>
     <span class:list={["status", `status--${challenge.migrationStatus}`]}>
       {challenge.migrationStatus}
     </span>
   </div>
-  <h2><a href={withBase(`challenges/${challenge.slug}`)}>{challenge.title}</a></h2>
+  <h2>
+    <a href={withBase(`challenges/${challenge.slug}`)}>{challenge.title}</a>
+  </h2>
   <p>{challenge.description}</p>
   <span class="card__link" aria-hidden="true">View challenge →</span>
 </article>

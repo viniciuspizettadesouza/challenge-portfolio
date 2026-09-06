@@ -29,9 +29,9 @@ importers:
       '@challenge/3cket-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-3cket/demo
-      '@challenge/blueticket-demo':
+      '@challenge/weather-forecast-demo':
         specifier: workspace:*
-        version: link:../../challenges/challenge-blueticket/demo
+        version: link:../../challenges/weather-forecast/demo
       '@challenge/castlabs-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-castlabs/demo
@@ -62,9 +62,6 @@ importers:
       '@challenge/meetime-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-meetime/demo
-      '@challenge/onsign-tv-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-onsign-tv/demo
       '@challenge/pipz-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-pipz/demo
@@ -74,9 +71,9 @@ importers:
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
-      '@challenge/stormtech-demo':
+      '@challenge/configurable-book-sorting-demo':
         specifier: workspace:*
-        version: link:../../challenges/challenge-stormtech/demo
+        version: link:../../challenges/configurable-book-sorting/demo
       '@challenge/strains-demo':
         specifier: workspace:*
         version: link:../../challenges/strains/demo
@@ -92,9 +89,6 @@ importers:
       '@challenge/vuejs-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vuejs/demo
-      '@challenge/zygo-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-zygo/demo
       '@types/react':
         specifier: ^19.2.18
         version: 19.2.18
@@ -157,12 +151,6 @@ importers:
         specifier: '>=3.0.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-blueticket/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.2.0'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/challenge-castlabs/demo:
     dependencies:
       react:
@@ -215,12 +203,6 @@ importers:
         specifier: '>=3.2.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-onsign-tv/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.2.0'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/challenge-pipz/demo:
     dependencies:
       react:
@@ -245,7 +227,7 @@ importers:
         specifier: '>=18'
         version: 19.2.8(react@19.2.8)
 
-  challenges/challenge-stormtech/demo:
+  challenges/configurable-book-sorting/demo:
     dependencies:
       react:
         specifier: '>=18.0.0'
@@ -285,7 +267,11 @@ importers:
         specifier: '>=3.4'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-zygo/demo: {}
+  challenges/weather-forecast/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.2.0'
+        version: 3.5.40(typescript@7.0.2)
 
   challenges/strains/demo:
     dependencies:

@@ -16,6 +16,7 @@ the [maintenance handbook](README.md).
 | 2026-07-30 | 13–16  | Added Leafwell and 3cket as signed source snapshots `e782b42` and `ba3715e`, then published integration `1b0c16e`. A fresh clone passed 68 unit tests, 22 Chromium tests, and a 47-page build; Pages and both demos were verified before the owner deleted both source repositories. |
 | 2026-09-02 | 17     | Added User Management with five sanitized commits and a complete maintained Parts 1–4 implementation. Revisions `8227df4` and `6caced1` were published and verified before the owner deleted its superseded repository.                                                              |
 | 2026-09-03 | 18     | Completed browser CI, dependency automation, full-history secret scanning, accessibility coverage, and URL-backed catalog discovery in revisions `e2b563b` and `6e79caf`. All workflows and production checks passed.                                                                |
+| 2026-09-06 | 19     | Consolidated two proven duplicate pairs into domain-focused weather and book-sorting demos, renamed the catalog around capabilities, and retained compatibility routes from all historical public slugs. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -45,7 +46,7 @@ remains.
 
 The supported presentation strategies established during migration were
 `native-react`, `native-vue3`, `static-embed`, `upgrade-vue2`,
-`upgrade-react`, `mock-backend`, `case-study`, and `manual-review`.
+`upgrade-react`, `mock-backend`, `consolidated`, `case-study`, and `manual-review`.
 Leafwell is the naming exception: its public slug is `challenge-leafwell`,
 while its preserved source and demo remain in `challenges/strains/`.
 
@@ -134,7 +135,7 @@ multi-stage Vite/nginx Docker build.
 | Challenge       | Historical architecture → maintained runtime        | Preserved behavior and intentional substitution                                                                      |
 | --------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | 3cket           | Nuxt 3/Tailwind/Express → Vue 3 island              | Event grid, search, details, images, and not-found behavior use the bundled fixture instead of localhost             |
-| Blueticket      | Vue 2/Vuetify/Maps/OpenWeather → Vue 3 island       | City search, geolocation, 48-hour conditions, history, and caching use local cities                                  |
+| Weather Forecast Explorer | Two Vue 2/Maps/OpenWeather challenges → Vue 3 island | Combines address search, Haversine geolocation matching, history, six-hour comparison, and a 48-hour local forecast from Blueticket and OnSign TV |
 | Castlabs        | React/Apollo/WebSockets/OMDb → React island         | Search, details, mutations, and subscription feedback use fixtures and local artwork                                 |
 | ClimateSeed     | Vue 3/Pinia/ApexCharts → Vue 3 island               | Organisation comparison, chart switching, aggregation, and results use semantic CSS charts                           |
 | Conaz           | Node script → Astro/TypeScript                      | Counts, run-length encoding, and member synchronization run interactively                                            |
@@ -145,17 +146,15 @@ multi-stage Vite/nginx Docker build.
 | JExperts        | React 16/Express/MongoDB → React island             | Search, profiles, addresses, and registration preserve the layout; orphaned routing is fixed and passwords discarded |
 | Lagoasoft       | React 16/Instagram → React island                   | Five posts and independent likes remain; expired media becomes local CSS artwork                                     |
 | Meetime         | Vue 2/Vuetify/private API → Vue 3 island            | Lead CRUD, cadence validation, dialogs, and persistence use fictional local data                                     |
-| OnSign TV       | Vue 2/BootstrapVue/Maps/OpenWeather → Vue 3 island  | Navigation, location selection, six-hour conditions, matrix fields, and caching use three locations                  |
 | Pipz            | React 16/SWAPI/crawl libraries → React island       | Seven-film order, Roman episodes, dates, logo, intro, crawl, pause, and restart work locally                         |
 | PropertiaG      | Next.js 12/React → React island                     | Integer-to-Roman conversion and 1–1000 constraint remain with clearer validation                                     |
 | Salsify         | React/Vite-style source → direct React island       | Original datastore, filters, operators, values, and table run with an Astro style layer                              |
-| Stormtech       | React 16/Express/MongoDB → React island             | Exact book fixture, five sorts, three cases, null exception, and empty output use local records                      |
+| Configurable Book Sorting | React/Express/MongoDB and Node scripts → React island | Combines the identical Stormtech and Zygo requirements in a configurable comparator pipeline with all documented outcomes |
 | User Management | React 18/Router/ReqRes → React island/local service | Completes authentication, token enforcement, CRUD, pagination, theme persistence, tests, and Docker without ReqRes   |
 | Leafwell        | Next.js 13/Apollo/GraphQL → React island            | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                               |
 | Sword Health    | Vue 3/Quasar/Auth0 → Vue 3 island                   | Feed, categories, load-more, detail, session, profile, authoring, and image preview work without Auth0               |
 | Vue             | Vue 3 component → direct Vue 3 island               | Original driver selector runs directly with only missing utility styles supplied                                     |
 | Vue.js          | Vue 3/Pinia/TVMaze → Vue 3 island                   | Show metadata, episodes, summaries, and pagination use a deterministic show fixture                                  |
-| Zygo            | Node sorting service → Astro/TypeScript             | Three sort configurations, exact orders, null exception, and empty output run interactively                          |
 
 No historical dependency was installed in place. Conaz and Zygo ran directly;
 both Devlandia Ruby programs ran with sample input; and Salsify, Vue.js, and
@@ -197,7 +196,7 @@ allowlists are prohibited. Rerun the complete-history scan after any exception.
 
 Established on 2026-09-02 and completed across every demo on 2026-09-03,
 Playwright and axe cover the shared home, catalog, detail, and about routes plus
-all 23 fullscreen demos against applicable WCAG 2.0 A/AA, 2.1 A/AA, and 2.2 AA
+all 21 canonical fullscreen demos against applicable WCAG 2.0 A/AA, 2.1 A/AA, and 2.2 AA
 rules. Full contrast analysis now runs on the shared shell and every maintained
 demo. Keyboard coverage verifies the catalog skip link, target focus, the first
 target on every demo, and the shared three-pixel focus ring.
@@ -219,6 +218,7 @@ color changes.
 | Project 23 · `6caced1`     | 25 workspaces; offline frozen install; lint and typecheck; 77 unit and 24 Chromium tests; 23 screenshots; 49 pages; standalone Vite and Docker/nginx builds; production home/detail/demo returned HTTP 200 |
 | Phase 18 · `6e79caf`       | Lint and typecheck; 80 unit tests; 51 Chromium tests (24 interactions, 25 accessibility, 2 catalog); 49 pages; Gitleaks over 310 commits; no screenshot changes                                            |
 | 2026-09-03 maintenance     | Compatible dependency updates; lint and typecheck; 80 unit tests; 51 Chromium tests with full accessibility coverage; 49 pages; Gitleaks over 316 commits; 23 reviewed screenshots                |
+| Phase 19 domain consolidation | Frozen install; lint and typecheck; 79 unit/SSR tests; 49 Chromium tests including all 21 canonical demos; 21 screenshots; 91 static pages including legacy challenge and demo redirects |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

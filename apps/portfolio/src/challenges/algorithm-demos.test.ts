@@ -6,17 +6,28 @@ import {
 } from "@challenge/climateseed-demo/logic";
 import {
   addSearchHistory,
-  closestForecast,
-  expandHourlyForecast,
+  comparisonHours,
+  distanceInKilometers,
   findForecast,
-} from "@challenge/blueticket-demo/logic";
+  forecasts as weatherForecasts,
+  nearestForecast,
+} from "@challenge/weather-forecast-demo/logic";
+import {
+  readWeatherState,
+  WEATHER_STORAGE_KEY,
+  writeWeatherState,
+} from "@challenge/weather-forecast-demo/persistence";
 import {
   createEpisode,
   deleteEpisode,
   episodes as castlabsEpisodes,
   searchEpisodes,
 } from "@challenge/castlabs-demo/logic";
-import { countCharacters, runLengthEncode, updateMembers } from "@challenge/conaz-demo/logic";
+import {
+  countCharacters,
+  runLengthEncode,
+  updateMembers,
+} from "@challenge/conaz-demo/logic";
 import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
 import {
   movies as fyldMovies,
@@ -36,12 +47,6 @@ import {
   similarity,
 } from "@challenge/jexperts-demo/logic";
 import {
-  findLocationForecast,
-  hourLabels,
-  locationForecasts,
-  nearestLocationForecast,
-} from "@challenge/onsign-tv-demo/logic";
-import {
   createLead,
   deleteLead,
   initialLeads,
@@ -53,10 +58,7 @@ import {
   getCategoryOptions,
   leads as instructLeads,
 } from "@challenge/instruct-demo/logic";
-import {
-  films as pipzFilms,
-  toRomanEpisode,
-} from "@challenge/pipz-demo/logic";
+import { films as pipzFilms, toRomanEpisode } from "@challenge/pipz-demo/logic";
 import {
   displayedLikes,
   posts as lagoasoftPosts,
@@ -70,18 +72,24 @@ import {
   visibleArticles as visibleSwordArticles,
 } from "@challenge/swordhealth-demo/logic";
 import {
-  books as stormtechBooks,
-  runScenario as runStormtechScenario,
-  sortBooks as sortStormtechBooks,
-} from "@challenge/stormtech-demo/logic";
+  BookSortingError,
+  books as sortingBooks,
+  createBookComparator,
+  presets as sortingPresets,
+  sortBooks as sortConfiguredBooks,
+  type BookField,
+} from "@challenge/configurable-book-sorting-demo/logic";
 import {
   filterStrains,
   findStrain,
   paginateStrains,
   strains,
 } from "@challenge/strains-demo/logic";
-import { sortBooks, type Book } from "@challenge/zygo-demo/logic";
-import { clampPage, getTotalPages, paginate } from "@challenge/vuejs-demo/logic";
+import {
+  clampPage,
+  getTotalPages,
+  paginate,
+} from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
 
 describe("3cket local event fixture", () => {
@@ -125,8 +133,12 @@ describe("Leafwell local strain directory", () => {
 
 describe("JExperts local employee directory", () => {
   it("supports exact and approximate name searches", () => {
-    expect(searchUsers(jexpertsUsers, "camila").map(({ id }) => id)).toEqual([3]);
-    expect(searchUsers(jexpertsUsers, "Vincus").map(({ id }) => id)).toEqual([2]);
+    expect(searchUsers(jexpertsUsers, "camila").map(({ id }) => id)).toEqual([
+      3,
+    ]);
+    expect(searchUsers(jexpertsUsers, "Vincus").map(({ id }) => id)).toEqual([
+      2,
+    ]);
     expect(similarity("Vinicius", "Vincus")).toBeGreaterThan(0.28);
   });
 
@@ -164,30 +176,57 @@ describe("JExperts local employee directory", () => {
   });
 });
 
-describe("Stormtech book sorting", () => {
-  it("supports every individual table order", () => {
+describe("configurable book sorting", () => {
+  it("reproduces the three documented compound configurations", () => {
     expect(
-      sortStormtechBooks(stormtechBooks, "title-ascending").map(({ id }) => id),
+      sortConfiguredBooks(sortingBooks, sortingPresets.title).map(
+        ({ id }) => id,
+      ),
     ).toEqual([3, 4, 1, 2]);
     expect(
-      sortStormtechBooks(stormtechBooks, "edition-descending").map(({ id }) => id),
+      sortConfiguredBooks(sortingBooks, sortingPresets.authorTitle).map(
+        ({ id }) => id,
+      ),
     ).toEqual([1, 4, 3, 2]);
+    expect(
+      sortConfiguredBooks(sortingBooks, sortingPresets.editionAuthorTitle).map(
+        ({ id }) => id,
+      ),
+    ).toEqual([4, 1, 3, 2]);
   });
 
-  it("reproduces all five documented scenario outcomes", () => {
-    expect(runStormtechScenario(stormtechBooks, "first").map(({ id }) => id)).toEqual([
-      3, 4, 1, 2,
+  it("supports arbitrary configuration without mutating its input", () => {
+    const input = [...sortingBooks];
+    const result = sortConfiguredBooks(input, [
+      { field: "title", direction: "descending" },
     ]);
-    expect(runStormtechScenario(stormtechBooks, "second").map(({ id }) => id)).toEqual([
-      1, 4, 3, 2,
-    ]);
-    expect(runStormtechScenario(stormtechBooks, "third").map(({ id }) => id)).toEqual([
-      4, 1, 3, 2,
-    ]);
-    expect(() => runStormtechScenario(stormtechBooks, "fourth")).toThrow(
-      "SortingServiceException",
+    expect(result[0].id).toBe(2);
+    expect(input).toEqual(sortingBooks);
+    expect(
+      createBookComparator([{ field: "editionYear", direction: "ascending" }])(
+        sortingBooks[0],
+        sortingBooks[1],
+      ),
+    ).toBeGreaterThan(0);
+  });
+
+  it("reports null, empty, and invalid configurations explicitly", () => {
+    expect(() => sortConfiguredBooks(null, sortingPresets.title)).toThrow(
+      BookSortingError,
     );
-    expect(runStormtechScenario(stormtechBooks, "fifth")).toEqual([]);
+    expect(sortConfiguredBooks([], sortingPresets.title)).toEqual([]);
+    expect(() => sortConfiguredBooks(sortingBooks, [])).toThrow("unique field");
+    expect(() =>
+      sortConfiguredBooks(sortingBooks, [
+        sortingPresets.title[0],
+        sortingPresets.title[0],
+      ]),
+    ).toThrow("unique field");
+    expect(() =>
+      sortConfiguredBooks(sortingBooks, [
+        { field: "isbn" as BookField, direction: "ascending" },
+      ]),
+    ).toThrow("unique field");
   });
 });
 
@@ -206,7 +245,9 @@ describe("Meetime local lead management", () => {
       leadName: "Alex Morgan",
       cadence: "Product Demo",
     });
-    expect(validateLead({ ...draft, email: "invalid" }).email).toContain("valid");
+    expect(validateLead({ ...draft, email: "invalid" }).email).toContain(
+      "valid",
+    );
   });
 
   it("updates and deletes leads without mutating the preserved fixture", () => {
@@ -219,58 +260,69 @@ describe("Meetime local lead management", () => {
   });
 });
 
-describe("OnSign TV local forecast", () => {
-  it("resolves text and coordinate searches against bundled locations", () => {
-    expect(findLocationForecast("florianópolis")?.hours).toHaveLength(6);
-    expect(findLocationForecast("Portugal")?.address).toBe("Lisbon, Portugal");
-    expect(nearestLocationForecast(51.5, -0.1).address).toBe(
-      "London, United Kingdom",
-    );
-  });
-
-  it("labels the first forecast column as now", () => {
-    expect(hourLabels(locationForecasts[1].hours)).toEqual([
-      "Now",
-      "23:00",
-      "00:00",
-      "01:00",
-      "02:00",
-      "03:00",
-    ]);
-  });
-});
-
-describe("Blueticket local weather lookup", () => {
+describe("consolidated local weather forecast", () => {
   it("finds city fixtures and selects the closest available forecast", () => {
     expect(findForecast("lisbon")?.country).toBe("Portugal");
     expect(findForecast("united kingdom")?.city).toBe("London");
-    expect(closestForecast(-27.6, -48.55).city).toBe("Florianópolis");
+    expect(findForecast("10 Downing Street, London")?.city).toBe("London");
+    expect(findForecast("sao paulo")?.city).toBe("São Paulo");
+    expect(nearestForecast(-27.6, -48.55).city).toBe("Florianópolis");
+    expect(
+      distanceInKilometers(38.7223, -9.1393, 51.5072, -0.1276),
+    ).toBeGreaterThan(1500);
   });
 
   it("maintains a unique, most-recent-first search history", () => {
-    expect(addSearchHistory(["London", "Lisbon"], "London")).toEqual([
-      "London",
-      "Lisbon",
-    ]);
+    const london = findForecast("London")!;
     expect(
-      addSearchHistory(["London", "Lisbon", "São Paulo"], "Florianópolis"),
-    ).toEqual(["Florianópolis", "London", "Lisbon", "São Paulo"]);
+      addSearchHistory(["London, England, United Kingdom", "Lisbon"], london),
+    ).toEqual(["London, England, United Kingdom", "Lisbon"]);
   });
 
-  it("retains a complete 48-record hourly horizon", () => {
-    const seed = findForecast("London")!.hourly.slice(0, 6);
-    const expanded = expandHourlyForecast(seed);
+  it("retains both six-hour and 48-hour views", () => {
+    expect(weatherForecasts).toHaveLength(4);
+    expect(weatherForecasts.every(({ hours }) => hours.length === 48)).toBe(
+      true,
+    );
+    expect(comparisonHours(weatherForecasts[0].hours)).toHaveLength(6);
+  });
 
-    expect(expanded).toHaveLength(48);
-    expect(new Set(expanded.slice(0, 24).map(({ time }) => time)).size).toBe(24);
+  it("validates versioned browser state and tolerates unavailable storage", () => {
+    const values = new Map<string, string>();
+    const storage = {
+      getItem: (key: string) => values.get(key) ?? null,
+      setItem: (key: string, value: string) => values.set(key, value),
+    };
+    expect(
+      writeWeatherState(storage, {
+        version: 1,
+        selectedId: "lisbon",
+        history: ["Lisbon"],
+      }),
+    ).toBe(true);
+    expect(readWeatherState(storage)).toEqual({
+      version: 1,
+      selectedId: "lisbon",
+      history: ["Lisbon"],
+    });
+    values.set(WEATHER_STORAGE_KEY, "not json");
+    expect(readWeatherState(storage)).toBeUndefined();
+    expect(readWeatherState(undefined)).toBeUndefined();
+    expect(
+      writeWeatherState(undefined, {
+        version: 1,
+        selectedId: "lisbon",
+        history: [],
+      }),
+    ).toBe(false);
   });
 });
 
 describe("Castlabs episode management", () => {
   it("searches episode titles and series names", () => {
-    expect(searchEpisodes(castlabsEpisodes, "quiet").map(({ id }) => id)).toEqual([
-      "episode-01",
-    ]);
+    expect(
+      searchEpisodes(castlabsEpisodes, "quiet").map(({ id }) => id),
+    ).toEqual(["episode-01"]);
     expect(searchEpisodes(castlabsEpisodes, "northbound")).toHaveLength(2);
   });
 
@@ -289,9 +341,9 @@ describe("Castlabs episode management", () => {
     );
 
     expect(episode).toMatchObject({ id: "local-6", title: "First Light" });
-    expect(deleteEpisode([...castlabsEpisodes, episode], episode.id)).toHaveLength(
-      castlabsEpisodes.length,
-    );
+    expect(
+      deleteEpisode([...castlabsEpisodes, episode], episode.id),
+    ).toHaveLength(castlabsEpisodes.length);
     expect(() =>
       createEpisode(
         {
@@ -318,7 +370,9 @@ describe("ClimateSeed demo logic", () => {
       { name: "Acme Corp", value: 2_306 },
       { name: "Fast Co2", value: 2_916 },
     ]);
-    expect(emissions.reduce((sum, { percentage }) => sum + percentage, 0)).toBeCloseTo(100);
+    expect(
+      emissions.reduce((sum, { percentage }) => sum + percentage, 0),
+    ).toBeCloseTo(100);
   });
 
   it("validates additions before they enter the dashboard", () => {
@@ -386,10 +440,9 @@ describe("PropertiaG Roman numeral conversion", () => {
 
 describe("Sword Health news logic", () => {
   it("filters categories and applies the visible article limit", () => {
-    expect(filterArticles(swordArticles, ["Engineering"]).map(({ id }) => id)).toEqual([
-      "02",
-      "06",
-    ]);
+    expect(
+      filterArticles(swordArticles, ["Engineering"]).map(({ id }) => id),
+    ).toEqual(["02", "06"]);
     expect(visibleSwordArticles(swordArticles, [], 4)).toHaveLength(4);
   });
 
@@ -417,44 +470,6 @@ describe("Sword Health news logic", () => {
   });
 });
 
-describe("Zygo demo logic", () => {
-  const books: Book[] = [
-    { id: 1, title: "Java How To Program", author: "Deitel & Deitel", edition: 2007 },
-    {
-      id: 2,
-      title: "Patterns of Enterprise Application Architecture",
-      author: "Martin Fowler",
-      edition: 2002,
-    },
-    {
-      id: 3,
-      title: "Head First Design Patterns",
-      author: "Elisabeth Freeman",
-      edition: 2004,
-    },
-    {
-      id: 4,
-      title: "Internet & World Wide Web: How to Program",
-      author: "Deitel & Deitel",
-      edition: 2007,
-    },
-  ];
-
-  it("reproduces all expected book orderings", () => {
-    expect(sortBooks(books, "title-ascending").map(({ id }) => id)).toEqual([3, 4, 1, 2]);
-    expect(
-      sortBooks(books, "author-ascending-title-descending").map(({ id }) => id),
-    ).toEqual([1, 4, 3, 2]);
-    expect(
-      sortBooks(books, "edition-descending-author-descending-title-ascending").map(
-        ({ id }) => id,
-      ),
-    ).toEqual([4, 1, 3, 2]);
-    expect(() => sortBooks(books, "null-collection")).toThrow("OrderingException");
-    expect(sortBooks(books, "empty-set")).toEqual([]);
-  });
-});
-
 describe("Devlandia demo logic", () => {
   const grid = `-----
 -----
@@ -475,7 +490,9 @@ p--m-
 describe("Fyld Hansecom movie search", () => {
   it("requires three characters and filters titles case-insensitively", () => {
     expect(searchMovies(fyldMovies, "av")).toEqual([]);
-    expect(searchMovies(fyldMovies, "INFINITY").map(({ id }) => id)).toEqual([299536]);
+    expect(searchMovies(fyldMovies, "INFINITY").map(({ id }) => id)).toEqual([
+      299536,
+    ]);
     expect(searchMovies(fyldMovies, "avengers")).toHaveLength(8);
   });
 });
@@ -495,12 +512,12 @@ describe("Lagoasoft demo voting", () => {
 
 describe("Ingenious Build timetable logic", () => {
   it("derives ordered lines, route stops, and departure times from the preserved data", () => {
-    expect(getLines(ingeniousStops)).toEqual([100, 101, 102, 103, 105, 106, 107, 109, 110, 111, 112]);
-    expect(getStopsForLine(ingeniousStops, 100).map(({ stop }) => stop)).toEqual([
-      "Salwator",
-      "Malczewskiego",
-      "Aleja Waszyngtona",
+    expect(getLines(ingeniousStops)).toEqual([
+      100, 101, 102, 103, 105, 106, 107, 109, 110, 111, 112,
     ]);
+    expect(
+      getStopsForLine(ingeniousStops, 100).map(({ stop }) => stop),
+    ).toEqual(["Salwator", "Malczewskiego", "Aleja Waszyngtona"]);
 
     const times = getTimesForStop(ingeniousStops, 100, "Salwator");
     expect(times[0]).toBe("6:20");
@@ -528,7 +545,9 @@ describe("Instruct lead filtering", () => {
   it("combines contact-name and category filters", () => {
     expect(filterLeads(instructLeads, "glenna", ["real-time"])).toHaveLength(1);
     expect(
-      filterLeads(instructLeads, "", ["e-enable", "applications"]).map(({ id }) => id),
+      filterLeads(instructLeads, "", ["e-enable", "applications"]).map(
+        ({ id }) => id,
+      ),
     ).toEqual([3, 6]);
     expect(filterLeads(instructLeads, "glenna", ["supply-chains"])).toEqual([]);
   });
@@ -540,7 +559,9 @@ describe("Pipz film archive logic", () => {
   });
 
   it("retains the historical SWAPI response order", () => {
-    expect(pipzFilms.map(({ episodeId }) => episodeId)).toEqual([4, 5, 6, 1, 2, 3, 7]);
+    expect(pipzFilms.map(({ episodeId }) => episodeId)).toEqual([
+      4, 5, 6, 1, 2, 3, 7,
+    ]);
   });
 });
 

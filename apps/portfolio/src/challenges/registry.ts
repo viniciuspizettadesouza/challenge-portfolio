@@ -1,12 +1,22 @@
 import challengeData from "./data.json";
 
 export type ChallengeRenderer = "react" | "vue3" | "static" | "case-study";
-export type MigrationStatus = "pending" | "in-progress" | "migrated" | "archived";
+export type MigrationStatus =
+  "pending" | "in-progress" | "migrated" | "archived";
+
+export interface ChallengeSource {
+  slug: string;
+  title: string;
+  sourcePath: string;
+  originalRepository: string;
+  originalDefaultBranch: "main" | "master";
+  originalHeadSha: string;
+}
 
 export interface Challenge {
   slug: string;
   title: string;
-  company: string;
+  themes: string[];
   description: string;
   technologies: string[];
   renderer: ChallengeRenderer;
@@ -18,12 +28,11 @@ export interface Challenge {
     | "upgrade-vue2"
     | "upgrade-react"
     | "mock-backend"
+    | "consolidated"
     | "case-study"
     | "manual-review";
-  sourcePath: string;
-  originalRepository: string;
-  originalDefaultBranch: "main" | "master";
-  originalHeadSha: string;
+  sources: ChallengeSource[];
+  aliases: string[];
   demoPath?: string;
   screenshot?: string;
 }
@@ -33,3 +42,9 @@ export const challenges = challengeData as Challenge[];
 export function getChallenge(slug: string) {
   return challenges.find((challenge) => challenge.slug === slug);
 }
+
+export const challengeAliases = new Map(
+  challenges.flatMap((challenge) =>
+    challenge.aliases.map((alias) => [alias, challenge] as const),
+  ),
+);

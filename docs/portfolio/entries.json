@@ -1,0 +1,136 @@
+[
+  {
+    "slug": "event-discovery",
+    "title": "Event Discovery",
+    "themes": ["Discovery & Catalogs", "Mobility & Events"],
+    "sourceSlugs": ["challenge-3cket"]
+  },
+  {
+    "slug": "weather-forecast",
+    "title": "Weather Forecast Explorer",
+    "themes": ["Weather & Climate"],
+    "sourceSlugs": ["challenge-blueticket", "challenge-onsign-tv"],
+    "renderer": "vue3",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "weather-forecast",
+    "description": "A private, fixture-backed weather explorer with location search, nearest-city matching, a six-hour comparison, a detailed 48-hour forecast, and resilient browser history."
+  },
+  {
+    "slug": "episode-management",
+    "title": "Episode Management",
+    "themes": ["Content & Media"],
+    "sourceSlugs": ["challenge-castlabs"]
+  },
+  {
+    "slug": "carbon-emissions-dashboard",
+    "title": "Carbon Emissions Dashboard",
+    "themes": ["Data & Analytics", "Weather & Climate"],
+    "sourceSlugs": ["challenge-climateseed"]
+  },
+  {
+    "slug": "javascript-data-exercises",
+    "title": "JavaScript Data Exercises",
+    "themes": ["Algorithms & Utilities"],
+    "sourceSlugs": ["challenge-conaz"]
+  },
+  {
+    "slug": "grid-pathfinding",
+    "title": "Grid Pathfinding",
+    "themes": ["Algorithms & Utilities"],
+    "sourceSlugs": ["challenge-devlandia"]
+  },
+  {
+    "slug": "movie-search",
+    "title": "Movie Search",
+    "themes": ["Content & Media", "Discovery & Catalogs"],
+    "sourceSlugs": ["challenge-fyld-hansecom"]
+  },
+  {
+    "slug": "public-transit-timetable",
+    "title": "Public Transit Timetable",
+    "themes": ["Discovery & Catalogs", "Mobility & Events"],
+    "sourceSlugs": ["challenge-ingenious-build-frontend"]
+  },
+  {
+    "slug": "lead-filtering-dashboard",
+    "title": "Lead Filtering Dashboard",
+    "themes": ["Business Operations", "Data & Analytics"],
+    "sourceSlugs": ["challenge-instruct"]
+  },
+  {
+    "slug": "employee-directory-registration",
+    "title": "Employee Directory & Registration",
+    "themes": ["Business Operations"],
+    "sourceSlugs": ["challenge-jexperts"]
+  },
+  {
+    "slug": "social-feed-interactions",
+    "title": "Social Feed Interactions",
+    "themes": ["Content & Media"],
+    "sourceSlugs": ["challenge-lagoasoft"]
+  },
+  {
+    "slug": "sales-lead-management",
+    "title": "Sales Lead Management",
+    "themes": ["Business Operations"],
+    "sourceSlugs": ["challenge-meetime"]
+  },
+  {
+    "slug": "film-crawl-experience",
+    "title": "Film Crawl Experience",
+    "themes": ["Content & Media"],
+    "sourceSlugs": ["challenge-pipz"]
+  },
+  {
+    "slug": "roman-numeral-converter",
+    "title": "Roman Numeral Converter",
+    "themes": ["Algorithms & Utilities"],
+    "sourceSlugs": ["challenge-propertiag"]
+  },
+  {
+    "slug": "product-data-table",
+    "title": "Product Data Table",
+    "themes": ["Data & Analytics", "Discovery & Catalogs"],
+    "sourceSlugs": ["challenge-salsify"]
+  },
+  {
+    "slug": "configurable-book-sorting",
+    "title": "Configurable Book Sorting",
+    "themes": ["Algorithms & Utilities", "Data & Analytics"],
+    "sourceSlugs": ["challenge-stormtech", "challenge-zygo"],
+    "renderer": "react",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "configurable-book-sorting",
+    "description": "A configurable sorting workbench that composes ordered field rules, preserves the documented book scenarios, and makes null and empty outcomes explicit."
+  },
+  {
+    "slug": "news-publishing-platform",
+    "title": "News Publishing Platform",
+    "themes": ["Content & Media"],
+    "sourceSlugs": ["challenge-swordhealth"]
+  },
+  {
+    "slug": "user-administration",
+    "title": "User Administration",
+    "themes": ["Business Operations"],
+    "sourceSlugs": ["challenge-user-management"]
+  },
+  {
+    "slug": "formula-one-driver-explorer",
+    "title": "Formula 1 Driver Explorer",
+    "themes": ["Data & Analytics", "Discovery & Catalogs"],
+    "sourceSlugs": ["challenge-vue"]
+  },
+  {
+    "slug": "tv-episode-guide",
+    "title": "TV Episode Guide",
+    "themes": ["Content & Media", "Discovery & Catalogs"],
+    "sourceSlugs": ["challenge-vuejs"]
+  },
+  {
+    "slug": "strain-directory",
+    "title": "Strain Directory",
+    "themes": ["Discovery & Catalogs"],
+    "sourceSlugs": ["challenge-leafwell"]
+  }
+]

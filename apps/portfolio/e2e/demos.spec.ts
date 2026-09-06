@@ -15,15 +15,19 @@ async function openDemo(page: Page, slug: string) {
   });
 
   await page.goto(`demos/${slug}`);
-  await expect(page.getByText("Interactive demo", { exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Back to challenge" })).toHaveAttribute(
-    "href",
-    `/challenge-portfolio/challenges/${slug}`,
-  );
-  await expect(page.locator("astro-island[ssr]")).toHaveCount(0, { timeout: 10_000 });
+  await expect(
+    page.getByText("Interactive demo", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Back to challenge" }),
+  ).toHaveAttribute("href", `/challenge-portfolio/challenges/${slug}`);
+  await expect(page.locator("astro-island[ssr]")).toHaveCount(0, {
+    timeout: 10_000,
+  });
   expect(errors, `hydration errors in ${slug}`).toEqual([]);
   await page.addStyleTag({
-    content: "*, *::before, *::after { animation: none !important; transition: none !important; }",
+    content:
+      "*, *::before, *::after { animation: none !important; transition: none !important; }",
   });
 
   return errors;
@@ -41,53 +45,72 @@ async function capture(page: Page, slug: string, errors: string[]) {
   });
 }
 
-test("3cket searches the imported event fixture and opens details", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-3cket");
-  await page.getByPlaceholder("Name, category, city or country").fill("Evo Padel");
+test("3cket searches the imported event fixture and opens details", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "event-discovery");
+  await page
+    .getByPlaceholder("Name, category, city or country")
+    .fill("Evo Padel");
   await expect(page.locator(".event-grid article")).toHaveCount(1);
   await page.locator(".event-grid article button").click();
-  await expect(page.getByRole("heading", { name: "Evo Padel Open" })).toBeVisible();
-  await expect(page.getByText("A local presentation of the original dynamic route")).toBeVisible();
-  await capture(page, "challenge-3cket", errors);
+  await expect(
+    page.getByRole("heading", { name: "Evo Padel Open" }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("A local presentation of the original dynamic route"),
+  ).toBeVisible();
+  await capture(page, "event-discovery", errors);
 });
 
-test("Leafwell combines directory filters and opens a profile", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-leafwell");
+test("Leafwell combines directory filters and opens a profile", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "strain-directory");
   await page.getByPlaceholder("Search by strain name").fill("Blue Dream");
-  await expect(page.getByRole("heading", { name: "1 directory record" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "1 directory record" }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "View strain →" }).click();
   await expect(page.getByRole("heading", { name: "Blue Dream" })).toBeVisible();
   await expect(page.getByText(/not medical advice/)).toBeVisible();
-  await capture(page, "challenge-leafwell", errors);
+  await capture(page, "strain-directory", errors);
 });
 
-test("Stormtech sorts the local book fixture", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-stormtech");
-  await page.getByRole("button", { name: "Title Descending" }).click();
-  await expect(page.locator(".storm-section").first().locator("tbody tr").first()).toContainText(
+test("book workbench applies a configurable descending title rule", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "configurable-book-sorting");
+  await page.getByLabel("Rule 1 direction").selectOption("descending");
+  await expect(page.locator(".result-panel tbody tr").first()).toContainText(
     "Patterns of Enterprise Application Architecture",
   );
-  await capture(page, "challenge-stormtech", errors);
+  await capture(page, "configurable-book-sorting", errors);
 });
 
 test("Vue filters and selects the original driver list", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-vue");
+  const errors = await openDemo(page, "formula-one-driver-explorer");
   await page.locator("#selectAll").check();
   await expect(page.getByText("5 of 5 selected")).toBeVisible();
   await page.locator("#filters").selectOption("Selected");
-  await capture(page, "challenge-vue", errors);
+  await capture(page, "formula-one-driver-explorer", errors);
 });
 
 test("Vuejs paginates the local episode guide", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-vuejs");
+  const errors = await openDemo(page, "tv-episode-guide");
   await page.getByRole("button", { name: "Next" }).click();
   await expect(page.getByText("Page 2 of 3")).toBeVisible();
-  await capture(page, "challenge-vuejs", errors);
+  await capture(page, "tv-episode-guide", errors);
 });
 
-test("User Management signs up and keeps only its theme after reopening", async ({ page, context }) => {
-  const errors = await openDemo(page, "challenge-user-management");
-  await expect(page.getByRole("heading", { name: "Create your account" })).toBeVisible();
+test("User Management signs up and keeps only its theme after reopening", async ({
+  page,
+  context,
+}) => {
+  const errors = await openDemo(page, "user-administration");
+  await expect(
+    page.getByRole("heading", { name: "Create your account" }),
+  ).toBeVisible();
 
   await page.getByLabel("Email address").fill("new.user@example.test");
   await page.getByLabel("Password", { exact: true }).fill("ExamplePass123!");
@@ -97,7 +120,9 @@ test("User Management signs up and keeps only its theme after reopening", async 
   await expect(page.getByTestId("user-card")).toHaveCount(6);
 
   const storedToken = await page.evaluate(() => {
-    const session = JSON.parse(sessionStorage.getItem("user-management/session") ?? "null") as { token?: string } | null;
+    const session = JSON.parse(
+      sessionStorage.getItem("user-management/session") ?? "null",
+    ) as { token?: string } | null;
     return session?.token ?? null;
   });
   expect(storedToken).toMatch(/^demo-token-/);
@@ -105,23 +130,38 @@ test("User Management signs up and keeps only its theme after reopening", async 
   const demo = page.locator(".um-demo");
   const initialTheme = await demo.getAttribute("data-theme");
   const selectedTheme = initialTheme === "dark" ? "light" : "dark";
-  await page.getByRole("button", { name: `Switch to ${selectedTheme} theme` }).click();
+  await page
+    .getByRole("button", { name: `Switch to ${selectedTheme} theme` })
+    .click();
   await expect(demo).toHaveAttribute("data-theme", selectedTheme);
   expect(errors).toEqual([]);
 
   await page.close();
   const reopenedPage = await context.newPage();
-  const reopenedErrors = await openDemo(reopenedPage, "challenge-user-management");
-  await expect(reopenedPage.getByRole("heading", { name: "Create your account" })).toBeVisible();
-  await expect(reopenedPage.locator(".um-demo")).toHaveAttribute("data-theme", selectedTheme);
-  expect(await reopenedPage.evaluate(() => sessionStorage.getItem("user-management/session"))).toBeNull();
+  const reopenedErrors = await openDemo(reopenedPage, "user-administration");
+  await expect(
+    reopenedPage.getByRole("heading", { name: "Create your account" }),
+  ).toBeVisible();
+  await expect(reopenedPage.locator(".um-demo")).toHaveAttribute(
+    "data-theme",
+    selectedTheme,
+  );
+  expect(
+    await reopenedPage.evaluate(() =>
+      sessionStorage.getItem("user-management/session"),
+    ),
+  ).toBeNull();
   expect(reopenedErrors).toEqual([]);
 });
 
-test("User Management completes authentication, CRUD, pagination, and theme persistence", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-user-management");
+test("User Management completes authentication, CRUD, pagination, and theme persistence", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "user-administration");
 
-  await expect(page.getByRole("heading", { name: "Create your account" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Create your account" }),
+  ).toBeVisible();
   await page.getByLabel("Email address").fill("new.user@example.test");
   await page.getByLabel("Password", { exact: true }).fill("ExamplePass123!");
   await page.getByLabel("Confirm password").fill("DifferentPass123!");
@@ -131,7 +171,9 @@ test("User Management completes authentication, CRUD, pagination, and theme pers
   await page.getByRole("tab", { name: "Sign In" }).click();
   await expect(page.getByText("admin@example.test")).toBeVisible();
   await page.getByRole("button", { name: "Sign in", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "Hello Janet" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Hello Janet" }),
+  ).toBeVisible();
   await expect(page.getByTestId("user-card")).toHaveCount(6);
 
   await page.getByRole("button", { name: "Next" }).click();
@@ -160,13 +202,22 @@ test("User Management completes authentication, CRUD, pagination, and theme pers
 
   const demo = page.locator(".um-demo");
   const originalTheme = await demo.getAttribute("data-theme");
-  await page.getByRole("button", { name: `Switch to ${originalTheme === "dark" ? "light" : "dark"} theme` }).click();
+  await page
+    .getByRole("button", {
+      name: `Switch to ${originalTheme === "dark" ? "light" : "dark"} theme`,
+    })
+    .click();
   const selectedTheme = originalTheme === "dark" ? "light" : "dark";
   await expect(demo).toHaveAttribute("data-theme", selectedTheme);
 
   await page.reload();
-  await expect(page.getByRole("heading", { name: "Hello Janet" })).toBeVisible();
-  await expect(page.locator(".um-demo")).toHaveAttribute("data-theme", selectedTheme);
+  await expect(
+    page.getByRole("heading", { name: "Hello Janet" }),
+  ).toBeVisible();
+  await expect(page.locator(".um-demo")).toHaveAttribute(
+    "data-theme",
+    selectedTheme,
+  );
   await expect(page.getByTestId("user-card")).toHaveCount(6);
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
@@ -174,103 +225,127 @@ test("User Management completes authentication, CRUD, pagination, and theme pers
   await expect(page.getByText("Rowan Vale")).toHaveCount(0);
   await page.getByRole("button", { name: "Previous" }).click();
   await page.getByRole("button", { name: "Previous" }).click();
-  await capture(page, "challenge-user-management", errors);
+  await capture(page, "user-administration", errors);
 });
 
-test("Castlabs filters episodes and receives an update event", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-castlabs");
+test("Castlabs filters episodes and receives an update event", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "episode-management");
   await page.getByPlaceholder("Search episodes...").fill("Northbound");
   await expect(page.getByRole("heading", { name: "2 episodes" })).toBeVisible();
   await page.getByRole("button", { name: "Simulate update event" }).click();
   await expect(page.getByText(/UPDATE received/)).toBeVisible();
-  await capture(page, "challenge-castlabs", errors);
+  await capture(page, "episode-management", errors);
 });
 
 test("Conaz runs the preserved encoding algorithm", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-conaz");
+  const errors = await openDemo(page, "javascript-data-exercises");
   await page.locator("#conaz-encoding").fill("aaabb");
   await expect(page.locator("#conaz-encoding-output")).toHaveText("3a2b");
-  await capture(page, "challenge-conaz", errors);
+  await capture(page, "javascript-data-exercises", errors);
 });
 
-test("JExperts shows the fixture-backed employee directory", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-jexperts");
+test("JExperts shows the fixture-backed employee directory", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "employee-directory-registration");
   await page.getByRole("button", { name: "See all Users" }).click();
   await expect(
-    page.locator(".jexperts-user").filter({ hasText: "Name: Adriano Lima" }).first(),
+    page
+      .locator(".jexperts-user")
+      .filter({ hasText: "Name: Adriano Lima" })
+      .first(),
   ).toBeVisible();
-  await capture(page, "challenge-jexperts", errors);
+  await capture(page, "employee-directory-registration", errors);
 });
 
-test("Zygo preserves the null-collection exception", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-zygo");
-  await page.locator("#zygo-rule").selectOption("null-collection");
-  await expect(page.locator("#zygo-ids")).toContainText(
-    "OrderingException: the book collection is null.",
-  );
-  await capture(page, "challenge-zygo", errors);
+test("book workbench preserves the null-collection exception", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "configurable-book-sorting");
+  await page.getByRole("button", { name: "Null collection" }).click();
+  await expect(page.getByRole("alert")).toContainText("NULL_COLLECTION");
+  expect(errors).toEqual([]);
 });
 
 test("Salsify uses the original product filter component", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-salsify");
+  const errors = await openDemo(page, "product-data-table");
   await page.getByLabel("Property Select").selectOption({ index: 1 });
   await expect(page.getByLabel("Operator Select")).toBeVisible();
   await page.getByLabel("Operator Select").selectOption({ index: 1 });
-  await capture(page, "challenge-salsify", errors);
+  await capture(page, "product-data-table", errors);
 });
 
 test("ClimateSeed switches chart presentation", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-climateseed");
+  const errors = await openDemo(page, "carbon-emissions-dashboard");
   await page.getByRole("button", { name: "Bar" }).click();
   await expect(page.getByRole("button", { name: "Bar" })).toHaveAttribute(
     "aria-pressed",
     "true",
   );
-  await capture(page, "challenge-climateseed", errors);
+  await capture(page, "carbon-emissions-dashboard", errors);
 });
 
 test("Lagoasoft keeps independent post likes", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-lagoasoft");
+  const errors = await openDemo(page, "social-feed-interactions");
   const like = page.locator(".lago-actions button").first();
   await like.click();
   await expect(like).toHaveAttribute("aria-pressed", "true");
-  await capture(page, "challenge-lagoasoft", errors);
+  await capture(page, "social-feed-interactions", errors);
 });
 
 test("Devlandia calculates the next bot move", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-devlandia");
+  const errors = await openDemo(page, "grid-pathfinding");
   await page.getByRole("button", { name: "Show next move" }).click();
-  await expect(page.locator("#devlandia-output")).toContainText("Next move:\nLEFT");
-  await capture(page, "challenge-devlandia", errors);
+  await expect(page.locator("#devlandia-output")).toContainText(
+    "Next move:\nLEFT",
+  );
+  await capture(page, "grid-pathfinding", errors);
 });
 
 test("Meetime opens the local leads list", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-meetime");
+  const errors = await openDemo(page, "sales-lead-management");
   await page.getByRole("button", { name: "List Leads" }).click();
   await expect(page.getByRole("heading", { name: "List leads" })).toBeVisible();
-  await capture(page, "challenge-meetime", errors);
+  await capture(page, "sales-lead-management", errors);
 });
 
 test("Instruct filters the preserved contact fixture", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-instruct");
+  const errors = await openDemo(page, "lead-filtering-dashboard");
   await page.getByPlaceholder("Search name...").fill("Glenna");
   await expect(page.locator(".result-count")).toContainText("1");
   await expect(page.locator(".result-count")).toContainText("matching leads");
   await expect(page.getByText("Glenna Reichert")).toBeVisible();
-  await capture(page, "challenge-instruct", errors);
+  await capture(page, "lead-filtering-dashboard", errors);
 });
 
-test("Blueticket searches the expanded hourly forecast", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-blueticket");
-  await page.locator(".weather-search input").fill("London");
+test("weather explorer searches the expanded hourly forecast", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "weather-forecast");
+  await page.locator("#weather-location").fill("London");
   await page.getByRole("button", { name: "Search" }).click();
-  await expect(page.getByRole("heading", { name: "London, United Kingdom" })).toBeVisible();
-  await expect(page.locator(".forecast-table-wrap tbody tr")).toHaveCount(48);
-  await capture(page, "challenge-blueticket", errors);
+  await expect(
+    page.getByRole("heading", { name: "London, England, United Kingdom" }),
+  ).toBeVisible();
+  await expect(page.locator(".detail-table tbody tr")).toHaveCount(48);
+  await page.reload();
+  await expect(page.locator("#weather-location")).toHaveValue(
+    "London, England, United Kingdom",
+  );
+  await expect(
+    page.getByText(
+      "Restored your last forecast and recent searches from this browser.",
+    ),
+  ).toBeVisible();
+  await capture(page, "weather-forecast", errors);
 });
 
-test("Sword Health supports the authenticated image workflow", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-swordhealth");
+test("Sword Health supports the authenticated image workflow", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "news-publishing-platform");
   await page.getByRole("button", { name: "Start demo session" }).click();
   await page.getByRole("button", { name: "Write" }).click();
   await page.locator('input[type="file"]').setInputFiles({
@@ -283,41 +358,44 @@ test("Sword Health supports the authenticated image workflow", async ({ page }) 
   });
   await expect(page.getByText("article.png")).toBeVisible();
   await expect(page.locator(".article-image-preview img")).toBeVisible();
-  await capture(page, "challenge-swordhealth", errors);
+  await capture(page, "news-publishing-platform", errors);
 });
 
 test("Pipz controls the preserved Star Wars crawl", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-pipz");
+  const errors = await openDemo(page, "film-crawl-experience");
   await page.getByRole("button", { name: "Pause crawl" }).click();
-  await expect(page.getByRole("button", { name: "Resume crawl" })).toBeVisible();
-  await capture(page, "challenge-pipz", errors);
+  await expect(
+    page.getByRole("button", { name: "Resume crawl" }),
+  ).toBeVisible();
+  await capture(page, "film-crawl-experience", errors);
 });
 
 test("PropertiaG translates an example number", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-propertiag");
+  const errors = await openDemo(page, "roman-numeral-converter");
   await page.getByRole("button", { name: "944" }).click();
   await expect(page.locator("output")).toContainText("CMXLIV");
-  await capture(page, "challenge-propertiag", errors);
+  await capture(page, "roman-numeral-converter", errors);
 });
 
 test("FYLD searches the preserved movie dataset", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-fyld-hansecom");
+  const errors = await openDemo(page, "movie-search");
   await page.getByRole("button", { name: "Search" }).click();
   await expect(page.getByText(/\d+ movies found\./)).toBeVisible();
   await expect(page.getByText(/The Avengers/).first()).toBeVisible();
-  await capture(page, "challenge-fyld-hansecom", errors);
+  await capture(page, "movie-search", errors);
 });
 
-test("OnSign TV searches the local weather fixture", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-onsign-tv");
-  await page.locator(".location-search input").fill("London");
-  await page.getByRole("button", { name: "Search address" }).click();
-  await expect(page.locator(".forecast-caption")).toContainText("London, United Kingdom");
-  await capture(page, "challenge-onsign-tv", errors);
+test("legacy challenge and demo URLs redirect to canonical entries", async ({
+  page,
+}) => {
+  await page.goto("demos/challenge-onsign-tv");
+  await expect(page).toHaveURL(/demos\/weather-forecast\/?$/);
+  await page.goto("challenges/challenge-zygo");
+  await expect(page).toHaveURL(/challenges\/configurable-book-sorting\/?$/);
 });
 
 test("Ingenious Build selects a line and stop", async ({ page }) => {
-  const errors = await openDemo(page, "challenge-ingenious-build-frontend");
+  const errors = await openDemo(page, "public-transit-timetable");
   const lineButton = page.locator(".line-buttons button").first();
   const line = (await lineButton.textContent())?.trim() ?? "";
   await lineButton.click();
@@ -326,10 +404,12 @@ test("Ingenious Build selects a line and stop", async ({ page }) => {
   await stopButton.click();
   await expect(page.locator(".selections")).toContainText(line);
   await expect(page.locator(".selections")).toContainText(stop);
-  await capture(page, "challenge-ingenious-build-frontend", errors);
+  await capture(page, "public-transit-timetable", errors);
 });
 
-test("catalog combines URL-backed filters and restores browser history", async ({ page }) => {
+test("catalog combines URL-backed filters and restores browser history", async ({
+  page,
+}) => {
   await page.goto("challenges?technology=React&framework=react");
   const entries = page.locator(".catalog-entry:visible");
   const initialCount = await entries.count();
@@ -339,23 +419,35 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByLabel("Adaptation type").selectOption("mock-backend");
   await expect(page).toHaveURL(/adaptation=mock-backend/);
-  await expect(page.locator(".catalog-entry:visible")).not.toHaveCount(initialCount);
+  await expect(page.locator(".catalog-entry:visible")).not.toHaveCount(
+    initialCount,
+  );
 
   await page.goBack();
   await expect(page.getByLabel("Adaptation type")).toHaveValue("");
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(initialCount);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(
+    initialCount,
+  );
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(23);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(21);
+
+  await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
+  await expect(page).toHaveURL(
+    (url) => url.searchParams.get("theme") === "Algorithms & Utilities",
+  );
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(4);
 });
 
-test("catalog keeps every challenge available without JavaScript", async ({ browser }) => {
+test("catalog keeps every challenge available without JavaScript", async ({
+  browser,
+}) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(23);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(23);
+  await expect(page.locator(".catalog-entry")).toHaveCount(21);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(21);
   await context.close();
 });

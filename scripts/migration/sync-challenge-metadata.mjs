@@ -12,7 +12,10 @@ const summaries = JSON.parse(
     "utf8",
   ),
 );
-const registry = [];
+const entries = JSON.parse(
+  readFileSync(resolve(projectRoot, "docs/portfolio/entries.json"), "utf8"),
+);
+const sources = new Map();
 
 for (const repository of repositories) {
   const slug = repository.slug ?? repository.name;
@@ -31,7 +34,7 @@ for (const repository of repositories) {
         ? "vue3"
         : audit?.migrationStrategy === "static-embed"
           ? "static"
-        : metadata.renderer ?? "case-study";
+          : (metadata.renderer ?? "case-study");
 
   const updated = {
     ...metadata,
@@ -44,7 +47,8 @@ for (const repository of repositories) {
         }
       : {}),
     framework: audit?.framework ?? metadata.framework ?? "",
-    frameworkVersion: audit?.frameworkVersion ?? metadata.frameworkVersion ?? "",
+    frameworkVersion:
+      audit?.frameworkVersion ?? metadata.frameworkVersion ?? "",
     renderer,
     migrationStrategy: audit?.migrationStrategy ?? "manual-review",
     migrationStatus,
@@ -53,11 +57,9 @@ for (const repository of repositories) {
   };
   writeFileSync(metadataPath, `${JSON.stringify(updated, null, 2)}\n`);
 
-  const company = updated.title.replace(/\s+Challenge$/, "");
-  registry.push({
+  sources.set(slug, {
     slug: updated.slug,
     title: updated.title,
-    company,
     description:
       summaries[updated.slug] ??
       "A preserved technical challenge available for source review and portfolio presentation.",
@@ -69,14 +71,73 @@ for (const repository of repositories) {
     originalRepository: updated.originalRepository,
     originalDefaultBranch: updated.originalDefaultBranch,
     originalHeadSha: updated.originalHeadSha,
-    ...(existsSync(resolve(directory, "demo"))
-      ? { demoPath: `challenges/${sourceDirectory}/demo` }
-      : {}),
+    sourceDirectory,
   });
+}
+
+const usedSources = new Set();
+const registry = entries.map((entry) => {
+  const entrySources = entry.sourceSlugs.map((slug) => {
+    const source = sources.get(slug);
+    if (!source) throw new Error(`Unknown portfolio source: ${slug}`);
+    if (usedSources.has(slug))
+      throw new Error(`Duplicate portfolio source: ${slug}`);
+    usedSources.add(slug);
+    return source;
+  });
+  const primary = entrySources[0];
+  const demoDirectory = entry.demoDirectory ?? primary.sourceDirectory;
+
+  return {
+    slug: entry.slug,
+    title: entry.title,
+    themes: entry.themes,
+    description: entry.description ?? primary.description,
+    technologies: [
+      ...new Set(entrySources.flatMap(({ technologies }) => technologies)),
+    ],
+    renderer: entry.renderer ?? primary.renderer,
+    migrationStatus: entrySources.every(
+      ({ migrationStatus }) => migrationStatus === "migrated",
+    )
+      ? "migrated"
+      : "in-progress",
+    migrationStrategy: entry.migrationStrategy ?? primary.migrationStrategy,
+    sources: entrySources.map(
+      ({
+        slug,
+        title,
+        sourcePath,
+        originalRepository,
+        originalDefaultBranch,
+        originalHeadSha,
+      }) => ({
+        slug,
+        title,
+        sourcePath,
+        originalRepository,
+        originalDefaultBranch,
+        originalHeadSha,
+      }),
+    ),
+    aliases: entry.sourceSlugs,
+    ...(existsSync(resolve(projectRoot, "challenges", demoDirectory, "demo"))
+      ? { demoPath: `challenges/${demoDirectory}/demo` }
+      : {}),
+  };
+});
+
+if (usedSources.size !== sources.size) {
+  const missing = [...sources.keys()].filter((slug) => !usedSources.has(slug));
+  throw new Error(
+    `Portfolio sources are not represented: ${missing.join(", ")}`,
+  );
 }
 
 writeFileSync(
   resolve(projectRoot, "apps/portfolio/src/challenges/data.json"),
   `${JSON.stringify(registry, null, 2)}\n`,
 );
-console.log(`Challenge metadata synchronized for ${registry.length} repositories.`);
+console.log(
+  `Challenge metadata synchronized for ${registry.length} curated entries.`,
+);
