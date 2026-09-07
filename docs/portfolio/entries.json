@@ -52,10 +52,20 @@
     "sourceSlugs": ["challenge-ingenious-build-frontend"]
   },
   {
-    "slug": "lead-filtering-dashboard",
-    "title": "Lead Filtering Dashboard",
+    "slug": "lead-operations",
+    "title": "Lead Operations Workspace",
     "themes": ["Business Operations", "Data & Analytics"],
-    "sourceSlugs": ["challenge-instruct"]
+    "sourceSlugs": ["challenge-instruct", "challenge-meetime"],
+    "aliases": [
+      "challenge-instruct",
+      "challenge-meetime",
+      "lead-filtering-dashboard",
+      "sales-lead-management"
+    ],
+    "renderer": "vue3",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "lead-operations",
+    "description": "A unified Vue lead-operations workspace with contact and company search, composable category filters, cadence assignment, validated local CRUD, responsive records, and versioned browser persistence."
   },
   {
     "slug": "employee-directory-registration",
@@ -68,12 +78,6 @@
     "title": "Social Feed Interactions",
     "themes": ["Content & Media"],
     "sourceSlugs": ["challenge-lagoasoft"]
-  },
-  {
-    "slug": "sales-lead-management",
-    "title": "Sales Lead Management",
-    "themes": ["Business Operations"],
-    "sourceSlugs": ["challenge-meetime"]
   },
   {
     "slug": "film-crawl-experience",

@@ -120,7 +120,7 @@ const registry = entries.map((entry) => {
         originalHeadSha,
       }),
     ),
-    aliases: entry.sourceSlugs,
+    aliases: entry.aliases ?? entry.sourceSlugs,
     ...(existsSync(resolve(projectRoot, "challenges", demoDirectory, "demo"))
       ? { demoPath: `challenges/${demoDirectory}/demo` }
       : {}),

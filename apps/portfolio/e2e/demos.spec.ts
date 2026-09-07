@@ -304,20 +304,52 @@ test("Devlandia calculates the next bot move", async ({ page }) => {
   await capture(page, "grid-pathfinding", errors);
 });
 
-test("Meetime opens the local leads list", async ({ page }) => {
-  const errors = await openDemo(page, "sales-lead-management");
-  await page.getByRole("button", { name: "List Leads" }).click();
-  await expect(page.getByRole("heading", { name: "List leads" })).toBeVisible();
-  await capture(page, "sales-lead-management", errors);
+test("lead operations searches, creates, edits, deletes, and persists leads", async ({ page }) => {
+  const errors = await openDemo(page, "lead-operations");
+  await page.getByPlaceholder("Search contact or company...").fill("Northstar");
+  await expect(page.locator(".lead-table tbody tr")).toHaveCount(1);
+  await expect(page.getByText("Daniel Brooks").first()).toBeVisible();
+  await page.getByRole("button", { name: "Clear filters" }).last().click();
+  await page.getByLabel("Company category").selectOption("e-enable");
+  await page.getByLabel("Company category").selectOption("applications");
+  await expect(page.locator(".lead-table tbody tr")).toHaveCount(2);
+  await page.getByRole("button", { name: "Clear filters" }).click();
+  await page.getByPlaceholder("Search contact or company...").fill("no-such-company");
+  await expect(page.getByText("No leads match these filters.")).toBeVisible();
+  await page.getByRole("button", { name: "Clear filters" }).last().click();
+  const addButton = page.getByRole("button", { name: "+ Add lead" }).first();
+  await addButton.click();
+  await page.getByRole("button", { name: "Add lead", exact: true }).click();
+  await expect(page.getByText("Name is required.")).toBeVisible();
+  await page.getByLabel("Name *").fill("Alex Morgan");
+  await page.getByLabel("E-mail *").fill("alex@example.com");
+  await page.getByLabel("Phone *").fill("+351 210 000 000");
+  await page.getByLabel("Company *").fill("Example Labs");
+  await page.getByLabel("Cadence *").selectOption("Product Demo");
+  await page.getByLabel(/Categories/).fill("saas, enterprise");
+  await page.getByRole("button", { name: "Add lead", exact: true }).click();
+  await expect(addButton).toBeFocused();
+  await expect(page.getByText("Alex Morgan").first()).toBeVisible();
+  await page.getByRole("button", { name: "Edit Alex Morgan" }).first().click();
+  await page.getByLabel("Company *").fill("Example Group");
+  await page.getByRole("button", { name: "Save changes" }).click();
+  await expect(page.getByText("Example Group").first()).toBeVisible();
+  await page.reload();
+  await expect(page.getByText("Alex Morgan").first()).toBeVisible();
+  await page.getByRole("button", { name: "Delete Alex Morgan" }).first().click();
+  await page.getByRole("button", { name: "Delete lead" }).click();
+  await expect(page.getByRole("button", { name: "Delete Alex Morgan" })).toHaveCount(0);
+  await expect(page.getByText("Alex Morgan was deleted.")).toBeVisible();
+  await capture(page, "lead-operations", errors);
 });
 
-test("Instruct filters the preserved contact fixture", async ({ page }) => {
-  const errors = await openDemo(page, "lead-filtering-dashboard");
-  await page.getByPlaceholder("Search name...").fill("Glenna");
-  await expect(page.locator(".result-count")).toContainText("1");
-  await expect(page.locator(".result-count")).toContainText("matching leads");
-  await expect(page.getByText("Glenna Reichert")).toBeVisible();
-  await capture(page, "lead-filtering-dashboard", errors);
+test("lead operations switches to accessible cards on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  const errors = await openDemo(page, "lead-operations");
+  await expect(page.locator(".lead-table")).toBeHidden();
+  await expect(page.locator(".lead-cards")).toBeVisible();
+  await expect(page.locator(".lead-cards article")).toHaveCount(13);
+  expect(errors).toEqual([]);
 });
 
 test("weather explorer searches the expanded hourly forecast", async ({
@@ -392,6 +424,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
   await expect(page).toHaveURL(/demos\/weather-forecast\/?$/);
   await page.goto("challenges/challenge-zygo");
   await expect(page).toHaveURL(/challenges\/configurable-book-sorting\/?$/);
+  for (const alias of ["challenge-instruct", "challenge-meetime", "lead-filtering-dashboard", "sales-lead-management"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/lead-operations\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/lead-operations\/?$/);
+  }
 });
 
 test("Ingenious Build selects a line and stop", async ({ page }) => {
@@ -431,7 +469,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(21);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(20);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -447,7 +485,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(21);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(21);
+  await expect(page.locator(".catalog-entry")).toHaveCount(20);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(20);
   await context.close();
 });

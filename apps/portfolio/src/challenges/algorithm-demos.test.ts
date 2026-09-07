@@ -46,18 +46,9 @@ import {
   searchUsers,
   similarity,
 } from "@challenge/jexperts-demo/logic";
-import {
-  createLead,
-  deleteLead,
-  initialLeads,
-  updateLead,
-  validateLead,
-} from "@challenge/meetime-demo/logic";
-import {
-  filterLeads,
-  getCategoryOptions,
-  leads as instructLeads,
-} from "@challenge/instruct-demo/logic";
+import { initialLeads } from "@challenge/lead-operations-demo/fixtures";
+import { createLead, deleteLead, filterLeads, getCategoryOptions, nextLeadId, updateLead, validateLead } from "@challenge/lead-operations-demo/logic";
+import { LEAD_STORAGE_KEY, loadLeads, migrateLegacyLeads, readLeadState, writeLeadState } from "@challenge/lead-operations-demo/persistence";
 import { films as pipzFilms, toRomanEpisode } from "@challenge/pipz-demo/logic";
 import {
   displayedLikes,
@@ -230,19 +221,30 @@ describe("configurable book sorting", () => {
   });
 });
 
-describe("Meetime local lead management", () => {
+describe("consolidated lead operations", () => {
+  it("retains thirteen records and combines contact, company, and category filters", () => {
+    expect(initialLeads).toHaveLength(13);
+    expect(new Set(initialLeads.map(({ id }) => id)).size).toBe(13);
+    expect(filterLeads(initialLeads, "Glenna", [])).toHaveLength(1);
+    expect(filterLeads(initialLeads, "Northstar", ["enterprise"])).toHaveLength(1);
+    expect(filterLeads(initialLeads, "", ["e-enable", "applications"]).map(({ id }) => id)).toEqual(["instruct-3", "instruct-6"]);
+    expect(getCategoryOptions(initialLeads)).toContain("real-time");
+  });
+
   it("validates and creates leads for a local cadence", () => {
     const draft = {
       name: "Alex Morgan",
       email: "alex@example.com",
       phone: "+44 20 7000 0000",
+      company: "Example Labs",
+      categories: ["saas"],
       cadence: "Product Demo",
     };
 
     expect(validateLead(draft)).toEqual({});
-    expect(createLead(draft, 4)).toMatchObject({
-      id: 4,
-      leadName: "Alex Morgan",
+    expect(createLead(draft, nextLeadId(initialLeads), "06 Sep 2026")).toMatchObject({
+      id: "local-1",
+      name: "Alex Morgan",
       cadence: "Product Demo",
     });
     expect(validateLead({ ...draft, email: "invalid" }).email).toContain(
@@ -257,6 +259,27 @@ describe("Meetime local lead management", () => {
     expect(next[0].phone).toBe("+55 48 90000-0000");
     expect(initialLeads[0].phone).not.toBe(next[0].phone);
     expect(deleteLead(next, updated.id)).toHaveLength(initialLeads.length - 1);
+  });
+
+  it("validates versioned persistence and imports authoritative legacy state", () => {
+    const values = new Map<string, string>();
+    const storage = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value) };
+    expect(writeLeadState(storage, initialLeads)).toBe(true);
+    expect(readLeadState(storage)?.leads).toHaveLength(13);
+    values.set(LEAD_STORAGE_KEY, "bad json");
+    expect(readLeadState(storage)).toBeUndefined();
+    const legacy = migrateLegacyLeads([{ leadName: "Daniel Updated", email: "daniel@example.com", phone: "123", cadence: "Enterprise Follow-up", createdAt: "27 Jul 2026" }, { leadName: "New Lead", email: "new@example.com", phone: "456", cadence: "Outbound SMB" }]);
+    expect(legacy).toHaveLength(12);
+    expect(legacy?.find(({ email }) => email === "daniel@example.com")?.name).toBe("Daniel Updated");
+    expect(legacy?.find(({ email }) => email === "new@example.com")?.company).toBe("Independent prospect");
+    expect(migrateLegacyLeads(null)).toBeUndefined();
+    expect(migrateLegacyLeads([{ email: "duplicate@example.com", phone: "1", cadence: "Product Demo" }, { email: "DUPLICATE@example.com", phone: "2", cadence: "Outbound SMB" }, { invalid: true }])).toHaveLength(11);
+    values.delete(LEAD_STORAGE_KEY);
+    values.set("meetime-demo-leads", JSON.stringify([{ leadName: "Only Legacy", email: "only@example.com", phone: "789", cadence: "Product Demo" }]));
+    expect(loadLeads(storage).source).toBe("migrated");
+    expect(readLeadState(undefined)).toBeUndefined();
+    expect(writeLeadState(undefined, initialLeads)).toBe(false);
+    expect(writeLeadState({ getItem: () => null, setItem: () => { throw new Error("blocked"); } }, initialLeads)).toBe(false);
   });
 });
 
@@ -530,26 +553,6 @@ describe("Ingenious Build timetable logic", () => {
 
     expect(ascending).toContain("Salwator");
     expect(descending).toEqual([...ascending].reverse());
-  });
-});
-
-describe("Instruct lead filtering", () => {
-  it("extracts the individual company categories", () => {
-    const options = getCategoryOptions(instructLeads);
-
-    expect(options).toContain("real-time");
-    expect(options).toContain("technologies");
-    expect(new Set(options).size).toBe(options.length);
-  });
-
-  it("combines contact-name and category filters", () => {
-    expect(filterLeads(instructLeads, "glenna", ["real-time"])).toHaveLength(1);
-    expect(
-      filterLeads(instructLeads, "", ["e-enable", "applications"]).map(
-        ({ id }) => id,
-      ),
-    ).toEqual([3, 6]);
-    expect(filterLeads(instructLeads, "glenna", ["supply-chains"])).toEqual([]);
   });
 });
 

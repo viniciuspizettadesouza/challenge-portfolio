@@ -17,6 +17,7 @@ the [maintenance handbook](README.md).
 | 2026-09-02 | 17     | Added User Management with five sanitized commits and a complete maintained Parts 1–4 implementation. Revisions `8227df4` and `6caced1` were published and verified before the owner deleted its superseded repository.                                                              |
 | 2026-09-03 | 18     | Completed browser CI, dependency automation, full-history secret scanning, accessibility coverage, and URL-backed catalog discovery in revisions `e2b563b` and `6e79caf`. All workflows and production checks passed.                                                                |
 | 2026-09-06 | 19     | Consolidated two proven duplicate pairs into domain-focused weather and book-sorting demos, renamed the catalog around capabilities, and retained compatibility routes from all historical public slugs. |
+| 2026-09-06 | 20     | Consolidated Instruct and Meetime into the Lead Operations Workspace, retaining unified discovery, category filters, cadence-backed CRUD, versioned persistence, responsive records, and redirects from both retired entries. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -219,6 +220,7 @@ color changes.
 | Phase 18 · `6e79caf`       | Lint and typecheck; 80 unit tests; 51 Chromium tests (24 interactions, 25 accessibility, 2 catalog); 49 pages; Gitleaks over 310 commits; no screenshot changes                                            |
 | 2026-09-03 maintenance     | Compatible dependency updates; lint and typecheck; 80 unit tests; 51 Chromium tests with full accessibility coverage; 49 pages; Gitleaks over 316 commits; 23 reviewed screenshots                |
 | Phase 19 domain consolidation | Frozen install; lint and typecheck; 79 unit/SSR tests; 49 Chromium tests including all 21 canonical demos; 21 screenshots; 91 static pages including legacy challenge and demo redirects |
+| Phase 20 lead consolidation | Offline frozen install; lint and typecheck; 78 unit/SSR tests; 48 Chromium interaction and accessibility tests; 20 screenshots; 93 static pages including four retained lead-route aliases; Gitleaks over 319 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

@@ -1,18 +1,18 @@
 # Migration status
 
-Last updated: 2026-09-06.
+Last updated: 2026-09-07.
 
-All migration and consolidation phases (0–19) are complete. The portfolio now
-presents 21 domain-focused entries backed by all 23 immutable historical
-sources. The duplicate weather and book-sorting demos have been replaced by
-feature-complete consolidated adaptations, and legacy public slugs resolve to
-their new capability-based routes.
+All migration and consolidation phases (0–20) are complete. The portfolio now
+presents 20 domain-focused entries backed by all 23 immutable historical
+sources. The Instruct and Meetime demos have been replaced by the consolidated
+Lead Operations Workspace, and all four former lead challenge and capability
+slugs resolve to the new canonical route.
 
-The Phase 19 working tree passes a frozen offline install, lint, typecheck, 79
-unit and SSR tests, 49 Chromium interaction and accessibility tests, a
-91-page production build, and Gitleaks across 318 commits with no findings.
-All 21 canonical demo screenshots were regenerated; the two consolidated
-screenshots received direct visual review.
+The Phase 20 working tree passes a frozen offline install, lint, typecheck, 78
+unit and SSR tests, 48 Chromium interaction and accessibility tests, a
+93-page production build, and Gitleaks across 319 commits with no findings.
+All 20 canonical demo screenshots were regenerated, and the new Lead
+Operations screenshot received direct visual review.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
 pass integrates the compatible dependency updates, keeps TypeScript 6 until
@@ -24,10 +24,10 @@ No tag is planned.
 
 ## Next action
 
-Review the two consolidated demos and the refreshed catalog screenshots, then
-commit and push the approved Phase 19 changes and verify all three GitHub
-Actions workflows. Continue routine dependency and security maintenance
-afterward.
+Review the Lead Operations Workspace and refreshed screenshots, then commit
+and push the approved Phase 20 changes and verify Browser tests, Security scan,
+and Deploy to GitHub Pages against the published revision. Continue routine
+dependency and security maintenance afterward.
 
 Use the [handbook](../README.md) for current procedures and
 [HISTORY.md](../HISTORY.md) for the complete summarized migration, security,

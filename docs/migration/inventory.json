@@ -377,7 +377,7 @@
     "migrationStrategy": "upgrade-vue2",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 2/Vuetify prospecting client adapted to a self-contained Vue 3 island. Cadence selection, lead validation and creation, the lead table, edit/delete dialogs, and browser persistence remain interactive with fictional local records replacing the private Meetime API. Owner approved on 2026-07-28."
+    "reviewNotes": "Vue 2/Vuetify prospecting client now contributes cadence assignment, validation, CRUD, and compatible browser persistence to the consolidated Lead Operations Workspace. Fictional local records replace the private Meetime API."
   },
   {
     "slug": "challenge-instruct",
@@ -405,7 +405,7 @@
     "migrationStrategy": "upgrade-vue2",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Nuxt 2 lead table adapted to a responsive Vue 3 island using a deterministic local copy of the original ten-user JSONPlaceholder response. Name and multi-category filtering are retained without live API access. Owner approved on 2026-07-28."
+    "reviewNotes": "Nuxt 2 lead table now contributes its deterministic ten-contact fixture, contact and company discovery, and composable category filters to the consolidated Lead Operations Workspace without live API access."
   },
   {
     "slug": "challenge-blueticket",

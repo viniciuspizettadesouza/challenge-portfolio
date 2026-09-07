@@ -3,8 +3,7 @@ import ThreeCketDemo from "@challenge/3cket-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
-import InstructDemo from "@challenge/instruct-demo";
-import MeetimeDemo from "@challenge/meetime-demo";
+import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import VueJsDemo from "@challenge/vuejs-demo";
@@ -18,8 +17,7 @@ const demos = {
   "carbon-emissions-dashboard": ClimateSeedDemo,
   "movie-search": FyldHansecomDemo,
   "public-transit-timetable": IngeniousBuildDemo,
-  "lead-filtering-dashboard": InstructDemo,
-  "sales-lead-management": MeetimeDemo,
+  "lead-operations": LeadOperationsDemo,
   "news-publishing-platform": SwordHealthDemo,
   "formula-one-driver-explorer": VueDemo,
   "tv-episode-guide": VueJsDemo,

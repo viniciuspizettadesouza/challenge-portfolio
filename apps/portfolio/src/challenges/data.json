@@ -265,23 +265,27 @@
     "demoPath": "challenges/challenge-ingenious-build-frontend/demo"
   },
   {
-    "slug": "lead-filtering-dashboard",
-    "title": "Lead Filtering Dashboard",
+    "slug": "lead-operations",
+    "title": "Lead Operations Workspace",
     "themes": [
       "Business Operations",
       "Data & Analytics"
     ],
-    "description": "A responsive lead-management table with contact-name search and combinable filters derived from company categories.",
+    "description": "A unified Vue lead-operations workspace with contact and company search, composable category filters, cadence assignment, validated local CRUD, responsive records, and versioned browser persistence.",
     "technologies": [
       "Nuxt",
       "Vue",
       "JavaScript",
       "SCSS",
-      "REST API"
+      "REST API",
+      "Vue CLI",
+      "Vuetify",
+      "Axios",
+      "Vuelidate"
     ],
     "renderer": "vue3",
     "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-instruct",
@@ -290,12 +294,23 @@
         "originalRepository": "viniciuspizettadesouza/challenge-instruct",
         "originalDefaultBranch": "master",
         "originalHeadSha": "803d0834803c9016d8e9b9835a7031f8830672f1"
+      },
+      {
+        "slug": "challenge-meetime",
+        "title": "Meetime Challenge",
+        "sourcePath": "challenges/challenge-meetime/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-meetime",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1"
       }
     ],
     "aliases": [
-      "challenge-instruct"
+      "challenge-instruct",
+      "challenge-meetime",
+      "lead-filtering-dashboard",
+      "sales-lead-management"
     ],
-    "demoPath": "challenges/challenge-instruct/demo"
+    "demoPath": "challenges/lead-operations/demo"
   },
   {
     "slug": "employee-directory-registration",
@@ -360,38 +375,6 @@
       "challenge-lagoasoft"
     ],
     "demoPath": "challenges/challenge-lagoasoft/demo"
-  },
-  {
-    "slug": "sales-lead-management",
-    "title": "Sales Lead Management",
-    "themes": [
-      "Business Operations"
-    ],
-    "description": "A Vue sales-prospecting client for validating and adding leads to outbound cadences, then listing, editing, deleting, and caching them locally.",
-    "technologies": [
-      "Vue",
-      "Vue CLI",
-      "Vuetify",
-      "Axios",
-      "Vuelidate"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
-    "sources": [
-      {
-        "slug": "challenge-meetime",
-        "title": "Meetime Challenge",
-        "sourcePath": "challenges/challenge-meetime/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-meetime",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "fe254ccc8c8b5e6636b032cb73e478e154b023b1"
-      }
-    ],
-    "aliases": [
-      "challenge-meetime"
-    ],
-    "demoPath": "challenges/challenge-meetime/demo"
   },
   {
     "slug": "film-crawl-experience",

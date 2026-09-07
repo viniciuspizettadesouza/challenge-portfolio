@@ -4,10 +4,9 @@ import CastlabsDemo from "@challenge/castlabs-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
-import InstructDemo from "@challenge/instruct-demo";
+import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import JExpertsDemo from "@challenge/jexperts-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
-import MeetimeDemo from "@challenge/meetime-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
@@ -59,12 +58,13 @@ describe("pilot demos", () => {
     expect(html).toContain("Configuration presets");
   });
 
-  it("renders the local Meetime lead workflow", async () => {
-    const html = await renderToString(createSSRApp(MeetimeDemo));
+  it("renders the consolidated lead operations workspace", async () => {
+    const html = await renderToString(createSSRApp(LeadOperationsDemo));
 
-    expect(html).toContain("Add lead");
-    expect(html).toContain("Outbound SMB");
-    expect(html).toContain("Private API replaced with local browser state");
+    expect(html).toContain("Lead Operations");
+    expect(html).toContain("Leanne Graham");
+    expect(html).toContain("Mariana Costa");
+    expect(html).toContain("Search contact or company");
   });
 
   it("renders the consolidated local weather explorer", async () => {
@@ -107,14 +107,6 @@ describe("pilot demos", () => {
     expect(html).toContain("Clinical insight for a world without pain");
     expect(html).toContain("Start demo session");
     expect(html).toContain("News &amp; perspectives");
-  });
-
-  it("renders the fixture-backed Instruct leads table", async () => {
-    const html = await renderToString(createSSRApp(InstructDemo));
-
-    expect(html).toContain("Potential customers");
-    expect(html).toContain("Leanne Graham");
-    expect(html).toContain("Glenna Reichert");
   });
 
   it("renders the Ingenious Build timetable", async () => {
