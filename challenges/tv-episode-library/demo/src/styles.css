@@ -15,6 +15,7 @@
 
 .castlabs-demo button,
 .castlabs-demo input,
+.castlabs-demo select,
 .castlabs-demo textarea {
   font: inherit;
 }
@@ -75,6 +76,27 @@
   padding: 0.7rem;
   border: 0;
   outline: 0;
+}
+
+.castlabs-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(38rem, 64%);
+}
+
+.castlabs-filters .castlabs-search {
+  flex: 1;
+  width: auto;
+}
+
+.castlabs-series-filter {
+  min-height: 2.6rem;
+  padding: 0 0.75rem;
+  border: 0;
+  border-radius: 0.45rem;
+  color: var(--castlabs-navy);
+  background: white;
 }
 
 .castlabs-status {
@@ -165,6 +187,31 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.castlabs-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem;
+  border-top: 1px solid var(--castlabs-line);
+  color: var(--castlabs-muted);
+  font-size: 0.72rem;
+}
+
+.castlabs-pagination button {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--castlabs-line);
+  border-radius: 0.4rem;
+  color: var(--castlabs-navy);
+  background: white;
+  cursor: pointer;
+}
+
+.castlabs-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .castlabs-list li {
@@ -326,6 +373,45 @@
   padding-top: 0.4rem;
 }
 
+.castlabs-show-card {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border: 1px solid var(--castlabs-line);
+  border-radius: 0.7rem;
+  background: white;
+}
+
+.castlabs-show-card strong {
+  font-size: 1rem;
+}
+
+.castlabs-show-card p {
+  margin: 0;
+  color: var(--castlabs-muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.castlabs-show-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.castlabs-show-card li {
+  padding: 0.25rem 0.45rem;
+  border-radius: 99px;
+  color: #334155;
+  background: #e9f2ff;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
 .castlabs-details__copy h2 {
   margin: 0.35rem 0 0.8rem;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -424,6 +510,7 @@
 }
 
 .castlabs-form input,
+.castlabs-form select,
 .castlabs-form textarea {
   width: 100%;
   box-sizing: border-box;
@@ -435,6 +522,7 @@
 }
 
 .castlabs-form input:focus,
+.castlabs-form select:focus,
 .castlabs-form textarea:focus {
   border-color: var(--castlabs-blue);
   outline: 3px solid #dbeafe;
@@ -485,6 +573,12 @@
   .castlabs-header {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .castlabs-filters {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
   }
 
   .castlabs-search {

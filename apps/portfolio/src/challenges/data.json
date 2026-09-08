@@ -75,23 +75,27 @@
     "demoPath": "challenges/weather-forecast/demo"
   },
   {
-    "slug": "episode-management",
-    "title": "Episode Management",
+    "slug": "tv-episode-library",
+    "title": "TV Episode Library",
     "themes": [
-      "Content & Media"
+      "Content & Media",
+      "Discovery & Catalogs"
     ],
-    "description": "A React episode manager with search, detailed records, local create/delete flows, and simulated create, update, and delete subscription feedback.",
+    "description": "A unified React television library with series metadata, searchable and paginated episodes, detailed records, local create/delete mutations, and simulated subscription activity.",
     "technologies": [
       "React",
       "TypeScript",
       "Vite",
       "Apollo",
       "GraphQL",
-      "OMDb"
+      "OMDb",
+      "Vue",
+      "Pinia",
+      "Vue Router"
     ],
     "renderer": "react",
     "migrationStatus": "migrated",
-    "migrationStrategy": "native-react",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-castlabs",
@@ -100,12 +104,23 @@
         "originalRepository": "viniciuspizettadesouza/challenge-castlabs",
         "originalDefaultBranch": "main",
         "originalHeadSha": "861564112e54344fd30e71f9bba10af8f3afe95b"
+      },
+      {
+        "slug": "challenge-vuejs",
+        "title": "Vue.js Challenge",
+        "sourcePath": "challenges/challenge-vuejs/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889"
       }
     ],
     "aliases": [
-      "challenge-castlabs"
+      "challenge-castlabs",
+      "challenge-vuejs",
+      "episode-management",
+      "tv-episode-guide"
     ],
-    "demoPath": "challenges/challenge-castlabs/demo"
+    "demoPath": "challenges/tv-episode-library/demo"
   },
   {
     "slug": "carbon-emissions-dashboard",
@@ -589,38 +604,6 @@
       "challenge-vue"
     ],
     "demoPath": "challenges/challenge-vue/demo"
-  },
-  {
-    "slug": "tv-episode-guide",
-    "title": "TV Episode Guide",
-    "themes": [
-      "Content & Media",
-      "Discovery & Catalogs"
-    ],
-    "description": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Pinia",
-      "Vue Router"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sources": [
-      {
-        "slug": "challenge-vuejs",
-        "title": "Vue.js Challenge",
-        "sourcePath": "challenges/challenge-vuejs/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889"
-      }
-    ],
-    "aliases": [
-      "challenge-vuejs"
-    ],
-    "demoPath": "challenges/challenge-vuejs/demo"
   },
   {
     "slug": "strain-directory",

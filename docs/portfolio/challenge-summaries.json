@@ -1,7 +1,7 @@
 {
   "challenge-3cket": "A Nuxt event-discovery challenge adapted to Vue 3 with responsive fixture-backed search, event cards, dynamic details, and explicit not-found handling.",
   "challenge-blueticket": "A Vue weather dashboard with local city search, privacy-safe location matching, a complete 48-hour forecast, and browser-cached history.",
-  "challenge-castlabs": "A React episode manager with search, detailed records, local create/delete flows, and simulated create, update, and delete subscription feedback.",
+  "challenge-castlabs": "The management half of the consolidated TV Episode Library, retaining search, detailed records, local create/delete flows, and simulated create, update, and delete subscription feedback.",
   "challenge-climateseed": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
   "challenge-conaz": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
   "challenge-devlandia": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",
@@ -20,6 +20,6 @@
   "challenge-swordhealth": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
   "challenge-user-management": "The secure administration half of a consolidated people-operations workspace, retaining authentication, token-protected CRUD, pagination, theme persistence, tests, and Docker delivery.",
   "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
-  "challenge-vuejs": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
+  "challenge-vuejs": "The discovery half of the consolidated TV Episode Library, contributing the Signal Lost series profile, twelve local episodes, summaries, and pagination.",
   "challenge-zygo": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes."
 }

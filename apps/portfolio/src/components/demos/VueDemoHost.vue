@@ -6,7 +6,6 @@ import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
-import VueJsDemo from "@challenge/vuejs-demo";
 import WeatherForecastDemo from "@challenge/weather-forecast-demo";
 import { computed } from "vue";
 
@@ -20,7 +19,6 @@ const demos = {
   "lead-operations": LeadOperationsDemo,
   "news-publishing-platform": SwordHealthDemo,
   "formula-one-driver-explorer": VueDemo,
-  "tv-episode-guide": VueJsDemo,
 };
 const demo = computed(() => demos[props.slug as keyof typeof demos]);
 </script>

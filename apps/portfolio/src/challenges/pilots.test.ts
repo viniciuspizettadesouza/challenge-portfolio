@@ -1,6 +1,6 @@
 import ThreeCketDemo from "@challenge/3cket-demo";
 import WeatherForecastDemo from "@challenge/weather-forecast-demo";
-import CastlabsDemo from "@challenge/castlabs-demo";
+import TVEpisodeLibraryDemo from "@challenge/tv-episode-library-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
@@ -14,7 +14,6 @@ import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-de
 import StrainsDemo from "@challenge/strains-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
-import VueJsDemo from "@challenge/vuejs-demo";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createSSRApp } from "vue";
@@ -74,13 +73,14 @@ describe("pilot demos", () => {
     expect(html).toContain("48-hour forecast");
   });
 
-  it("renders the local Castlabs episode manager", () => {
-    const html = renderToStaticMarkup(createElement(CastlabsDemo));
+  it("renders the consolidated TV episode library", () => {
+    const html = renderToStaticMarkup(createElement(TVEpisodeLibraryDemo));
 
-    expect(html).toContain("TV Series Episodes");
+    expect(html).toContain("TV Episode Library");
     expect(html).toContain("Local subscription simulation");
-    expect(html).toContain("Simulate update event");
-    expect(html).toContain("The Quiet Frequency");
+    expect(html).toContain("Signal Lost");
+    expect(html).toContain("17 matching episodes");
+    expect(html).toContain("Page 1 of 4");
   });
 
   it("renders the Fyld Hansecom movie search", async () => {
@@ -152,11 +152,4 @@ describe("pilot demos", () => {
     expect(html).toContain("Max Verstappen");
   });
 
-  it("renders the fixture-backed Vue.js episode guide", async () => {
-    const html = await renderToString(createSSRApp(VueJsDemo));
-
-    expect(html).toContain("Signal Lost");
-    expect(html).toContain("The Carrier Wave");
-    expect(html).toContain("Page 1 of 3");
-  });
 });

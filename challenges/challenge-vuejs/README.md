@@ -4,14 +4,17 @@ History imported, sanitized, and verified.
 
 ## Portfolio presentation
 
-The Vue 3 episode guide is available as an interactive Astro island with
-pagination. Deterministic local fixtures replace the original insecure HTTP
-TVMaze requests, so the demo works without external services.
+The maintained adaptation is consolidated with the Castlabs episode manager in
+[`../tv-episode-library/demo`](../tv-episode-library/demo). It contributes the
+Signal Lost series profile, twelve episode records, summaries, and pagination.
+Deterministic local fixtures replace the original insecure HTTP TVMaze
+requests, so the demo works without external services.
 
-The historical Vue application remains unchanged under `original/`. The
-portfolio adaptation lives under `demo/`.
+The historical Vue application remains unchanged under `original/`. The former
+`challenge-vuejs` and `tv-episode-guide` routes redirect to the canonical
+`tv-episode-library` entry.
 
 ## Status
 
-The demo is integrated, covered by SSR and pagination tests, and was approved
-by the repository owner on 2026-07-28.
+The consolidated demo is covered by SSR, unit, browser interaction, and
+accessibility tests.

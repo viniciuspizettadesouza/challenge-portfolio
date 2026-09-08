@@ -16,10 +16,20 @@
     "description": "A private, fixture-backed weather explorer with location search, nearest-city matching, a six-hour comparison, a detailed 48-hour forecast, and resilient browser history."
   },
   {
-    "slug": "episode-management",
-    "title": "Episode Management",
-    "themes": ["Content & Media"],
-    "sourceSlugs": ["challenge-castlabs"]
+    "slug": "tv-episode-library",
+    "title": "TV Episode Library",
+    "themes": ["Content & Media", "Discovery & Catalogs"],
+    "sourceSlugs": ["challenge-castlabs", "challenge-vuejs"],
+    "aliases": [
+      "challenge-castlabs",
+      "challenge-vuejs",
+      "episode-management",
+      "tv-episode-guide"
+    ],
+    "renderer": "react",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "tv-episode-library",
+    "description": "A unified React television library with series metadata, searchable and paginated episodes, detailed records, local create/delete mutations, and simulated subscription activity."
   },
   {
     "slug": "carbon-emissions-dashboard",
@@ -128,12 +138,6 @@
     "title": "Formula 1 Driver Explorer",
     "themes": ["Data & Analytics", "Discovery & Catalogs"],
     "sourceSlugs": ["challenge-vue"]
-  },
-  {
-    "slug": "tv-episode-guide",
-    "title": "TV Episode Guide",
-    "themes": ["Content & Media", "Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-vuejs"]
   },
   {
     "slug": "strain-directory",

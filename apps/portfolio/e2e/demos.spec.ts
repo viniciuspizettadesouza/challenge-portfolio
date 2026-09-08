@@ -96,13 +96,6 @@ test("Vue filters and selects the original driver list", async ({ page }) => {
   await capture(page, "formula-one-driver-explorer", errors);
 });
 
-test("Vuejs paginates the local episode guide", async ({ page }) => {
-  const errors = await openDemo(page, "tv-episode-guide");
-  await page.getByRole("button", { name: "Next" }).click();
-  await expect(page.getByText("Page 2 of 3")).toBeVisible();
-  await capture(page, "tv-episode-guide", errors);
-});
-
 test("People Operations signs up and keeps only its theme after reopening", async ({
   page,
   context,
@@ -244,15 +237,20 @@ test("People Operations completes authentication, directory discovery, CRUD, and
   await capture(page, "people-operations", errors);
 });
 
-test("Castlabs filters episodes and receives an update event", async ({
+test("TV Episode Library combines series discovery and episode management", async ({
   page,
 }) => {
-  const errors = await openDemo(page, "episode-management");
-  await page.getByPlaceholder("Search episodes...").fill("Northbound");
-  await expect(page.getByRole("heading", { name: "2 episodes" })).toBeVisible();
+  const errors = await openDemo(page, "tv-episode-library");
+  await expect(page.getByRole("heading", { name: "17 matching episodes" })).toBeVisible();
+  await page.getByRole("combobox", { name: "Series" }).selectOption("signal-lost");
+  await expect(page.getByRole("heading", { name: "12 matching episodes" })).toBeVisible();
+  await page.getByRole("button", { name: "Next" }).click();
+  await expect(page.getByText("Page 2 of 3")).toBeVisible();
+  await page.getByPlaceholder("Search episodes or series...").fill("Return Signal");
+  await expect(page.getByRole("heading", { name: "1 matching episode" })).toBeVisible();
   await page.getByRole("button", { name: "Simulate update event" }).click();
   await expect(page.getByText(/UPDATE received/)).toBeVisible();
-  await capture(page, "episode-management", errors);
+  await capture(page, "tv-episode-library", errors);
 });
 
 test("Conaz runs the preserved encoding algorithm", async ({ page }) => {
@@ -438,6 +436,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/people-operations\/?$/);
   }
+  for (const alias of ["challenge-castlabs", "challenge-vuejs", "episode-management", "tv-episode-guide"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/tv-episode-library\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/tv-episode-library\/?$/);
+  }
 });
 
 test("Ingenious Build selects a line and stop", async ({ page }) => {
@@ -477,7 +481,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(19);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(18);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -493,7 +497,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(19);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(19);
+  await expect(page.locator(".catalog-entry")).toHaveCount(18);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(18);
   await context.close();
 });

@@ -19,6 +19,7 @@ the [maintenance handbook](README.md).
 | 2026-09-06 | 19     | Consolidated two proven duplicate pairs into domain-focused weather and book-sorting demos, renamed the catalog around capabilities, and retained compatibility routes from all historical public slugs. |
 | 2026-09-06 | 20     | Consolidated Instruct and Meetime into the Lead Operations Workspace, retaining unified discovery, category filters, cadence-backed CRUD, versioned persistence, responsive records, and redirects from both retired entries. |
 | 2026-09-08 | 21     | Consolidated JExperts and User Management into the People Operations Workspace, retaining secure administration, enriched employee profiles, reporting hierarchy, standalone delivery, and four legacy-route aliases. |
+| 2026-09-08 | 22     | Consolidated Castlabs and Vue.js into the TV Episode Library, retaining series discovery, 17 searchable and paginated episodes, local mutations, subscription feedback, and four legacy-route aliases. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -138,7 +139,7 @@ multi-stage Vite/nginx Docker build.
 | --------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | 3cket           | Nuxt 3/Tailwind/Express → Vue 3 island              | Event grid, search, details, images, and not-found behavior use the bundled fixture instead of localhost             |
 | Weather Forecast Explorer | Two Vue 2/Maps/OpenWeather challenges → Vue 3 island | Combines address search, Haversine geolocation matching, history, six-hour comparison, and a 48-hour local forecast from Blueticket and OnSign TV |
-| Castlabs        | React/Apollo/WebSockets/OMDb → React island         | Search, details, mutations, and subscription feedback use fixtures and local artwork                                 |
+| TV Episode Library | React/Apollo/WebSockets/OMDb and Vue 3/Pinia/TVMaze → React island | Combines series metadata, 17 searchable and paginated episodes, details, local mutations, and subscription feedback from Castlabs and Vue.js using fixtures and local artwork |
 | ClimateSeed     | Vue 3/Pinia/ApexCharts → Vue 3 island               | Organisation comparison, chart switching, aggregation, and results use semantic CSS charts                           |
 | Conaz           | Node script → Astro/TypeScript                      | Counts, run-length encoding, and member synchronization run interactively                                            |
 | Devlandia       | Two Ruby CLIs → Astro/TypeScript                    | Full-path and next-move solutions accept editable browser grids                                                      |
@@ -154,7 +155,6 @@ multi-stage Vite/nginx Docker build.
 | Leafwell        | Next.js 13/Apollo/GraphQL → React island            | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                               |
 | Sword Health    | Vue 3/Quasar/Auth0 → Vue 3 island                   | Feed, categories, load-more, detail, session, profile, authoring, and image preview work without Auth0               |
 | Vue             | Vue 3 component → direct Vue 3 island               | Original driver selector runs directly with only missing utility styles supplied                                     |
-| Vue.js          | Vue 3/Pinia/TVMaze → Vue 3 island                   | Show metadata, episodes, summaries, and pagination use a deterministic show fixture                                  |
 
 No historical dependency was installed in place. Conaz and Zygo ran directly;
 both Devlandia Ruby programs ran with sample input; and Salsify, Vue.js, and
@@ -196,7 +196,7 @@ allowlists are prohibited. Rerun the complete-history scan after any exception.
 
 Established on 2026-09-02 and completed across every demo on 2026-09-03,
 Playwright and axe cover the shared home, catalog, detail, and about routes plus
-all 21 canonical fullscreen demos against applicable WCAG 2.0 A/AA, 2.1 A/AA, and 2.2 AA
+all 18 canonical fullscreen demos against applicable WCAG 2.0 A/AA, 2.1 A/AA, and 2.2 AA
 rules. Full contrast analysis now runs on the shared shell and every maintained
 demo. Keyboard coverage verifies the catalog skip link, target focus, the first
 target on every demo, and the shared three-pixel focus ring.
@@ -221,6 +221,7 @@ color changes.
 | Phase 19 domain consolidation | Frozen install; lint and typecheck; 79 unit/SSR tests; 49 Chromium tests including all 21 canonical demos; 21 screenshots; 91 static pages including legacy challenge and demo redirects |
 | Phase 20 lead consolidation | Offline frozen install; lint and typecheck; 78 unit/SSR tests; 48 Chromium interaction and accessibility tests; 20 screenshots; 93 static pages including four retained lead-route aliases; Gitleaks over 319 commits |
 | Phase 21 people consolidation | 21 workspaces; lint and typecheck; 78 unit/SSR tests; 46 Chromium interaction and accessibility tests; 19 screenshots; 95 static pages including four retained people-route aliases; standalone Vite and Docker/nginx builds; Gitleaks over 320 commits |
+| Phase 22 TV episode consolidation | 20 workspaces; lint and typecheck; 77 unit/SSR tests; 44 Chromium interaction and accessibility tests; 18 screenshots; 97 static pages including four retained episode-route aliases; Gitleaks over 321 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

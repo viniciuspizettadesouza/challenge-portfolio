@@ -18,11 +18,16 @@ import {
   writeWeatherState,
 } from "@challenge/weather-forecast-demo/persistence";
 import {
+  clampPage,
   createEpisode,
   deleteEpisode,
-  episodes as castlabsEpisodes,
+  episodes as televisionEpisodes,
+  filterEpisodes,
+  getShow,
+  getTotalPages,
+  paginate,
   searchEpisodes,
-} from "@challenge/castlabs-demo/logic";
+} from "@challenge/tv-episode-library-demo/logic";
 import {
   countCharacters,
   runLengthEncode,
@@ -70,11 +75,6 @@ import {
   paginateStrains,
   strains,
 } from "@challenge/strains-demo/logic";
-import {
-  clampPage,
-  getTotalPages,
-  paginate,
-} from "@challenge/vuejs-demo/logic";
 import { describe, expect, it } from "vitest";
 
 describe("3cket local event fixture", () => {
@@ -290,23 +290,26 @@ describe("consolidated local weather forecast", () => {
   });
 });
 
-describe("Castlabs episode management", () => {
-  it("searches episode titles and series names", () => {
+describe("consolidated TV episode library", () => {
+  it("searches and filters episodes across both source projects", () => {
     expect(
-      searchEpisodes(castlabsEpisodes, "quiet").map(({ id }) => id),
+      searchEpisodes(televisionEpisodes, "quiet").map(({ id }) => id),
     ).toEqual(["episode-01"]);
-    expect(searchEpisodes(castlabsEpisodes, "northbound")).toHaveLength(2);
+    expect(searchEpisodes(televisionEpisodes, "northbound")).toHaveLength(2);
+    expect(filterEpisodes(televisionEpisodes, "", "signal-lost")).toHaveLength(12);
+    expect(getShow("signal-lost")?.rating).toBe(8.4);
   });
 
   it("creates and deletes local episodes", () => {
     const episode = createEpisode(
       {
-        series: "Orbital",
+        showId: "signal-division",
         title: "First Light",
         description: "The station wakes.",
         seasonNumber: 1,
         episodeNumber: 1,
         releaseDate: "2026-07-28",
+        runtime: 44,
         imdbId: "tt1234567",
       },
       6,
@@ -314,22 +317,23 @@ describe("Castlabs episode management", () => {
 
     expect(episode).toMatchObject({ id: "local-6", title: "First Light" });
     expect(
-      deleteEpisode([...castlabsEpisodes, episode], episode.id),
-    ).toHaveLength(castlabsEpisodes.length);
+      deleteEpisode([...televisionEpisodes, episode], episode.id),
+    ).toHaveLength(televisionEpisodes.length);
     expect(() =>
       createEpisode(
         {
-          series: "",
-          title: "",
-          description: "",
-          seasonNumber: 0,
-          episodeNumber: 0,
-          releaseDate: "",
-          imdbId: "",
+          showId: "",
+          title: "First Light",
+          description: "The station wakes.",
+          seasonNumber: 1,
+          episodeNumber: 1,
+          releaseDate: "2026-07-28",
+          runtime: 44,
+          imdbId: "tt1234567",
         },
         7,
       ),
-    ).toThrow("Series");
+    ).toThrow("series");
   });
 });
 
@@ -517,17 +521,16 @@ describe("Pipz film archive logic", () => {
   });
 });
 
-describe("Vue.js demo pagination", () => {
-  const items = Array.from({ length: 12 }, (_, index) => index + 1);
-
+describe("TV episode library pagination", () => {
   it("calculates pages and returns the requested slice", () => {
-    expect(getTotalPages(items.length, 5)).toBe(3);
-    expect(paginate(items, 2, 5)).toEqual([6, 7, 8, 9, 10]);
+    expect(televisionEpisodes).toHaveLength(17);
+    expect(getTotalPages(televisionEpisodes.length, 5)).toBe(4);
+    expect(paginate(televisionEpisodes, 2, 5)).toHaveLength(5);
   });
 
   it("keeps page selection within range", () => {
-    expect(clampPage(0, items.length, 5)).toBe(1);
-    expect(clampPage(8, items.length, 5)).toBe(3);
+    expect(clampPage(0, televisionEpisodes.length, 5)).toBe(1);
+    expect(clampPage(8, televisionEpisodes.length, 5)).toBe(4);
   });
 });
 import {

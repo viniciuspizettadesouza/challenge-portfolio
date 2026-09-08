@@ -29,9 +29,6 @@ importers:
       '@challenge/3cket-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-3cket/demo
-      '@challenge/castlabs-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-castlabs/demo
       '@challenge/climateseed-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-climateseed/demo
@@ -74,12 +71,12 @@ importers:
       '@challenge/swordhealth-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-swordhealth/demo
+      '@challenge/tv-episode-library-demo':
+        specifier: workspace:*
+        version: link:../../challenges/tv-episode-library/demo
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
-      '@challenge/vuejs-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-vuejs/demo
       '@challenge/weather-forecast-demo':
         specifier: workspace:*
         version: link:../../challenges/weather-forecast/demo
@@ -145,12 +142,6 @@ importers:
         specifier: '>=3.0.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-castlabs/demo:
-    dependencies:
-      react:
-        specifier: '>=18.0.0'
-        version: 19.2.8
-
   challenges/challenge-climateseed/demo:
     dependencies:
       vue:
@@ -215,12 +206,6 @@ importers:
         specifier: '>=3'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-vuejs/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.4'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/configurable-book-sorting/demo:
     dependencies:
       react:
@@ -257,6 +242,12 @@ importers:
       react-dom:
         specifier: '>=18'
         version: 19.2.8(react@19.2.8)
+
+  challenges/tv-episode-library/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
 
   challenges/weather-forecast/demo:
     dependencies:
