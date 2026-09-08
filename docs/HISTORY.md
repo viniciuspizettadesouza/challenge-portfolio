@@ -18,6 +18,7 @@ the [maintenance handbook](README.md).
 | 2026-09-03 | 18     | Completed browser CI, dependency automation, full-history secret scanning, accessibility coverage, and URL-backed catalog discovery in revisions `e2b563b` and `6e79caf`. All workflows and production checks passed.                                                                |
 | 2026-09-06 | 19     | Consolidated two proven duplicate pairs into domain-focused weather and book-sorting demos, renamed the catalog around capabilities, and retained compatibility routes from all historical public slugs. |
 | 2026-09-06 | 20     | Consolidated Instruct and Meetime into the Lead Operations Workspace, retaining unified discovery, category filters, cadence-backed CRUD, versioned persistence, responsive records, and redirects from both retired entries. |
+| 2026-09-08 | 21     | Consolidated JExperts and User Management into the People Operations Workspace, retaining secure administration, enriched employee profiles, reporting hierarchy, standalone delivery, and four legacy-route aliases. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -143,15 +144,13 @@ multi-stage Vite/nginx Docker build.
 | Devlandia       | Two Ruby CLIs → Astro/TypeScript                    | Full-path and next-move solutions accept editable browser grids                                                      |
 | FYLD / HanseCom | Nuxt 2/Vuex/Vuetify/movie API → Vue 3 island        | Three-character search and bundled Avengers results retain the screenshot layout without a token                     |
 | Ingenious Build | Vue 3/Vuex/json-server → Vue 3 island               | All 11 lines, 163 stops, positions, times, search, and direction use the complete response                           |
-| Instruct        | Nuxt 2/JSONPlaceholder → Vue 3 island               | Ten leads, name search, categories, and combined filters use a local fixture                                         |
-| JExperts        | React 16/Express/MongoDB → React island             | Search, profiles, addresses, and registration preserve the layout; orphaned routing is fixed and passwords discarded |
+| Lead Operations Workspace | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime |
+| People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management |
 | Lagoasoft       | React 16/Instagram → React island                   | Five posts and independent likes remain; expired media becomes local CSS artwork                                     |
-| Meetime         | Vue 2/Vuetify/private API → Vue 3 island            | Lead CRUD, cadence validation, dialogs, and persistence use fictional local data                                     |
 | Pipz            | React 16/SWAPI/crawl libraries → React island       | Seven-film order, Roman episodes, dates, logo, intro, crawl, pause, and restart work locally                         |
 | PropertiaG      | Next.js 12/React → React island                     | Integer-to-Roman conversion and 1–1000 constraint remain with clearer validation                                     |
 | Salsify         | React/Vite-style source → direct React island       | Original datastore, filters, operators, values, and table run with an Astro style layer                              |
 | Configurable Book Sorting | React/Express/MongoDB and Node scripts → React island | Combines the identical Stormtech and Zygo requirements in a configurable comparator pipeline with all documented outcomes |
-| User Management | React 18/Router/ReqRes → React island/local service | Completes authentication, token enforcement, CRUD, pagination, theme persistence, tests, and Docker without ReqRes   |
 | Leafwell        | Next.js 13/Apollo/GraphQL → React island            | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                               |
 | Sword Health    | Vue 3/Quasar/Auth0 → Vue 3 island                   | Feed, categories, load-more, detail, session, profile, authoring, and image preview work without Auth0               |
 | Vue             | Vue 3 component → direct Vue 3 island               | Original driver selector runs directly with only missing utility styles supplied                                     |
@@ -221,6 +220,7 @@ color changes.
 | 2026-09-03 maintenance     | Compatible dependency updates; lint and typecheck; 80 unit tests; 51 Chromium tests with full accessibility coverage; 49 pages; Gitleaks over 316 commits; 23 reviewed screenshots                |
 | Phase 19 domain consolidation | Frozen install; lint and typecheck; 79 unit/SSR tests; 49 Chromium tests including all 21 canonical demos; 21 screenshots; 91 static pages including legacy challenge and demo redirects |
 | Phase 20 lead consolidation | Offline frozen install; lint and typecheck; 78 unit/SSR tests; 48 Chromium interaction and accessibility tests; 20 screenshots; 93 static pages including four retained lead-route aliases; Gitleaks over 319 commits |
+| Phase 21 people consolidation | 21 workspaces; lint and typecheck; 78 unit/SSR tests; 46 Chromium interaction and accessibility tests; 19 screenshots; 95 static pages including four retained people-route aliases; standalone Vite and Docker/nginx builds; Gitleaks over 320 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

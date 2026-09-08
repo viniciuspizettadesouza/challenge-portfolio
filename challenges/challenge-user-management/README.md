@@ -1,5 +1,9 @@
 # React User Management Challenge
 
+> Portfolio note: this challenge's maintained demo is now consolidated into
+> the domain-based **People Operations Workspace**. The source below remains
+> preserved as historical evidence.
+
 This project is portfolio challenge 23. It keeps a sanitized historical React
 18, TypeScript, Vite, and React Router snapshot beside a maintained completion
 of the full four-part technical exercise.
@@ -22,14 +26,16 @@ The tracked `.env` contains only
 `https://reqres.in/api`; no secret, credential, generated build, or dependency
 directory is included. These are the complete sanitization differences.
 
-## Maintained demo
+## Consolidated maintained demo
 
-The demo completes Parts 1–4. It provides independent seeded sign-in, sign-up
+The demo under `../people-operations/demo/` completes Parts 1–4 and combines
+them with the JExperts employee-directory requirements. It provides independent seeded sign-in, sign-up
 validation, a token-bearing session, protected asynchronous service calls,
 full in-memory user CRUD, exactly six users per page, deletion confirmation,
-light/dark theme persistence, unit and Playwright coverage, and a standalone
-Vite production build served by Docker. The authenticated landing view is the
-dashboard and retains the required `Hello <first_name>` greeting.
+light/dark theme persistence, detailed profiles, reporting-line filters, unit
+and Playwright coverage, and a standalone Vite production build served by
+Docker. The authenticated landing view retains the required
+`Hello <first_name>` greeting.
 
 ReqRes is intentionally replaced by deterministic fictional fixtures. This
 keeps the static portfolio reliable, removes production API and personal-data
@@ -51,8 +57,8 @@ unchanged, so improvements in `demo/` are not presented as historical capabiliti
 From the repository root:
 
 ```bash
-pnpm --filter @challenge/user-management-demo dev
-pnpm --filter @challenge/user-management-demo build
-docker build -f challenges/challenge-user-management/demo/Dockerfile -t user-management-demo .
-docker run --rm -p 8080:80 user-management-demo
+pnpm --filter @challenge/people-operations-demo dev
+pnpm --filter @challenge/people-operations-demo build
+docker build -f challenges/people-operations/demo/Dockerfile -t people-operations-demo .
+docker run --rm -p 8080:80 people-operations-demo
 ```

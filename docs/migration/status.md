@@ -1,18 +1,18 @@
 # Migration status
 
-Last updated: 2026-09-07.
+Last updated: 2026-09-08.
 
-All migration and consolidation phases (0–20) are complete. The portfolio now
-presents 20 domain-focused entries backed by all 23 immutable historical
-sources. The Instruct and Meetime demos have been replaced by the consolidated
-Lead Operations Workspace, and all four former lead challenge and capability
-slugs resolve to the new canonical route.
+All migration and consolidation phases (0–21) are complete. The portfolio now
+presents 19 domain-focused entries backed by all 23 immutable historical
+sources. The JExperts and User Management demos have been replaced by the
+consolidated People Operations Workspace, and all four former people challenge
+and capability slugs resolve to the new canonical route.
 
-The Phase 20 working tree passes a frozen offline install, lint, typecheck, 78
-unit and SSR tests, 48 Chromium interaction and accessibility tests, a
-93-page production build, and Gitleaks across 319 commits with no findings.
-All 20 canonical demo screenshots were regenerated, and the new Lead
-Operations screenshot received direct visual review.
+The Phase 21 working tree passes lint, typecheck, 78 unit and SSR tests, 46
+Chromium interaction and accessibility tests, a 95-page production build, the
+standalone People Operations Vite and Docker/nginx builds, and Gitleaks across
+320 commits with no findings. The new People Operations screenshot received
+direct visual review, and the 19 canonical screenshots remain represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
 pass integrates the compatible dependency updates, keeps TypeScript 6 until
@@ -24,8 +24,8 @@ No tag is planned.
 
 ## Next action
 
-Review the Lead Operations Workspace and refreshed screenshots, then commit
-and push the approved Phase 20 changes and verify Browser tests, Security scan,
+Review the People Operations Workspace and refreshed screenshot, then commit
+and push the approved Phase 21 changes and verify Browser tests, Security scan,
 and Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

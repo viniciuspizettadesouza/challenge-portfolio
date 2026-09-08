@@ -68,10 +68,20 @@
     "description": "A unified Vue lead-operations workspace with contact and company search, composable category filters, cadence assignment, validated local CRUD, responsive records, and versioned browser persistence."
   },
   {
-    "slug": "employee-directory-registration",
-    "title": "Employee Directory & Registration",
+    "slug": "people-operations",
+    "title": "People Operations Workspace",
     "themes": ["Business Operations"],
-    "sourceSlugs": ["challenge-jexperts"]
+    "sourceSlugs": ["challenge-jexperts", "challenge-user-management"],
+    "aliases": [
+      "challenge-jexperts",
+      "challenge-user-management",
+      "employee-directory-registration",
+      "user-administration"
+    ],
+    "renderer": "react",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "people-operations",
+    "description": "A secure React people-operations workspace with local authentication, protected CRUD, approximate directory search, reporting-line filters, detailed employee profiles, pagination, persistent themes, and a standalone Docker build."
   },
   {
     "slug": "social-feed-interactions",
@@ -112,12 +122,6 @@
     "title": "News Publishing Platform",
     "themes": ["Content & Media"],
     "sourceSlugs": ["challenge-swordhealth"]
-  },
-  {
-    "slug": "user-administration",
-    "title": "User Administration",
-    "themes": ["Business Operations"],
-    "sourceSlugs": ["challenge-user-management"]
   },
   {
     "slug": "formula-one-driver-explorer",

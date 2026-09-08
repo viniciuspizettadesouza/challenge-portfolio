@@ -1,12 +1,17 @@
 import { freshUsers } from "./fixtures";
-import { createUser as addUser, deleteUser as removeUser, updateUser as editUser } from "./logic";
+import {
+  createUser as addUser,
+  deleteUser as removeUser,
+  updateUser as editUser,
+  validateUserDraft,
+} from "./logic";
 import type { Session, StorageLike, User, UserDraft } from "./types";
 
 export const SESSION_KEY = "user-management/session";
 export const DEMO_EMAIL = "admin@example.test";
 export const DEMO_PASSWORD = "DemoPass123!";
 
-const administrator = freshUsers()[0];
+const administrator = freshUsers().find(({ email }) => email === "janet.weaver@example.test")!;
 const tick = async () => Promise.resolve();
 
 function tokenFor(email: string): string {
@@ -68,12 +73,16 @@ export async function listUsers(token: string, users: readonly User[]): Promise<
 export async function createUser(token: string, users: readonly User[], draft: UserDraft): Promise<User[]> {
   await tick();
   requireToken(token);
+  const validationError = validateUserDraft(draft, users);
+  if (validationError) throw new Error(validationError);
   return addUser(users, draft);
 }
 
 export async function updateUser(token: string, users: readonly User[], id: number, draft: UserDraft): Promise<User[]> {
   await tick();
   requireToken(token);
+  const validationError = validateUserDraft(draft, users, id);
+  if (validationError) throw new Error(validationError);
   return editUser(users, id, draft);
 }
 

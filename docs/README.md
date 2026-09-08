@@ -1,12 +1,12 @@
 # Challenge Portfolio handbook
 
 This is the canonical maintenance guide for the Challenge Portfolio. The
-repository presents 20 domain-focused entries through a single Astro site while
+repository presents 19 domain-focused entries through a single Astro site while
 preserving all 23 reviewed historical sources separately from maintained demos.
 
 ## Current state
 
-Migration Phases 0–20 are complete. Revision `6e79caf` is the verified Phase
+Migration Phases 0–21 are complete. Revision `6e79caf` is the verified Phase
 18 baseline: browser, security, accessibility, catalog-discovery, GitHub Pages,
 and production checks passed. The owner intentionally deferred a new tag and
 GitHub Release because this repository is a personal library; that is a release
@@ -14,7 +14,7 @@ decision, not pending migration work.
 
 The short operational handoff is [migration status](migration/status.md).
 The decisions, preservation evidence, project fidelity notes, validation
-results, and completed Phase 0–20 timeline are in the
+results, and completed Phase 0–21 timeline are in the
 [distilled history](HISTORY.md).
 
 ## Repository model
@@ -179,7 +179,8 @@ points for project-specific context:
 The consolidated maintained demos are documented at
 [Weather Forecast Explorer](../challenges/weather-forecast/README.md),
 [Configurable Book Sorting](../challenges/configurable-book-sorting/README.md),
-and [Lead Operations Workspace](../challenges/lead-operations/README.md).
+[Lead Operations Workspace](../challenges/lead-operations/README.md), and
+[People Operations Workspace](../challenges/people-operations/README.md).
 
 ## Evidence and ownership
 

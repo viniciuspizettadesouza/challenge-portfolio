@@ -1,15 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { freshUsers } from "@challenge/user-management-demo/fixtures";
+import { freshUsers } from "@challenge/people-operations-demo/fixtures";
 import {
   createUser as createUserLogic,
   deleteUser as deleteUserLogic,
   pageCount,
   parseTheme,
+  filterBySuperior,
+  searchUsers,
+  similarity,
   updateUser as updateUserLogic,
   usersForPage,
   validPage,
   validatePasswordConfirmation,
-} from "@challenge/user-management-demo/logic";
+  validateUserDraft,
+} from "@challenge/people-operations-demo/logic";
 import {
   DEMO_EMAIL,
   DEMO_PASSWORD,
@@ -24,7 +28,23 @@ import {
   signIn,
   signUp,
   updateUser,
-} from "@challenge/user-management-demo/services";
+} from "@challenge/people-operations-demo/services";
+import type { UserDraft } from "@challenge/people-operations-demo";
+
+const draft = (overrides: Partial<UserDraft> = {}): UserDraft => ({
+  firstName: "Rowan",
+  lastName: "Stone",
+  email: "rowan@example.test",
+  telephone: "+351 210 000 000",
+  position: "Consultant",
+  department: "Operations",
+  login: "rstone",
+  cpf: "111.222.333-44",
+  superiorId: 1,
+  address: null,
+  password: "local-only",
+  ...overrides,
+});
 
 class MemoryStorage {
   values = new Map<string, string>();
@@ -33,7 +53,7 @@ class MemoryStorage {
   removeItem(key: string) { this.values.delete(key); }
 }
 
-describe("user management business logic", () => {
+describe("consolidated people operations business logic", () => {
   it("rejects a password mismatch before authentication", () => {
     expect(validatePasswordConfirmation("long-password", "different-password")).toBe("Passwords do not match.");
     expect(validatePasswordConfirmation("long-password", "long-password")).toBeNull();
@@ -74,12 +94,12 @@ describe("user management business logic", () => {
   it("enforces tokens on every protected user operation", async () => {
     const users = freshUsers();
     const session = { token: "invalid", user: users[0] };
-    const draft = { firstName: "A", lastName: "B", email: "a@example.test" };
+    const invalidTokenDraft = draft();
     const protectedCalls = [
       () => getCurrentUser("invalid", session),
       () => listUsers("", users),
-      () => createUser("invalid", users, draft),
-      () => updateUser("", users, users[0].id, draft),
+      () => createUser("invalid", users, invalidTokenDraft),
+      () => updateUser("", users, users[0].id, invalidTokenDraft),
       () => deleteUser("invalid", users, users[0].id),
     ];
 
@@ -91,16 +111,17 @@ describe("user management business logic", () => {
   it("runs every protected user operation with a valid token", async () => {
     const session = await signIn(DEMO_EMAIL, DEMO_PASSWORD);
     const users = freshUsers();
-    const draft = { firstName: "Rowan", lastName: "Stone", email: "rowan@example.test" };
+    const userDraft = draft();
 
     await expect(getCurrentUser(session.token, session)).resolves.toEqual(session.user);
     await expect(listUsers(session.token, users)).resolves.toEqual(users);
-    const created = await createUser(session.token, users, draft);
+    const created = await createUser(session.token, users, userDraft);
     const createdUser = created.at(-1)!;
-    const updated = await updateUser(session.token, created, createdUser.id, { ...draft, lastName: "Vale" });
+    const updated = await updateUser(session.token, created, createdUser.id, { ...userDraft, lastName: "Vale" });
     const deleted = await deleteUser(session.token, updated, createdUser.id);
 
-    expect(createdUser).toMatchObject(draft);
+    expect(createdUser).toMatchObject({ firstName: "Rowan", lastName: "Stone" });
+    expect(createdUser).not.toHaveProperty("password");
     expect(updated.at(-1)?.lastName).toBe("Vale");
     expect(deleted).toHaveLength(users.length);
   });
@@ -108,29 +129,56 @@ describe("user management business logic", () => {
   it("paginates exactly six records and corrects an invalid page", () => {
     const users = freshUsers();
     expect(usersForPage(users, 1)).toHaveLength(6);
-    expect(usersForPage(users, 3)).toHaveLength(2);
+    expect(usersForPage(users, 3)).toHaveLength(5);
     expect(pageCount(users)).toBe(3);
     expect(validPage(3, users.slice(0, 12))).toBe(2);
   });
 
   it("creates, updates, and deletes users without mutating the fixture", () => {
     const users = freshUsers();
-    const created = createUserLogic(users, { firstName: "Rowan", lastName: "Stone", email: "rowan@example.test" });
+    const userDraft = draft();
+    const created = createUserLogic(users, userDraft);
     const id = created.at(-1)!.id;
-    const updated = updateUserLogic(created, id, { firstName: "Rowan", lastName: "Vale", email: "rowan.vale@example.test" });
+    const updated = updateUserLogic(created, id, { ...userDraft, lastName: "Vale", email: "rowan.vale@example.test" });
     const deleted = deleteUserLogic(updated, id);
-    expect(created).toHaveLength(15);
+    expect(created).toHaveLength(18);
     expect(updated.at(-1)?.lastName).toBe("Vale");
-    expect(deleted).toHaveLength(14);
+    expect(deleted).toHaveLength(17);
     expect(freshUsers()).toEqual(users);
   });
 
   it("restores fresh fixture copies and parses persisted themes", () => {
     const first = freshUsers();
     first.pop();
-    expect(freshUsers()).toHaveLength(14);
+    expect(freshUsers()).toHaveLength(17);
     expect(parseTheme("dark")).toBe("dark");
     expect(parseTheme(null, true)).toBe("dark");
     expect(parseTheme("invalid", false)).toBe("light");
+  });
+
+  it("retains approximate directory search and reporting-line filters", () => {
+    const users = freshUsers();
+    expect(searchUsers(users, "Vincus").map(({ firstName }) => firstName)).toEqual([
+      "Vinicius",
+    ]);
+    expect(similarity("Vinicius", "Vincus")).toBeGreaterThan(0.28);
+    expect(filterBySuperior(users, 15).map(({ firstName }) => firstName)).toEqual([
+      "Vinicius",
+    ]);
+  });
+
+  it("validates hierarchy and complete optional addresses", () => {
+    const users = freshUsers();
+    expect(validateUserDraft(draft({ position: "Director", superiorId: 3 }), users)).toBe(
+      "Directors cannot report to Managers.",
+    );
+    expect(
+      validateUserDraft(
+        draft({ address: { street: "Main", number: "", complement: "", district: "", city: "", state: "", postalCode: "" } }),
+        users,
+      ),
+    ).toBe("Number is required when adding an address.");
+    expect(validateUserDraft(draft(), users)).toBeNull();
+    expect(validateUserDraft(draft({ superiorId: null }), users)).toBeNull();
   });
 });

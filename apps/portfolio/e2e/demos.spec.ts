@@ -103,11 +103,11 @@ test("Vuejs paginates the local episode guide", async ({ page }) => {
   await capture(page, "tv-episode-guide", errors);
 });
 
-test("User Management signs up and keeps only its theme after reopening", async ({
+test("People Operations signs up and keeps only its theme after reopening", async ({
   page,
   context,
 }) => {
-  const errors = await openDemo(page, "user-administration");
+  const errors = await openDemo(page, "people-operations");
   await expect(
     page.getByRole("heading", { name: "Create your account" }),
   ).toBeVisible();
@@ -138,7 +138,7 @@ test("User Management signs up and keeps only its theme after reopening", async 
 
   await page.close();
   const reopenedPage = await context.newPage();
-  const reopenedErrors = await openDemo(reopenedPage, "user-administration");
+  const reopenedErrors = await openDemo(reopenedPage, "people-operations");
   await expect(
     reopenedPage.getByRole("heading", { name: "Create your account" }),
   ).toBeVisible();
@@ -154,10 +154,10 @@ test("User Management signs up and keeps only its theme after reopening", async 
   expect(reopenedErrors).toEqual([]);
 });
 
-test("User Management completes authentication, CRUD, pagination, and theme persistence", async ({
+test("People Operations completes authentication, directory discovery, CRUD, and theme persistence", async ({
   page,
 }) => {
-  const errors = await openDemo(page, "user-administration");
+  const errors = await openDemo(page, "people-operations");
 
   await expect(
     page.getByRole("heading", { name: "Create your account" }),
@@ -176,6 +176,15 @@ test("User Management completes authentication, CRUD, pagination, and theme pers
   ).toBeVisible();
   await expect(page.getByTestId("user-card")).toHaveCount(6);
 
+  await page.getByPlaceholder("Name, email or department").fill("Vincus");
+  await expect(page.getByRole("heading", { name: "Vinicius Souza" })).toBeVisible();
+  await expect(page.getByTestId("user-card")).toHaveCount(1);
+  await page.getByPlaceholder("Name, email or department").fill("");
+  await page.getByLabel("Reports to").selectOption({ label: "Adriano Lima" });
+  await expect(page.getByRole("heading", { name: "Vinicius Souza" })).toBeVisible();
+  await expect(page.getByTestId("user-card")).toHaveCount(1);
+  await page.getByLabel("Reports to").selectOption("all");
+
   await page.getByRole("button", { name: "Next" }).click();
   await expect(page.getByText("Page 2 of 3")).toBeVisible();
   await expect(page.getByTestId("user-card")).toHaveCount(6);
@@ -184,15 +193,17 @@ test("User Management completes authentication, CRUD, pagination, and theme pers
   await page.getByLabel("First name").fill("Rowan");
   await page.getByLabel("Last name").fill("Stone");
   await page.getByLabel("Email address").fill("rowan.stone@example.test");
+  await page.getByLabel("Login").fill("rstone");
+  await page.getByLabel(/^Password/).fill("LocalPass123!");
   await page.getByRole("button", { name: "Save user" }).click();
   await expect(page.getByText("Rowan was created.")).toBeVisible();
   await expect(page.getByText("Page 3 of 3")).toBeVisible();
-  await expect(page.getByText("Rowan Stone")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Rowan Stone" })).toBeVisible();
 
   await page.getByRole("button", { name: "Edit Rowan Stone" }).click();
   await page.getByLabel("Last name").fill("Vale");
   await page.getByRole("button", { name: "Save user" }).click();
-  await expect(page.getByText("Rowan Vale")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Rowan Vale" })).toBeVisible();
 
   await page.getByRole("button", { name: "Delete Kai Tan" }).click();
   await expect(page.getByRole("alertdialog")).toBeVisible();
@@ -221,11 +232,16 @@ test("User Management completes authentication, CRUD, pagination, and theme pers
   await expect(page.getByTestId("user-card")).toHaveCount(6);
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
-  await expect(page.getByText("Kai Tan")).toBeVisible();
-  await expect(page.getByText("Rowan Vale")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Kai Tan" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Rowan Vale" })).toHaveCount(0);
   await page.getByRole("button", { name: "Previous" }).click();
   await page.getByRole("button", { name: "Previous" }).click();
-  await capture(page, "user-administration", errors);
+  await page.evaluate(() => {
+    (document.activeElement as HTMLElement | null)?.blur();
+    window.scrollTo(0, 0);
+  });
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await capture(page, "people-operations", errors);
 });
 
 test("Castlabs filters episodes and receives an update event", async ({
@@ -244,20 +260,6 @@ test("Conaz runs the preserved encoding algorithm", async ({ page }) => {
   await page.locator("#conaz-encoding").fill("aaabb");
   await expect(page.locator("#conaz-encoding-output")).toHaveText("3a2b");
   await capture(page, "javascript-data-exercises", errors);
-});
-
-test("JExperts shows the fixture-backed employee directory", async ({
-  page,
-}) => {
-  const errors = await openDemo(page, "employee-directory-registration");
-  await page.getByRole("button", { name: "See all Users" }).click();
-  await expect(
-    page
-      .locator(".jexperts-user")
-      .filter({ hasText: "Name: Adriano Lima" })
-      .first(),
-  ).toBeVisible();
-  await capture(page, "employee-directory-registration", errors);
 });
 
 test("book workbench preserves the null-collection exception", async ({
@@ -430,6 +432,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/lead-operations\/?$/);
   }
+  for (const alias of ["challenge-jexperts", "challenge-user-management", "employee-directory-registration", "user-administration"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/people-operations\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/people-operations\/?$/);
+  }
 });
 
 test("Ingenious Build selects a line and stop", async ({ page }) => {
@@ -469,7 +477,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(20);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(19);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -485,7 +493,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(20);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(20);
+  await expect(page.locator(".catalog-entry")).toHaveCount(19);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(19);
   await context.close();
 });

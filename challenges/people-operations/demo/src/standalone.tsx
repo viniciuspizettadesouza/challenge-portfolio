@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import UserManagementDemo from "./UserManagementDemo";
+import PeopleOperationsDemo from "./PeopleOperationsDemo";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode><UserManagementDemo /></StrictMode>,
+  <StrictMode><PeopleOperationsDemo /></StrictMode>,
 );

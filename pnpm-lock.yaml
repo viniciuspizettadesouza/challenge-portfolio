@@ -50,15 +50,15 @@ importers:
       '@challenge/ingenious-build-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-ingenious-build-frontend/demo
-      '@challenge/jexperts-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-jexperts/demo
       '@challenge/lagoasoft-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-lagoasoft/demo
       '@challenge/lead-operations-demo':
         specifier: workspace:*
         version: link:../../challenges/lead-operations/demo
+      '@challenge/people-operations-demo':
+        specifier: workspace:*
+        version: link:../../challenges/people-operations/demo
       '@challenge/pipz-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-pipz/demo
@@ -74,9 +74,6 @@ importers:
       '@challenge/swordhealth-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-swordhealth/demo
-      '@challenge/user-management-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-user-management/demo
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
@@ -176,12 +173,6 @@ importers:
         specifier: '>=3.2.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-jexperts/demo:
-    dependencies:
-      react:
-        specifier: '>=18.0.0'
-        version: 19.2.8
-
   challenges/challenge-lagoasoft/demo:
     dependencies:
       react:
@@ -218,22 +209,6 @@ importers:
         specifier: '>=3.0.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-user-management/demo:
-    dependencies:
-      react:
-        specifier: '>=18'
-        version: 19.2.8
-      react-dom:
-        specifier: '>=18'
-        version: 19.2.8(react@19.2.8)
-    devDependencies:
-      '@vitejs/plugin-react':
-        specifier: 6.1.1
-        version: 6.1.1(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0))
-      vite:
-        specifier: 8.2.2
-        version: 8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0)
-
   challenges/challenge-vue/demo:
     dependencies:
       vue:
@@ -257,6 +232,22 @@ importers:
       vue:
         specifier: '>=3.2.0'
         version: 3.5.40(typescript@7.0.2)
+
+  challenges/people-operations/demo:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 19.2.8
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.8(react@19.2.8)
+    devDependencies:
+      '@vitejs/plugin-react':
+        specifier: 6.1.1
+        version: 6.1.1(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0))
+      vite:
+        specifier: 8.2.2
+        version: 8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0)
 
   challenges/strains/demo:
     dependencies:
@@ -2385,10 +2376,6 @@ packages:
   picomatch@2.3.2:
     resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
-
-  picomatch@4.0.5:
-    resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
-    engines: {node: '>=12'}
 
   picomatch@4.0.7:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
@@ -5231,8 +5218,6 @@ snapshots:
 
   picomatch@2.3.2: {}
 
-  picomatch@4.0.5: {}
-
   picomatch@4.0.7: {}
 
   playwright-core@1.62.1: {}
@@ -5684,7 +5669,7 @@ snapshots:
   vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
-      picomatch: 4.0.5
+      picomatch: 4.0.7
       postcss: 8.5.28
       rolldown: 1.2.7
       tinyglobby: 0.2.17

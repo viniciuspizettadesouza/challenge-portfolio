@@ -5,7 +5,7 @@ import ClimateSeedDemo from "@challenge/climateseed-demo";
 import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
-import JExpertsDemo from "@challenge/jexperts-demo";
+import PeopleOperationsDemo from "@challenge/people-operations-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PipzDemo from "@challenge/pipz-demo";
 import PropertiaGDemo from "@challenge/propertiag-demo";
@@ -38,13 +38,11 @@ describe("pilot demos", () => {
     expect(html).toContain("12 directory records");
   });
 
-  it("renders the local JExperts employee directory", () => {
-    const html = renderToStaticMarkup(createElement(JExpertsDemo));
+  it("renders the consolidated people operations workspace", () => {
+    const html = renderToStaticMarkup(createElement(PeopleOperationsDemo));
 
-    expect(html).toContain("JExperts");
-    expect(html).toContain("Create User");
-    expect(html).toContain("See all Users");
-    expect(html).toContain("Search users by name");
+    expect(html).toContain("Loading people operations");
+    expect(html).toContain("data-theme=\"light\"");
   });
 
   it("renders configurable book sorting", () => {

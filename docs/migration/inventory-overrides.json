@@ -82,7 +82,7 @@
     "hasBackend": false,
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "React 16/Express/MongoDB employee directory adapted to a self-contained modern React island. Show-all and approximate name search, profile fields, a repaired two-step profile/address registration flow, and browser persistence use fictional local records. Passwords are never stored, and the historical remote MongoDB connection is not used. Owner approved on 2026-07-28."
+    "reviewNotes": "React 16/Express/MongoDB employee directory now contributes approximate search, detailed profiles, addresses, reporting constraints, and direct-report filtering to the consolidated People Operations Workspace. Passwords are never stored, and the historical remote MongoDB connection is not used."
   },
   "challenge-propertiag": {
     "migrationStrategy": "native-react",
@@ -155,7 +155,7 @@
     "migrationStrategy": "mock-backend",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "The historical React 18 source implemented approximately Part 1 against ReqRes. The maintained demo completes Parts 1–4 with independent local authentication, enforced session tokens, runtime-only CRUD, six-user pagination, persistent themes, tests, and Docker support. The owner approved the completed demo and sanitized source on 2026-09-02."
+    "reviewNotes": "The historical React 18 source implemented approximately Part 1 against ReqRes. It now contributes independent local authentication, enforced session tokens, runtime-only CRUD, six-user pagination, persistent themes, tests, and Docker support to the consolidated People Operations Workspace."
   },
   "challenge-leafwell": {
     "framework": "react",

@@ -8,7 +8,7 @@
   "challenge-fyld-hansecom": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
   "challenge-ingenious-build-frontend": "A Vue bus timetable for selecting lines and stops, viewing sorted departure times, and searching the complete stop directory.",
   "challenge-instruct": "The contact and company discovery half of a consolidated lead-operations workspace, retaining the ten-record fixture and combinable company-category filters.",
-  "challenge-jexperts": "A React employee directory for showing and approximately searching local users, inspecting their details, and completing a two-step profile-and-address registration.",
+  "challenge-jexperts": "The directory and hierarchy half of a consolidated people-operations workspace, retaining approximate search, detailed profiles, addresses, reporting constraints, and subordinate discovery.",
   "challenge-lagoasoft": "A React social feed that renders five local posts and maintains an independent browser-only like vote for each one.",
   "challenge-meetime": "The cadence and lifecycle half of a consolidated lead-operations workspace, retaining validated creation, editing, deletion, and compatible local persistence.",
   "challenge-onsign-tv": "A Vue location forecast with address search, privacy-safe coordinate matching, and a cached six-column comparison of conditions, temperature, and humidity.",
@@ -18,7 +18,7 @@
   "challenge-stormtech": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
   "challenge-leafwell": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
   "challenge-swordhealth": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
-  "challenge-user-management": "A complete React user-administration challenge with independent authentication, token-protected local services, runtime-only CRUD, six-user pagination, and persistent themes.",
+  "challenge-user-management": "The secure administration half of a consolidated people-operations workspace, retaining authentication, token-protected CRUD, pagination, theme persistence, tests, and Docker delivery.",
   "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
   "challenge-vuejs": "A Vue television episode guide with local show data, pagination, episode details, and a deterministic browsing experience.",
   "challenge-zygo": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes."

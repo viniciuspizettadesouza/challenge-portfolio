@@ -313,23 +313,27 @@
     "demoPath": "challenges/lead-operations/demo"
   },
   {
-    "slug": "employee-directory-registration",
-    "title": "Employee Directory & Registration",
+    "slug": "people-operations",
+    "title": "People Operations Workspace",
     "themes": [
       "Business Operations"
     ],
-    "description": "A React employee directory for showing and approximately searching local users, inspecting their details, and completing a two-step profile-and-address registration.",
+    "description": "A secure React people-operations workspace with local authentication, protected CRUD, approximate directory search, reporting-line filters, detailed employee profiles, pagination, persistent themes, and a standalone Docker build.",
     "technologies": [
       "React",
       "Create React App",
       "Express",
       "MongoDB",
       "Mongoose",
-      "React Router"
+      "React Router",
+      "TypeScript",
+      "Vite",
+      "REST API",
+      "sessionStorage"
     ],
     "renderer": "react",
     "migrationStatus": "migrated",
-    "migrationStrategy": "mock-backend",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-jexperts",
@@ -338,12 +342,23 @@
         "originalRepository": "viniciuspizettadesouza/challenge-jexperts",
         "originalDefaultBranch": "master",
         "originalHeadSha": "86eb3b612ed2b066a562a1f62ac6a42ef5b7414c"
+      },
+      {
+        "slug": "challenge-user-management",
+        "title": "React User Management Challenge",
+        "sourcePath": "challenges/challenge-user-management/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-user-management-source",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653"
       }
     ],
     "aliases": [
-      "challenge-jexperts"
+      "challenge-jexperts",
+      "challenge-user-management",
+      "employee-directory-registration",
+      "user-administration"
     ],
-    "demoPath": "challenges/challenge-jexperts/demo"
+    "demoPath": "challenges/people-operations/demo"
   },
   {
     "slug": "social-feed-interactions",
@@ -544,39 +559,6 @@
       "challenge-swordhealth"
     ],
     "demoPath": "challenges/challenge-swordhealth/demo"
-  },
-  {
-    "slug": "user-administration",
-    "title": "User Administration",
-    "themes": [
-      "Business Operations"
-    ],
-    "description": "A complete React user-administration challenge with independent authentication, token-protected local services, runtime-only CRUD, six-user pagination, and persistent themes.",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Vite",
-      "React Router",
-      "REST API",
-      "sessionStorage"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "mock-backend",
-    "sources": [
-      {
-        "slug": "challenge-user-management",
-        "title": "React User Management Challenge",
-        "sourcePath": "challenges/challenge-user-management/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-user-management-source",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "f73752d439ab7ae4dbf4aaca579ca19a79443653"
-      }
-    ],
-    "aliases": [
-      "challenge-user-management"
-    ],
-    "demoPath": "challenges/challenge-user-management/demo"
   },
   {
     "slug": "formula-one-driver-explorer",

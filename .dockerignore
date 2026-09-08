@@ -4,9 +4,9 @@
 !pnpm-workspace.yaml
 !challenges/
 challenges/*
-!challenges/challenge-user-management/
-challenges/challenge-user-management/*
-!challenges/challenge-user-management/demo/
-!challenges/challenge-user-management/demo/**
-challenges/challenge-user-management/demo/dist
-challenges/challenge-user-management/demo/node_modules
+!challenges/people-operations/
+challenges/people-operations/*
+!challenges/people-operations/demo/
+!challenges/people-operations/demo/**
+challenges/people-operations/demo/dist
+challenges/people-operations/demo/node_modules

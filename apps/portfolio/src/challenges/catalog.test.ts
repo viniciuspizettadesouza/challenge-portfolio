@@ -34,7 +34,7 @@ describe("catalog discovery", () => {
       theme: "Business Operations",
       technology: "React",
       framework: "react",
-      adaptation: "mock-backend",
+      adaptation: "consolidated",
     });
 
     expect(results.length).toBeGreaterThan(0);
@@ -44,7 +44,7 @@ describe("catalog discovery", () => {
     expect(results.every(({ renderer }) => renderer === "react")).toBe(true);
     expect(
       results.every(
-        ({ migrationStrategy }) => migrationStrategy === "mock-backend",
+        ({ migrationStrategy }) => migrationStrategy === "consolidated",
       ),
     ).toBe(true);
   });
