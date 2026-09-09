@@ -253,11 +253,27 @@ test("TV Episode Library combines series discovery and episode management", asyn
   await capture(page, "tv-episode-library", errors);
 });
 
-test("Conaz runs the preserved encoding algorithm", async ({ page }) => {
-  const errors = await openDemo(page, "javascript-data-exercises");
-  await page.locator("#conaz-encoding").fill("aaabb");
-  await expect(page.locator("#conaz-encoding-output")).toHaveText("3a2b");
-  await capture(page, "javascript-data-exercises", errors);
+test("Algorithm Playground preserves all three source workflows", async ({ page }) => {
+  const errors = await openDemo(page, "algorithm-playground");
+  await page.locator("#algorithm-encoding").fill("aaabb");
+  await expect(page.locator("#algorithm-encoding-output")).toHaveText("3a2b");
+
+  await page.getByRole("tab", { name: /Roman numerals/ }).click();
+  await page.getByRole("button", { name: "944" }).click();
+  await expect(page.locator("#algorithm-roman-output")).toContainText("CMXLIV");
+
+  await page.getByRole("tab", { name: /Grid path/ }).click();
+  await page.getByRole("button", { name: "Show next move" }).click();
+  await expect(page.locator("#algorithm-path-output")).toContainText(
+    "Next move:\nLEFT",
+  );
+  await page.getByRole("tab", { name: /Text lab/ }).click();
+  await page.evaluate(() => {
+    (document.activeElement as HTMLElement | null)?.blur();
+    window.scrollTo(0, 0);
+  });
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await capture(page, "algorithm-playground", errors);
 });
 
 test("book workbench preserves the null-collection exception", async ({
@@ -293,15 +309,6 @@ test("Lagoasoft keeps independent post likes", async ({ page }) => {
   await like.click();
   await expect(like).toHaveAttribute("aria-pressed", "true");
   await capture(page, "social-feed-interactions", errors);
-});
-
-test("Devlandia calculates the next bot move", async ({ page }) => {
-  const errors = await openDemo(page, "grid-pathfinding");
-  await page.getByRole("button", { name: "Show next move" }).click();
-  await expect(page.locator("#devlandia-output")).toContainText(
-    "Next move:\nLEFT",
-  );
-  await capture(page, "grid-pathfinding", errors);
 });
 
 test("lead operations searches, creates, edits, deletes, and persists leads", async ({ page }) => {
@@ -402,13 +409,6 @@ test("Pipz controls the preserved Star Wars crawl", async ({ page }) => {
   await capture(page, "film-crawl-experience", errors);
 });
 
-test("PropertiaG translates an example number", async ({ page }) => {
-  const errors = await openDemo(page, "roman-numeral-converter");
-  await page.getByRole("button", { name: "944" }).click();
-  await expect(page.locator("output")).toContainText("CMXLIV");
-  await capture(page, "roman-numeral-converter", errors);
-});
-
 test("FYLD searches the preserved movie dataset", async ({ page }) => {
   const errors = await openDemo(page, "movie-search");
   await page.getByRole("button", { name: "Search" }).click();
@@ -441,6 +441,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
     await expect(page).toHaveURL(/challenges\/tv-episode-library\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/tv-episode-library\/?$/);
+  }
+  for (const alias of ["challenge-conaz", "challenge-devlandia", "challenge-propertiag", "javascript-data-exercises", "grid-pathfinding", "roman-numeral-converter"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/algorithm-playground\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/algorithm-playground\/?$/);
   }
 });
 
@@ -481,13 +487,13 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(18);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(16);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
     (url) => url.searchParams.get("theme") === "Algorithms & Utilities",
   );
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(4);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(2);
 });
 
 test("catalog keeps every challenge available without JavaScript", async ({
@@ -497,7 +503,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(18);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(18);
+  await expect(page.locator(".catalog-entry")).toHaveCount(16);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(16);
   await context.close();
 });

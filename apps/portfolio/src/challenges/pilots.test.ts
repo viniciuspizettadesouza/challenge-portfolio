@@ -8,7 +8,6 @@ import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import PipzDemo from "@challenge/pipz-demo";
-import PropertiaGDemo from "@challenge/propertiag-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-demo";
 import StrainsDemo from "@challenge/strains-demo";
@@ -129,13 +128,6 @@ describe("pilot demos", () => {
     expect(html).toContain("Organisation emissions overview");
     expect(html).toContain("Climateseed");
     expect(html).toContain("Add an emissions result");
-  });
-
-  it("renders the PropertiaG Roman numeral calculator", () => {
-    const html = renderToStaticMarkup(createElement(PropertiaGDemo));
-
-    expect(html).toContain("Integer to Roman numeral");
-    expect(html).toContain("XLII");
   });
 
   it("renders the Salsify product table", () => {

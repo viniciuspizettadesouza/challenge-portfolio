@@ -1,6 +1,5 @@
 ---
-import ConazDemo from "@challenge/conaz-demo";
-import DevlandiaDemo from "@challenge/devlandia-demo";
+import AlgorithmPlaygroundDemo from "@challenge/algorithm-playground-demo";
 
 interface Props {
   slug: string;
@@ -9,9 +8,5 @@ const { slug } = Astro.props;
 ---
 
 {
-  slug === "javascript-data-exercises" ? (
-    <ConazDemo />
-  ) : slug === "grid-pathfinding" ? (
-    <DevlandiaDemo />
-  ) : null
+  slug === "algorithm-playground" ? <AlgorithmPlaygroundDemo /> : null
 }

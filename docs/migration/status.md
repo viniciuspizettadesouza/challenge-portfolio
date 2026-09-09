@@ -1,17 +1,17 @@
 # Migration status
 
-Last updated: 2026-09-08.
+Last updated: 2026-09-10.
 
-All migration and consolidation phases (0–22) are complete. The portfolio now
-presents 18 domain-focused entries backed by all 23 immutable historical
-sources. Castlabs and Vue.js have been replaced by the consolidated TV Episode
-Library, and all four former episode challenge and capability slugs resolve to
-the new canonical route.
+All migration and consolidation phases (0–23) are complete. The portfolio now
+presents 16 domain-focused entries backed by all 23 immutable historical
+sources. Conaz, Devlandia, and PropertiaG are represented by the consolidated
+Algorithm Playground, and all six former algorithm challenge and capability
+slugs resolve to the new canonical route.
 
-The Phase 22 working tree passes lint, typecheck, 77 unit and SSR tests, 44
-Chromium interaction and accessibility tests, a 97-page production build, and
-Gitleaks across 321 commits with no findings. The new TV Episode Library
-screenshot received direct visual review, and all 18 canonical screenshots
+The Phase 23 working tree passes lint, typecheck, 76 unit and SSR tests, 40
+Chromium interaction and accessibility tests, a 99-page production build, and
+Gitleaks across 325 commits with no findings. The new Algorithm Playground
+screenshot received direct visual review, and all 16 canonical screenshots
 remain represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
@@ -24,8 +24,8 @@ No tag is planned.
 
 ## Next action
 
-Review the TV Episode Library and refreshed screenshot, then commit and push
-the approved Phase 22 changes and verify Browser tests, Security scan, and
+Review the Algorithm Playground and refreshed screenshot, then commit and push
+the approved Phase 23 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

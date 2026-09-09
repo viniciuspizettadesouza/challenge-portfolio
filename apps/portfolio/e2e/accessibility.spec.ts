@@ -46,7 +46,7 @@ test("shared shell meets the automated WCAG baseline", async ({ page }) => {
   for (const route of [
     "",
     "challenges",
-    "challenges/roman-numeral-converter",
+    "challenges/algorithm-playground",
     "about",
   ]) {
     await expectAccessible(page, route, { checkContrast: true });

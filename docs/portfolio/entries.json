@@ -38,16 +38,26 @@
     "sourceSlugs": ["challenge-climateseed"]
   },
   {
-    "slug": "javascript-data-exercises",
-    "title": "JavaScript Data Exercises",
+    "slug": "algorithm-playground",
+    "title": "Algorithm Playground",
     "themes": ["Algorithms & Utilities"],
-    "sourceSlugs": ["challenge-conaz"]
-  },
-  {
-    "slug": "grid-pathfinding",
-    "title": "Grid Pathfinding",
-    "themes": ["Algorithms & Utilities"],
-    "sourceSlugs": ["challenge-devlandia"]
+    "sourceSlugs": [
+      "challenge-conaz",
+      "challenge-devlandia",
+      "challenge-propertiag"
+    ],
+    "aliases": [
+      "challenge-conaz",
+      "challenge-devlandia",
+      "challenge-propertiag",
+      "javascript-data-exercises",
+      "grid-pathfinding",
+      "roman-numeral-converter"
+    ],
+    "renderer": "static",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "algorithm-playground",
+    "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding."
   },
   {
     "slug": "movie-search",
@@ -104,12 +114,6 @@
     "title": "Film Crawl Experience",
     "themes": ["Content & Media"],
     "sourceSlugs": ["challenge-pipz"]
-  },
-  {
-    "slug": "roman-numeral-converter",
-    "title": "Roman Numeral Converter",
-    "themes": ["Algorithms & Utilities"],
-    "sourceSlugs": ["challenge-propertiag"]
   },
   {
     "slug": "product-data-table",

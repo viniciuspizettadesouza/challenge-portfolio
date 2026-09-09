@@ -24,13 +24,13 @@
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Dependency-free JavaScript algorithms adapted to an interactive Astro demo. Owner approved on 2026-07-28."
+    "reviewNotes": "Dependency-free JavaScript exercises now contribute character frequency, run-length encoding, and member synchronisation to the consolidated Algorithm Playground."
   },
   "challenge-devlandia": {
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Original Ruby pathfinding behavior adapted to browser-safe TypeScript. Owner approved on 2026-07-28."
+    "reviewNotes": "The two original Ruby pathfinding programs now contribute editable full-path and next-move exercises to the consolidated Algorithm Playground through browser-safe TypeScript."
   },
   "challenge-fyld-hansecom": {
     "migrationStrategy": "upgrade-vue2",
@@ -88,7 +88,7 @@
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Next.js calculator behavior adapted to a tested React island. Preserved build passes under Node 18/Yarn 1; one original snapshot is stale. Owner approved on 2026-07-28."
+    "reviewNotes": "The Next.js calculator now contributes validated 1–1000 integer-to-Roman conversion to the consolidated Algorithm Playground. The preserved build passes under Node 18/Yarn 1; one original snapshot remains stale."
   },
   "challenge-pipz": {
     "migrationStrategy": "upgrade-react",

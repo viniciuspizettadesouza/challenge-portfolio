@@ -155,19 +155,24 @@
     "demoPath": "challenges/challenge-climateseed/demo"
   },
   {
-    "slug": "javascript-data-exercises",
-    "title": "JavaScript Data Exercises",
+    "slug": "algorithm-playground",
+    "title": "Algorithm Playground",
     "themes": [
       "Algorithms & Utilities"
     ],
-    "description": "A collection of interactive JavaScript exercises for character counting, run-length encoding, and synchronising member records.",
+    "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding.",
     "technologies": [
       "JavaScript",
-      "Astro"
+      "Astro",
+      "Ruby",
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Jest"
     ],
     "renderer": "static",
     "migrationStatus": "migrated",
-    "migrationStrategy": "static-embed",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-conaz",
@@ -176,29 +181,7 @@
         "originalRepository": "viniciuspizettadesouza/challenge-conaz",
         "originalDefaultBranch": "master",
         "originalHeadSha": "69264714c1376d8150364d68fe749f97d9eb9ca0"
-      }
-    ],
-    "aliases": [
-      "challenge-conaz"
-    ],
-    "demoPath": "challenges/challenge-conaz/demo"
-  },
-  {
-    "slug": "grid-pathfinding",
-    "title": "Grid Pathfinding",
-    "themes": [
-      "Algorithms & Utilities"
-    ],
-    "description": "A browser adaptation of two Ruby pathfinding programs that calculate the next move and complete route across a grid.",
-    "technologies": [
-      "Ruby",
-      "TypeScript",
-      "Astro"
-    ],
-    "renderer": "static",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "static-embed",
-    "sources": [
+      },
       {
         "slug": "challenge-devlandia",
         "title": "Devlandia Challenge",
@@ -206,12 +189,25 @@
         "originalRepository": "viniciuspizettadesouza/challenge-devlandia",
         "originalDefaultBranch": "main",
         "originalHeadSha": "59d7929b4b43e433eadbe069a838d21d8e9a18f6"
+      },
+      {
+        "slug": "challenge-propertiag",
+        "title": "PropertiaG Challenge",
+        "sourcePath": "challenges/challenge-propertiag/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b"
       }
     ],
     "aliases": [
-      "challenge-devlandia"
+      "challenge-conaz",
+      "challenge-devlandia",
+      "challenge-propertiag",
+      "javascript-data-exercises",
+      "grid-pathfinding",
+      "roman-numeral-converter"
     ],
-    "demoPath": "challenges/challenge-devlandia/demo"
+    "demoPath": "challenges/algorithm-playground/demo"
   },
   {
     "slug": "movie-search",
@@ -436,37 +432,6 @@
       "challenge-pipz"
     ],
     "demoPath": "challenges/challenge-pipz/demo"
-  },
-  {
-    "slug": "roman-numeral-converter",
-    "title": "Roman Numeral Converter",
-    "themes": [
-      "Algorithms & Utilities"
-    ],
-    "description": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Jest"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-react",
-    "sources": [
-      {
-        "slug": "challenge-propertiag",
-        "title": "PropertiaG Challenge",
-        "sourcePath": "challenges/challenge-propertiag/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-propertiag",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "aafa79a513f54f19159ae6649d73fcd021f14b5b"
-      }
-    ],
-    "aliases": [
-      "challenge-propertiag"
-    ],
-    "demoPath": "challenges/challenge-propertiag/demo"
   },
   {
     "slug": "product-data-table",

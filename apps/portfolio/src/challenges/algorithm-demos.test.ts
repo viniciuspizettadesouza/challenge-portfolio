@@ -30,10 +30,12 @@ import {
 } from "@challenge/tv-episode-library-demo/logic";
 import {
   countCharacters,
+  convertToRoman,
+  fullPath,
+  nextMove,
   runLengthEncode,
   updateMembers,
-} from "@challenge/conaz-demo/logic";
-import { fullPath, nextMove } from "@challenge/devlandia-demo/logic";
+} from "@challenge/algorithm-playground-demo/logic";
 import {
   movies as fyldMovies,
   searchMovies,
@@ -54,7 +56,6 @@ import {
   posts as lagoasoftPosts,
   togglePostVote,
 } from "@challenge/lagoasoft-demo/logic";
-import { convertToRoman } from "@challenge/propertiag-demo/logic";
 import {
   createArticle,
   filterArticles,
@@ -361,7 +362,7 @@ describe("ClimateSeed demo logic", () => {
   });
 });
 
-describe("Conaz demo logic", () => {
+describe("consolidated Algorithm Playground logic", () => {
   it("counts characters and encodes repeated runs", () => {
     expect(countCharacters("teste conaz")).toEqual({
       " ": 1,
@@ -397,7 +398,7 @@ describe("Conaz demo logic", () => {
   });
 });
 
-describe("PropertiaG Roman numeral conversion", () => {
+describe("Algorithm Playground Roman numeral conversion", () => {
   it.each([
     [1, "I"],
     [4, "IV"],
@@ -446,7 +447,7 @@ describe("Sword Health news logic", () => {
   });
 });
 
-describe("Devlandia demo logic", () => {
+describe("Algorithm Playground pathfinding", () => {
   const grid = `-----
 -----
 p--m-

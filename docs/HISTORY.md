@@ -20,6 +20,7 @@ the [maintenance handbook](README.md).
 | 2026-09-06 | 20     | Consolidated Instruct and Meetime into the Lead Operations Workspace, retaining unified discovery, category filters, cadence-backed CRUD, versioned persistence, responsive records, and redirects from both retired entries. |
 | 2026-09-08 | 21     | Consolidated JExperts and User Management into the People Operations Workspace, retaining secure administration, enriched employee profiles, reporting hierarchy, standalone delivery, and four legacy-route aliases. |
 | 2026-09-08 | 22     | Consolidated Castlabs and Vue.js into the TV Episode Library, retaining series discovery, 17 searchable and paginated episodes, local mutations, subscription feedback, and four legacy-route aliases. |
+| 2026-09-10 | 23     | Consolidated Conaz, Devlandia, and PropertiaG into the Algorithm Playground, retaining six interactive text, record, numeral, and pathfinding algorithms plus six legacy-route aliases. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -141,15 +142,13 @@ multi-stage Vite/nginx Docker build.
 | Weather Forecast Explorer | Two Vue 2/Maps/OpenWeather challenges → Vue 3 island | Combines address search, Haversine geolocation matching, history, six-hour comparison, and a 48-hour local forecast from Blueticket and OnSign TV |
 | TV Episode Library | React/Apollo/WebSockets/OMDb and Vue 3/Pinia/TVMaze → React island | Combines series metadata, 17 searchable and paginated episodes, details, local mutations, and subscription feedback from Castlabs and Vue.js using fixtures and local artwork |
 | ClimateSeed     | Vue 3/Pinia/ApexCharts → Vue 3 island               | Organisation comparison, chart switching, aggregation, and results use semantic CSS charts                           |
-| Conaz           | Node script → Astro/TypeScript                      | Counts, run-length encoding, and member synchronization run interactively                                            |
-| Devlandia       | Two Ruby CLIs → Astro/TypeScript                    | Full-path and next-move solutions accept editable browser grids                                                      |
+| Algorithm Playground | Node scripts, two Ruby CLIs, and Next.js/React → Astro/TypeScript | Combines character counts, run-length encoding, member synchronization, validated Roman numerals, and editable full-path and next-move grid solutions from Conaz, PropertiaG, and Devlandia |
 | FYLD / HanseCom | Nuxt 2/Vuex/Vuetify/movie API → Vue 3 island        | Three-character search and bundled Avengers results retain the screenshot layout without a token                     |
 | Ingenious Build | Vue 3/Vuex/json-server → Vue 3 island               | All 11 lines, 163 stops, positions, times, search, and direction use the complete response                           |
 | Lead Operations Workspace | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime |
 | People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management |
 | Lagoasoft       | React 16/Instagram → React island                   | Five posts and independent likes remain; expired media becomes local CSS artwork                                     |
 | Pipz            | React 16/SWAPI/crawl libraries → React island       | Seven-film order, Roman episodes, dates, logo, intro, crawl, pause, and restart work locally                         |
-| PropertiaG      | Next.js 12/React → React island                     | Integer-to-Roman conversion and 1–1000 constraint remain with clearer validation                                     |
 | Salsify         | React/Vite-style source → direct React island       | Original datastore, filters, operators, values, and table run with an Astro style layer                              |
 | Configurable Book Sorting | React/Express/MongoDB and Node scripts → React island | Combines the identical Stormtech and Zygo requirements in a configurable comparator pipeline with all documented outcomes |
 | Leafwell        | Next.js 13/Apollo/GraphQL → React island            | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                               |
@@ -208,6 +207,8 @@ labels for four controls whose immutable historical component reuses the wrong
 were removed, and the refreshed screenshots record the small fidelity-preserving
 color changes.
 
+Phase 23 retains this full baseline across the 16 consolidated canonical demos.
+
 ## Validation and publication record
 
 | Baseline                   | Validation                                                                                                                                                                                                 |
@@ -222,6 +223,7 @@ color changes.
 | Phase 20 lead consolidation | Offline frozen install; lint and typecheck; 78 unit/SSR tests; 48 Chromium interaction and accessibility tests; 20 screenshots; 93 static pages including four retained lead-route aliases; Gitleaks over 319 commits |
 | Phase 21 people consolidation | 21 workspaces; lint and typecheck; 78 unit/SSR tests; 46 Chromium interaction and accessibility tests; 19 screenshots; 95 static pages including four retained people-route aliases; standalone Vite and Docker/nginx builds; Gitleaks over 320 commits |
 | Phase 22 TV episode consolidation | 20 workspaces; lint and typecheck; 77 unit/SSR tests; 44 Chromium interaction and accessibility tests; 18 screenshots; 97 static pages including four retained episode-route aliases; Gitleaks over 321 commits |
+| Phase 23 algorithm consolidation | 18 workspaces; lint and typecheck; 76 unit/SSR tests; 40 Chromium interaction and accessibility tests; 16 screenshots; 99 static pages including six retained algorithm-route aliases; Gitleaks over 325 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

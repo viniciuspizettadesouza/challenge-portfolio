@@ -29,18 +29,15 @@ importers:
       '@challenge/3cket-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-3cket/demo
+      '@challenge/algorithm-playground-demo':
+        specifier: workspace:*
+        version: link:../../challenges/algorithm-playground/demo
       '@challenge/climateseed-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-climateseed/demo
-      '@challenge/conaz-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-conaz/demo
       '@challenge/configurable-book-sorting-demo':
         specifier: workspace:*
         version: link:../../challenges/configurable-book-sorting/demo
-      '@challenge/devlandia-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-devlandia/demo
       '@challenge/fyld-hansecom-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-fyld-hansecom/demo
@@ -59,9 +56,6 @@ importers:
       '@challenge/pipz-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-pipz/demo
-      '@challenge/propertiag-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-propertiag/demo
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
@@ -136,6 +130,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(@types/node@26.4.1)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0))
 
+  challenges/algorithm-playground/demo: {}
+
   challenges/challenge-3cket/demo:
     dependencies:
       vue:
@@ -147,10 +143,6 @@ importers:
       vue:
         specifier: '>=3.4.0'
         version: 3.5.40(typescript@7.0.2)
-
-  challenges/challenge-conaz/demo: {}
-
-  challenges/challenge-devlandia/demo: {}
 
   challenges/challenge-fyld-hansecom/demo:
     dependencies:
@@ -175,15 +167,6 @@ importers:
       react:
         specifier: '>=18.0.0'
         version: 19.2.8
-
-  challenges/challenge-propertiag/demo:
-    dependencies:
-      react:
-        specifier: '>=18'
-        version: 19.2.8
-      react-dom:
-        specifier: '>=18'
-        version: 19.2.8(react@19.2.8)
 
   challenges/challenge-salsify/demo:
     dependencies:
