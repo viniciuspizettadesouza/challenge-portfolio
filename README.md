@@ -1,6 +1,6 @@
 # Challenge Portfolio
 
-A unified Astro portfolio that presents 16 domain-focused entries backed by 23
+A unified Astro portfolio that presents 15 domain-focused entries backed by 23
 preserved historical technical challenges.
 
 Each project separates immutable, sanitized source in `original/` from the
@@ -27,7 +27,7 @@ The usual validation commands are `pnpm lint`, `pnpm typecheck`, `pnpm test`,
 - [Challenge library](docs/README.md#challenge-library)
 - [Distilled migration and hardening history](docs/HISTORY.md)
 
-Migration Phases 0–23 are complete. Routine dependency, CI, and security
+Migration Phases 0–24 are complete. Routine dependency, CI, and security
 maintenance is the current work; no migration task is pending.
 
 Automated agents leave changes unstaged and unpublished unless the repository

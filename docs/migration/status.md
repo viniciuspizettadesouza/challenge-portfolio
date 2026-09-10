@@ -2,17 +2,17 @@
 
 Last updated: 2026-09-10.
 
-All migration and consolidation phases (0–23) are complete. The portfolio now
-presents 16 domain-focused entries backed by all 23 immutable historical
-sources. Conaz, Devlandia, and PropertiaG are represented by the consolidated
-Algorithm Playground, and all six former algorithm challenge and capability
-slugs resolve to the new canonical route.
+All migration and consolidation phases (0–24) are complete. The portfolio now
+presents 15 domain-focused entries backed by all 23 immutable historical
+sources. FYLD / HanseCom and Pipz are represented by the consolidated Film
+Library, and all four former film challenge and capability slugs resolve to the
+new canonical route.
 
-The Phase 23 working tree passes lint, typecheck, 76 unit and SSR tests, 40
-Chromium interaction and accessibility tests, a 99-page production build, and
-Gitleaks across 325 commits with no findings. The new Algorithm Playground
-screenshot received direct visual review, and all 16 canonical screenshots
-remain represented.
+The Phase 24 working tree passes lint, typecheck, 74 unit and SSR tests, 39
+Chromium interaction and accessibility tests, a 101-page production build, and
+Gitleaks across 328 commits with no findings. The new Film Library screenshot
+received direct visual review, and all 15 canonical screenshots remain
+represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
 pass integrates the compatible dependency updates, keeps TypeScript 6 until
@@ -24,8 +24,8 @@ No tag is planned.
 
 ## Next action
 
-Review the Algorithm Playground and refreshed screenshot, then commit and push
-the approved Phase 23 changes and verify Browser tests, Security scan, and
+Review the Film Library and refreshed screenshot, then commit and push the
+approved Phase 24 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

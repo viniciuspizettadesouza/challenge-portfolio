@@ -210,23 +210,27 @@
     "demoPath": "challenges/algorithm-playground/demo"
   },
   {
-    "slug": "movie-search",
-    "title": "Movie Search",
+    "slug": "film-library",
+    "title": "Film Library",
     "themes": [
       "Content & Media",
       "Discovery & Catalogs"
     ],
-    "description": "A Nuxt movie-search interface that filters a bundled catalog and presents release years, ratings, and plot summaries in wide text cards.",
+    "description": "A unified React film library with the preserved three-character Avengers search, ratings and summaries, plus a dedicated Star Wars view with the seven-film crawl, Roman episode numbers, pause, and restart controls.",
     "technologies": [
       "Nuxt",
       "Vue",
       "Vuex",
       "Vuetify",
-      "Movie API"
+      "Movie API",
+      "React",
+      "JavaScript",
+      "Create React App",
+      "SWAPI"
     ],
-    "renderer": "vue3",
+    "renderer": "react",
     "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-vue2",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-fyld-hansecom",
@@ -235,12 +239,23 @@
         "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
         "originalDefaultBranch": "main",
         "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79"
+      },
+      {
+        "slug": "challenge-pipz",
+        "title": "Pipz Challenge",
+        "sourcePath": "challenges/challenge-pipz/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-pipz",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3"
       }
     ],
     "aliases": [
-      "challenge-fyld-hansecom"
+      "challenge-fyld-hansecom",
+      "challenge-pipz",
+      "movie-search",
+      "film-crawl-experience"
     ],
-    "demoPath": "challenges/challenge-fyld-hansecom/demo"
+    "demoPath": "challenges/film-library/demo"
   },
   {
     "slug": "public-transit-timetable",
@@ -401,37 +416,6 @@
       "challenge-lagoasoft"
     ],
     "demoPath": "challenges/challenge-lagoasoft/demo"
-  },
-  {
-    "slug": "film-crawl-experience",
-    "title": "Film Crawl Experience",
-    "themes": [
-      "Content & Media"
-    ],
-    "description": "A faithful React recreation of the original Star Wars intro and perspective crawl, listing seven films with Roman episode numbers and release dates.",
-    "technologies": [
-      "React",
-      "JavaScript",
-      "Create React App",
-      "SWAPI"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-react",
-    "sources": [
-      {
-        "slug": "challenge-pipz",
-        "title": "Pipz Challenge",
-        "sourcePath": "challenges/challenge-pipz/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-pipz",
-        "originalDefaultBranch": "master",
-        "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3"
-      }
-    ],
-    "aliases": [
-      "challenge-pipz"
-    ],
-    "demoPath": "challenges/challenge-pipz/demo"
   },
   {
     "slug": "product-data-table",

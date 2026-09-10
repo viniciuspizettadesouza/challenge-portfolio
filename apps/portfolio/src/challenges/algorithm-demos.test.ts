@@ -37,9 +37,11 @@ import {
   updateMembers,
 } from "@challenge/algorithm-playground-demo/logic";
 import {
-  movies as fyldMovies,
+  films as libraryFilms,
+  movies as libraryMovies,
   searchMovies,
-} from "@challenge/fyld-hansecom-demo/logic";
+  toRomanEpisode,
+} from "@challenge/film-library-demo/logic";
 import {
   getLines,
   getStopsForLine,
@@ -50,7 +52,6 @@ import {
 import { initialLeads } from "@challenge/lead-operations-demo/fixtures";
 import { createLead, deleteLead, filterLeads, getCategoryOptions, nextLeadId, updateLead, validateLead } from "@challenge/lead-operations-demo/logic";
 import { LEAD_STORAGE_KEY, loadLeads, migrateLegacyLeads, readLeadState, writeLeadState } from "@challenge/lead-operations-demo/persistence";
-import { films as pipzFilms, toRomanEpisode } from "@challenge/pipz-demo/logic";
 import {
   displayedLikes,
   posts as lagoasoftPosts,
@@ -464,13 +465,20 @@ p--m-
   });
 });
 
-describe("Fyld Hansecom movie search", () => {
+describe("consolidated Film Library logic", () => {
   it("requires three characters and filters titles case-insensitively", () => {
-    expect(searchMovies(fyldMovies, "av")).toEqual([]);
-    expect(searchMovies(fyldMovies, "INFINITY").map(({ id }) => id)).toEqual([
+    expect(searchMovies(libraryMovies, "av")).toEqual([]);
+    expect(searchMovies(libraryMovies, "INFINITY").map(({ id }) => id)).toEqual([
       299536,
     ]);
-    expect(searchMovies(fyldMovies, "avengers")).toHaveLength(8);
+    expect(searchMovies(libraryMovies, "avengers")).toHaveLength(8);
+  });
+
+  it("retains the historical SWAPI response order and Roman episodes", () => {
+    expect(toRomanEpisode(4)).toBe("IV");
+    expect(libraryFilms.map(({ episodeId }) => episodeId)).toEqual([
+      4, 5, 6, 1, 2, 3, 7,
+    ]);
   });
 });
 
@@ -507,18 +515,6 @@ describe("Ingenious Build timetable logic", () => {
 
     expect(ascending).toContain("Salwator");
     expect(descending).toEqual([...ascending].reverse());
-  });
-});
-
-describe("Pipz film archive logic", () => {
-  it("formats episode numbers", () => {
-    expect(toRomanEpisode(4)).toBe("IV");
-  });
-
-  it("retains the historical SWAPI response order", () => {
-    expect(pipzFilms.map(({ episodeId }) => episodeId)).toEqual([
-      4, 5, 6, 1, 2, 3, 7,
-    ]);
   });
 });
 

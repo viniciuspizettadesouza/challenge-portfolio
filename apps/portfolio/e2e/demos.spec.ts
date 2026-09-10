@@ -400,21 +400,22 @@ test("Sword Health supports the authenticated image workflow", async ({
   await capture(page, "news-publishing-platform", errors);
 });
 
-test("Pipz controls the preserved Star Wars crawl", async ({ page }) => {
-  const errors = await openDemo(page, "film-crawl-experience");
+test("Film Library searches movies and controls the preserved Star Wars crawl", async ({
+  page,
+}) => {
+  const errors = await openDemo(page, "film-library");
+  await page.getByRole("button", { name: "Search" }).click();
+  await expect(page.getByText("8 movies found.")).toBeVisible();
+  await expect(page.getByText(/The Avengers/).first()).toBeVisible();
+  await page.getByRole("button", { name: "Star Wars crawl" }).click();
+  await expect(page.getByAltText("Star Wars")).toBeVisible();
   await page.getByRole("button", { name: "Pause crawl" }).click();
   await expect(
     page.getByRole("button", { name: "Resume crawl" }),
   ).toBeVisible();
-  await capture(page, "film-crawl-experience", errors);
-});
-
-test("FYLD searches the preserved movie dataset", async ({ page }) => {
-  const errors = await openDemo(page, "movie-search");
-  await page.getByRole("button", { name: "Search" }).click();
-  await expect(page.getByText(/\d+ movies found\./)).toBeVisible();
-  await expect(page.getByText(/The Avengers/).first()).toBeVisible();
-  await capture(page, "movie-search", errors);
+  await page.getByRole("button", { name: "Discover movies" }).click();
+  await expect(page.getByText("8 movies found.")).toBeVisible();
+  await capture(page, "film-library", errors);
 });
 
 test("legacy challenge and demo URLs redirect to canonical entries", async ({
@@ -447,6 +448,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
     await expect(page).toHaveURL(/challenges\/algorithm-playground\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/algorithm-playground\/?$/);
+  }
+  for (const alias of ["challenge-fyld-hansecom", "challenge-pipz", "movie-search", "film-crawl-experience"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/film-library\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/film-library\/?$/);
   }
 });
 
@@ -487,7 +494,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(16);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(15);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -503,7 +510,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(16);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(16);
+  await expect(page.locator(".catalog-entry")).toHaveCount(15);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(15);
   await context.close();
 });

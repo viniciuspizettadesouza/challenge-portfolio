@@ -2,12 +2,11 @@ import ThreeCketDemo from "@challenge/3cket-demo";
 import WeatherForecastDemo from "@challenge/weather-forecast-demo";
 import TVEpisodeLibraryDemo from "@challenge/tv-episode-library-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
-import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
+import FilmLibraryDemo from "@challenge/film-library-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
-import PipzDemo from "@challenge/pipz-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-demo";
 import StrainsDemo from "@challenge/strains-demo";
@@ -82,20 +81,15 @@ describe("pilot demos", () => {
     expect(html).toContain("Page 1 of 4");
   });
 
-  it("renders the Fyld Hansecom movie search", async () => {
-    const html = await renderToString(createSSRApp(FyldHansecomDemo));
+  it("renders the consolidated Film Library", () => {
+    const html = renderToStaticMarkup(createElement(FilmLibraryDemo));
 
+    expect(html).toContain("Film Library");
+    expect(html).toContain("Discover movies");
+    expect(html).toContain("Star Wars crawl");
     expect(html).toContain("Search for any movie");
     expect(html).toContain("Search movie");
     expect(html).toContain("The preserved “avengers” query is ready to run.");
-  });
-
-  it("renders the local Pipz film archive", () => {
-    const html = renderToStaticMarkup(createElement(PipzDemo));
-
-    expect(html).toContain("A long time ago in a galaxy far, far away");
-    expect(html).toContain("The Phantom Menace");
-    expect(html).toContain("The Force Awakens");
   });
 
   it("renders the safe Sword Health news platform", async () => {

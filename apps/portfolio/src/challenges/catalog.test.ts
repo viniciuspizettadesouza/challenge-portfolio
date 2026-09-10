@@ -24,7 +24,6 @@ describe("catalog discovery", () => {
       "native-react",
       "native-vue3",
       "upgrade-react",
-      "upgrade-vue2",
     ]);
   });
 

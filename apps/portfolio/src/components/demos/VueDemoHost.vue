@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ThreeCketDemo from "@challenge/3cket-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
-import FyldHansecomDemo from "@challenge/fyld-hansecom-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
@@ -14,7 +13,6 @@ const demos = {
   "event-discovery": ThreeCketDemo,
   "weather-forecast": WeatherForecastDemo,
   "carbon-emissions-dashboard": ClimateSeedDemo,
-  "movie-search": FyldHansecomDemo,
   "public-transit-timetable": IngeniousBuildDemo,
   "lead-operations": LeadOperationsDemo,
   "news-publishing-platform": SwordHealthDemo,

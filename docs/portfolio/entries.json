@@ -60,10 +60,20 @@
     "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding."
   },
   {
-    "slug": "movie-search",
-    "title": "Movie Search",
+    "slug": "film-library",
+    "title": "Film Library",
     "themes": ["Content & Media", "Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-fyld-hansecom"]
+    "sourceSlugs": ["challenge-fyld-hansecom", "challenge-pipz"],
+    "aliases": [
+      "challenge-fyld-hansecom",
+      "challenge-pipz",
+      "movie-search",
+      "film-crawl-experience"
+    ],
+    "renderer": "react",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "film-library",
+    "description": "A unified React film library with the preserved three-character Avengers search, ratings and summaries, plus a dedicated Star Wars view with the seven-film crawl, Roman episode numbers, pause, and restart controls."
   },
   {
     "slug": "public-transit-timetable",
@@ -108,12 +118,6 @@
     "title": "Social Feed Interactions",
     "themes": ["Content & Media"],
     "sourceSlugs": ["challenge-lagoasoft"]
-  },
-  {
-    "slug": "film-crawl-experience",
-    "title": "Film Crawl Experience",
-    "themes": ["Content & Media"],
-    "sourceSlugs": ["challenge-pipz"]
   },
   {
     "slug": "product-data-table",

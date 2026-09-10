@@ -38,9 +38,9 @@ importers:
       '@challenge/configurable-book-sorting-demo':
         specifier: workspace:*
         version: link:../../challenges/configurable-book-sorting/demo
-      '@challenge/fyld-hansecom-demo':
+      '@challenge/film-library-demo':
         specifier: workspace:*
-        version: link:../../challenges/challenge-fyld-hansecom/demo
+        version: link:../../challenges/film-library/demo
       '@challenge/ingenious-build-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-ingenious-build-frontend/demo
@@ -53,9 +53,6 @@ importers:
       '@challenge/people-operations-demo':
         specifier: workspace:*
         version: link:../../challenges/people-operations/demo
-      '@challenge/pipz-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-pipz/demo
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
@@ -144,12 +141,6 @@ importers:
         specifier: '>=3.4.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-fyld-hansecom/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.2.0'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/challenge-ingenious-build-frontend/demo:
     dependencies:
       vue:
@@ -162,7 +153,7 @@ importers:
         specifier: '>=18.0.0'
         version: 19.2.8
 
-  challenges/challenge-pipz/demo:
+  challenges/film-library/demo:
     dependencies:
       react:
         specifier: '>=18.0.0'

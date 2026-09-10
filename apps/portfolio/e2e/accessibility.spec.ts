@@ -18,10 +18,15 @@ const fullAuditSlugs = new Set(challenges.map(({ slug }) => slug));
 async function expectAccessible(
   page: Page,
   route: string,
-  options: { checkContrast?: boolean; exclude?: string[] } = {},
+  options: {
+    checkContrast?: boolean;
+    exclude?: string[];
+    prepare?: (page: Page) => Promise<void>;
+  } = {},
 ) {
   await page.goto(route);
   await page.waitForLoadState("networkidle");
+  await options.prepare?.(page);
 
   let audit = new AxeBuilder({ page }).withTags(wcagTags);
   if (!options.checkContrast) audit = audit.disableRules(["color-contrast"]);
@@ -80,3 +85,14 @@ for (const challenge of challenges.filter(({ demoPath }) => demoPath)) {
     await expect(focusedElement).toHaveCSS("outline-style", "solid");
   });
 }
+
+test("Film Library crawl view meets the accessibility baseline", async ({
+  page,
+}) => {
+  await expectAccessible(page, "demos/film-library", {
+    checkContrast: true,
+    prepare: async (filmPage) => {
+      await filmPage.getByRole("button", { name: "Star Wars crawl" }).click();
+    },
+  });
+});

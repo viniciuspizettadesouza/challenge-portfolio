@@ -1,12 +1,16 @@
 # FYLD / HanseCom Challenge
 
+> Portfolio note: this challenge's maintained demo is now consolidated into
+> the domain-based **Film Library**. The source below remains as immutable
+> historical evidence.
+
 The complete sanitized history is preserved under `original/`. That directory
 is historical evidence and must not be modified.
 
-## Maintained demo
+## Consolidated maintained demo
 
-The Vue 3 demo under `demo/` modernizes the Nuxt 2/Vuetify movie search while
-remaining close to the preserved screenshot:
+The React demo under `../film-library/demo/` modernizes the Nuxt 2/Vuetify
+movie search while remaining close to the preserved screenshot:
 
 - show the original NuxtJS branding and centered search heading;
 - require at least three search characters;
@@ -17,4 +21,5 @@ The historical API token is unavailable and the original page rendered its
 bundled mock even after requesting live data. The maintained demo searches
 those local records directly and requires no credential or network request.
 
-Status: integrated, automatically tested, and owner-approved on 2026-07-28.
+The former `challenge-fyld-hansecom` and `movie-search` routes redirect to the
+canonical `film-library` entry. Status: consolidated and automatically tested.

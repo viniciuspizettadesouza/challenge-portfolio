@@ -37,7 +37,7 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "Nuxt 2/Vuetify movie search adapted to a Vue 3 island using records from its bundled Avengers response. The preserved Nuxt branding, search form, and wide text-card layout are reproduced without the removed movie API token. Owner approved on 2026-07-28."
+    "reviewNotes": "Nuxt 2/Vuetify movie search now contributes its three-character Avengers search, ratings, summaries, Nuxt branding, and wide result cards to the consolidated Film Library without the removed movie API token."
   },
   "challenge-lagoasoft": {
     "migrationStrategy": "upgrade-react",
@@ -95,7 +95,7 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "React 16 SWAPI film list adapted to a tested modern React island with the original seven-film fields and historical response order stored locally. The original intro, preserved logo, and continuous perspective crawl are reproduced without the removed API configuration. Owner approved on 2026-07-28."
+    "reviewNotes": "React 16 SWAPI film list now contributes its seven-film response order, Roman episode numbers, preserved logo, animated opening, perspective crawl, pause, and restart controls to the consolidated Film Library without the removed API configuration."
   },
   "challenge-salsify": {
     "migrationStrategy": "native-react",
