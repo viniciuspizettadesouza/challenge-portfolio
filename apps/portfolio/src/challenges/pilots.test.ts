@@ -2,13 +2,12 @@ import CityExplorerDemo from "@challenge/city-explorer-demo";
 import WeatherForecastDemo from "@challenge/weather-forecast-demo";
 import ScreenLibraryDemo from "@challenge/screen-library-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
+import ContentPlatformDemo from "@challenge/content-platform-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
-import LagoasoftDemo from "@challenge/lagoasoft-demo";
 import SalsifyDemo from "@challenge/salsify-demo";
 import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-demo";
 import StrainsDemo from "@challenge/strains-demo";
-import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -85,20 +84,15 @@ describe("pilot demos", () => {
     expect(html).toContain("Page 1 of 4");
   });
 
-  it("renders the safe Sword Health news platform", async () => {
-    const html = await renderToString(createSSRApp(SwordHealthDemo));
+  it("renders the consolidated Content Platform", async () => {
+    const html = await renderToString(createSSRApp(ContentPlatformDemo));
 
+    expect(html).toContain("Content Platform");
+    expect(html).toContain("News");
+    expect(html).toContain("Social feed");
     expect(html).toContain("Clinical insight for a world without pain");
     expect(html).toContain("Start demo session");
     expect(html).toContain("News &amp; perspectives");
-  });
-
-  it("renders the Lagoasoft social feed", () => {
-    const html = renderToStaticMarkup(createElement(LagoasoftDemo));
-
-    expect(html).toContain("A local social feed with independent likes");
-    expect(html).toContain("Need a job?");
-    expect(html).toContain("Mobile developer role");
   });
 
   it("renders the fixture-backed ClimateSeed dashboard", async () => {

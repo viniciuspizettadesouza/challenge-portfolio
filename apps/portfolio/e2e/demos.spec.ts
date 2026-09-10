@@ -313,14 +313,6 @@ test("ClimateSeed switches chart presentation", async ({ page }) => {
   await capture(page, "carbon-emissions-dashboard", errors);
 });
 
-test("Lagoasoft keeps independent post likes", async ({ page }) => {
-  const errors = await openDemo(page, "social-feed-interactions");
-  const like = page.locator(".lago-actions button").first();
-  await like.click();
-  await expect(like).toHaveAttribute("aria-pressed", "true");
-  await capture(page, "social-feed-interactions", errors);
-});
-
 test("lead operations searches, creates, edits, deletes, and persists leads", async ({ page }) => {
   const errors = await openDemo(page, "lead-operations");
   await page.getByPlaceholder("Search contact or company...").fill("Northstar");
@@ -391,10 +383,10 @@ test("weather explorer searches the expanded hourly forecast", async ({
   await capture(page, "weather-forecast", errors);
 });
 
-test("Sword Health supports the authenticated image workflow", async ({
+test("Content Platform preserves news publishing and social engagement", async ({
   page,
 }) => {
-  const errors = await openDemo(page, "news-publishing-platform");
+  const errors = await openDemo(page, "content-platform");
   await page.getByRole("button", { name: "Start demo session" }).click();
   await page.getByRole("button", { name: "Write" }).click();
   await page.locator('input[type="file"]').setInputFiles({
@@ -407,7 +399,15 @@ test("Sword Health supports the authenticated image workflow", async ({
   });
   await expect(page.getByText("article.png")).toBeVisible();
   await expect(page.locator(".article-image-preview img")).toBeVisible();
-  await capture(page, "news-publishing-platform", errors);
+
+  await page.getByRole("button", { name: "Social feed", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "A local social feed with independent likes" }),
+  ).toBeVisible();
+  const like = page.locator(".lago-actions button").first();
+  await like.click();
+  await expect(like).toHaveAttribute("aria-pressed", "true");
+  await capture(page, "content-platform", errors);
 });
 
 test("Screen Library composes movie search and the preserved Star Wars crawl", async ({
@@ -441,6 +441,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
     await expect(page).toHaveURL(/challenges\/city-explorer\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/city-explorer\/?$/);
+  }
+  for (const alias of ["challenge-lagoasoft", "challenge-swordhealth", "social-feed-interactions", "news-publishing-platform"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/content-platform\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/content-platform\/?$/);
   }
   for (const alias of ["challenge-instruct", "challenge-meetime", "lead-filtering-dashboard", "sales-lead-management"]) {
     await page.goto(`challenges/${alias}`);
@@ -492,7 +498,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(13);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(12);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -508,7 +514,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(13);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(13);
+  await expect(page.locator(".catalog-entry")).toHaveCount(12);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(12);
   await context.close();
 });

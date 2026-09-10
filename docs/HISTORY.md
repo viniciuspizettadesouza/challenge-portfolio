@@ -24,6 +24,7 @@ the [maintenance handbook](README.md).
 | 2026-09-10 | 24     | Consolidated FYLD / HanseCom and Pipz into the Film Library, retaining three-character movie discovery, the eight-result Avengers fixture, the seven-film Star Wars crawl, and four legacy-route aliases. |
 | 2026-09-10 | 25     | Composed the TV Episode Library and Film Library into the Screen Library, retaining distinct television and film collections, all four historical sources, and ten compatibility aliases. |
 | 2026-09-11 | 26     | Consolidated 3cket and Ingenious Build into the City Explorer, retaining distinct event and transit collections, complete local fixtures, and four compatibility aliases. |
+| 2026-09-11 | 27     | Consolidated Lagoasoft and Sword Health into the Content Platform, retaining distinct news and social channels, local publishing and reactions, and four compatibility aliases. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -148,11 +149,10 @@ multi-stage Vite/nginx Docker build.
 | Algorithm Playground | Node scripts, two Ruby CLIs, and Next.js/React → Astro/TypeScript | Combines character counts, run-length encoding, member synchronization, validated Roman numerals, and editable full-path and next-move grid solutions from Conaz, PropertiaG, and Devlandia |
 | Lead Operations Workspace | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime |
 | People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management |
-| Lagoasoft       | React 16/Instagram → React island                   | Five posts and independent likes remain; expired media becomes local CSS artwork                                     |
+| Content Platform | Vue 3/Quasar/Auth0 and React 16/Instagram → Vue 3 island | Combines article discovery, categories, details, author sessions, profiles, publishing, and image previews with five social posts and independent likes; external Auth0 and expired media remain replaced locally |
 | Salsify         | React/Vite-style source → direct React island       | Original datastore, filters, operators, values, and table run with an Astro style layer                              |
 | Configurable Book Sorting | React/Express/MongoDB and Node scripts → React island | Combines the identical Stormtech and Zygo requirements in a configurable comparator pipeline with all documented outcomes |
 | Leafwell        | Next.js 13/Apollo/GraphQL → React island            | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                               |
-| Sword Health    | Vue 3/Quasar/Auth0 → Vue 3 island                   | Feed, categories, load-more, detail, session, profile, authoring, and image preview work without Auth0               |
 | Vue             | Vue 3 component → direct Vue 3 island               | Original driver selector runs directly with only missing utility styles supplied                                     |
 
 No historical dependency was installed in place. Conaz and Zygo ran directly;
@@ -210,6 +210,8 @@ color changes.
 Phase 25 retains this full baseline across the 14 consolidated canonical demos.
 Phase 26 retains the baseline across 13 canonical demos and directly audits the
 new City Explorer shell.
+Phase 27 retains the baseline across 12 canonical demos and directly audits the
+new Content Platform shell plus its news and social channels.
 
 ## Validation and publication record
 
@@ -229,6 +231,7 @@ new City Explorer shell.
 | Phase 24 film consolidation | 17 workspaces; lint and typecheck; 74 unit/SSR tests; 39 Chromium interaction and accessibility tests including both Film Library views; 15 screenshots; 101 static pages including four retained film-route aliases; Gitleaks over 328 commits |
 | Phase 25 screen-media composition | 16 workspaces; lint and typecheck; 73 unit/SSR tests; 38 Chromium interaction and accessibility tests covering television, film discovery, and crawl views; 14 screenshots; 103 static pages including ten retained screen-media aliases; Gitleaks over 329 commits |
 | Phase 26 city exploration consolidation | 15 workspaces; lint and typecheck; 72 unit/SSR tests; 36 Chromium interaction and accessibility tests covering event discovery and transit planning; 13 screenshots; 105 static pages including four retained city-exploration aliases; Gitleaks over 330 commits |
+| Phase 27 content-platform consolidation | 14 workspaces; lint and typecheck; 71 unit/SSR tests; 34 Chromium interaction and accessibility tests covering news publishing and social engagement; 12 screenshots; 107 static pages including four retained content-platform aliases; Gitleaks over 331 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

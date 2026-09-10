@@ -2,17 +2,18 @@
 
 Last updated: 2026-09-11.
 
-All migration and consolidation phases (0–26) are complete. The portfolio now
-presents 13 domain-focused entries backed by all 23 immutable historical
-sources. 3cket and Ingenious Build are represented by the consolidated City
-Explorer, and both historical source slugs plus the former `event-discovery`
-and `public-transit-timetable` canonical slugs resolve to the new route.
+All migration and consolidation phases (0–27) are complete. The portfolio now
+presents 12 domain-focused entries backed by all 23 immutable historical
+sources. Lagoasoft and Sword Health are represented by the consolidated
+Content Platform, and both historical source slugs plus the former
+`social-feed-interactions` and `news-publishing-platform` canonical slugs
+resolve to the new route.
 
-The Phase 26 working tree passes lint, typecheck, 72 unit and SSR tests, 36
-Chromium interaction and accessibility tests, a 105-page production build,
-and Gitleaks across 330 commits with no findings. The City Explorer screenshot
-received direct visual review, and all 13 canonical screenshots remain
-represented.
+The Phase 27 working tree passes lint, typecheck, 71 unit and SSR tests, 34
+Chromium interaction and accessibility tests, a 107-page production build,
+and Gitleaks across 331 commits with no findings. The Content Platform
+screenshot received direct visual review, and all 12 canonical screenshots
+remain represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
 pass integrates the compatible dependency updates, keeps TypeScript 6 until
@@ -24,8 +25,8 @@ No tag is planned.
 
 ## Next action
 
-Review the City Explorer and refreshed screenshot, then commit and push the
-approved Phase 26 changes and verify Browser tests, Security scan, and
+Review the Content Platform and refreshed screenshot, then commit and push the
+approved Phase 27 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

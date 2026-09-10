@@ -54,13 +54,13 @@ import {
   displayedLikes,
   posts as lagoasoftPosts,
   togglePostVote,
-} from "@challenge/lagoasoft-demo/logic";
+} from "@challenge/content-platform-demo/socialLogic";
 import {
   createArticle,
   filterArticles,
   initialArticles as swordArticles,
   visibleArticles as visibleSwordArticles,
-} from "@challenge/swordhealth-demo/logic";
+} from "@challenge/content-platform-demo/newsLogic";
 import {
   BookSortingError,
   books as sortingBooks,

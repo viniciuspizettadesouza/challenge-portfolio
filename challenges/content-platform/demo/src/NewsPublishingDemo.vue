@@ -9,7 +9,7 @@ import {
   type Article,
   type ArticleDraft,
   type Category,
-} from "./logic";
+} from "./newsLogic";
 
 type View = "home" | "article" | "profile" | "write";
 

@@ -116,10 +116,20 @@
     "description": "A secure React people-operations workspace with local authentication, protected CRUD, approximate directory search, reporting-line filters, detailed employee profiles, pagination, persistent themes, and a standalone Docker build."
   },
   {
-    "slug": "social-feed-interactions",
-    "title": "Social Feed Interactions",
+    "slug": "content-platform",
+    "title": "Content Platform",
     "themes": ["Content & Media"],
-    "sourceSlugs": ["challenge-lagoasoft"]
+    "sourceSlugs": ["challenge-lagoasoft", "challenge-swordhealth"],
+    "aliases": [
+      "challenge-lagoasoft",
+      "challenge-swordhealth",
+      "social-feed-interactions",
+      "news-publishing-platform"
+    ],
+    "renderer": "vue3",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "content-platform",
+    "description": "A unified Vue content platform combining local news discovery, category filtering, author profiles and article publishing with a five-post social feed and independent browser-only likes."
   },
   {
     "slug": "product-data-table",
@@ -136,12 +146,6 @@
     "migrationStrategy": "consolidated",
     "demoDirectory": "configurable-book-sorting",
     "description": "A configurable sorting workbench that composes ordered field rules, preserves the documented book scenarios, and makes null and empty outcomes explicit."
-  },
-  {
-    "slug": "news-publishing-platform",
-    "title": "News Publishing Platform",
-    "themes": ["Content & Media"],
-    "sourceSlugs": ["challenge-swordhealth"]
   },
   {
     "slug": "formula-one-driver-explorer",

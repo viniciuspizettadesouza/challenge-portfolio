@@ -38,9 +38,9 @@ importers:
       '@challenge/configurable-book-sorting-demo':
         specifier: workspace:*
         version: link:../../challenges/configurable-book-sorting/demo
-      '@challenge/lagoasoft-demo':
+      '@challenge/content-platform-demo':
         specifier: workspace:*
-        version: link:../../challenges/challenge-lagoasoft/demo
+        version: link:../../challenges/content-platform/demo
       '@challenge/lead-operations-demo':
         specifier: workspace:*
         version: link:../../challenges/lead-operations/demo
@@ -56,9 +56,6 @@ importers:
       '@challenge/strains-demo':
         specifier: workspace:*
         version: link:../../challenges/strains/demo
-      '@challenge/swordhealth-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-swordhealth/demo
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
@@ -129,12 +126,6 @@ importers:
         specifier: '>=3.4.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-lagoasoft/demo:
-    dependencies:
-      react:
-        specifier: '>=18.0.0'
-        version: 19.2.8
-
   challenges/challenge-salsify/demo:
     dependencies:
       react:
@@ -143,12 +134,6 @@ importers:
       react-dom:
         specifier: '>=18'
         version: 19.2.8(react@19.2.8)
-
-  challenges/challenge-swordhealth/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.0.0'
-        version: 3.5.40(typescript@7.0.2)
 
   challenges/challenge-vue/demo:
     dependencies:
@@ -167,6 +152,12 @@ importers:
       react:
         specifier: '>=18.0.0'
         version: 19.2.8
+
+  challenges/content-platform/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.5.40(typescript@7.0.2)
 
   challenges/lead-operations/demo:
     dependencies:

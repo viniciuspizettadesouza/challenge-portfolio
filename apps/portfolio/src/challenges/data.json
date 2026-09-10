@@ -349,21 +349,26 @@
     "demoPath": "challenges/people-operations/demo"
   },
   {
-    "slug": "social-feed-interactions",
-    "title": "Social Feed Interactions",
+    "slug": "content-platform",
+    "title": "Content Platform",
     "themes": [
       "Content & Media"
     ],
-    "description": "A React social feed that renders five local posts and maintains an independent browser-only like vote for each one.",
+    "description": "A unified Vue content platform combining local news discovery, category filtering, author profiles and article publishing with a five-post social feed and independent browser-only likes.",
     "technologies": [
       "React",
       "JavaScript",
       "Create React App",
-      "CSS"
+      "CSS",
+      "Vue",
+      "TypeScript",
+      "Quasar",
+      "Pinia",
+      "Auth0"
     ],
-    "renderer": "react",
+    "renderer": "vue3",
     "migrationStatus": "migrated",
-    "migrationStrategy": "upgrade-react",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-lagoasoft",
@@ -372,12 +377,23 @@
         "originalRepository": "viniciuspizettadesouza/challenge-lagoasoft",
         "originalDefaultBranch": "master",
         "originalHeadSha": "250566f65454403572dd26eee1d1be1af2529af1"
+      },
+      {
+        "slug": "challenge-swordhealth",
+        "title": "Sword Health Challenge",
+        "sourcePath": "challenges/challenge-swordhealth/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5"
       }
     ],
     "aliases": [
-      "challenge-lagoasoft"
+      "challenge-lagoasoft",
+      "challenge-swordhealth",
+      "social-feed-interactions",
+      "news-publishing-platform"
     ],
-    "demoPath": "challenges/challenge-lagoasoft/demo"
+    "demoPath": "challenges/content-platform/demo"
   },
   {
     "slug": "product-data-table",
@@ -453,38 +469,6 @@
       "challenge-zygo"
     ],
     "demoPath": "challenges/configurable-book-sorting/demo"
-  },
-  {
-    "slug": "news-publishing-platform",
-    "title": "News Publishing Platform",
-    "themes": [
-      "Content & Media"
-    ],
-    "description": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Quasar",
-      "Pinia",
-      "Auth0"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sources": [
-      {
-        "slug": "challenge-swordhealth",
-        "title": "Sword Health Challenge",
-        "sourcePath": "challenges/challenge-swordhealth/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-swordhealth",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "ca2930937ee98b81396290ad5e4b22204df95cf5"
-      }
-    ],
-    "aliases": [
-      "challenge-swordhealth"
-    ],
-    "demoPath": "challenges/challenge-swordhealth/demo"
   },
   {
     "slug": "formula-one-driver-explorer",
