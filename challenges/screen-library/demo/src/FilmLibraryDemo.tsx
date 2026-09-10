@@ -1,7 +1,7 @@
 import { useState } from "react";
 import logo from "../../../challenge-pipz/original/src/assets/sw-logo.png";
-import { films, movies, searchMovies, toRomanEpisode, type Movie } from "./logic";
-import "./styles.css";
+import { films, movies, searchMovies, toRomanEpisode, type Movie } from "./filmLogic";
+import "./film-styles.css";
 
 type View = "discover" | "crawl";
 

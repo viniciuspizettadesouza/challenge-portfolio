@@ -86,12 +86,19 @@ for (const challenge of challenges.filter(({ demoPath }) => demoPath)) {
   });
 }
 
-test("Film Library crawl view meets the accessibility baseline", async ({
+test("Screen Library film views meet the accessibility baseline", async ({
   page,
 }) => {
-  await expectAccessible(page, "demos/film-library", {
+  await expectAccessible(page, "demos/screen-library", {
     checkContrast: true,
     prepare: async (filmPage) => {
+      await filmPage.getByRole("button", { name: "Films", exact: true }).click();
+    },
+  });
+  await expectAccessible(page, "demos/screen-library", {
+    checkContrast: true,
+    prepare: async (filmPage) => {
+      await filmPage.getByRole("button", { name: "Films", exact: true }).click();
       await filmPage.getByRole("button", { name: "Star Wars crawl" }).click();
     },
   });

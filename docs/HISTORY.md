@@ -22,6 +22,7 @@ the [maintenance handbook](README.md).
 | 2026-09-08 | 22     | Consolidated Castlabs and Vue.js into the TV Episode Library, retaining series discovery, 17 searchable and paginated episodes, local mutations, subscription feedback, and four legacy-route aliases. |
 | 2026-09-10 | 23     | Consolidated Conaz, Devlandia, and PropertiaG into the Algorithm Playground, retaining six interactive text, record, numeral, and pathfinding algorithms plus six legacy-route aliases. |
 | 2026-09-10 | 24     | Consolidated FYLD / HanseCom and Pipz into the Film Library, retaining three-character movie discovery, the eight-result Avengers fixture, the seven-film Star Wars crawl, and four legacy-route aliases. |
+| 2026-09-10 | 25     | Composed the TV Episode Library and Film Library into the Screen Library, retaining distinct television and film collections, all four historical sources, and ten compatibility aliases. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -141,10 +142,9 @@ multi-stage Vite/nginx Docker build.
 | --------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | 3cket           | Nuxt 3/Tailwind/Express → Vue 3 island              | Event grid, search, details, images, and not-found behavior use the bundled fixture instead of localhost             |
 | Weather Forecast Explorer | Two Vue 2/Maps/OpenWeather challenges → Vue 3 island | Combines address search, Haversine geolocation matching, history, six-hour comparison, and a 48-hour local forecast from Blueticket and OnSign TV |
-| TV Episode Library | React/Apollo/WebSockets/OMDb and Vue 3/Pinia/TVMaze → React island | Combines series metadata, 17 searchable and paginated episodes, details, local mutations, and subscription feedback from Castlabs and Vue.js using fixtures and local artwork |
+| Screen Library | React/Apollo/WebSockets/OMDb, Vue 3/Pinia/TVMaze, Nuxt 2/movie API, and React 16/SWAPI → React island | Composes searchable series and episode management with Avengers discovery and a controllable seven-film Star Wars crawl using distinct local television and film collections |
 | ClimateSeed     | Vue 3/Pinia/ApexCharts → Vue 3 island               | Organisation comparison, chart switching, aggregation, and results use semantic CSS charts                           |
 | Algorithm Playground | Node scripts, two Ruby CLIs, and Next.js/React → Astro/TypeScript | Combines character counts, run-length encoding, member synchronization, validated Roman numerals, and editable full-path and next-move grid solutions from Conaz, PropertiaG, and Devlandia |
-| Film Library | Nuxt 2/Vuex/Vuetify/movie API and React 16/SWAPI → React island | Combines three-character Avengers discovery, ratings and summaries with the seven-film Star Wars opening and controllable crawl using local fixtures |
 | Ingenious Build | Vue 3/Vuex/json-server → Vue 3 island               | All 11 lines, 163 stops, positions, times, search, and direction use the complete response                           |
 | Lead Operations Workspace | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime |
 | People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management |
@@ -207,7 +207,7 @@ labels for four controls whose immutable historical component reuses the wrong
 were removed, and the refreshed screenshots record the small fidelity-preserving
 color changes.
 
-Phase 24 retains this full baseline across the 15 consolidated canonical demos.
+Phase 25 retains this full baseline across the 14 consolidated canonical demos.
 
 ## Validation and publication record
 
@@ -225,6 +225,7 @@ Phase 24 retains this full baseline across the 15 consolidated canonical demos.
 | Phase 22 TV episode consolidation | 20 workspaces; lint and typecheck; 77 unit/SSR tests; 44 Chromium interaction and accessibility tests; 18 screenshots; 97 static pages including four retained episode-route aliases; Gitleaks over 321 commits |
 | Phase 23 algorithm consolidation | 18 workspaces; lint and typecheck; 76 unit/SSR tests; 40 Chromium interaction and accessibility tests; 16 screenshots; 99 static pages including six retained algorithm-route aliases; Gitleaks over 325 commits |
 | Phase 24 film consolidation | 17 workspaces; lint and typecheck; 74 unit/SSR tests; 39 Chromium interaction and accessibility tests including both Film Library views; 15 screenshots; 101 static pages including four retained film-route aliases; Gitleaks over 328 commits |
+| Phase 25 screen-media composition | 16 workspaces; lint and typecheck; 73 unit/SSR tests; 38 Chromium interaction and accessibility tests covering television, film discovery, and crawl views; 14 screenshots; 103 static pages including ten retained screen-media aliases; Gitleaks over 329 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

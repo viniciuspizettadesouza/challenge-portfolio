@@ -1,7 +1,7 @@
 # Pipz Challenge
 
 > Portfolio note: this challenge's maintained demo is now consolidated into
-> the domain-based **Film Library**. The source below remains as immutable
+> the domain-based **Screen Library**. The source below remains as immutable
 > historical evidence.
 
 The complete sanitized history is preserved under `original/`. That directory
@@ -9,8 +9,8 @@ is historical evidence and must not be modified.
 
 ## Consolidated maintained demo
 
-The React demo under `../film-library/demo/` preserves the original film
-listing and visual sequence:
+The film collection under `../screen-library/demo/` preserves the original
+film listing and visual sequence:
 
 - show the seven film records returned by the historical SWAPI `/films` flow;
 - display episode numbers as Roman numerals and format release dates;
@@ -24,4 +24,4 @@ The preserved frontend expected a removed `REACT_APP_API_URL` value and the old
 network-free.
 
 The former `challenge-pipz` and `film-crawl-experience` routes redirect to the
-canonical `film-library` entry. Status: consolidated and automatically tested.
+canonical `screen-library` entry. Status: consolidated and automatically tested.

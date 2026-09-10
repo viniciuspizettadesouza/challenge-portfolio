@@ -1,8 +1,7 @@
 import ThreeCketDemo from "@challenge/3cket-demo";
 import WeatherForecastDemo from "@challenge/weather-forecast-demo";
-import TVEpisodeLibraryDemo from "@challenge/tv-episode-library-demo";
+import ScreenLibraryDemo from "@challenge/screen-library-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
-import FilmLibraryDemo from "@challenge/film-library-demo";
 import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
@@ -71,25 +70,17 @@ describe("pilot demos", () => {
     expect(html).toContain("48-hour forecast");
   });
 
-  it("renders the consolidated TV episode library", () => {
-    const html = renderToStaticMarkup(createElement(TVEpisodeLibraryDemo));
+  it("renders the consolidated Screen Library television collection", () => {
+    const html = renderToStaticMarkup(createElement(ScreenLibraryDemo));
 
+    expect(html).toContain("Screen Library");
+    expect(html).toContain("TV shows");
+    expect(html).toContain("Films");
     expect(html).toContain("TV Episode Library");
     expect(html).toContain("Local subscription simulation");
     expect(html).toContain("Signal Lost");
     expect(html).toContain("17 matching episodes");
     expect(html).toContain("Page 1 of 4");
-  });
-
-  it("renders the consolidated Film Library", () => {
-    const html = renderToStaticMarkup(createElement(FilmLibraryDemo));
-
-    expect(html).toContain("Film Library");
-    expect(html).toContain("Discover movies");
-    expect(html).toContain("Star Wars crawl");
-    expect(html).toContain("Search for any movie");
-    expect(html).toContain("Search movie");
-    expect(html).toContain("The preserved “avengers” query is ready to run.");
   });
 
   it("renders the safe Sword Health news platform", async () => {

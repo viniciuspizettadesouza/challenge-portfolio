@@ -23,11 +23,15 @@ import {
   deleteEpisode,
   episodes as televisionEpisodes,
   filterEpisodes,
+  films as libraryFilms,
   getShow,
   getTotalPages,
+  movies as libraryMovies,
   paginate,
   searchEpisodes,
-} from "@challenge/tv-episode-library-demo/logic";
+  searchMovies,
+  toRomanEpisode,
+} from "@challenge/screen-library-demo/logic";
 import {
   countCharacters,
   convertToRoman,
@@ -36,12 +40,6 @@ import {
   runLengthEncode,
   updateMembers,
 } from "@challenge/algorithm-playground-demo/logic";
-import {
-  films as libraryFilms,
-  movies as libraryMovies,
-  searchMovies,
-  toRomanEpisode,
-} from "@challenge/film-library-demo/logic";
 import {
   getLines,
   getStopsForLine,

@@ -75,13 +75,13 @@
     "demoPath": "challenges/weather-forecast/demo"
   },
   {
-    "slug": "tv-episode-library",
-    "title": "TV Episode Library",
+    "slug": "screen-library",
+    "title": "Screen Library",
     "themes": [
       "Content & Media",
       "Discovery & Catalogs"
     ],
-    "description": "A unified React television library with series metadata, searchable and paginated episodes, detailed records, local create/delete mutations, and simulated subscription activity.",
+    "description": "A unified React screen-media library composing searchable television series and episode management with movie discovery, ratings and summaries, plus a dedicated controllable Star Wars crawl.",
     "technologies": [
       "React",
       "TypeScript",
@@ -91,7 +91,14 @@
       "OMDb",
       "Vue",
       "Pinia",
-      "Vue Router"
+      "Vue Router",
+      "Nuxt",
+      "Vuex",
+      "Vuetify",
+      "Movie API",
+      "JavaScript",
+      "Create React App",
+      "SWAPI"
     ],
     "renderer": "react",
     "migrationStatus": "migrated",
@@ -112,15 +119,37 @@
         "originalRepository": "viniciuspizettadesouza/challenge-vuejs",
         "originalDefaultBranch": "main",
         "originalHeadSha": "6bdca5370a1f64073dc6a3c10627f7b0a3371889"
+      },
+      {
+        "slug": "challenge-fyld-hansecom",
+        "title": "FYLD / HanseCom Challenge",
+        "sourcePath": "challenges/challenge-fyld-hansecom/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79"
+      },
+      {
+        "slug": "challenge-pipz",
+        "title": "Pipz Challenge",
+        "sourcePath": "challenges/challenge-pipz/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-pipz",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3"
       }
     ],
     "aliases": [
       "challenge-castlabs",
       "challenge-vuejs",
       "episode-management",
-      "tv-episode-guide"
+      "tv-episode-guide",
+      "challenge-fyld-hansecom",
+      "challenge-pipz",
+      "movie-search",
+      "film-crawl-experience",
+      "tv-episode-library",
+      "film-library"
     ],
-    "demoPath": "challenges/tv-episode-library/demo"
+    "demoPath": "challenges/screen-library/demo"
   },
   {
     "slug": "carbon-emissions-dashboard",
@@ -208,54 +237,6 @@
       "roman-numeral-converter"
     ],
     "demoPath": "challenges/algorithm-playground/demo"
-  },
-  {
-    "slug": "film-library",
-    "title": "Film Library",
-    "themes": [
-      "Content & Media",
-      "Discovery & Catalogs"
-    ],
-    "description": "A unified React film library with the preserved three-character Avengers search, ratings and summaries, plus a dedicated Star Wars view with the seven-film crawl, Roman episode numbers, pause, and restart controls.",
-    "technologies": [
-      "Nuxt",
-      "Vue",
-      "Vuex",
-      "Vuetify",
-      "Movie API",
-      "React",
-      "JavaScript",
-      "Create React App",
-      "SWAPI"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "consolidated",
-    "sources": [
-      {
-        "slug": "challenge-fyld-hansecom",
-        "title": "FYLD / HanseCom Challenge",
-        "sourcePath": "challenges/challenge-fyld-hansecom/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-fyld-hansecom",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "dcc8942e2ec5dec3b59c268f5b207c4f00048a79"
-      },
-      {
-        "slug": "challenge-pipz",
-        "title": "Pipz Challenge",
-        "sourcePath": "challenges/challenge-pipz/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-pipz",
-        "originalDefaultBranch": "master",
-        "originalHeadSha": "3c2a2f91d391a2021ff936c1ce0b7f41fde6f6c3"
-      }
-    ],
-    "aliases": [
-      "challenge-fyld-hansecom",
-      "challenge-pipz",
-      "movie-search",
-      "film-crawl-experience"
-    ],
-    "demoPath": "challenges/film-library/demo"
   },
   {
     "slug": "public-transit-timetable",

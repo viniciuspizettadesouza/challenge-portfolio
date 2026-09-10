@@ -11,7 +11,7 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "React/Vite episode manager now contributes search, details, create/delete mutations, and subscription feedback to the consolidated TV Episode Library. Deterministic fixtures and local artwork replace the unavailable GraphQL, WebSocket, and OMDb services."
+    "reviewNotes": "React/Vite episode manager now contributes search, details, create/delete mutations, and subscription feedback to the television collection in the consolidated Screen Library. Deterministic fixtures and local artwork replace the unavailable GraphQL, WebSocket, and OMDb services."
   },
   "challenge-climateseed": {
     "migrationStrategy": "native-vue3",
@@ -37,7 +37,7 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "Nuxt 2/Vuetify movie search now contributes its three-character Avengers search, ratings, summaries, Nuxt branding, and wide result cards to the consolidated Film Library without the removed movie API token."
+    "reviewNotes": "Nuxt 2/Vuetify movie search now contributes its three-character Avengers search, ratings, summaries, Nuxt branding, and wide result cards to the film collection in the consolidated Screen Library without the removed movie API token."
   },
   "challenge-lagoasoft": {
     "migrationStrategy": "upgrade-react",
@@ -95,7 +95,7 @@
     "migrationStatus": "migrated",
     "hasExternalApi": false,
     "reviewStatus": "confirmed",
-    "reviewNotes": "React 16 SWAPI film list now contributes its seven-film response order, Roman episode numbers, preserved logo, animated opening, perspective crawl, pause, and restart controls to the consolidated Film Library without the removed API configuration."
+    "reviewNotes": "React 16 SWAPI film list now contributes its seven-film response order, Roman episode numbers, preserved logo, animated opening, perspective crawl, pause, and restart controls to the film collection in the consolidated Screen Library without the removed API configuration."
   },
   "challenge-salsify": {
     "migrationStrategy": "native-react",
@@ -128,7 +128,7 @@
     "migrationStrategy": "native-vue3",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 3 episode guide now contributes the Signal Lost profile, twelve episodes, summaries, and pagination to the consolidated TV Episode Library. Deterministic local fixtures replace the original insecure HTTP TVMaze dependency."
+    "reviewNotes": "Vue 3 episode guide now contributes the Signal Lost profile, twelve episodes, summaries, and pagination to the television collection in the consolidated Screen Library. Deterministic local fixtures replace the original insecure HTTP TVMaze dependency."
   },
   "challenge-zygo": {
     "migrationStrategy": "static-embed",

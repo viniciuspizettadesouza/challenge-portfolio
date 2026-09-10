@@ -11,8 +11,8 @@ import {
   shows,
   type Episode,
   type EpisodeDraft,
-} from "./logic";
-import "./styles.css";
+} from "./tvLogic";
+import "./tv-styles.css";
 
 const PAGE_SIZE = 5;
 const emptyDraft = (): EpisodeDraft => ({

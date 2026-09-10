@@ -2,16 +2,16 @@
 
 Last updated: 2026-09-10.
 
-All migration and consolidation phases (0–24) are complete. The portfolio now
-presents 15 domain-focused entries backed by all 23 immutable historical
-sources. FYLD / HanseCom and Pipz are represented by the consolidated Film
-Library, and all four former film challenge and capability slugs resolve to the
-new canonical route.
+All migration and consolidation phases (0–25) are complete. The portfolio now
+presents 14 domain-focused entries backed by all 23 immutable historical
+sources. Castlabs, Vue.js, FYLD / HanseCom, and Pipz are represented by the
+consolidated Screen Library, and all ten former screen-media challenge,
+capability, and canonical slugs resolve to the new route.
 
-The Phase 24 working tree passes lint, typecheck, 74 unit and SSR tests, 39
-Chromium interaction and accessibility tests, a 101-page production build, and
-Gitleaks across 328 commits with no findings. The new Film Library screenshot
-received direct visual review, and all 15 canonical screenshots remain
+The Phase 25 working tree passes lint, typecheck, 73 unit and SSR tests, 38
+Chromium interaction and accessibility tests, a 103-page production build, and
+Gitleaks across 329 commits with no findings. The Screen Library screenshot
+received direct visual review, and all 14 canonical screenshots remain
 represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
@@ -24,8 +24,8 @@ No tag is planned.
 
 ## Next action
 
-Review the Film Library and refreshed screenshot, then commit and push the
-approved Phase 24 changes and verify Browser tests, Security scan, and
+Review the Screen Library and refreshed screenshot, then commit and push the
+approved Phase 25 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

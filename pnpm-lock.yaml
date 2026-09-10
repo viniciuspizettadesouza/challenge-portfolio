@@ -38,9 +38,9 @@ importers:
       '@challenge/configurable-book-sorting-demo':
         specifier: workspace:*
         version: link:../../challenges/configurable-book-sorting/demo
-      '@challenge/film-library-demo':
+      '@challenge/screen-library-demo':
         specifier: workspace:*
-        version: link:../../challenges/film-library/demo
+        version: link:../../challenges/screen-library/demo
       '@challenge/ingenious-build-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-ingenious-build-frontend/demo
@@ -62,9 +62,6 @@ importers:
       '@challenge/swordhealth-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-swordhealth/demo
-      '@challenge/tv-episode-library-demo':
-        specifier: workspace:*
-        version: link:../../challenges/tv-episode-library/demo
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
@@ -153,7 +150,7 @@ importers:
         specifier: '>=18.0.0'
         version: 19.2.8
 
-  challenges/film-library/demo:
+  challenges/screen-library/demo:
     dependencies:
       react:
         specifier: '>=18.0.0'
@@ -216,12 +213,6 @@ importers:
       react-dom:
         specifier: '>=18'
         version: 19.2.8(react@19.2.8)
-
-  challenges/tv-episode-library/demo:
-    dependencies:
-      react:
-        specifier: '>=18.0.0'
-        version: 19.2.8
 
   challenges/weather-forecast/demo:
     dependencies:

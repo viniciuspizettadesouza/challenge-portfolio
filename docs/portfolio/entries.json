@@ -16,20 +16,31 @@
     "description": "A private, fixture-backed weather explorer with location search, nearest-city matching, a six-hour comparison, a detailed 48-hour forecast, and resilient browser history."
   },
   {
-    "slug": "tv-episode-library",
-    "title": "TV Episode Library",
+    "slug": "screen-library",
+    "title": "Screen Library",
     "themes": ["Content & Media", "Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-castlabs", "challenge-vuejs"],
+    "sourceSlugs": [
+      "challenge-castlabs",
+      "challenge-vuejs",
+      "challenge-fyld-hansecom",
+      "challenge-pipz"
+    ],
     "aliases": [
       "challenge-castlabs",
       "challenge-vuejs",
       "episode-management",
-      "tv-episode-guide"
+      "tv-episode-guide",
+      "challenge-fyld-hansecom",
+      "challenge-pipz",
+      "movie-search",
+      "film-crawl-experience",
+      "tv-episode-library",
+      "film-library"
     ],
     "renderer": "react",
     "migrationStrategy": "consolidated",
-    "demoDirectory": "tv-episode-library",
-    "description": "A unified React television library with series metadata, searchable and paginated episodes, detailed records, local create/delete mutations, and simulated subscription activity."
+    "demoDirectory": "screen-library",
+    "description": "A unified React screen-media library composing searchable television series and episode management with movie discovery, ratings and summaries, plus a dedicated controllable Star Wars crawl."
   },
   {
     "slug": "carbon-emissions-dashboard",
@@ -58,22 +69,6 @@
     "migrationStrategy": "consolidated",
     "demoDirectory": "algorithm-playground",
     "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding."
-  },
-  {
-    "slug": "film-library",
-    "title": "Film Library",
-    "themes": ["Content & Media", "Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-fyld-hansecom", "challenge-pipz"],
-    "aliases": [
-      "challenge-fyld-hansecom",
-      "challenge-pipz",
-      "movie-search",
-      "film-crawl-experience"
-    ],
-    "renderer": "react",
-    "migrationStrategy": "consolidated",
-    "demoDirectory": "film-library",
-    "description": "A unified React film library with the preserved three-character Avengers search, ratings and summaries, plus a dedicated Star Wars view with the seven-film crawl, Roman episode numbers, pause, and restart controls."
   },
   {
     "slug": "public-transit-timetable",
