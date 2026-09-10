@@ -1,4 +1,4 @@
-import payload from "../../original/backend/public/events.json";
+import payload from "../../../challenge-3cket/original/backend/public/events.json";
 
 export interface EventImage {
   url: string;

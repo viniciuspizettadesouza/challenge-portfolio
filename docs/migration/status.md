@@ -1,17 +1,17 @@
 # Migration status
 
-Last updated: 2026-09-10.
+Last updated: 2026-09-11.
 
-All migration and consolidation phases (0–25) are complete. The portfolio now
-presents 14 domain-focused entries backed by all 23 immutable historical
-sources. Castlabs, Vue.js, FYLD / HanseCom, and Pipz are represented by the
-consolidated Screen Library, and all ten former screen-media challenge,
-capability, and canonical slugs resolve to the new route.
+All migration and consolidation phases (0–26) are complete. The portfolio now
+presents 13 domain-focused entries backed by all 23 immutable historical
+sources. 3cket and Ingenious Build are represented by the consolidated City
+Explorer, and both historical source slugs plus the former `event-discovery`
+and `public-transit-timetable` canonical slugs resolve to the new route.
 
-The Phase 25 working tree passes lint, typecheck, 73 unit and SSR tests, 38
-Chromium interaction and accessibility tests, a 103-page production build, and
-Gitleaks across 329 commits with no findings. The Screen Library screenshot
-received direct visual review, and all 14 canonical screenshots remain
+The Phase 26 working tree passes lint, typecheck, 72 unit and SSR tests, 36
+Chromium interaction and accessibility tests, a 105-page production build,
+and Gitleaks across 330 commits with no findings. The City Explorer screenshot
+received direct visual review, and all 13 canonical screenshots remain
 represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
@@ -24,8 +24,8 @@ No tag is planned.
 
 ## Next action
 
-Review the Screen Library and refreshed screenshot, then commit and push the
-approved Phase 25 changes and verify Browser tests, Security scan, and
+Review the City Explorer and refreshed screenshot, then commit and push the
+approved Phase 26 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

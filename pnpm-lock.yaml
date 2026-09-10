@@ -26,24 +26,18 @@ importers:
       '@astrojs/vue':
         specifier: 7.0.2
         version: 7.0.2(@types/node@26.4.1)(astro@7.3.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@26.4.1)(yaml@2.9.0))(esbuild@0.28.2)(vue@3.5.40(typescript@6.0.3))(yaml@2.9.0)
-      '@challenge/3cket-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-3cket/demo
       '@challenge/algorithm-playground-demo':
         specifier: workspace:*
         version: link:../../challenges/algorithm-playground/demo
+      '@challenge/city-explorer-demo':
+        specifier: workspace:*
+        version: link:../../challenges/city-explorer/demo
       '@challenge/climateseed-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-climateseed/demo
       '@challenge/configurable-book-sorting-demo':
         specifier: workspace:*
         version: link:../../challenges/configurable-book-sorting/demo
-      '@challenge/screen-library-demo':
-        specifier: workspace:*
-        version: link:../../challenges/screen-library/demo
-      '@challenge/ingenious-build-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-ingenious-build-frontend/demo
       '@challenge/lagoasoft-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-lagoasoft/demo
@@ -56,6 +50,9 @@ importers:
       '@challenge/salsify-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-salsify/demo
+      '@challenge/screen-library-demo':
+        specifier: workspace:*
+        version: link:../../challenges/screen-library/demo
       '@challenge/strains-demo':
         specifier: workspace:*
         version: link:../../challenges/strains/demo
@@ -126,31 +123,13 @@ importers:
 
   challenges/algorithm-playground/demo: {}
 
-  challenges/challenge-3cket/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.0.0'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/challenge-climateseed/demo:
     dependencies:
       vue:
         specifier: '>=3.4.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-ingenious-build-frontend/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.2.0'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/challenge-lagoasoft/demo:
-    dependencies:
-      react:
-        specifier: '>=18.0.0'
-        version: 19.2.8
-
-  challenges/screen-library/demo:
     dependencies:
       react:
         specifier: '>=18.0.0'
@@ -175,6 +154,12 @@ importers:
     dependencies:
       vue:
         specifier: '>=3'
+        version: 3.5.40(typescript@7.0.2)
+
+  challenges/city-explorer/demo:
+    dependencies:
+      vue:
+        specifier: '>=3.2.0'
         version: 3.5.40(typescript@7.0.2)
 
   challenges/configurable-book-sorting/demo:
@@ -204,6 +189,12 @@ importers:
       vite:
         specifier: 8.2.2
         version: 8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0)
+
+  challenges/screen-library/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
 
   challenges/strains/demo:
     dependencies:

@@ -1,4 +1,4 @@
-import rawData from "../../original/data.json";
+import rawData from "../../../challenge-ingenious-build-frontend/original/data.json";
 
 export interface BusStop {
   line: number;

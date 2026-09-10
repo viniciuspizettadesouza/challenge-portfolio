@@ -29,10 +29,12 @@ The original Nuxt 3/Tailwind application:
 It expects the Express server at `http://localhost:3001`, so the original
 frontend cannot run on static GitHub Pages by itself.
 
-## Maintained demo
+## Consolidated maintained demo
 
-The Vue 3 demo under `demo/` preserves the list, search, selection, detail, and
-not-found flow using the imported JSON and images directly. It does not start
-the historical backend or rewrite anything under `original/`.
+The event collection under `../city-explorer/demo/` preserves the list,
+search, selection, detail, and not-found flow using the imported JSON and
+images directly. It does not start the historical backend or rewrite anything
+under `original/`.
 
-Status: signed source snapshot imported; maintained demo owner-approved.
+The former `challenge-3cket` and `event-discovery` routes redirect to the
+canonical `city-explorer` entry. Status: consolidated and automatically tested.

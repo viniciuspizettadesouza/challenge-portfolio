@@ -7,18 +7,18 @@ import {
   formatEventDate,
   formatEventPrice,
   type EventRecord,
-} from "./logic";
+} from "./eventLogic";
 
-import bancoImage from "../../original/backend/public/images/ff38ffc9112a430090f637c3bbc05dcd.jpg";
-import blissImage from "../../original/backend/public/images/1612b793167347359651fb0c88cc313d.jpg";
-import evoImage from "../../original/backend/public/images/2f0a35c0494d404da53b77b56ae761b5.jpg";
-import festivalImage from "../../original/backend/public/images/017ba94beac84f8b93dfa3272c95b132.jpg";
-import grandesImage from "../../original/backend/public/images/63b8b74fc2534eae919173f449740a35.jpg";
-import jmjImage from "../../original/backend/public/images/222f6d055fe941cc9a0a7882f59107ad.png";
-import lamireImage from "../../original/backend/public/images/aab9533ec1ca438d80130a8ebaa372da.jpg";
-import maiaImage from "../../original/backend/public/images/7a5f17a359f04bf78d6e2083ac02409f.png";
-import tamarizImage from "../../original/backend/public/images/155b5667fdea443486d2cc35bc4d3df4.jpg";
-import timeoutImage from "../../original/backend/public/images/253972cbc8ac4a57ab190852e8b955b9.jpg";
+import bancoImage from "../../../challenge-3cket/original/backend/public/images/ff38ffc9112a430090f637c3bbc05dcd.jpg";
+import blissImage from "../../../challenge-3cket/original/backend/public/images/1612b793167347359651fb0c88cc313d.jpg";
+import evoImage from "../../../challenge-3cket/original/backend/public/images/2f0a35c0494d404da53b77b56ae761b5.jpg";
+import festivalImage from "../../../challenge-3cket/original/backend/public/images/017ba94beac84f8b93dfa3272c95b132.jpg";
+import grandesImage from "../../../challenge-3cket/original/backend/public/images/63b8b74fc2534eae919173f449740a35.jpg";
+import jmjImage from "../../../challenge-3cket/original/backend/public/images/222f6d055fe941cc9a0a7882f59107ad.png";
+import lamireImage from "../../../challenge-3cket/original/backend/public/images/aab9533ec1ca438d80130a8ebaa372da.jpg";
+import maiaImage from "../../../challenge-3cket/original/backend/public/images/7a5f17a359f04bf78d6e2083ac02409f.png";
+import tamarizImage from "../../../challenge-3cket/original/backend/public/images/155b5667fdea443486d2cc35bc4d3df4.jpg";
+import timeoutImage from "../../../challenge-3cket/original/backend/public/images/253972cbc8ac4a57ab190852e8b955b9.jpg";
 
 const query = ref("");
 const selectedSlug = ref("");

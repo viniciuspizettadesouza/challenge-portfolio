@@ -1,9 +1,22 @@
 [
   {
-    "slug": "event-discovery",
-    "title": "Event Discovery",
+    "slug": "city-explorer",
+    "title": "City Explorer",
     "themes": ["Discovery & Catalogs", "Mobility & Events"],
-    "sourceSlugs": ["challenge-3cket"]
+    "sourceSlugs": [
+      "challenge-3cket",
+      "challenge-ingenious-build-frontend"
+    ],
+    "aliases": [
+      "challenge-3cket",
+      "challenge-ingenious-build-frontend",
+      "event-discovery",
+      "public-transit-timetable"
+    ],
+    "renderer": "vue3",
+    "migrationStrategy": "consolidated",
+    "demoDirectory": "city-explorer",
+    "description": "A unified Vue city explorer combining fixture-backed event search and details with complete bus-line, stop-directory, and departure-time discovery."
   },
   {
     "slug": "weather-forecast",
@@ -69,12 +82,6 @@
     "migrationStrategy": "consolidated",
     "demoDirectory": "algorithm-playground",
     "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding."
-  },
-  {
-    "slug": "public-transit-timetable",
-    "title": "Public Transit Timetable",
-    "themes": ["Discovery & Catalogs", "Mobility & Events"],
-    "sourceSlugs": ["challenge-ingenious-build-frontend"]
   },
   {
     "slug": "lead-operations",

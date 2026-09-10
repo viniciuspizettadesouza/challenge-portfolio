@@ -20,7 +20,6 @@ describe("catalog discovery", () => {
     ]);
     expect(facets.adaptations).toEqual([
       "consolidated",
-      "mock-backend",
       "native-react",
       "native-vue3",
       "upgrade-react",

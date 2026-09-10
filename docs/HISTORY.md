@@ -23,6 +23,7 @@ the [maintenance handbook](README.md).
 | 2026-09-10 | 23     | Consolidated Conaz, Devlandia, and PropertiaG into the Algorithm Playground, retaining six interactive text, record, numeral, and pathfinding algorithms plus six legacy-route aliases. |
 | 2026-09-10 | 24     | Consolidated FYLD / HanseCom and Pipz into the Film Library, retaining three-character movie discovery, the eight-result Avengers fixture, the seven-film Star Wars crawl, and four legacy-route aliases. |
 | 2026-09-10 | 25     | Composed the TV Episode Library and Film Library into the Screen Library, retaining distinct television and film collections, all four historical sources, and ten compatibility aliases. |
+| 2026-09-11 | 26     | Consolidated 3cket and Ingenious Build into the City Explorer, retaining distinct event and transit collections, complete local fixtures, and four compatibility aliases. |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -140,12 +141,11 @@ multi-stage Vite/nginx Docker build.
 
 | Challenge       | Historical architecture → maintained runtime        | Preserved behavior and intentional substitution                                                                      |
 | --------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| 3cket           | Nuxt 3/Tailwind/Express → Vue 3 island              | Event grid, search, details, images, and not-found behavior use the bundled fixture instead of localhost             |
+| City Explorer | Nuxt 3/Tailwind/Express and Vue 3/Vuex/json-server → Vue 3 island | Combines the 3cket event grid, search, details, images, and not-found behavior with all 11 Ingenious Build lines, 163 stops, positions, times, search, and sorting from local fixtures |
 | Weather Forecast Explorer | Two Vue 2/Maps/OpenWeather challenges → Vue 3 island | Combines address search, Haversine geolocation matching, history, six-hour comparison, and a 48-hour local forecast from Blueticket and OnSign TV |
 | Screen Library | React/Apollo/WebSockets/OMDb, Vue 3/Pinia/TVMaze, Nuxt 2/movie API, and React 16/SWAPI → React island | Composes searchable series and episode management with Avengers discovery and a controllable seven-film Star Wars crawl using distinct local television and film collections |
 | ClimateSeed     | Vue 3/Pinia/ApexCharts → Vue 3 island               | Organisation comparison, chart switching, aggregation, and results use semantic CSS charts                           |
 | Algorithm Playground | Node scripts, two Ruby CLIs, and Next.js/React → Astro/TypeScript | Combines character counts, run-length encoding, member synchronization, validated Roman numerals, and editable full-path and next-move grid solutions from Conaz, PropertiaG, and Devlandia |
-| Ingenious Build | Vue 3/Vuex/json-server → Vue 3 island               | All 11 lines, 163 stops, positions, times, search, and direction use the complete response                           |
 | Lead Operations Workspace | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime |
 | People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management |
 | Lagoasoft       | React 16/Instagram → React island                   | Five posts and independent likes remain; expired media becomes local CSS artwork                                     |
@@ -208,6 +208,8 @@ were removed, and the refreshed screenshots record the small fidelity-preserving
 color changes.
 
 Phase 25 retains this full baseline across the 14 consolidated canonical demos.
+Phase 26 retains the baseline across 13 canonical demos and directly audits the
+new City Explorer shell.
 
 ## Validation and publication record
 
@@ -226,6 +228,7 @@ Phase 25 retains this full baseline across the 14 consolidated canonical demos.
 | Phase 23 algorithm consolidation | 18 workspaces; lint and typecheck; 76 unit/SSR tests; 40 Chromium interaction and accessibility tests; 16 screenshots; 99 static pages including six retained algorithm-route aliases; Gitleaks over 325 commits |
 | Phase 24 film consolidation | 17 workspaces; lint and typecheck; 74 unit/SSR tests; 39 Chromium interaction and accessibility tests including both Film Library views; 15 screenshots; 101 static pages including four retained film-route aliases; Gitleaks over 328 commits |
 | Phase 25 screen-media composition | 16 workspaces; lint and typecheck; 73 unit/SSR tests; 38 Chromium interaction and accessibility tests covering television, film discovery, and crawl views; 14 screenshots; 103 static pages including ten retained screen-media aliases; Gitleaks over 329 commits |
+| Phase 26 city exploration consolidation | 15 workspaces; lint and typecheck; 72 unit/SSR tests; 36 Chromium interaction and accessibility tests covering event discovery and transit planning; 13 screenshots; 105 static pages including four retained city-exploration aliases; Gitleaks over 330 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

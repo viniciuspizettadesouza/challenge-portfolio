@@ -16,12 +16,11 @@
   "dependencies": {
     "@astrojs/react": "6.0.5",
     "@astrojs/vue": "7.0.2",
-    "@challenge/3cket-demo": "workspace:*",
+    "@challenge/city-explorer-demo": "workspace:*",
     "@challenge/weather-forecast-demo": "workspace:*",
     "@challenge/screen-library-demo": "workspace:*",
     "@challenge/climateseed-demo": "workspace:*",
     "@challenge/algorithm-playground-demo": "workspace:*",
-    "@challenge/ingenious-build-demo": "workspace:*",
     "@challenge/lead-operations-demo": "workspace:*",
     "@challenge/people-operations-demo": "workspace:*",
     "@challenge/lagoasoft-demo": "workspace:*",

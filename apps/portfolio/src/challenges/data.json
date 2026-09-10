@@ -1,22 +1,25 @@
 [
   {
-    "slug": "event-discovery",
-    "title": "Event Discovery",
+    "slug": "city-explorer",
+    "title": "City Explorer",
     "themes": [
       "Discovery & Catalogs",
       "Mobility & Events"
     ],
-    "description": "A Nuxt event-discovery challenge adapted to Vue 3 with responsive fixture-backed search, event cards, dynamic details, and explicit not-found handling.",
+    "description": "A unified Vue city explorer combining fixture-backed event search and details with complete bus-line, stop-directory, and departure-time discovery.",
     "technologies": [
       "Nuxt",
       "Vue",
       "TypeScript",
       "Tailwind CSS",
-      "Express"
+      "Express",
+      "Vuex",
+      "Vue Router",
+      "JSON Server"
     ],
     "renderer": "vue3",
     "migrationStatus": "migrated",
-    "migrationStrategy": "mock-backend",
+    "migrationStrategy": "consolidated",
     "sources": [
       {
         "slug": "challenge-3cket",
@@ -25,12 +28,23 @@
         "originalRepository": "viniciuspizettadesouza/nuxt-challenge",
         "originalDefaultBranch": "master",
         "originalHeadSha": "72fbed2c1911d27b4cd9d4e29aa0e72bf6da7a9e"
+      },
+      {
+        "slug": "challenge-ingenious-build-frontend",
+        "title": "Ingenious Build Challenge",
+        "sourcePath": "challenges/challenge-ingenious-build-frontend/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-ingenious-build-frontend",
+        "originalDefaultBranch": "master",
+        "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87"
       }
     ],
     "aliases": [
-      "challenge-3cket"
+      "challenge-3cket",
+      "challenge-ingenious-build-frontend",
+      "event-discovery",
+      "public-transit-timetable"
     ],
-    "demoPath": "challenges/challenge-3cket/demo"
+    "demoPath": "challenges/city-explorer/demo"
   },
   {
     "slug": "weather-forecast",
@@ -237,39 +251,6 @@
       "roman-numeral-converter"
     ],
     "demoPath": "challenges/algorithm-playground/demo"
-  },
-  {
-    "slug": "public-transit-timetable",
-    "title": "Public Transit Timetable",
-    "themes": [
-      "Discovery & Catalogs",
-      "Mobility & Events"
-    ],
-    "description": "A Vue bus timetable for selecting lines and stops, viewing sorted departure times, and searching the complete stop directory.",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Vuex",
-      "Vue Router",
-      "JSON Server"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sources": [
-      {
-        "slug": "challenge-ingenious-build-frontend",
-        "title": "Ingenious Build Challenge",
-        "sourcePath": "challenges/challenge-ingenious-build-frontend/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-ingenious-build-frontend",
-        "originalDefaultBranch": "master",
-        "originalHeadSha": "6b021d73c13e9bdeabdc9be472248ff703106f87"
-      }
-    ],
-    "aliases": [
-      "challenge-ingenious-build-frontend"
-    ],
-    "demoPath": "challenges/challenge-ingenious-build-frontend/demo"
   },
   {
     "slug": "lead-operations",

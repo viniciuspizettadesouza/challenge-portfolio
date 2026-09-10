@@ -45,10 +45,10 @@ async function capture(page: Page, slug: string, errors: string[]) {
   });
 }
 
-test("3cket searches the imported event fixture and opens details", async ({
+test("City Explorer preserves event discovery and transit planning", async ({
   page,
 }) => {
-  const errors = await openDemo(page, "event-discovery");
+  const errors = await openDemo(page, "city-explorer");
   await page
     .getByPlaceholder("Name, category, city or country")
     .fill("Evo Padel");
@@ -60,7 +60,17 @@ test("3cket searches the imported event fixture and opens details", async ({
   await expect(
     page.getByText("A local presentation of the original dynamic route"),
   ).toBeVisible();
-  await capture(page, "event-discovery", errors);
+
+  await page.getByRole("button", { name: "Transit", exact: true }).click();
+  const lineButton = page.locator(".line-buttons button").first();
+  const line = (await lineButton.textContent())?.trim() ?? "";
+  await lineButton.click();
+  const stopButton = page.locator(".scroll-list button").first();
+  const stop = (await stopButton.textContent())?.trim() ?? "";
+  await stopButton.click();
+  await expect(page.locator(".selections")).toContainText(line);
+  await expect(page.locator(".selections")).toContainText(stop);
+  await capture(page, "city-explorer", errors);
 });
 
 test("Leafwell combines directory filters and opens a profile", async ({
@@ -426,6 +436,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
   await expect(page).toHaveURL(/demos\/weather-forecast\/?$/);
   await page.goto("challenges/challenge-zygo");
   await expect(page).toHaveURL(/challenges\/configurable-book-sorting\/?$/);
+  for (const alias of ["challenge-3cket", "challenge-ingenious-build-frontend", "event-discovery", "public-transit-timetable"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/city-explorer\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/city-explorer\/?$/);
+  }
   for (const alias of ["challenge-instruct", "challenge-meetime", "lead-filtering-dashboard", "sales-lead-management"]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/lead-operations\/?$/);
@@ -452,19 +468,6 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
   }
 });
 
-test("Ingenious Build selects a line and stop", async ({ page }) => {
-  const errors = await openDemo(page, "public-transit-timetable");
-  const lineButton = page.locator(".line-buttons button").first();
-  const line = (await lineButton.textContent())?.trim() ?? "";
-  await lineButton.click();
-  const stopButton = page.locator(".scroll-list button").first();
-  const stop = (await stopButton.textContent())?.trim() ?? "";
-  await stopButton.click();
-  await expect(page.locator(".selections")).toContainText(line);
-  await expect(page.locator(".selections")).toContainText(stop);
-  await capture(page, "public-transit-timetable", errors);
-});
-
 test("catalog combines URL-backed filters and restores browser history", async ({
   page,
 }) => {
@@ -475,8 +478,8 @@ test("catalog combines URL-backed filters and restores browser history", async (
   await expect(page.getByLabel("Technology")).toHaveValue("React");
   await expect(page.getByLabel("Framework")).toHaveValue("react");
 
-  await page.getByLabel("Adaptation type").selectOption("mock-backend");
-  await expect(page).toHaveURL(/adaptation=mock-backend/);
+  await page.getByLabel("Adaptation type").selectOption("consolidated");
+  await expect(page).toHaveURL(/adaptation=consolidated/);
   await expect(page.locator(".catalog-entry:visible")).not.toHaveCount(
     initialCount,
   );
@@ -489,7 +492,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(14);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(13);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -505,7 +508,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(14);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(14);
+  await expect(page.locator(".catalog-entry")).toHaveCount(13);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(13);
   await context.close();
 });

@@ -46,7 +46,7 @@ import {
   getTimesForStop,
   getUniqueStops,
   stops as ingeniousStops,
-} from "@challenge/ingenious-build-demo/logic";
+} from "@challenge/city-explorer-demo/transitLogic";
 import { initialLeads } from "@challenge/lead-operations-demo/fixtures";
 import { createLead, deleteLead, filterLeads, getCategoryOptions, nextLeadId, updateLead, validateLead } from "@challenge/lead-operations-demo/logic";
 import { LEAD_STORAGE_KEY, loadLeads, migrateLegacyLeads, readLeadState, writeLeadState } from "@challenge/lead-operations-demo/persistence";
@@ -533,4 +533,4 @@ import {
   filterEvents,
   findEvent,
   formatEventPrice,
-} from "@challenge/3cket-demo/logic";
+} from "@challenge/city-explorer-demo/eventLogic";

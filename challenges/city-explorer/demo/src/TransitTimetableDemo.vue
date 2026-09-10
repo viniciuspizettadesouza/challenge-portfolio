@@ -6,7 +6,7 @@ import {
   getTimesForStop,
   getUniqueStops,
   stops,
-} from "./logic";
+} from "./transitLogic";
 
 const activeView = ref<"lines" | "stops">("lines");
 const selectedLine = ref<number | null>(null);

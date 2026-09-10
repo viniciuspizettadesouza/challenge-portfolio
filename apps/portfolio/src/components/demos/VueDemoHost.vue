@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import ThreeCketDemo from "@challenge/3cket-demo";
+import CityExplorerDemo from "@challenge/city-explorer-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
-import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import SwordHealthDemo from "@challenge/swordhealth-demo";
 import VueDemo from "@challenge/vue-demo";
@@ -10,10 +9,9 @@ import { computed } from "vue";
 
 const props = defineProps<{ slug: string }>();
 const demos = {
-  "event-discovery": ThreeCketDemo,
+  "city-explorer": CityExplorerDemo,
   "weather-forecast": WeatherForecastDemo,
   "carbon-emissions-dashboard": ClimateSeedDemo,
-  "public-transit-timetable": IngeniousBuildDemo,
   "lead-operations": LeadOperationsDemo,
   "news-publishing-platform": SwordHealthDemo,
   "formula-one-driver-explorer": VueDemo,

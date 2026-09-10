@@ -1,8 +1,7 @@
-import ThreeCketDemo from "@challenge/3cket-demo";
+import CityExplorerDemo from "@challenge/city-explorer-demo";
 import WeatherForecastDemo from "@challenge/weather-forecast-demo";
 import ScreenLibraryDemo from "@challenge/screen-library-demo";
 import ClimateSeedDemo from "@challenge/climateseed-demo";
-import IngeniousBuildDemo from "@challenge/ingenious-build-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
 import LagoasoftDemo from "@challenge/lagoasoft-demo";
@@ -18,9 +17,12 @@ import { renderToString } from "vue/server-renderer";
 import { describe, expect, it } from "vitest";
 
 describe("pilot demos", () => {
-  it("renders the fixture-backed 3cket event grid", async () => {
-    const html = await renderToString(createSSRApp(ThreeCketDemo));
+  it("renders the consolidated City Explorer", async () => {
+    const html = await renderToString(createSSRApp(CityExplorerDemo));
 
+    expect(html).toContain("City Explorer");
+    expect(html).toContain("Events");
+    expect(html).toContain("Transit");
     expect(html).toContain("Find your next event.");
     expect(html).toContain("Evo Padel Open");
     expect(html).toContain("Preview dynamic slug");
@@ -89,14 +91,6 @@ describe("pilot demos", () => {
     expect(html).toContain("Clinical insight for a world without pain");
     expect(html).toContain("Start demo session");
     expect(html).toContain("News &amp; perspectives");
-  });
-
-  it("renders the Ingenious Build timetable", async () => {
-    const html = await renderToString(createSSRApp(IngeniousBuildDemo));
-
-    expect(html).toContain("Stops Board");
-    expect(html).toContain("Select Bus Line");
-    expect(html).toContain("Please select a bus line first");
   });
 
   it("renders the Lagoasoft social feed", () => {
