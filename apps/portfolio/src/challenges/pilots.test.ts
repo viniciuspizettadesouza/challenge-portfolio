@@ -1,7 +1,6 @@
 import CityExplorerDemo from "@challenge/city-explorer-demo";
-import WeatherForecastDemo from "@challenge/weather-forecast-demo";
+import ClimateWorkspaceDemo from "@challenge/climate-workspace-demo";
 import ScreenLibraryDemo from "@challenge/screen-library-demo";
-import ClimateSeedDemo from "@challenge/climateseed-demo";
 import ContentPlatformDemo from "@challenge/content-platform-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
@@ -38,7 +37,7 @@ describe("pilot demos", () => {
     const html = renderToStaticMarkup(createElement(PeopleOperationsDemo));
 
     expect(html).toContain("Loading people operations");
-    expect(html).toContain("data-theme=\"light\"");
+    expect(html).toContain('data-theme="light"');
   });
 
   it("renders the consolidated Structured Data Workbench", () => {
@@ -62,9 +61,12 @@ describe("pilot demos", () => {
     expect(html).toContain("Search contact or company");
   });
 
-  it("renders the consolidated local weather explorer", async () => {
-    const html = await renderToString(createSSRApp(WeatherForecastDemo));
+  it("renders the consolidated climate workspace", () => {
+    const html = renderToStaticMarkup(createElement(ClimateWorkspaceDemo));
 
+    expect(html).toContain("Climate &amp; Weather Workspace");
+    expect(html).toContain("Forecasts");
+    expect(html).toContain("Emissions");
     expect(html).toContain("Forecast explorer");
     expect(html).toContain("Florianópolis");
     expect(html).toContain("Next six hours");
@@ -95,19 +97,10 @@ describe("pilot demos", () => {
     expect(html).toContain("News &amp; perspectives");
   });
 
-  it("renders the fixture-backed ClimateSeed dashboard", async () => {
-    const html = await renderToString(createSSRApp(ClimateSeedDemo));
-
-    expect(html).toContain("Organisation emissions overview");
-    expect(html).toContain("Climateseed");
-    expect(html).toContain("Add an emissions result");
-  });
-
   it("renders the Vue driver selector", async () => {
     const html = await renderToString(createSSRApp(VueDemo));
 
     expect(html).toContain("Formula 1 Top Drivers");
     expect(html).toContain("Max Verstappen");
   });
-
 });

@@ -3,7 +3,7 @@ import {
   createEmissionResult,
   initialResults,
   organisations,
-} from "@challenge/climateseed-demo/logic";
+} from "@challenge/climate-workspace-demo/emissions-logic";
 import {
   addSearchHistory,
   comparisonHours,
@@ -11,12 +11,12 @@ import {
   findForecast,
   forecasts as weatherForecasts,
   nearestForecast,
-} from "@challenge/weather-forecast-demo/logic";
+} from "@challenge/climate-workspace-demo/weather-logic";
 import {
   readWeatherState,
   WEATHER_STORAGE_KEY,
   writeWeatherState,
-} from "@challenge/weather-forecast-demo/persistence";
+} from "@challenge/climate-workspace-demo/persistence";
 import {
   clampPage,
   createEpisode,
@@ -48,8 +48,22 @@ import {
   stops as ingeniousStops,
 } from "@challenge/city-explorer-demo/transitLogic";
 import { initialLeads } from "@challenge/lead-operations-demo/fixtures";
-import { createLead, deleteLead, filterLeads, getCategoryOptions, nextLeadId, updateLead, validateLead } from "@challenge/lead-operations-demo/logic";
-import { LEAD_STORAGE_KEY, loadLeads, migrateLegacyLeads, readLeadState, writeLeadState } from "@challenge/lead-operations-demo/persistence";
+import {
+  createLead,
+  deleteLead,
+  filterLeads,
+  getCategoryOptions,
+  nextLeadId,
+  updateLead,
+  validateLead,
+} from "@challenge/lead-operations-demo/logic";
+import {
+  LEAD_STORAGE_KEY,
+  loadLeads,
+  migrateLegacyLeads,
+  readLeadState,
+  writeLeadState,
+} from "@challenge/lead-operations-demo/persistence";
 import {
   displayedLikes,
   posts as lagoasoftPosts,
@@ -175,8 +189,14 @@ describe("consolidated lead operations", () => {
     expect(initialLeads).toHaveLength(13);
     expect(new Set(initialLeads.map(({ id }) => id)).size).toBe(13);
     expect(filterLeads(initialLeads, "Glenna", [])).toHaveLength(1);
-    expect(filterLeads(initialLeads, "Northstar", ["enterprise"])).toHaveLength(1);
-    expect(filterLeads(initialLeads, "", ["e-enable", "applications"]).map(({ id }) => id)).toEqual(["instruct-3", "instruct-6"]);
+    expect(filterLeads(initialLeads, "Northstar", ["enterprise"])).toHaveLength(
+      1,
+    );
+    expect(
+      filterLeads(initialLeads, "", ["e-enable", "applications"]).map(
+        ({ id }) => id,
+      ),
+    ).toEqual(["instruct-3", "instruct-6"]);
     expect(getCategoryOptions(initialLeads)).toContain("real-time");
   });
 
@@ -191,7 +211,9 @@ describe("consolidated lead operations", () => {
     };
 
     expect(validateLead(draft)).toEqual({});
-    expect(createLead(draft, nextLeadId(initialLeads), "06 Sep 2026")).toMatchObject({
+    expect(
+      createLead(draft, nextLeadId(initialLeads), "06 Sep 2026"),
+    ).toMatchObject({
       id: "local-1",
       name: "Alex Morgan",
       cadence: "Product Demo",
@@ -212,23 +234,70 @@ describe("consolidated lead operations", () => {
 
   it("validates versioned persistence and imports authoritative legacy state", () => {
     const values = new Map<string, string>();
-    const storage = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value) };
+    const storage = {
+      getItem: (key: string) => values.get(key) ?? null,
+      setItem: (key: string, value: string) => values.set(key, value),
+    };
     expect(writeLeadState(storage, initialLeads)).toBe(true);
     expect(readLeadState(storage)?.leads).toHaveLength(13);
     values.set(LEAD_STORAGE_KEY, "bad json");
     expect(readLeadState(storage)).toBeUndefined();
-    const legacy = migrateLegacyLeads([{ leadName: "Daniel Updated", email: "daniel@example.com", phone: "123", cadence: "Enterprise Follow-up", createdAt: "27 Jul 2026" }, { leadName: "New Lead", email: "new@example.com", phone: "456", cadence: "Outbound SMB" }]);
+    const legacy = migrateLegacyLeads([
+      {
+        leadName: "Daniel Updated",
+        email: "daniel@example.com",
+        phone: "123",
+        cadence: "Enterprise Follow-up",
+        createdAt: "27 Jul 2026",
+      },
+      {
+        leadName: "New Lead",
+        email: "new@example.com",
+        phone: "456",
+        cadence: "Outbound SMB",
+      },
+    ]);
     expect(legacy).toHaveLength(12);
-    expect(legacy?.find(({ email }) => email === "daniel@example.com")?.name).toBe("Daniel Updated");
-    expect(legacy?.find(({ email }) => email === "new@example.com")?.company).toBe("Independent prospect");
+    expect(
+      legacy?.find(({ email }) => email === "daniel@example.com")?.name,
+    ).toBe("Daniel Updated");
+    expect(
+      legacy?.find(({ email }) => email === "new@example.com")?.company,
+    ).toBe("Independent prospect");
     expect(migrateLegacyLeads(null)).toBeUndefined();
-    expect(migrateLegacyLeads([{ email: "duplicate@example.com", phone: "1", cadence: "Product Demo" }, { email: "DUPLICATE@example.com", phone: "2", cadence: "Outbound SMB" }, { invalid: true }])).toHaveLength(11);
+    expect(
+      migrateLegacyLeads([
+        { email: "duplicate@example.com", phone: "1", cadence: "Product Demo" },
+        { email: "DUPLICATE@example.com", phone: "2", cadence: "Outbound SMB" },
+        { invalid: true },
+      ]),
+    ).toHaveLength(11);
     values.delete(LEAD_STORAGE_KEY);
-    values.set("meetime-demo-leads", JSON.stringify([{ leadName: "Only Legacy", email: "only@example.com", phone: "789", cadence: "Product Demo" }]));
+    values.set(
+      "meetime-demo-leads",
+      JSON.stringify([
+        {
+          leadName: "Only Legacy",
+          email: "only@example.com",
+          phone: "789",
+          cadence: "Product Demo",
+        },
+      ]),
+    );
     expect(loadLeads(storage).source).toBe("migrated");
     expect(readLeadState(undefined)).toBeUndefined();
     expect(writeLeadState(undefined, initialLeads)).toBe(false);
-    expect(writeLeadState({ getItem: () => null, setItem: () => { throw new Error("blocked"); } }, initialLeads)).toBe(false);
+    expect(
+      writeLeadState(
+        {
+          getItem: () => null,
+          setItem: () => {
+            throw new Error("blocked");
+          },
+        },
+        initialLeads,
+      ),
+    ).toBe(false);
   });
 });
 
@@ -296,7 +365,9 @@ describe("consolidated TV episode library", () => {
       searchEpisodes(televisionEpisodes, "quiet").map(({ id }) => id),
     ).toEqual(["episode-01"]);
     expect(searchEpisodes(televisionEpisodes, "northbound")).toHaveLength(2);
-    expect(filterEpisodes(televisionEpisodes, "", "signal-lost")).toHaveLength(12);
+    expect(filterEpisodes(televisionEpisodes, "", "signal-lost")).toHaveLength(
+      12,
+    );
     expect(getShow("signal-lost")?.rating).toBe(8.4);
   });
 
@@ -466,9 +537,9 @@ p--m-
 describe("consolidated Film Library logic", () => {
   it("requires three characters and filters titles case-insensitively", () => {
     expect(searchMovies(libraryMovies, "av")).toEqual([]);
-    expect(searchMovies(libraryMovies, "INFINITY").map(({ id }) => id)).toEqual([
-      299536,
-    ]);
+    expect(searchMovies(libraryMovies, "INFINITY").map(({ id }) => id)).toEqual(
+      [299536],
+    );
     expect(searchMovies(libraryMovies, "avengers")).toHaveLength(8);
   });
 

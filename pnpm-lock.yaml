@@ -32,9 +32,9 @@ importers:
       '@challenge/city-explorer-demo':
         specifier: workspace:*
         version: link:../../challenges/city-explorer/demo
-      '@challenge/climateseed-demo':
+      '@challenge/climate-workspace-demo':
         specifier: workspace:*
-        version: link:../../challenges/challenge-climateseed/demo
+        version: link:../../challenges/climate-workspace/demo
       '@challenge/content-platform-demo':
         specifier: workspace:*
         version: link:../../challenges/content-platform/demo
@@ -44,21 +44,18 @@ importers:
       '@challenge/people-operations-demo':
         specifier: workspace:*
         version: link:../../challenges/people-operations/demo
-      '@challenge/structured-data-workbench-demo':
-        specifier: workspace:*
-        version: link:../../challenges/structured-data-workbench/demo
       '@challenge/screen-library-demo':
         specifier: workspace:*
         version: link:../../challenges/screen-library/demo
       '@challenge/strains-demo':
         specifier: workspace:*
         version: link:../../challenges/strains/demo
+      '@challenge/structured-data-workbench-demo':
+        specifier: workspace:*
+        version: link:../../challenges/structured-data-workbench/demo
       '@challenge/vue-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-vue/demo
-      '@challenge/weather-forecast-demo':
-        specifier: workspace:*
-        version: link:../../challenges/weather-forecast/demo
       '@types/react':
         specifier: ^19.2.18
         version: 19.2.18
@@ -117,12 +114,6 @@ importers:
 
   challenges/algorithm-playground/demo: {}
 
-  challenges/challenge-climateseed/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.4.0'
-        version: 3.5.40(typescript@7.0.2)
-
   challenges/challenge-vue/demo:
     dependencies:
       vue:
@@ -134,6 +125,12 @@ importers:
       vue:
         specifier: '>=3.2.0'
         version: 3.5.40(typescript@7.0.2)
+
+  challenges/climate-workspace/demo:
+    dependencies:
+      react:
+        specifier: '>=19.0.0'
+        version: 19.2.8
 
   challenges/content-platform/demo:
     dependencies:
@@ -186,12 +183,6 @@ importers:
       react-dom:
         specifier: '>=18.0.0'
         version: 19.2.8(react@19.2.8)
-
-  challenges/weather-forecast/demo:
-    dependencies:
-      vue:
-        specifier: '>=3.2.0'
-        version: 3.5.40(typescript@7.0.2)
 
 packages:
 

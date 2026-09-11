@@ -1,0 +1,318 @@
+.climate-demo {
+  --ink: #173128;
+  --muted: #52615b;
+  --line: #dbe8e1;
+  --green: #0b7045;
+  display: grid;
+  gap: 1.15rem;
+  width: 100%;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+.climate-demo *,
+.climate-demo *::before,
+.climate-demo *::after {
+  box-sizing: border-box;
+}
+.climate-demo .intro,
+.climate-demo .card-heading,
+.climate-demo .bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.climate-demo .intro {
+  align-items: flex-end;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  color: white;
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(94, 234, 212, 0.25),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #0c3127, #12613e);
+}
+.climate-demo .intro h2,
+.climate-demo .card h3,
+.climate-demo .intro p {
+  margin: 0;
+}
+.climate-demo .intro h2 {
+  max-width: 17ch;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  line-height: 1.05;
+}
+.climate-demo .intro > div > p:last-child {
+  max-width: 58ch;
+  margin-top: 0.75rem;
+  color: #d8eee5;
+}
+.climate-demo .eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.climate-demo .intro .eyebrow {
+  color: #83e8bd;
+}
+.climate-demo .total {
+  min-width: 9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+.climate-demo .total span,
+.climate-demo .total small {
+  display: block;
+  color: #bfe5d6;
+  font-size: 0.72rem;
+}
+.climate-demo .total strong {
+  display: block;
+  margin: 0.15rem 0;
+  font-size: 1.45rem;
+}
+.climate-demo .dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.15rem;
+}
+.climate-demo .card {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(20, 60, 45, 0.07);
+}
+.climate-demo .card-heading {
+  align-items: flex-start;
+}
+.climate-demo .card h3 {
+  font-size: 1.1rem;
+}
+.climate-demo .badge {
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  color: #18714c;
+  background: #e7f7ef;
+  font-size: 0.68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.climate-demo .employee-bars {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 2rem;
+}
+.climate-demo .bar-label {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.climate-demo .bar-label strong {
+  color: var(--ink);
+}
+.climate-demo .bar-track {
+  overflow: hidden;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: #edf3ef;
+}
+.climate-demo .bar-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22c55e, #0e8a57);
+}
+.climate-demo .chart-toggle {
+  display: flex;
+  padding: 0.2rem;
+  border-radius: 0.65rem;
+  background: #edf3ef;
+}
+.climate-demo .chart-toggle button {
+  padding: 0.4rem 0.65rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.climate-demo .chart-toggle button.active {
+  color: var(--ink);
+  background: white;
+  box-shadow: 0 2px 8px rgba(23, 49, 40, 0.1);
+}
+.climate-demo .chart-area {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.9fr) minmax(12rem, 1.1fr);
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 14rem;
+  margin-top: 1rem;
+}
+.climate-demo .donut-wrap {
+  display: grid;
+  place-items: center;
+}
+.climate-demo .donut {
+  display: grid;
+  place-items: center;
+  width: min(11rem, 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.climate-demo .donut > div {
+  display: grid;
+  place-items: center;
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+}
+.climate-demo .donut strong,
+.climate-demo .donut span {
+  display: block;
+}
+.climate-demo .donut strong {
+  align-self: end;
+  font-size: 1.2rem;
+}
+.climate-demo .donut span {
+  align-self: start;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+.climate-demo .emission-bars {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 0.65rem;
+  height: 12rem;
+}
+.climate-demo .emission-bars > div {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  width: 28%;
+  height: 100%;
+  text-align: center;
+}
+.climate-demo .emission-bars span {
+  display: block;
+  width: 100%;
+  min-height: 0.4rem;
+  border-radius: 0.5rem 0.5rem 0.15rem 0.15rem;
+}
+.climate-demo .emission-bars small {
+  overflow: hidden;
+  margin-top: 0.35rem;
+  font-size: 0.62rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.climate-demo .legend {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.climate-demo .legend li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #edf3ef;
+  font-size: 0.78rem;
+}
+.climate-demo .legend i {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+}
+.climate-demo .legend strong {
+  font-size: 0.78rem;
+}
+.climate-demo .legend small {
+  grid-column: 2 / -1;
+  color: var(--muted);
+}
+.climate-demo .form-card > div > p:last-child {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.climate-demo .form-card form {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr auto;
+  align-items: end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.climate-demo .form-card label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.climate-demo .form-card select,
+.climate-demo .form-card input,
+.climate-demo .form-card button {
+  min-height: 2.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  font: inherit;
+}
+.climate-demo .form-card select,
+.climate-demo .form-card input {
+  width: 100%;
+  padding: 0 0.65rem;
+  color: var(--ink);
+  background: white;
+}
+.climate-demo .form-card button {
+  padding: 0 1rem;
+  border-color: var(--green);
+  color: white;
+  background: var(--green);
+  font-weight: 800;
+  cursor: pointer;
+}
+.climate-demo .feedback {
+  min-height: 1.25rem;
+  margin: 0.65rem 0 0;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .climate-demo .intro,
+  .climate-demo .dashboard,
+  .climate-demo .chart-area,
+  .climate-demo .form-card form {
+    grid-template-columns: 1fr;
+  }
+  .climate-demo .intro {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .climate-demo .total {
+    min-width: 0;
+  }
+  .climate-demo .chart-area {
+    min-height: 0;
+  }
+}

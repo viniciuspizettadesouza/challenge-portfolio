@@ -1,11 +1,16 @@
 # ClimateSeed Challenge
 
+> Portfolio note: this challenge's maintained demo is now consolidated into
+> the React-based **Climate & Weather Workspace**. The source below remains as
+> immutable historical evidence.
+
 The complete sanitized history is preserved under `original/`. That directory is
 historical evidence and must not be modified.
 
 ## Maintained demo
 
-The Vue 3 demo under `demo/` preserves the original local-data workflow:
+The emissions view under `../climate-workspace/demo/` preserves the original
+local-data workflow:
 
 - compare employee counts across the three organisations;
 - switch the emissions visualisation between donut and bar charts;
@@ -24,4 +29,6 @@ app type, Vite environment typing, and Pinia getter inference. The maintained
 demo resolves those integration concerns without rewriting the preserved
 source.
 
-Status: integrated, automatically tested, and owner-approved on 2026-07-28.
+The former `challenge-climateseed` and `carbon-emissions-dashboard` routes
+redirect to the canonical `climate-workspace` entry. Status: consolidated and
+automatically tested.

@@ -1,7 +1,7 @@
 # Blueticket Challenge
 
 > Portfolio note: this challenge's maintained demo is now consolidated into
-> the domain-based **Weather Forecast Explorer**. The source below remains as
+> the React-based **Climate & Weather Workspace**. The source below remains as
 > immutable historical evidence.
 
 The complete sanitized history is preserved under `original/`. That directory
@@ -9,7 +9,8 @@ is historical evidence and must not be modified.
 
 ## Maintained demo
 
-The Vue 3 demo under `demo/` modernizes the original Vue 2/Vuetify weather
+The forecast view under `../climate-workspace/demo/` modernizes the original Vue
+2/Vuetify weather
 screen while retaining its primary workflow:
 
 - search deterministic forecasts by city or country;
@@ -23,4 +24,6 @@ Google key was removed during sanitization, and historical credentials must not
 be reused. The maintained demo uses four local city fixtures and never sends
 search text or browser coordinates over the network.
 
-Status: integrated, automatically tested, and owner-approved on 2026-07-28.
+The former `challenge-blueticket` and `weather-forecast` routes redirect to the
+canonical `climate-workspace` entry. Status: consolidated and automatically
+tested.

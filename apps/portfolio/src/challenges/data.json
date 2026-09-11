@@ -47,21 +47,25 @@
     "demoPath": "challenges/city-explorer/demo"
   },
   {
-    "slug": "weather-forecast",
-    "title": "Weather Forecast Explorer",
+    "slug": "climate-workspace",
+    "title": "Climate & Weather Workspace",
     "themes": [
+      "Data & Analytics",
       "Weather & Climate"
     ],
-    "description": "A private, fixture-backed weather explorer with location search, nearest-city matching, a six-hour comparison, a detailed 48-hour forecast, and resilient browser history.",
+    "description": "A unified React climate workspace combining private local forecast discovery, geolocation and a 48-hour outlook with organisation emissions analysis, switchable charts, and validated local results.",
     "technologies": [
       "Vue",
       "Vue CLI",
       "Vuetify",
       "Google Maps",
       "OpenWeather",
-      "BootstrapVue"
+      "BootstrapVue",
+      "TypeScript",
+      "Pinia",
+      "ApexCharts"
     ],
-    "renderer": "vue3",
+    "renderer": "react",
     "migrationStatus": "migrated",
     "migrationStrategy": "consolidated",
     "sources": [
@@ -80,13 +84,24 @@
         "originalRepository": "viniciuspizettadesouza/challenge-onsign-tv",
         "originalDefaultBranch": "main",
         "originalHeadSha": "77b260bb522b2ae2647e026051691d2717d55565"
+      },
+      {
+        "slug": "challenge-climateseed",
+        "title": "ClimateSeed Challenge",
+        "sourcePath": "challenges/challenge-climateseed/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-climateseed",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4"
       }
     ],
     "aliases": [
       "challenge-blueticket",
-      "challenge-onsign-tv"
+      "challenge-onsign-tv",
+      "challenge-climateseed",
+      "weather-forecast",
+      "carbon-emissions-dashboard"
     ],
-    "demoPath": "challenges/weather-forecast/demo"
+    "demoPath": "challenges/climate-workspace/demo"
   },
   {
     "slug": "screen-library",
@@ -164,38 +179,6 @@
       "film-library"
     ],
     "demoPath": "challenges/screen-library/demo"
-  },
-  {
-    "slug": "carbon-emissions-dashboard",
-    "title": "Carbon Emissions Dashboard",
-    "themes": [
-      "Data & Analytics",
-      "Weather & Climate"
-    ],
-    "description": "A Vue carbon dashboard that compares organisation emissions and team sizes, switches chart formats, and accepts new emissions records.",
-    "technologies": [
-      "Vue",
-      "TypeScript",
-      "Pinia",
-      "ApexCharts"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sources": [
-      {
-        "slug": "challenge-climateseed",
-        "title": "ClimateSeed Challenge",
-        "sourcePath": "challenges/challenge-climateseed/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-climateseed",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "99aadfdffab032bdf307a749eba6c0ef23d308a4"
-      }
-    ],
-    "aliases": [
-      "challenge-climateseed"
-    ],
-    "demoPath": "challenges/challenge-climateseed/demo"
   },
   {
     "slug": "algorithm-playground",

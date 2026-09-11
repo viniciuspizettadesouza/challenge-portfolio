@@ -92,13 +92,17 @@ test("Screen Library film views meet the accessibility baseline", async ({
   await expectAccessible(page, "demos/screen-library", {
     checkContrast: true,
     prepare: async (filmPage) => {
-      await filmPage.getByRole("button", { name: "Films", exact: true }).click();
+      await filmPage
+        .getByRole("button", { name: "Films", exact: true })
+        .click();
     },
   });
   await expectAccessible(page, "demos/screen-library", {
     checkContrast: true,
     prepare: async (filmPage) => {
-      await filmPage.getByRole("button", { name: "Films", exact: true }).click();
+      await filmPage
+        .getByRole("button", { name: "Films", exact: true })
+        .click();
       await filmPage.getByRole("button", { name: "Star Wars crawl" }).click();
     },
   });
@@ -110,9 +114,18 @@ test("Structured Data Workbench book view meets the accessibility baseline", asy
   await expectAccessible(page, "demos/structured-data-workbench", {
     checkContrast: true,
     prepare: async (workbenchPage) => {
-      await workbenchPage
-        .getByRole("button", { name: "Book sorting" })
-        .click();
+      await workbenchPage.getByRole("button", { name: "Book sorting" }).click();
+    },
+  });
+});
+
+test("Climate & Weather Workspace emissions view meets the accessibility baseline", async ({
+  page,
+}) => {
+  await expectAccessible(page, "demos/climate-workspace", {
+    checkContrast: true,
+    prepare: async (climatePage) => {
+      await climatePage.getByRole("button", { name: "Emissions" }).click();
     },
   });
 });

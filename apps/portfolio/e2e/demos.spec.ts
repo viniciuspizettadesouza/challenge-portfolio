@@ -193,11 +193,15 @@ test("People Operations completes authentication, directory discovery, CRUD, and
   await expect(page.getByTestId("user-card")).toHaveCount(6);
 
   await page.getByPlaceholder("Name, email or department").fill("Vincus");
-  await expect(page.getByRole("heading", { name: "Vinicius Souza" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Vinicius Souza" }),
+  ).toBeVisible();
   await expect(page.getByTestId("user-card")).toHaveCount(1);
   await page.getByPlaceholder("Name, email or department").fill("");
   await page.getByLabel("Reports to").selectOption({ label: "Adriano Lima" });
-  await expect(page.getByRole("heading", { name: "Vinicius Souza" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Vinicius Souza" }),
+  ).toBeVisible();
   await expect(page.getByTestId("user-card")).toHaveCount(1);
   await page.getByLabel("Reports to").selectOption("all");
 
@@ -214,7 +218,9 @@ test("People Operations completes authentication, directory discovery, CRUD, and
   await page.getByRole("button", { name: "Save user" }).click();
   await expect(page.getByText("Rowan was created.")).toBeVisible();
   await expect(page.getByText("Page 3 of 3")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Rowan Stone" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Rowan Stone" }),
+  ).toBeVisible();
 
   await page.getByRole("button", { name: "Edit Rowan Stone" }).click();
   await page.getByLabel("Last name").fill("Vale");
@@ -249,7 +255,9 @@ test("People Operations completes authentication, directory discovery, CRUD, and
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
   await expect(page.getByRole("heading", { name: "Kai Tan" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Rowan Vale" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Rowan Vale" })).toHaveCount(
+    0,
+  );
   await page.getByRole("button", { name: "Previous" }).click();
   await page.getByRole("button", { name: "Previous" }).click();
   await page.evaluate(() => {
@@ -264,19 +272,31 @@ test("Screen Library combines series discovery and episode management", async ({
   page,
 }) => {
   const errors = await openDemo(page, "screen-library");
-  await expect(page.getByRole("heading", { name: "17 matching episodes" })).toBeVisible();
-  await page.getByRole("combobox", { name: "Series" }).selectOption("signal-lost");
-  await expect(page.getByRole("heading", { name: "12 matching episodes" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "17 matching episodes" }),
+  ).toBeVisible();
+  await page
+    .getByRole("combobox", { name: "Series" })
+    .selectOption("signal-lost");
+  await expect(
+    page.getByRole("heading", { name: "12 matching episodes" }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Next" }).click();
   await expect(page.getByText("Page 2 of 3")).toBeVisible();
-  await page.getByPlaceholder("Search episodes or series...").fill("Return Signal");
-  await expect(page.getByRole("heading", { name: "1 matching episode" })).toBeVisible();
+  await page
+    .getByPlaceholder("Search episodes or series...")
+    .fill("Return Signal");
+  await expect(
+    page.getByRole("heading", { name: "1 matching episode" }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Simulate update event" }).click();
   await expect(page.getByText(/UPDATE received/)).toBeVisible();
   expect(errors).toEqual([]);
 });
 
-test("Algorithm Playground preserves all three source workflows", async ({ page }) => {
+test("Algorithm Playground preserves all three source workflows", async ({
+  page,
+}) => {
   const errors = await openDemo(page, "algorithm-playground");
   await page.locator("#algorithm-encoding").fill("aaabb");
   await expect(page.locator("#algorithm-encoding-output")).toHaveText("3a2b");
@@ -299,17 +319,9 @@ test("Algorithm Playground preserves all three source workflows", async ({ page 
   await capture(page, "algorithm-playground", errors);
 });
 
-test("ClimateSeed switches chart presentation", async ({ page }) => {
-  const errors = await openDemo(page, "carbon-emissions-dashboard");
-  await page.getByRole("button", { name: "Bar" }).click();
-  await expect(page.getByRole("button", { name: "Bar" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await capture(page, "carbon-emissions-dashboard", errors);
-});
-
-test("lead operations searches, creates, edits, deletes, and persists leads", async ({ page }) => {
+test("lead operations searches, creates, edits, deletes, and persists leads", async ({
+  page,
+}) => {
   const errors = await openDemo(page, "lead-operations");
   await page.getByPlaceholder("Search contact or company...").fill("Northstar");
   await expect(page.locator(".lead-table tbody tr")).toHaveCount(1);
@@ -319,7 +331,9 @@ test("lead operations searches, creates, edits, deletes, and persists leads", as
   await page.getByLabel("Company category").selectOption("applications");
   await expect(page.locator(".lead-table tbody tr")).toHaveCount(2);
   await page.getByRole("button", { name: "Clear filters" }).click();
-  await page.getByPlaceholder("Search contact or company...").fill("no-such-company");
+  await page
+    .getByPlaceholder("Search contact or company...")
+    .fill("no-such-company");
   await expect(page.getByText("No leads match these filters.")).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).last().click();
   const addButton = page.getByRole("button", { name: "+ Add lead" }).first();
@@ -341,14 +355,21 @@ test("lead operations searches, creates, edits, deletes, and persists leads", as
   await expect(page.getByText("Example Group").first()).toBeVisible();
   await page.reload();
   await expect(page.getByText("Alex Morgan").first()).toBeVisible();
-  await page.getByRole("button", { name: "Delete Alex Morgan" }).first().click();
+  await page
+    .getByRole("button", { name: "Delete Alex Morgan" })
+    .first()
+    .click();
   await page.getByRole("button", { name: "Delete lead" }).click();
-  await expect(page.getByRole("button", { name: "Delete Alex Morgan" })).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Delete Alex Morgan" }),
+  ).toHaveCount(0);
   await expect(page.getByText("Alex Morgan was deleted.")).toBeVisible();
   await capture(page, "lead-operations", errors);
 });
 
-test("lead operations switches to accessible cards on mobile", async ({ page }) => {
+test("lead operations switches to accessible cards on mobile", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 390, height: 844 });
   const errors = await openDemo(page, "lead-operations");
   await expect(page.locator(".lead-table")).toBeHidden();
@@ -357,10 +378,8 @@ test("lead operations switches to accessible cards on mobile", async ({ page }) 
   expect(errors).toEqual([]);
 });
 
-test("weather explorer searches the expanded hourly forecast", async ({
-  page,
-}) => {
-  const errors = await openDemo(page, "weather-forecast");
+test("climate workspace combines forecasts and emissions", async ({ page }) => {
+  const errors = await openDemo(page, "climate-workspace");
   await page.locator("#weather-location").fill("London");
   await page.getByRole("button", { name: "Search" }).click();
   await expect(
@@ -376,7 +395,16 @@ test("weather explorer searches the expanded hourly forecast", async ({
       "Restored your last forecast and recent searches from this browser.",
     ),
   ).toBeVisible();
-  await capture(page, "weather-forecast", errors);
+  await page.getByRole("button", { name: "Emissions" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Organisation emissions overview" }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Bar" }).click();
+  await expect(page.getByRole("button", { name: "Bar" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await capture(page, "climate-workspace", errors);
 });
 
 test("Content Platform preserves news publishing and social engagement", async ({
@@ -398,7 +426,9 @@ test("Content Platform preserves news publishing and social engagement", async (
 
   await page.getByRole("button", { name: "Social feed", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "A local social feed with independent likes" }),
+    page.getByRole("heading", {
+      name: "A local social feed with independent likes",
+    }),
   ).toBeVisible();
   const like = page.locator(".lago-actions button").first();
   await like.click();
@@ -428,45 +458,99 @@ test("Screen Library composes movie search and the preserved Star Wars crawl", a
 test("legacy challenge and demo URLs redirect to canonical entries", async ({
   page,
 }) => {
-  await page.goto("demos/challenge-onsign-tv");
-  await expect(page).toHaveURL(/demos\/weather-forecast\/?$/);
-  for (const alias of ["challenge-salsify", "challenge-stormtech", "challenge-zygo", "product-data-table", "configurable-book-sorting"]) {
+  for (const alias of [
+    "challenge-blueticket",
+    "challenge-onsign-tv",
+    "challenge-climateseed",
+    "weather-forecast",
+    "carbon-emissions-dashboard",
+  ]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/climate-workspace\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/climate-workspace\/?$/);
+  }
+  for (const alias of [
+    "challenge-salsify",
+    "challenge-stormtech",
+    "challenge-zygo",
+    "product-data-table",
+    "configurable-book-sorting",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/structured-data-workbench\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/structured-data-workbench\/?$/);
   }
-  for (const alias of ["challenge-3cket", "challenge-ingenious-build-frontend", "event-discovery", "public-transit-timetable"]) {
+  for (const alias of [
+    "challenge-3cket",
+    "challenge-ingenious-build-frontend",
+    "event-discovery",
+    "public-transit-timetable",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/city-explorer\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/city-explorer\/?$/);
   }
-  for (const alias of ["challenge-lagoasoft", "challenge-swordhealth", "social-feed-interactions", "news-publishing-platform"]) {
+  for (const alias of [
+    "challenge-lagoasoft",
+    "challenge-swordhealth",
+    "social-feed-interactions",
+    "news-publishing-platform",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/content-platform\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/content-platform\/?$/);
   }
-  for (const alias of ["challenge-instruct", "challenge-meetime", "lead-filtering-dashboard", "sales-lead-management"]) {
+  for (const alias of [
+    "challenge-instruct",
+    "challenge-meetime",
+    "lead-filtering-dashboard",
+    "sales-lead-management",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/lead-operations\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/lead-operations\/?$/);
   }
-  for (const alias of ["challenge-jexperts", "challenge-user-management", "employee-directory-registration", "user-administration"]) {
+  for (const alias of [
+    "challenge-jexperts",
+    "challenge-user-management",
+    "employee-directory-registration",
+    "user-administration",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/people-operations\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/people-operations\/?$/);
   }
-  for (const alias of ["challenge-castlabs", "challenge-vuejs", "episode-management", "tv-episode-guide", "challenge-fyld-hansecom", "challenge-pipz", "movie-search", "film-crawl-experience", "tv-episode-library", "film-library"]) {
+  for (const alias of [
+    "challenge-castlabs",
+    "challenge-vuejs",
+    "episode-management",
+    "tv-episode-guide",
+    "challenge-fyld-hansecom",
+    "challenge-pipz",
+    "movie-search",
+    "film-crawl-experience",
+    "tv-episode-library",
+    "film-library",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/screen-library\/?$/);
     await page.goto(`demos/${alias}`);
     await expect(page).toHaveURL(/demos\/screen-library\/?$/);
   }
-  for (const alias of ["challenge-conaz", "challenge-devlandia", "challenge-propertiag", "javascript-data-exercises", "grid-pathfinding", "roman-numeral-converter"]) {
+  for (const alias of [
+    "challenge-conaz",
+    "challenge-devlandia",
+    "challenge-propertiag",
+    "javascript-data-exercises",
+    "grid-pathfinding",
+    "roman-numeral-converter",
+  ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/algorithm-playground\/?$/);
     await page.goto(`demos/${alias}`);
@@ -498,7 +582,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(11);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(10);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -514,7 +598,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(11);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(11);
+  await expect(page.locator(".catalog-entry")).toHaveCount(10);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(10);
   await context.close();
 });

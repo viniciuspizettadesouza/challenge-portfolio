@@ -2,18 +2,18 @@
 
 Last updated: 2026-09-11.
 
-All migration and consolidation phases (0–28) are complete. The portfolio now
-presents 11 domain-focused entries backed by all 23 immutable historical
-sources. Salsify, Stormtech, and Zygo are represented by the consolidated
-Structured Data Workbench; their historical source slugs plus the former
-`product-data-table` and `configurable-book-sorting` canonical slugs resolve to
-the new route.
+All migration and consolidation phases (0–29) are complete. The portfolio now
+presents 10 domain-focused entries backed by all 23 immutable historical
+sources. Blueticket, OnSign TV, and ClimateSeed are represented by the
+React-based Climate & Weather Workspace; their historical source slugs plus the
+former `weather-forecast` and `carbon-emissions-dashboard` canonical slugs
+resolve to the new route.
 
-The Phase 28 working tree passes lint, typecheck, 70 unit and SSR tests, 32
-Chromium interaction and accessibility tests, a 109-page production build,
-and Gitleaks across 332 commits with no findings. The Structured Data Workbench
-screenshot received direct visual review, and all 11 canonical screenshots
-remain represented.
+The Phase 29 working tree passes lint, typecheck, 69 unit and SSR tests, 31
+Chromium interaction and accessibility tests, a 111-page production build,
+and Gitleaks across 333 commits with no findings. The Climate & Weather
+Workspace screenshot received direct visual review, and all 10 canonical
+screenshots remain represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
 pass integrates the compatible dependency updates, keeps TypeScript 6 until
@@ -25,8 +25,8 @@ No tag is planned.
 
 ## Next action
 
-Review the Structured Data Workbench and refreshed screenshot, then commit and
-push the approved Phase 28 changes and verify Browser tests, Security scan, and
+Review the Climate & Weather Workspace and refreshed screenshot, then commit
+and push the approved Phase 29 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 
