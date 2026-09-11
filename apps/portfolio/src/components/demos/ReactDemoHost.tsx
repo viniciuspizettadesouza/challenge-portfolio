@@ -1,14 +1,12 @@
-import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-demo";
+import StructuredDataWorkbenchDemo from "@challenge/structured-data-workbench-demo";
 import ScreenLibraryDemo from "@challenge/screen-library-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
-import SalsifyDemo from "@challenge/salsify-demo";
 import StrainsDemo from "@challenge/strains-demo";
 
 const demos = {
   "screen-library": ScreenLibraryDemo,
   "people-operations": PeopleOperationsDemo,
-  "product-data-table": SalsifyDemo,
-  "configurable-book-sorting": ConfigurableBookSortingDemo,
+  "structured-data-workbench": StructuredDataWorkbenchDemo,
   "strain-directory": StrainsDemo,
 };
 

@@ -1,0 +1,108 @@
+.structured-data-workbench {
+  --data-ink: #17211b;
+  --data-muted: #b9c9bf;
+  --data-accent: #cbe970;
+  width: 100%;
+  overflow: hidden;
+  color: var(--data-ink);
+  background: #f3f5ef;
+  border: 1px solid #d9e1da;
+  border-radius: 1.2rem;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.structured-data-workbench *,
+.structured-data-workbench *::before,
+.structured-data-workbench *::after {
+  box-sizing: border-box;
+}
+
+.structured-data-workbench__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: end;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  color: #f5f7f2;
+  background: #15261d;
+}
+
+.structured-data-workbench__header p,
+.structured-data-workbench__header h2 {
+  margin-top: 0;
+}
+
+.structured-data-workbench__header p {
+  margin-bottom: 0.35rem;
+  color: var(--data-accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.structured-data-workbench__header h2 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.structured-data-workbench__header span {
+  display: block;
+  max-width: 43rem;
+  color: var(--data-muted);
+  line-height: 1.55;
+}
+
+.structured-data-workbench__header nav {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.45rem;
+}
+
+.structured-data-workbench__header button {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+  color: #dbe5de;
+  background: #22392c;
+  border: 1px solid #496454;
+  border-radius: 0.5rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.structured-data-workbench__header button[aria-pressed="true"] {
+  color: #15261d;
+  background: var(--data-accent);
+  border-color: var(--data-accent);
+}
+
+.structured-data-workbench__header button:focus-visible {
+  outline: 3px solid #f2bd42;
+  outline-offset: 3px;
+}
+
+.structured-data-workbench > .salsify-demo,
+.structured-data-workbench > .book-demo {
+  border: 0;
+  border-radius: 0;
+}
+
+.structured-data-workbench > .book-demo .book-hero {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .structured-data-workbench__header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .structured-data-workbench__header nav,
+  .structured-data-workbench__header button {
+    width: 100%;
+  }
+}

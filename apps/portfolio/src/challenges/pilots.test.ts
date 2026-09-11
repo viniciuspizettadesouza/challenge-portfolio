@@ -5,8 +5,7 @@ import ClimateSeedDemo from "@challenge/climateseed-demo";
 import ContentPlatformDemo from "@challenge/content-platform-demo";
 import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
-import SalsifyDemo from "@challenge/salsify-demo";
-import ConfigurableBookSortingDemo from "@challenge/configurable-book-sorting-demo";
+import StructuredDataWorkbenchDemo from "@challenge/structured-data-workbench-demo";
 import StrainsDemo from "@challenge/strains-demo";
 import VueDemo from "@challenge/vue-demo";
 import { createElement } from "react";
@@ -42,15 +41,16 @@ describe("pilot demos", () => {
     expect(html).toContain("data-theme=\"light\"");
   });
 
-  it("renders configurable book sorting", () => {
+  it("renders the consolidated Structured Data Workbench", () => {
     const html = renderToStaticMarkup(
-      createElement(ConfigurableBookSortingDemo),
+      createElement(StructuredDataWorkbenchDemo),
     );
 
-    expect(html).toContain("Configurable book sorting");
-    expect(html).toContain("Comparator pipeline");
-    expect(html).toContain("Java How To Program");
-    expect(html).toContain("Configuration presets");
+    expect(html).toContain("Structured Data Workbench");
+    expect(html).toContain("Product filtering");
+    expect(html).toContain("Book sorting");
+    expect(html).toContain("Salsify Product Table");
+    expect(html).toContain("<table");
   });
 
   it("renders the consolidated lead operations workspace", async () => {
@@ -101,13 +101,6 @@ describe("pilot demos", () => {
     expect(html).toContain("Organisation emissions overview");
     expect(html).toContain("Climateseed");
     expect(html).toContain("Add an emissions result");
-  });
-
-  it("renders the Salsify product table", () => {
-    const html = renderToStaticMarkup(createElement(SalsifyDemo));
-
-    expect(html).toContain("Salsify Product Table");
-    expect(html).toContain("<table");
   });
 
   it("renders the Vue driver selector", async () => {

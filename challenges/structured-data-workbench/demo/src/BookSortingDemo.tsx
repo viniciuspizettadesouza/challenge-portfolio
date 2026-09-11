@@ -8,8 +8,8 @@ import {
   type BookField,
   type SortDirection,
   type SortRule,
-} from "./logic";
-import "./styles.css";
+} from "./bookLogic";
+import "./book-styles.css";
 
 const fields: Array<{ value: BookField; label: string }> = [
   { value: "title", label: "Title" },
@@ -60,7 +60,7 @@ function BookTable({ items }: { items: Book[] }) {
   );
 }
 
-export default function ConfigurableBookSortingDemo() {
+export default function BookSortingDemo() {
   const [rules, setRules] = useState<SortRule[]>([...presets.title]);
   const [collectionMode, setCollectionMode] = useState<
     "books" | "empty" | "null"

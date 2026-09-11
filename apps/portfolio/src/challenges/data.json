@@ -396,46 +396,18 @@
     "demoPath": "challenges/content-platform/demo"
   },
   {
-    "slug": "product-data-table",
-    "title": "Product Data Table",
+    "slug": "structured-data-workbench",
+    "title": "Structured Data Workbench",
     "themes": [
+      "Algorithms & Utilities",
       "Data & Analytics",
       "Discovery & Catalogs"
     ],
-    "description": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
+    "description": "A unified React data workbench combining dynamic product-property filters with configurable, ordered book-comparison rules and explicit edge-case outcomes.",
     "technologies": [
       "React",
       "TypeScript",
-      "Vite"
-    ],
-    "renderer": "react",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-react",
-    "sources": [
-      {
-        "slug": "challenge-salsify",
-        "title": "Salsify Challenge",
-        "sourcePath": "challenges/challenge-salsify/original",
-        "originalRepository": "viniciuspizettadesouza/challenge-salsify",
-        "originalDefaultBranch": "main",
-        "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4"
-      }
-    ],
-    "aliases": [
-      "challenge-salsify"
-    ],
-    "demoPath": "challenges/challenge-salsify/demo"
-  },
-  {
-    "slug": "configurable-book-sorting",
-    "title": "Configurable Book Sorting",
-    "themes": [
-      "Algorithms & Utilities",
-      "Data & Analytics"
-    ],
-    "description": "A configurable sorting workbench that composes ordered field rules, preserves the documented book scenarios, and makes null and empty outcomes explicit.",
-    "technologies": [
-      "React",
+      "Vite",
       "Create React App",
       "Express",
       "MongoDB",
@@ -447,6 +419,14 @@
     "migrationStatus": "migrated",
     "migrationStrategy": "consolidated",
     "sources": [
+      {
+        "slug": "challenge-salsify",
+        "title": "Salsify Challenge",
+        "sourcePath": "challenges/challenge-salsify/original",
+        "originalRepository": "viniciuspizettadesouza/challenge-salsify",
+        "originalDefaultBranch": "main",
+        "originalHeadSha": "11a4be50d5677c0ccaa883a90c8c2f19060779d4"
+      },
       {
         "slug": "challenge-stormtech",
         "title": "Stormtech Challenge",
@@ -465,10 +445,13 @@
       }
     ],
     "aliases": [
+      "challenge-salsify",
       "challenge-stormtech",
-      "challenge-zygo"
+      "challenge-zygo",
+      "product-data-table",
+      "configurable-book-sorting"
     ],
-    "demoPath": "challenges/configurable-book-sorting/demo"
+    "demoPath": "challenges/structured-data-workbench/demo"
   },
   {
     "slug": "formula-one-driver-explorer",

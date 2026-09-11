@@ -150,8 +150,7 @@ multi-stage Vite/nginx Docker build.
 | Lead Operations Workspace | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime |
 | People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management |
 | Content Platform | Vue 3/Quasar/Auth0 and React 16/Instagram → Vue 3 island | Combines article discovery, categories, details, author sessions, profiles, publishing, and image previews with five social posts and independent likes; external Auth0 and expired media remain replaced locally |
-| Salsify         | React/Vite-style source → direct React island       | Original datastore, filters, operators, values, and table run with an Astro style layer                              |
-| Configurable Book Sorting | React/Express/MongoDB and Node scripts → React island | Combines the identical Stormtech and Zygo requirements in a configurable comparator pipeline with all documented outcomes |
+| Structured Data Workbench | React/Vite, React/Express/MongoDB, and Node scripts → React island | Combines Salsify's original property-driven product table with the equivalent Stormtech and Zygo configurable book-sorting requirements |
 | Leafwell        | Next.js 13/Apollo/GraphQL → React island            | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                               |
 | Vue             | Vue 3 component → direct Vue 3 island               | Original driver selector runs directly with only missing utility styles supplied                                     |
 
@@ -212,6 +211,9 @@ Phase 26 retains the baseline across 13 canonical demos and directly audits the
 new City Explorer shell.
 Phase 27 retains the baseline across 12 canonical demos and directly audits the
 new Content Platform shell plus its news and social channels.
+Phase 28 retains the baseline across 11 canonical demos and directly audits the
+new Structured Data Workbench shell plus its product-filtering and book-sorting
+workspaces.
 
 ## Validation and publication record
 
@@ -232,6 +234,7 @@ new Content Platform shell plus its news and social channels.
 | Phase 25 screen-media composition | 16 workspaces; lint and typecheck; 73 unit/SSR tests; 38 Chromium interaction and accessibility tests covering television, film discovery, and crawl views; 14 screenshots; 103 static pages including ten retained screen-media aliases; Gitleaks over 329 commits |
 | Phase 26 city exploration consolidation | 15 workspaces; lint and typecheck; 72 unit/SSR tests; 36 Chromium interaction and accessibility tests covering event discovery and transit planning; 13 screenshots; 105 static pages including four retained city-exploration aliases; Gitleaks over 330 commits |
 | Phase 27 content-platform consolidation | 14 workspaces; lint and typecheck; 71 unit/SSR tests; 34 Chromium interaction and accessibility tests covering news publishing and social engagement; 12 screenshots; 107 static pages including four retained content-platform aliases; Gitleaks over 331 commits |
+| Phase 28 structured-data consolidation | 13 workspaces; lint and typecheck; 70 unit/SSR tests; 32 Chromium interaction and accessibility tests covering product filtering and configurable book sorting; 11 screenshots; 109 static pages including five retained structured-data aliases; Gitleaks over 332 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

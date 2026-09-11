@@ -1,19 +1,21 @@
 # Zygo Challenge
 
 > Portfolio note: this challenge's maintained demo is now consolidated into
-> **Configurable Book Sorting**. The source below remains as immutable
+> **Structured Data Workbench**. The source below remains as immutable
 > historical evidence.
 
 History imported, sanitized, and verified.
 
 ## Portfolio presentation
 
-The book-ordering exercise is available as an interactive Astro demo. Visitors
-can switch among the three original ordering rules, inspect the resulting book
-IDs and table, and reproduce the documented null-collection exception and
-empty-set result.
+The book-ordering exercise is available under
+`../structured-data-workbench/demo/`. Visitors can switch among the three
+original ordering rules, inspect the resulting book IDs and table, and
+reproduce the documented null-collection exception and empty-set result.
 
 The historical implementation remains unchanged under `original/`. The
-browser-safe adaptation lives under `demo/`.
+browser-safe adaptation lives under `../structured-data-workbench/demo/`.
 
-Status: integrated, automatically tested, and owner-approved on 2026-07-28.
+Status: consolidated and automatically tested. The historical source slug and
+former `configurable-book-sorting` route redirect to the canonical
+`structured-data-workbench` entry.

@@ -87,15 +87,28 @@ test("Leafwell combines directory filters and opens a profile", async ({
   await capture(page, "strain-directory", errors);
 });
 
-test("book workbench applies a configurable descending title rule", async ({
+test("Structured Data Workbench filters products and configures book sorting", async ({
   page,
 }) => {
-  const errors = await openDemo(page, "configurable-book-sorting");
+  const errors = await openDemo(page, "structured-data-workbench");
+
+  await expect(
+    page.getByRole("heading", { name: "Structured Data Workbench" }),
+  ).toBeVisible();
+  await page.getByLabel("Property Select").selectOption({ index: 1 });
+  await expect(page.getByLabel("Operator Select")).toBeVisible();
+  await page.getByLabel("Operator Select").selectOption({ index: 1 });
+
+  await page.getByRole("button", { name: "Book sorting" }).click();
   await page.getByLabel("Rule 1 direction").selectOption("descending");
   await expect(page.locator(".result-panel tbody tr").first()).toContainText(
     "Patterns of Enterprise Application Architecture",
   );
-  await capture(page, "configurable-book-sorting", errors);
+  await page.getByRole("button", { name: "Null collection" }).click();
+  await expect(page.getByRole("alert")).toContainText("NULL_COLLECTION");
+
+  await page.getByRole("button", { name: "Product filtering" }).click();
+  await capture(page, "structured-data-workbench", errors);
 });
 
 test("Vue filters and selects the original driver list", async ({ page }) => {
@@ -286,23 +299,6 @@ test("Algorithm Playground preserves all three source workflows", async ({ page 
   await capture(page, "algorithm-playground", errors);
 });
 
-test("book workbench preserves the null-collection exception", async ({
-  page,
-}) => {
-  const errors = await openDemo(page, "configurable-book-sorting");
-  await page.getByRole("button", { name: "Null collection" }).click();
-  await expect(page.getByRole("alert")).toContainText("NULL_COLLECTION");
-  expect(errors).toEqual([]);
-});
-
-test("Salsify uses the original product filter component", async ({ page }) => {
-  const errors = await openDemo(page, "product-data-table");
-  await page.getByLabel("Property Select").selectOption({ index: 1 });
-  await expect(page.getByLabel("Operator Select")).toBeVisible();
-  await page.getByLabel("Operator Select").selectOption({ index: 1 });
-  await capture(page, "product-data-table", errors);
-});
-
 test("ClimateSeed switches chart presentation", async ({ page }) => {
   const errors = await openDemo(page, "carbon-emissions-dashboard");
   await page.getByRole("button", { name: "Bar" }).click();
@@ -434,8 +430,12 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
 }) => {
   await page.goto("demos/challenge-onsign-tv");
   await expect(page).toHaveURL(/demos\/weather-forecast\/?$/);
-  await page.goto("challenges/challenge-zygo");
-  await expect(page).toHaveURL(/challenges\/configurable-book-sorting\/?$/);
+  for (const alias of ["challenge-salsify", "challenge-stormtech", "challenge-zygo", "product-data-table", "configurable-book-sorting"]) {
+    await page.goto(`challenges/${alias}`);
+    await expect(page).toHaveURL(/challenges\/structured-data-workbench\/?$/);
+    await page.goto(`demos/${alias}`);
+    await expect(page).toHaveURL(/demos\/structured-data-workbench\/?$/);
+  }
   for (const alias of ["challenge-3cket", "challenge-ingenious-build-frontend", "event-discovery", "public-transit-timetable"]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/city-explorer\/?$/);
@@ -498,7 +498,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(12);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(11);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -514,7 +514,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(12);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(12);
+  await expect(page.locator(".catalog-entry")).toHaveCount(11);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(11);
   await context.close();
 });

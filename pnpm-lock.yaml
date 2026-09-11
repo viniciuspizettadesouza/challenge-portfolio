@@ -35,9 +35,6 @@ importers:
       '@challenge/climateseed-demo':
         specifier: workspace:*
         version: link:../../challenges/challenge-climateseed/demo
-      '@challenge/configurable-book-sorting-demo':
-        specifier: workspace:*
-        version: link:../../challenges/configurable-book-sorting/demo
       '@challenge/content-platform-demo':
         specifier: workspace:*
         version: link:../../challenges/content-platform/demo
@@ -47,9 +44,9 @@ importers:
       '@challenge/people-operations-demo':
         specifier: workspace:*
         version: link:../../challenges/people-operations/demo
-      '@challenge/salsify-demo':
+      '@challenge/structured-data-workbench-demo':
         specifier: workspace:*
-        version: link:../../challenges/challenge-salsify/demo
+        version: link:../../challenges/structured-data-workbench/demo
       '@challenge/screen-library-demo':
         specifier: workspace:*
         version: link:../../challenges/screen-library/demo
@@ -126,15 +123,6 @@ importers:
         specifier: '>=3.4.0'
         version: 3.5.40(typescript@7.0.2)
 
-  challenges/challenge-salsify/demo:
-    dependencies:
-      react:
-        specifier: '>=18'
-        version: 19.2.8
-      react-dom:
-        specifier: '>=18'
-        version: 19.2.8(react@19.2.8)
-
   challenges/challenge-vue/demo:
     dependencies:
       vue:
@@ -146,12 +134,6 @@ importers:
       vue:
         specifier: '>=3.2.0'
         version: 3.5.40(typescript@7.0.2)
-
-  challenges/configurable-book-sorting/demo:
-    dependencies:
-      react:
-        specifier: '>=18.0.0'
-        version: 19.2.8
 
   challenges/content-platform/demo:
     dependencies:
@@ -194,6 +176,15 @@ importers:
         version: 19.2.8
       react-dom:
         specifier: '>=18'
+        version: 19.2.8(react@19.2.8)
+
+  challenges/structured-data-workbench/demo:
+    dependencies:
+      react:
+        specifier: '>=18.0.0'
+        version: 19.2.8
+      react-dom:
+        specifier: '>=18.0.0'
         version: 19.2.8(react@19.2.8)
 
   challenges/weather-forecast/demo:

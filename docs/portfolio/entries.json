@@ -132,20 +132,29 @@
     "description": "A unified Vue content platform combining local news discovery, category filtering, author profiles and article publishing with a five-post social feed and independent browser-only likes."
   },
   {
-    "slug": "product-data-table",
-    "title": "Product Data Table",
-    "themes": ["Data & Analytics", "Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-salsify"]
-  },
-  {
-    "slug": "configurable-book-sorting",
-    "title": "Configurable Book Sorting",
-    "themes": ["Algorithms & Utilities", "Data & Analytics"],
-    "sourceSlugs": ["challenge-stormtech", "challenge-zygo"],
+    "slug": "structured-data-workbench",
+    "title": "Structured Data Workbench",
+    "themes": [
+      "Algorithms & Utilities",
+      "Data & Analytics",
+      "Discovery & Catalogs"
+    ],
+    "sourceSlugs": [
+      "challenge-salsify",
+      "challenge-stormtech",
+      "challenge-zygo"
+    ],
+    "aliases": [
+      "challenge-salsify",
+      "challenge-stormtech",
+      "challenge-zygo",
+      "product-data-table",
+      "configurable-book-sorting"
+    ],
     "renderer": "react",
     "migrationStrategy": "consolidated",
-    "demoDirectory": "configurable-book-sorting",
-    "description": "A configurable sorting workbench that composes ordered field rules, preserves the documented book scenarios, and makes null and empty outcomes explicit."
+    "demoDirectory": "structured-data-workbench",
+    "description": "A unified React data workbench combining dynamic product-property filters with configurable, ordered book-comparison rules and explicit edge-case outcomes."
   },
   {
     "slug": "formula-one-driver-explorer",

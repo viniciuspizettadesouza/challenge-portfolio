@@ -1,6 +1,8 @@
 # Salsify Challenge
 
-React pilot project.
+> Portfolio note: this challenge's maintained demo is now consolidated into
+> **Structured Data Workbench**. The source below remains as immutable
+> historical evidence.
 
 ## Preservation
 
@@ -10,11 +12,13 @@ React pilot project.
 
 ## Demo
 
-`demo/` exposes the original React application as an isolated workspace
-package. The adaptation adds only an Astro-compatible styling layer; filtering
-rules and the datastore still come from the preserved source.
+The product-filtering workspace under `../structured-data-workbench/demo/`
+loads the original React application directly. The adaptation adds only an
+Astro-compatible styling layer; filtering rules and the datastore still come
+from the preserved source.
 
 ## Status
 
-The demo is integrated, tested, and was approved by the repository owner on
-2026-07-28.
+The demo is consolidated and automatically tested. Its historical source slug
+and former `product-data-table` route redirect to the canonical
+`structured-data-workbench` entry.

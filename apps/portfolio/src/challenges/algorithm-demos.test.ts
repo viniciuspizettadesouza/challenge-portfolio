@@ -68,7 +68,7 @@ import {
   presets as sortingPresets,
   sortBooks as sortConfiguredBooks,
   type BookField,
-} from "@challenge/configurable-book-sorting-demo/logic";
+} from "@challenge/structured-data-workbench-demo/bookLogic";
 import {
   filterStrains,
   findStrain,

@@ -29,7 +29,7 @@
     "migrationStrategy": "mock-backend",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "React 16/Express/MongoDB book sorter now contributes its table presentation and documented outcomes to Configurable Book Sorting. The consolidated React demo uses the exact four-book fixture and requires no backend or historical remote MongoDB connection."
+    "reviewNotes": "React 16/Express/MongoDB book sorter now contributes its table presentation and documented outcomes to the consolidated Structured Data Workbench. The React adaptation uses the exact four-book fixture and requires no backend or historical remote MongoDB connection."
   },
   {
     "slug": "challenge-vue",
@@ -224,7 +224,7 @@
     "migrationStrategy": "static-embed",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Dependency-free JavaScript sorting exercise now contributes its configuration-oriented requirements, three compound rules, null exception, and empty-set result to Configurable Book Sorting."
+    "reviewNotes": "Dependency-free JavaScript sorting exercise now contributes its configuration-oriented requirements, three compound rules, null exception, and empty-set result to the consolidated Structured Data Workbench."
   },
   {
     "slug": "challenge-salsify",
@@ -256,7 +256,7 @@
     "migrationStrategy": "native-react",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Modern React/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
+    "reviewNotes": "Modern React/Vite product table now contributes its original datastore, dynamic property and operator controls, value selection, filtering, and table to the consolidated Structured Data Workbench."
   },
   {
     "slug": "challenge-climateseed",

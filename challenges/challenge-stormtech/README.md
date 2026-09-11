@@ -1,7 +1,7 @@
 # Stormtech Challenge
 
 > Portfolio note: this challenge's maintained demo is now consolidated into
-> **Configurable Book Sorting**. The source below remains as immutable
+> **Structured Data Workbench**. The source below remains as immutable
 > historical evidence.
 
 The complete sanitized history is preserved under `original/`. That directory
@@ -9,8 +9,8 @@ is historical evidence and must not be modified.
 
 ## Maintained demo
 
-The React demo under `demo/` preserves the documented four-book dataset and
-both original table sections:
+The book-sorting workspace under `../structured-data-workbench/demo/`
+preserves the documented four-book dataset and both original table sections:
 
 - sort by title or author in either direction and by edition year descending;
 - run the three ordered scenarios from the original README;
@@ -24,4 +24,6 @@ database read with the exact records documented in the repository. The
 preserved Storm Tecnologia logo, red controls, and table presentation remain
 recognizable without requiring two processes or a database.
 
-Status: integrated, automatically tested, and owner-approved on 2026-07-28.
+Status: consolidated and automatically tested. The historical source slug and
+former `configurable-book-sorting` route redirect to the canonical
+`structured-data-workbench` entry.

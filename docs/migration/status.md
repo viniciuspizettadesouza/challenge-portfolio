@@ -2,17 +2,17 @@
 
 Last updated: 2026-09-11.
 
-All migration and consolidation phases (0–27) are complete. The portfolio now
-presents 12 domain-focused entries backed by all 23 immutable historical
-sources. Lagoasoft and Sword Health are represented by the consolidated
-Content Platform, and both historical source slugs plus the former
-`social-feed-interactions` and `news-publishing-platform` canonical slugs
-resolve to the new route.
+All migration and consolidation phases (0–28) are complete. The portfolio now
+presents 11 domain-focused entries backed by all 23 immutable historical
+sources. Salsify, Stormtech, and Zygo are represented by the consolidated
+Structured Data Workbench; their historical source slugs plus the former
+`product-data-table` and `configurable-book-sorting` canonical slugs resolve to
+the new route.
 
-The Phase 27 working tree passes lint, typecheck, 71 unit and SSR tests, 34
-Chromium interaction and accessibility tests, a 107-page production build,
-and Gitleaks across 331 commits with no findings. The Content Platform
-screenshot received direct visual review, and all 12 canonical screenshots
+The Phase 28 working tree passes lint, typecheck, 70 unit and SSR tests, 32
+Chromium interaction and accessibility tests, a 109-page production build,
+and Gitleaks across 332 commits with no findings. The Structured Data Workbench
+screenshot received direct visual review, and all 11 canonical screenshots
 remain represented.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
@@ -25,8 +25,8 @@ No tag is planned.
 
 ## Next action
 
-Review the Content Platform and refreshed screenshot, then commit and push the
-approved Phase 27 changes and verify Browser tests, Security scan, and
+Review the Structured Data Workbench and refreshed screenshot, then commit and
+push the approved Phase 28 changes and verify Browser tests, Security scan, and
 Deploy to GitHub Pages against the published revision. Continue routine
 dependency and security maintenance afterward.
 

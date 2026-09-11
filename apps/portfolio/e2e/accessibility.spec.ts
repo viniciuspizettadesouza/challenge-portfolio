@@ -103,3 +103,16 @@ test("Screen Library film views meet the accessibility baseline", async ({
     },
   });
 });
+
+test("Structured Data Workbench book view meets the accessibility baseline", async ({
+  page,
+}) => {
+  await expectAccessible(page, "demos/structured-data-workbench", {
+    checkContrast: true,
+    prepare: async (workbenchPage) => {
+      await workbenchPage
+        .getByRole("button", { name: "Book sorting" })
+        .click();
+    },
+  });
+});

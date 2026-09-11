@@ -14,12 +14,12 @@
   "challenge-onsign-tv": "A Vue location forecast with address search, privacy-safe coordinate matching, and a cached six-column comparison of conditions, temperature, and humidity.",
   "challenge-pipz": "The cinematic source in the consolidated Screen Library, retaining the seven-film SWAPI order, Roman episode numbers, preserved Star Wars logo, animated opening, perspective crawl, pause, and restart controls.",
   "challenge-propertiag": "A tested React calculator that validates integers from 1 to 1,000 and converts them into Roman numerals.",
-  "challenge-salsify": "A React product-data table for browsing structured catalog records in a compact, sortable portfolio interface.",
-  "challenge-stormtech": "A React book catalog using the documented four-record fixture to demonstrate individual title, author, and edition sorts plus five expected scenarios.",
+  "challenge-salsify": "The product-filtering source in the consolidated Structured Data Workbench, retaining its original datastore, property and operator controls, value selection, and result table.",
+  "challenge-stormtech": "A book-sorting source in the consolidated Structured Data Workbench, retaining the documented four-record fixture, table presentation, and expected scenarios.",
   "challenge-leafwell": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
   "challenge-swordhealth": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
   "challenge-user-management": "The secure administration half of a consolidated people-operations workspace, retaining authentication, token-protected CRUD, pagination, theme persistence, tests, and Docker delivery.",
   "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
   "challenge-vuejs": "The television-discovery source in the consolidated Screen Library, contributing the Signal Lost series profile, twelve local episodes, summaries, and pagination.",
-  "challenge-zygo": "An interactive presentation of JavaScript book sorting across three ordering rules, including its documented null exception and empty-set outcomes."
+  "challenge-zygo": "The configuration-oriented source in the consolidated Structured Data Workbench, retaining three compound sorting rules, its null exception, and empty-set outcomes."
 }
