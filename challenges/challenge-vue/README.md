@@ -1,6 +1,7 @@
 # Vue Challenge
 
-Vue 3 pilot project.
+> **Structured Data Workbench**. The Vue 3 source below remains as immutable
+> historical evidence.
 
 ## Preservation
 
@@ -8,13 +9,15 @@ Vue 3 pilot project.
 - tree content and authors were verified during migration;
 - `original/` remains unchanged after sanitization.
 
-## Demo
+## Maintained demo
 
-`demo/` loads the original Vue 3 component through Astro's official Vue
-integration. A local stylesheet replaces the visual utility classes expected by
-the project without installing or executing the legacy dependency set.
+The React adaptation under `../structured-data-workbench/demo/` retains the
+original five-driver fixture, individual and select-all controls, emitted
+selected IDs, and the All, Selected, and Unselected views. It fixes the
+historical checkbox-state and label-association defects without changing the
+preserved Vue application.
 
 ## Status
 
-The demo is integrated, tested, and was approved by the repository owner on
-2026-07-28.
+Status: consolidated and automatically tested. The `challenge-vue` and former
+`formula-one-driver-explorer` routes remain available as redirects.

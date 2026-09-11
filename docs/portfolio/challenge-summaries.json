@@ -19,7 +19,7 @@
   "challenge-leafwell": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
   "challenge-swordhealth": "A Vue news platform with category filtering, progressive loading, detail and profile views, plus local article authoring with image preview.",
   "challenge-user-management": "The secure administration half of a consolidated people-operations workspace, retaining authentication, token-protected CRUD, pagination, theme persistence, tests, and Docker delivery.",
-  "challenge-vue": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
+  "challenge-vue": "The selection-state source in the consolidated Structured Data Workbench, retaining the original five-driver collection, select-all behavior, emitted IDs, and All, Selected, and Unselected filters.",
   "challenge-vuejs": "The television-discovery source in the consolidated Screen Library, contributing the Signal Lost series profile, twelve local episodes, summaries, and pagination.",
   "challenge-zygo": "The configuration-oriented source in the consolidated Structured Data Workbench, retaining three compound sorting rules, its null exception, and empty-set outcomes."
 }

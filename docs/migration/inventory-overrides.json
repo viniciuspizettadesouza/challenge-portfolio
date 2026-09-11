@@ -122,7 +122,7 @@
     "migrationStrategy": "native-vue3",
     "migrationStatus": "migrated",
     "reviewStatus": "confirmed",
-    "reviewNotes": "Vue 3/Vite application integrated as a tested Astro island. Owner approved on 2026-07-28."
+    "reviewNotes": "Vue 3/Vite selection exercise now contributes its exact five-driver collection, select-all behavior, emitted IDs, and All, Selected, and Unselected filters to the consolidated React Structured Data Workbench. The immutable original remains unchanged."
   },
   "challenge-vuejs": {
     "migrationStrategy": "native-vue3",

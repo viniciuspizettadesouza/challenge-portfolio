@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./src/index.tsx",
-    "./bookLogic": "./src/bookLogic.ts"
+    "./bookLogic": "./src/bookLogic.ts",
+    "./driverLogic": "./src/driverLogic.ts"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

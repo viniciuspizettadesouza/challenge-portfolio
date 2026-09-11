@@ -1,6 +1,6 @@
 # Demo screenshots
 
-These 10 images are reproducible browser evidence for the curated portfolio
+These 9 images are reproducible browser evidence for the curated portfolio
 demos. Each image is captured after the representative interaction asserted by
 `apps/portfolio/e2e/demos.spec.ts`.
 

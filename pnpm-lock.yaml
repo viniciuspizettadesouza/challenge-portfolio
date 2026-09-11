@@ -53,9 +53,6 @@ importers:
       '@challenge/structured-data-workbench-demo':
         specifier: workspace:*
         version: link:../../challenges/structured-data-workbench/demo
-      '@challenge/vue-demo':
-        specifier: workspace:*
-        version: link:../../challenges/challenge-vue/demo
       '@types/react':
         specifier: ^19.2.18
         version: 19.2.18
@@ -113,12 +110,6 @@ importers:
         version: 5.0.0(@types/node@26.4.1)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(yaml@2.9.0))
 
   challenges/algorithm-playground/demo: {}
-
-  challenges/challenge-vue/demo:
-    dependencies:
-      vue:
-        specifier: '>=3'
-        version: 3.5.40(typescript@7.0.2)
 
   challenges/city-explorer/demo:
     dependencies:

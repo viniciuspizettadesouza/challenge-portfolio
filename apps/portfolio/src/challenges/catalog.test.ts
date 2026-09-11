@@ -21,7 +21,6 @@ describe("catalog discovery", () => {
     expect(facets.adaptations).toEqual([
       "consolidated",
       "native-react",
-      "native-vue3",
     ]);
   });
 

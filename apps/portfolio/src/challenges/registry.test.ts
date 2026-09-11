@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { challengeAliases, challenges, getChallenge } from "./registry";
 
 describe("challenge registry", () => {
-  it("contains ten curated entries backed by all twenty-three sources", () => {
-    expect(challenges).toHaveLength(10);
-    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(10);
+  it("contains nine curated entries backed by all twenty-three sources", () => {
+    expect(challenges).toHaveLength(9);
+    expect(new Set(challenges.map(({ slug }) => slug)).size).toBe(9);
     const sourceSlugs = challenges.flatMap(({ sources }) =>
       sources.map(({ slug }) => slug),
     );
@@ -16,7 +16,7 @@ describe("challenge registry", () => {
   });
 
   it("resolves every unique legacy slug to its canonical entry", () => {
-    expect(challengeAliases.size).toBe(44);
+    expect(challengeAliases.size).toBe(45);
     for (const challenge of challenges) {
       for (const alias of challenge.aliases) {
         expect(challengeAliases.get(alias)).toBe(challenge);
@@ -39,7 +39,7 @@ describe("challenge registry", () => {
     }
 
     expect(new Set(challenges.map(({ description }) => description)).size).toBe(
-      10,
+      9,
     );
   });
 });

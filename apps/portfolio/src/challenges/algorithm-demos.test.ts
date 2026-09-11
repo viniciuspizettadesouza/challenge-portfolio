@@ -84,6 +84,11 @@ import {
   type BookField,
 } from "@challenge/structured-data-workbench-demo/bookLogic";
 import {
+  drivers,
+  filterDrivers,
+  toggleDriver,
+} from "@challenge/structured-data-workbench-demo/driverLogic";
+import {
   filterStrains,
   findStrain,
   paginateStrains,
@@ -181,6 +186,28 @@ describe("configurable book sorting", () => {
         { field: "isbn" as BookField, direction: "ascending" },
       ]),
     ).toThrow("unique field");
+  });
+});
+
+describe("Formula 1 driver selection", () => {
+  it("filters the exact preserved collection by selection state", () => {
+    const selected = new Set([2, 4]);
+
+    expect(
+      filterDrivers(drivers, selected, "Selected").map(({ name }) => name),
+    ).toEqual(["Max Verstappen", "Lando Norris"]);
+    expect(filterDrivers(drivers, selected, "Unselected")).toHaveLength(3);
+    expect(filterDrivers(drivers, selected, "All")).toEqual(drivers);
+  });
+
+  it("toggles IDs without mutating the current selection", () => {
+    const selected = new Set([1]);
+    const added = toggleDriver(selected, 2);
+    const removed = toggleDriver(added, 1);
+
+    expect([...selected]).toEqual([1]);
+    expect([...added]).toEqual([1, 2]);
+    expect([...removed]).toEqual([2]);
   });
 });
 

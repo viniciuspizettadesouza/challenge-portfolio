@@ -87,7 +87,7 @@ test("Leafwell combines directory filters and opens a profile", async ({
   await capture(page, "strain-directory", errors);
 });
 
-test("Structured Data Workbench filters products and configures book sorting", async ({
+test("Structured Data Workbench filters products, sorts books, and selects drivers", async ({
   page,
 }) => {
   const errors = await openDemo(page, "structured-data-workbench");
@@ -107,16 +107,20 @@ test("Structured Data Workbench filters products and configures book sorting", a
   await page.getByRole("button", { name: "Null collection" }).click();
   await expect(page.getByRole("alert")).toContainText("NULL_COLLECTION");
 
-  await page.getByRole("button", { name: "Product filtering" }).click();
-  await capture(page, "structured-data-workbench", errors);
-});
-
-test("Vue filters and selects the original driver list", async ({ page }) => {
-  const errors = await openDemo(page, "formula-one-driver-explorer");
-  await page.locator("#selectAll").check();
+  await page.getByRole("button", { name: "Driver selection" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Formula 1 driver selection" }),
+  ).toBeVisible();
+  await page.getByRole("checkbox", { name: /Select all drivers/ }).check();
   await expect(page.getByText("5 of 5 selected")).toBeVisible();
-  await page.locator("#filters").selectOption("Selected");
-  await capture(page, "formula-one-driver-explorer", errors);
+  await expect(page.getByLabel("Emitted selected driver IDs")).toHaveText(
+    "IDs: 1, 2, 3, 4, 5",
+  );
+  await page.getByRole("button", { name: "Selected", exact: true }).click();
+  await expect(
+    page.getByRole("list", { name: "Selected drivers" }),
+  ).toContainText("Max Verstappen");
+  await capture(page, "structured-data-workbench", errors);
 });
 
 test("People Operations signs up and keeps only its theme after reopening", async ({
@@ -474,8 +478,10 @@ test("legacy challenge and demo URLs redirect to canonical entries", async ({
     "challenge-salsify",
     "challenge-stormtech",
     "challenge-zygo",
+    "challenge-vue",
     "product-data-table",
     "configurable-book-sorting",
+    "formula-one-driver-explorer",
   ]) {
     await page.goto(`challenges/${alias}`);
     await expect(page).toHaveURL(/challenges\/structured-data-workbench\/?$/);
@@ -582,7 +588,7 @@ test("catalog combines URL-backed filters and restores browser history", async (
 
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page).not.toHaveURL(/technology=|framework=|adaptation=/);
-  await expect(page.locator(".catalog-entry:visible")).toHaveCount(10);
+  await expect(page.locator(".catalog-entry:visible")).toHaveCount(9);
 
   await page.getByLabel("Theme").selectOption("Algorithms & Utilities");
   await expect(page).toHaveURL(
@@ -598,7 +604,7 @@ test("catalog keeps every challenge available without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("challenges?technology=React");
 
-  await expect(page.locator(".catalog-entry")).toHaveCount(10);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(10);
+  await expect(page.locator(".catalog-entry")).toHaveCount(9);
+  await expect(page.locator(".catalog-entry a")).toHaveCount(9);
   await context.close();
 });

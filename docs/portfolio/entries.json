@@ -144,25 +144,22 @@
     "sourceSlugs": [
       "challenge-salsify",
       "challenge-stormtech",
-      "challenge-zygo"
+      "challenge-zygo",
+      "challenge-vue"
     ],
     "aliases": [
       "challenge-salsify",
       "challenge-stormtech",
       "challenge-zygo",
+      "challenge-vue",
       "product-data-table",
-      "configurable-book-sorting"
+      "configurable-book-sorting",
+      "formula-one-driver-explorer"
     ],
     "renderer": "react",
     "migrationStrategy": "consolidated",
     "demoDirectory": "structured-data-workbench",
-    "description": "A unified React data workbench combining dynamic product-property filters with configurable, ordered book-comparison rules and explicit edge-case outcomes."
-  },
-  {
-    "slug": "formula-one-driver-explorer",
-    "title": "Formula 1 Driver Explorer",
-    "themes": ["Data & Analytics", "Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-vue"]
+    "description": "A unified React data workbench combining dynamic product-property filters, configurable book-comparison rules, and selection-state filtering over the original Formula 1 driver collection."
   },
   {
     "slug": "strain-directory",

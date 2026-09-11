@@ -25,7 +25,6 @@
     "@challenge/content-platform-demo": "workspace:*",
     "@challenge/structured-data-workbench-demo": "workspace:*",
     "@challenge/strains-demo": "workspace:*",
-    "@challenge/vue-demo": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "astro": "7.3.1",

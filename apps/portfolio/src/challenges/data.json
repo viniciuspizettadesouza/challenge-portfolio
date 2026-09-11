@@ -386,7 +386,7 @@
       "Data & Analytics",
       "Discovery & Catalogs"
     ],
-    "description": "A unified React data workbench combining dynamic product-property filters with configurable, ordered book-comparison rules and explicit edge-case outcomes.",
+    "description": "A unified React data workbench combining dynamic product-property filters, configurable book-comparison rules, and selection-state filtering over the original Formula 1 driver collection.",
     "technologies": [
       "React",
       "TypeScript",
@@ -396,7 +396,8 @@
       "MongoDB",
       "Mongoose",
       "JavaScript",
-      "Astro"
+      "Astro",
+      "Vue"
     ],
     "renderer": "react",
     "migrationStatus": "migrated",
@@ -425,33 +426,7 @@
         "originalRepository": "viniciuspizettadesouza/challenge-zygo",
         "originalDefaultBranch": "master",
         "originalHeadSha": "241e915e9b3748f9a87813bdaf07382125eba2e4"
-      }
-    ],
-    "aliases": [
-      "challenge-salsify",
-      "challenge-stormtech",
-      "challenge-zygo",
-      "product-data-table",
-      "configurable-book-sorting"
-    ],
-    "demoPath": "challenges/structured-data-workbench/demo"
-  },
-  {
-    "slug": "formula-one-driver-explorer",
-    "title": "Formula 1 Driver Explorer",
-    "themes": [
-      "Data & Analytics",
-      "Discovery & Catalogs"
-    ],
-    "description": "A Vue Formula 1 explorer for selecting leading drivers and reviewing their team, nationality, points, and season statistics.",
-    "technologies": [
-      "Vue",
-      "Vite"
-    ],
-    "renderer": "vue3",
-    "migrationStatus": "migrated",
-    "migrationStrategy": "native-vue3",
-    "sources": [
+      },
       {
         "slug": "challenge-vue",
         "title": "Vue Challenge",
@@ -462,9 +437,15 @@
       }
     ],
     "aliases": [
-      "challenge-vue"
+      "challenge-salsify",
+      "challenge-stormtech",
+      "challenge-zygo",
+      "challenge-vue",
+      "product-data-table",
+      "configurable-book-sorting",
+      "formula-one-driver-explorer"
     ],
-    "demoPath": "challenges/challenge-vue/demo"
+    "demoPath": "challenges/structured-data-workbench/demo"
   },
   {
     "slug": "strain-directory",

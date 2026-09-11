@@ -86,7 +86,8 @@
 }
 
 .structured-data-workbench > .salsify-demo,
-.structured-data-workbench > .book-demo {
+.structured-data-workbench > .book-demo,
+.structured-data-workbench > .driver-demo {
   border: 0;
   border-radius: 0;
 }
@@ -104,5 +105,9 @@
   .structured-data-workbench__header nav,
   .structured-data-workbench__header button {
     width: 100%;
+  }
+
+  .structured-data-workbench__header nav {
+    flex-wrap: wrap;
   }
 }

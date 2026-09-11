@@ -1,0 +1,238 @@
+.driver-demo {
+  min-height: 34rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  color: #17211b;
+  background:
+    radial-gradient(
+      circle at 92% 10%,
+      rgba(203, 233, 112, 0.42),
+      transparent 25rem
+    ),
+    #eef2ea;
+}
+
+.driver-demo__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem);
+  gap: 2rem;
+  align-items: end;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #c8d3ca;
+}
+
+.driver-demo__intro p,
+.driver-demo__intro h2,
+.driver-demo__intro span,
+.driver-demo__toolbar p {
+  margin: 0;
+}
+
+.driver-demo__intro p {
+  margin-bottom: 0.45rem;
+  color: #48624f;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.driver-demo__intro h2 {
+  font-size: clamp(1.8rem, 4vw, 3.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.driver-demo__intro span {
+  color: #405347;
+  line-height: 1.6;
+}
+
+.driver-demo__toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  padding: 1.5rem 0 1rem;
+}
+
+.driver-demo fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.driver-demo legend {
+  margin-bottom: 0.5rem;
+  color: #4c6053;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.driver-demo__filters {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.driver-demo button {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  color: #22342a;
+  background: #f8faf6;
+  border: 1px solid #aebdb2;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.driver-demo button[aria-pressed="true"] {
+  color: #f7faf7;
+  background: #1e3929;
+  border-color: #1e3929;
+}
+
+.driver-demo button:focus-visible,
+.driver-demo input:focus-visible {
+  outline: 3px solid #bd7b00;
+  outline-offset: 3px;
+}
+
+.driver-demo__toolbar p,
+.driver-demo__status output {
+  color: #425649;
+}
+
+.driver-demo__toolbar p strong {
+  color: #17211b;
+  font-size: 1.6rem;
+}
+
+.driver-demo__status {
+  text-align: right;
+}
+
+.driver-demo__status output {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.driver-demo__collection {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #cad5cc;
+  border-radius: 0.8rem;
+  box-shadow: 0 1rem 3rem rgba(25, 48, 34, 0.08);
+}
+
+.driver-demo__select-all,
+.driver-demo__collection li label {
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+}
+
+.driver-demo__select-all {
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  color: #f4f7f3;
+  background: #1e3929;
+}
+
+.driver-demo input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: #7ea023;
+}
+
+.driver-demo__select-all span,
+.driver-demo__select-all small {
+  display: block;
+}
+
+.driver-demo__select-all small {
+  margin-top: 0.15rem;
+  color: #bdcbbf;
+}
+
+.driver-demo__collection ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.driver-demo__collection li + li {
+  border-top: 1px solid #d6ded7;
+}
+
+.driver-demo__collection li label {
+  grid-template-columns: auto 2.5rem 1fr auto;
+  gap: 0.9rem;
+  min-height: 4.5rem;
+  padding: 0.8rem 1.25rem;
+}
+
+.driver-demo__collection li label:hover {
+  background: #f4f7f1;
+}
+
+.driver-demo__collection li label > span {
+  display: grid;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  place-items: center;
+  color: #1e3929;
+  background: #dcebad;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.driver-demo__collection li small {
+  color: #53675a;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.driver-demo__empty {
+  margin: 0;
+  padding: 3rem 1.25rem;
+  color: #4b5f52;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .driver-demo__intro {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-demo__toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .driver-demo__status {
+    text-align: left;
+  }
+
+  .driver-demo__filters button {
+    flex: 1;
+  }
+
+  .driver-demo__collection li label {
+    grid-template-columns: auto 2.5rem 1fr;
+  }
+
+  .driver-demo__collection li small {
+    display: none;
+  }
+}

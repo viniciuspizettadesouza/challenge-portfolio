@@ -1,9 +1,10 @@
 import { useState } from "react";
 import BookSortingDemo from "./BookSortingDemo";
+import DriverSelectionDemo from "./DriverSelectionDemo";
 import ProductDataTableDemo from "./ProductDataTableDemo";
 import "./styles.css";
 
-type Workspace = "products" | "books";
+type Workspace = "products" | "books" | "drivers";
 
 export default function StructuredDataWorkbenchDemo() {
   const [workspace, setWorkspace] = useState<Workspace>("products");
@@ -12,11 +13,11 @@ export default function StructuredDataWorkbenchDemo() {
     <section className="structured-data-workbench">
       <header className="structured-data-workbench__header">
         <div>
-          <p>Three preserved rule-driven data projects</p>
+          <p>Four preserved rule-driven data projects</p>
           <h2>Structured Data Workbench</h2>
           <span>
-            Filter product properties or compose ordered comparison rules over
-            a deterministic book collection.
+            Filter product properties, compose ordered book comparisons, or
+            select records from the original Formula 1 driver collection.
           </span>
         </div>
         <nav aria-label="Structured data workspaces">
@@ -34,14 +35,19 @@ export default function StructuredDataWorkbenchDemo() {
           >
             Book sorting
           </button>
+          <button
+            type="button"
+            aria-pressed={workspace === "drivers"}
+            onClick={() => setWorkspace("drivers")}
+          >
+            Driver selection
+          </button>
         </nav>
       </header>
 
-      {workspace === "products" ? (
-        <ProductDataTableDemo />
-      ) : (
-        <BookSortingDemo />
-      )}
+      {workspace === "products" && <ProductDataTableDemo />}
+      {workspace === "books" && <BookSortingDemo />}
+      {workspace === "drivers" && <DriverSelectionDemo />}
     </section>
   );
 }

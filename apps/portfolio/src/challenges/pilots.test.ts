@@ -6,7 +6,6 @@ import LeadOperationsDemo from "@challenge/lead-operations-demo";
 import PeopleOperationsDemo from "@challenge/people-operations-demo";
 import StructuredDataWorkbenchDemo from "@challenge/structured-data-workbench-demo";
 import StrainsDemo from "@challenge/strains-demo";
-import VueDemo from "@challenge/vue-demo";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createSSRApp } from "vue";
@@ -48,6 +47,7 @@ describe("pilot demos", () => {
     expect(html).toContain("Structured Data Workbench");
     expect(html).toContain("Product filtering");
     expect(html).toContain("Book sorting");
+    expect(html).toContain("Driver selection");
     expect(html).toContain("Salsify Product Table");
     expect(html).toContain("<table");
   });
@@ -95,12 +95,5 @@ describe("pilot demos", () => {
     expect(html).toContain("Clinical insight for a world without pain");
     expect(html).toContain("Start demo session");
     expect(html).toContain("News &amp; perspectives");
-  });
-
-  it("renders the Vue driver selector", async () => {
-    const html = await renderToString(createSSRApp(VueDemo));
-
-    expect(html).toContain("Formula 1 Top Drivers");
-    expect(html).toContain("Max Verstappen");
   });
 });

@@ -119,6 +119,19 @@ test("Structured Data Workbench book view meets the accessibility baseline", asy
   });
 });
 
+test("Structured Data Workbench driver view meets the accessibility baseline", async ({
+  page,
+}) => {
+  await expectAccessible(page, "demos/structured-data-workbench", {
+    checkContrast: true,
+    prepare: async (workbenchPage) => {
+      await workbenchPage
+        .getByRole("button", { name: "Driver selection" })
+        .click();
+    },
+  });
+});
+
 test("Climate & Weather Workspace emissions view meets the accessibility baseline", async ({
   page,
 }) => {

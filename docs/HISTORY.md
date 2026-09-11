@@ -25,6 +25,9 @@ the [maintenance handbook](README.md).
 | 2026-09-10 | 25     | Composed the TV Episode Library and Film Library into the Screen Library, retaining distinct television and film collections, all four historical sources, and ten compatibility aliases.                                                                                            |
 | 2026-09-11 | 26     | Consolidated 3cket and Ingenious Build into the City Explorer, retaining distinct event and transit collections, complete local fixtures, and four compatibility aliases.                                                                                                            |
 | 2026-09-11 | 27     | Consolidated Lagoasoft and Sword Health into the Content Platform, retaining distinct news and social channels, local publishing and reactions, and four compatibility aliases.                                                                                                      |
+| 2026-09-11 | 28     | Consolidated Salsify, Stormtech, and Zygo into the Structured Data Workbench, retaining product-property filtering, configurable book sorting, explicit edge cases, and five compatibility aliases.                                                                                   |
+| 2026-09-11 | 29     | Consolidated Blueticket, OnSign TV, and ClimateSeed into the Climate & Weather Workspace, retaining forecast discovery, geolocation, a 48-hour outlook, emissions analysis, switchable charts, and five compatibility aliases.                                                         |
+| 2026-09-12 | 30     | Consolidated the Vue driver selector into the Structured Data Workbench, retaining its exact five records, individual and select-all behavior, emitted IDs, selection-state filters, and seven compatibility aliases.                                                                 |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -149,9 +152,8 @@ multi-stage Vite/nginx Docker build.
 | Lead Operations Workspace   | Nuxt 2/JSONPlaceholder and Vue 2/private API → Vue 3 island                                           | Combines contact and company discovery, category filters, cadence-backed CRUD, validation, and compatible browser persistence from Instruct and Meetime                                                                 |
 | People Operations Workspace | React 16/Express/MongoDB and React 18/ReqRes → React island/local service                             | Combines authentication, protected CRUD, pagination, themes, approximate search, detailed profiles, reporting hierarchy, and Docker delivery from JExperts and User Management                                          |
 | Content Platform            | Vue 3/Quasar/Auth0 and React 16/Instagram → Vue 3 island                                              | Combines article discovery, categories, details, author sessions, profiles, publishing, and image previews with five social posts and independent likes; external Auth0 and expired media remain replaced locally       |
-| Structured Data Workbench   | React/Vite, React/Express/MongoDB, and Node scripts → React island                                    | Combines Salsify's original property-driven product table with the equivalent Stormtech and Zygo configurable book-sorting requirements                                                                                 |
+| Structured Data Workbench   | React/Vite, React/Express/MongoDB, Node scripts, and Vue 3 → React island                              | Combines Salsify's property-driven product table, Stormtech and Zygo configurable book sorting, and Vue's exact five-driver selection and filtering exercise                                                            |
 | Leafwell                    | Next.js 13/Apollo/GraphQL → React island                                                              | Name, initial, type, pagination, and details use deterministic GraphQL-derived records                                                                                                                                  |
-| Vue                         | Vue 3 component → direct Vue 3 island                                                                 | Original driver selector runs directly with only missing utility styles supplied                                                                                                                                        |
 
 No historical dependency was installed in place. Conaz and Zygo ran directly;
 both Devlandia Ruby programs ran with sample input; and Salsify, Vue.js, and
@@ -216,6 +218,9 @@ workspaces.
 Phase 29 retains the baseline across 10 canonical demos and directly audits the
 new React Climate & Weather Workspace shell plus its forecast and emissions
 views.
+Phase 30 retains the baseline across 9 canonical demos and directly audits the
+Structured Data Workbench driver-selection view in addition to its product and
+book areas.
 
 ## Validation and publication record
 
@@ -238,6 +243,7 @@ views.
 | Phase 27 content-platform consolidation | 14 workspaces; lint and typecheck; 71 unit/SSR tests; 34 Chromium interaction and accessibility tests covering news publishing and social engagement; 12 screenshots; 107 static pages including four retained content-platform aliases; Gitleaks over 331 commits          |
 | Phase 28 structured-data consolidation  | 13 workspaces; lint and typecheck; 70 unit/SSR tests; 32 Chromium interaction and accessibility tests covering product filtering and configurable book sorting; 11 screenshots; 109 static pages including five retained structured-data aliases; Gitleaks over 332 commits |
 | Phase 29 climate consolidation          | 12 workspaces; lint and typecheck; 69 unit/SSR tests; 31 Chromium interaction and accessibility tests covering local weather discovery and emissions analysis; 10 screenshots; 111 static pages including five retained climate aliases; Gitleaks over 333 commits          |
+| Phase 30 driver-selection consolidation | 9 canonical demos; lint and typecheck; 70 unit/SSR tests; 30 Chromium interaction and accessibility tests covering product filtering, book sorting, and driver selection; 9 screenshots; 111 static pages including seven structured-data aliases; Gitleaks over 334 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.
