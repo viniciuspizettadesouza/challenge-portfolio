@@ -16,6 +16,9 @@ The short operational handoff is [migration status](migration/status.md).
 The decisions, preservation evidence, project fidelity notes, validation
 results, and completed Phase 0–31 timeline are in the
 [distilled history](HISTORY.md).
+The [architecture reference](architecture.md) diagrams the repository
+boundaries, metadata flow, renderer dispatch, image pipeline, and deployment
+path.
 
 ## Repository model
 

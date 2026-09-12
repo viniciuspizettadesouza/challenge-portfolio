@@ -14,6 +14,11 @@ toolbar before cropping, so it cannot cover project content. Future evidence
 captures also keep that toolbar in normal document flow while taking full-page
 screenshots.
 
+The internal [architecture reference](../architecture.md) now documents the
+repository boundaries, metadata and renderer flows, reproducible image
+pipeline, CI/deployment path, and change-impact expectations with Mermaid
+diagrams.
+
 The Phase 31 working tree passes lint, typecheck, 73 unit and SSR tests, 34
 Chromium interaction, presentation, SEO, and accessibility tests, and a
 111-page production build with 12 canonical sitemap URLs. Gitleaks scanned all
@@ -32,11 +37,12 @@ No tag is planned.
 
 ## Next action
 
-Review the featured home, complete catalog, and generated social cards, then
-commit and push the approved Phase 31 changes. Verify Browser tests, Security
-scan, Deploy to GitHub Pages, social metadata, `robots.txt`, and the sitemap
-against the published revision. Continue routine dependency, security, image,
-and metadata maintenance afterward.
+Review the featured home, complete catalog, generated social cards, and
+architecture reference, then commit and push the approved changes. Verify
+Browser tests, Security scan, Deploy to GitHub Pages, social metadata,
+`robots.txt`, and the sitemap against the published revision. Continue routine
+dependency, security, image, metadata, and architecture-documentation
+maintenance afterward.
 
 Use the [handbook](../README.md) for current procedures and
 [HISTORY.md](../HISTORY.md) for the complete summarized migration, security,

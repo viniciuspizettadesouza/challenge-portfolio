@@ -23,6 +23,7 @@ The usual validation commands are `pnpm lint`, `pnpm typecheck`, `pnpm test`,
 ## Documentation
 
 - [Canonical handbook](docs/README.md)
+- [Internal architecture diagrams](docs/architecture.md)
 - [Current migration and maintenance status](docs/migration/status.md)
 - [Challenge library](docs/README.md#challenge-library)
 - [Distilled migration and hardening history](docs/HISTORY.md)
