@@ -27,7 +27,7 @@ async function openDemo(page: Page, slug: string) {
   expect(errors, `hydration errors in ${slug}`).toEqual([]);
   await page.addStyleTag({
     content:
-      "*, *::before, *::after { animation: none !important; transition: none !important; }",
+      ".demo-toolbar { position: static !important; } *, *::before, *::after { animation: none !important; transition: none !important; }",
   });
 
   return errors;
@@ -605,6 +605,6 @@ test("catalog keeps every challenge available without JavaScript", async ({
   await page.goto("challenges?technology=React");
 
   await expect(page.locator(".catalog-entry")).toHaveCount(9);
-  await expect(page.locator(".catalog-entry a")).toHaveCount(9);
+  await expect(page.locator(".catalog-entry h2 a")).toHaveCount(9);
   await context.close();
 });

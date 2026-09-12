@@ -3,9 +3,23 @@ import ChallengeCard from "../components/ChallengeCard.astro";
 import { challenges } from "../challenges/registry";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBase } from "../lib/urls";
+
+const featuredChallenges = challenges
+  .filter(({ featuredRank }) => featuredRank)
+  .sort((left, right) => left.featuredRank! - right.featuredRank!);
+const canonicalUrl = new URL(withBase(), Astro.site).href;
+const description =
+  "Explore nine modern interactive demos backed by 23 preserved React, Vue, Astro, and Ruby technical challenge sources.";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Challenge Portfolio",
+  description,
+  url: canonicalUrl,
+};
 ---
 
-<BaseLayout title="Challenge Portfolio">
+<BaseLayout title="Challenge Portfolio" {description} {structuredData}>
   <section class="hero">
     <p class="eyebrow">A living work archive</p>
     <h1>{challenges.length} curated entries.<br />23 preserved sources.</h1>
@@ -20,15 +34,15 @@ import { withBase } from "../lib/urls";
     <div class="section-heading">
       <div>
         <p class="eyebrow">Catalog</p>
-        <h2>First in line</h2>
+        <h2>Featured projects</h2>
       </div>
       <a href={withBase("challenges")}>View all ({challenges.length})</a>
     </div>
     <div class="grid">
       {
-        challenges
-          .slice(0, 6)
-          .map((challenge) => <ChallengeCard challenge={challenge} />)
+        featuredChallenges.map((challenge, index) => (
+          <ChallengeCard challenge={challenge} priority={index === 0} />
+        ))
       }
     </div>
   </section>

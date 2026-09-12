@@ -5,7 +5,10 @@ interface Props {
 }
 
 const { destination, title } = Astro.props;
-const canonicalUrl = new URL(destination, Astro.site);
+const canonicalUrl = new URL(
+  destination.endsWith("/") ? destination : `${destination}/`,
+  Astro.site,
+);
 ---
 
 <!doctype html>

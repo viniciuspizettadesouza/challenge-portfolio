@@ -28,6 +28,7 @@ the [maintenance handbook](README.md).
 | 2026-09-11 | 28     | Consolidated Salsify, Stormtech, and Zygo into the Structured Data Workbench, retaining product-property filtering, configurable book sorting, explicit edge cases, and five compatibility aliases.                                                                                   |
 | 2026-09-11 | 29     | Consolidated Blueticket, OnSign TV, and ClimateSeed into the Climate & Weather Workspace, retaining forecast discovery, geolocation, a 48-hour outlook, emissions analysis, switchable charts, and five compatibility aliases.                                                         |
 | 2026-09-12 | 30     | Consolidated the Vue driver selector into the Structured Data Workbench, retaining its exact five records, individual and select-all behavior, emitted IDs, selection-state filters, and seven compatibility aliases.                                                                 |
+| 2026-09-12 | 31     | Added reproducible project thumbnails and social cards, featured People Operations, City Explorer, and Climate & Weather Workspace, and completed canonical, Open Graph, Twitter, JSON-LD, robots, and filtered sitemap coverage.                                                     |
 
 All phases are complete. A Phase 18 tag and GitHub Release were intentionally
 deferred because the repository is a personal library, not because work
@@ -244,6 +245,7 @@ book areas.
 | Phase 28 structured-data consolidation  | 13 workspaces; lint and typecheck; 70 unit/SSR tests; 32 Chromium interaction and accessibility tests covering product filtering and configurable book sorting; 11 screenshots; 109 static pages including five retained structured-data aliases; Gitleaks over 332 commits |
 | Phase 29 climate consolidation          | 12 workspaces; lint and typecheck; 69 unit/SSR tests; 31 Chromium interaction and accessibility tests covering local weather discovery and emissions analysis; 10 screenshots; 111 static pages including five retained climate aliases; Gitleaks over 333 commits          |
 | Phase 30 driver-selection consolidation | 9 canonical demos; lint and typecheck; 70 unit/SSR tests; 30 Chromium interaction and accessibility tests covering product filtering, book sorting, and driver selection; 9 screenshots; 111 static pages including seven structured-data aliases; Gitleaks over 334 commits |
+| Phase 31 presentation and SEO            | 9 thumbnails and 10 social images generated from the 9 canonical screenshots; lint and typecheck; 73 unit/SSR tests; 34 Chromium interaction, presentation, SEO, and accessibility tests; 12 canonical sitemap URLs; 111 static pages; Gitleaks over 335 commits |
 
 For `6e79caf`, GitHub Actions runs Browser tests `33693030456`, Security
 scan `33693030344`, and Deploy to GitHub Pages `33693030353` passed.

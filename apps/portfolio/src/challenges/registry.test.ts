@@ -42,4 +42,22 @@ describe("challenge registry", () => {
       9,
     );
   });
+
+  it("registers project imagery and exactly three ordered features", () => {
+    for (const challenge of challenges) {
+      expect(challenge.screenshot).toBe(
+        `images/projects/${challenge.slug}.webp`,
+      );
+    }
+
+    const featured = challenges
+      .filter(({ featuredRank }) => featuredRank)
+      .sort((left, right) => left.featuredRank! - right.featuredRank!);
+    expect(featured.map(({ slug }) => slug)).toEqual([
+      "people-operations",
+      "city-explorer",
+      "climate-workspace",
+    ]);
+    expect(featured.map(({ featuredRank }) => featuredRank)).toEqual([1, 2, 3]);
+  });
 });

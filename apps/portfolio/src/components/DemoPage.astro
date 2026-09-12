@@ -8,6 +8,8 @@ interface Props {
   challenge: Challenge;
 }
 const { challenge } = Astro.props;
+const canonicalPath = withBase(`challenges/${challenge.slug}`);
+const canonicalUrl = new URL(`${canonicalPath}/`, Astro.site);
 ---
 
 <!doctype html>
@@ -19,6 +21,8 @@ const { challenge } = Astro.props;
       name="description"
       content={`Full-screen interactive demo for ${challenge.title}.`}
     />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={canonicalUrl} />
     <title>{challenge.title} Demo — Challenge Portfolio</title>
   </head>
   <body>

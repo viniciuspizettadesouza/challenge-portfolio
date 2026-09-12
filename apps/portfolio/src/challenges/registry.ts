@@ -33,8 +33,9 @@ export interface Challenge {
     | "manual-review";
   sources: ChallengeSource[];
   aliases: string[];
+  screenshot: string;
+  featuredRank?: 1 | 2 | 3;
   demoPath?: string;
-  screenshot?: string;
 }
 
 export const challenges = challengeData as Challenge[];

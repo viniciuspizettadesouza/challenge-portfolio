@@ -13,6 +13,8 @@
     "renderer": "vue3",
     "migrationStrategy": "consolidated",
     "demoDirectory": "city-explorer",
+    "screenshot": "images/projects/city-explorer.webp",
+    "featuredRank": 2,
     "description": "A unified Vue city explorer combining fixture-backed event search and details with complete bus-line, stop-directory, and departure-time discovery."
   },
   {
@@ -34,6 +36,8 @@
     "renderer": "react",
     "migrationStrategy": "consolidated",
     "demoDirectory": "climate-workspace",
+    "screenshot": "images/projects/climate-workspace.webp",
+    "featuredRank": 3,
     "description": "A unified React climate workspace combining private local forecast discovery, geolocation and a 48-hour outlook with organisation emissions analysis, switchable charts, and validated local results."
   },
   {
@@ -61,6 +65,7 @@
     "renderer": "react",
     "migrationStrategy": "consolidated",
     "demoDirectory": "screen-library",
+    "screenshot": "images/projects/screen-library.webp",
     "description": "A unified React screen-media library composing searchable television series and episode management with movie discovery, ratings and summaries, plus a dedicated controllable Star Wars crawl."
   },
   {
@@ -83,6 +88,7 @@
     "renderer": "static",
     "migrationStrategy": "consolidated",
     "demoDirectory": "algorithm-playground",
+    "screenshot": "images/projects/algorithm-playground.webp",
     "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding."
   },
   {
@@ -99,6 +105,7 @@
     "renderer": "vue3",
     "migrationStrategy": "consolidated",
     "demoDirectory": "lead-operations",
+    "screenshot": "images/projects/lead-operations.webp",
     "description": "A unified Vue lead-operations workspace with contact and company search, composable category filters, cadence assignment, validated local CRUD, responsive records, and versioned browser persistence."
   },
   {
@@ -115,6 +122,8 @@
     "renderer": "react",
     "migrationStrategy": "consolidated",
     "demoDirectory": "people-operations",
+    "screenshot": "images/projects/people-operations.webp",
+    "featuredRank": 1,
     "description": "A secure React people-operations workspace with local authentication, protected CRUD, approximate directory search, reporting-line filters, detailed employee profiles, pagination, persistent themes, and a standalone Docker build."
   },
   {
@@ -131,6 +140,7 @@
     "renderer": "vue3",
     "migrationStrategy": "consolidated",
     "demoDirectory": "content-platform",
+    "screenshot": "images/projects/content-platform.webp",
     "description": "A unified Vue content platform combining local news discovery, category filtering, author profiles and article publishing with a five-post social feed and independent browser-only likes."
   },
   {
@@ -159,12 +169,14 @@
     "renderer": "react",
     "migrationStrategy": "consolidated",
     "demoDirectory": "structured-data-workbench",
+    "screenshot": "images/projects/structured-data-workbench.webp",
     "description": "A unified React data workbench combining dynamic product-property filters, configurable book-comparison rules, and selection-state filtering over the original Formula 1 driver collection."
   },
   {
     "slug": "strain-directory",
     "title": "Strain Directory",
     "themes": ["Discovery & Catalogs"],
-    "sourceSlugs": ["challenge-leafwell"]
+    "sourceSlugs": ["challenge-leafwell"],
+    "screenshot": "images/projects/strain-directory.webp"
   }
 ]

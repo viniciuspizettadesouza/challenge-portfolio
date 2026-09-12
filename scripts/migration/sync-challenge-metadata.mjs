@@ -121,6 +121,8 @@ const registry = entries.map((entry) => {
       }),
     ),
     aliases: entry.aliases ?? entry.sourceSlugs,
+    screenshot: entry.screenshot,
+    ...(entry.featuredRank ? { featuredRank: entry.featuredRank } : {}),
     ...(existsSync(resolve(projectRoot, "challenges", demoDirectory, "demo"))
       ? { demoPath: `challenges/${demoDirectory}/demo` }
       : {}),

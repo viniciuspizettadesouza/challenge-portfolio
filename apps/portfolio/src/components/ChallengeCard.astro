@@ -4,21 +4,47 @@ import { withBase } from "../lib/urls";
 
 interface Props {
   challenge: Challenge;
+  priority?: boolean;
 }
 
-const { challenge } = Astro.props;
+const { challenge, priority = false } = Astro.props;
+const technologies = challenge.technologies.slice(0, 4);
+const hiddenTechnologyCount =
+  challenge.technologies.length - technologies.length;
 ---
 
 <article class="card">
-  <div class="card__eyebrow">
-    <span>{challenge.themes.join(" · ")}</span>
-    <span class:list={["status", `status--${challenge.migrationStatus}`]}>
-      {challenge.migrationStatus}
-    </span>
+  <a
+    class="card__media"
+    href={withBase(`challenges/${challenge.slug}`)}
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    <img
+      src={withBase(challenge.screenshot)}
+      alt=""
+      width="800"
+      height="500"
+      loading={priority ? "eager" : "lazy"}
+      fetchpriority={priority ? "high" : "auto"}
+      decoding="async"
+    />
+  </a>
+  <div class="card__body">
+    <div class="card__eyebrow">
+      <span>{challenge.themes.join(" · ")}</span>
+      <span class:list={["status", `status--${challenge.migrationStatus}`]}>
+        {challenge.migrationStatus}
+      </span>
+    </div>
+    <h2>
+      <a href={withBase(`challenges/${challenge.slug}`)}>{challenge.title}</a>
+    </h2>
+    <p>{challenge.description}</p>
+    <ul class="technology-list" aria-label="Technologies">
+      {technologies.map((technology) => <li>{technology}</li>)}
+      {hiddenTechnologyCount > 0 && <li>+{hiddenTechnologyCount}</li>}
+    </ul>
+    <span class="card__link" aria-hidden="true">View challenge →</span>
   </div>
-  <h2>
-    <a href={withBase(`challenges/${challenge.slug}`)}>{challenge.title}</a>
-  </h2>
-  <p>{challenge.description}</p>
-  <span class="card__link" aria-hidden="true">View challenge →</span>
 </article>

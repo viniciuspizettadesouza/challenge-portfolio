@@ -2,10 +2,7 @@
   {
     "slug": "city-explorer",
     "title": "City Explorer",
-    "themes": [
-      "Discovery & Catalogs",
-      "Mobility & Events"
-    ],
+    "themes": ["Discovery & Catalogs", "Mobility & Events"],
     "description": "A unified Vue city explorer combining fixture-backed event search and details with complete bus-line, stop-directory, and departure-time discovery.",
     "technologies": [
       "Nuxt",
@@ -44,15 +41,14 @@
       "event-discovery",
       "public-transit-timetable"
     ],
+    "screenshot": "images/projects/city-explorer.webp",
+    "featuredRank": 2,
     "demoPath": "challenges/city-explorer/demo"
   },
   {
     "slug": "climate-workspace",
     "title": "Climate & Weather Workspace",
-    "themes": [
-      "Data & Analytics",
-      "Weather & Climate"
-    ],
+    "themes": ["Data & Analytics", "Weather & Climate"],
     "description": "A unified React climate workspace combining private local forecast discovery, geolocation and a 48-hour outlook with organisation emissions analysis, switchable charts, and validated local results.",
     "technologies": [
       "Vue",
@@ -101,15 +97,14 @@
       "weather-forecast",
       "carbon-emissions-dashboard"
     ],
+    "screenshot": "images/projects/climate-workspace.webp",
+    "featuredRank": 3,
     "demoPath": "challenges/climate-workspace/demo"
   },
   {
     "slug": "screen-library",
     "title": "Screen Library",
-    "themes": [
-      "Content & Media",
-      "Discovery & Catalogs"
-    ],
+    "themes": ["Content & Media", "Discovery & Catalogs"],
     "description": "A unified React screen-media library composing searchable television series and episode management with movie discovery, ratings and summaries, plus a dedicated controllable Star Wars crawl.",
     "technologies": [
       "React",
@@ -178,14 +173,13 @@
       "tv-episode-library",
       "film-library"
     ],
+    "screenshot": "images/projects/screen-library.webp",
     "demoPath": "challenges/screen-library/demo"
   },
   {
     "slug": "algorithm-playground",
     "title": "Algorithm Playground",
-    "themes": [
-      "Algorithms & Utilities"
-    ],
+    "themes": ["Algorithms & Utilities"],
     "description": "A unified algorithm workspace for interactive text analysis, run-length encoding, member synchronisation, Roman-numeral conversion, and editable grid pathfinding.",
     "technologies": [
       "JavaScript",
@@ -233,15 +227,13 @@
       "grid-pathfinding",
       "roman-numeral-converter"
     ],
+    "screenshot": "images/projects/algorithm-playground.webp",
     "demoPath": "challenges/algorithm-playground/demo"
   },
   {
     "slug": "lead-operations",
     "title": "Lead Operations Workspace",
-    "themes": [
-      "Business Operations",
-      "Data & Analytics"
-    ],
+    "themes": ["Business Operations", "Data & Analytics"],
     "description": "A unified Vue lead-operations workspace with contact and company search, composable category filters, cadence assignment, validated local CRUD, responsive records, and versioned browser persistence.",
     "technologies": [
       "Nuxt",
@@ -281,14 +273,13 @@
       "lead-filtering-dashboard",
       "sales-lead-management"
     ],
+    "screenshot": "images/projects/lead-operations.webp",
     "demoPath": "challenges/lead-operations/demo"
   },
   {
     "slug": "people-operations",
     "title": "People Operations Workspace",
-    "themes": [
-      "Business Operations"
-    ],
+    "themes": ["Business Operations"],
     "description": "A secure React people-operations workspace with local authentication, protected CRUD, approximate directory search, reporting-line filters, detailed employee profiles, pagination, persistent themes, and a standalone Docker build.",
     "technologies": [
       "React",
@@ -329,14 +320,14 @@
       "employee-directory-registration",
       "user-administration"
     ],
+    "screenshot": "images/projects/people-operations.webp",
+    "featuredRank": 1,
     "demoPath": "challenges/people-operations/demo"
   },
   {
     "slug": "content-platform",
     "title": "Content Platform",
-    "themes": [
-      "Content & Media"
-    ],
+    "themes": ["Content & Media"],
     "description": "A unified Vue content platform combining local news discovery, category filtering, author profiles and article publishing with a five-post social feed and independent browser-only likes.",
     "technologies": [
       "React",
@@ -376,6 +367,7 @@
       "social-feed-interactions",
       "news-publishing-platform"
     ],
+    "screenshot": "images/projects/content-platform.webp",
     "demoPath": "challenges/content-platform/demo"
   },
   {
@@ -445,14 +437,13 @@
       "configurable-book-sorting",
       "formula-one-driver-explorer"
     ],
+    "screenshot": "images/projects/structured-data-workbench.webp",
     "demoPath": "challenges/structured-data-workbench/demo"
   },
   {
     "slug": "strain-directory",
     "title": "Strain Directory",
-    "themes": [
-      "Discovery & Catalogs"
-    ],
+    "themes": ["Discovery & Catalogs"],
     "description": "A React Leafwell strain directory with deterministic local records, combinable name, initial, and type filters, pagination, and detailed composition profiles.",
     "technologies": [
       "Next.js",
@@ -475,9 +466,8 @@
         "originalHeadSha": "7f41b5022e29528d737fd045a9554bee98ae8d18"
       }
     ],
-    "aliases": [
-      "challenge-leafwell"
-    ],
+    "aliases": ["challenge-leafwell"],
+    "screenshot": "images/projects/strain-directory.webp",
     "demoPath": "challenges/strains/demo"
   }
 ]

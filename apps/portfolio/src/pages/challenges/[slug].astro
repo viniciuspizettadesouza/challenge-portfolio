@@ -25,6 +25,27 @@ interface Props {
 }
 
 const { challenge, redirectTo } = Astro.props;
+const canonicalPath = challenge
+  ? withBase(`challenges/${challenge.slug}`)
+  : undefined;
+const structuredData = challenge
+  ? {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: challenge.title,
+      description: challenge.description,
+      url: new URL(`${canonicalPath}/`, Astro.site).href,
+      image: new URL(
+        withBase(`images/social/${challenge.slug}.png`),
+        Astro.site,
+      ).href,
+      keywords: challenge.technologies.join(", "),
+      isBasedOn: challenge.sources.map(
+        (source) =>
+          `https://github.com/viniciuspizettadesouza/challenge-portfolio/tree/main/${source.sourcePath}`,
+      ),
+    }
+  : undefined;
 ---
 
 {
@@ -34,7 +55,12 @@ const { challenge, redirectTo } = Astro.props;
       title={redirectTo.title}
     />
   ) : challenge ? (
-    <BaseLayout title={`${challenge.title} — Challenge Portfolio`}>
+    <BaseLayout
+      title={`${challenge.title} — Challenge Portfolio`}
+      description={challenge.description}
+      image={`images/social/${challenge.slug}.png`}
+      {structuredData}
+    >
       <article>
         <header class="challenge-hero">
           <a class="back-link" href={withBase("challenges")}>

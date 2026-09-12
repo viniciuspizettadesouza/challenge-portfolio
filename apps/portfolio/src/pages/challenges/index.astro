@@ -10,11 +10,42 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { withBase } from "../../lib/urls";
 
 const facets = getCatalogFacets(challenges);
+const catalogPath = withBase("challenges");
+const canonicalUrl = new URL(`${catalogPath}/`, Astro.site).href;
+const description =
+  "Browse nine curated technical challenge entries by theme, technology, framework, and adaptation strategy.";
+const challengeUrl = (slug: string) => {
+  const path = withBase(`challenges/${slug}`);
+  return new URL(`${path}/`, Astro.site).href;
+};
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Technical Challenges",
+  description,
+  url: canonicalUrl,
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: challenges.length,
+    itemListElement: challenges.map((challenge, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: challenge.title,
+      url: challengeUrl(challenge.slug),
+    })),
+  },
+};
 ---
 
-<BaseLayout title="Challenges — Challenge Portfolio">
+<BaseLayout
+  title="Challenges — Challenge Portfolio"
+  description={description}
+  structuredData={structuredData}
+>
   <section class="page-intro">
-    <p class="eyebrow">23 preserved sources, {challenges.length} curated entries</p>
+    <p class="eyebrow">
+      23 preserved sources, {challenges.length} curated entries
+    </p>
     <h1>Challenges</h1>
     <p>
       Each page documents the preserved source, its context, and the strategy

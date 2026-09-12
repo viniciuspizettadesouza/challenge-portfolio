@@ -6,7 +6,7 @@ preserving all 23 reviewed historical sources separately from maintained demos.
 
 ## Current state
 
-Migration Phases 0–30 are complete. Revision `6e79caf` is the verified Phase
+Migration and presentation Phases 0–31 are complete. Revision `6e79caf` is the verified Phase
 18 baseline: browser, security, accessibility, catalog-discovery, GitHub Pages,
 and production checks passed. The owner intentionally deferred a new tag and
 GitHub Release because this repository is a personal library; that is a release
@@ -14,7 +14,7 @@ decision, not pending migration work.
 
 The short operational handoff is [migration status](migration/status.md).
 The decisions, preservation evidence, project fidelity notes, validation
-results, and completed Phase 0–30 timeline are in the
+results, and completed Phase 0–31 timeline are in the
 [distilled history](HISTORY.md).
 
 ## Repository model
@@ -62,22 +62,25 @@ pnpm lint
 pnpm typecheck
 pnpm test
 pnpm test:e2e
+pnpm images
 pnpm security:secrets
 pnpm build
 git diff --check
 ```
 
-`pnpm test:e2e` validates Chromium interactions and accessibility without
-rewriting tracked images. Use `pnpm screenshots` only when a deliberate visual
-change requires refreshing the reproducible screenshots in
-`docs/portfolio/screenshots/`. Review every changed image before keeping it.
+`pnpm test:e2e` validates Chromium interactions, presentation, SEO, and
+accessibility without rewriting tracked images. `pnpm images` rebuilds web and
+social derivatives from the nine evidence screenshots. Use `pnpm screenshots`
+only when a deliberate demo change requires refreshing both the reproducible
+screenshots in `docs/portfolio/screenshots/` and their derivatives. Review every
+changed image before keeping it.
 The secret scan uses the digest-pinned Gitleaks container defined by
 `scripts/security/scan-secrets.sh`, so Docker must be available for that check.
 
 ## Metadata and catalog discovery
 
 Historical sources are registered by `challenge.json`; public entries and
-their themes, aliases, and source relationships are defined in
+their themes, aliases, source relationships, screenshots, and featured order are defined in
 `docs/portfolio/entries.json`. After changing either manifest, run:
 
 ```bash
@@ -145,7 +148,8 @@ manually. GitHub Pages must use **GitHub Actions** as its build source.
 
 After deployment, verify the home page, `/challenges/`, at least one detail
 page, its `/demos/<slug>/` route, and a shareable filtered catalog URL. Confirm
-HTTP 200 responses, expected filtering, and no browser console or page errors.
+HTTP 200 responses, expected filtering, social metadata, `robots.txt`, the
+12 canonical sitemap URLs, and no browser console or page errors.
 
 ## Historical source library
 

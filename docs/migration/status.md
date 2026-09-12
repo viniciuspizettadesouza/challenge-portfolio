@@ -2,17 +2,25 @@
 
 Last updated: 2026-09-12.
 
-All migration and consolidation phases (0–30) are complete. The portfolio now
-presents 9 domain-focused entries backed by all 23 immutable historical
-sources. The Vue driver-selection exercise is represented as the third area of
-the React-based Structured Data Workbench; `challenge-vue` and the former
-`formula-one-driver-explorer` canonical slug resolve to the consolidated route.
+All migration, consolidation, and presentation phases (0–31) are complete. The
+portfolio now presents 9 domain-focused entries backed by all 23 immutable
+historical sources. The Vue driver-selection exercise is represented as the
+third area of the React-based Structured Data Workbench; `challenge-vue` and
+the former `formula-one-driver-explorer` canonical slug resolve to the
+consolidated route.
 
-The Phase 30 working tree passes lint, typecheck, 70 unit and SSR tests, 30
-Chromium interaction and accessibility tests, a 111-page production build, and
-Gitleaks across 334 commits with no findings. The refreshed Structured Data
-Workbench screenshot received direct visual review, and all 9 canonical
-screenshots remain represented.
+The derived thumbnail and social-image pipeline removes the portfolio demo
+toolbar before cropping, so it cannot cover project content. Future evidence
+captures also keep that toolbar in normal document flow while taking full-page
+screenshots.
+
+The Phase 31 working tree passes lint, typecheck, 73 unit and SSR tests, 34
+Chromium interaction, presentation, SEO, and accessibility tests, and a
+111-page production build with 12 canonical sitemap URLs. Gitleaks scanned all
+335 committed revisions with no findings. All 9 evidence screenshots remain
+represented by reproducible 800 × 500 WebP thumbnails, 9 project-specific 1200
+× 630 social cards, and one portfolio social card. The home, catalog, and
+representative social cards received direct visual review.
 
 Revision `6e79caf` remains the Phase 18 baseline. The 2026-09-03 maintenance
 pass integrates the compatible dependency updates, keeps TypeScript 6 until
@@ -24,10 +32,11 @@ No tag is planned.
 
 ## Next action
 
-Review the Structured Data Workbench and refreshed screenshot, then commit and
-push the approved Phase 30 changes and verify Browser tests, Security scan, and
-Deploy to GitHub Pages against the published revision. Continue routine
-dependency and security maintenance afterward.
+Review the featured home, complete catalog, and generated social cards, then
+commit and push the approved Phase 31 changes. Verify Browser tests, Security
+scan, Deploy to GitHub Pages, social metadata, `robots.txt`, and the sitemap
+against the published revision. Continue routine dependency, security, image,
+and metadata maintenance afterward.
 
 Use the [handbook](../README.md) for current procedures and
 [HISTORY.md](../HISTORY.md) for the complete summarized migration, security,
