@@ -20,8 +20,8 @@
     "inventory": "node scripts/migration/generate-inventory.mjs && node scripts/migration/sync-challenge-metadata.mjs"
   },
   "devDependencies": {
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "vue": "3.5.40"
   }
 }
