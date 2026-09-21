@@ -15,8 +15,8 @@
     "screenshots": "UPDATE_SCREENSHOTS=1 playwright test && pnpm images"
   },
   "dependencies": {
-    "@astrojs/react": "6.0.5",
-    "@astrojs/vue": "7.0.2",
+    "@astrojs/react": "6.0.6",
+    "@astrojs/vue": "7.0.3",
     "@challenge/algorithm-playground-demo": "workspace:*",
     "@challenge/city-explorer-demo": "workspace:*",
     "@challenge/climate-workspace-demo": "workspace:*",
@@ -26,12 +26,12 @@
     "@challenge/screen-library-demo": "workspace:*",
     "@challenge/strains-demo": "workspace:*",
     "@challenge/structured-data-workbench-demo": "workspace:*",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
-    "astro": "7.3.1",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "vue": "3.5.40"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "7.3.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "vue": "3.5.43"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
