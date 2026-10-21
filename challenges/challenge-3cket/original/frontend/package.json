@@ -17,7 +17,7 @@
     "prettier-plugin-tailwindcss": "^0.5.4"
   },
   "dependencies": {
-    "@nuxt/image": "^1.0.0-rc.1",
+    "@nuxt/image": "^2.1.0",
     "@nuxt/ui": "^2.8.1"
   }
 }
